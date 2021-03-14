@@ -25,10 +25,6 @@ public class VistaGestionar_productos extends PolymerTemplate<VistaGestionar_pro
 	private H1 h1;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-	@Id("vistaProductos_administrador")
-	private Element vistaProductos_administrador;
-	@Id("vistaProductosadministrador")
-	private Element vistaProductosadministrador;
 
 	/**
      * Creates a new VistaGestionar_productos.
@@ -68,11 +64,4 @@ public class VistaGestionar_productos extends PolymerTemplate<VistaGestionar_pro
 		this.vaadinButton = vaadinButton;
 	}
 
-	public Element getVistaProductos_administrador() {
-		return vistaProductos_administrador;
-	}
-
-	public void setVistaProductos_administrador(Element vistaProductos_administrador) {
-		this.vistaProductos_administrador = vistaProductos_administrador;
-	}
 }
