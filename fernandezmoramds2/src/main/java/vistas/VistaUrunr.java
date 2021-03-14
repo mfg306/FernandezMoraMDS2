@@ -22,14 +22,6 @@ public class VistaUrunr extends PolymerTemplate<VistaUrunr.VistaUrunrModel> {
 	private Element vaadinVerticalLayout;
 	@Id("botonVerCategorias")
 	private Button botonVerCategorias;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("listaOfertas")
-	private Element listaOfertas;
-	@Id("listaProductosmasvendidosporcategorias")
-	private Element listaProductosmasvendidosporcategorias;
 	@Id("huecoMenu")
 	private Element huecoMenu;
 	/**
@@ -62,37 +54,6 @@ public class VistaUrunr extends PolymerTemplate<VistaUrunr.VistaUrunrModel> {
 		this.botonVerCategorias = botonVerCategorias;
 	}
 
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
-	}
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
-	}
-
-	public Element getListaOfertas() {
-		return listaOfertas;
-	}
-
-	public void setListaOfertas(Element listaOfertas) {
-		this.listaOfertas = listaOfertas;
-	}
-
-	public Element getListaProductosmasvendidosporcategorias() {
-		return listaProductosmasvendidosporcategorias;
-	}
-
-	public void setListaProductosmasvendidosporcategorias(Element listaProductosmasvendidosporcategorias) {
-		this.listaProductosmasvendidosporcategorias = listaProductosmasvendidosporcategorias;
-	}
 
 	public Element getHuecoMenu() {
 		return huecoMenu;

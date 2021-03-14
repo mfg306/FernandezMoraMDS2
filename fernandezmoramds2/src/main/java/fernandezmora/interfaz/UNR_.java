@@ -26,13 +26,6 @@ public class UNR_ extends UR_UNR {
 		this.getVaadinVerticalLayout().setVisible(false);
 	}
 	
-	public void abrirIniciarSesion() {
-		
-		this._menu_UNR.getBoton_iniciar_sesion().addClickListener(event -> {
-				ocultarInformacionUNR();
-				this._menu_UNR._iniciar_sesion_UNR = new Iniciar_sesion_UNR();
-				this.layout.add(this._menu_UNR._iniciar_sesion_UNR);
-			});
-	}
+	
 	
 }

@@ -1,7 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import './vista-ofertas.js';
-import './vista-productosmasvendidosporcategorias.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaUrunr extends PolymerElement {
@@ -19,12 +17,6 @@ class VistaUrunr extends PolymerElement {
  <vaadin-button theme="primary" id="botonVerCategorias" style="align-self: flex-end; margin: var(--lumo-space-m);">
    Ver categorías 
  </vaadin-button>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%;">
-  <vista-ofertas id="listaOfertas" style="width: 100%;"></vista-ofertas>
- </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="width: 100%;">
-  <vista-productosmasvendidosporcategorias id="listaProductosmasvendidosporcategorias" style="width: 100%;"></vista-productosmasvendidosporcategorias>
- </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }

@@ -10,6 +10,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 	
 	public Menu_UNR() {
 		
+		this._iniciar_sesion_UNR = new Iniciar_sesion_UNR();
 
 	}
 	
