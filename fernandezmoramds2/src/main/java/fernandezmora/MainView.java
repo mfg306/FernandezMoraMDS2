@@ -59,7 +59,7 @@ public class MainView extends VerticalLayout {
     	Iniciar_sesion_UNR inicio_sesion = unr._menu_UNR._iniciar_sesion_UNR;
     	
     	inicio_sesion.getBoton_iniciar_sesion().addClickListener(event -> {
-
+    		
 			if(inicio_sesion.getCorreo().getValue().equals("usuario")){
 				UR ur = new UR();
 				remove(unr);
