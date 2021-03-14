@@ -14,10 +14,10 @@ public class Menu_UNR extends Menu_UR_UNR {
 		layout = this.getMenu().as(VerticalLayout.class);
 		
 		
-		/*this.getBoton_iniciar_sesion().addClickListener(event ->{
+		this.getBoton_iniciar_sesion().addClickListener(event ->{
 			layout.add(_iniciar_sesion_UNR);
 
-		});*/
+		});
 
 	}
 	
