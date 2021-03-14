@@ -19,28 +19,23 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @JsModule("./src/vista-administrarproductosanadidos.js")
 public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAdministrar_productos_anadidos.VistaAdministrar_productos_anadidosModel> {
 
-    @Id("vertical-layout_administrar_productos_anadidios")
+
+	@Id("vertical-layout_administrar_productos_anadidios")
 	private Element verticalLayout_administrar_productos_anadidios;
-	@Id("h2-administrar_productos_anadidios")
-	private H2 h2Administrar_productos_anadidios;
-	@Id("lista-administrar_productos_anadidios")
-	private Element listaAdministrar_productos_anadidios;
 	@Id("vaadinHorizontalLayout_administrador_productos_anadidos")
-	private HorizontalLayout vaadinHorizontalLayout;
+	private HorizontalLayout vaadinHorizontalLayout_administrador_productos_anadidos;
 	@Id("vaadinVerticalLayout_zonaProductos")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout1_zonaProductos")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vistaProductos_listado_zonaProductos")
-	private Element vistaProductos_listado;
-	@Id("vaadinVerticalLayout1_productos_anadidos")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout2_productos_anadidos")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("vistaProductos_listado_administracion__productos_anadidos")
-	private Element vistaProductos_listado_administracion;
+	private Element vaadinVerticalLayout_zonaProductos;
 	@Id("h2")
 	private H2 h2;
+	@Id("vaadinHorizontalLayout1_zonaProductos")
+	private HorizontalLayout vaadinHorizontalLayout1_zonaProductos;
+	@Id("vistaProductos_listado_zonaProductos")
+	private Element vistaProductos_listado_zonaProductos;
+	@Id("vaadinVerticalLayout1_productos_anadidos")
+	private Element vaadinVerticalLayout1_productos_anadidos;
+	@Id("vaadinHorizontalLayout2_productos_anadidos")
+	private HorizontalLayout vaadinHorizontalLayout2_productos_anadidos;
 	@Id("h21")
 	private H2 h21;
 	@Id("vistaProductoslistadoadministracion")
@@ -68,76 +63,21 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 		this.verticalLayout_administrar_productos_anadidios = verticalLayout_administrar_productos_anadidios;
 	}
 
-	public H2 getH2Administrar_productos_anadidios() {
-		return h2Administrar_productos_anadidios;
+	public HorizontalLayout getVaadinHorizontalLayout_administrador_productos_anadidos() {
+		return vaadinHorizontalLayout_administrador_productos_anadidos;
 	}
 
-	public void setH2Administrar_productos_anadidios(H2 h2Administrar_productos_anadidios) {
-		this.h2Administrar_productos_anadidios = h2Administrar_productos_anadidios;
+	public void setVaadinHorizontalLayout_administrador_productos_anadidos(
+			HorizontalLayout vaadinHorizontalLayout_administrador_productos_anadidos) {
+		this.vaadinHorizontalLayout_administrador_productos_anadidos = vaadinHorizontalLayout_administrador_productos_anadidos;
 	}
 
-	public Element getListaAdministrar_productos_anadidios() {
-		return listaAdministrar_productos_anadidios;
+	public Element getVaadinVerticalLayout_zonaProductos() {
+		return vaadinVerticalLayout_zonaProductos;
 	}
 
-	public void setListaAdministrar_productos_anadidios(Element listaAdministrar_productos_anadidios) {
-		this.listaAdministrar_productos_anadidios = listaAdministrar_productos_anadidios;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
-	}
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
-	}
-
-	public Element getVistaProductos_listado() {
-		return vistaProductos_listado;
-	}
-
-	public void setVistaProductos_listado(Element vistaProductos_listado) {
-		this.vistaProductos_listado = vistaProductos_listado;
-	}
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
-	}
-
-	public Element getVistaProductos_listado_administracion() {
-		return vistaProductos_listado_administracion;
-	}
-
-	public void setVistaProductos_listado_administracion(Element vistaProductos_listado_administracion) {
-		this.vistaProductos_listado_administracion = vistaProductos_listado_administracion;
+	public void setVaadinVerticalLayout_zonaProductos(Element vaadinVerticalLayout_zonaProductos) {
+		this.vaadinVerticalLayout_zonaProductos = vaadinVerticalLayout_zonaProductos;
 	}
 
 	public H2 getH2() {
@@ -148,6 +88,38 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 		this.h2 = h2;
 	}
 
+	public HorizontalLayout getVaadinHorizontalLayout1_zonaProductos() {
+		return vaadinHorizontalLayout1_zonaProductos;
+	}
+
+	public void setVaadinHorizontalLayout1_zonaProductos(HorizontalLayout vaadinHorizontalLayout1_zonaProductos) {
+		this.vaadinHorizontalLayout1_zonaProductos = vaadinHorizontalLayout1_zonaProductos;
+	}
+
+	public Element getVistaProductos_listado_zonaProductos() {
+		return vistaProductos_listado_zonaProductos;
+	}
+
+	public void setVistaProductos_listado_zonaProductos(Element vistaProductos_listado_zonaProductos) {
+		this.vistaProductos_listado_zonaProductos = vistaProductos_listado_zonaProductos;
+	}
+
+	public Element getVaadinVerticalLayout1_productos_anadidos() {
+		return vaadinVerticalLayout1_productos_anadidos;
+	}
+
+	public void setVaadinVerticalLayout1_productos_anadidos(Element vaadinVerticalLayout1_productos_anadidos) {
+		this.vaadinVerticalLayout1_productos_anadidos = vaadinVerticalLayout1_productos_anadidos;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2_productos_anadidos() {
+		return vaadinHorizontalLayout2_productos_anadidos;
+	}
+
+	public void setVaadinHorizontalLayout2_productos_anadidos(HorizontalLayout vaadinHorizontalLayout2_productos_anadidos) {
+		this.vaadinHorizontalLayout2_productos_anadidos = vaadinHorizontalLayout2_productos_anadidos;
+	}
+
 	public H2 getH21() {
 		return h21;
 	}
@@ -155,4 +127,16 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	public void setH21(H2 h21) {
 		this.h21 = h21;
 	}
+
+	public Element getVistaProductoslistadoadministracion() {
+		return vistaProductoslistadoadministracion;
+	}
+
+	public void setVistaProductoslistadoadministracion(Element vistaProductoslistadoadministracion) {
+		this.vistaProductoslistadoadministracion = vistaProductoslistadoadministracion;
+	}
+
+
+
+
 }
