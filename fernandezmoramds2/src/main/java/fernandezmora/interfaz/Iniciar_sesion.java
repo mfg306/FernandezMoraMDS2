@@ -14,9 +14,6 @@ public class Iniciar_sesion extends VistaIniciar_sesion{
 		this.getEnlace_recuperar_contrasenia().setVisible(false);
 		this.getEnlace_registrarse().setVisible(false);
 		
-		
-		
-		
 	}
 	
 }

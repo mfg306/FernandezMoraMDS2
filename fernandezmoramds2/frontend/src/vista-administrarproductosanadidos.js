@@ -2,6 +2,8 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import './vista-productoslistadoadministracion.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 class VistaAdministrar_productos_anadidos extends PolymerElement {
 
@@ -16,12 +18,15 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; align-items: flex-start;" id="vertical-layout_administrar_productos_anadidios">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout_administrador_productos_anadidos" style="width: 100%;">
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout_zonaProductos" style="width: 100%;">
+   <vaadin-text-field placeholder="Search" id="buscador" style="align-self: center; width: 100%; padding: var(--lumo-space-m); padding-left: var(--lumo-space-xl); padding-bottom: var(--lumo-space-m);">
+    <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
+   </vaadin-text-field>
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1_zonaProductos" style="width: 100%; justify-content: center;">
     <h2 id="h2"> Seleccione los productos a:</h2>
    </vaadin-horizontal-layout>
    <vista-productos_listado id="vistaProductos_listado_zonaProductos" style="width: 100%;"></vista-productos_listado>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1_productos_anadidos" style="width: 100%;">
+  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1_productos_anadidos" style="width: 100%; align-self: flex-end;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2_productos_anadidos" style="width: 100%; justify-content: center;">
     <h2 id="h21">Añadidos:</h2>
    </vaadin-horizontal-layout>

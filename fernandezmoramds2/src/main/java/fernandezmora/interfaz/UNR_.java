@@ -1,5 +1,4 @@
 package fernandezmora.interfaz;
-import java.util.EventListener;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -12,28 +11,28 @@ public class UNR_ extends UR_UNR {
 	public VerticalLayout layout;
 
 
+
 	public UNR_() {
 		
 		_menu_UNR = new Menu_UNR();
 		_producto_UNR =  new Producto_UNR();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		layout.add(_menu_UNR);
-		getBotonVerCategorias().addClickListener(event ->{
+		this.getHuecoMenu().as(VerticalLayout.class).add(_menu_UNR);
 				
-				_ver_categorias = new Ver_categorias();
-				
-			});
-		inicializar();
-
-			
 	}
 	
-	public void inicializar() {
+	public void ocultarInformacionUNR() {
 		
-		_menu_UNR.abrirIniciarSesionMenuUNR(layout, _menu_UNR);
-		_menu_UNR._iniciar_sesion_UNR.abrirRecuperarContrasenia(layout,_menu_UNR);
-		_menu_UNR._iniciar_sesion_UNR.abrirRegistrarse(layout,_menu_UNR);
+		this.getVaadinVerticalLayout().setVisible(false);
+	}
+	
+	public void abrirIniciarSesion() {
 		
+		this._menu_UNR.getBoton_iniciar_sesion().addClickListener(event -> {
+				ocultarInformacionUNR();
+				this._menu_UNR._iniciar_sesion_UNR = new Iniciar_sesion_UNR();
+				this.layout.add(this._menu_UNR._iniciar_sesion_UNR);
+			});
 	}
 	
 }

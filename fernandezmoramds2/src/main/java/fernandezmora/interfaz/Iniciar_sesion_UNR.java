@@ -22,23 +22,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 				
 	}
 	
-	/*Método que nos cambia a la vista para poder recuperar la contraseña*/
-	public void abrirRecuperarContrasenia(VerticalLayout layout, Menu_UNR m_unr) {
-		m_unr._iniciar_sesion_UNR.getEnlace_recuperar_contrasenia().addEventListener("click",e->{
-			
-			Recuperar_contrasenia recuperar_contrasenia = new Recuperar_contrasenia();
-			layout.remove(m_unr._iniciar_sesion_UNR);
-			layout.add(recuperar_contrasenia);	
-	});
-	}
 	
-	/*Metodo que nos cambia a la vista de registrarse*/
-	public void abrirRegistrarse(VerticalLayout layout, Menu_UNR m_unr) {
-	m_unr._iniciar_sesion_UNR.getEnlace_registrarse().addEventListener("click",e->{
-			
-			Registrarse registrarse = new Registrarse();
-			layout.remove(m_unr._iniciar_sesion_UNR);
-			layout.add(registrarse);	
-	});
-	}
+	
 }

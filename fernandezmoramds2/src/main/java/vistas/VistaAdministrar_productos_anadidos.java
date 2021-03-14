@@ -8,6 +8,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-administrar_productos_anadidos template.
@@ -40,6 +41,8 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private H2 h21;
 	@Id("vistaProductoslistadoadministracion")
 	private Element vistaProductoslistadoadministracion;
+	@Id("buscador")
+	private TextField vaadinTextField;
 
 	/**
      * Creates a new VistaAdministrar_productos_anadidos.
@@ -134,6 +137,14 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setVistaProductoslistadoadministracion(Element vistaProductoslistadoadministracion) {
 		this.vistaProductoslistadoadministracion = vistaProductoslistadoadministracion;
+	}
+
+	public TextField getVaadinTextField() {
+		return vaadinTextField;
+	}
+
+	public void setVaadinTextField(TextField vaadinTextField) {
+		this.vaadinTextField = vaadinTextField;
 	}
 
 
