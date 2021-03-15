@@ -15,15 +15,13 @@ import com.vaadin.flow.component.html.Div;
 /**
  * A Designer generated component for the vista-iniciar_sesion template.
  *
- * Designer will add and remove fields with @Id mappings but
- * does not overwrite or otherwise change this file.
+ * Designer will add and remove fields with @Id mappings but does not overwrite
+ * or otherwise change this file.
  */
 @Tag("vista-iniciarsesion")
 @JsModule("./src/vista-iniciarsesion.js")
 public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.VistaIniciar_sesionModel> {
 
-    @Id("enlace_registrarse")
-	private Element enlace_registrarse;
 	@Id("boton_iniciar_sesion_facebook")
 	private Button boton_iniciar_sesion_facebook;
 	@Id("boton_iniciar_sesion_google")
@@ -32,8 +30,6 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("boton_iniciar_sesion")
 	private Button boton_iniciar_sesion;
-	@Id("enlace_recuperar_contrasenia")
-	private Element enlace_recuperar_contrasenia;
 	@Id("contrasenia")
 	private TextField contrasenia;
 	@Id("nombre_usuario")
@@ -44,30 +40,24 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	private Span span;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("BotonPrueba")
-	private Button botonPrueba;
-
+	@Id("botonOlvidarContraseña")
+	private Button vaadinButton1;
+	@Id("botonRegistrarse")
+	private Button botonRegistrarse;
 
 	/**
-     * Creates a new VistaIniciar_sesion.
-     */
-    public VistaIniciar_sesion() {
-        // You can initialise any data required for the connected UI components here.
-    }
-
-    /**
-     * This model binds properties between VistaIniciar_sesion and vista-iniciar_sesion
-     */
-    public interface VistaIniciar_sesionModel extends TemplateModel {
-        // Add setters and getters for template properties here.
-    }
-
-	public Element getEnlace_registrarse() {
-		return enlace_registrarse;
+	 * Creates a new VistaIniciar_sesion.
+	 */
+	public VistaIniciar_sesion() {
+		// You can initialise any data required for the connected UI components here.
 	}
 
-	public void setEnlace_registrarse(Element enlace_registrarse) {
-		this.enlace_registrarse = enlace_registrarse;
+	/**
+	 * This model binds properties between VistaIniciar_sesion and
+	 * vista-iniciar_sesion
+	 */
+	public interface VistaIniciar_sesionModel extends TemplateModel {
+		// Add setters and getters for template properties here.
 	}
 
 	public Button getBoton_iniciar_sesion_facebook() {
@@ -100,14 +90,6 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 
 	public void setBoton_iniciar_sesion(Button boton_iniciar_sesion) {
 		this.boton_iniciar_sesion = boton_iniciar_sesion;
-	}
-
-	public Element getEnlace_recuperar_contrasenia() {
-		return enlace_recuperar_contrasenia;
-	}
-
-	public void setEnlace_recuperar_contrasenia(Element enlace_recuperar_contrasenia) {
-		this.enlace_recuperar_contrasenia = enlace_recuperar_contrasenia;
 	}
 
 	public TextField getContrasenia() {
@@ -148,6 +130,22 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Button getBotonRegistrarse() {
+		return botonRegistrarse;
+	}
+
+	public void setBotonRegistrarse(Button botonRegistrarse) {
+		this.botonRegistrarse = botonRegistrarse;
+	}
+
+	public Button getVaadinButton1() {
+		return vaadinButton1;
+	}
+
+	public void setVaadinButton1(Button vaadinButton1) {
+		this.vaadinButton1 = vaadinButton1;
 	}
 
 }

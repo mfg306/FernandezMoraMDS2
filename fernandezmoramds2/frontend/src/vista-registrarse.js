@@ -35,9 +35,11 @@ class VistaRegistrarse extends PolymerElement {
       con Facebook 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <a href="" style="align-self: center;" id="enlace_iniciar_sesion">¿Ya tienes cuenta? Haz click aquí para iniciar sesión</a>
   </vaadin-vertical-layout>
  </div>
+ <vaadin-button theme="primary" id="botonIniciarSesion" style="align-self: center; margin: var(--lumo-space-m);">
+  ¿Ya tienes cuenta? Haz click aquí para iniciar sesión
+ </vaadin-button>
 </vaadin-vertical-layout>
 `;
     }

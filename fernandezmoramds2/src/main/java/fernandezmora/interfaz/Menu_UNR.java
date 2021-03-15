@@ -7,17 +7,12 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public Ver_carrito_UNR _ver_carrito_UNR;
 	public Iniciar_sesion_UNR _iniciar_sesion_UNR;
 	public VerticalLayout layout;
-	
+
 	public Menu_UNR() {
-		
+
 		this._iniciar_sesion_UNR = new Iniciar_sesion_UNR();
 		layout = this.getMenu().as(VerticalLayout.class);
-		
 
 	}
-		
-	
-}
-			
 
-				
+}

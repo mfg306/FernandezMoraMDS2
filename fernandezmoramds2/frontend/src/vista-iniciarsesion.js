@@ -19,7 +19,9 @@ class VistaIniciar_sesion extends PolymerElement {
  <vaadin-text-field id="correo" style="width: 100%;" placeholder="Introduzca su correo electrónico"></vaadin-text-field>
  <vaadin-text-field id="nombre_usuario" style="width: 100%;" placeholder="Introduzca su nombre de usuario"></vaadin-text-field>
  <vaadin-text-field id="contrasenia" style="width: 100%;" placeholder="Introduzca su contraseña"></vaadin-text-field>
- <a href="" id="enlace_recuperar_contrasenia" style="width: 100%; align-self: center;">¿Has olvidado tu contraseña? Hac click aquí para recuperarla </a>
+ <vaadin-button theme="primary" id="botonOlvidarContraseña">
+  ¿Has olvidado tu contraseña? Haz click aquí para recuperarla
+ </vaadin-button>
  <vaadin-button theme="primary" id="boton_iniciar_sesion">
    Iniciar sesión 
  </vaadin-button>
@@ -31,9 +33,8 @@ class VistaIniciar_sesion extends PolymerElement {
     con Facebook 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <a href="" id="enlace_registrarse">¿No tienes cuenta? Haz click aquí para registrarte</a>
- <vaadin-button id="BotonPrueba" theme="valo:link">
-   Prueba 
+ <vaadin-button theme="primary" id="botonRegistrarse">
+  ¿No tienes cuenta? Haz click aquí para registrarte
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

@@ -25,27 +25,6 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-editarcategoria.js")
 public class VistaEditar_categoria extends PolymerTemplate<VistaEditar_categoria.VistaEditar_categoriaModel> {
 
-    @Id("vaadinVerticalLayout_editar_Categoria")
-	private Element vaadinVerticalLayout;
-	@Id("h1_editar_Categoria")
-	private H1 h1;
-	@Id("h2_editar_Categoria")
-	private H2 h2;
-	@Id("vaadinHorizontalLayout_Crear_Categoria")
-	private HorizontalLayout vaadinHorizontalLayout_Crear_Categoria;
-	@Id("vistaZona_productos_editar_Categoria")
-	private VistaZona_productos vistaZona_productos;
-	@Id("vaadinHorizontalLayout_editar_Categoria")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinButton_editar_Categoria")
-	private Button vaadinButton;
-	@Id("label_editar_Categoria")
-	private Label label_editar_Categoria;
-	@Id("vaadinTextField_editar_Categoria")
-	private TextField vaadinTextField_editar_Categoria;
-	@Id("vistaZonaproductos")
-	private VistaZona_productos vistaZonaproductos;
-
 	/**
      * Creates a new VistaEditar_categoria.
      */
@@ -60,76 +39,5 @@ public class VistaEditar_categoria extends PolymerTemplate<VistaEditar_categoria
         // Add setters and getters for template properties here.
     }
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
-	public H2 getH2() {
-		return h2;
-	}
-
-	public void setH2(H2 h2) {
-		this.h2 = h2;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout_Crear_Categoria() {
-		return vaadinHorizontalLayout_Crear_Categoria;
-	}
-
-	public void setVaadinHorizontalLayout_Crear_Categoria(HorizontalLayout vaadinHorizontalLayout_Crear_Categoria) {
-		this.vaadinHorizontalLayout_Crear_Categoria = vaadinHorizontalLayout_Crear_Categoria;
-	}
-
-	public VistaZona_productos getVistaZona_productos() {
-		return vistaZona_productos;
-	}
-
-	public void setVistaZona_productos(VistaZona_productos vistaZona_productos) {
-		this.vistaZona_productos = vistaZona_productos;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
-
-	public Label getLabel_editar_Categoria() {
-		return label_editar_Categoria;
-	}
-
-	public void setLabel_editar_Categoria(Label label_editar_Categoria) {
-		this.label_editar_Categoria = label_editar_Categoria;
-	}
-
-	public TextField getVaadinTextField_editar_Categoria() {
-		return vaadinTextField_editar_Categoria;
-	}
-
-	public void setVaadinTextField_editar_Categoria(TextField vaadinTextField_editar_Categoria) {
-		this.vaadinTextField_editar_Categoria = vaadinTextField_editar_Categoria;
-	}
+	
 }

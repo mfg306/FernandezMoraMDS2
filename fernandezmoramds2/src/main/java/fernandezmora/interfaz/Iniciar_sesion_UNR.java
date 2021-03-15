@@ -10,18 +10,15 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	public Registrarse _registrarse;
 	public Recuperar_contrasenia _recuperar_contrasenia;
 	public VerticalLayout layout;
-	
+
 	public Iniciar_sesion_UNR() {
-		
+
+		this._registrarse = new Registrarse();
 		this.getNombre_usuario().setVisible(false);
 		this.getCorreo().setVisible(true);
 		this.getBoton_iniciar_sesion_facebook().setVisible(true);
 		this.getBoton_iniciar_sesion_google().setVisible(true);
-		this.getEnlace_recuperar_contrasenia().setVisible(true);
-		this.getEnlace_registrarse().setVisible(true);
-				
+
 	}
-	
-	
-	
+
 }

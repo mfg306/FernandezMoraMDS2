@@ -44,10 +44,12 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 	private Button boton_con_Google;
 	@Id("boton_con_Facebook")
 	private Button boton_con_Facebook;
-	@Id("enlace_iniciar_sesion")
-	private Element enlace_iniciar_sesion;
 	@Id("confirmacion_contrasenia")
 	private TextField confirmacion_contrasenia;
+	@Id("botonIniciarSesion")
+	private Button botonIniciarSesion;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 
 	/**
      * Creates a new VistaRegistrarse.
@@ -151,13 +153,7 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 		this.boton_con_Facebook = boton_con_Facebook;
 	}
 
-	public Element getEnlace_iniciar_sesion() {
-		return enlace_iniciar_sesion;
-	}
 
-	public void setEnlace_iniciar_sesion(Element enlace_iniciar_sesion) {
-		this.enlace_iniciar_sesion = enlace_iniciar_sesion;
-	}
 
 	public TextField getConfirmacion_contrasenia() {
 		return confirmacion_contrasenia;
@@ -165,5 +161,21 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 
 	public void setConfirmacion_contrasenia(TextField confirmacion_contrasenia) {
 		this.confirmacion_contrasenia = confirmacion_contrasenia;
+	}
+
+	public Button getBotonIniciarSesion() {
+		return botonIniciarSesion;
+	}
+
+	public void setBotonIniciarSesion(Button botonIniciarSesion) {
+		this.botonIniciarSesion = botonIniciarSesion;
+	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 }

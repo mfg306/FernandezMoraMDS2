@@ -26,30 +26,8 @@ import vistas.VistaZona_productos;
 @JsModule("./src/vista-crearcategoria.js")
 public class VistaCrear_categoria extends PolymerTemplate<VistaCrear_categoria.VistaCrear_categoriaModel> {
 
-    @Id("vaadinVerticalLayout_Crear_Categoria")
+    @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("h2_Crear_Categoria")
-	private H2 h2;
-	@Id("vaadinHorizontalLayout_Crear_Categoria")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("label_Crear_Categoria")
-	private Label label;
-	@Id("vaadinTextField_Crear_Categoria")
-	private TextField vaadinTextField;
-	@Id("vaadinHorizontalLayout1_Crear_Categoria")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinHorizontalLayout2_Crear_Categoria")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("boton_Cancelar_Crear_Categoria")
-	private Button boton_Cancelar_Crear_Categoria;
-	@Id("vaadinHorizontalLayout3_Crear_Categoria")
-	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("zonaProductos_Crear_Categoría")
-	private VistaZona_productos zonaProductos_Crear_Categoría;
-	@Id("h1_Crear_Categoria")
-	private H1 h1_Crear_Categoria;
-	@Id("vistaZonaproductos")
-	private VistaZona_productos vistaZonaproductos;
 
 	/**
      * Creates a new VistaCrear_categoria.
@@ -64,4 +42,12 @@ public class VistaCrear_categoria extends PolymerTemplate<VistaCrear_categoria.V
     public interface VistaCrear_categoriaModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
 }
