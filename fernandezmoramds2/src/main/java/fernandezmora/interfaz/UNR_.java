@@ -21,6 +21,12 @@ public class UNR_ extends UR_UNR {
 		abrir_RecuperarContraseña();
 
 	}
+	
+	public void abrir_Ver_Categorias() {
+		this.getBotonVerCategorias().addClickListener(event ->{
+			
+		});
+	}
 
 	public void abrir_Registrarse() {
 
