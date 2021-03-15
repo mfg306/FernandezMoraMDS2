@@ -18,12 +18,16 @@ public class UNR_ extends UR_UNR {
 		abrir_iniciar_sesion();
 		abrir_Registrarse();
 		abrir_iniciar_sesion_Registrarse();
+		abrir_Ver_Categorias();
 		abrir_RecuperarContraseña();
 
 	}
 	
 	public void abrir_Ver_Categorias() {
 		this.getBotonVerCategorias().addClickListener(event ->{
+			ocultarVerCategoriasUNR();
+			this._ver_categorias = new Ver_categorias();
+			this.layout.add(this._ver_categorias._categorias);
 			
 		});
 	}
@@ -68,5 +72,10 @@ public class UNR_ extends UR_UNR {
 		this.getHuecoMenu().setVisible(false);
 		this.getBotonVerCategorias().setVisible(false);
 	}
+	
+	public void ocultarVerCategoriasUNR() {
+		this.getBotonVerCategorias().setVisible(false);
+	}
+	
 
 }
