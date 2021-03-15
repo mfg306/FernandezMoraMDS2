@@ -22,8 +22,8 @@ public class VistaGestionar_empleados extends PolymerTemplate<VistaGestionar_emp
 	private Element vaadinVerticalLayout;
 	@Id("h1")
 	private H1 h1;
-	@Id("vistaCrearempleados")
-	private Element vistaCrearempleados;
+	@Id("huecoCrearEmpleados")
+	private Element huecoCrearEmpleados;
 
 	/**
      * Creates a new VistaGestionar_empleados.
@@ -55,11 +55,12 @@ public class VistaGestionar_empleados extends PolymerTemplate<VistaGestionar_emp
 		this.h1 = h1;
 	}
 
-	public Element getVistaCrearempleados() {
-		return vistaCrearempleados;
+
+	public Element getHuecoCrearEmpleados() {
+		return huecoCrearEmpleados;
 	}
 
-	public void setVistaCrearempleados(Element vistaCrearempleados) {
-		this.vistaCrearempleados = vistaCrearempleados;
+	public void setHuecoCrearEmpleados(Element huecoCrearEmpleados) {
+		this.huecoCrearEmpleados = huecoCrearEmpleados;
 	}
 }

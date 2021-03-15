@@ -13,7 +13,6 @@ public class Empleados extends VistaEmpleados {
 
 	
 	public Empleados() {
-		
 		this._list_Empleado = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);		
 	}
