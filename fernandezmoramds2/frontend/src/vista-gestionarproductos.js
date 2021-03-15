@@ -1,7 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import './vista-productosadministrador.js';
 
 class VistaGestionar_productos extends PolymerElement {
 
@@ -18,7 +17,6 @@ class VistaGestionar_productos extends PolymerElement {
  <vaadin-button theme="primary" style="margin: var(--lumo-space-l);" id="vaadinButton">
    Nuevo producto 
  </vaadin-button>
- <vista-productosadministrador id="vistaProductosadministrador"></vista-productosadministrador>
 </vaadin-vertical-layout>
 `;
     }

@@ -18,7 +18,9 @@ class VistaGestionar_ofertas extends PolymerElement {
  <vaadin-button theme="primary" style="margin: var(--lumo-space-l);" id="vaadinButton">
    Nueva oferta 
  </vaadin-button>
- <vista-ofertasadministrador id="vistaOfertasadministrador"></vista-ofertasadministrador>
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1">
+  <vista-ofertasadministrador id="vistaOfertasadministrador"></vista-ofertasadministrador>
+ </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }

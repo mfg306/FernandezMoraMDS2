@@ -45,7 +45,6 @@ public class Administrador extends VistaAdministrador{
 			this._gestionar_empleados = new Gestionar_empleados(); 
 			layout.add(this._gestionar_empleados);
 		});
-				
 	}
 	
 	public void gestionarCategorias() {

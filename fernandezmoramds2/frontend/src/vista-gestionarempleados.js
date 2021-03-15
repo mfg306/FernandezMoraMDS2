@@ -1,7 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-crearempleados.js';
-import './vista-empleados.js';
 
 class VistaGestionar_empleados extends PolymerElement {
 
@@ -14,9 +13,8 @@ class VistaGestionar_empleados extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: center;" id="vaadinVerticalLayout">
- <vista-crear_empleados id="crearEmpleado"></vista-crear_empleados>
+ <vista-crearempleados id="vistaCrearempleados"></vista-crearempleados>
  <h1 id="h1">Empleados</h1>
- <vista-empleados id="vistaEmpleados"></vista-empleados>
 </vaadin-vertical-layout>
 `;
     }

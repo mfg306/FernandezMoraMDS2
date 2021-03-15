@@ -25,10 +25,10 @@ public class VistaGestionar_ofertas extends PolymerTemplate<VistaGestionar_ofert
 	private H1 h1;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-	@Id("vistaOfertas_administrador")
-	private Element vistaOfertas_administrador;
 	@Id("vistaOfertasadministrador")
 	private Element vistaOfertasadministrador;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 	/**
      * Creates a new VistaGestionar_ofertas.
      */
@@ -67,11 +67,19 @@ public class VistaGestionar_ofertas extends PolymerTemplate<VistaGestionar_ofert
 		this.vaadinButton = vaadinButton;
 	}
 
-	public Element getVistaOfertas_administrador() {
-		return vistaOfertas_administrador;
+	public Element getVistaOfertasadministrador() {
+		return vistaOfertasadministrador;
 	}
 
-	public void setVistaOfertas_administrador(Element vistaOfertas_administrador) {
-		this.vistaOfertas_administrador = vistaOfertas_administrador;
+	public void setVistaOfertasadministrador(Element vistaOfertasadministrador) {
+		this.vistaOfertasadministrador = vistaOfertasadministrador;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
 	}
 }
