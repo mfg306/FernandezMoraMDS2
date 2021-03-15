@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaCategoria extends PolymerElement {
 
@@ -12,7 +13,9 @@ class VistaCategoria extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout id="vaadinVerticalLayout">
- <a href="https://vaadin.com" style="width: 100%; padding: var(--lumo-space-l); align-self: center; text-decoration:none; color: white; font-size: 20px;  background-color: #4FC3F7; text-align: center;" id="categoria">Categoría</a>
+ <vaadin-button theme="primary" id="categoria1" style="width: 100%; flex-grow: 0;">
+  Categoría
+ </vaadin-button>
 </vaadin-vertical-layout>
 `;
     }

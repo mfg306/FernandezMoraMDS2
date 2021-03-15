@@ -11,12 +11,8 @@ public class Recuperar_contrasenia extends VistaRecuperar_contrasenia {
 	public Establecer_nueva_contrasenia _establecer_nueva_contrasenia;
 	public Gestor_Correos _unnamed_Gestor_Correos_;
 	
-	public Recuperar_contrasenia(){
-		
-	    this._iniciar_sesion_UNR = new Iniciar_sesion_UNR();
-		this.getBoton_enviar_correo().setVisible(true);
-		this.getSpan().setVisible(true);
-		this.getCorreo().setVisible(true);
+	public Recuperar_contrasenia(Iniciar_sesion_UNR iunr){
+		this._iniciar_sesion_UNR = iunr;
 	}
 
 	public void Enviar_enlace_recuperacion() {
