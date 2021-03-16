@@ -11,8 +11,17 @@ public class Registrarse extends VistaRegistrarse {
 	public Registrarse_con_Facebook _registrarse_con_Facebook;
 	public Confirmación_registro _confirmacion_registro;
 
-	public Registrarse() {
+	public Registrarse(Iniciar_sesion_UNR iunr) {
+		this._iniciar_sesion_UNR = iunr;
+		abrir_Iniciar_Sesion_Registrarse();
+	}
 
+	public void abrir_Iniciar_Sesion_Registrarse() {
+
+		this.getBotonIniciarSesion().addClickListener(event -> {
+			this._iniciar_sesion_UNR._menu_UNR.layout.remove(this);
+			this._iniciar_sesion_UNR._menu_UNR.layout.add(this._iniciar_sesion_UNR);
+		});
 	}
 
 }

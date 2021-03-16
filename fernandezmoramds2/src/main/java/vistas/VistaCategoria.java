@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-categoria template.
@@ -20,7 +21,7 @@ public class VistaCategoria extends PolymerTemplate<VistaCategoria.VistaCategori
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("categoria")
-	private Element categoria;
+	private Button vaadinButton;
 
 	/**
      * Creates a new VistaCategoria.
@@ -44,11 +45,13 @@ public class VistaCategoria extends PolymerTemplate<VistaCategoria.VistaCategori
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public Element getCategoria() {
-		return categoria;
+	public Button getVaadinButton() {
+		return vaadinButton;
 	}
 
-	public void setCategoria(Element categoria) {
-		this.categoria = categoria;
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
 	}
+
+	
 }

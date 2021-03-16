@@ -11,14 +11,33 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	public Recuperar_contrasenia _recuperar_contrasenia;
 	public VerticalLayout layout;
 
-	public Iniciar_sesion_UNR() {
-
-		this._registrarse = new Registrarse();
+	public Iniciar_sesion_UNR(Menu_UNR munr) {
+		this._menu_UNR = munr;
+		this._recuperar_contrasenia = new Recuperar_contrasenia(this);
+		this._registrarse = new Registrarse(this);
 		this.getNombre_usuario().setVisible(false);
 		this.getCorreo().setVisible(true);
 		this.getBoton_iniciar_sesion_facebook().setVisible(true);
 		this.getBoton_iniciar_sesion_google().setVisible(true);
+		abrir_RecuperarContraseña();
+		abrir_Registrarse();
 
+	}
+
+	public void abrir_RecuperarContraseña() {
+		this.getVaadinButton1().addClickListener(event -> {
+			this._menu_UNR.layout.remove(this);
+			this._menu_UNR.layout.add(this._recuperar_contrasenia);
+
+		});
+	}
+	
+	public void abrir_Registrarse() {
+		this.getBotonRegistrarse().addClickListener(event -> {
+			this._menu_UNR.layout.remove(this);
+			this._menu_UNR.layout.add(this._registrarse);
+
+		});
 	}
 
 }
