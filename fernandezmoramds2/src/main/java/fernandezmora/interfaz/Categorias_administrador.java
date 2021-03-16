@@ -5,9 +5,9 @@ import java.util.Vector;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import ch.qos.logback.core.Layout;
-import vistas.VistaCategoria_administrador;
+import vistas.VistaCategorias_administrador;
 
-public class Categorias_administrador extends VistaCategoria_administrador{
+public class Categorias_administrador extends VistaCategorias_administrador{
 	public Gestionar_categorias _gestionar_categorias;
 	public Vector<Categoria_administrador> _list_Categoria_administrador = new Vector<Categoria_administrador>();
 	public VerticalLayout layout;

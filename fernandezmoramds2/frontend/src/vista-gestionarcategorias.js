@@ -1,7 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import './vista-categoriasadministrador.js';
 
 class VistaGestionarcategorias extends PolymerElement {
 
@@ -16,11 +15,9 @@ class VistaGestionarcategorias extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <h1 id="titulo" style="align-self: center;">Mis categorías</h1>
  <vaadin-button theme="primary" id="botonNuevaCategoria">
-  Nueva categoria
+   Nueva categoria 
  </vaadin-button>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1">
-  <vista-categoriasadministrador id="vistaCategoriasadministrador"></vista-categoriasadministrador>
- </vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }

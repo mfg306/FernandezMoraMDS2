@@ -34,16 +34,13 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private H2 h2;
 	@Id("vaadinHorizontalLayout1_zonaProductos")
 	private HorizontalLayout vaadinHorizontalLayout1_zonaProductos;
-	@Id("vistaProductos_listado_zonaProductos")
-	private Element vistaProductos_listado_zonaProductos;
 	@Id("vaadinVerticalLayout1_productos_anadidos")
 	private Element vaadinVerticalLayout1_productos_anadidos;
 	@Id("vaadinHorizontalLayout2_productos_anadidos")
 	private HorizontalLayout vaadinHorizontalLayout2_productos_anadidos;
 	@Id("h21")
 	private H2 h21;
-	@Id("vistaProductoslistadoadministracion")
-	private Element vistaProductoslistadoadministracion;
+
 	@Id("buscador")
 	private TextField vaadinTextField;
 	@Id("botonesCG")
@@ -94,6 +91,8 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private Label nombreOferta;
 	@Id("campoOferta")
 	private TextField campoOferta;
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
 
 	/**
      * Creates a new VistaAdministrar_productos_anadidos.
@@ -150,14 +149,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 		this.vaadinHorizontalLayout1_zonaProductos = vaadinHorizontalLayout1_zonaProductos;
 	}
 
-	public Element getVistaProductos_listado_zonaProductos() {
-		return vistaProductos_listado_zonaProductos;
-	}
-
-	public void setVistaProductos_listado_zonaProductos(Element vistaProductos_listado_zonaProductos) {
-		this.vistaProductos_listado_zonaProductos = vistaProductos_listado_zonaProductos;
-	}
-
 	public Element getVaadinVerticalLayout1_productos_anadidos() {
 		return vaadinVerticalLayout1_productos_anadidos;
 	}
@@ -180,14 +171,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setH21(H2 h21) {
 		this.h21 = h21;
-	}
-
-	public Element getVistaProductoslistadoadministracion() {
-		return vistaProductoslistadoadministracion;
-	}
-
-	public void setVistaProductoslistadoadministracion(Element vistaProductoslistadoadministracion) {
-		this.vistaProductoslistadoadministracion = vistaProductoslistadoadministracion;
 	}
 
 	public TextField getVaadinTextField() {
@@ -388,6 +371,14 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setCampoOferta(TextField campoOferta) {
 		this.campoOferta = campoOferta;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
 	}
 
 

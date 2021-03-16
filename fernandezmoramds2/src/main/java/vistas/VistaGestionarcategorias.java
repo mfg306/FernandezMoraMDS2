@@ -28,8 +28,7 @@ public class VistaGestionarcategorias extends PolymerTemplate<VistaGestionarcate
 	private Button botonNuevaCategoria;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
-	@Id("vistaCategoriasadministrador")
-	private VistaCategorias_administrador vistaCategoriasadministrador;
+
 
 	/**
      * Creates a new VistaGestionarcategorias.
@@ -77,11 +76,4 @@ public class VistaGestionarcategorias extends PolymerTemplate<VistaGestionarcate
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
 	}
 
-	public VistaCategorias_administrador getVistaCategoriasadministrador() {
-		return vistaCategoriasadministrador;
-	}
-
-	public void setVistaCategoriasadministrador(VistaCategorias_administrador vistaCategoriasadministrador) {
-		this.vistaCategoriasadministrador = vistaCategoriasadministrador;
-	}
 }
