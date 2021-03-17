@@ -1,6 +1,5 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaGestionarcategorias;
@@ -14,7 +13,7 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 
 	
 	public Gestionar_categorias() {
-		this._categorias_administrador = new Categorias_administrador(); //listado
+		this._categorias_administrador = new Categorias_administrador(this); //
 		this._categorias_administrador.add_categorias();
 		this._categorias_administrador.add_categorias();
 		
@@ -51,7 +50,7 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	public void editar_Categoria() {
 		for(Categoria_administrador ca : this._categorias_administrador._list_Categoria_administrador) {
 			ca.getVaadinButton().addClickListener(event ->{
-				ca._editar_categoria = new Editar_categoria();
+				ca._editar_categoria = new Editar_categoria(ca);
 				this.ocultar_Gestionar_Categorias();
 				layout.add(ca._editar_categoria);
 			});
