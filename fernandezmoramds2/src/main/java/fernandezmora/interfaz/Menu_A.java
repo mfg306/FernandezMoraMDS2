@@ -41,6 +41,24 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 			this.getBoton_recibidos().setVisible(true);
 			this.getVaadinVerticalLayout1().setVisible(true);
 			this.getSpan().setVisible(true);
+			
+			if(_administrador._gestionar_categorias != null) {
+				_administrador._gestionar_categorias.getTitulo().setVisible(false);
+				_administrador._gestionar_categorias.getBotonNuevaCategoria().setVisible(false);
+				_administrador._gestionar_categorias._categorias_administrador.setVisible(false);
+			}
+			
+			if(_administrador._gestionar_empleados != null) {
+				_administrador._gestionar_empleados.getH1().setVisible(false);
+				_administrador._gestionar_empleados.getHuecoCrearEmpleados().setVisible(false);
+				_administrador._gestionar_empleados._empleados.setVisible(false);
+			}
+			
+			if(_administrador._gestionar_ofertas != null) {
+				_administrador._gestionar_ofertas.getH1().setVisible(false);
+				_administrador._gestionar_ofertas.getVaadinVerticalLayout().setVisible(false);
+				_administrador._gestionar_ofertas.getVaadinButton().setVisible(false);
+			}
 		});
 	}
 }

@@ -23,8 +23,6 @@ public class VistaOferta_administrador extends PolymerTemplate<VistaOferta_admin
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
 	@Id("h1")
 	private H1 h1;
 	@Id("vaadinHorizontalLayout")
@@ -56,14 +54,6 @@ public class VistaOferta_administrador extends PolymerTemplate<VistaOferta_admin
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
 	}
 
 	public H1 getH1() {

@@ -14,12 +14,17 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 	public Gestionar_ofertas() {
 		this._ofertas_administrador = new Ofertas_administrador();
 		this._ofertas_administrador.add_ofertas();
+		this._ofertas_administrador.add_ofertas();
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		
 		layout.add(this._ofertas_administrador);
+		
+		crear_Ofertas();
+		editar_Oferta();
 	}
 	
 	public void ocultar_Gestionar_Ofertas() {
+		this.getH1().setVisible(false);
 		layout.remove(this._ofertas_administrador);
 	}
 	
@@ -34,6 +39,16 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 			layout.add(this._crear_oferta);
 		});
 		
+	}
+	
+	public void editar_Oferta() {
+		for(Oferta_administrador oa : this._ofertas_administrador._list_Oferta_administrador) {
+			oa.getVaadinButton().addClickListener(event ->{
+				oa._editar_oferta = new Editar_oferta();
+				this.ocultar_Gestionar_Ofertas();
+				layout.add(oa._editar_oferta);
+			});
+		}
 	}
 	
 	
