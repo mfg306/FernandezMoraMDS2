@@ -1,6 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaOferta_administrador extends PolymerElement {
 
@@ -12,19 +12,17 @@ class VistaOferta_administrador extends PolymerElement {
                     height: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
- <vaadin-vertical-layout theme="spacing" style="width: 80%; background-color: #F1F2F2; flex-grow: 0; margin-top: var(--lumo-space-m);" id="vaadinVerticalLayout1">
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-grow: 0; margin-top: var(--lumo-space-l); background-color: #F1F2F2; align-self: center;" id="vaadinHorizontalLayout">
-   <h1 style="margin-left: var(--lumo-space-l); flex-grow: 1; flex-shrink: 0;" id="h1">Nombre oferta 
-    <vaadin-button theme="primary" style="margin-left: 40%;" id="vaadinButton">
-      Editar 
-    </vaadin-button>
-    <vaadin-button theme="primary" style="margin-left: var(--lumo-space-m);" id="vaadinButton1">
-      Eliminar 
-    </vaadin-button></h1>
-  </vaadin-horizontal-layout>
+<vaadin-vertical-layout style="align-items: center; background-color: #F1F2F2; justify-content: center;" id="vaadinVerticalLayout">
+ <h1 id="h1" style="width: 50%; align-self: center;">Nombre oferta</h1>
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-grow: 1; margin-top: var(--lumo-space-l); flex-shrink: 0; align-items: center; align-self: stretch; justify-content: center;" id="vaadinHorizontalLayout">
   <label style="margin: var(--lumo-space-l);" id="label">Código oferta</label>
- </vaadin-vertical-layout>
+  <vaadin-button theme="primary" style="margin-left: var(--lumo-space-m);" id="vaadinButton1">
+    Eliminar 
+  </vaadin-button>
+  <vaadin-button theme="primary" style="margin-left: 40%;" id="vaadinButton">
+    Editar 
+  </vaadin-button>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
     }

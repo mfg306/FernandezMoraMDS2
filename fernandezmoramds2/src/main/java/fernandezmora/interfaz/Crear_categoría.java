@@ -14,6 +14,9 @@ public class Crear_categoría extends Zona_productos {
 		this.getH2EditarCategoria().setVisible(false);
 		this.getH2EditarOferta().setVisible(false);
 		
+		this.getCampoOferta().setVisible(false);
+		this.getNombreOferta().setVisible(false);
+		
 		
 	}
 	

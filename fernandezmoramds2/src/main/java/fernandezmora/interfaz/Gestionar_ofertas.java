@@ -31,6 +31,7 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 		this.getVaadinButton().addClickListener(event ->{
 			this._crear_oferta = new Crear_oferta();
 			ocultar_Gestionar_Ofertas();
+			layout.add(this._crear_oferta);
 		});
 		
 	}

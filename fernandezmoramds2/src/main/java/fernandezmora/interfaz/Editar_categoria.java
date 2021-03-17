@@ -10,5 +10,8 @@ public class Editar_categoria extends Zona_productos {
 		this.getH2CrearCategoria().setVisible(false);
 		this.getH2CrearOferta().setVisible(false);
 		this.getH2EditarOferta().setVisible(false);
+		
+		this.getCampoOferta().setVisible(false);
+		this.getNombreOferta().setVisible(false);
 	}
 }
