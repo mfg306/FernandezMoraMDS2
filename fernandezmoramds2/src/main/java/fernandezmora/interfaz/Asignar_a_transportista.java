@@ -19,7 +19,6 @@ public class Asignar_a_transportista extends VistaAsignar_a_transportista {
 	public void ocultar_Asignar_a_transportista() {
 		this.getH1Asignar_a_transportista().setVisible(false);
 		this.getVerticalLayout_2_asignar_a_transportista().setVisible(false);
-		this.get
 	}
 	
 	public void guardar_Cambios() {
