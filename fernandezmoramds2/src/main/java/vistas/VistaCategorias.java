@@ -19,6 +19,8 @@ public class VistaCategorias extends PolymerTemplate<VistaCategorias.VistaCatego
 
     @Id("lista_categorias")
 	private Element lista_categorias;
+	@Id("huecoProductos")
+	private Element huecoProductos;
 
 	/**
      * Creates a new VistaCategorias.
@@ -40,5 +42,13 @@ public class VistaCategorias extends PolymerTemplate<VistaCategorias.VistaCatego
 
 	public void setLista_categorias(Element lista_categorias) {
 		this.lista_categorias = lista_categorias;
+	}
+
+	public Element getHuecoProductos() {
+		return huecoProductos;
+	}
+
+	public void setHuecoProductos(Element huecoProductos) {
+		this.huecoProductos = huecoProductos;
 	}
 }
