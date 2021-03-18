@@ -26,6 +26,7 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 	public void ocultar_Gestionar_Ofertas() {
 		this.getH1().setVisible(false);
 		layout.remove(this._ofertas_administrador);
+		this.getVaadinButton().setVisible(false);
 	}
 	
 	/**
