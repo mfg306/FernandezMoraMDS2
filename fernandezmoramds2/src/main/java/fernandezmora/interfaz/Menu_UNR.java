@@ -21,7 +21,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this.getVaadinHorizontalLayout().setVisible(false);
 		 this._uNR_.getBotonVerCategorias().setVisible(false);
 		 
-		if(this._uNR_._ver_categorias._categorias.getLista_categorias() != null)
+		if(this._uNR_._ver_categorias!= null)
 		this._uNR_._ver_categorias._categorias.getLista_categorias().setVisible(false);
 		
 		this.layout.add(this._iniciar_sesion_UNR);	
