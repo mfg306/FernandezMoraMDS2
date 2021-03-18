@@ -1,6 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import './vista-pedidost.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaTransportista extends PolymerElement {
 
@@ -19,7 +19,7 @@ class VistaTransportista extends PolymerElement {
   </vaadin-button>
  </vaadin-horizontal-layout>
  <h1 style="align-self: center;" id="h1-transportista">Lista pedidos</h1>
- <vista-pedidost id="vistaPedidost"></vista-pedidost>
+ <vaadin-vertical-layout theme="spacing" id="huecoListaPedidos" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
  <h3 style="align-self: center; padding: var(--lumo-space-s); background-color: #6ECCFC; border-radius: 15px;" id="h3-transportista">Nombre empresa</h3>
 </vaadin-vertical-layout>
 `;

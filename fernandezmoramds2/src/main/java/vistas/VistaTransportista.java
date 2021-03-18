@@ -32,6 +32,8 @@ public class VistaTransportista extends PolymerTemplate<VistaTransportista.Vista
 	private H1 h1;
 	@Id("h3-transportista")
 	private H3 h3Transportista;
+	@Id("huecoListaPedidos")
+	private Element huecoListaPedidos;
 
 	/**
      * Creates a new VistaTransportista.
@@ -86,5 +88,13 @@ public class VistaTransportista extends PolymerTemplate<VistaTransportista.Vista
 
 	public void setH3Transportista(H3 h3Transportista) {
 		this.h3Transportista = h3Transportista;
+	}
+
+	public Element getHuecoListaPedidos() {
+		return huecoListaPedidos;
+	}
+
+	public void setHuecoListaPedidos(Element huecoListaPedidos) {
+		this.huecoListaPedidos = huecoListaPedidos;
 	}
 }
