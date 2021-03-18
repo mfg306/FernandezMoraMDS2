@@ -1,9 +1,10 @@
 package fernandezmora.interfaz;
 
-//Herencia multiple
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Crear_categoría extends Zona_productos {
 	public Gestionar_categorias _gestionar_categorias;
+	VerticalLayout layout;
 	
 	public Crear_categoría() {
 		this.getH1CrearOferta().setVisible(false);
@@ -16,6 +17,36 @@ public class Crear_categoría extends Zona_productos {
 		
 		this.getCampoOferta().setVisible(false);
 		this.getNombreOferta().setVisible(false);
+		
+		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		
+		cancelar_creacion();
+	}
+	
+	
+	public void ocultar_editar_categoria() {
+		
+		this.getCampoCategoria().setVisible(false);
+		this.getNombreCategoria().setVisible(false);
+		
+		this.getH1CrearCategoria().setVisible(false);
+		this.getH2CrearCategoria().setVisible(false);
+		this.getH2().setVisible(false);
+		this.getH21().setVisible(false);
+		
+		this.getVaadinHorizontalLayout().setVisible(false);
+		
+	}
+	
+	
+	public void cancelar_creacion() {
+		
+		this.getBotonCancelar().addClickListener(event ->{
+			ocultar_editar_categoria();
+			this._gestionar_categorias = new Gestionar_categorias();
+			
+			layout.add(this._gestionar_categorias);
+		});
 		
 		
 	}
