@@ -12,7 +12,7 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 
 	
 	public Gestionar_ofertas() {
-		this._ofertas_administrador = new Ofertas_administrador();
+		this._ofertas_administrador = new Ofertas_administrador(this);
 		this._ofertas_administrador.add_ofertas();
 		this._ofertas_administrador.add_ofertas();
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
@@ -44,7 +44,7 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 	public void editar_Oferta() {
 		for(Oferta_administrador oa : this._ofertas_administrador._list_Oferta_administrador) {
 			oa.getVaadinButton().addClickListener(event ->{
-				oa._editar_oferta = new Editar_oferta();
+				oa._editar_oferta = new Editar_oferta(oa);
 				this.ocultar_Gestionar_Ofertas();
 				layout.add(oa._editar_oferta);
 			});

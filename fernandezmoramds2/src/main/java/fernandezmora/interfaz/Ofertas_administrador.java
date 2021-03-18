@@ -12,14 +12,15 @@ public class Ofertas_administrador extends VistaOfertas_administrador {
 	public VerticalLayout layout;
 
 	
-	public Ofertas_administrador() {
+	public Ofertas_administrador(Gestionar_ofertas go) {
+		this._gestionar_ofertas = go;
 		this._list_Oferta_administrador = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);		
 	}
 	
 	public void add_ofertas() {
 		
-		Oferta_administrador oa = new Oferta_administrador();
+		Oferta_administrador oa = new Oferta_administrador(this);
 		this._list_Oferta_administrador.add(oa);
 		layout.add(oa);
 		
