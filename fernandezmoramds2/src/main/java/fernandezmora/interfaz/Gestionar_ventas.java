@@ -10,14 +10,16 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 	VerticalLayout layout;
 	
 	public Gestionar_ventas() {
-		
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._ventas = new Ventas();
 		this._ventas.add_ventas();
 		this._ventas.add_ventas();
 		
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		layout.add(this._ventas);
-	
 	}
 	
 	public void ocultar_ventas() {

@@ -11,6 +11,10 @@ public class Transportista extends VistaTransportista {
 	VerticalLayout layout;
 	
 	public Transportista() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._pedidos_T = new Pedidos_T(this);
 		
 		this._pedidos_T.add_pedidos_T();

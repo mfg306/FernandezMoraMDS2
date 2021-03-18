@@ -13,7 +13,11 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 
 	
 	public Gestionar_categorias() {
-		this._categorias_administrador = new Categorias_administrador(this); //
+		inicializar();
+	}
+	
+	public void inicializar() {
+		this._categorias_administrador = new Categorias_administrador(this); 
 		this._categorias_administrador.add_categorias();
 		this._categorias_administrador.add_categorias();
 		

@@ -10,6 +10,10 @@ public class Editar_empleado extends VistaEditar_empleado {
 	public VerticalLayout layout;
 	
 	public Editar_empleado() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		cancelar_edicion();
 	}

@@ -7,6 +7,10 @@ public class Crear_categoría extends Zona_productos {
 	VerticalLayout layout;
 	
 	public Crear_categoría() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this.getH1CrearOferta().setVisible(false);
 		this.getH1EditarCategoria().setVisible(false);
 		this.getH1EditarOferta().setVisible(false);

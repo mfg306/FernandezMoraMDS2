@@ -10,6 +10,8 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 
 	public Menu_A(Administrador _administrador) {
 		
+		this.getLogo().setSrc("");
+		
 		/*De la clase Ver_bandeja_de_entrada solo nos interesa quedarnos con la parte del menu*/
 		this.getBoton_enviados().setVisible(false);
 		this.getBoton_recibidos().setVisible(false);

@@ -13,6 +13,10 @@ public class Gestionar_empleados extends VistaGestionar_empleados{
 
 	
 	public Gestionar_empleados() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._empleados = new Empleados();
 		this._empleados.add_Empleados();
 		this._empleados.add_Empleados();
@@ -26,7 +30,6 @@ public class Gestionar_empleados extends VistaGestionar_empleados{
 		this.getHuecoCrearEmpleados().as(VerticalLayout.class).add(_crear_empleados);
 		
 		editar_Empleado();
-
 	}
 	
 	public void ocultar_Gestionar_Ofertas() {

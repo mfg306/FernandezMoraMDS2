@@ -9,8 +9,12 @@ public class Pedido_E extends VistaPedido_e{
 	public Asignar_a_transportista _asignar_a_transportista;
 	
 	public Pedido_E(Pedidos_E pedidos_E) {
+		inicializar(pedidos_E);
+	}
+	
+	public void inicializar(Pedidos_E pedidos_E) {
 		this._pedidos_E = pedidos_E;
-		this._asignar_a_transportista = new Asignar_a_transportista(this);			
+		this._asignar_a_transportista = new Asignar_a_transportista(this);	
 	}
 		
 	public void Marcar_como_enviado() {

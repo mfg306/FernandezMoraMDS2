@@ -7,6 +7,10 @@ public class Crear_oferta extends Zona_productos {
 	VerticalLayout layout;
 
 	public Crear_oferta() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this.getH1CrearCategoria().setVisible(false);
 		this.getH1EditarCategoria().setVisible(false);
 		this.getH1EditarOferta().setVisible(false);
@@ -21,7 +25,6 @@ public class Crear_oferta extends Zona_productos {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		
 		cancelar_creacion();
-		
 	}
 	
 	public void ocultar_crear_oferta() {

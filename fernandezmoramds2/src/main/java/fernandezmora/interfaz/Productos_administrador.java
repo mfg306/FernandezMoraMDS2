@@ -13,6 +13,10 @@ public class Productos_administrador extends VistaProductos_administrador{
 
 	
 	public Productos_administrador() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._list_Producto_administrador = new Vector<Producto_administrador>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);		
 	}

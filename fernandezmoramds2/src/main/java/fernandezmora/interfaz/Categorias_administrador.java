@@ -13,10 +13,13 @@ public class Categorias_administrador extends VistaCategorias_administrador{
 	public VerticalLayout layout;
 	
 	public Categorias_administrador(Gestionar_categorias gc) {
+		inicializar(gc);
+	}
+	
+	public void inicializar(Gestionar_categorias gc) {
 		this._gestionar_categorias = gc; 
 		this._list_Categoria_administrador = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-
 	}
 	
 	/*Metodo para agregar categorias al listado. Cuando sepamos como se hace con la base de datos lo podemos mejorar*/

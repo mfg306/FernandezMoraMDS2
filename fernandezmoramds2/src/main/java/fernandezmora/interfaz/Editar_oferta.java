@@ -8,6 +8,11 @@ public class Editar_oferta extends Zona_productos {
 
 	
 	public Editar_oferta(Oferta_administrador oa) {
+		inicializar(oa);
+	}
+	
+	
+	public void inicializar(Oferta_administrador oa) {
 		this._oferta_administrador = oa;
 		
 		this.getH1CrearCategoria().setVisible(false);

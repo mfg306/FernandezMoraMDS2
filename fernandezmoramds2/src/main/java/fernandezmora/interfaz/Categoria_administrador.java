@@ -8,6 +8,10 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 	public Editar_categoria _editar_categoria;
 
 	public Categoria_administrador(Categorias_administrador ca) {
+		inicializar(ca);
+	}
+	
+	public void inicializar(Categorias_administrador ca) {
 		this._categorias_administrador = ca;
 		this._editar_categoria = new Editar_categoria(this);
 	}

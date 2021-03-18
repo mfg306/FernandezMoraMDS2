@@ -11,6 +11,10 @@ public class Encargado_de_compras extends VistaEncargado_de_compras{
 	VerticalLayout layout;
 	
 	public Encargado_de_compras() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		_pedidos_E = new Pedidos_E(this);
 		_pedidos_E.add_pedidos();
 		_pedidos_E.add_pedidos();

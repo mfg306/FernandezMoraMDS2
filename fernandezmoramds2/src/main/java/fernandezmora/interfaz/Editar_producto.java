@@ -11,8 +11,12 @@ public class Editar_producto extends VistaEditar_producto {
 
 	
 	public Editar_producto() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		cancelar_edicion();		
+		cancelar_edicion();	
 	}
 	
 	public void cancelar_edicion() {

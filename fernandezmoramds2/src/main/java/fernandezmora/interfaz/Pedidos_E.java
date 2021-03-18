@@ -12,6 +12,10 @@ public class Pedidos_E extends VistaPedidos_e {
 	VerticalLayout layout;
 	
 	public Pedidos_E(Encargado_de_compras e) {
+		inicializar(e);
+	}
+	
+	public void inicializar(Encargado_de_compras e) {
 		this._encargado_de_compras = e;
 		this._list_Pedido_E = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);

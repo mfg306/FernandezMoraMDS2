@@ -12,6 +12,10 @@ public class Ventas extends VistaVentas{
 	VerticalLayout layout;
 	
 	public Ventas() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._list_Venta = new Vector<>();
 		
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);

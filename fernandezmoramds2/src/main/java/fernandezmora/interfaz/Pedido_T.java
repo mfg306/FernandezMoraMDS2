@@ -8,6 +8,10 @@ public class Pedido_T extends VistaPedido_t {
 	public Gestor_Correos _unnamed_Gestor_Correos_;
 	
 	public Pedido_T(Pedidos_T p) {
+		inicializar(p);
+	}
+	
+	public void inicializar(Pedidos_T p) {
 		this._pedidos_T = p;
 		this._ver_ficha_cliente = new Ver_ficha_cliente(this);
 	}

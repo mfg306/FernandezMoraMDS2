@@ -11,6 +11,10 @@ public class Gestionar_productos extends VistaGestionar_productos {
 	public VerticalLayout layout;
 
 	public Gestionar_productos() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._productos_administrador = new Productos_administrador();
 		this._productos_administrador.add_Productos();
 		this._productos_administrador.add_Productos();

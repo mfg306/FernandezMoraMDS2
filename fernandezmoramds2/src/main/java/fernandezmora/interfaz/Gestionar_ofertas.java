@@ -12,6 +12,10 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 
 	
 	public Gestionar_ofertas() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._ofertas_administrador = new Ofertas_administrador(this);
 		this._ofertas_administrador.add_ofertas();
 		this._ofertas_administrador.add_ofertas();

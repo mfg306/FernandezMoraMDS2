@@ -11,15 +11,17 @@ public class Crear_producto extends VistaCrear_producto {
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 	public VerticalLayout layout;
 
-	
 	public Crear_producto() {
+		inicializar();
+	}
+
+	public void inicializar() {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		cancelar_creacion();
 	}
-	
-	
+
 	public void cancelar_creacion() {
-		this.getVaadinButton2().addClickListener(event ->{
+		this.getVaadinButton2().addClickListener(event -> {
 			Gestionar_productos gp = new Gestionar_productos();
 			this.getH1().setVisible(false);
 			this.getVaadinHorizontalLayout().setVisible(false);

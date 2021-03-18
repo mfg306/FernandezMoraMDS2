@@ -9,6 +9,10 @@ public class Ver_ficha_cliente extends VistaVer_ficha_cliente{
 	VerticalLayout layout;
 
 	public Ver_ficha_cliente(Pedido_T p) {
+		inicializar(p);
+	}
+	
+	public void inicializar(Pedido_T p) {
 		this._pedido_T = p;
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		

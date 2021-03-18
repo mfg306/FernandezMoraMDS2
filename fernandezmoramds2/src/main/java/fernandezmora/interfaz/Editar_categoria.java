@@ -7,9 +7,12 @@ public class Editar_categoria extends Zona_productos {
 	VerticalLayout layout;
 	
 	public Editar_categoria(Categoria_administrador ca) {
-		
+		inicializar(ca);
+	}
+	
+	public void inicializar(Categoria_administrador ca) {
 		this._categoria_administrador = ca;
-				
+		
 		this.getH1CrearCategoria().setVisible(false);
 		this.getH1CrearOferta().setVisible(false);
 		this.getH1EditarOferta().setVisible(false);

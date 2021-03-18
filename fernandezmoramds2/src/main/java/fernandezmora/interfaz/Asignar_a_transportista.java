@@ -9,11 +9,15 @@ public class Asignar_a_transportista extends VistaAsignar_a_transportista {
 	VerticalLayout layout;
 	
 	public Asignar_a_transportista(Pedido_E pedido) {
+
+		inicializar(pedido);
+	}
+	
+	public void inicializar(Pedido_E pedido) {
 		this._list_Pedido_E = pedido;
 		layout = this.getVerticalLayout_asignar_a_transportista().as(VerticalLayout.class);
 		
 		guardar_Cambios();
-		
 	}
 	
 	public void ocultar_Asignar_a_transportista() {

@@ -13,6 +13,10 @@ public class Pedidos_T extends VistaPedidos_t {
 	VerticalLayout layout;
 	
 	public Pedidos_T(Transportista t) {
+		inicializar(t);
+	}
+	
+	public void inicializar(Transportista t) {
 		this._transportista = t;
 		this._list_Pedido_T = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
