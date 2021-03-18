@@ -27,7 +27,8 @@ public class Administrador extends VistaAdministrador{
 		gestionarEmpleados();
 		gestionarCategorias();
 		gestionarOfertas();
-		gestionarProductos();		
+		gestionarProductos();
+		gestionarVentas();
 	}
 	
 	
@@ -35,6 +36,7 @@ public class Administrador extends VistaAdministrador{
 		this.getVaadinHorizontalLayout().setVisible(false);
 		this.getVaadinHorizontalLayout1().setVisible(false);
 		this.getH1().setVisible(false);
+		this.getVaadinHorizontalLayout2().setVisible(false);
 		
 	}
 	
@@ -69,6 +71,15 @@ public class Administrador extends VistaAdministrador{
 			this._gestionar_productos = new Gestionar_productos(); 
 			layout.add(this._gestionar_productos);
 		});
+	}
+	
+	public void gestionarVentas() {
+		this.getBoton_gestionar_ventas().addClickListener(event ->{
+			this.ocultarAdministrador();
+			this._gestionar_ventas = new Gestionar_ventas();
+			layout.add(this._gestionar_ventas);
+		});
+		
 	}
 	
 	

@@ -22,8 +22,7 @@ public class VistaGestionar_ventas extends PolymerTemplate<VistaGestionar_ventas
 	private Element vaadinVerticalLayout;
 	@Id("h1")
 	private H1 h1;
-	@Id("vistaVentas")
-	private Element vistaVentas;
+
 
 	/**
      * Creates a new VistaGestionar_ventas.
@@ -55,11 +54,4 @@ public class VistaGestionar_ventas extends PolymerTemplate<VistaGestionar_ventas
 		this.h1 = h1;
 	}
 
-	public Element getVistaVentas() {
-		return vistaVentas;
-	}
-
-	public void setVistaVentas(Element vistaVentas) {
-		this.vistaVentas = vistaVentas;
-	}
 }

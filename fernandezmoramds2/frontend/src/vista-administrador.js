@@ -1,6 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaAdministrador extends PolymerElement {
@@ -14,7 +14,7 @@ class VistaAdministrador extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
- <vaadin-vertical-layout theme="spacing" id="hueco-menu" style="align-self: center;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="hueco-menu"></vaadin-vertical-layout>
  <h1 style="align-self: center; margin-bottom: var(--lumo-space-xl);" id="h1">Bienvenido al modo administrador</h1>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%;background-color:#D0D1D1;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="width: 100%; padding: var(--lumo-space-m);" id="vaadinVerticalLayout1">
@@ -40,6 +40,14 @@ class VistaAdministrador extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="width: 100%; padding: var(--lumo-space-m);" id="vaadinVerticalLayout4">
    <h2 style="align-self: center;" id="h23">Tus empleados</h2>
    <vaadin-button theme="primary" style="align-self: center;" id="boton_gestionar_empleados">
+     Gestionar 
+   </vaadin-button>
+  </vaadin-vertical-layout>
+ </vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="width: 100%; margin-top:20%; background-color:#D0D1D1; height: 100%;">
+  <vaadin-vertical-layout theme="spacing" style="flex-grow: 1; align-self: center; align-items: center; justify-content: center; width: 100%; height: 100%;" id="vaadinVerticalLayout5">
+   <h2 style="align-self: center;" id="h23">Tus ventas</h2>
+   <vaadin-button theme="primary" id="boton_gestionar_ventas">
      Gestionar 
    </vaadin-button>
   </vaadin-vertical-layout>

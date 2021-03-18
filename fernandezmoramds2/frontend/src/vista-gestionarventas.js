@@ -1,6 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-ventas.js';
 
 class VistaGestionar_ventas extends PolymerElement {
 
@@ -14,7 +13,6 @@ class VistaGestionar_ventas extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <h1 style="align-self: center;" id="h1">Ventas</h1>
- <vista-ventas style="align-self: center; width: 100%;" id="vistaVentas"></vista-ventas>
 </vaadin-vertical-layout>
 `;
     }

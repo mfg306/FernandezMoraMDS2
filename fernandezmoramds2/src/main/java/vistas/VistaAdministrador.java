@@ -57,6 +57,12 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 	private H2 h23;
 	@Id("boton_gestionar_empleados")
 	private Button boton_gestionar_empleados;
+	@Id("vaadinHorizontalLayout2")
+	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("vaadinVerticalLayout5")
+	private Element vaadinVerticalLayout5;
+	@Id("boton_gestionar_ventas")
+	private Button boton_gestionar_ventas;
 
 	/**
      * Creates a new VistaAdministrador.
@@ -206,6 +212,30 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 
 	public void setBoton_gestionar_empleados(Button boton_gestionar_empleados) {
 		this.boton_gestionar_empleados = boton_gestionar_empleados;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public Element getVaadinVerticalLayout5() {
+		return vaadinVerticalLayout5;
+	}
+
+	public void setVaadinVerticalLayout5(Element vaadinVerticalLayout5) {
+		this.vaadinVerticalLayout5 = vaadinVerticalLayout5;
+	}
+
+	public Button getBoton_gestionar_ventas() {
+		return boton_gestionar_ventas;
+	}
+
+	public void setBoton_gestionar_ventas(Button boton_gestionar_ventas) {
+		this.boton_gestionar_ventas = boton_gestionar_ventas;
 	}
 
 
