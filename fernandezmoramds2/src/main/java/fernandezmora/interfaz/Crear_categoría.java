@@ -24,7 +24,7 @@ public class Crear_categoría extends Zona_productos {
 	}
 	
 	
-	public void ocultar_editar_categoria() {
+	public void ocultar_crear_categoria() {
 		
 		this.getCampoCategoria().setVisible(false);
 		this.getNombreCategoria().setVisible(false);
@@ -42,7 +42,7 @@ public class Crear_categoría extends Zona_productos {
 	public void cancelar_creacion() {
 		
 		this.getBotonCancelar().addClickListener(event ->{
-			ocultar_editar_categoria();
+			ocultar_crear_categoria();
 			this._gestionar_categorias = new Gestionar_categorias();
 			
 			layout.add(this._gestionar_categorias);
