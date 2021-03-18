@@ -20,8 +20,6 @@ public class VistaCategoria extends PolymerTemplate<VistaCategoria.VistaCategori
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("categoria")
-	private Button vaadinButton;
 	@Id("categoria1")
 	private Button categoria1;
 
@@ -47,13 +45,6 @@ public class VistaCategoria extends PolymerTemplate<VistaCategoria.VistaCategori
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
 
 	public Button getCategoria1() {
 		return categoria1;

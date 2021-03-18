@@ -12,6 +12,12 @@ public class Productos_categoria extends VistaProductos_categoria {
 	private Panel _panel;*/
 	public Categoria _list_Categoria;
 	public Vector<Producto_categoria> _list_Producto_categoria = new Vector<Producto_categoria>();
+	
+	public Productos_categoria(Categoria c) {
+		this._list_Categoria = c;
+		
+	}
+	
 
 	public void Ver_siguientes() {
 		throw new UnsupportedOperationException();
