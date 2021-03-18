@@ -1,5 +1,7 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
 public class Menu_A extends Ver_bandeja_de_entrada {
 	public Administrador _administrador;
 	
@@ -43,21 +45,19 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 			this.getSpan().setVisible(true);
 			
 			if(_administrador._gestionar_categorias != null) {
-				_administrador._gestionar_categorias.getTitulo().setVisible(false);
-				_administrador._gestionar_categorias.getBotonNuevaCategoria().setVisible(false);
-				_administrador._gestionar_categorias._categorias_administrador.setVisible(false);
+				_administrador._gestionar_categorias.setVisible(false);
 			}
 			
 			if(_administrador._gestionar_empleados != null) {
-				_administrador._gestionar_empleados.getH1().setVisible(false);
-				_administrador._gestionar_empleados.getHuecoCrearEmpleados().setVisible(false);
-				_administrador._gestionar_empleados._empleados.setVisible(false);
+				_administrador._gestionar_empleados.setVisible(false);
 			}
 			
 			if(_administrador._gestionar_ofertas != null) {
-				_administrador._gestionar_ofertas.getH1().setVisible(false);
-				_administrador._gestionar_ofertas.getVaadinVerticalLayout().setVisible(false);
-				_administrador._gestionar_ofertas.getVaadinButton().setVisible(false);
+				_administrador._gestionar_ofertas.setVisible(false);
+			}
+			
+			if(_administrador._gestionar_productos != null) {
+				_administrador._gestionar_productos.setVisible(false);
 			}
 		});
 	}
