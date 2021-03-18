@@ -28,10 +28,9 @@ public class VistaEncargado_de_compras extends PolymerTemplate<VistaEncargado_de
 	private Button vaadinButton;
 	@Id("h1")
 	private H1 h1;
-	@Id("vistaPedidos_e")
-	private Element vistaPedidos_e;
-	@Id("vistaPedidose")
-	private Element vistaPedidose;
+	@Id("huecoListaPedidos")
+	private Element huecoListaPedidos;
+
 
 	/**
      * Creates a new VistaEncargado_de_compras.
@@ -79,11 +78,12 @@ public class VistaEncargado_de_compras extends PolymerTemplate<VistaEncargado_de
 		this.h1 = h1;
 	}
 
-	public Element getVistaPedidos_e() {
-		return vistaPedidos_e;
+	public Element getHuecoListaPedidos() {
+		return huecoListaPedidos;
 	}
 
-	public void setVistaPedidos_e(Element vistaPedidos_e) {
-		this.vistaPedidos_e = vistaPedidos_e;
+	public void setHuecoListaPedidos(Element huecoListaPedidos) {
+		this.huecoListaPedidos = huecoListaPedidos;
 	}
+
 }

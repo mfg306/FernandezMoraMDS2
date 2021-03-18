@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-pedido_e template.
@@ -34,9 +35,8 @@ public class VistaPedido_e extends PolymerTemplate<VistaPedido_e.VistaPedido_eMo
 	private Label label2;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinCheckbox")
-	private Checkbox vaadinCheckbox;
-
+	@Id("botonAsignar")
+	private Button botonAsignar;
 	/**
      * Creates a new VistaPedido_e.
      */
@@ -107,11 +107,12 @@ public class VistaPedido_e extends PolymerTemplate<VistaPedido_e.VistaPedido_eMo
 		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
 	}
 
-	public Checkbox getVaadinCheckbox() {
-		return vaadinCheckbox;
+	public Button getBotonAsignar() {
+		return botonAsignar;
 	}
 
-	public void setVaadinCheckbox(Checkbox vaadinCheckbox) {
-		this.vaadinCheckbox = vaadinCheckbox;
+	public void setBotonAsignar(Button botonAsignar) {
+		this.botonAsignar = botonAsignar;
 	}
+
 }

@@ -23,20 +23,12 @@ public class VistaAsignar_a_transportista extends PolymerTemplate<VistaAsignar_a
 
     @Id("vertical-layout_asignar_a_transportista")
 	private Element verticalLayout_asignar_a_transportista;
-	@Id("horizontal-layout_asignar_a_transportista")
-	private HorizontalLayout horizontalLayout_asignar_a_transportista;
-	@Id("cerrarSesion_asignar_a_transportista")
-	private Button cerrarSesion_asignar_a_transportista;
 	@Id("h1-asignar_a_transportista")
 	private H1 h1Asignar_a_transportista;
 	@Id("vertical-layout_2_asignar_a_transportista")
 	private Element verticalLayout_2_asignar_a_transportista;
 	@Id("Seleccion-asignar_a_transportista")
 	private Select seleccionAsignar_a_transportista;
-	@Id("listaSeleccionarTransportista-asignar_a_transportista")
-	private Element listaSeleccionarTransportistaAsignar_a_transportista;
-	@Id("transportista-asignar_a_transportista")
-	private Element transportistaAsignar_a_transportista;
 	@Id("aceptar-asignar_a_transportista")
 	private Button aceptarAsignar_a_transportista;
 
@@ -62,22 +54,6 @@ public class VistaAsignar_a_transportista extends PolymerTemplate<VistaAsignar_a
 		this.verticalLayout_asignar_a_transportista = verticalLayout_asignar_a_transportista;
 	}
 
-	public HorizontalLayout getHorizontalLayout_asignar_a_transportista() {
-		return horizontalLayout_asignar_a_transportista;
-	}
-
-	public void setHorizontalLayout_asignar_a_transportista(HorizontalLayout horizontalLayout_asignar_a_transportista) {
-		this.horizontalLayout_asignar_a_transportista = horizontalLayout_asignar_a_transportista;
-	}
-
-	public Button getCerrarSesion_asignar_a_transportista() {
-		return cerrarSesion_asignar_a_transportista;
-	}
-
-	public void setCerrarSesion_asignar_a_transportista(Button cerrarSesion_asignar_a_transportista) {
-		this.cerrarSesion_asignar_a_transportista = cerrarSesion_asignar_a_transportista;
-	}
-
 	public H1 getH1Asignar_a_transportista() {
 		return h1Asignar_a_transportista;
 	}
@@ -100,23 +76,6 @@ public class VistaAsignar_a_transportista extends PolymerTemplate<VistaAsignar_a
 
 	public void setSeleccionAsignar_a_transportista(Select seleccionAsignar_a_transportista) {
 		this.seleccionAsignar_a_transportista = seleccionAsignar_a_transportista;
-	}
-
-	public Element getListaSeleccionarTransportistaAsignar_a_transportista() {
-		return listaSeleccionarTransportistaAsignar_a_transportista;
-	}
-
-	public void setListaSeleccionarTransportistaAsignar_a_transportista(
-			Element listaSeleccionarTransportistaAsignar_a_transportista) {
-		this.listaSeleccionarTransportistaAsignar_a_transportista = listaSeleccionarTransportistaAsignar_a_transportista;
-	}
-
-	public Element getTransportistaAsignar_a_transportista() {
-		return transportistaAsignar_a_transportista;
-	}
-
-	public void setTransportistaAsignar_a_transportista(Element transportistaAsignar_a_transportista) {
-		this.transportistaAsignar_a_transportista = transportistaAsignar_a_transportista;
 	}
 
 	public Button getAceptarAsignar_a_transportista() {

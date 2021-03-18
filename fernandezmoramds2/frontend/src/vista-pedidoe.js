@@ -1,6 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaPedido_e extends PolymerElement {
 
@@ -19,9 +19,9 @@ class VistaPedido_e extends PolymerElement {
    <label style="align-self: center; flex-shrink: 0; margin-left: 15%;" id="label1">Código de la compra:</label>
    <label style="align-self: center; margin-left: 10%;" id="label2">Fecha:</label>
    <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; width: 100%; margin-left: 5%;" id="vaadinHorizontalLayout1">
-    <vaadin-checkbox style="align-self: center;" id="vaadinCheckbox">
-      Anotar envío 
-    </vaadin-checkbox>
+    <vaadin-button theme="primary" id="botonAsignar">
+     Asignar
+    </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

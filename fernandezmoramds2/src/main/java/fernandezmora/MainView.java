@@ -8,9 +8,11 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
 import fernandezmora.interfaz.Administrador;
+import fernandezmora.interfaz.Encargado_de_compras;
 import fernandezmora.interfaz.Gestionar_categorias;
 import fernandezmora.interfaz.Iniciar_sesion_UNR;
 import fernandezmora.interfaz.Prueba_prueba;
+import fernandezmora.interfaz.Transportista;
 import fernandezmora.interfaz.UNR_;
 import fernandezmora.interfaz.UR;
 
@@ -71,7 +73,17 @@ public class MainView extends VerticalLayout {
 				remove(unr);
 				add(admin);
 				    		    		
-			}else {
+			} else if(inicio_sesion.getCorreo().getValue().equals("t")) {
+				Transportista t = new Transportista();
+				remove(unr);
+				add(t);
+			} else if(inicio_sesion.getCorreo().getValue().equals("e")) {
+				Encargado_de_compras e = new Encargado_de_compras();
+				remove(unr);
+				add(e);
+			}
+			
+			else {
 		    	Notification.show("Este usuario no esta registrado");
 		    }
 			

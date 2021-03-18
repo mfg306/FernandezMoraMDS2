@@ -1,8 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import './vista-pedidose.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaEncargado_de_compras extends PolymerElement {
 
@@ -21,7 +20,7 @@ class VistaEncargado_de_compras extends PolymerElement {
   </vaadin-button>
  </vaadin-horizontal-layout>
  <h1 style="margin-left: 10%;" id="h1">Compras realizadas</h1>
- <vista-pedidose id="vistaPedidose"></vista-pedidose>
+ <vaadin-vertical-layout theme="spacing" id="huecoListaPedidos" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }

@@ -30,12 +30,9 @@ public class VistaTransportista extends PolymerTemplate<VistaTransportista.Vista
 	private Button vaadinButton;
 	@Id("h1-transportista")
 	private H1 h1;
-	@Id("vistaPedidos_t-transportista")
-	private VistaPedidos_t vistaPedidos_t;
 	@Id("h3-transportista")
 	private H3 h3Transportista;
-	@Id("vistaPedidost")
-	private VistaPedidos_t vistaPedidost;
+
 	/**
      * Creates a new VistaTransportista.
      */
@@ -82,13 +79,6 @@ public class VistaTransportista extends PolymerTemplate<VistaTransportista.Vista
 		this.h1 = h1;
 	}
 
-	public VistaPedidos_t getVistaPedidos_t() {
-		return vistaPedidos_t;
-	}
-
-	public void setVistaPedidos_t(VistaPedidos_t vistaPedidos_t) {
-		this.vistaPedidos_t = vistaPedidos_t;
-	}
 
 	public H3 getH3Transportista() {
 		return h3Transportista;
