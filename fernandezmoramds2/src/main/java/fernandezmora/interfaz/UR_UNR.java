@@ -19,8 +19,16 @@ public abstract class UR_UNR extends VistaUrunr{
 		
 		this._ver_categorias = new Ver_categorias(this);
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		abrir_Ver_Categorias();
 	}
-
+	
+	public void abrir_Ver_Categorias() {
+		this.getBotonVerCategorias().addClickListener(event ->{
+			this.getBotonVerCategorias().setVisible(false);
+			this.layout.add(this._ver_categorias._categorias);
+			
+		});
+	}
 	
 	
 }

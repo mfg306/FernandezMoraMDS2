@@ -8,4 +8,5 @@ public class Producto_categoria extends VistaProducto_categoria{
 	private Label _precioL;*/
 	public Productos_categoria _productos_categoria;
 	public Producto _producto;
+	
 }
