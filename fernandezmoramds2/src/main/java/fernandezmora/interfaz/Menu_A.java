@@ -1,7 +1,5 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
-
 public class Menu_A extends Ver_bandeja_de_entrada {
 	public Administrador _administrador;
 	
@@ -26,6 +24,7 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 		this._administrador = _administrador;
 		
 		correo();
+		cerrar_sesion();
 	}
 	
 	/**
@@ -33,8 +32,13 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 	 */
 	public void cerrar_sesion() {
 		
+		this.getCerrar_sesion().addClickListener(event ->{
+			_administrador.layout.removeAll();
+			UNR_ unr = new UNR_();
+			_administrador.layout.add(unr);
+
+		});
 		
-		throw new UnsupportedOperationException();
 	}
 	
 	/**
