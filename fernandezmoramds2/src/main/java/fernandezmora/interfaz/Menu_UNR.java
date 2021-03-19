@@ -24,7 +24,11 @@ public class Menu_UNR extends Menu_UR_UNR {
 			if(this._ver_carrito_UNR._solicitar_identificación!=null) {
 			   this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
 			   this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);
+			   this._ver_carrito_UNR.getProductosCarrito().setVisible(true);
 			}
+			
+			if (this._uNR_._ver_categorias != null) 
+				this._uNR_._ver_categorias._categorias.setVisible(false);
 			
 			this.layout.add(this._ver_carrito_UNR);
 		});

@@ -32,6 +32,8 @@ public class VistaVer_carrito extends PolymerTemplate<VistaVer_carrito.VistaVer_
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("productosCarrito")
+	private HorizontalLayout productosCarrito;
 	/**
      * Creates a new VistaVer_carrito.
      */
@@ -94,5 +96,13 @@ public class VistaVer_carrito extends PolymerTemplate<VistaVer_carrito.VistaVer_
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public HorizontalLayout getProductosCarrito() {
+		return productosCarrito;
+	}
+
+	public void setProductosCarrito(HorizontalLayout productosCarrito) {
+		this.productosCarrito = productosCarrito;
 	}
 }

@@ -29,14 +29,6 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinSelect")
 	private Select vaadinSelect;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("vaadinButton")
 	private Button vaadinButton;
 
@@ -86,37 +78,6 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 		this.vaadinSelect = vaadinSelect;
 	}
 
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
 
 	public Button getVaadinButton() {
 		return vaadinButton;
