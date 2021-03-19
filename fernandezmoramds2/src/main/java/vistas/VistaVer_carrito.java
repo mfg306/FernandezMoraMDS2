@@ -28,10 +28,6 @@ public class VistaVer_carrito extends PolymerTemplate<VistaVer_carrito.VistaVer_
 	private Span span;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vistaProductos_carrito")
-	private Element vistaProductos_carrito;
-	@Id("vistaMenu_urunr")
-	private Element vistaMenu_urunr;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout")
@@ -82,21 +78,7 @@ public class VistaVer_carrito extends PolymerTemplate<VistaVer_carrito.VistaVer_
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public Element getVistaProductos_carrito() {
-		return vistaProductos_carrito;
-	}
-
-	public void setVistaProductos_carrito(Element vistaProductos_carrito) {
-		this.vistaProductos_carrito = vistaProductos_carrito;
-	}
-
-	public Element getVistaMenu_urunr() {
-		return vistaMenu_urunr;
-	}
-
-	public void setVistaMenu_urunr(Element vistaMenu_urunr) {
-		this.vistaMenu_urunr = vistaMenu_urunr;
-	}
+	
 
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
