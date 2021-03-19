@@ -93,7 +93,12 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("buscador")
 	private TextField buscador;
-
+	@Id("huecoProductos")
+	private HorizontalLayout huecoProductos;
+	@Id("huecoIzquierda")
+	private Element huecoIzquierda;
+	@Id("huecoDerecha")
+	private Element huecoDerecha;
 	/**
      * Creates a new VistaAdministrar_productos_anadidos.
      */
@@ -379,6 +384,30 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setBuscador(TextField buscador) {
 		this.buscador = buscador;
+	}
+
+	public HorizontalLayout getHuecoProductos() {
+		return huecoProductos;
+	}
+
+	public void setHuecoProductos(HorizontalLayout huecoProductos) {
+		this.huecoProductos = huecoProductos;
+	}
+
+	public Element getHuecoIzquierda() {
+		return huecoIzquierda;
+	}
+
+	public void setHuecoIzquierda(Element huecoIzquierda) {
+		this.huecoIzquierda = huecoIzquierda;
+	}
+
+	public Element getHuecoDerecha() {
+		return huecoDerecha;
+	}
+
+	public void setHuecoDerecha(Element huecoDerecha) {
+		this.huecoDerecha = huecoDerecha;
 	}
 
 

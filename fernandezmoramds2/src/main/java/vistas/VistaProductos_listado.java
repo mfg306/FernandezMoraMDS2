@@ -13,7 +13,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("vista-productos_listado")
+@Tag("vista-productoslistado")
 @JsModule("./src/vista-productoslistado.js")
 public class VistaProductos_listado extends PolymerTemplate<VistaProductos_listado.VistaProductos_listadoModel> {
 

@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaAdministrar_productos_anadidos extends PolymerElement {
 
@@ -72,6 +72,10 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
+<vaadin-horizontal-layout theme="spacing" id="huecoProductos" style="width: 100%; height: 100%;">
+ <vaadin-vertical-layout theme="spacing" id="huecoIzquierda" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="huecoDerecha" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
+</vaadin-horizontal-layout>
 `;
     }
 
