@@ -36,13 +36,15 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this.getVaadinHorizontalLayout().setVisible(false);
 			this._uNR_.getBotonVerCategorias().setVisible(false);
 
-			if (this._uNR_._ver_categorias != null || this._ver_carrito_UNR!=null) 
+			if (this._uNR_._ver_categorias != null) 
 				this._uNR_._ver_categorias._categorias.setVisible(false);
 			
 			if(this._ver_carrito_UNR!=null) {
 			   this._ver_carrito_UNR.setVisible(false);
-			   this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
 			   }
+			if(this._ver_carrito_UNR._solicitar_identificación!=null) {
+				this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
+			}
 
 			this.layout.add(this._iniciar_sesion_UNR);
 
