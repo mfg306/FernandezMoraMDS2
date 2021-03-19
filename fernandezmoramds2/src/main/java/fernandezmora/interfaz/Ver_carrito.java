@@ -14,5 +14,7 @@ public class Ver_carrito extends VistaVer_carrito{
 		layout = getVaadinVerticalLayout().as(VerticalLayout.class);
 	}
 	
+
+	
 	
 }
