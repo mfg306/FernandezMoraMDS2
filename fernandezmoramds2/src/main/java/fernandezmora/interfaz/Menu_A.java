@@ -10,6 +10,11 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 
 	public Menu_A(Administrador _administrador) {
 		
+		inicializar(_administrador);
+		
+	}
+	
+	public void inicializar(Administrador _administrador) {
 		this.getLogo().setSrc("");
 		
 		/*De la clase Ver_bandeja_de_entrada solo nos interesa quedarnos con la parte del menu*/
@@ -21,7 +26,6 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 		this._administrador = _administrador;
 		
 		correo();
-		
 	}
 	
 	/**
