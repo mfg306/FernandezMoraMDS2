@@ -17,6 +17,13 @@ public class Menu_UR_UNR extends VistaMenu_urunr {
 		this.getDatos_cuenta().setVisible(false);
 		layout = this.getMenu().as(VerticalLayout.class);
 		this._ver_carrito = new Ver_carrito(this);
+		abrirCarrito();
+	}
+	
+	public void abrirCarrito() {
+		this.getBoton_carrito().addClickListener(event->{
+			this._uR_UNR.getBotonVerCategorias().setVisible(false);
+		});
 	}
 	
 	

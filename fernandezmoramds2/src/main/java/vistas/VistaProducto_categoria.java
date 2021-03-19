@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-producto_categoria template.
@@ -30,6 +31,8 @@ public class VistaProducto_categoria extends PolymerTemplate<VistaProducto_categ
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("precio_producto")
 	private Span precio_producto;
+	@Id("verProducto")
+	private Button verProducto;
 
 	/**
      * Creates a new VistaProducto_categoria.
@@ -83,5 +86,13 @@ public class VistaProducto_categoria extends PolymerTemplate<VistaProducto_categ
 
 	public void setPrecio_producto(Span precio_producto) {
 		this.precio_producto = precio_producto;
+	}
+
+	public Button getVerProducto() {
+		return verProducto;
+	}
+
+	public void setVerProducto(Button verProducto) {
+		this.verProducto = verProducto;
 	}
 }
