@@ -14,6 +14,9 @@ public class Productos_listado extends VistaProductos_listado {
 	public Productos_listado() {
 		this._list_Producto_listado = new Vector<>();
 		layout = this.getVaadinVerticalLayout_productos_listado().as(VerticalLayout.class);
+		
+		this.add_productos_listado();
+		this.add_productos_listado();
 	}
 	
 	public void add_productos_listado() {

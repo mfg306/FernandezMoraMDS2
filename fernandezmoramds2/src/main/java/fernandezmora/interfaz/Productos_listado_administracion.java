@@ -15,6 +15,12 @@ public class Productos_listado_administracion extends VistaProductos_listado_adm
 	public Productos_listado_administracion() {
 		this._list_Producto_listado_administracion = new Vector<>();
 		layout = this.getVaadinVerticalLayout_productos_listado_administracion().as(VerticalLayout.class);
+		
+		this.add_productos_listado_administracion();
+		this.add_productos_listado_administracion();
+		this.add_productos_listado_administracion();
+
+		
 	}
 	
 	public void add_productos_listado_administracion() {
