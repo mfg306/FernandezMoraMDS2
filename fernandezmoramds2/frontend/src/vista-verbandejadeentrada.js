@@ -11,6 +11,8 @@ class VistaVer_bandeja_de_entrada extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">

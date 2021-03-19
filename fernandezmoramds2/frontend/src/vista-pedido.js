@@ -14,6 +14,8 @@ class VistaPedido extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout id="pedido">

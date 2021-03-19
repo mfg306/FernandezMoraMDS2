@@ -11,6 +11,8 @@ class VistaAsignar_a_transportista extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vertical-layout_asignar_a_transportista">

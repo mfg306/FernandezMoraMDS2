@@ -11,6 +11,8 @@ class VistaMensajes_recibidos extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="lista_mensajes_recibidos">

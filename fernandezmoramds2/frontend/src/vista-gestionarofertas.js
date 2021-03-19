@@ -11,6 +11,8 @@ class VistaGestionar_ofertas extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: flex-start;" id="vaadinVerticalLayout">

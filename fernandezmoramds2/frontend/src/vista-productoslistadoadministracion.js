@@ -10,6 +10,8 @@ class VistaProductos_listado_administracion extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: center;" id="vaadinVerticalLayout_productos_listado_administracion"></vaadin-vertical-layout>

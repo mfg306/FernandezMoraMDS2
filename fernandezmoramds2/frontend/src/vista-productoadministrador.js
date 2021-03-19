@@ -13,6 +13,8 @@ class VistaProducto_administrador extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: center; margin-top: var(--lumo-space-l);" id="vaadinVerticalLayout">
