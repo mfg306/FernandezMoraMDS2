@@ -10,9 +10,6 @@ public class UR extends UR_UNR {
 	public Ver_producto_UR _ver_producto_UR;
 	public VerticalLayout layout;
 	
-	
-	
-	
 	public UR() {
 		_menu_UR = new Menu_UR();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);

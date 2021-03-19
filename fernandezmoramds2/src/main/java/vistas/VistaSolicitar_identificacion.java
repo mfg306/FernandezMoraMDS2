@@ -20,8 +20,6 @@ public class VistaSolicitar_identificacion extends PolymerTemplate<VistaSolicita
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vistaMenu_urunr")
-	private Element vistaMenu_urunr;
 	@Id("span")
 	private Span span;
 
@@ -47,13 +45,6 @@ public class VistaSolicitar_identificacion extends PolymerTemplate<VistaSolicita
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public Element getVistaMenu_urunr() {
-		return vistaMenu_urunr;
-	}
-
-	public void setVistaMenu_urunr(Element vistaMenu_urunr) {
-		this.vistaMenu_urunr = vistaMenu_urunr;
-	}
 
 	public Span getSpan() {
 		return span;

@@ -18,4 +18,10 @@ public class Menu_UR extends Menu_UR_UNR {
 	public void cerrar_sesion() {
 		throw new UnsupportedOperationException();
 	}
+
+	@Override
+	public void abrirCarrito() {
+		// TODO Auto-generated method stub
+		
+	}
 }
