@@ -16,7 +16,7 @@ public abstract class UR_UNR extends VistaUrunr{
 	public VerticalLayout layout;
 	
 	public UR_UNR() {
-		
+		this._menu_UR_UNR = new Menu_UR_UNR();
 		this._ver_categorias = new Ver_categorias(this);
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		abrir_Ver_Categorias();
