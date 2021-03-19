@@ -41,8 +41,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	@Id("h21")
 	private H2 h21;
 
-	@Id("buscador")
-	private TextField vaadinTextField;
 	@Id("botonesCG")
 	private Element botonesCG;
 	@Id("vaadinHorizontalLayout")
@@ -93,7 +91,14 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private TextField campoOferta;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-
+	@Id("buscador")
+	private TextField buscador;
+	@Id("huecoProductos")
+	private HorizontalLayout huecoProductos;
+	@Id("huecoIzquierda")
+	private Element huecoIzquierda;
+	@Id("huecoDerecha")
+	private Element huecoDerecha;
 	/**
      * Creates a new VistaAdministrar_productos_anadidos.
      */
@@ -171,14 +176,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setH21(H2 h21) {
 		this.h21 = h21;
-	}
-
-	public TextField getVaadinTextField() {
-		return vaadinTextField;
-	}
-
-	public void setVaadinTextField(TextField vaadinTextField) {
-		this.vaadinTextField = vaadinTextField;
 	}
 
 	public Element getBotonesCG() {
@@ -379,6 +376,38 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
 		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public TextField getBuscador() {
+		return buscador;
+	}
+
+	public void setBuscador(TextField buscador) {
+		this.buscador = buscador;
+	}
+
+	public HorizontalLayout getHuecoProductos() {
+		return huecoProductos;
+	}
+
+	public void setHuecoProductos(HorizontalLayout huecoProductos) {
+		this.huecoProductos = huecoProductos;
+	}
+
+	public Element getHuecoIzquierda() {
+		return huecoIzquierda;
+	}
+
+	public void setHuecoIzquierda(Element huecoIzquierda) {
+		this.huecoIzquierda = huecoIzquierda;
+	}
+
+	public Element getHuecoDerecha() {
+		return huecoDerecha;
+	}
+
+	public void setHuecoDerecha(Element huecoDerecha) {
+		this.huecoDerecha = huecoDerecha;
 	}
 
 

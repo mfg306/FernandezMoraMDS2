@@ -10,6 +10,8 @@ class VistaMensaje_recibido extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
+        			width: 100%;
+
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; background-color: #F5F5F5" id="vaadinVerticalLayout">

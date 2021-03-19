@@ -2,6 +2,7 @@ package fernandezmora.interfaz;
 
 import java.util.Vector;
 
+
 import vistas.VistaProductos_categoria;
 
 public class Productos_categoria extends VistaProductos_categoria {
