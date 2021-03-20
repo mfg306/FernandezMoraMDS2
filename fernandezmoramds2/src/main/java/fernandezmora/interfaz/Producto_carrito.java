@@ -19,6 +19,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 	public void abrir_Producto_Carrito() {
 		for(Producto_carrito pca : this._productos_carrito._list_Producto_carrito) {
 			pca.getVerProductoCarrito().addClickListener(event ->{
+				this._productos_carrito._ver_carrito.getVaadinHorizontalLayout().setVisible(false);
 				this._productos_carrito._ver_carrito.getProductosCarrito().setVisible(false);
 				this._productos_carrito._ver_carrito.getProductoURUNR().as(VerticalLayout.class).add(pca._producto);
 			});

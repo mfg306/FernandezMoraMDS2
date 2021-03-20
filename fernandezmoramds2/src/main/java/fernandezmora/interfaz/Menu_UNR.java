@@ -22,18 +22,19 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
 			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);
 			this._ver_carrito_UNR.getProductosCarrito().setVisible(true);
+			this._ver_carrito_UNR.getProductoURUNR().setVisible(false);
 		}
 			if (this._uNR_._ver_categorias != null)
 				this._uNR_._ver_categorias._categorias.setVisible(false);
 
 			this._ver_carrito_UNR.getProductosCarrito().setVisible(true);
-			//this._ver_carrito_UNR.getProductoURUNR().setVisible(false);
 
 	}
 
 	public void abrirCarrito() {
 		this.getBoton_carrito().addClickListener(event -> {
 			this._uNR_.getBotonVerCategorias().setVisible(false);
+			this._ver_carrito.getVaadinHorizontalLayout().setVisible(true);
 			ocultarInformacionCarrito();
 			this.layout.add(this._ver_carrito_UNR);
 		});
