@@ -11,6 +11,10 @@ public class Producto extends VistaProducto{
 	public Comentarios _comentarios;
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 	
+	public Producto() {
+		
+	}
+	
 	public void Añadir_al_carrito() {
 		throw new UnsupportedOperationException();
 	}

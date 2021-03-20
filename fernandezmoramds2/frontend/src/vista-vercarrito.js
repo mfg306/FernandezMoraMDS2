@@ -1,7 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import './vista-menuurunr.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import './vista-productoscarrito.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
@@ -19,7 +18,7 @@ class VistaVer_carrito extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout1">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; align-self: center;" id="vaadinHorizontalLayout">
-  <vista-productoscarrito></vista-productoscarrito>
+  <vaadin-horizontal-layout theme="spacing" id="productosCarrito"></vaadin-horizontal-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-self: center;" id="vaadinVerticalLayout">
    <span style="align-self: center;" id="span">Precio total de la compra:</span>
    <span style="align-self: center;" id="span1">Precio $$</span>
@@ -28,9 +27,8 @@ class VistaVer_carrito extends PolymerElement {
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" id="productosCarrito" style="width: 100%;"></vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="productoURUNR" style="width: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
+<vaadin-vertical-layout theme="spacing" id="productoURUNR" style="width: 100%;"></vaadin-vertical-layout>
 `;
     }
 

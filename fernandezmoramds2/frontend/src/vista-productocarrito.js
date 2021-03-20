@@ -16,15 +16,15 @@ class VistaProducto_carrito extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <img style="width: 100%; height: 100%;" id="img">
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout">
+<vaadin-vertical-layout id="vaadinVerticalLayout">
+ <img id="img">
+ <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout">
   <vaadin-select value="Item one" style="width: 100%;" id="vaadinSelect"></vaadin-select>
   <vaadin-button style="width: 100%;" id="vaadinButton">
     Eliminar 
   </vaadin-button>
   <vaadin-button id="verProductoCarrito" style="width: 100%;">
-   Ver producto
+    Ver producto 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

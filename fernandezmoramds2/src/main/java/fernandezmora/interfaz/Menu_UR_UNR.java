@@ -4,7 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaMenu_urunr;
 
-public abstract class  Menu_UR_UNR extends VistaMenu_urunr {
+public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 	public UR_UNR _uR_UNR;
 	public Ver_carrito _ver_carrito;
 	public Buscador _buscador;
@@ -15,12 +15,10 @@ public abstract class  Menu_UR_UNR extends VistaMenu_urunr {
 		 * oculto*/
 		this.getDatos_cuenta().setVisible(false);
 		layout = this.getMenu().as(VerticalLayout.class);
-		this._ver_carrito = new Ver_carrito(this);
-		abrirCarrito();
-		
 	}
 	
-	public abstract void abrirCarrito();
+	public abstract void abrir_carrito();
+
 	
 	
 }

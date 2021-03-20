@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Menu_UNR extends Menu_UR_UNR {
@@ -14,32 +15,39 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this._ver_carrito_UNR = new Ver_carrito_UNR(this);
 		layout = this.getMenu().as(VerticalLayout.class);
 		abrir_iniciar_sesion();
-		abrirCarrito();
+
+		abrir_carrito();
 	}
-	
-	public void ocultarInformacionCarrito() {
-		if (this._ver_carrito_UNR._solicitar_identificación != null) {
-			this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
-			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);
-			this._ver_carrito_UNR.getProductosCarrito().setVisible(true);
-			this._ver_carrito_UNR.getProductoURUNR().setVisible(false);
+
+	public void ocultar_Informacion_Al_Abrir_Carrito() {
+		if (this._uNR_._ver_categorias != null) {
+			this._uNR_.layout.remove(this._uNR_._ver_categorias._categorias);
 		}
-			if (this._uNR_._ver_categorias != null)
-				this._uNR_._ver_categorias._categorias.setVisible(false);
 
-			this._ver_carrito_UNR.getProductosCarrito().setVisible(true);
-
+		/* Ver si se habia ocultado el carrito porque estaba abierto el de solicitar identificacion*/
+		if (this._ver_carrito_UNR.getVaadinVerticalLayout().isVisible() == false) {
+			this._ver_carrito_UNR.getVaadinVerticalLayout().setVisible(true);
+			this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
+		}
+		
 	}
 
-	public void abrirCarrito() {
+	@Override
+	public void abrir_carrito() {
 		this.getBoton_carrito().addClickListener(event -> {
-			this._uNR_.getBotonVerCategorias().setVisible(false);
-			this._ver_carrito.getVaadinHorizontalLayout().setVisible(true);
-			ocultarInformacionCarrito();
-			this.layout.add(this._ver_carrito_UNR);
+			ocultar_Informacion_Al_Abrir_Carrito();
+			
+			if(this._ver_carrito_UNR.getProductosCarrito().isVisible() == false) {
+				this._ver_carrito_UNR.inicializar();
+				this._ver_carrito_UNR.getProductosCarrito().setVisible(true);		
+			}
+			
+
+			if(this._ver_carrito_UNR.getProductosCarrito().isVisible() == false) this._ver_carrito_UNR.getProductosCarrito().setVisible(true);
+			else this._uNR_.layout.add(this._ver_carrito_UNR); // Se añade en la pagina principal
 		});
 	}
-	
+
 	public void ocultarInformacionIniciarSesion() {
 		this.getVaadinHorizontalLayout().setVisible(false);
 		this._uNR_.getBotonVerCategorias().setVisible(false);
@@ -60,7 +68,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
 			ocultarInformacionIniciarSesion();
 			this.layout.add(this._iniciar_sesion_UNR);
-			
+
 		});
 
 	}

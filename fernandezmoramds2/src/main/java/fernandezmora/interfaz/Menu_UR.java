@@ -20,7 +20,7 @@ public class Menu_UR extends Menu_UR_UNR {
 	}
 
 	@Override
-	public void abrirCarrito() {
+	public void abrir_carrito() {
 		// TODO Auto-generated method stub
 		
 	}
