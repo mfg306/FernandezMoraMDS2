@@ -19,6 +19,7 @@ public class Categorias extends VistaCategorias {
 		this._ver_categorias = vCategorias;
 		this._list_Categorias = new Vector<Categoria>();
 		add_categoria();
+		add_categoria();
 	
 	}
 

@@ -16,6 +16,8 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		this._productos_carrito = new Productos_carrito(this);
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		solicitar_Identificacion();
+		this._productos_carrito.anadir_Producto_Carrito();
+		this._productos_carrito.anadir_Producto_Carrito();
 	}
 	
 	public void solicitar_Identificacion() {
@@ -23,6 +25,7 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		this._solicitar_identificación = new Solicitar_identificación(this);
 		this.getVaadinHorizontalLayout().setVisible(false);
 		this._productos_carrito._ver_carrito.getProductosCarrito().setVisible(false);
+		this._productos_carrito._ver_carrito.getProductoURUNR().setVisible(false);
 		this._menu_UNR.layout.add(this._solicitar_identificación);
 		});
 		

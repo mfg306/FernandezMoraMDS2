@@ -34,6 +34,8 @@ public class VistaVer_carrito extends PolymerTemplate<VistaVer_carrito.VistaVer_
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("productosCarrito")
 	private HorizontalLayout productosCarrito;
+	@Id("productoURUNR")
+	private Element productoURUNR;
 	/**
      * Creates a new VistaVer_carrito.
      */
@@ -104,5 +106,13 @@ public class VistaVer_carrito extends PolymerTemplate<VistaVer_carrito.VistaVer_
 
 	public void setProductosCarrito(HorizontalLayout productosCarrito) {
 		this.productosCarrito = productosCarrito;
+	}
+
+	public Element getProductoURUNR() {
+		return productoURUNR;
+	}
+
+	public void setProductoURUNR(Element productoURUNR) {
+		this.productoURUNR = productoURUNR;
 	}
 }

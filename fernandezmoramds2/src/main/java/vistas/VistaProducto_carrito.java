@@ -31,6 +31,8 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 	private Select vaadinSelect;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("verProductoCarrito")
+	private Button verProductoCarrito;
 
 	/**
      * Creates a new VistaProducto_carrito.
@@ -85,5 +87,13 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public Button getVerProductoCarrito() {
+		return verProductoCarrito;
+	}
+
+	public void setVerProductoCarrito(Button verProductoCarrito) {
+		this.verProductoCarrito = verProductoCarrito;
 	}
 }
