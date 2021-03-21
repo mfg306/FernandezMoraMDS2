@@ -1,7 +1,5 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import vistas.VistaProducto_carrito;
 
 public class Producto_carrito extends VistaProducto_carrito {

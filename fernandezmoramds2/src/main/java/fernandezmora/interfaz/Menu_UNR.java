@@ -1,6 +1,5 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Menu_UNR extends Menu_UR_UNR {
@@ -23,12 +22,15 @@ public class Menu_UNR extends Menu_UR_UNR {
 		if (this._uNR_._ver_categorias != null) {
 			this._uNR_.layout.remove(this._uNR_._ver_categorias._categorias);
 		}
-
-		/* Ver si se habia ocultado el carrito porque estaba abierto el de solicitar identificacion*/
-		if (this._ver_carrito_UNR.getVaadinVerticalLayout().isVisible() == false) {
+		
+		
+		/*Esto lo he cambiado*/
+		if(this._ver_carrito_UNR._solicitar_identificación != null) {
+			this._ver_carrito_UNR.layout.remove(this._ver_carrito_UNR._solicitar_identificación);
 			this._ver_carrito_UNR.getVaadinVerticalLayout().setVisible(true);
-			this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
 		}
+		
+		this._ver_carrito_UNR.cerrar_Producto();
 		
 	}
 
@@ -37,14 +39,10 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this.getBoton_carrito().addClickListener(event -> {
 			ocultar_Informacion_Al_Abrir_Carrito();
 			
-			if(this._ver_carrito_UNR.getProductosCarrito().isVisible() == false) {
-				this._ver_carrito_UNR.inicializar();
-				this._ver_carrito_UNR.getProductosCarrito().setVisible(true);		
-			}
-			
-
-			if(this._ver_carrito_UNR.getProductosCarrito().isVisible() == false) this._ver_carrito_UNR.getProductosCarrito().setVisible(true);
-			else this._uNR_.layout.add(this._ver_carrito_UNR); // Se añade en la pagina principal
+			/*Aqui creo que he quitado dos setVisible que habia y he puesto este mas general que quitaba a esos dos
+			 * porque estaban dentro*/
+			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);	
+			this._uNR_.layout.add(this._ver_carrito_UNR);
 		});
 	}
 

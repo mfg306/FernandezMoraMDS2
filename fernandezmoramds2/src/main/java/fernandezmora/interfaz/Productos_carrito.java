@@ -2,9 +2,6 @@ package fernandezmora.interfaz;
 
 import java.util.Vector;
 
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import vistas.VistaProductos_carrito;
 
 public class Productos_carrito extends VistaProductos_carrito {
@@ -15,26 +12,15 @@ public class Productos_carrito extends VistaProductos_carrito {
 	
 	public Productos_carrito(Ver_carrito vc) {
 		this._ver_carrito = vc;
+
 		this._list_Producto_carrito = new Vector<Producto_carrito>();
 		
 		this.anadir_Producto_Carrito();
 		this.anadir_Producto_Carrito();
 		this.anadir_Producto_Carrito();
-		
-		abrir_Producto_Carrito();
-			
+					
 	}
 	
-	public void abrir_Producto_Carrito() {
-		for(Producto_carrito pca : this._list_Producto_carrito) {
-			pca.getVerProductoCarrito().addClickListener(event ->{
-				this._ver_carrito.getVaadinHorizontalLayout().setVisible(false);
-				this._ver_carrito.getProductosCarrito().setVisible(false);
-				
-				this._ver_carrito.getProductoURUNR().as(VerticalLayout.class).add(pca._producto);
-			});
-		}
-	}
 	
      public void anadir_Producto_Carrito() {
 		Producto_carrito p = new Producto_carrito(this);
