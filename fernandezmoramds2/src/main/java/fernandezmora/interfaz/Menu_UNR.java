@@ -14,7 +14,6 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this._ver_carrito_UNR = new Ver_carrito_UNR(this);
 		layout = this.getMenu().as(VerticalLayout.class);
 		abrir_iniciar_sesion();
-
 		abrir_carrito();
 	}
 
@@ -42,13 +41,14 @@ public class Menu_UNR extends Menu_UR_UNR {
 			/*Aqui creo que he quitado dos setVisible que habia y he puesto este mas general que quitaba a esos dos
 			 * porque estaban dentro*/
 			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);	
+			this._uNR_.getBotonVerCategorias().setVisible(false);
 			this._uNR_.layout.add(this._ver_carrito_UNR);
 		});
 	}
 
 	public void ocultarInformacionIniciarSesion() {
 		this.getVaadinHorizontalLayout().setVisible(false);
-		this._uNR_.getBotonVerCategorias().setVisible(false);
+	    this._uNR_.getBotonVerCategorias().setVisible(false);
 
 		if (this._uNR_._ver_categorias != null)
 			this._uNR_._ver_categorias._categorias.setVisible(false);

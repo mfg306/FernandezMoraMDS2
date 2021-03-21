@@ -22,7 +22,7 @@ public class Ver_carrito_UNR extends Ver_carrito {
 	
 	public void inicializar() {
 		this._solicitar_identificación = new Solicitar_identificación(this);
-		this._menu_UNR._uNR_.getBotonVerCategorias().setVisible(false);
+		//this._menu_UNR._uNR_.getBotonVerCategorias().setVisible(false);
 		
 		this.getProductosCarrito().add(this._productos_carrito);
 		
