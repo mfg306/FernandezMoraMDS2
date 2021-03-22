@@ -22,8 +22,6 @@ public class VistaProductos_oferta extends PolymerTemplate<VistaProductos_oferta
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("menu")
-	private Element menu;
 	@Id("lista_productos_oferta")
 	private HorizontalLayout lista_productos_oferta;
 	@Id("vaadinHorizontalLayout")
@@ -57,13 +55,6 @@ public class VistaProductos_oferta extends PolymerTemplate<VistaProductos_oferta
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public Element getMenu() {
-		return menu;
-	}
-
-	public void setMenu(Element menu) {
-		this.menu = menu;
-	}
 
 	public HorizontalLayout getLista_productos_oferta() {
 		return lista_productos_oferta;

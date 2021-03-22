@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-oferta template.
@@ -19,8 +20,8 @@ public class VistaOferta extends PolymerTemplate<VistaOferta.VistaOfertaModel> {
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("oferta")
-	private Element oferta;
+	@Id("botonOferta")
+	private Button botonOferta;
 
 	/**
      * Creates a new VistaOferta.
@@ -44,11 +45,12 @@ public class VistaOferta extends PolymerTemplate<VistaOferta.VistaOfertaModel> {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public Element getOferta() {
-		return oferta;
+
+	public Button getBotonOferta() {
+		return botonOferta;
 	}
 
-	public void setOferta(Element oferta) {
-		this.oferta = oferta;
+	public void setBotonOferta(Button o) {
+		this.botonOferta = o;
 	}
 }

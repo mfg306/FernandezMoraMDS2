@@ -1,7 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import './vista-oferta.js';
 
 class VistaOfertas extends PolymerElement {
 
@@ -19,7 +18,7 @@ class VistaOfertas extends PolymerElement {
  <vaadin-button style="align-self: center;" id="boton_anterior">
    &lt; 
  </vaadin-button>
- <vista-oferta style="width: 100%;" id="oferta"></vista-oferta>
+ <vaadin-horizontal-layout theme="spacing" id="listaOfertas" style="width: 100%;"></vaadin-horizontal-layout>
  <vaadin-button style="align-self: center;" id="boton_siguiente">
    &gt; 
  </vaadin-button>

@@ -7,12 +7,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import vistas.VistaCategorias;
 
 public class Categorias extends VistaCategorias {
-	/*
-	 * private event _ver_anteriores; private event _ver_siguientes; private Panel
-	 * _panel; private Label _numero_paginaL;
-	 */
+
 	public Ver_categorias _ver_categorias;
-	public Categoria _list_Categoria;
 	public Vector<Categoria> _list_Categorias = new Vector<Categoria>();
 
 	public Categorias(Ver_categorias vCategorias) {
@@ -24,9 +20,9 @@ public class Categorias extends VistaCategorias {
 	}
 
 	public void add_categoria() {
-		this._list_Categoria = new Categoria(this);
-		this._list_Categorias.add(this._list_Categoria);
-		this.getLista_categorias().as(VerticalLayout.class).add(this._list_Categoria);
+		Categoria c = new Categoria(this);
+		this._list_Categorias.add(c);
+		this.getLista_categorias().as(VerticalLayout.class).add(c);
 
 	}
 	

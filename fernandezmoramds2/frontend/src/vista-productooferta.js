@@ -1,6 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaProducto_oferta extends PolymerElement {
 
@@ -21,6 +22,9 @@ class VistaProducto_oferta extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="align-items: flex-end; width: 100%;" id="vaadinVerticalLayout1">
    <span id="precio_original">Precio Original</span>
    <span style="color: red;" id="precio_rebajado">Precio Rebajado</span>
+   <vaadin-button id="botonProductoOferta">
+    Ver producto
+   </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

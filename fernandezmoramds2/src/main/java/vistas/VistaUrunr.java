@@ -24,6 +24,8 @@ public class VistaUrunr extends PolymerTemplate<VistaUrunr.VistaUrunrModel> {
 	private Button botonVerCategorias;
 	@Id("huecoMenu")
 	private Element huecoMenu;
+	@Id("ofertas")
+	private Element ofertas;
 	/**
      * Creates a new VistaUrunr.
      */
@@ -61,5 +63,13 @@ public class VistaUrunr extends PolymerTemplate<VistaUrunr.VistaUrunrModel> {
 
 	public void setHuecoMenu(Element huecoMenu) {
 		this.huecoMenu = huecoMenu;
+	}
+
+	public Element getOfertas() {
+		return ofertas;
+	}
+
+	public void setOfertas(Element ofertas) {
+		this.ofertas = ofertas;
 	}
 }

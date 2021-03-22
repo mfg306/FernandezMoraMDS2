@@ -23,10 +23,10 @@ public class VistaOfertas extends PolymerTemplate<VistaOfertas.VistaOfertasModel
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("boton_anterior")
 	private Button boton_anterior;
-	@Id("oferta")
-	private Element oferta;
 	@Id("boton_siguiente")
 	private Button boton_siguiente;
+	@Id("listaOfertas")
+	private HorizontalLayout listaOfertas;
 
 	/**
      * Creates a new VistaOfertas.
@@ -58,13 +58,7 @@ public class VistaOfertas extends PolymerTemplate<VistaOfertas.VistaOfertasModel
 		this.boton_anterior = boton_anterior;
 	}
 
-	public Element getOferta() {
-		return oferta;
-	}
-
-	public void setOferta(Element oferta) {
-		this.oferta = oferta;
-	}
+	
 
 	public Button getBoton_siguiente() {
 		return boton_siguiente;
@@ -72,5 +66,13 @@ public class VistaOfertas extends PolymerTemplate<VistaOfertas.VistaOfertasModel
 
 	public void setBoton_siguiente(Button boton_siguiente) {
 		this.boton_siguiente = boton_siguiente;
+	}
+
+	public HorizontalLayout getListaOfertas() {
+		return listaOfertas;
+	}
+
+	public void setListaOfertas(HorizontalLayout listaOfertas) {
+		this.listaOfertas = listaOfertas;
 	}
 }

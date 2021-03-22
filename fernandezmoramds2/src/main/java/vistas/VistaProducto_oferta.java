@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-producto_oferta template.
@@ -34,6 +35,8 @@ public class VistaProducto_oferta extends PolymerTemplate<VistaProducto_oferta.V
 	private Element vaadinVerticalLayout1;
 	@Id("precio_rebajado")
 	private Span precio_rebajado;
+	@Id("botonProductoOferta")
+	private Button botonProductoOferta;
 
 	/**
      * Creates a new VistaProducto_oferta.
@@ -103,5 +106,13 @@ public class VistaProducto_oferta extends PolymerTemplate<VistaProducto_oferta.V
 
 	public void setPrecio_rebajado(Span precio_rebajado) {
 		this.precio_rebajado = precio_rebajado;
+	}
+
+	public Button getBotonProductoOferta() {
+		return botonProductoOferta;
+	}
+
+	public void setBotonProductoOferta(Button botonProductoOferta) {
+		this.botonProductoOferta = botonProductoOferta;
 	}
 }
