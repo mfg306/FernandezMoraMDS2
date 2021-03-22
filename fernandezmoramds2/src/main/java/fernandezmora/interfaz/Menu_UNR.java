@@ -19,7 +19,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 
 	public void ocultar_Informacion_Al_Abrir_Carrito() {
 		if (this._uNR_._ver_categorias != null) {
-			this._uNR_.layout.remove(this._uNR_._ver_categorias._categorias);
+			this._uNR_.layout.remove(this._uNR_._ver_categorias);
 		}
 		
 		

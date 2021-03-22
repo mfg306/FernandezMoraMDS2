@@ -24,7 +24,7 @@ public abstract class UR_UNR extends VistaUrunr{
 	public void abrir_Ver_Categorias() {
 		this.getBotonVerCategorias().addClickListener(event ->{
 			this.getBotonVerCategorias().setVisible(false);
-			this.layout.add(this._ver_categorias._categorias);
+			this.layout.add(this._ver_categorias);
 			
 		});
 	}

@@ -1,4 +1,4 @@
-package fernandezmora.interfaz;
+	package fernandezmora.interfaz;
 
 import java.util.Vector;
 
@@ -12,7 +12,7 @@ public class Categorias extends VistaCategorias {
 	 * _panel; private Label _numero_paginaL;
 	 */
 	public Ver_categorias _ver_categorias;
-	//public Categoria _list_Categoria;
+	public Categoria _list_Categoria;
 	public Vector<Categoria> _list_Categorias = new Vector<Categoria>();
 
 	public Categorias(Ver_categorias vCategorias) {
@@ -20,14 +20,25 @@ public class Categorias extends VistaCategorias {
 		this._list_Categorias = new Vector<Categoria>();
 		add_categoria();
 		add_categoria();
-	
+		abrir_Categoria();
 	}
 
 	public void add_categoria() {
-		Categoria ca = new Categoria(this);
-		this._list_Categorias.add(ca);
-		this.getLista_categorias().as(VerticalLayout.class).add(ca);
+		this._list_Categoria = new Categoria(this);
+		this._list_Categorias.add(this._list_Categoria);
+		this.getLista_categorias().as(VerticalLayout.class).add(this._list_Categoria);
 
+	}
+	
+	public void abrir_Categoria() {
+		for(Categoria c : this._list_Categorias) {
+			c.getCategoria1().addClickListener(event->{
+				this.getLista_categorias().as(VerticalLayout.class).removeAll();
+				this.getLista_categorias().as(VerticalLayout.class).add(c._productos_categoria);
+				
+				
+			});
+		}
 	}
 
 	public void Ver_anteriores() {

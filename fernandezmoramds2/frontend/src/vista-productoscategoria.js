@@ -1,8 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import './vista-menuurunr.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaProductos_categoria extends PolymerElement {
 
@@ -27,6 +27,7 @@ class VistaProductos_categoria extends PolymerElement {
     &gt; 
   </vaadin-button>
  </vaadin-horizontal-layout>
+ <vaadin-vertical-layout theme="spacing" id="verProductoCategoria" style="width: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }

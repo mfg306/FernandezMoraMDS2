@@ -32,6 +32,8 @@ public class VistaProductos_categoria extends PolymerTemplate<VistaProductos_cat
 	private Span numero_pagina;
 	@Id("boton_pagina_siguiente")
 	private Button boton_pagina_siguiente;
+	@Id("verProductoCategoria")
+	private Element verProductoCategoria;
 
 	/**
      * Creates a new VistaProductos_categoria.
@@ -95,5 +97,13 @@ public class VistaProductos_categoria extends PolymerTemplate<VistaProductos_cat
 
 	public void setBoton_pagina_siguiente(Button boton_pagina_siguiente) {
 		this.boton_pagina_siguiente = boton_pagina_siguiente;
+	}
+
+	public Element getVerProductoCategoria() {
+		return verProductoCategoria;
+	}
+
+	public void setVerProductoCategoria(Element verProductoCategoria) {
+		this.verProductoCategoria = verProductoCategoria;
 	}
 }
