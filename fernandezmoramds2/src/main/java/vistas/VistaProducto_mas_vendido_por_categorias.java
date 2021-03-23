@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-producto_mas_vendido_por_categorias template.
@@ -22,6 +23,8 @@ public class VistaProducto_mas_vendido_por_categorias extends PolymerTemplate<Vi
 	private Element vaadinVerticalLayout;
 	@Id("imagen_producto")
 	private Image imagen_producto;
+	@Id("botonproductoMasVendidoPorCategoria")
+	private Button botonproductoMasVendidoPorCategoria;
 
 	/**
      * Creates a new VistaProducto_mas_vendido_por_categorias.
@@ -51,5 +54,13 @@ public class VistaProducto_mas_vendido_por_categorias extends PolymerTemplate<Vi
 
 	public void setImagen_producto(Image imagen_producto) {
 		this.imagen_producto = imagen_producto;
+	}
+
+	public Button getBotonproductoMasVendidoPorCategoria() {
+		return botonproductoMasVendidoPorCategoria;
+	}
+
+	public void setBotonproductoMasVendidoPorCategoria(Button botonproductoMasVendidoPorCategoria) {
+		this.botonproductoMasVendidoPorCategoria = botonproductoMasVendidoPorCategoria;
 	}
 }

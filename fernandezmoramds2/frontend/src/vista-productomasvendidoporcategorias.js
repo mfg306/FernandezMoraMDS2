@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaProducto_mas_vendido_por_categorias extends PolymerElement {
 
@@ -15,6 +16,9 @@ class VistaProducto_mas_vendido_por_categorias extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <img style="width: 100%; height: 100%;" id="imagen_producto">
+ <vaadin-button id="botonproductoMasVendidoPorCategoria" style="align-self: center;">
+  Ver producto
+ </vaadin-button>
 </vaadin-vertical-layout>
 `;
     }

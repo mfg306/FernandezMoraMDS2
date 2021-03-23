@@ -26,6 +26,8 @@ public class VistaUrunr extends PolymerTemplate<VistaUrunr.VistaUrunrModel> {
 	private Element huecoMenu;
 	@Id("ofertas")
 	private Element ofertas;
+	@Id("productosMasVendidosPorCategorias")
+	private Element productosMasVendidosPorCategorias;
 	/**
      * Creates a new VistaUrunr.
      */
@@ -71,5 +73,13 @@ public class VistaUrunr extends PolymerTemplate<VistaUrunr.VistaUrunrModel> {
 
 	public void setOfertas(Element ofertas) {
 		this.ofertas = ofertas;
+	}
+
+	public Element getProductosMasVendidosPorCategorias() {
+		return productosMasVendidosPorCategorias;
+	}
+
+	public void setProductosMasVendidosPorCategorias(Element productosMasVendidosPorCategorias) {
+		this.productosMasVendidosPorCategorias = productosMasVendidosPorCategorias;
 	}
 }

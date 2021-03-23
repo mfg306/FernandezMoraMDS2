@@ -26,17 +26,9 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 	private Span span;
 	@Id("clasificar_categorias")
 	private Select clasificar_categorias;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
 	@Id("lista_productos_categoria")
 	private HorizontalLayout lista_productos_categoria;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
-
+	
 	/**
      * Creates a new VistaProductos_mas_vendidos_por_categorias.
      */
@@ -75,29 +67,7 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 		this.clasificar_categorias = clasificar_categorias;
 	}
 
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
+	
 
 	public HorizontalLayout getLista_productos_categoria() {
 		return lista_productos_categoria;
@@ -107,11 +77,5 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 		this.lista_productos_categoria = lista_productos_categoria;
 	}
 
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
+	
 }
