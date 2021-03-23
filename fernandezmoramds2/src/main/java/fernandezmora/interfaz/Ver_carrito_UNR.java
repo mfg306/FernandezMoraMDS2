@@ -36,6 +36,7 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		for(Producto_carrito pca : this._productos_carrito._list_Producto_carrito) {
 			pca.getVerProductoCarrito().addClickListener(event ->{
 				this.getVaadinHorizontalLayout().setVisible(false);
+				pca._producto.getVaadinVerticalLayout2().setVisible(false);
 				this.layout.add(pca._producto);
 			});
 		}

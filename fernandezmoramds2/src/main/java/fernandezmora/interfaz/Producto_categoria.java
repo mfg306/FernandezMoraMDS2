@@ -18,6 +18,7 @@ public class Producto_categoria extends VistaProducto_categoria{
 		this.getVerProducto().addClickListener(event->{
 			this._productos_categoria.getVaadinHorizontalLayout().setVisible(false);
 			this._productos_categoria.getLista_productos_categoria().setVisible(false);
+			this._producto.getVaadinVerticalLayout2().setVisible(false);
 			this._productos_categoria.getVerProductoCategoria().as(VerticalLayout.class).add(this._producto);
 		});
 	}

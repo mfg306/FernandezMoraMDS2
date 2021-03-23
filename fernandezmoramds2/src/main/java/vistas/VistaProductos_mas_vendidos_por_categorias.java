@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.html.H2;
 
 /**
  * A Designer generated component for the vista-productos_mas_vendidos_por_categorias template.
@@ -22,12 +23,12 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("span")
-	private Span span;
 	@Id("clasificar_categorias")
 	private Select clasificar_categorias;
 	@Id("lista_productos_categoria")
 	private HorizontalLayout lista_productos_categoria;
+	@Id("getTituloMasVendidos")
+	private H2 getTituloMasVendidos;
 	
 	/**
      * Creates a new VistaProductos_mas_vendidos_por_categorias.
@@ -51,13 +52,6 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public Span getSpan() {
-		return span;
-	}
-
-	public void setSpan(Span span) {
-		this.span = span;
-	}
 
 	public Select getClasificar_categorias() {
 		return clasificar_categorias;

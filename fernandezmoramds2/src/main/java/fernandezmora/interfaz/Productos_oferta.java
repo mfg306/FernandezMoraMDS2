@@ -30,7 +30,9 @@ public class Productos_oferta extends VistaProductos_oferta{
 		for(Producto_oferta pof : this._list_Producto_oferta) {
 			pof.getBotonProductoOferta().addClickListener(event ->{
 				this._list_Ofertas._ofertas._uR_UNR.layoutOfertas.remove(this._list_Ofertas._productos_oferta);
+				pof._producto.getVaadinVerticalLayout2().setVisible(false);
 				this._list_Ofertas._ofertas._uR_UNR.layoutOfertas.add(pof._producto);
+				
 			});
 		}
 	}
