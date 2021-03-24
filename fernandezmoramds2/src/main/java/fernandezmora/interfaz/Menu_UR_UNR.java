@@ -11,9 +11,6 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 	public VerticalLayout layout;
 	
 	public Menu_UR_UNR() {
-		/*El primer usuario que va a entrar es el UNR, por lo que ponemos el desplegable del UR 
-		 * oculto*/
-		this.getDatos_cuenta().setVisible(false);
 		layout = this.getMenu().as(VerticalLayout.class);
 	}
 	

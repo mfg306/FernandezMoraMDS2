@@ -1,6 +1,7 @@
 package fernandezmora.interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.select.Select;
 
 public class Menu_UNR extends Menu_UR_UNR {
 	public UNR_ _uNR_;
@@ -13,6 +14,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		_iniciar_sesion_UNR = new Iniciar_sesion_UNR(this);
 		this._ver_carrito_UNR = new Ver_carrito_UNR(this);
 		layout = this.getMenu().as(VerticalLayout.class);
+		
 		abrir_iniciar_sesion();
 		abrir_carrito();
 	}
@@ -24,8 +26,6 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this._uNR_.layout.remove(this._uNR_._ver_categorias);
 		}
 		
-		
-		/*Esto lo he cambiado*/
 		if(this._ver_carrito_UNR._solicitar_identificación != null) {
 			this._ver_carrito_UNR.layout.remove(this._ver_carrito_UNR._solicitar_identificación);
 			this._ver_carrito_UNR.getVaadinVerticalLayout().setVisible(true);
@@ -40,8 +40,6 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this.getBoton_carrito().addClickListener(event -> {
 			ocultar_Informacion_Al_Abrir_Carrito();
 			
-			/*Aqui creo que he quitado dos setVisible que habia y he puesto este mas general que quitaba a esos dos
-			 * porque estaban dentro*/
 			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);	
 			ocultar_Informacion_PaginaInicial();
 			this._uNR_.getBotonVerCategorias().setVisible(false);

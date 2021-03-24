@@ -37,20 +37,7 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 	private Element vaadinItem2;
 	@Id("buscador_productos")
 	private Element buscador_productos;
-	@Id("datos_cuenta")
-	private Select datos_cuenta;
-	@Id("vaadinListBox1")
-	private Element vaadinListBox1;
-	@Id("vaadinItem3")
-	private Element vaadinItem3;
-	@Id("vaadinItem4")
-	private Element vaadinItem4;
-	@Id("vaadinItem5")
-	private Element vaadinItem5;
-	@Id("vaadinItem6")
-	private Element vaadinItem6;
-	@Id("vaadinItem7")
-	private Element vaadinItem7;
+
 	@Id("boton_iniciar_sesion")
 	private Button boton_iniciar_sesion;
 	@Id("boton_carrito")
@@ -143,62 +130,6 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 
 	public void setBuscador_productos(Element buscador_productos) {
 		this.buscador_productos = buscador_productos;
-	}
-
-	public Select getDatos_cuenta() {
-		return datos_cuenta;
-	}
-
-	public void setDatos_cuenta(Select datos_cuenta) {
-		this.datos_cuenta = datos_cuenta;
-	}
-
-	public Element getVaadinListBox1() {
-		return vaadinListBox1;
-	}
-
-	public void setVaadinListBox1(Element vaadinListBox1) {
-		this.vaadinListBox1 = vaadinListBox1;
-	}
-
-	public Element getVaadinItem3() {
-		return vaadinItem3;
-	}
-
-	public void setVaadinItem3(Element vaadinItem3) {
-		this.vaadinItem3 = vaadinItem3;
-	}
-
-	public Element getVaadinItem4() {
-		return vaadinItem4;
-	}
-
-	public void setVaadinItem4(Element vaadinItem4) {
-		this.vaadinItem4 = vaadinItem4;
-	}
-
-	public Element getVaadinItem5() {
-		return vaadinItem5;
-	}
-
-	public void setVaadinItem5(Element vaadinItem5) {
-		this.vaadinItem5 = vaadinItem5;
-	}
-
-	public Element getVaadinItem6() {
-		return vaadinItem6;
-	}
-
-	public void setVaadinItem6(Element vaadinItem6) {
-		this.vaadinItem6 = vaadinItem6;
-	}
-
-	public Element getVaadinItem7() {
-		return vaadinItem7;
-	}
-
-	public void setVaadinItem7(Element vaadinItem7) {
-		this.vaadinItem7 = vaadinItem7;
 	}
 
 	public Button getBoton_iniciar_sesion() {

@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
 import './vista-buscador.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-item/src/vaadin-item.js';
 
@@ -36,25 +36,6 @@ class VistaMenu_urunr extends PolymerElement {
    </vaadin-list-box>
   </vaadin-select>
   <vista-buscador style="width: 100%;" id="buscador_productos"></vista-buscador>
-  <vaadin-select value="Item one" id="datos_cuenta">
-   <vaadin-list-box selected="0" id="vaadinListBox1">
-    <vaadin-item selected id="vaadinItem3">
-      Mi Perfil 
-    </vaadin-item>
-    <vaadin-item id="vaadinItem4">
-      Mis pedidos 
-    </vaadin-item>
-    <vaadin-item id="vaadinItem5">
-      Mis correos 
-    </vaadin-item>
-    <vaadin-item id="vaadinItem6">
-      Configuración de perfil 
-    </vaadin-item>
-    <vaadin-item id="vaadinItem7">
-      Cerrar sesión 
-    </vaadin-item>
-   </vaadin-list-box>
-  </vaadin-select>
   <vaadin-button theme="primary" id="boton_iniciar_sesion">
     Iniciar sesión 
   </vaadin-button>
