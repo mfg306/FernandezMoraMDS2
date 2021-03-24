@@ -25,8 +25,6 @@ public class VistaIntroducir_datos_compra extends PolymerTemplate<VistaIntroduci
 	private Element vaadinVerticalLayout;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
-	@Id("div")
-	private Div div;
 	@Id("span")
 	private Span span;
 	@Id("direccion_envio")
@@ -66,13 +64,6 @@ public class VistaIntroducir_datos_compra extends PolymerTemplate<VistaIntroduci
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
 	}
 
-	public Div getDiv() {
-		return div;
-	}
-
-	public void setDiv(Div div) {
-		this.div = div;
-	}
 
 	public Span getSpan() {
 		return span;
