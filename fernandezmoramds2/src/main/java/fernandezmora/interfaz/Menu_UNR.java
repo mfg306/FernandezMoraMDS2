@@ -23,7 +23,6 @@ public class Menu_UNR extends Menu_UR_UNR {
 		abrir_carrito();
 	}
 	
-	
 
 	public void ocultar_Informacion_Al_Abrir_Carrito() {
 		if (this._uNR_._ver_categorias != null) {
@@ -70,6 +69,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 
 	public void ocultar_Informacion_PaginaInicial() {
 		this._uNR_.layoutOfertas.setVisible(false);
+		this._uNR_.layoutProductosMasVendidosPorCategorias.setVisible(false);
 	}
 	
 	
@@ -77,7 +77,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
 			ocultarInformacionIniciarSesion();
-			//ocultar_Informacion_PaginaInicial();
+			ocultar_Informacion_PaginaInicial();
 			this.layout.add(this._iniciar_sesion_UNR);
 
 		});
