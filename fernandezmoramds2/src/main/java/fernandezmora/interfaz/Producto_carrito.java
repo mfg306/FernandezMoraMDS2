@@ -8,8 +8,12 @@ public class Producto_carrito extends VistaProducto_carrito {
 	
 	
 	public Producto_carrito(Productos_carrito pc) {
+		inicializar(pc);
+	}
+	
+	public void inicializar(Productos_carrito pc) {
 		this._productos_carrito = pc;
-		this._producto = new Producto();		
+		this._producto = new Producto();	
 	}
 
 	public void Editar_cantidad() {

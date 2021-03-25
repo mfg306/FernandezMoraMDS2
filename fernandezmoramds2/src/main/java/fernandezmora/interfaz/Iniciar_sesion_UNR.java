@@ -12,6 +12,10 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	public VerticalLayout layout;
 
 	public Iniciar_sesion_UNR(Menu_UNR munr) {
+		inicializar(munr);
+	}
+	
+	public void inicializar(Menu_UNR munr) {
 		this._menu_UNR = munr;
 		this._recuperar_contrasenia = new Recuperar_contrasenia(this);
 		this._registrarse = new Registrarse(this);
@@ -21,7 +25,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this.getBoton_iniciar_sesion_google().setVisible(true);
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
-
 	}
 
 	public void abrir_RecuperarContraseña() {

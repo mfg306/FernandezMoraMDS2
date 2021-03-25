@@ -13,6 +13,10 @@ public class Productos_oferta extends VistaProductos_oferta{
 	public Vector<Producto_oferta> _list_Producto_oferta = new Vector<Producto_oferta>();
 	
 	public Productos_oferta(Oferta of) {
+		inicializar(of);
+	}
+	
+	public void inicializar(Oferta of) {
 		this._list_Ofertas = of;
 		add_productos_oferta();
 		add_productos_oferta();

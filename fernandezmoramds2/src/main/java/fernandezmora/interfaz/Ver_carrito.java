@@ -10,7 +10,6 @@ public abstract class Ver_carrito extends VistaVer_carrito{
 	public VerticalLayout layout;
 	
 	public Ver_carrito() {
-		
 		realizar_compra();
 	}
 	

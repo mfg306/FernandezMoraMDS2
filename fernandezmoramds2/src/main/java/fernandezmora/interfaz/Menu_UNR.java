@@ -10,6 +10,10 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public VerticalLayout layout;
 
 	public Menu_UNR(UNR_ unr) {
+		inicializar(unr);
+	}
+	
+	public void inicializar(UNR_ unr) {
 		_uNR_ = unr;
 		_iniciar_sesion_UNR = new Iniciar_sesion_UNR(this);
 		this._ver_carrito_UNR = new Ver_carrito_UNR(this);

@@ -12,7 +12,12 @@ public class Producto extends VistaProducto{
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 	
 	public Producto() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		this._comentarios = new Comentarios();
+
 	}
 	
 	public void Añadir_al_carrito() {

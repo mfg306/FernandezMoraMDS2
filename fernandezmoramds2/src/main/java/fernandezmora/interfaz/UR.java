@@ -9,10 +9,12 @@ public class UR extends UR_UNR {
 	public Menu_UR _menu_UR;
 	public Ver_producto_UR _ver_producto_UR;
 	
-	
 	public UR() {
+		inicializar();
+	}
+	
+	public void inicializar() {
 		_menu_UR = new Menu_UR(this);
-		this.getHuecoMenu().as(VerticalLayout.class).add(_menu_UR);
-				
+		this.getHuecoMenu().as(VerticalLayout.class).add(_menu_UR);	
 	}
 }

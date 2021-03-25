@@ -1,7 +1,5 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import vistas.VistaRegistrarse;
 
 public class Registrarse extends VistaRegistrarse {
@@ -12,6 +10,10 @@ public class Registrarse extends VistaRegistrarse {
 	public Confirmación_registro _confirmacion_registro;
 
 	public Registrarse(Iniciar_sesion_UNR iunr) {
+		inicializar(iunr);
+	}
+	
+	public void inicializar(Iniciar_sesion_UNR iunr) {
 		this._iniciar_sesion_UNR = iunr;
 		abrir_Iniciar_Sesion_Registrarse();
 	}

@@ -10,6 +10,10 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 	public Vector<Producto_mas_vendido_por_categoria> _list_Producto_mas_vendido_por_categoria = new Vector<Producto_mas_vendido_por_categoria>();
 
 	public Productos_mas_vendidos_por_categorias(UR_UNR urunr) {
+		inicializar(urunr);
+	}
+	
+	public void inicializar(UR_UNR urunr) {
 		this._uR_UNR = urunr;
 		this._list_Producto_mas_vendido_por_categoria = new Vector<Producto_mas_vendido_por_categoria>();
 		add_Producto_Mas_Vendido_Por_Categoria();

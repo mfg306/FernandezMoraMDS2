@@ -11,6 +11,10 @@ public class Productos_carrito extends VistaProductos_carrito {
 	
 	
 	public Productos_carrito(Ver_carrito vc) {
+		inicializar(vc);
+	}
+	
+	public void inicializar(Ver_carrito vc) {
 		this._ver_carrito = vc;
 
 		this._list_Producto_carrito = new Vector<Producto_carrito>();
@@ -18,7 +22,6 @@ public class Productos_carrito extends VistaProductos_carrito {
 		this.anadir_Producto_Carrito();
 		this.anadir_Producto_Carrito();
 		this.anadir_Producto_Carrito();
-					
 	}
 	
 	

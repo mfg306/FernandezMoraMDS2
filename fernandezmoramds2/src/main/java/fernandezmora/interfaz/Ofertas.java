@@ -12,6 +12,10 @@ public class Ofertas extends VistaOfertas {
 	public Vector<Oferta> _list_Ofertas = new Vector<Oferta>();
 	
 	public Ofertas(UR_UNR urunr) {
+		inicializar(urunr);
+	}
+	
+	public void inicializar(UR_UNR urunr) {
 		this._uR_UNR = urunr;
 	    add_oferta();
 	    add_oferta();

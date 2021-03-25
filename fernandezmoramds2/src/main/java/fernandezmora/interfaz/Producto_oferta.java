@@ -10,6 +10,10 @@ public class Producto_oferta extends VistaProducto_oferta{
 	public Producto _producto;
 	
 	public Producto_oferta(Productos_oferta pof) {
+		inicializar(pof);
+	}
+	
+	public void inicializar(Productos_oferta pof) {
 		this._productos_oferta = pof;
 		this._producto = new Producto();
 	}

@@ -12,6 +12,10 @@ public class Categorias extends VistaCategorias {
 	public Vector<Categoria> _list_Categorias = new Vector<Categoria>();
 
 	public Categorias(Ver_categorias vCategorias) {
+		inicializar(vCategorias);
+	}
+	
+	public void inicializar(Ver_categorias vCategorias) {
 		this._ver_categorias = vCategorias;
 		this._list_Categorias = new Vector<Categoria>();
 		add_categoria();

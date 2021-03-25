@@ -9,6 +9,10 @@ public class Producto_categoria extends VistaProducto_categoria{
 	public Producto _producto;
 	
 	public Producto_categoria(Productos_categoria pc) {
+		inicializar(pc);
+	}
+	
+	public void inicializar(Productos_categoria pc) {
 		this._productos_categoria = pc;
 		this._producto = new Producto();
 		abrir_Producto_Categoria();

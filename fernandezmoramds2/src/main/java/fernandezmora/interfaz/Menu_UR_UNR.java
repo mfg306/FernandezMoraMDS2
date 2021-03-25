@@ -11,6 +11,11 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 	public VerticalLayout layout;
 	
 	public Menu_UR_UNR() {
+		inicializar();
+	}
+	
+	
+	public void inicializar() {
 		layout = this.getMenu().as(VerticalLayout.class);
 	}
 	

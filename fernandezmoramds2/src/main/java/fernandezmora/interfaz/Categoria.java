@@ -10,10 +10,13 @@ public class Categoria extends VistaCategoria{
 	public VerticalLayout layout;
 	
 	public Categoria(Categorias c) {
+		inicializar(c);
+	}
+	
+	public void inicializar(Categorias c) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this._categorias = c;
 		this._productos_categoria = new Productos_categoria(this);
-		
 	}
 	
 	

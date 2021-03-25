@@ -10,11 +10,14 @@ public class Productos_categoria extends VistaProductos_categoria {
 	public Vector<Producto_categoria> _list_Producto_categoria = new Vector<Producto_categoria>();
 	
 	public Productos_categoria(Categoria c) {
+		inicializar(c);
+	}
+	
+	public void inicializar(Categoria c) {
 		this._list_Categoria = c;
 		this._list_Producto_categoria = new Vector<>();
 		add_Productos_Categoria();
 		add_Productos_Categoria();
-		
 	}
 	
 	public void add_Productos_Categoria() {
