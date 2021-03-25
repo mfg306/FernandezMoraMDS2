@@ -41,6 +41,7 @@ class VistaVer_bandeja_de_entrada extends PolymerElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
+<vaadin-vertical-layout theme="spacing" id="huecoMensajes" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 `;
     }
 

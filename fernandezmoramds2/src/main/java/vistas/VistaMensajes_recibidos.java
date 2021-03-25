@@ -22,8 +22,6 @@ public class VistaMensajes_recibidos extends PolymerTemplate<VistaMensajes_recib
 
     @Id("lista_mensajes_recibidos")
 	private Element lista_mensajes_recibidos;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("boton_crear_mensaje")
 	private Button boton_crear_mensaje;
 	@Id("vaadinHorizontalLayout")
@@ -34,6 +32,8 @@ public class VistaMensajes_recibidos extends PolymerTemplate<VistaMensajes_recib
 	private Span numero_de_pagina;
 	@Id("boton_pagina_siguiente")
 	private Button boton_pagina_siguiente;
+	@Id("hueco_mensajes_recibidos")
+	private Element hueco_mensajes_recibidos;
 	/**
      * Creates a new VistaMensajes_recibidos.
      */
@@ -54,14 +54,6 @@ public class VistaMensajes_recibidos extends PolymerTemplate<VistaMensajes_recib
 
 	public void setLista_mensajes_recibidos(Element lista_mensajes_recibidos) {
 		this.lista_mensajes_recibidos = lista_mensajes_recibidos;
-	}
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
 	public Button getBoton_crear_mensaje() {
@@ -102,5 +94,13 @@ public class VistaMensajes_recibidos extends PolymerTemplate<VistaMensajes_recib
 
 	public void setBoton_pagina_siguiente(Button boton_pagina_siguiente) {
 		this.boton_pagina_siguiente = boton_pagina_siguiente;
+	}
+
+	public Element getHueco_mensajes_recibidos() {
+		return hueco_mensajes_recibidos;
+	}
+
+	public void setHueco_mensajes_recibidos(Element hueco_mensajes_recibidos) {
+		this.hueco_mensajes_recibidos = hueco_mensajes_recibidos;
 	}
 }

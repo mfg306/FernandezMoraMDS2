@@ -44,6 +44,8 @@ public class VistaVer_bandeja_de_entrada extends PolymerTemplate<VistaVer_bandej
 	private Button cerrar_sesion;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("huecoMensajes")
+	private Element huecoMensajes;
 
 	/**
      * Creates a new VistaVer_bandeja_de_entrada.
@@ -138,6 +140,14 @@ public class VistaVer_bandeja_de_entrada extends PolymerTemplate<VistaVer_bandej
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Element getHuecoMensajes() {
+		return huecoMensajes;
+	}
+
+	public void setHuecoMensajes(Element huecoMensajes) {
+		this.huecoMensajes = huecoMensajes;
 	}
 
 }

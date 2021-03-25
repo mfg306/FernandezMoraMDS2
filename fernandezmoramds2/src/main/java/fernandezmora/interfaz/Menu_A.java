@@ -8,11 +8,11 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 
 	public Menu_A(Administrador _administrador) {
 		
-		inicializar(_administrador);
+		inicializarMenu(_administrador);
 		
 	}
 	
-	public void inicializar(Administrador _administrador) {
+	public void inicializarMenu(Administrador _administrador) {
 		this.getLogo().setSrc("");
 		
 		/*De la clase Ver_bandeja_de_entrada solo nos interesa quedarnos con la parte del menu*/
@@ -20,6 +20,8 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 		this.getBoton_recibidos().setVisible(false);
 		this.getVaadinVerticalLayout1().setVisible(false);
 		this.getSpan().setVisible(false);
+		this.getHuecoMensajes().setVisible(false);
+
 		
 		this._administrador = _administrador;
 		
@@ -46,12 +48,14 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 	 */
 	public void correo() {
 		this.getCorreo().addClickListener(event -> {
+			this.inicializar(); //metodo de Ver_Bandeja_de_entrada
 			_administrador.getVaadinHorizontalLayout().setVisible(false);
 			_administrador.getVaadinHorizontalLayout1().setVisible(false);
 			_administrador.getVaadinHorizontalLayout2().setVisible(false);
 			_administrador.getH1().setVisible(false);
-			this.getBoton_enviados().setVisible(true);
+			this.getBoton_enviados().setVisible(true); 
 			this.getBoton_recibidos().setVisible(true);
+			this.getHuecoMensajes().setVisible(true);
 			this.getVaadinVerticalLayout1().setVisible(true);
 			this.getSpan().setVisible(true);
 			

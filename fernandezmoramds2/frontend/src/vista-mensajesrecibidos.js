@@ -1,7 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaMensajes_recibidos extends PolymerElement {
 
@@ -16,10 +16,10 @@ class VistaMensajes_recibidos extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="lista_mensajes_recibidos">
- <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
  <vaadin-button id="boton_crear_mensaje">
    Crear mensaje 
  </vaadin-button>
+ <vaadin-vertical-layout theme="spacing" id="hueco_mensajes_recibidos"></vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; align-self: center; justify-content: center; align-items: center;" id="vaadinHorizontalLayout">
   <vaadin-button id="boton_pagina_anterior">
     &lt; 
