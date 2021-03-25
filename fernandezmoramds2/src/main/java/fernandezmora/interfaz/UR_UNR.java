@@ -17,15 +17,15 @@ public abstract class UR_UNR extends VistaUrunr {
 	public VerticalLayout layoutProductosMasVendidosPorCategorias;
 
 	public UR_UNR() {
-		inicializar();
+		inicializarURUNR();
 	}
 
-	public void inicializar() {
+	public void inicializarURUNR() {
+		this.layoutOfertas = this.getOfertas().as(VerticalLayout.class);
 		this._ver_categorias = new Ver_categorias(this);
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		abrir_Ver_Categorias();
 		this._ofertas = new Ofertas(this);
-		this.layoutOfertas = this.getOfertas().as(VerticalLayout.class);
 		this.layoutOfertas.add(this._ofertas);
 		this._productos_mas_vendidos_por_categorias = new Productos_mas_vendidos_por_categorias(this);
 		this.layoutProductosMasVendidosPorCategorias = this.getProductosMasVendidosPorCategorias()

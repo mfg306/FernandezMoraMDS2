@@ -21,8 +21,6 @@ public class VistaVer_pedidos extends PolymerTemplate<VistaVer_pedidos.VistaVer_
 
     @Id("menu")
 	private Element menu;
-	@Id("vistaMenu_urunr")
-	private Element vistaMenu_urunr;
 	@Id("div")
 	private Div div;
 	@Id("span")
@@ -50,14 +48,6 @@ public class VistaVer_pedidos extends PolymerTemplate<VistaVer_pedidos.VistaVer_
 
 	public void setMenu(Element menu) {
 		this.menu = menu;
-	}
-
-	public Element getVistaMenu_urunr() {
-		return vistaMenu_urunr;
-	}
-
-	public void setVistaMenu_urunr(Element vistaMenu_urunr) {
-		this.vistaMenu_urunr = vistaMenu_urunr;
 	}
 
 	public Div getDiv() {

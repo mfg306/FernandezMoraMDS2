@@ -23,8 +23,6 @@ public class VistaCambiar_contrasenia extends PolymerTemplate<VistaCambiar_contr
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("menu")
-	private Element menu;
 	@Id("div")
 	private Div div;
 	@Id("vaadinVerticalLayout1")
@@ -60,14 +58,6 @@ public class VistaCambiar_contrasenia extends PolymerTemplate<VistaCambiar_contr
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public Element getMenu() {
-		return menu;
-	}
-
-	public void setMenu(Element menu) {
-		this.menu = menu;
 	}
 
 	public Div getDiv() {

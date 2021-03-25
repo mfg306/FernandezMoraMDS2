@@ -22,10 +22,6 @@ public class VistaVerificacion_cuenta_eliminada extends PolymerTemplate<VistaVer
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("div")
-	private Div div;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
 	@Id("span")
 	private Span span;
 	@Id("boton_volver")
@@ -51,22 +47,6 @@ public class VistaVerificacion_cuenta_eliminada extends PolymerTemplate<VistaVer
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public Div getDiv() {
-		return div;
-	}
-
-	public void setDiv(Div div) {
-		this.div = div;
-	}
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
 	}
 
 	public Span getSpan() {

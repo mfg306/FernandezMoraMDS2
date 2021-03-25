@@ -71,11 +71,13 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public void ocultar_Informacion_PaginaInicial() {
 		this._uNR_.layoutOfertas.setVisible(false);
 	}
+	
+	
 	public void abrir_iniciar_sesion() {
 
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
 			ocultarInformacionIniciarSesion();
-			ocultar_Informacion_PaginaInicial();
+			//ocultar_Informacion_PaginaInicial();
 			this.layout.add(this._iniciar_sesion_UNR);
 
 		});

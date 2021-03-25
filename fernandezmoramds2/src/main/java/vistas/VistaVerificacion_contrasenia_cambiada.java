@@ -21,8 +21,6 @@ public class VistaVerificacion_contrasenia_cambiada extends PolymerTemplate<Vist
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("menu")
-	private Element menu;
 	@Id("span")
 	private Span span;
 	@Id("boton_aceptar")
@@ -48,14 +46,6 @@ public class VistaVerificacion_contrasenia_cambiada extends PolymerTemplate<Vist
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public Element getMenu() {
-		return menu;
-	}
-
-	public void setMenu(Element menu) {
-		this.menu = menu;
 	}
 
 	public Span getSpan() {
