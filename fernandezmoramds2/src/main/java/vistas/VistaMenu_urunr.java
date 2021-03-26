@@ -25,16 +25,6 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("logo_tienda")
 	private Image logo_tienda;
-	@Id("clasificar_categoria")
-	private Select clasificar_categoria;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("buscador_productos")
 	private Element buscador_productos;
 
@@ -44,6 +34,8 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 	private Button boton_carrito;
 	@Id("menu")
 	private Element menu;
+	@Id("seleccionarCategoria")
+	private HorizontalLayout seleccionarCategoria;
 	
 
 	/**
@@ -84,45 +76,6 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 		this.logo_tienda = logo_tienda;
 	}
 
-	public Select getClasificar_categoria() {
-		return clasificar_categoria;
-	}
-
-	public void setClasificar_categoria(Select clasificar_categoria) {
-		this.clasificar_categoria = clasificar_categoria;
-	}
-
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
 
 	public Element getBuscador_productos() {
 		return buscador_productos;
@@ -146,5 +99,13 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 
 	public void setBoton_carrito(Button boton_carrito) {
 		this.boton_carrito = boton_carrito;
+	}
+
+	public HorizontalLayout getSeleccionarCategoria() {
+		return seleccionarCategoria;
+	}
+
+	public void setSeleccionarCategoria(HorizontalLayout seleccionarCategoria) {
+		this.seleccionarCategoria = seleccionarCategoria;
 	}
 }

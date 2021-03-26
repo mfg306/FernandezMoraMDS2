@@ -19,23 +19,19 @@ public class Menu_UR extends Menu_UR_UNR {
 		this.getBoton_iniciar_sesion().setVisible(false);
 		this._ver_carrito_UR = new Ver_carrito_UR(this);
 		this.layout = this.getMenu().as(VerticalLayout.class);
-		Editar_perfil ep = new Editar_perfil(this);
-		Ver_pedidos vp = new Ver_pedidos();
+		this._editar_perfil = new Editar_perfil(this);
+		this._ver_pedidos = new Ver_pedidos(this);
 
 
 		datos.setItems("Nombre de Usuario", "Mis pedidos", "Mis correos", "Configuración", "Cerrar sesion");
 
 		datos.addValueChangeListener(event -> {
 			if (event.getValue().equals("Configuración")) {
-				this.ocultar_Informacion_PaginaInicial();
-				this.ocultar_Informacion_Al_Abrir_Carrito();
-				this.layout.add(ep);
+				abrirEditarPerfil();
 				
 			}
 			if (event.getValue().equals("Mis pedidos")) {
-				this.ocultar_Informacion_PaginaInicial();
-				this.ocultar_Informacion_Al_Abrir_Carrito();
-				this.layout.add(vp);
+				abrirPedidos();
 			}
 			if (event.getValue().equals("Cerrar sesion")) {
 				cerrar_sesion();
@@ -60,6 +56,7 @@ public class Menu_UR extends Menu_UR_UNR {
 			this._ver_carrito_UR.layout.remove(this._ver_carrito_UR._introducir_datos_compra);
 			this._ver_carrito_UR.getVaadinVerticalLayout().setVisible(true);
 		}
+		
 
 		this._ver_carrito_UR.cerrar_Producto();
 
@@ -69,6 +66,8 @@ public class Menu_UR extends Menu_UR_UNR {
 	public void abrir_carrito() {
 		this.getBoton_carrito().addClickListener(event -> {
 			ocultar_Informacion_Al_Abrir_Carrito();
+			ocultarInformacionPedidos();
+			 ocultarInformacionEditarPerfil();
 			this._ver_carrito_UR.getVaadinHorizontalLayout().setVisible(true);
 			ocultar_Informacion_PaginaInicial();
 			this._uR.getBotonVerCategorias().setVisible(false);
@@ -81,6 +80,46 @@ public class Menu_UR extends Menu_UR_UNR {
 		this._uR.layoutOfertas.setVisible(false);
 		this._uR.layoutProductosMasVendidosPorCategorias.setVisible(false);
 		this._uR.getBotonVerCategorias().setVisible(false);
+	}
+	
+	public void ocultarInformacionPedidos() {
+	if(this._ver_pedidos != null) {
+		this.layout.remove(this._ver_pedidos);
+	}
+	}
+	
+	public void ocultarInformacionEditarPerfil() {
+		if(this._editar_perfil != null) {
+			this.layout.remove(this._editar_perfil);
+		}
+	}
+	
+	public void abrirPedidos() {
+		ocultar_Informacion_PaginaInicial();
+		if(this._ver_carrito_UR != null) {
+			this._uR.layout.remove(this._ver_carrito_UR);
+		}
+		
+		if(this._editar_perfil != null) {
+			this._uR.layout.remove(this._editar_perfil);
+		}
+		
+		this.layout.add(this._ver_pedidos);
+	}
+	
+	public void abrirEditarPerfil() {
+		ocultar_Informacion_PaginaInicial();
+		if(this._ver_carrito_UR != null) {
+			this._uR.layout.remove(this._ver_carrito_UR);
+		}
+		
+		if(this._ver_pedidos != null) {
+			this._uR.layout.remove(this._ver_pedidos);
+		}
+		if(this._editar_perfil!=null) {
+			this._uR.layout.remove(this._editar_perfil);
+		}
+		this.layout.add(this._editar_perfil);
 	}
 
 	public void cerrar_sesion() {

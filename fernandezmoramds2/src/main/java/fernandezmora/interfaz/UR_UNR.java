@@ -1,6 +1,7 @@
 package fernandezmora.interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.select.Select;
 
 import vistas.VistaUrunr;
 
@@ -15,6 +16,7 @@ public abstract class UR_UNR extends VistaUrunr {
 	public VerticalLayout layout;
 	public VerticalLayout layoutOfertas;
 	public VerticalLayout layoutProductosMasVendidosPorCategorias;
+	
 
 	public UR_UNR() {
 		inicializarURUNR();
@@ -31,6 +33,7 @@ public abstract class UR_UNR extends VistaUrunr {
 		this.layoutProductosMasVendidosPorCategorias = this.getProductosMasVendidosPorCategorias()
 				.as(VerticalLayout.class);
 		this.layoutProductosMasVendidosPorCategorias.add(this._productos_mas_vendidos_por_categorias);
+	
 	}
 
 	public void abrir_Ver_Categorias() {

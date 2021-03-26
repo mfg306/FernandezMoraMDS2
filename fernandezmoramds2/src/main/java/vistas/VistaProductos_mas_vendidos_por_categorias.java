@@ -23,12 +23,12 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("clasificar_categorias")
-	private Select clasificar_categorias;
 	@Id("lista_productos_categoria")
 	private HorizontalLayout lista_productos_categoria;
 	@Id("getTituloMasVendidos")
 	private H2 getTituloMasVendidos;
+	@Id("listaCategoriasMasVendidos")
+	private Element listaCategoriasMasVendidos;
 	
 	/**
      * Creates a new VistaProductos_mas_vendidos_por_categorias.
@@ -53,13 +53,6 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 	}
 
 
-	public Select getClasificar_categorias() {
-		return clasificar_categorias;
-	}
-
-	public void setClasificar_categorias(Select clasificar_categorias) {
-		this.clasificar_categorias = clasificar_categorias;
-	}
 
 	
 
@@ -69,6 +62,22 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 
 	public void setLista_productos_categoria(HorizontalLayout lista_productos_categoria) {
 		this.lista_productos_categoria = lista_productos_categoria;
+	}
+
+	public H2 getGetTituloMasVendidos() {
+		return getTituloMasVendidos;
+	}
+
+	public void setGetTituloMasVendidos(H2 getTituloMasVendidos) {
+		this.getTituloMasVendidos = getTituloMasVendidos;
+	}
+
+	public Element getListaCategoriasMasVendidos() {
+		return listaCategoriasMasVendidos;
+	}
+
+	public void setListaCategoriasMasVendidos(Element listaCategoriasMasVendidos) {
+		this.listaCategoriasMasVendidos = listaCategoriasMasVendidos;
 	}
 
 	
