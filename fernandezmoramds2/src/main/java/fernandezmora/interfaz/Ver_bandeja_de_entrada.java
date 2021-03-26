@@ -1,7 +1,5 @@
 package fernandezmora.interfaz;
 
-import java.util.Vector;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaVer_bandeja_de_entrada;
