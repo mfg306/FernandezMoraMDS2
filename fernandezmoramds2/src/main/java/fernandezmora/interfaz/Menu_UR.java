@@ -20,6 +20,7 @@ public class Menu_UR extends Menu_UR_UNR {
 		this.layout = this.getMenu().as(VerticalLayout.class);
 		this._editar_perfil = new Editar_perfil(this);
 		this._ver_pedidos = new Ver_pedidos(this);
+		this._ver_bandeja_de_entrada = new Ver_bandeja_de_entrada();
 
 
 		datos.setItems("Nombre de Usuario", "Mis pedidos", "Mis correos", "Configuración", "Cerrar sesion");
@@ -35,16 +36,29 @@ public class Menu_UR extends Menu_UR_UNR {
 			if (event.getValue().equals("Cerrar sesion")) {
 				cerrar_sesion();
 			}
+			
+			if(event.getValue().equals("Mis correos")) {
+				abrir_bandeja_entrada();
+			}
 
 		});
 
 		this.getVaadinHorizontalLayout().add(datos);
-
 		abrir_carrito();
-
 	}
 	
+	public void abrir_bandeja_entrada() {
+		ocultar_Informacion_PaginaInicial();
+		this.ocultar_Informacion_Al_Abrir_Carrito();
+		this.ocultarInformacionPedidos();
+		this.ocultarInformacionEditarPerfil();
+		this.ocultarInformacionVerBandejaDeEntrada();
+		this._ver_bandeja_de_entrada.getVaadinHorizontalLayout1().setVisible(false);
 
+		this._ver_bandeja_de_entrada.inicializar();
+		this.layout.add(this._ver_bandeja_de_entrada);
+	}
+	
 
 	public void ocultar_Informacion_Al_Abrir_Carrito() {
 		if (this._uR._ver_categorias != null) {
@@ -93,31 +107,29 @@ public class Menu_UR extends Menu_UR_UNR {
 		}
 	}
 	
+	public void ocultarInformacionVerBandejaDeEntrada() {
+		if(this._ver_bandeja_de_entrada != null) {
+			this.layout.remove(this._ver_bandeja_de_entrada);
+		}
+	}
+	
 	public void abrirPedidos() {
 		ocultar_Informacion_PaginaInicial();
-		if(this._ver_carrito_UR != null) {
-			this._uR.layout.remove(this._ver_carrito_UR);
-		}
-		
-		if(this._editar_perfil != null) {
-			this._uR.layout.remove(this._editar_perfil);
-		}
+		this.ocultar_Informacion_Al_Abrir_Carrito();
+		this.ocultarInformacionPedidos();
+		this.ocultarInformacionEditarPerfil();
+		this.ocultarInformacionVerBandejaDeEntrada();
 		
 		this.layout.add(this._ver_pedidos);
 	}
 	
 	public void abrirEditarPerfil() {
 		ocultar_Informacion_PaginaInicial();
-		if(this._ver_carrito_UR != null) {
-			this._uR.layout.remove(this._ver_carrito_UR);
-		}
+		this.ocultar_Informacion_Al_Abrir_Carrito();
+		this.ocultarInformacionPedidos();
+		this.ocultarInformacionEditarPerfil();
+		this.ocultarInformacionVerBandejaDeEntrada();
 		
-		if(this._ver_pedidos != null) {
-			this._uR.layout.remove(this._ver_pedidos);
-		}
-		if(this._editar_perfil!=null) {
-			this._uR.layout.remove(this._editar_perfil);
-		}
 		this.layout.add(this._editar_perfil);
 	}
 
