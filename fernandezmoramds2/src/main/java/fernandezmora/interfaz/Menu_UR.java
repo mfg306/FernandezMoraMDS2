@@ -113,8 +113,15 @@ public class Menu_UR extends Menu_UR_UNR {
 		}
 	}
 	
+	public void ocultarCarrito() {
+		if(this._ver_carrito_UR != null) {
+			this._uR.layout.remove(this._ver_carrito_UR);
+		}
+	}
+	
 	public void abrirPedidos() {
 		ocultar_Informacion_PaginaInicial();
+		ocultarCarrito();
 		this.ocultar_Informacion_Al_Abrir_Carrito();
 		this.ocultarInformacionPedidos();
 		this.ocultarInformacionEditarPerfil();
@@ -125,6 +132,7 @@ public class Menu_UR extends Menu_UR_UNR {
 	
 	public void abrirEditarPerfil() {
 		ocultar_Informacion_PaginaInicial();
+		ocultarCarrito();
 		this.ocultar_Informacion_Al_Abrir_Carrito();
 		this.ocultarInformacionPedidos();
 		this.ocultarInformacionEditarPerfil();
