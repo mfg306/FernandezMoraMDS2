@@ -37,6 +37,8 @@ public class Ver_carrito_UR extends Ver_carrito {
 		}
 	}
 	
+	
+	
 	/* Este metodo es para cerrar el producto. Lo llama Menu_UNR.ocultar_Informacion_Al_Abrir_Carrito() */ 
 	public void cerrar_Producto() {
 		for(Producto_carrito pca : this._productos_carrito._list_Producto_carrito) {
