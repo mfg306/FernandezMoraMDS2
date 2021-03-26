@@ -1,10 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-item/src/vaadin-item.js';
+import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 
 class VistaPedido extends PolymerElement {
 
@@ -42,30 +41,6 @@ class VistaPedido extends PolymerElement {
      Cancelar 
    </vaadin-button>
    <span style="align-self: center;" id="span">Valora tu pedido:</span>
-   <vaadin-select value="Item one" style="align-self: center;" id="valoracion_pedido">
-    <template>
-     <vaadin-list-box>
-      <vaadin-item selected id="vaadinItem4">
-        0 
-      </vaadin-item>
-      <vaadin-item id="vaadinItem5">
-        1 
-      </vaadin-item>
-      <vaadin-item id="vaadinItem6">
-        2 
-      </vaadin-item>
-      <vaadin-item id="vaadinItem7">
-        3 
-      </vaadin-item>
-      <vaadin-item id="vaadinItem8">
-        4 
-      </vaadin-item>
-      <vaadin-item id="vaadinItem9">
-        5 
-      </vaadin-item>
-     </vaadin-list-box>
-    </template>
-   </vaadin-select>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

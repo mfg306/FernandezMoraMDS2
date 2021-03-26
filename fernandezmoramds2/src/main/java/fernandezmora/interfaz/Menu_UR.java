@@ -1,6 +1,5 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
