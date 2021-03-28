@@ -20,25 +20,18 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	}
 	
 	public void inicializar() {
-		layout = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
 		this._list_Mensaje_recibido = new Vector<>();
-		this._list_Ver_mensajes_enviados = new Vector<>();
 
-		obtener_mensajes_recibidos();
+		layout = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
+		this._list_Ver_mensajes_enviados = new Ver_mensajes_enviados(); // PROBLEMA
+
+		//obtener_mensajes_recibidos();
 	}
 	
 	public void obtener_mensajes_recibidos() {
 		Mensaje_recibido mr = new Mensaje_recibido();
 		
 		this._list_Mensaje_recibido.add(mr);
-		this.layout.add(mr);
-		
-	}
-	
-	public void obtener_mensajes_enviados() {
-		Mensaje_enviado me = new Mensaje_enviado();
-		
-		this._list_Ver_mensajes_enviados.add(me); //wtf por que tenemos un listado de Ver_mensajes_enviado si esa es la interfaz 
 		this.layout.add(mr);
 		
 	}

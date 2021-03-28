@@ -53,9 +53,9 @@ public class Menu_UR extends Menu_UR_UNR {
 		this.ocultarInformacionPedidos();
 		this.ocultarInformacionEditarPerfil();
 		this.ocultarInformacionVerBandejaDeEntrada();
-		this._ver_bandeja_de_entrada.getVaadinHorizontalLayout1().setVisible(false);
+//		this._ver_bandeja_de_entrada.getVaadinHorizontalLayout1().setVisible(false);
 
-		this._ver_bandeja_de_entrada.inicializar();
+//		this._ver_bandeja_de_entrada.inicializar();
 		this.layout.add(this._ver_bandeja_de_entrada);
 	}
 	
@@ -111,6 +111,10 @@ public class Menu_UR extends Menu_UR_UNR {
 		if(this._ver_bandeja_de_entrada != null) {
 			this.layout.remove(this._ver_bandeja_de_entrada);
 		}
+	}
+	
+	public void limpiarInterfaz() {
+		this.layout.removeAll();
 	}
 	
 	public void ocultarCarrito() {
