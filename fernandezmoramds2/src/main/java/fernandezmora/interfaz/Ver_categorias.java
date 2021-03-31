@@ -18,4 +18,6 @@ public class Ver_categorias extends VistaVercategorias {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this.layout.add(this._categorias);
 	}
+	
+
 }
