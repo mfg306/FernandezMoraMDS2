@@ -19,6 +19,7 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 	public void inicializarEnviados() {
 		this._list_Mensaje_enviado = new Vector<Mensaje_enviado>();
 		this.layoutEnviados = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
+		this.layout.removeAll(); //Vaciamos los mensajes recibidos que hubiese
 		obtener_mensajes_enviados();
 	}
 	

@@ -22,30 +22,32 @@ import com.vaadin.flow.component.html.Image;
 @JsModule("./src/vista-verbandejadeentrada.js")
 public class VistaVer_bandeja_de_entrada extends PolymerTemplate<VistaVer_bandeja_de_entrada.VistaVer_bandeja_de_entradaModel> {
 
-    @Id("span")
-	private Span span;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("boton_enviados")
-	private Button boton_enviados;
-	@Id("boton_recibidos")
-	private Button boton_recibidos;
+
+
+	@Id("vaadinVerticalLayoutGeneral")
+	private Element vaadinVerticalLayoutGeneral;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	
-	/*Menu*/
 	@Id("logo")
 	private Image logo;
-	@Id("correo")
-	private Button correo;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("cerrar_sesion")
 	private Button cerrar_sesion;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
+	@Id("correo")
+	private Button correo;
+	@Id("span")
+	private Span span;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("boton_recibidos")
+	private Button boton_recibidos;
+	@Id("boton_enviados")
+	private Button boton_enviados;
 	@Id("huecoMensajes")
 	private Element huecoMensajes;
+	@Id("menuAdmin")
+	private Element menuAdmin;
 
 	/**
      * Creates a new VistaVer_bandeja_de_entrada.
@@ -61,37 +63,12 @@ public class VistaVer_bandeja_de_entrada extends PolymerTemplate<VistaVer_bandej
         // Add setters and getters for template properties here.
     }
 
-	public Span getSpan() {
-		return span;
+	public Element getVaadinVerticalLayoutGeneral() {
+		return vaadinVerticalLayoutGeneral;
 	}
 
-	public void setSpan(Span span) {
-		this.span = span;
-	}
-
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-	public Button getBoton_enviados() {
-		return boton_enviados;
-	}
-
-	public void setBoton_enviados(Button boton_enviados) {
-		this.boton_enviados = boton_enviados;
-	}
-
-	public Button getBoton_recibidos() {
-		return boton_recibidos;
-	}
-
-	public void setBoton_recibidos(Button boton_recibidos) {
-		this.boton_recibidos = boton_recibidos;
+	public void setVaadinVerticalLayoutGeneral(Element vaadinVerticalLayoutGeneral) {
+		this.vaadinVerticalLayoutGeneral = vaadinVerticalLayoutGeneral;
 	}
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
@@ -110,14 +87,6 @@ public class VistaVer_bandeja_de_entrada extends PolymerTemplate<VistaVer_bandej
 		this.logo = logo;
 	}
 
-	public Button getCorreo() {
-		return correo;
-	}
-
-	public void setCorreo(Button correo) {
-		this.correo = correo;
-	}
-
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
 	}
@@ -134,12 +103,44 @@ public class VistaVer_bandeja_de_entrada extends PolymerTemplate<VistaVer_bandej
 		this.cerrar_sesion = cerrar_sesion;
 	}
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Button getCorreo() {
+		return correo;
 	}
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setCorreo(Button correo) {
+		this.correo = correo;
+	}
+
+	public Span getSpan() {
+		return span;
+	}
+
+	public void setSpan(Span span) {
+		this.span = span;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public Button getBoton_recibidos() {
+		return boton_recibidos;
+	}
+
+	public void setBoton_recibidos(Button boton_recibidos) {
+		this.boton_recibidos = boton_recibidos;
+	}
+
+	public Button getBoton_enviados() {
+		return boton_enviados;
+	}
+
+	public void setBoton_enviados(Button boton_enviados) {
+		this.boton_enviados = boton_enviados;
 	}
 
 	public Element getHuecoMensajes() {
@@ -149,5 +150,19 @@ public class VistaVer_bandeja_de_entrada extends PolymerTemplate<VistaVer_bandej
 	public void setHuecoMensajes(Element huecoMensajes) {
 		this.huecoMensajes = huecoMensajes;
 	}
+
+	public Element getMenuAdmin() {
+		return menuAdmin;
+	}
+
+	public void setMenuAdmin(Element menuAdmin) {
+		this.menuAdmin = menuAdmin;
+	}
+
+
+
+
+
+
 
 }

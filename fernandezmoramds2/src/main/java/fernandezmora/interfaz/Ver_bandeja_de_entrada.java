@@ -10,20 +10,17 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	public VerticalLayout layout;
 	
 	public Ver_bandeja_de_entrada() {
-		//No hace falta llamar al metodo inicializar porque se llama en Menu_A cuando se hace click en el boton 
-		//del correo del menu
-		this.getVaadinHorizontalLayout1().setVisible(false);
-		layout = this.getHuecoMensajes().as(VerticalLayout.class);
+		this._mensajes_recibidos = new Mensajes_recibidos();
 		inicializar();
+		abrir_mensajes_recibidos();
+		abrir_mensajes_enviados();
 
 	}
 	
 	public void inicializar() {
-		this._mensajes_recibidos = new Mensajes_recibidos();
-
-		layout.add(this._mensajes_recibidos);
-		abrir_mensajes_enviados();
-		abrir_mensajes_recibidos();
+		this.layout = this.getVaadinVerticalLayoutGeneral().as(VerticalLayout.class);
+		this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos);
+		this.getMenuAdmin().setVisible(false);
 	}
 	
 	public void limpiar_interfaz() {
@@ -32,16 +29,22 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	
 	public void abrir_mensajes_enviados() {
 		this.getBoton_enviados().addClickListener(event ->{
-			limpiar_interfaz();
-			this.layout.add(this._mensajes_recibidos._list_Ver_mensajes_enviados);
+			limpiar_mensajes();
+			this._mensajes_recibidos._list_Ver_mensajes_enviados = new Ver_mensajes_enviados();
+			this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos._list_Ver_mensajes_enviados._mensajes_enviados);
 		});
+		
+	}
+	
+	public void limpiar_mensajes() {
+		this.getHuecoMensajes().as(VerticalLayout.class).removeAll();
 	}
 	
 	public void abrir_mensajes_recibidos() {
 		this.getBoton_recibidos().addClickListener(event ->{
-			limpiar_interfaz();
-			this.layout.add(this._mensajes_recibidos);
-			
+			limpiar_mensajes();
+			this.inicializar();
 		});
+
 	}
 }

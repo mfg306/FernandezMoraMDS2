@@ -15,8 +15,8 @@ class VistaVer_bandeja_de_entrada extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
- <vaadin-vertical-layout style="width: 100%; background-color: #F1F2F2;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutGeneral">
+ <vaadin-vertical-layout style="width: 100%; background-color: #F1F2F2;" id="menuAdmin">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout">
    <img id="logo">
    <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout1">

@@ -1,9 +1,7 @@
 package fernandezmora.interfaz;
 
 import java.util.Vector;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import vistas.VistaMensajes_recibidos;
 
 
@@ -20,12 +18,10 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	}
 	
 	public void inicializar() {
-		this._list_Mensaje_recibido = new Vector<>();
-
-		layout = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
-		this._list_Ver_mensajes_enviados = new Ver_mensajes_enviados(); // PROBLEMA
-
+		this.layout = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
 		//obtener_mensajes_recibidos();
+		obtener_mensajes_recibidos();
+
 	}
 	
 	public void obtener_mensajes_recibidos() {
@@ -33,7 +29,6 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 		
 		this._list_Mensaje_recibido.add(mr);
 		this.layout.add(mr);
-		
 	}
 	
 
