@@ -13,6 +13,11 @@ public abstract class Ver_carrito extends VistaVer_carrito{
 		realizar_compra();
 	}
 	
+	
+	public void mostrarProductosCarrito() {
+		
+	}
+	
 	public abstract void realizar_compra();
 	
 	

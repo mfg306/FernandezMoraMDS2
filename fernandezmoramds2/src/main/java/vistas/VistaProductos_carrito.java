@@ -75,4 +75,12 @@ public class VistaProductos_carrito extends PolymerTemplate<VistaProductos_carri
 	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
 		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
 	}
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
 }

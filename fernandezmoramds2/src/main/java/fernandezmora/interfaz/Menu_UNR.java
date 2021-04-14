@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
@@ -16,9 +17,9 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public void inicializar(UNR_ unr) {
 		_uNR_ = unr;
 		_iniciar_sesion_UNR = new Iniciar_sesion_UNR(this);
-		this._ver_carrito_UNR = new Ver_carrito_UNR(this);
 		layout = this.getMenu().as(VerticalLayout.class);
-		
+		this._ver_carrito_UNR = new Ver_carrito_UNR(this);
+
 		abrir_iniciar_sesion();
 		abrir_carrito();
 	}
@@ -34,8 +35,9 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this._ver_carrito_UNR.getVaadinVerticalLayout().setVisible(true);
 		}
 		
+		this._ver_carrito_UNR.inicializar();
 		this._ver_carrito_UNR.cerrar_Producto();
-		
+
 	}
 
 	@Override
@@ -43,11 +45,14 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this.getBoton_carrito().addClickListener(event -> {
 			ocultar_Informacion_Al_Abrir_Carrito();
 			
+			this._ver_carrito_UNR.inicializar(); //que se refresque porque ya estaba creado antes
+
 			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);	
 			ocultar_Informacion_PaginaInicial();
 			this._uNR_.getBotonVerCategorias().setVisible(false);
 			this._uNR_.getProductosMasVendidosPorCategorias().setVisible(false);
 			this._uNR_.layout.add(this._ver_carrito_UNR);
+			
 		});
 	}
 
