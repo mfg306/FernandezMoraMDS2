@@ -13,53 +13,50 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public Menu_UNR(UNR_ unr) {
 		inicializar(unr);
 	}
-	
+
 	public void inicializar(UNR_ unr) {
 		_uNR_ = unr;
 		_iniciar_sesion_UNR = new Iniciar_sesion_UNR(this);
 		layout = this.getMenu().as(VerticalLayout.class);
-		this._ver_carrito_UNR = new Ver_carrito_UNR(this);
 
 		abrir_iniciar_sesion();
 		abrir_carrito();
 	}
-	
 
 	public void ocultar_Informacion_Al_Abrir_Carrito() {
 		if (this._uNR_._ver_categorias != null) {
 			this._uNR_.layout.remove(this._uNR_._ver_categorias);
 		}
-		
-		if(this._ver_carrito_UNR._solicitar_identificación != null) {
+
+		if (this._ver_carrito_UNR._solicitar_identificación != null) {
 			this._ver_carrito_UNR.layout.remove(this._ver_carrito_UNR._solicitar_identificación);
 			this._ver_carrito_UNR.getVaadinVerticalLayout().setVisible(true);
 		}
-		
-		this._ver_carrito_UNR.inicializar();
-		this._ver_carrito_UNR.cerrar_Producto();
-
 	}
 
 	@Override
 	public void abrir_carrito() {
 		this.getBoton_carrito().addClickListener(event -> {
-			ocultar_Informacion_Al_Abrir_Carrito();
 			
-			this._ver_carrito_UNR.inicializar(); //que se refresque porque ya estaba creado antes
+			if(this._ver_carrito_UNR == null ) this._ver_carrito_UNR = new Ver_carrito_UNR(this);
 
-			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);	
+			this._ver_carrito_UNR._productos_carrito.actualizarListaProductos(this._uNR_.listaAux);
+			this._ver_carrito_UNR.inicializar();
+			ocultar_Informacion_Al_Abrir_Carrito();
+
+			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);
 			ocultar_Informacion_PaginaInicial();
 			this._uNR_.getBotonVerCategorias().setVisible(false);
 			this._uNR_.getProductosMasVendidosPorCategorias().setVisible(false);
 			this._uNR_.layout.add(this._ver_carrito_UNR);
-			
+
 		});
 	}
 
 	public void ocultarInformacionIniciarSesion() {
 		this.getVaadinHorizontalLayout().setVisible(false);
-	    this._uNR_.getBotonVerCategorias().setVisible(false);
-	    this._uNR_.getProductosMasVendidosPorCategorias().setVisible(false);
+		this._uNR_.getBotonVerCategorias().setVisible(false);
+		this._uNR_.getProductosMasVendidosPorCategorias().setVisible(false);
 
 		if (this._uNR_._ver_categorias != null)
 			this._uNR_._ver_categorias._categorias.setVisible(false);
@@ -76,8 +73,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this._uNR_.layoutOfertas.setVisible(false);
 		this._uNR_.layoutProductosMasVendidosPorCategorias.setVisible(false);
 	}
-	
-	
+
 	public void abrir_iniciar_sesion() {
 
 		this.getBoton_iniciar_sesion().addClickListener(event -> {

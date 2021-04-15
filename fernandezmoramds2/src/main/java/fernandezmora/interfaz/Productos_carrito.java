@@ -2,7 +2,6 @@ package fernandezmora.interfaz;
 
 import java.util.Vector;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaProductos_carrito;
@@ -20,23 +19,21 @@ public class Productos_carrito extends VistaProductos_carrito {
 
 	public void inicializar() {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		mostrarProductoCarrito();
+		mostrarProductos();
 		Borrar();
 	}
-
-	public void actualizarListaProductos(Vector<Producto_carrito> aux) {
-		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
-		inicializar();
-	}
 	
-
-	public void mostrarProductoCarrito() {
-		for (Producto_carrito pc : this._list_Producto_carrito) {
+	public void mostrarProductos() {
+		for(Producto_carrito pc : this._list_Producto_carrito) {
 			this.layout.add(pc);
-			pc.setProductosCarrito(this);
-			pc.inicializar();
 		}
 	}
+	
+	public void actualizarListaProductos(Vector<Producto_carrito> aux) {
+		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
+
+	}
+
 
 	public void Seleccionar_varios() {
 		throw new UnsupportedOperationException();
