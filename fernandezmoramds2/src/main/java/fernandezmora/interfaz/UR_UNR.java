@@ -1,5 +1,7 @@
 package fernandezmora.interfaz;
 
+import java.util.Vector;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
@@ -16,6 +18,7 @@ public abstract class UR_UNR extends VistaUrunr {
 	public VerticalLayout layout;
 	public VerticalLayout layoutOfertas;
 	public VerticalLayout layoutProductosMasVendidosPorCategorias;
+
 
 	public UR_UNR() {
 		inicializarURUNR();

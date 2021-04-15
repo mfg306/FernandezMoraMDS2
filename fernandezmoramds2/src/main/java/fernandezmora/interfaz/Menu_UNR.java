@@ -1,8 +1,6 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.select.Select;
 
 public class Menu_UNR extends Menu_UR_UNR {
 	public UNR_ _uNR_;
@@ -37,11 +35,12 @@ public class Menu_UNR extends Menu_UR_UNR {
 	@Override
 	public void abrir_carrito() {
 		this.getBoton_carrito().addClickListener(event -> {
-			
-			if(this._ver_carrito_UNR == null ) this._ver_carrito_UNR = new Ver_carrito_UNR(this);
+
+			if (this._ver_carrito_UNR == null) {
+				this._ver_carrito_UNR = new Ver_carrito_UNR(this);
+			}
 
 			this._ver_carrito_UNR._productos_carrito.actualizarListaProductos(this._uNR_.listaAux);
-			this._ver_carrito_UNR.inicializar();
 			ocultar_Informacion_Al_Abrir_Carrito();
 
 			this._ver_carrito_UNR.getVaadinHorizontalLayout().setVisible(true);
@@ -64,9 +63,12 @@ public class Menu_UNR extends Menu_UR_UNR {
 		if (this._ver_carrito_UNR != null) {
 			this._ver_carrito_UNR.setVisible(false);
 		}
-		if (this._ver_carrito_UNR._solicitar_identificación != null) {
-			this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
+		if (this._ver_carrito_UNR != null) {
+			if (this._ver_carrito_UNR._solicitar_identificación != null) {
+				this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
+			}
 		}
+
 	}
 
 	public void ocultar_Informacion_PaginaInicial() {

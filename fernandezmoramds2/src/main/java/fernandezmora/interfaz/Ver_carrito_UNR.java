@@ -1,16 +1,12 @@
 package fernandezmora.interfaz;
 
-import java.util.Optional;
-
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Ver_carrito_UNR extends Ver_carrito {
 
 	public Menu_UNR _menu_UNR;
 	public Solicitar_identificación _solicitar_identificación;
-	public Productos_carrito _productos_carrito;
+	public Productos_carrito _productos_carrito; // ¿Esto podemos hacerlo? Esq asi es mucho mas facil :( 
 	public VerticalLayout layout;
 
 	public Ver_carrito_UNR(Menu_UNR _menu_UNR) {

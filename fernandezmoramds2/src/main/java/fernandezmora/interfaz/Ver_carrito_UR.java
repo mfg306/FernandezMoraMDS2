@@ -7,9 +7,13 @@ public class Ver_carrito_UR extends Ver_carrito {
 	public Menu_UR _menu_UR;
 	public Introducir_datos_compra _introducir_datos_compra;
 	public VerticalLayout layout;
+	public Productos_carrito _productos_carrito; // ¿Esto podemos hacerlo? Esq asi es mucho mas facil :( 
+
 	
 	public Ver_carrito_UR(Menu_UR _menu_UR) {
 		this._menu_UR = _menu_UR;
+		this._productos_carrito = new Productos_carrito(this._menu_UR._uR.listaAux);
+		
 		layout = this.getVaadinVerticalLayout1().as(VerticalLayout.class);
 		inicializar();
 	}
@@ -17,9 +21,9 @@ public class Ver_carrito_UR extends Ver_carrito {
 	
 	public void inicializar() {
 		this._introducir_datos_compra = new Introducir_datos_compra(this);
-		//this._menu_UNR._uNR_.getBotonVerCategorias().setVisible(false);
 		this.getProductosCarrito().add(this._productos_carrito);
 		abrir_Producto();
+		cerrar_Producto();
 	}
 	
 	
@@ -39,9 +43,11 @@ public class Ver_carrito_UR extends Ver_carrito {
 	
 	/* Este metodo es para cerrar el producto. Lo llama Menu_UNR.ocultar_Informacion_Al_Abrir_Carrito() */ 
 	public void cerrar_Producto() {
-		for(Producto_carrito pca : this._productos_carrito._list_Producto_carrito) {
-			this.layout.remove(pca._producto);
-		}
+		this._menu_UR.getBoton_carrito().addClickListener(event -> {
+			for (Producto_carrito pca : this._menu_UR._uR.listaAux) {
+				this.layout.remove(pca._producto);
+			}
+		});
 	}
 	
 	public void ocultar_informacion_al_realizar_compra() {
