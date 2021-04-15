@@ -21,32 +21,12 @@ public class Ver_carrito_UNR extends Ver_carrito {
 	public void inicializar() {
 		this._solicitar_identificación = new Solicitar_identificación(this);
 		this.getProductosCarrito().add(this._productos_carrito);
-		abrir_Producto();
-		cerrar_Producto();
+		abrir_Producto(this._menu_UNR._uNR_.listaAux, this.layout);
+		cerrar_Producto(this._menu_UNR.getBoton_carrito(), this._menu_UNR._uNR_.listaAux, this.layout);
 	}
 
-	public void abrir_Producto() {
-		for (Producto_carrito pca : this._menu_UNR._uNR_.listaAux) {
-			pca.getVerProductoCarrito().addClickListener(event -> {
-				this.getVaadinHorizontalLayout().setVisible(false);
-				pca._producto.getVaadinVerticalLayout2().setVisible(false);
-				this.layout.add(pca._producto);
-			});
-		}
-	}
 
-	public void cerrar_Producto() {
-		this._menu_UNR.getBoton_carrito().addClickListener(event -> {
-			for (Producto_carrito pca : this._menu_UNR._uNR_.listaAux) {
-				this.layout.remove(pca._producto);
-			}
-		});
-	}
 
-	public void ocultar_informacion_al_realizar_compra() {
-		this.getVaadinHorizontalLayout().setVisible(false);
-
-	}
 
 	@Override
 	public void realizar_compra() {
@@ -54,7 +34,6 @@ public class Ver_carrito_UNR extends Ver_carrito {
 			ocultar_informacion_al_realizar_compra();
 			layout.add(this._solicitar_identificación);
 		});
-
 	}
 
 }

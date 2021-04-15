@@ -18,10 +18,15 @@ public abstract class UR_UNR extends VistaUrunr {
 	public VerticalLayout layout;
 	public VerticalLayout layoutOfertas;
 	public VerticalLayout layoutProductosMasVendidosPorCategorias;
+	public Vector<Producto_carrito> listaAux;
 
 
 	public UR_UNR() {
 		inicializarURUNR();
+	}
+	
+	public void miListadoProductos(Producto_carrito p) {
+		listaAux.add(p);
 	}
 
 	public void inicializarURUNR() {
