@@ -2,6 +2,7 @@ package fernandezmora;
 
 
 import com.vaadin.flow.component.dependency.CssImport;
+
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
@@ -11,7 +12,6 @@ import fernandezmora.interfaz.Administrador;
 import fernandezmora.interfaz.Encargado_de_compras;
 import fernandezmora.interfaz.Gestionar_categorias;
 import fernandezmora.interfaz.Iniciar_sesion_UNR;
-import fernandezmora.interfaz.Prueba_prueba;
 import fernandezmora.interfaz.Transportista;
 import fernandezmora.interfaz.UNR_;
 import fernandezmora.interfaz.UR;
@@ -54,14 +54,13 @@ public class MainView extends VerticalLayout {
     public MainView() {    	
     	this.add(unr);
     	
-    	login(); //Falaba porque se me habia olvidado poner esto jeje
+    	login(); 
    }
     
     public void login() {
     	Iniciar_sesion_UNR inicio_sesion = unr._menu_UNR._iniciar_sesion_UNR;
     	
     	inicio_sesion.getBoton_iniciar_sesion().addClickListener(event -> {
-    		
 			if(inicio_sesion.getCorreo().getValue().equals("usuario")){
 				UR ur = new UR();
 				remove(unr);
@@ -86,8 +85,6 @@ public class MainView extends VerticalLayout {
 			else {
 		    	Notification.show("Este usuario no esta registrado");
 		    }
-			
-			
 		});
     	
   

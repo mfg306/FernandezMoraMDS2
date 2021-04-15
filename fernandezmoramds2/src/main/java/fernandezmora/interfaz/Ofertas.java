@@ -21,7 +21,6 @@ public class Ofertas extends VistaOfertas {
 		this._uR_UNR = urunr;
 		this._list_Ofertas = new Vector<Oferta>();
 		
-		
 		/*Ofertas de prueba para ver que cambian*/
 		Oferta of1 = new Oferta(this);
 		of1.getBotonOferta().setText("Prueba1");
@@ -33,10 +32,8 @@ public class Ofertas extends VistaOfertas {
 		of3.getBotonOferta().setText("Prueba3");
 		this._list_Ofertas.add(of3);
 		
-		
 		Ver_anteriores();
 		Ver_siguientes();
-		
 
 		this.getListaOfertas().add(this._list_Ofertas.get(0)); //Por defecto añadimos la primera
 		abrir_Oferta();
@@ -64,7 +61,6 @@ public class Ofertas extends VistaOfertas {
 
 	public void Ver_anteriores() {
 		this.getBoton_anterior().addClickListener(event -> {
-			Notification.show("Contador : " + contador);
 			if (contador == 0) {
 				this.visualizarOferta(0);
 			} else {
@@ -72,12 +68,10 @@ public class Ofertas extends VistaOfertas {
 				this.visualizarOferta(contador);
 			}
 		});
-
 	}
 
 	public void Ver_siguientes() {
 		this.getBoton_siguiente().addClickListener(event -> {
-			Notification.show("Contador : " + contador);
 			if (contador == this._list_Ofertas.size() - 1) {
 				this.visualizarOferta(contador);
 			} else {

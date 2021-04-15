@@ -14,7 +14,7 @@ class VistaUrunr extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout theme="spacing" id="huecoMenu" style="width: 100%;"></vaadin-vertical-layout>
  <vaadin-button theme="primary" id="botonVerCategorias" style="align-self: flex-end; margin: var(--lumo-space-m);">
    Ver categorías 

@@ -22,6 +22,7 @@ public class Administrador extends VistaAdministrador{
 	
 	public void inicializar() {
 		_menu_A = new Menu_A(this);
+		this._menu_A.getMenuAdmin().setVisible(true);
 		
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);	
 		

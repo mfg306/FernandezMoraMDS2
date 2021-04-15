@@ -60,9 +60,11 @@ public class Menu_UR extends Menu_UR_UNR {
 			this._uR.layout.remove(this._uR._ver_categorias);
 		}
 
-		if (this._ver_carrito_UR._introducir_datos_compra != null) {
-			this._ver_carrito_UR.layout.remove(this._ver_carrito_UR._introducir_datos_compra);
-			this._ver_carrito_UR.getVaadinVerticalLayout().setVisible(true);
+		if (this._ver_carrito_UR != null) {
+			if (this._ver_carrito_UR._introducir_datos_compra != null) {
+				this._ver_carrito_UR.layout.remove(this._ver_carrito_UR._introducir_datos_compra);
+				this._ver_carrito_UR.getVaadinVerticalLayout().setVisible(true);
+			}
 		}
 
 	}
@@ -74,10 +76,10 @@ public class Menu_UR extends Menu_UR_UNR {
 			if (this._ver_carrito_UR == null) {
 				this._ver_carrito_UR = new Ver_carrito_UR(this);
 			}
-			
+
 			this._ver_carrito_UR._productos_carrito.actualizarListaProductos(this._uR.listaAux);
 			ocultar_Informacion_Al_Abrir_Carrito();
-			
+
 			ocultarInformacionPedidos();
 			ocultarInformacionEditarPerfil();
 			this._ver_carrito_UR.getVaadinHorizontalLayout().setVisible(true);
@@ -87,7 +89,7 @@ public class Menu_UR extends Menu_UR_UNR {
 			this._uR.layout.add(this._ver_carrito_UR);
 		});
 	}
-	
+
 	@Override
 	public void ocultar_Informacion_PaginaInicial() {
 		this._uR.layoutOfertas.setVisible(false);
@@ -148,6 +150,8 @@ public class Menu_UR extends Menu_UR_UNR {
 	public void cerrar_sesion() {
 		_uR.layout.removeAll();
 		UNR_ unr = new UNR_();
+		_uR.layout.setPadding(false);
+		_uR.layout.setMargin(false);
 		_uR.layout.add(unr);
 	}
 

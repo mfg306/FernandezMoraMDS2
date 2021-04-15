@@ -16,7 +16,6 @@ public class Producto extends VistaProducto{
 	
 	public Producto() {
 		inicializar();
-
 	}
 	
 	public void inicializar() {

@@ -6,8 +6,7 @@ public class Producto_UNR extends Producto {
 	public Añadir_al_carrito _añadir_al_carrito;
 
 	public Producto_UNR(UR_UNR unr) { // para que sirva para Ver_Producto_UR
-		if (unr instanceof UNR_)
-			this._uNR_ = (UNR_) unr;
+		if (unr instanceof UNR_) this._uNR_ = (UNR_) unr;
 		Anadir_al_carrito();
 	}
 

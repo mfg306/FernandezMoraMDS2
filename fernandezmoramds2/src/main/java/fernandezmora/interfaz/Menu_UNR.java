@@ -82,6 +82,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
 			ocultarInformacionIniciarSesion();
 			ocultar_Informacion_PaginaInicial();
+			this.layout.removeAll();
 			this.layout.add(this._iniciar_sesion_UNR);
 
 		});
