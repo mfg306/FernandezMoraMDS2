@@ -25,6 +25,7 @@ public class Productos_carrito extends VistaProductos_carrito {
 	
 	public void mostrarProductos() {
 		for(Producto_carrito pc : this._list_Producto_carrito) {
+			pc.actualizarListado(this);
 			this.layout.add(pc);
 		}
 	}

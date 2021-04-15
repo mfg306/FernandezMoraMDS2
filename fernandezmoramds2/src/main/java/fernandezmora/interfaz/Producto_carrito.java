@@ -11,6 +11,16 @@ public class Producto_carrito extends VistaProducto_carrito {
 		inicializar();
 	}
 	
+	
+	/**
+	 * @param pc listado al que queremos que pertenezca ahora
+	 */
+	public void actualizarListado(Productos_carrito pc) {
+		this._productos_carrito = pc;
+	}
+	
+	
+	
 
 	public void inicializar() {
 		Eliminar();
@@ -21,7 +31,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Eliminar() { /*No funciona*/
+	public void Eliminar() {
 		this.getVaadinButton().addClickListener(event ->{
 			this._productos_carrito.layout.remove(this);
 			this._productos_carrito._list_Producto_carrito.remove(this);
