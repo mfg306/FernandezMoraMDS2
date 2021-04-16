@@ -10,6 +10,7 @@ import Base_de_Datos.BD_Transportistas;
 import Base_de_Datos.BD_Encargados_de_compras;
 import Base_de_Datos.BD_Comentarios;
 import Base_de_Datos.DB_Imagen;
+import Base_de_Datos.Empleado;
 import Base_de_Datos.BD_Enviado;
 import Base_de_Datos.BD_Recibido;
 import Base_de_Datos.BD_Pendiente;
@@ -21,6 +22,7 @@ import Base_de_Datos.Oferta;
 import Base_de_Datos.Producto;
 import Base_de_Datos.Categoria;
 import Base_de_Datos.Producto_Rebajado;
+import Base_de_Datos.Recibido;
 import Base_de_Datos.Compra;
 // import Base_de_Datos.UR;
 import Base_de_Datos.Mensaje;
@@ -34,8 +36,9 @@ import fernandezmora.interfaz.Transportista_Encargado_NR;
 import fernandezmora.interfaz.Transportista;
 import fernandezmora.interfaz.Encargado_de_compras;
 import Base_de_Datos.Enviado;
+import Base_de_Datos.Imagen;
 
-public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, eliminarCategoriaAdministrador, iTransportista, iEncargado_de_compras {
+public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, iAdministrador, iTransportista, iEncargado_de_compras {
 	public BD_UR _bD_UNR;
 	public BD_Administrador _bD_Administrador;
 	public BD_Categorias _bD_Categorias;
@@ -180,5 +183,133 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 
 	public Enviado[] cargarPedidosT(int aIdTransportista) {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public Empleado[] cargarEmpleados() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Recibido[] cargarVentas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void eliminarOfertaAdministrador(int aIdOferta) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eliminarCategoriaAdministrador(int aIdCategoria) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eliminarProductoAdministrador(int aIdProducto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eliminarEmpleado(int aIdEmpleado) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+			String aFechaRegistro) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Categoria[] cargarCategoriasAdministrador() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Producto[] cargarProductosAdministrador() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertarProducto(String aNombreProducto, String aDescripcion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void guardarImagenesProducto(Imagen[] aImagenes) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Producto[] cargarProductosListado() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Producto[] cargarProductosAdministracion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void VerZonaProductos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void VerZonaProductosAnadidos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+			String aFechaActualizacion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
+		// TODO Auto-generated method stub
+		
 	}
 }
