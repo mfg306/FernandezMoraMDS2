@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,24 +20,24 @@ import javax.persistence.*;
 @Table(name="UR")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="Usuario_GeneralId_Usuario", referencedColumnName="Id_Usuario")
-public class UR extends base_de_datos.Usuario_General implements Serializable {
+public class UR extends Base_de_Datos.Usuario_General implements Serializable {
 	public UR() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_UR__ES_DE_UN) {
+		if (key == Base_de_Datos.ORMConstants.KEY_UR__ES_DE_UN) {
 			return ORM__Es_de_un;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__COMPRA) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_UR__COMPRA) {
 			return ORM__Compra;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__RECIBIDO) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_UR__RECIBIDO) {
 			return ORM__recibido;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__ENVIA) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_UR__ENVIA) {
 			return ORM__Envia;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__VALORA) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_UR__VALORA) {
 			return ORM__Valora;
 		}
 		
@@ -64,27 +64,27 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	@Column(name="Esta_operativo", nullable=false, length=1)	
 	private boolean esta_operativo;
 	
-	@OneToMany(mappedBy="_Realiza", targetEntity=base_de_datos.Comentario.class)	
+	@OneToMany(mappedBy="_Realiza", targetEntity=Base_de_Datos.Comentario.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Es_de_un = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_Hace_compra", targetEntity=base_de_datos.Pendiente.class)	
+	@OneToMany(mappedBy="_Hace_compra", targetEntity=Base_de_Datos.Pendiente.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Compra = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_recibe", targetEntity=base_de_datos.Recibido.class)	
+	@OneToMany(mappedBy="_recibe", targetEntity=Base_de_Datos.Recibido.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__recibido = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_Enviado_por_UR", targetEntity=base_de_datos.Mensaje.class)	
+	@OneToMany(mappedBy="_Enviado_por_UR", targetEntity=Base_de_Datos.Mensaje.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Envia = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_Valorado_por", targetEntity=base_de_datos.Valoracion.class)	
+	@OneToMany(mappedBy="_Valorado_por", targetEntity=Base_de_Datos.Valoracion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Valora = new java.util.HashSet();
@@ -130,7 +130,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ComentarioSetCollection _Es_de_un = new base_de_datos.ComentarioSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__ES_DE_UN, base_de_datos.ORMConstants.KEY_COMENTARIO__REALIZA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.ComentarioSetCollection _Es_de_un = new Base_de_Datos.ComentarioSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_UR__ES_DE_UN, Base_de_Datos.ORMConstants.KEY_COMENTARIO__REALIZA, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Compra(java.util.Set value) {
 		this.ORM__Compra = value;
@@ -141,7 +141,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.PendienteSetCollection _Compra = new base_de_datos.PendienteSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__COMPRA, base_de_datos.ORMConstants.KEY_PENDIENTE__HACE_COMPRA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.PendienteSetCollection _Compra = new Base_de_Datos.PendienteSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_UR__COMPRA, Base_de_Datos.ORMConstants.KEY_PENDIENTE__HACE_COMPRA, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__recibido(java.util.Set value) {
 		this.ORM__recibido = value;
@@ -152,7 +152,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.RecibidoSetCollection _recibido = new base_de_datos.RecibidoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__RECIBIDO, base_de_datos.ORMConstants.KEY_RECIBIDO__RECIBE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.RecibidoSetCollection _recibido = new Base_de_Datos.RecibidoSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_UR__RECIBIDO, Base_de_Datos.ORMConstants.KEY_RECIBIDO__RECIBE, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Envia(java.util.Set value) {
 		this.ORM__Envia = value;
@@ -163,7 +163,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.MensajeSetCollection _Envia = new base_de_datos.MensajeSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__ENVIA, base_de_datos.ORMConstants.KEY_MENSAJE__ENVIADO_POR_UR, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.MensajeSetCollection _Envia = new Base_de_Datos.MensajeSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_UR__ENVIA, Base_de_Datos.ORMConstants.KEY_MENSAJE__ENVIADO_POR_UR, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Valora(java.util.Set value) {
 		this.ORM__Valora = value;
@@ -174,7 +174,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ValoracionSetCollection _Valora = new base_de_datos.ValoracionSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__VALORA, base_de_datos.ORMConstants.KEY_VALORACION__VALORADO_POR, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.ValoracionSetCollection _Valora = new Base_de_Datos.ValoracionSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_UR__VALORA, Base_de_Datos.ORMConstants.KEY_VALORACION__VALORADO_POR, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

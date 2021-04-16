@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -45,7 +45,7 @@ public class RecibidoCriteria extends AbstractORMCriteria {
 	}
 	
 	public RecibidoCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(Base_de_Datos.HitoPersistentManager.instance().getSession());
 	}
 	
 	public URCriteria create_recibeCriteria() {

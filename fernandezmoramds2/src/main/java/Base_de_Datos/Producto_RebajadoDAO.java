@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class Producto_RebajadoDAO {
 	public static Producto_Rebajado loadProducto_RebajadoByORMID(int id_Producto) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadProducto_RebajadoByORMID(session, id_Producto);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado getProducto_RebajadoByORMID(int id_Producto) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getProducto_RebajadoByORMID(session, id_Producto);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado loadProducto_RebajadoByORMID(int id_Producto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadProducto_RebajadoByORMID(session, id_Producto, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado getProducto_RebajadoByORMID(int id_Producto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getProducto_RebajadoByORMID(session, id_Producto, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado loadProducto_RebajadoByORMID(PersistentSession session, int id_Producto) throws PersistentException {
 		try {
-			return (Producto_Rebajado) session.load(base_de_datos.Producto_Rebajado.class, new Integer(id_Producto));
+			return (Producto_Rebajado) session.load(Base_de_Datos.Producto_Rebajado.class, new Integer(id_Producto));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado getProducto_RebajadoByORMID(PersistentSession session, int id_Producto) throws PersistentException {
 		try {
-			return (Producto_Rebajado) session.get(base_de_datos.Producto_Rebajado.class, new Integer(id_Producto));
+			return (Producto_Rebajado) session.get(Base_de_Datos.Producto_Rebajado.class, new Integer(id_Producto));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado loadProducto_RebajadoByORMID(PersistentSession session, int id_Producto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Producto_Rebajado) session.load(base_de_datos.Producto_Rebajado.class, new Integer(id_Producto), lockMode);
+			return (Producto_Rebajado) session.load(Base_de_Datos.Producto_Rebajado.class, new Integer(id_Producto), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado getProducto_RebajadoByORMID(PersistentSession session, int id_Producto, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Producto_Rebajado) session.get(base_de_datos.Producto_Rebajado.class, new Integer(id_Producto), lockMode);
+			return (Producto_Rebajado) session.get(Base_de_Datos.Producto_Rebajado.class, new Integer(id_Producto), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class Producto_RebajadoDAO {
 	
 	public static List queryProducto_Rebajado(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryProducto_Rebajado(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class Producto_RebajadoDAO {
 	
 	public static List queryProducto_Rebajado(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryProducto_Rebajado(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado[] listProducto_RebajadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listProducto_RebajadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado[] listProducto_RebajadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listProducto_RebajadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class Producto_RebajadoDAO {
 	}
 	
 	public static List queryProducto_Rebajado(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Producto_Rebajado as Producto_Rebajado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Producto_Rebajado as Producto_Rebajado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Producto_RebajadoDAO {
 	}
 	
 	public static List queryProducto_Rebajado(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Producto_Rebajado as Producto_Rebajado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Producto_Rebajado as Producto_Rebajado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado loadProducto_RebajadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadProducto_RebajadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class Producto_RebajadoDAO {
 	
 	public static Producto_Rebajado loadProducto_RebajadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadProducto_RebajadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class Producto_RebajadoDAO {
 	
 	public static java.util.Iterator iterateProducto_RebajadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateProducto_RebajadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class Producto_RebajadoDAO {
 	
 	public static java.util.Iterator iterateProducto_RebajadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateProducto_RebajadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class Producto_RebajadoDAO {
 	}
 	
 	public static java.util.Iterator iterateProducto_RebajadoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Producto_Rebajado as Producto_Rebajado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Producto_Rebajado as Producto_Rebajado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Producto_RebajadoDAO {
 	}
 	
 	public static java.util.Iterator iterateProducto_RebajadoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Producto_Rebajado as Producto_Rebajado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Producto_Rebajado as Producto_Rebajado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class Producto_RebajadoDAO {
 	}
 	
 	public static Producto_Rebajado createProducto_Rebajado() {
-		return new base_de_datos.Producto_Rebajado();
+		return new Base_de_Datos.Producto_Rebajado();
 	}
 	
-	public static boolean save(base_de_datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
+	public static boolean save(Base_de_Datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(producto_Rebajado);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(producto_Rebajado);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class Producto_RebajadoDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(producto_Rebajado);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(producto_Rebajado);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class Producto_RebajadoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Producto_Rebajado producto_Rebajado)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Producto_Rebajado producto_Rebajado)throws PersistentException {
 		try {
 			if (producto_Rebajado.get_Tiene() != null) {
 				producto_Rebajado.get_Tiene()._Pertenece_a.remove(producto_Rebajado);
@@ -335,15 +335,15 @@ public class Producto_RebajadoDAO {
 				producto_Rebajado.get_Categoria()._Producto.remove(producto_Rebajado);
 			}
 			
-			base_de_datos.Producto_en_compra[] l_Producto_en_compras = producto_Rebajado._Producto_en_compra.toArray();
+			Base_de_Datos.Producto_en_compra[] l_Producto_en_compras = producto_Rebajado._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
 				l_Producto_en_compras[i]._Producto.remove(producto_Rebajado);
 			}
-			base_de_datos.Comentario[] l_Pertenece_as = producto_Rebajado._Pertenece_a.toArray();
+			Base_de_Datos.Comentario[] l_Pertenece_as = producto_Rebajado._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
 				l_Pertenece_as[i].set_Tiene(null);
 			}
-			base_de_datos.Imagen[] l_Imagens = producto_Rebajado._Imagen.toArray();
+			Base_de_Datos.Imagen[] l_Imagens = producto_Rebajado._Imagen.toArray();
 			for(int i = 0; i < l_Imagens.length; i++) {
 				l_Imagens[i].set_Producto(null);
 			}
@@ -355,7 +355,7 @@ public class Producto_RebajadoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Producto_Rebajado producto_Rebajado, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Producto_Rebajado producto_Rebajado, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (producto_Rebajado.get_Tiene() != null) {
 				producto_Rebajado.get_Tiene()._Pertenece_a.remove(producto_Rebajado);
@@ -369,15 +369,15 @@ public class Producto_RebajadoDAO {
 				producto_Rebajado.get_Categoria()._Producto.remove(producto_Rebajado);
 			}
 			
-			base_de_datos.Producto_en_compra[] l_Producto_en_compras = producto_Rebajado._Producto_en_compra.toArray();
+			Base_de_Datos.Producto_en_compra[] l_Producto_en_compras = producto_Rebajado._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
 				l_Producto_en_compras[i]._Producto.remove(producto_Rebajado);
 			}
-			base_de_datos.Comentario[] l_Pertenece_as = producto_Rebajado._Pertenece_a.toArray();
+			Base_de_Datos.Comentario[] l_Pertenece_as = producto_Rebajado._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
 				l_Pertenece_as[i].set_Tiene(null);
 			}
-			base_de_datos.Imagen[] l_Imagens = producto_Rebajado._Imagen.toArray();
+			Base_de_Datos.Imagen[] l_Imagens = producto_Rebajado._Imagen.toArray();
 			for(int i = 0; i < l_Imagens.length; i++) {
 				l_Imagens[i].set_Producto(null);
 			}
@@ -394,9 +394,9 @@ public class Producto_RebajadoDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(producto_Rebajado);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(producto_Rebajado);
 			return true;
 		}
 		catch (Exception e) {
@@ -405,9 +405,9 @@ public class Producto_RebajadoDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Producto_Rebajado producto_Rebajado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(producto_Rebajado);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(producto_Rebajado);
 			return true;
 		}
 		catch (Exception e) {

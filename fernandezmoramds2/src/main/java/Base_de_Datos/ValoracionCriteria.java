@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -39,15 +39,15 @@ public class ValoracionCriteria extends AbstractORMCriteria {
 	}
 	
 	public ValoracionCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(Base_de_Datos.HitoPersistentManager.instance().getSession());
 	}
 	
 	public URCriteria create_Valorado_porCriteria() {
 		return new URCriteria(createCriteria("_Valorado_por"));
 	}
 	
-	public base_de_datos.ProductoCriteria create_ValoradoCriteria() {
-		return new base_de_datos.ProductoCriteria(createCriteria("ORM__Valorado"));
+	public Base_de_Datos.ProductoCriteria create_ValoradoCriteria() {
+		return new Base_de_Datos.ProductoCriteria(createCriteria("ORM__Valorado"));
 	}
 	
 	public Valoracion uniqueValoracion() {

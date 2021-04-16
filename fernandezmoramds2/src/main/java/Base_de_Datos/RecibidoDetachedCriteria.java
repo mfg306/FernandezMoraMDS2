@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -29,7 +29,7 @@ public class RecibidoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final AssociationExpression _Recoge;
 	
 	public RecibidoDetachedCriteria() {
-		super(base_de_datos.Recibido.class, base_de_datos.RecibidoCriteria.class);
+		super(Base_de_Datos.Recibido.class, Base_de_Datos.RecibidoCriteria.class);
 		codigo = new IntegerExpression("codigo", this.getDetachedCriteria());
 		num_total_unidades = new IntegerExpression("num_total_unidades", this.getDetachedCriteria());
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());
@@ -41,7 +41,7 @@ public class RecibidoDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public RecibidoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.RecibidoCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.RecibidoCriteria.class);
 		codigo = new IntegerExpression("codigo", this.getDetachedCriteria());
 		num_total_unidades = new IntegerExpression("num_total_unidades", this.getDetachedCriteria());
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());

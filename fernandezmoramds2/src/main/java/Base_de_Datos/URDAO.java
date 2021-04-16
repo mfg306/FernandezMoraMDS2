@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class URDAO {
 	public static UR loadURByORMID(int id_Usuario) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadURByORMID(session, id_Usuario);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class URDAO {
 	
 	public static UR getURByORMID(int id_Usuario) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getURByORMID(session, id_Usuario);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class URDAO {
 	
 	public static UR loadURByORMID(int id_Usuario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadURByORMID(session, id_Usuario, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class URDAO {
 	
 	public static UR getURByORMID(int id_Usuario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getURByORMID(session, id_Usuario, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class URDAO {
 	
 	public static UR loadURByORMID(PersistentSession session, int id_Usuario) throws PersistentException {
 		try {
-			return (UR) session.load(base_de_datos.UR.class, new Integer(id_Usuario));
+			return (UR) session.load(Base_de_Datos.UR.class, new Integer(id_Usuario));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class URDAO {
 	
 	public static UR getURByORMID(PersistentSession session, int id_Usuario) throws PersistentException {
 		try {
-			return (UR) session.get(base_de_datos.UR.class, new Integer(id_Usuario));
+			return (UR) session.get(Base_de_Datos.UR.class, new Integer(id_Usuario));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class URDAO {
 	
 	public static UR loadURByORMID(PersistentSession session, int id_Usuario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UR) session.load(base_de_datos.UR.class, new Integer(id_Usuario), lockMode);
+			return (UR) session.load(Base_de_Datos.UR.class, new Integer(id_Usuario), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class URDAO {
 	
 	public static UR getURByORMID(PersistentSession session, int id_Usuario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UR) session.get(base_de_datos.UR.class, new Integer(id_Usuario), lockMode);
+			return (UR) session.get(Base_de_Datos.UR.class, new Integer(id_Usuario), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class URDAO {
 	
 	public static List queryUR(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryUR(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class URDAO {
 	
 	public static List queryUR(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryUR(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class URDAO {
 	
 	public static UR[] listURByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listURByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class URDAO {
 	
 	public static UR[] listURByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listURByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class URDAO {
 	}
 	
 	public static List queryUR(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.UR as UR");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.UR as UR");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class URDAO {
 	}
 	
 	public static List queryUR(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.UR as UR");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.UR as UR");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class URDAO {
 	
 	public static UR loadURByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadURByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class URDAO {
 	
 	public static UR loadURByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadURByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class URDAO {
 	
 	public static java.util.Iterator iterateURByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateURByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class URDAO {
 	
 	public static java.util.Iterator iterateURByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateURByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class URDAO {
 	}
 	
 	public static java.util.Iterator iterateURByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.UR as UR");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.UR as UR");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class URDAO {
 	}
 	
 	public static java.util.Iterator iterateURByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.UR as UR");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.UR as UR");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class URDAO {
 	}
 	
 	public static UR createUR() {
-		return new base_de_datos.UR();
+		return new Base_de_Datos.UR();
 	}
 	
-	public static boolean save(base_de_datos.UR uR) throws PersistentException {
+	public static boolean save(Base_de_Datos.UR uR) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(uR);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(uR);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class URDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.UR uR) throws PersistentException {
+	public static boolean delete(Base_de_Datos.UR uR) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(uR);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(uR);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,25 +321,25 @@ public class URDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.UR uR)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.UR uR)throws PersistentException {
 		try {
-			base_de_datos.Comentario[] l_Es_de_uns = uR._Es_de_un.toArray();
+			Base_de_Datos.Comentario[] l_Es_de_uns = uR._Es_de_un.toArray();
 			for(int i = 0; i < l_Es_de_uns.length; i++) {
 				l_Es_de_uns[i].set_Realiza(null);
 			}
-			base_de_datos.Pendiente[] l_Compras = uR._Compra.toArray();
+			Base_de_Datos.Pendiente[] l_Compras = uR._Compra.toArray();
 			for(int i = 0; i < l_Compras.length; i++) {
 				l_Compras[i].set_Hace_compra(null);
 			}
-			base_de_datos.Recibido[] l_recibidos = uR._recibido.toArray();
+			Base_de_Datos.Recibido[] l_recibidos = uR._recibido.toArray();
 			for(int i = 0; i < l_recibidos.length; i++) {
 				l_recibidos[i].set_recibe(null);
 			}
-			base_de_datos.Mensaje[] l_Envias = uR._Envia.toArray();
+			Base_de_Datos.Mensaje[] l_Envias = uR._Envia.toArray();
 			for(int i = 0; i < l_Envias.length; i++) {
 				l_Envias[i].set_Enviado_por_UR(null);
 			}
-			base_de_datos.Valoracion[] l_Valoras = uR._Valora.toArray();
+			Base_de_Datos.Valoracion[] l_Valoras = uR._Valora.toArray();
 			for(int i = 0; i < l_Valoras.length; i++) {
 				l_Valoras[i].set_Valorado_por(null);
 			}
@@ -351,25 +351,25 @@ public class URDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.UR uR, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.UR uR, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			base_de_datos.Comentario[] l_Es_de_uns = uR._Es_de_un.toArray();
+			Base_de_Datos.Comentario[] l_Es_de_uns = uR._Es_de_un.toArray();
 			for(int i = 0; i < l_Es_de_uns.length; i++) {
 				l_Es_de_uns[i].set_Realiza(null);
 			}
-			base_de_datos.Pendiente[] l_Compras = uR._Compra.toArray();
+			Base_de_Datos.Pendiente[] l_Compras = uR._Compra.toArray();
 			for(int i = 0; i < l_Compras.length; i++) {
 				l_Compras[i].set_Hace_compra(null);
 			}
-			base_de_datos.Recibido[] l_recibidos = uR._recibido.toArray();
+			Base_de_Datos.Recibido[] l_recibidos = uR._recibido.toArray();
 			for(int i = 0; i < l_recibidos.length; i++) {
 				l_recibidos[i].set_recibe(null);
 			}
-			base_de_datos.Mensaje[] l_Envias = uR._Envia.toArray();
+			Base_de_Datos.Mensaje[] l_Envias = uR._Envia.toArray();
 			for(int i = 0; i < l_Envias.length; i++) {
 				l_Envias[i].set_Enviado_por_UR(null);
 			}
-			base_de_datos.Valoracion[] l_Valoras = uR._Valora.toArray();
+			Base_de_Datos.Valoracion[] l_Valoras = uR._Valora.toArray();
 			for(int i = 0; i < l_Valoras.length; i++) {
 				l_Valoras[i].set_Valorado_por(null);
 			}
@@ -386,9 +386,9 @@ public class URDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.UR uR) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.UR uR) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(uR);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(uR);
 			return true;
 		}
 		catch (Exception e) {
@@ -397,9 +397,9 @@ public class URDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.UR uR) throws PersistentException {
+	public static boolean evict(Base_de_Datos.UR uR) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(uR);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(uR);
 			return true;
 		}
 		catch (Exception e) {

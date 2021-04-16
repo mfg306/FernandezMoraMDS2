@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class PendienteDAO {
 	public static Pendiente loadPendienteByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadPendienteByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class PendienteDAO {
 	
 	public static Pendiente getPendienteByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getPendienteByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadPendienteByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class PendienteDAO {
 	
 	public static Pendiente getPendienteByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getPendienteByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			return (Pendiente) session.load(base_de_datos.Pendiente.class, new Integer(codigo));
+			return (Pendiente) session.load(Base_de_Datos.Pendiente.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class PendienteDAO {
 	
 	public static Pendiente getPendienteByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			return (Pendiente) session.get(base_de_datos.Pendiente.class, new Integer(codigo));
+			return (Pendiente) session.get(Base_de_Datos.Pendiente.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Pendiente) session.load(base_de_datos.Pendiente.class, new Integer(codigo), lockMode);
+			return (Pendiente) session.load(Base_de_Datos.Pendiente.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class PendienteDAO {
 	
 	public static Pendiente getPendienteByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Pendiente) session.get(base_de_datos.Pendiente.class, new Integer(codigo), lockMode);
+			return (Pendiente) session.get(Base_de_Datos.Pendiente.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class PendienteDAO {
 	
 	public static List queryPendiente(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryPendiente(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class PendienteDAO {
 	
 	public static List queryPendiente(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryPendiente(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class PendienteDAO {
 	
 	public static Pendiente[] listPendienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listPendienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class PendienteDAO {
 	
 	public static Pendiente[] listPendienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listPendienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class PendienteDAO {
 	}
 	
 	public static List queryPendiente(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Pendiente as Pendiente");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Pendiente as Pendiente");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class PendienteDAO {
 	}
 	
 	public static List queryPendiente(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Pendiente as Pendiente");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Pendiente as Pendiente");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadPendienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadPendienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class PendienteDAO {
 	
 	public static java.util.Iterator iteratePendienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iteratePendienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class PendienteDAO {
 	
 	public static java.util.Iterator iteratePendienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iteratePendienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class PendienteDAO {
 	}
 	
 	public static java.util.Iterator iteratePendienteByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Pendiente as Pendiente");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Pendiente as Pendiente");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class PendienteDAO {
 	}
 	
 	public static java.util.Iterator iteratePendienteByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Pendiente as Pendiente");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Pendiente as Pendiente");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class PendienteDAO {
 	}
 	
 	public static Pendiente createPendiente() {
-		return new base_de_datos.Pendiente();
+		return new Base_de_Datos.Pendiente();
 	}
 	
-	public static boolean save(base_de_datos.Pendiente pendiente) throws PersistentException {
+	public static boolean save(Base_de_Datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(pendiente);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(pendiente);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class PendienteDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Pendiente pendiente) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(pendiente);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(pendiente);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class PendienteDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Pendiente pendiente)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Pendiente pendiente)throws PersistentException {
 		try {
 			if (pendiente.get_Encargado_de_compras() != null) {
 				pendiente.get_Encargado_de_compras()._Pendiente.remove(pendiente);
@@ -331,7 +331,7 @@ public class PendienteDAO {
 				pendiente.get_Hace_compra()._Compra.remove(pendiente);
 			}
 			
-			base_de_datos.Producto_en_compra[] l_Producto_en_compras = pendiente._Producto_en_compra.toArray();
+			Base_de_Datos.Producto_en_compra[] l_Producto_en_compras = pendiente._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
 				l_Producto_en_compras[i]._Pendiente.remove(pendiente);
 			}
@@ -343,7 +343,7 @@ public class PendienteDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Pendiente pendiente, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Pendiente pendiente, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (pendiente.get_Encargado_de_compras() != null) {
 				pendiente.get_Encargado_de_compras()._Pendiente.remove(pendiente);
@@ -353,7 +353,7 @@ public class PendienteDAO {
 				pendiente.get_Hace_compra()._Compra.remove(pendiente);
 			}
 			
-			base_de_datos.Producto_en_compra[] l_Producto_en_compras = pendiente._Producto_en_compra.toArray();
+			Base_de_Datos.Producto_en_compra[] l_Producto_en_compras = pendiente._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
 				l_Producto_en_compras[i]._Pendiente.remove(pendiente);
 			}
@@ -370,9 +370,9 @@ public class PendienteDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Pendiente pendiente) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(pendiente);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(pendiente);
 			return true;
 		}
 		catch (Exception e) {
@@ -381,9 +381,9 @@ public class PendienteDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Pendiente pendiente) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(pendiente);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(pendiente);
 			return true;
 		}
 		catch (Exception e) {

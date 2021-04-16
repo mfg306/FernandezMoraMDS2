@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,17 +20,17 @@ import javax.persistence.*;
 @Table(name="Recibido")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="CompraCodigo", referencedColumnName="Codigo")
-public class Recibido extends base_de_datos.Compra implements Serializable {
+public class Recibido extends Base_de_Datos.Compra implements Serializable {
 	public Recibido() {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_RECIBIDO__RECOGE) {
-			this._Recoge = (base_de_datos.Transportista) owner;
+		if (key == Base_de_Datos.ORMConstants.KEY_RECIBIDO__RECOGE) {
+			this._Recoge = (Base_de_Datos.Transportista) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_RECIBIDO__RECIBE) {
-			this._recibe = (base_de_datos.UR) owner;
+		else if (key == Base_de_Datos.ORMConstants.KEY_RECIBIDO__RECIBE) {
+			this._recibe = (Base_de_Datos.UR) owner;
 		}
 	}
 	
@@ -42,17 +42,17 @@ public class Recibido extends base_de_datos.Compra implements Serializable {
 		
 	};
 	
-	@ManyToOne(targetEntity=base_de_datos.UR.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.UR.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKRecibido916793"))	
-	private base_de_datos.UR _recibe;
+	private Base_de_Datos.UR _recibe;
 	
-	@ManyToOne(targetEntity=base_de_datos.Transportista.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Transportista.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="TransportistaEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKRecibido615365"))	
-	private base_de_datos.Transportista _Recoge;
+	private Base_de_Datos.Transportista _Recoge;
 	
-	public void set_Recoge(base_de_datos.Transportista value) {
+	public void set_Recoge(Base_de_Datos.Transportista value) {
 		if (_Recoge != null) {
 			_Recoge._Recibido.remove(this);
 		}
@@ -61,22 +61,22 @@ public class Recibido extends base_de_datos.Compra implements Serializable {
 		}
 	}
 	
-	public base_de_datos.Transportista get_Recoge() {
+	public Base_de_Datos.Transportista get_Recoge() {
 		return _Recoge;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Recoge(base_de_datos.Transportista value) {
+	public void setORM__Recoge(Base_de_Datos.Transportista value) {
 		this._Recoge = value;
 	}
 	
-	private base_de_datos.Transportista getORM__Recoge() {
+	private Base_de_Datos.Transportista getORM__Recoge() {
 		return _Recoge;
 	}
 	
-	public void set_recibe(base_de_datos.UR value) {
+	public void set_recibe(Base_de_Datos.UR value) {
 		if (_recibe != null) {
 			_recibe._recibido.remove(this);
 		}
@@ -85,18 +85,18 @@ public class Recibido extends base_de_datos.Compra implements Serializable {
 		}
 	}
 	
-	public base_de_datos.UR get_recibe() {
+	public Base_de_Datos.UR get_recibe() {
 		return _recibe;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__recibe(base_de_datos.UR value) {
+	public void setORM__recibe(Base_de_Datos.UR value) {
 		this._recibe = value;
 	}
 	
-	private base_de_datos.UR getORM__recibe() {
+	private Base_de_Datos.UR getORM__recibe() {
 		return _recibe;
 	}
 	

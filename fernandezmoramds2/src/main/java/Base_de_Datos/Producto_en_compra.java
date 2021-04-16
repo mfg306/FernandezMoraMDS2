@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -23,10 +23,10 @@ public class Producto_en_compra implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO) {
+		if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO) {
 			return ORM__Producto;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE) {
 			return ORM__Pendiente;
 		}
 		
@@ -43,19 +43,19 @@ public class Producto_en_compra implements Serializable {
 	
 	@Column(name="Id_Producto_en_compra", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_PRODUCTO_EN_COMPRA_ID_PRODUCTO_EN_COMPRA_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_PRODUCTO_EN_COMPRA_ID_PRODUCTO_EN_COMPRA_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="Base_de_Datos_PRODUCTO_EN_COMPRA_ID_PRODUCTO_EN_COMPRA_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="Base_de_Datos_PRODUCTO_EN_COMPRA_ID_PRODUCTO_EN_COMPRA_GENERATOR", strategy="native")	
 	private int id_Producto_en_compra;
 	
 	@Column(name="Num_unidades_producto", nullable=false, length=10)	
 	private int num_unidades_producto;
 	
-	@ManyToMany(mappedBy="ORM__Producto_en_compra", targetEntity=base_de_datos.Producto.class)	
+	@ManyToMany(mappedBy="ORM__Producto_en_compra", targetEntity=Base_de_Datos.Producto.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Producto = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM__Producto_en_compra", targetEntity=base_de_datos.Pendiente.class)	
+	@ManyToMany(mappedBy="ORM__Producto_en_compra", targetEntity=Base_de_Datos.Pendiente.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Pendiente = new java.util.HashSet();
@@ -89,7 +89,7 @@ public class Producto_en_compra implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ProductoSetCollection _Producto = new base_de_datos.ProductoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, base_de_datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final Base_de_Datos.ProductoSetCollection _Producto = new Base_de_Datos.ProductoSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, Base_de_Datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, Base_de_Datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM__Pendiente(java.util.Set value) {
 		this.ORM__Pendiente = value;
@@ -100,7 +100,7 @@ public class Producto_en_compra implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.PendienteSetCollection _Pendiente = new base_de_datos.PendienteSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, base_de_datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final Base_de_Datos.PendienteSetCollection _Pendiente = new Base_de_Datos.PendienteSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, Base_de_Datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, Base_de_Datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Producto_en_compra());

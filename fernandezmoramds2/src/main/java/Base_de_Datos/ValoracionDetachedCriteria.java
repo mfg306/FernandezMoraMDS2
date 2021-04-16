@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -26,7 +26,7 @@ public class ValoracionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression _Valorado;
 	
 	public ValoracionDetachedCriteria() {
-		super(base_de_datos.Valoracion.class, base_de_datos.ValoracionCriteria.class);
+		super(Base_de_Datos.Valoracion.class, Base_de_Datos.ValoracionCriteria.class);
 		id_valoracion = new IntegerExpression("id_valoracion", this.getDetachedCriteria());
 		_Valorado_porId = new IntegerExpression("_Valorado_por.", this.getDetachedCriteria());
 		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
@@ -35,7 +35,7 @@ public class ValoracionDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public ValoracionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.ValoracionCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.ValoracionCriteria.class);
 		id_valoracion = new IntegerExpression("id_valoracion", this.getDetachedCriteria());
 		_Valorado_porId = new IntegerExpression("_Valorado_por.", this.getDetachedCriteria());
 		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
@@ -47,8 +47,8 @@ public class ValoracionDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new URDetachedCriteria(createCriteria("_Valorado_por"));
 	}
 	
-	public base_de_datos.ProductoDetachedCriteria create_ValoradoCriteria() {
-		return new base_de_datos.ProductoDetachedCriteria(createCriteria("ORM__Valorado"));
+	public Base_de_Datos.ProductoDetachedCriteria create_ValoradoCriteria() {
+		return new Base_de_Datos.ProductoDetachedCriteria(createCriteria("ORM__Valorado"));
 	}
 	
 	public Valoracion uniqueValoracion(PersistentSession session) {

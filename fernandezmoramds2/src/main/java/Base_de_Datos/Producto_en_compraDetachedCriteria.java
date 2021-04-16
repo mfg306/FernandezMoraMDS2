@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -25,7 +25,7 @@ public class Producto_en_compraDetachedCriteria extends AbstractORMDetachedCrite
 	public final CollectionExpression _Pendiente;
 	
 	public Producto_en_compraDetachedCriteria() {
-		super(base_de_datos.Producto_en_compra.class, base_de_datos.Producto_en_compraCriteria.class);
+		super(Base_de_Datos.Producto_en_compra.class, Base_de_Datos.Producto_en_compraCriteria.class);
 		id_Producto_en_compra = new IntegerExpression("id_Producto_en_compra", this.getDetachedCriteria());
 		num_unidades_producto = new IntegerExpression("num_unidades_producto", this.getDetachedCriteria());
 		_Producto = new CollectionExpression("ORM__Producto", this.getDetachedCriteria());
@@ -33,19 +33,19 @@ public class Producto_en_compraDetachedCriteria extends AbstractORMDetachedCrite
 	}
 	
 	public Producto_en_compraDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.Producto_en_compraCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.Producto_en_compraCriteria.class);
 		id_Producto_en_compra = new IntegerExpression("id_Producto_en_compra", this.getDetachedCriteria());
 		num_unidades_producto = new IntegerExpression("num_unidades_producto", this.getDetachedCriteria());
 		_Producto = new CollectionExpression("ORM__Producto", this.getDetachedCriteria());
 		_Pendiente = new CollectionExpression("ORM__Pendiente", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.ProductoDetachedCriteria create_ProductoCriteria() {
-		return new base_de_datos.ProductoDetachedCriteria(createCriteria("ORM__Producto"));
+	public Base_de_Datos.ProductoDetachedCriteria create_ProductoCriteria() {
+		return new Base_de_Datos.ProductoDetachedCriteria(createCriteria("ORM__Producto"));
 	}
 	
-	public base_de_datos.PendienteDetachedCriteria create_PendienteCriteria() {
-		return new base_de_datos.PendienteDetachedCriteria(createCriteria("ORM__Pendiente"));
+	public Base_de_Datos.PendienteDetachedCriteria create_PendienteCriteria() {
+		return new Base_de_Datos.PendienteDetachedCriteria(createCriteria("ORM__Pendiente"));
 	}
 	
 	public Producto_en_compra uniqueProducto_en_compra(PersistentSession session) {

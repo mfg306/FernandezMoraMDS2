@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -30,7 +30,7 @@ public class PendienteDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression _Producto_en_compra;
 	
 	public PendienteDetachedCriteria() {
-		super(base_de_datos.Pendiente.class, base_de_datos.PendienteCriteria.class);
+		super(Base_de_Datos.Pendiente.class, Base_de_Datos.PendienteCriteria.class);
 		codigo = new IntegerExpression("codigo", this.getDetachedCriteria());
 		num_total_unidades = new IntegerExpression("num_total_unidades", this.getDetachedCriteria());
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());
@@ -43,7 +43,7 @@ public class PendienteDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public PendienteDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.PendienteCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.PendienteCriteria.class);
 		codigo = new IntegerExpression("codigo", this.getDetachedCriteria());
 		num_total_unidades = new IntegerExpression("num_total_unidades", this.getDetachedCriteria());
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());
@@ -63,8 +63,8 @@ public class PendienteDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new URDetachedCriteria(createCriteria("_Hace_compra"));
 	}
 	
-	public base_de_datos.Producto_en_compraDetachedCriteria create_Producto_en_compraCriteria() {
-		return new base_de_datos.Producto_en_compraDetachedCriteria(createCriteria("ORM__Producto_en_compra"));
+	public Base_de_Datos.Producto_en_compraDetachedCriteria create_Producto_en_compraCriteria() {
+		return new Base_de_Datos.Producto_en_compraDetachedCriteria(createCriteria("ORM__Producto_en_compra"));
 	}
 	
 	public Pendiente uniquePendiente(PersistentSession session) {

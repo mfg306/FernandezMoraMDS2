@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -25,8 +25,8 @@ public class Usuario_General implements Serializable {
 	
 	@Column(name="Id_Usuario", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_USUARIO_GENERAL_ID_USUARIO_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_USUARIO_GENERAL_ID_USUARIO_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="Base_de_Datos_USUARIO_GENERAL_ID_USUARIO_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="Base_de_Datos_USUARIO_GENERAL_ID_USUARIO_GENERATOR", strategy="native")	
 	private int id_Usuario;
 	
 	@Column(name="Nombre", nullable=true, length=255)	

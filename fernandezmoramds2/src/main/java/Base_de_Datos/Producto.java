@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -24,13 +24,13 @@ public class Producto implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA) {
+		if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA) {
 			return ORM__Producto_en_compra;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__PERTENECE_A) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO__PERTENECE_A) {
 			return ORM__Pertenece_a;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__IMAGEN) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO__IMAGEN) {
 			return ORM__Imagen;
 		}
 		
@@ -38,12 +38,12 @@ public class Producto implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__CATEGORIA) {
-			this._Categoria = (base_de_datos.Categoria) owner;
+		if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO__CATEGORIA) {
+			this._Categoria = (Base_de_Datos.Categoria) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR) {
-			this._Valorado_por = (base_de_datos.Valoracion) owner;
+		else if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR) {
+			this._Valorado_por = (Base_de_Datos.Valoracion) owner;
 		}
 	}
 	
@@ -61,19 +61,19 @@ public class Producto implements Serializable {
 	
 	@Column(name="Id_Producto", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_PRODUCTO_ID_PRODUCTO_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_PRODUCTO_ID_PRODUCTO_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="Base_de_Datos_PRODUCTO_ID_PRODUCTO_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="Base_de_Datos_PRODUCTO_ID_PRODUCTO_GENERATOR", strategy="native")	
 	private int id_Producto;
 	
-	@ManyToOne(targetEntity=base_de_datos.Valoracion.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Valoracion.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="ValoracionId_valoracion", referencedColumnName="Id_valoracion", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto367958"))	
-	private base_de_datos.Valoracion _Valorado_por;
+	private Base_de_Datos.Valoracion _Valorado_por;
 	
-	@ManyToOne(targetEntity=base_de_datos.Categoria.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Categoria.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="CategoriaId_Categoria", referencedColumnName="Id_Categoria", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto634639"))	
-	private base_de_datos.Categoria _Categoria;
+	private Base_de_Datos.Categoria _Categoria;
 	
 	@Column(name="Precio_producto", nullable=false)	
 	private double precio_producto;
@@ -87,18 +87,18 @@ public class Producto implements Serializable {
 	@Column(name="Descripcion", nullable=true, length=255)	
 	private String descripcion;
 	
-	@ManyToMany(targetEntity=base_de_datos.Producto_en_compra.class)	
+	@ManyToMany(targetEntity=Base_de_Datos.Producto_en_compra.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Producto_en_compra_Producto", joinColumns={ @JoinColumn(name="ProductoId_Producto") }, inverseJoinColumns={ @JoinColumn(name="Producto_en_compraId_Producto_en_compra") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Producto_en_compra = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_Tiene", targetEntity=base_de_datos.Comentario.class)	
+	@OneToMany(mappedBy="_Tiene", targetEntity=Base_de_Datos.Comentario.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Pertenece_a = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_Producto", targetEntity=base_de_datos.Imagen.class)	
+	@OneToMany(mappedBy="_Producto", targetEntity=Base_de_Datos.Imagen.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Imagen = new java.util.HashSet();
@@ -147,7 +147,7 @@ public class Producto implements Serializable {
 		return descripcion;
 	}
 	
-	public void set_Categoria(base_de_datos.Categoria value) {
+	public void set_Categoria(Base_de_Datos.Categoria value) {
 		if (_Categoria != null) {
 			_Categoria._Producto.remove(this);
 		}
@@ -156,18 +156,18 @@ public class Producto implements Serializable {
 		}
 	}
 	
-	public base_de_datos.Categoria get_Categoria() {
+	public Base_de_Datos.Categoria get_Categoria() {
 		return _Categoria;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Categoria(base_de_datos.Categoria value) {
+	public void setORM__Categoria(Base_de_Datos.Categoria value) {
 		this._Categoria = value;
 	}
 	
-	private base_de_datos.Categoria getORM__Categoria() {
+	private Base_de_Datos.Categoria getORM__Categoria() {
 		return _Categoria;
 	}
 	
@@ -180,7 +180,7 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final Base_de_Datos.Producto_en_compraSetCollection _Producto_en_compra = new Base_de_Datos.Producto_en_compraSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, Base_de_Datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, Base_de_Datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM__Pertenece_a(java.util.Set value) {
 		this.ORM__Pertenece_a = value;
@@ -191,7 +191,7 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ComentarioSetCollection _Pertenece_a = new base_de_datos.ComentarioSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__PERTENECE_A, base_de_datos.ORMConstants.KEY_COMENTARIO__TIENE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.ComentarioSetCollection _Pertenece_a = new Base_de_Datos.ComentarioSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_PRODUCTO__PERTENECE_A, Base_de_Datos.ORMConstants.KEY_COMENTARIO__TIENE, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Imagen(java.util.Set value) {
 		this.ORM__Imagen = value;
@@ -202,9 +202,9 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ImagenSetCollection _Imagen = new base_de_datos.ImagenSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__IMAGEN, base_de_datos.ORMConstants.KEY_IMAGEN__PRODUCTO, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.ImagenSetCollection _Imagen = new Base_de_Datos.ImagenSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_PRODUCTO__IMAGEN, Base_de_Datos.ORMConstants.KEY_IMAGEN__PRODUCTO, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
-	public void set_Valorado_por(base_de_datos.Valoracion value) {
+	public void set_Valorado_por(Base_de_Datos.Valoracion value) {
 		if (_Valorado_por != null) {
 			_Valorado_por._Valorado.remove(this);
 		}
@@ -213,18 +213,18 @@ public class Producto implements Serializable {
 		}
 	}
 	
-	public base_de_datos.Valoracion get_Valorado_por() {
+	public Base_de_Datos.Valoracion get_Valorado_por() {
 		return _Valorado_por;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Valorado_por(base_de_datos.Valoracion value) {
+	public void setORM__Valorado_por(Base_de_Datos.Valoracion value) {
 		this._Valorado_por = value;
 	}
 	
-	private base_de_datos.Valoracion getORM__Valorado_por() {
+	private Base_de_Datos.Valoracion getORM__Valorado_por() {
 		return _Valorado_por;
 	}
 	

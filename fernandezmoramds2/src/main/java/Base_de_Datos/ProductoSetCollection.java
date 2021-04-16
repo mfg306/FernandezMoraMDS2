@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 
@@ -99,7 +99,7 @@ public class ProductoSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return base_de_datos.HitoPersistentManager.instance();
+		return Base_de_Datos.HitoPersistentManager.instance();
 	}
 	
 }

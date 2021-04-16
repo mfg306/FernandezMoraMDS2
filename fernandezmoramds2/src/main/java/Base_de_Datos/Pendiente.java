@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,12 +20,12 @@ import javax.persistence.*;
 @Table(name="Pendiente")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="CompraCodigo", referencedColumnName="Codigo")
-public class Pendiente extends base_de_datos.Compra implements Serializable {
+public class Pendiente extends Base_de_Datos.Compra implements Serializable {
 	public Pendiente() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA) {
+		if (key == Base_de_Datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA) {
 			return ORM__Producto_en_compra;
 		}
 		
@@ -33,12 +33,12 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PENDIENTE__HACE_COMPRA) {
-			this._Hace_compra = (base_de_datos.UR) owner;
+		if (key == Base_de_Datos.ORMConstants.KEY_PENDIENTE__HACE_COMPRA) {
+			this._Hace_compra = (Base_de_Datos.UR) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS) {
-			this._Encargado_de_compras = (base_de_datos.Encargado_de_compras) owner;
+		else if (key == Base_de_Datos.ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS) {
+			this._Encargado_de_compras = (Base_de_Datos.Encargado_de_compras) owner;
 		}
 	}
 	
@@ -54,17 +54,17 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 		
 	};
 	
-	@ManyToOne(targetEntity=base_de_datos.Encargado_de_compras.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Encargado_de_compras.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="Encargado_de_comprasEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKPendiente822971"))	
-	private base_de_datos.Encargado_de_compras _Encargado_de_compras;
+	private Base_de_Datos.Encargado_de_compras _Encargado_de_compras;
 	
-	@ManyToOne(targetEntity=base_de_datos.UR.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.UR.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKPendiente405808"))	
-	private base_de_datos.UR _Hace_compra;
+	private Base_de_Datos.UR _Hace_compra;
 	
-	@ManyToMany(targetEntity=base_de_datos.Producto_en_compra.class)	
+	@ManyToMany(targetEntity=Base_de_Datos.Producto_en_compra.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Producto_en_compra_Pendiente", joinColumns={ @JoinColumn(name="PendienteCompraCodigo") }, inverseJoinColumns={ @JoinColumn(name="Producto_en_compraId_Producto_en_compra") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -79,9 +79,9 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final Base_de_Datos.Producto_en_compraSetCollection _Producto_en_compra = new Base_de_Datos.Producto_en_compraSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, Base_de_Datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, Base_de_Datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void set_Hace_compra(base_de_datos.UR value) {
+	public void set_Hace_compra(Base_de_Datos.UR value) {
 		if (_Hace_compra != null) {
 			_Hace_compra._Compra.remove(this);
 		}
@@ -90,22 +90,22 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 		}
 	}
 	
-	public base_de_datos.UR get_Hace_compra() {
+	public Base_de_Datos.UR get_Hace_compra() {
 		return _Hace_compra;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Hace_compra(base_de_datos.UR value) {
+	public void setORM__Hace_compra(Base_de_Datos.UR value) {
 		this._Hace_compra = value;
 	}
 	
-	private base_de_datos.UR getORM__Hace_compra() {
+	private Base_de_Datos.UR getORM__Hace_compra() {
 		return _Hace_compra;
 	}
 	
-	public void set_Encargado_de_compras(base_de_datos.Encargado_de_compras value) {
+	public void set_Encargado_de_compras(Base_de_Datos.Encargado_de_compras value) {
 		if (_Encargado_de_compras != null) {
 			_Encargado_de_compras._Pendiente.remove(this);
 		}
@@ -114,18 +114,18 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 		}
 	}
 	
-	public base_de_datos.Encargado_de_compras get_Encargado_de_compras() {
+	public Base_de_Datos.Encargado_de_compras get_Encargado_de_compras() {
 		return _Encargado_de_compras;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Encargado_de_compras(base_de_datos.Encargado_de_compras value) {
+	public void setORM__Encargado_de_compras(Base_de_Datos.Encargado_de_compras value) {
 		this._Encargado_de_compras = value;
 	}
 	
-	private base_de_datos.Encargado_de_compras getORM__Encargado_de_compras() {
+	private Base_de_Datos.Encargado_de_compras getORM__Encargado_de_compras() {
 		return _Encargado_de_compras;
 	}
 	

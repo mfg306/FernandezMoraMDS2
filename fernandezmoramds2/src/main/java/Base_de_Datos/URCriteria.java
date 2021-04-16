@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -61,27 +61,27 @@ public class URCriteria extends AbstractORMCriteria {
 	}
 	
 	public URCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(Base_de_Datos.HitoPersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.ComentarioCriteria create_Es_de_unCriteria() {
-		return new base_de_datos.ComentarioCriteria(createCriteria("ORM__Es_de_un"));
+	public Base_de_Datos.ComentarioCriteria create_Es_de_unCriteria() {
+		return new Base_de_Datos.ComentarioCriteria(createCriteria("ORM__Es_de_un"));
 	}
 	
-	public base_de_datos.PendienteCriteria create_CompraCriteria() {
-		return new base_de_datos.PendienteCriteria(createCriteria("ORM__Compra"));
+	public Base_de_Datos.PendienteCriteria create_CompraCriteria() {
+		return new Base_de_Datos.PendienteCriteria(createCriteria("ORM__Compra"));
 	}
 	
-	public base_de_datos.RecibidoCriteria create_recibidoCriteria() {
-		return new base_de_datos.RecibidoCriteria(createCriteria("ORM__recibido"));
+	public Base_de_Datos.RecibidoCriteria create_recibidoCriteria() {
+		return new Base_de_Datos.RecibidoCriteria(createCriteria("ORM__recibido"));
 	}
 	
-	public base_de_datos.MensajeCriteria create_EnviaCriteria() {
-		return new base_de_datos.MensajeCriteria(createCriteria("ORM__Envia"));
+	public Base_de_Datos.MensajeCriteria create_EnviaCriteria() {
+		return new Base_de_Datos.MensajeCriteria(createCriteria("ORM__Envia"));
 	}
 	
-	public base_de_datos.ValoracionCriteria create_ValoraCriteria() {
-		return new base_de_datos.ValoracionCriteria(createCriteria("ORM__Valora"));
+	public Base_de_Datos.ValoracionCriteria create_ValoraCriteria() {
+		return new Base_de_Datos.ValoracionCriteria(createCriteria("ORM__Valora"));
 	}
 	
 	public UR uniqueUR() {

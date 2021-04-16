@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class ValoracionDAO {
 	public static Valoracion loadValoracionByORMID(int id_valoracion) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadValoracionByORMID(session, id_valoracion);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion getValoracionByORMID(int id_valoracion) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getValoracionByORMID(session, id_valoracion);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByORMID(int id_valoracion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadValoracionByORMID(session, id_valoracion, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion getValoracionByORMID(int id_valoracion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getValoracionByORMID(session, id_valoracion, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByORMID(PersistentSession session, int id_valoracion) throws PersistentException {
 		try {
-			return (Valoracion) session.load(base_de_datos.Valoracion.class, new Integer(id_valoracion));
+			return (Valoracion) session.load(Base_de_Datos.Valoracion.class, new Integer(id_valoracion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion getValoracionByORMID(PersistentSession session, int id_valoracion) throws PersistentException {
 		try {
-			return (Valoracion) session.get(base_de_datos.Valoracion.class, new Integer(id_valoracion));
+			return (Valoracion) session.get(Base_de_Datos.Valoracion.class, new Integer(id_valoracion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByORMID(PersistentSession session, int id_valoracion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Valoracion) session.load(base_de_datos.Valoracion.class, new Integer(id_valoracion), lockMode);
+			return (Valoracion) session.load(Base_de_Datos.Valoracion.class, new Integer(id_valoracion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion getValoracionByORMID(PersistentSession session, int id_valoracion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Valoracion) session.get(base_de_datos.Valoracion.class, new Integer(id_valoracion), lockMode);
+			return (Valoracion) session.get(Base_de_Datos.Valoracion.class, new Integer(id_valoracion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class ValoracionDAO {
 	
 	public static List queryValoracion(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryValoracion(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class ValoracionDAO {
 	
 	public static List queryValoracion(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryValoracion(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion[] listValoracionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listValoracionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion[] listValoracionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listValoracionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class ValoracionDAO {
 	}
 	
 	public static List queryValoracion(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Valoracion as Valoracion");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Valoracion as Valoracion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class ValoracionDAO {
 	}
 	
 	public static List queryValoracion(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Valoracion as Valoracion");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Valoracion as Valoracion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadValoracionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadValoracionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class ValoracionDAO {
 	
 	public static java.util.Iterator iterateValoracionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateValoracionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class ValoracionDAO {
 	
 	public static java.util.Iterator iterateValoracionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateValoracionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class ValoracionDAO {
 	}
 	
 	public static java.util.Iterator iterateValoracionByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Valoracion as Valoracion");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Valoracion as Valoracion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class ValoracionDAO {
 	}
 	
 	public static java.util.Iterator iterateValoracionByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Valoracion as Valoracion");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Valoracion as Valoracion");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class ValoracionDAO {
 	}
 	
 	public static Valoracion createValoracion() {
-		return new base_de_datos.Valoracion();
+		return new Base_de_Datos.Valoracion();
 	}
 	
-	public static boolean save(base_de_datos.Valoracion valoracion) throws PersistentException {
+	public static boolean save(Base_de_Datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(valoracion);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(valoracion);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class ValoracionDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Valoracion valoracion) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(valoracion);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(valoracion);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,13 +321,13 @@ public class ValoracionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Valoracion valoracion)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Valoracion valoracion)throws PersistentException {
 		try {
 			if (valoracion.get_Valorado_por() != null) {
 				valoracion.get_Valorado_por()._Valora.remove(valoracion);
 			}
 			
-			base_de_datos.Producto[] l_Valorados = valoracion._Valorado.toArray();
+			Base_de_Datos.Producto[] l_Valorados = valoracion._Valorado.toArray();
 			for(int i = 0; i < l_Valorados.length; i++) {
 				l_Valorados[i].set_Valorado_por(null);
 			}
@@ -339,13 +339,13 @@ public class ValoracionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Valoracion valoracion, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Valoracion valoracion, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (valoracion.get_Valorado_por() != null) {
 				valoracion.get_Valorado_por()._Valora.remove(valoracion);
 			}
 			
-			base_de_datos.Producto[] l_Valorados = valoracion._Valorado.toArray();
+			Base_de_Datos.Producto[] l_Valorados = valoracion._Valorado.toArray();
 			for(int i = 0; i < l_Valorados.length; i++) {
 				l_Valorados[i].set_Valorado_por(null);
 			}
@@ -362,9 +362,9 @@ public class ValoracionDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Valoracion valoracion) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(valoracion);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(valoracion);
 			return true;
 		}
 		catch (Exception e) {
@@ -373,9 +373,9 @@ public class ValoracionDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Valoracion valoracion) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(valoracion);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(valoracion);
 			return true;
 		}
 		catch (Exception e) {

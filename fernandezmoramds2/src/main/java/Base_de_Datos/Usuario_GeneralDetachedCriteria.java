@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -28,7 +28,7 @@ public class Usuario_GeneralDetachedCriteria extends AbstractORMDetachedCriteria
 	public final BooleanExpression es_administrador;
 	
 	public Usuario_GeneralDetachedCriteria() {
-		super(base_de_datos.Usuario_General.class, base_de_datos.Usuario_GeneralCriteria.class);
+		super(Base_de_Datos.Usuario_General.class, Base_de_Datos.Usuario_GeneralCriteria.class);
 		id_Usuario = new IntegerExpression("id_Usuario", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		primer_apellido = new StringExpression("primer_apellido", this.getDetachedCriteria());
@@ -39,7 +39,7 @@ public class Usuario_GeneralDetachedCriteria extends AbstractORMDetachedCriteria
 	}
 	
 	public Usuario_GeneralDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.Usuario_GeneralCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.Usuario_GeneralCriteria.class);
 		id_Usuario = new IntegerExpression("id_Usuario", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		primer_apellido = new StringExpression("primer_apellido", this.getDetachedCriteria());

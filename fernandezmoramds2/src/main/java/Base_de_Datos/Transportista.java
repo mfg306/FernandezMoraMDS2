@@ -11,7 +11,8 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
+
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,15 +21,15 @@ import javax.persistence.*;
 @Table(name="Transportista")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="EmpleadoIdEmpleado", referencedColumnName="IdEmpleado")
-public class Transportista extends base_de_datos.Empleado implements Serializable {
+public class Transportista extends Base_de_Datos.Empleado implements Serializable {
 	public Transportista() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_TRANSPORTISTA__RECIBIDO) {
+		if (key == Base_de_Datos.ORMConstants.KEY_TRANSPORTISTA__RECIBIDO) {
 			return ORM__Recibido;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_TRANSPORTISTA__ENVIADO) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_TRANSPORTISTA__ENVIADO) {
 			return ORM__Enviado;
 		}
 		
@@ -52,12 +53,12 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	@Column(name="Contrasenia", nullable=true, length=255)	
 	private String contrasenia;
 	
-	@OneToMany(mappedBy="_Recoge", targetEntity=base_de_datos.Recibido.class)	
+	@OneToMany(mappedBy="_Recoge", targetEntity=Base_de_Datos.Recibido.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Recibido = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_Transportista", targetEntity=base_de_datos.Enviado.class)	
+	@OneToMany(mappedBy="_Transportista", targetEntity=Base_de_Datos.Enviado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Enviado = new java.util.HashSet();
@@ -95,7 +96,7 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	}
 	
 	@Transient	
-	public final base_de_datos.RecibidoSetCollection _Recibido = new base_de_datos.RecibidoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_TRANSPORTISTA__RECIBIDO, base_de_datos.ORMConstants.KEY_RECIBIDO__RECOGE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.RecibidoSetCollection _Recibido = new Base_de_Datos.RecibidoSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_TRANSPORTISTA__RECIBIDO, Base_de_Datos.ORMConstants.KEY_RECIBIDO__RECOGE, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Enviado(java.util.Set value) {
 		this.ORM__Enviado = value;
@@ -106,7 +107,7 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	}
 	
 	@Transient	
-	public final base_de_datos.EnviadoSetCollection _Enviado = new base_de_datos.EnviadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_TRANSPORTISTA__ENVIADO, base_de_datos.ORMConstants.KEY_ENVIADO__TRANSPORTISTA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.EnviadoSetCollection _Enviado = new Base_de_Datos.EnviadoSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_TRANSPORTISTA__ENVIADO, Base_de_Datos.ORMConstants.KEY_ENVIADO__TRANSPORTISTA, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -53,7 +53,7 @@ public class ProductoCriteria extends AbstractORMCriteria {
 	}
 	
 	public ProductoCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(Base_de_Datos.HitoPersistentManager.instance().getSession());
 	}
 	
 	public ValoracionCriteria create_Valorado_porCriteria() {
@@ -64,16 +64,16 @@ public class ProductoCriteria extends AbstractORMCriteria {
 		return new CategoriaCriteria(createCriteria("_Categoria"));
 	}
 	
-	public base_de_datos.Producto_en_compraCriteria create_Producto_en_compraCriteria() {
-		return new base_de_datos.Producto_en_compraCriteria(createCriteria("ORM__Producto_en_compra"));
+	public Base_de_Datos.Producto_en_compraCriteria create_Producto_en_compraCriteria() {
+		return new Base_de_Datos.Producto_en_compraCriteria(createCriteria("ORM__Producto_en_compra"));
 	}
 	
-	public base_de_datos.ComentarioCriteria create_Pertenece_aCriteria() {
-		return new base_de_datos.ComentarioCriteria(createCriteria("ORM__Pertenece_a"));
+	public Base_de_Datos.ComentarioCriteria create_Pertenece_aCriteria() {
+		return new Base_de_Datos.ComentarioCriteria(createCriteria("ORM__Pertenece_a"));
 	}
 	
-	public base_de_datos.ImagenCriteria create_ImagenCriteria() {
-		return new base_de_datos.ImagenCriteria(createCriteria("ORM__Imagen"));
+	public Base_de_Datos.ImagenCriteria create_ImagenCriteria() {
+		return new Base_de_Datos.ImagenCriteria(createCriteria("ORM__Imagen"));
 	}
 	
 	public Producto uniqueProducto() {

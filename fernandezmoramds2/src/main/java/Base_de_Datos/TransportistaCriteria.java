@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -43,15 +43,15 @@ public class TransportistaCriteria extends AbstractORMCriteria {
 	}
 	
 	public TransportistaCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(Base_de_Datos.HitoPersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.RecibidoCriteria create_RecibidoCriteria() {
-		return new base_de_datos.RecibidoCriteria(createCriteria("ORM__Recibido"));
+	public Base_de_Datos.RecibidoCriteria create_RecibidoCriteria() {
+		return new Base_de_Datos.RecibidoCriteria(createCriteria("ORM__Recibido"));
 	}
 	
-	public base_de_datos.EnviadoCriteria create_EnviadoCriteria() {
-		return new base_de_datos.EnviadoCriteria(createCriteria("ORM__Enviado"));
+	public Base_de_Datos.EnviadoCriteria create_EnviadoCriteria() {
+		return new Base_de_Datos.EnviadoCriteria(createCriteria("ORM__Enviado"));
 	}
 	
 	public Transportista uniqueTransportista() {

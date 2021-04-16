@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class RecibidoDAO {
 	public static Recibido loadRecibidoByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadRecibidoByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class RecibidoDAO {
 	
 	public static Recibido getRecibidoByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getRecibidoByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadRecibidoByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class RecibidoDAO {
 	
 	public static Recibido getRecibidoByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getRecibidoByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			return (Recibido) session.load(base_de_datos.Recibido.class, new Integer(codigo));
+			return (Recibido) session.load(Base_de_Datos.Recibido.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class RecibidoDAO {
 	
 	public static Recibido getRecibidoByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			return (Recibido) session.get(base_de_datos.Recibido.class, new Integer(codigo));
+			return (Recibido) session.get(Base_de_Datos.Recibido.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Recibido) session.load(base_de_datos.Recibido.class, new Integer(codigo), lockMode);
+			return (Recibido) session.load(Base_de_Datos.Recibido.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class RecibidoDAO {
 	
 	public static Recibido getRecibidoByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Recibido) session.get(base_de_datos.Recibido.class, new Integer(codigo), lockMode);
+			return (Recibido) session.get(Base_de_Datos.Recibido.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class RecibidoDAO {
 	
 	public static List queryRecibido(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryRecibido(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class RecibidoDAO {
 	
 	public static List queryRecibido(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryRecibido(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class RecibidoDAO {
 	
 	public static Recibido[] listRecibidoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listRecibidoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class RecibidoDAO {
 	
 	public static Recibido[] listRecibidoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listRecibidoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class RecibidoDAO {
 	}
 	
 	public static List queryRecibido(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Recibido as Recibido");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Recibido as Recibido");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class RecibidoDAO {
 	}
 	
 	public static List queryRecibido(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Recibido as Recibido");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Recibido as Recibido");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadRecibidoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadRecibidoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class RecibidoDAO {
 	
 	public static java.util.Iterator iterateRecibidoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateRecibidoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class RecibidoDAO {
 	
 	public static java.util.Iterator iterateRecibidoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateRecibidoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class RecibidoDAO {
 	}
 	
 	public static java.util.Iterator iterateRecibidoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Recibido as Recibido");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Recibido as Recibido");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class RecibidoDAO {
 	}
 	
 	public static java.util.Iterator iterateRecibidoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Recibido as Recibido");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Recibido as Recibido");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class RecibidoDAO {
 	}
 	
 	public static Recibido createRecibido() {
-		return new base_de_datos.Recibido();
+		return new Base_de_Datos.Recibido();
 	}
 	
-	public static boolean save(base_de_datos.Recibido recibido) throws PersistentException {
+	public static boolean save(Base_de_Datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(recibido);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(recibido);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class RecibidoDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Recibido recibido) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(recibido);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(recibido);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class RecibidoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Recibido recibido)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Recibido recibido)throws PersistentException {
 		try {
 			if (recibido.get_recibe() != null) {
 				recibido.get_recibe()._recibido.remove(recibido);
@@ -339,7 +339,7 @@ public class RecibidoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Recibido recibido, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Recibido recibido, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (recibido.get_recibe() != null) {
 				recibido.get_recibe()._recibido.remove(recibido);
@@ -362,9 +362,9 @@ public class RecibidoDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Recibido recibido) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(recibido);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(recibido);
 			return true;
 		}
 		catch (Exception e) {
@@ -373,9 +373,9 @@ public class RecibidoDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Recibido recibido) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(recibido);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(recibido);
 			return true;
 		}
 		catch (Exception e) {

@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,13 +20,13 @@ import javax.persistence.*;
 @Table(name="Producto_Rebajado")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto")
-public class Producto_Rebajado extends base_de_datos.Producto implements Serializable {
+public class Producto_Rebajado extends Base_de_Datos.Producto implements Serializable {
 	public Producto_Rebajado() {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE) {
-			this._Tiene = (base_de_datos.Oferta) owner;
+		if (key == Base_de_Datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE) {
+			this._Tiene = (Base_de_Datos.Oferta) owner;
 		}
 	}
 	
@@ -41,10 +41,10 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 	@Column(name="Precio_rebajado", nullable=false)	
 	private double precio_rebajado;
 	
-	@ManyToOne(targetEntity=base_de_datos.Oferta.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Oferta.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="OfertaId_Oferta", referencedColumnName="Id_Oferta", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto_R263979"))	
-	private base_de_datos.Oferta _Tiene;
+	private Base_de_Datos.Oferta _Tiene;
 	
 	public void setPrecio_rebajado(double value) {
 		this.precio_rebajado = value;
@@ -54,7 +54,7 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 		return precio_rebajado;
 	}
 	
-	public void set_Tiene(base_de_datos.Oferta value) {
+	public void set_Tiene(Base_de_Datos.Oferta value) {
 		if (_Tiene != null) {
 			_Tiene._Pertenece_a.remove(this);
 		}
@@ -63,18 +63,18 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 		}
 	}
 	
-	public base_de_datos.Oferta get_Tiene() {
+	public Base_de_Datos.Oferta get_Tiene() {
 		return _Tiene;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Tiene(base_de_datos.Oferta value) {
+	public void setORM__Tiene(Base_de_Datos.Oferta value) {
 		this._Tiene = value;
 	}
 	
-	private base_de_datos.Oferta getORM__Tiene() {
+	private Base_de_Datos.Oferta getORM__Tiene() {
 		return _Tiene;
 	}
 	

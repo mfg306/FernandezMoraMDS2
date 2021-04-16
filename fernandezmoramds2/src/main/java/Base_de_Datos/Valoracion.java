@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -23,7 +23,7 @@ public class Valoracion implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_VALORACION__VALORADO) {
+		if (key == Base_de_Datos.ORMConstants.KEY_VALORACION__VALORADO) {
 			return ORM__Valorado;
 		}
 		
@@ -31,8 +31,8 @@ public class Valoracion implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_VALORACION__VALORADO_POR) {
-			this._Valorado_por = (base_de_datos.UR) owner;
+		if (key == Base_de_Datos.ORMConstants.KEY_VALORACION__VALORADO_POR) {
+			this._Valorado_por = (Base_de_Datos.UR) owner;
 		}
 	}
 	
@@ -50,19 +50,19 @@ public class Valoracion implements Serializable {
 	
 	@Column(name="Id_valoracion", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_VALORACION_ID_VALORACION_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_VALORACION_ID_VALORACION_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="Base_de_Datos_VALORACION_ID_VALORACION_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="Base_de_Datos_VALORACION_ID_VALORACION_GENERATOR", strategy="native")	
 	private int id_valoracion;
 	
-	@ManyToOne(targetEntity=base_de_datos.UR.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.UR.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKValoracion23089"))	
-	private base_de_datos.UR _Valorado_por;
+	private Base_de_Datos.UR _Valorado_por;
 	
 	@Column(name="Valoracion", nullable=false, length=10)	
 	private int valoracion;
 	
-	@OneToMany(mappedBy="_Valorado_por", targetEntity=base_de_datos.Producto.class)	
+	@OneToMany(mappedBy="_Valorado_por", targetEntity=Base_de_Datos.Producto.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Valorado = new java.util.HashSet();
@@ -87,7 +87,7 @@ public class Valoracion implements Serializable {
 		return valoracion;
 	}
 	
-	public void set_Valorado_por(base_de_datos.UR value) {
+	public void set_Valorado_por(Base_de_Datos.UR value) {
 		if (_Valorado_por != null) {
 			_Valorado_por._Valora.remove(this);
 		}
@@ -96,18 +96,18 @@ public class Valoracion implements Serializable {
 		}
 	}
 	
-	public base_de_datos.UR get_Valorado_por() {
+	public Base_de_Datos.UR get_Valorado_por() {
 		return _Valorado_por;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Valorado_por(base_de_datos.UR value) {
+	public void setORM__Valorado_por(Base_de_Datos.UR value) {
 		this._Valorado_por = value;
 	}
 	
-	private base_de_datos.UR getORM__Valorado_por() {
+	private Base_de_Datos.UR getORM__Valorado_por() {
 		return _Valorado_por;
 	}
 	
@@ -120,7 +120,7 @@ public class Valoracion implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ProductoSetCollection _Valorado = new base_de_datos.ProductoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_VALORACION__VALORADO, base_de_datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.ProductoSetCollection _Valorado = new Base_de_Datos.ProductoSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_VALORACION__VALORADO, Base_de_Datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_valoracion());

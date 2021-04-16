@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class TransportistaDAO {
 	public static Transportista loadTransportistaByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadTransportistaByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class TransportistaDAO {
 	
 	public static Transportista getTransportistaByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getTransportistaByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadTransportistaByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class TransportistaDAO {
 	
 	public static Transportista getTransportistaByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getTransportistaByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByORMID(PersistentSession session, int idEmpleado) throws PersistentException {
 		try {
-			return (Transportista) session.load(base_de_datos.Transportista.class, new Integer(idEmpleado));
+			return (Transportista) session.load(Base_de_Datos.Transportista.class, new Integer(idEmpleado));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class TransportistaDAO {
 	
 	public static Transportista getTransportistaByORMID(PersistentSession session, int idEmpleado) throws PersistentException {
 		try {
-			return (Transportista) session.get(base_de_datos.Transportista.class, new Integer(idEmpleado));
+			return (Transportista) session.get(Base_de_Datos.Transportista.class, new Integer(idEmpleado));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByORMID(PersistentSession session, int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Transportista) session.load(base_de_datos.Transportista.class, new Integer(idEmpleado), lockMode);
+			return (Transportista) session.load(Base_de_Datos.Transportista.class, new Integer(idEmpleado), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class TransportistaDAO {
 	
 	public static Transportista getTransportistaByORMID(PersistentSession session, int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Transportista) session.get(base_de_datos.Transportista.class, new Integer(idEmpleado), lockMode);
+			return (Transportista) session.get(Base_de_Datos.Transportista.class, new Integer(idEmpleado), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class TransportistaDAO {
 	
 	public static List queryTransportista(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryTransportista(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class TransportistaDAO {
 	
 	public static List queryTransportista(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryTransportista(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class TransportistaDAO {
 	
 	public static Transportista[] listTransportistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listTransportistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class TransportistaDAO {
 	
 	public static Transportista[] listTransportistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listTransportistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class TransportistaDAO {
 	}
 	
 	public static List queryTransportista(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Transportista as Transportista");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Transportista as Transportista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class TransportistaDAO {
 	}
 	
 	public static List queryTransportista(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Transportista as Transportista");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Transportista as Transportista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadTransportistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadTransportistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class TransportistaDAO {
 	
 	public static java.util.Iterator iterateTransportistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateTransportistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class TransportistaDAO {
 	
 	public static java.util.Iterator iterateTransportistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateTransportistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class TransportistaDAO {
 	}
 	
 	public static java.util.Iterator iterateTransportistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Transportista as Transportista");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Transportista as Transportista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class TransportistaDAO {
 	}
 	
 	public static java.util.Iterator iterateTransportistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Transportista as Transportista");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Transportista as Transportista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class TransportistaDAO {
 	}
 	
 	public static Transportista createTransportista() {
-		return new base_de_datos.Transportista();
+		return new Base_de_Datos.Transportista();
 	}
 	
-	public static boolean save(base_de_datos.Transportista transportista) throws PersistentException {
+	public static boolean save(Base_de_Datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(transportista);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(transportista);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class TransportistaDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Transportista transportista) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(transportista);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(transportista);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,13 +321,13 @@ public class TransportistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Transportista transportista)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Transportista transportista)throws PersistentException {
 		try {
-			base_de_datos.Recibido[] l_Recibidos = transportista._Recibido.toArray();
+			Base_de_Datos.Recibido[] l_Recibidos = transportista._Recibido.toArray();
 			for(int i = 0; i < l_Recibidos.length; i++) {
 				l_Recibidos[i].set_Recoge(null);
 			}
-			base_de_datos.Enviado[] l_Enviados = transportista._Enviado.toArray();
+			Base_de_Datos.Enviado[] l_Enviados = transportista._Enviado.toArray();
 			for(int i = 0; i < l_Enviados.length; i++) {
 				l_Enviados[i].set_Transportista(null);
 			}
@@ -339,13 +339,13 @@ public class TransportistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Transportista transportista, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Transportista transportista, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			base_de_datos.Recibido[] l_Recibidos = transportista._Recibido.toArray();
+			Base_de_Datos.Recibido[] l_Recibidos = transportista._Recibido.toArray();
 			for(int i = 0; i < l_Recibidos.length; i++) {
 				l_Recibidos[i].set_Recoge(null);
 			}
-			base_de_datos.Enviado[] l_Enviados = transportista._Enviado.toArray();
+			Base_de_Datos.Enviado[] l_Enviados = transportista._Enviado.toArray();
 			for(int i = 0; i < l_Enviados.length; i++) {
 				l_Enviados[i].set_Transportista(null);
 			}
@@ -362,9 +362,9 @@ public class TransportistaDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Transportista transportista) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(transportista);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(transportista);
 			return true;
 		}
 		catch (Exception e) {
@@ -373,9 +373,9 @@ public class TransportistaDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Transportista transportista) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(transportista);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(transportista);
 			return true;
 		}
 		catch (Exception e) {

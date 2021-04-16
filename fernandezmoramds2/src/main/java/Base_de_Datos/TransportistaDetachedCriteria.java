@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -28,7 +28,7 @@ public class TransportistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression _Enviado;
 	
 	public TransportistaDetachedCriteria() {
-		super(base_de_datos.Transportista.class, base_de_datos.TransportistaCriteria.class);
+		super(Base_de_Datos.Transportista.class, Base_de_Datos.TransportistaCriteria.class);
 		idEmpleado = new IntegerExpression("idEmpleado", this.getDetachedCriteria());
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
@@ -39,7 +39,7 @@ public class TransportistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public TransportistaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.TransportistaCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.TransportistaCriteria.class);
 		idEmpleado = new IntegerExpression("idEmpleado", this.getDetachedCriteria());
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
@@ -49,12 +49,12 @@ public class TransportistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		_Enviado = new CollectionExpression("ORM__Enviado", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.RecibidoDetachedCriteria create_RecibidoCriteria() {
-		return new base_de_datos.RecibidoDetachedCriteria(createCriteria("ORM__Recibido"));
+	public Base_de_Datos.RecibidoDetachedCriteria create_RecibidoCriteria() {
+		return new Base_de_Datos.RecibidoDetachedCriteria(createCriteria("ORM__Recibido"));
 	}
 	
-	public base_de_datos.EnviadoDetachedCriteria create_EnviadoCriteria() {
-		return new base_de_datos.EnviadoDetachedCriteria(createCriteria("ORM__Enviado"));
+	public Base_de_Datos.EnviadoDetachedCriteria create_EnviadoCriteria() {
+		return new Base_de_Datos.EnviadoDetachedCriteria(createCriteria("ORM__Enviado"));
 	}
 	
 	public Transportista uniqueTransportista(PersistentSession session) {

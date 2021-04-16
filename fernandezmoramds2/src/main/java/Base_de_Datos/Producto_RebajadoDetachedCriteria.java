@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -36,7 +36,7 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	public final AssociationExpression _Tiene;
 	
 	public Producto_RebajadoDetachedCriteria() {
-		super(base_de_datos.Producto_Rebajado.class, base_de_datos.Producto_RebajadoCriteria.class);
+		super(Base_de_Datos.Producto_Rebajado.class, Base_de_Datos.Producto_RebajadoCriteria.class);
 		id_Producto = new IntegerExpression("id_Producto", this.getDetachedCriteria());
 		_Valorado_porId = new IntegerExpression("_Valorado_por.id_valoracion", this.getDetachedCriteria());
 		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
@@ -55,7 +55,7 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	}
 	
 	public Producto_RebajadoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.Producto_RebajadoCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.Producto_RebajadoCriteria.class);
 		id_Producto = new IntegerExpression("id_Producto", this.getDetachedCriteria());
 		_Valorado_porId = new IntegerExpression("_Valorado_por.id_valoracion", this.getDetachedCriteria());
 		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
@@ -85,16 +85,16 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 		return new CategoriaDetachedCriteria(createCriteria("_Categoria"));
 	}
 	
-	public base_de_datos.Producto_en_compraDetachedCriteria create_Producto_en_compraCriteria() {
-		return new base_de_datos.Producto_en_compraDetachedCriteria(createCriteria("ORM__Producto_en_compra"));
+	public Base_de_Datos.Producto_en_compraDetachedCriteria create_Producto_en_compraCriteria() {
+		return new Base_de_Datos.Producto_en_compraDetachedCriteria(createCriteria("ORM__Producto_en_compra"));
 	}
 	
-	public base_de_datos.ComentarioDetachedCriteria create_Pertenece_aCriteria() {
-		return new base_de_datos.ComentarioDetachedCriteria(createCriteria("ORM__Pertenece_a"));
+	public Base_de_Datos.ComentarioDetachedCriteria create_Pertenece_aCriteria() {
+		return new Base_de_Datos.ComentarioDetachedCriteria(createCriteria("ORM__Pertenece_a"));
 	}
 	
-	public base_de_datos.ImagenDetachedCriteria create_ImagenCriteria() {
-		return new base_de_datos.ImagenDetachedCriteria(createCriteria("ORM__Imagen"));
+	public Base_de_Datos.ImagenDetachedCriteria create_ImagenCriteria() {
+		return new Base_de_Datos.ImagenDetachedCriteria(createCriteria("ORM__Imagen"));
 	}
 	
 	public Producto_Rebajado uniqueProducto_Rebajado(PersistentSession session) {

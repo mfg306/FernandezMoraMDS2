@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -37,15 +37,15 @@ public class Producto_en_compraCriteria extends AbstractORMCriteria {
 	}
 	
 	public Producto_en_compraCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(Base_de_Datos.HitoPersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.ProductoCriteria create_ProductoCriteria() {
-		return new base_de_datos.ProductoCriteria(createCriteria("ORM__Producto"));
+	public Base_de_Datos.ProductoCriteria create_ProductoCriteria() {
+		return new Base_de_Datos.ProductoCriteria(createCriteria("ORM__Producto"));
 	}
 	
-	public base_de_datos.PendienteCriteria create_PendienteCriteria() {
-		return new base_de_datos.PendienteCriteria(createCriteria("ORM__Pendiente"));
+	public Base_de_Datos.PendienteCriteria create_PendienteCriteria() {
+		return new Base_de_Datos.PendienteCriteria(createCriteria("ORM__Pendiente"));
 	}
 	
 	public Producto_en_compra uniqueProducto_en_compra() {
