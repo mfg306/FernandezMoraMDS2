@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -34,7 +34,7 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final AssociationExpression _Mensaje;
 	
 	public MensajeDetachedCriteria() {
-		super(base_de_datos.Mensaje.class, base_de_datos.MensajeCriteria.class);
+		super(Base_de_Datos.Mensaje.class, Base_de_Datos.MensajeCriteria.class);
 		id_Mensaje = new IntegerExpression("id_Mensaje", this.getDetachedCriteria());
 		_Enviado_por_AdminId = new IntegerExpression("_Enviado_por_Admin.", this.getDetachedCriteria());
 		_Enviado_por_Admin = new AssociationExpression("_Enviado_por_Admin", this.getDetachedCriteria());
@@ -51,7 +51,7 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public MensajeDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.MensajeCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.MensajeCriteria.class);
 		id_Mensaje = new IntegerExpression("id_Mensaje", this.getDetachedCriteria());
 		_Enviado_por_AdminId = new IntegerExpression("_Enviado_por_Admin.", this.getDetachedCriteria());
 		_Enviado_por_Admin = new AssociationExpression("_Enviado_por_Admin", this.getDetachedCriteria());

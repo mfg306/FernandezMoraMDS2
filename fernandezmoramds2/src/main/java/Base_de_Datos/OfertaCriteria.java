@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -39,11 +39,11 @@ public class OfertaCriteria extends AbstractORMCriteria {
 	}
 	
 	public OfertaCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(Base_de_Datos.HitoPersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.Producto_RebajadoCriteria create_Pertenece_aCriteria() {
-		return new base_de_datos.Producto_RebajadoCriteria(createCriteria("ORM__Pertenece_a"));
+	public Base_de_Datos.Producto_RebajadoCriteria create_Pertenece_aCriteria() {
+		return new Base_de_Datos.Producto_RebajadoCriteria(createCriteria("ORM__Pertenece_a"));
 	}
 	
 	public Oferta uniqueOferta() {

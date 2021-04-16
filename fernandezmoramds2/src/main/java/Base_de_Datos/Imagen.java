@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -23,8 +23,8 @@ public class Imagen implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_IMAGEN__PRODUCTO) {
-			this._Producto = (base_de_datos.Producto) owner;
+		if (key == Base_de_Datos.ORMConstants.KEY_IMAGEN__PRODUCTO) {
+			this._Producto = (Base_de_Datos.Producto) owner;
 		}
 	}
 	
@@ -38,14 +38,14 @@ public class Imagen implements Serializable {
 	
 	@Column(name="ID", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_IMAGEN_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_IMAGEN_ID_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="Base_de_Datos_IMAGEN_ID_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="Base_de_Datos_IMAGEN_ID_GENERATOR", strategy="native")	
 	private int ID;
 	
-	@ManyToOne(targetEntity=base_de_datos.Producto.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Producto.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto", nullable=false) }, foreignKey=@ForeignKey(name="FKImagen195906"))	
-	private base_de_datos.Producto _Producto;
+	private Base_de_Datos.Producto _Producto;
 	
 	@Column(name="Ruta", nullable=true, length=255)	
 	private String ruta;
@@ -81,7 +81,7 @@ public class Imagen implements Serializable {
 		return principal;
 	}
 	
-	public void set_Producto(base_de_datos.Producto value) {
+	public void set_Producto(Base_de_Datos.Producto value) {
 		if (_Producto != null) {
 			_Producto._Imagen.remove(this);
 		}
@@ -90,18 +90,18 @@ public class Imagen implements Serializable {
 		}
 	}
 	
-	public base_de_datos.Producto get_Producto() {
+	public Base_de_Datos.Producto get_Producto() {
 		return _Producto;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Producto(base_de_datos.Producto value) {
+	public void setORM__Producto(Base_de_Datos.Producto value) {
 		this._Producto = value;
 	}
 	
-	private base_de_datos.Producto getORM__Producto() {
+	private Base_de_Datos.Producto getORM__Producto() {
 		return _Producto;
 	}
 	

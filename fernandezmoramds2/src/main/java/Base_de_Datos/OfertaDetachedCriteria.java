@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -26,7 +26,7 @@ public class OfertaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression _Pertenece_a;
 	
 	public OfertaDetachedCriteria() {
-		super(base_de_datos.Oferta.class, base_de_datos.OfertaCriteria.class);
+		super(Base_de_Datos.Oferta.class, Base_de_Datos.OfertaCriteria.class);
 		id_Oferta = new IntegerExpression("id_Oferta", this.getDetachedCriteria());
 		nombre_Oferta = new StringExpression("nombre_Oferta", this.getDetachedCriteria());
 		fecha_caducidad = new StringExpression("fecha_caducidad", this.getDetachedCriteria());
@@ -35,7 +35,7 @@ public class OfertaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public OfertaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.OfertaCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.OfertaCriteria.class);
 		id_Oferta = new IntegerExpression("id_Oferta", this.getDetachedCriteria());
 		nombre_Oferta = new StringExpression("nombre_Oferta", this.getDetachedCriteria());
 		fecha_caducidad = new StringExpression("fecha_caducidad", this.getDetachedCriteria());
@@ -43,8 +43,8 @@ public class OfertaDetachedCriteria extends AbstractORMDetachedCriteria {
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.Producto_RebajadoDetachedCriteria create_Pertenece_aCriteria() {
-		return new base_de_datos.Producto_RebajadoDetachedCriteria(createCriteria("ORM__Pertenece_a"));
+	public Base_de_Datos.Producto_RebajadoDetachedCriteria create_Pertenece_aCriteria() {
+		return new Base_de_Datos.Producto_RebajadoDetachedCriteria(createCriteria("ORM__Pertenece_a"));
 	}
 	
 	public Oferta uniqueOferta(PersistentSession session) {

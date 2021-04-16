@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.orm.cfg.JDBCConnectionSetting;
@@ -37,25 +37,25 @@ public class HitoPersistentManager extends PersistentManager {
 	@Override
 	protected void configureMetadataSources(MetadataSources aMetadataSources) {
 		super.configureMetadataSources(aMetadataSources);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Usuario_General.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.UR.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Administrador.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Categoria.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Producto.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Imagen.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Oferta.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Producto_Rebajado.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Empleado.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Transportista.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Encargado_de_compras.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Comentario.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Compra.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Producto_en_compra.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Valoracion.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Pendiente.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Enviado.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Recibido.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Mensaje.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Usuario_General.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.UR.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Administrador.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Categoria.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Producto.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Imagen.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Oferta.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Producto_Rebajado.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Empleado.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Transportista.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Encargado_de_compras.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Comentario.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Compra.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Producto_en_compra.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Valoracion.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Pendiente.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Enviado.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Recibido.class);
+		aMetadataSources.addAnnotatedClass(Base_de_Datos.Mensaje.class);
 	}
 	
 	public String getProjectName() {

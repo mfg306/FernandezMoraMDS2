@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,17 +20,17 @@ import javax.persistence.*;
 @Table(name="Enviado")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="CompraCodigo", referencedColumnName="Codigo")
-public class Enviado extends base_de_datos.Compra implements Serializable {
+public class Enviado extends Base_de_Datos.Compra implements Serializable {
 	public Enviado() {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_ENVIADO__PROCESA) {
-			this._Procesa = (base_de_datos.Encargado_de_compras) owner;
+		if (key == Base_de_Datos.ORMConstants.KEY_ENVIADO__PROCESA) {
+			this._Procesa = (Base_de_Datos.Encargado_de_compras) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_ENVIADO__TRANSPORTISTA) {
-			this._Transportista = (base_de_datos.Transportista) owner;
+		else if (key == Base_de_Datos.ORMConstants.KEY_ENVIADO__TRANSPORTISTA) {
+			this._Transportista = (Base_de_Datos.Transportista) owner;
 		}
 	}
 	
@@ -45,15 +45,15 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 	@Column(name="Id_Cola", nullable=false, length=10)	
 	private int id_Cola;
 	
-	@ManyToOne(targetEntity=base_de_datos.Transportista.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Transportista.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="TransportistaEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKEnviado870041"))	
-	private base_de_datos.Transportista _Transportista;
+	private Base_de_Datos.Transportista _Transportista;
 	
-	@ManyToOne(targetEntity=base_de_datos.Encargado_de_compras.class, fetch=FetchType.LAZY)	
+	@ManyToOne(targetEntity=Base_de_Datos.Encargado_de_compras.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="Encargado_de_comprasEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKEnviado404928"))	
-	private base_de_datos.Encargado_de_compras _Procesa;
+	private Base_de_Datos.Encargado_de_compras _Procesa;
 	
 	public void setId_Cola(int value) {
 		this.id_Cola = value;
@@ -63,7 +63,7 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 		return id_Cola;
 	}
 	
-	public void set_Procesa(base_de_datos.Encargado_de_compras value) {
+	public void set_Procesa(Base_de_Datos.Encargado_de_compras value) {
 		if (_Procesa != null) {
 			_Procesa._Pedido_enviado.remove(this);
 		}
@@ -72,22 +72,22 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 		}
 	}
 	
-	public base_de_datos.Encargado_de_compras get_Procesa() {
+	public Base_de_Datos.Encargado_de_compras get_Procesa() {
 		return _Procesa;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Procesa(base_de_datos.Encargado_de_compras value) {
+	public void setORM__Procesa(Base_de_Datos.Encargado_de_compras value) {
 		this._Procesa = value;
 	}
 	
-	private base_de_datos.Encargado_de_compras getORM__Procesa() {
+	private Base_de_Datos.Encargado_de_compras getORM__Procesa() {
 		return _Procesa;
 	}
 	
-	public void set_Transportista(base_de_datos.Transportista value) {
+	public void set_Transportista(Base_de_Datos.Transportista value) {
 		if (_Transportista != null) {
 			_Transportista._Enviado.remove(this);
 		}
@@ -96,18 +96,18 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 		}
 	}
 	
-	public base_de_datos.Transportista get_Transportista() {
+	public Base_de_Datos.Transportista get_Transportista() {
 		return _Transportista;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM__Transportista(base_de_datos.Transportista value) {
+	public void setORM__Transportista(Base_de_Datos.Transportista value) {
 		this._Transportista = value;
 	}
 	
-	private base_de_datos.Transportista getORM__Transportista() {
+	private Base_de_Datos.Transportista getORM__Transportista() {
 		return _Transportista;
 	}
 	

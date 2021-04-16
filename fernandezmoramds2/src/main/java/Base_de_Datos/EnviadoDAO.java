@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class EnviadoDAO {
 	public static Enviado loadEnviadoByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEnviadoByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class EnviadoDAO {
 	
 	public static Enviado getEnviadoByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getEnviadoByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class EnviadoDAO {
 	
 	public static Enviado loadEnviadoByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEnviadoByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class EnviadoDAO {
 	
 	public static Enviado getEnviadoByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getEnviadoByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class EnviadoDAO {
 	
 	public static Enviado loadEnviadoByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			return (Enviado) session.load(base_de_datos.Enviado.class, new Integer(codigo));
+			return (Enviado) session.load(Base_de_Datos.Enviado.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class EnviadoDAO {
 	
 	public static Enviado getEnviadoByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			return (Enviado) session.get(base_de_datos.Enviado.class, new Integer(codigo));
+			return (Enviado) session.get(Base_de_Datos.Enviado.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class EnviadoDAO {
 	
 	public static Enviado loadEnviadoByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Enviado) session.load(base_de_datos.Enviado.class, new Integer(codigo), lockMode);
+			return (Enviado) session.load(Base_de_Datos.Enviado.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class EnviadoDAO {
 	
 	public static Enviado getEnviadoByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Enviado) session.get(base_de_datos.Enviado.class, new Integer(codigo), lockMode);
+			return (Enviado) session.get(Base_de_Datos.Enviado.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class EnviadoDAO {
 	
 	public static List queryEnviado(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryEnviado(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class EnviadoDAO {
 	
 	public static List queryEnviado(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryEnviado(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class EnviadoDAO {
 	
 	public static Enviado[] listEnviadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listEnviadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class EnviadoDAO {
 	
 	public static Enviado[] listEnviadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listEnviadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class EnviadoDAO {
 	}
 	
 	public static List queryEnviado(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Enviado as Enviado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Enviado as Enviado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class EnviadoDAO {
 	}
 	
 	public static List queryEnviado(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Enviado as Enviado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Enviado as Enviado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class EnviadoDAO {
 	
 	public static Enviado loadEnviadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEnviadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class EnviadoDAO {
 	
 	public static Enviado loadEnviadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEnviadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class EnviadoDAO {
 	
 	public static java.util.Iterator iterateEnviadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateEnviadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class EnviadoDAO {
 	
 	public static java.util.Iterator iterateEnviadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateEnviadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class EnviadoDAO {
 	}
 	
 	public static java.util.Iterator iterateEnviadoByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Enviado as Enviado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Enviado as Enviado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class EnviadoDAO {
 	}
 	
 	public static java.util.Iterator iterateEnviadoByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Enviado as Enviado");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Enviado as Enviado");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class EnviadoDAO {
 	}
 	
 	public static Enviado createEnviado() {
-		return new base_de_datos.Enviado();
+		return new Base_de_Datos.Enviado();
 	}
 	
-	public static boolean save(base_de_datos.Enviado enviado) throws PersistentException {
+	public static boolean save(Base_de_Datos.Enviado enviado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(enviado);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(enviado);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class EnviadoDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Enviado enviado) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Enviado enviado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(enviado);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(enviado);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class EnviadoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Enviado enviado)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Enviado enviado)throws PersistentException {
 		try {
 			if (enviado.get_Transportista() != null) {
 				enviado.get_Transportista()._Enviado.remove(enviado);
@@ -339,7 +339,7 @@ public class EnviadoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Enviado enviado, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Enviado enviado, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (enviado.get_Transportista() != null) {
 				enviado.get_Transportista()._Enviado.remove(enviado);
@@ -362,9 +362,9 @@ public class EnviadoDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Enviado enviado) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Enviado enviado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(enviado);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(enviado);
 			return true;
 		}
 		catch (Exception e) {
@@ -373,9 +373,9 @@ public class EnviadoDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Enviado enviado) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Enviado enviado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(enviado);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(enviado);
 			return true;
 		}
 		catch (Exception e) {

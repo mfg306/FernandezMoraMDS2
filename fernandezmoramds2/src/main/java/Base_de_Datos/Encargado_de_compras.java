@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -20,15 +20,15 @@ import javax.persistence.*;
 @Table(name="Encargado_de_compras")
 @Inheritance(strategy=InheritanceType.JOINED)
 @PrimaryKeyJoinColumn(name="EmpleadoIdEmpleado", referencedColumnName="IdEmpleado")
-public class Encargado_de_compras extends base_de_datos.Empleado implements Serializable {
+public class Encargado_de_compras extends Base_de_Datos.Empleado implements Serializable {
 	public Encargado_de_compras() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE) {
+		if (key == Base_de_Datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE) {
 			return ORM__Pendiente;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO) {
+		else if (key == Base_de_Datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO) {
 			return ORM__Pedido_enviado;
 		}
 		
@@ -52,12 +52,12 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	@Column(name="Contrasenia", nullable=true, length=255)	
 	private String contrasenia;
 	
-	@OneToMany(mappedBy="_Encargado_de_compras", targetEntity=base_de_datos.Pendiente.class)	
+	@OneToMany(mappedBy="_Encargado_de_compras", targetEntity=Base_de_Datos.Pendiente.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Pendiente = new java.util.HashSet();
 	
-	@OneToMany(mappedBy="_Procesa", targetEntity=base_de_datos.Enviado.class)	
+	@OneToMany(mappedBy="_Procesa", targetEntity=Base_de_Datos.Enviado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Pedido_enviado = new java.util.HashSet();
@@ -95,7 +95,7 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	}
 	
 	@Transient	
-	public final base_de_datos.PendienteSetCollection _Pendiente = new base_de_datos.PendienteSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE, base_de_datos.ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.PendienteSetCollection _Pendiente = new Base_de_Datos.PendienteSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE, Base_de_Datos.ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Pedido_enviado(java.util.Set value) {
 		this.ORM__Pedido_enviado = value;
@@ -106,7 +106,7 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	}
 	
 	@Transient	
-	public final base_de_datos.EnviadoSetCollection _Pedido_enviado = new base_de_datos.EnviadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO, base_de_datos.ORMConstants.KEY_ENVIADO__PROCESA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.EnviadoSetCollection _Pedido_enviado = new Base_de_Datos.EnviadoSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO, Base_de_Datos.ORMConstants.KEY_ENVIADO__PROCESA, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

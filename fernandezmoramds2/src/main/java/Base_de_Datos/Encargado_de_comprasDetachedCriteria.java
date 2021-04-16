@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -28,7 +28,7 @@ public class Encargado_de_comprasDetachedCriteria extends AbstractORMDetachedCri
 	public final CollectionExpression _Pedido_enviado;
 	
 	public Encargado_de_comprasDetachedCriteria() {
-		super(base_de_datos.Encargado_de_compras.class, base_de_datos.Encargado_de_comprasCriteria.class);
+		super(Base_de_Datos.Encargado_de_compras.class, Base_de_Datos.Encargado_de_comprasCriteria.class);
 		idEmpleado = new IntegerExpression("idEmpleado", this.getDetachedCriteria());
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
@@ -39,7 +39,7 @@ public class Encargado_de_comprasDetachedCriteria extends AbstractORMDetachedCri
 	}
 	
 	public Encargado_de_comprasDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.Encargado_de_comprasCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.Encargado_de_comprasCriteria.class);
 		idEmpleado = new IntegerExpression("idEmpleado", this.getDetachedCriteria());
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
@@ -49,12 +49,12 @@ public class Encargado_de_comprasDetachedCriteria extends AbstractORMDetachedCri
 		_Pedido_enviado = new CollectionExpression("ORM__Pedido_enviado", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.PendienteDetachedCriteria create_PendienteCriteria() {
-		return new base_de_datos.PendienteDetachedCriteria(createCriteria("ORM__Pendiente"));
+	public Base_de_Datos.PendienteDetachedCriteria create_PendienteCriteria() {
+		return new Base_de_Datos.PendienteDetachedCriteria(createCriteria("ORM__Pendiente"));
 	}
 	
-	public base_de_datos.EnviadoDetachedCriteria create_Pedido_enviadoCriteria() {
-		return new base_de_datos.EnviadoDetachedCriteria(createCriteria("ORM__Pedido_enviado"));
+	public Base_de_Datos.EnviadoDetachedCriteria create_Pedido_enviadoCriteria() {
+		return new Base_de_Datos.EnviadoDetachedCriteria(createCriteria("ORM__Pedido_enviado"));
 	}
 	
 	public Encargado_de_compras uniqueEncargado_de_compras(PersistentSession session) {

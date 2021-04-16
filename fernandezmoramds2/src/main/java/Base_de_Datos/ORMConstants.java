@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_ADMINISTRADOR__ENVIA = 1477283208;

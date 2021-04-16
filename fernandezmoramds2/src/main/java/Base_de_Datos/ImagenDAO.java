@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class ImagenDAO {
 	public static Imagen loadImagenByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadImagenByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class ImagenDAO {
 	
 	public static Imagen getImagenByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getImagenByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class ImagenDAO {
 	
 	public static Imagen loadImagenByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadImagenByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class ImagenDAO {
 	
 	public static Imagen getImagenByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getImagenByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class ImagenDAO {
 	
 	public static Imagen loadImagenByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (Imagen) session.load(base_de_datos.Imagen.class, new Integer(ID));
+			return (Imagen) session.load(Base_de_Datos.Imagen.class, new Integer(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class ImagenDAO {
 	
 	public static Imagen getImagenByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (Imagen) session.get(base_de_datos.Imagen.class, new Integer(ID));
+			return (Imagen) session.get(Base_de_Datos.Imagen.class, new Integer(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class ImagenDAO {
 	
 	public static Imagen loadImagenByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Imagen) session.load(base_de_datos.Imagen.class, new Integer(ID), lockMode);
+			return (Imagen) session.load(Base_de_Datos.Imagen.class, new Integer(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class ImagenDAO {
 	
 	public static Imagen getImagenByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Imagen) session.get(base_de_datos.Imagen.class, new Integer(ID), lockMode);
+			return (Imagen) session.get(Base_de_Datos.Imagen.class, new Integer(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class ImagenDAO {
 	
 	public static List queryImagen(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryImagen(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class ImagenDAO {
 	
 	public static List queryImagen(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryImagen(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class ImagenDAO {
 	
 	public static Imagen[] listImagenByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listImagenByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class ImagenDAO {
 	
 	public static Imagen[] listImagenByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listImagenByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class ImagenDAO {
 	}
 	
 	public static List queryImagen(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Imagen as Imagen");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Imagen as Imagen");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class ImagenDAO {
 	}
 	
 	public static List queryImagen(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Imagen as Imagen");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Imagen as Imagen");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class ImagenDAO {
 	
 	public static Imagen loadImagenByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadImagenByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class ImagenDAO {
 	
 	public static Imagen loadImagenByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadImagenByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class ImagenDAO {
 	
 	public static java.util.Iterator iterateImagenByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateImagenByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class ImagenDAO {
 	
 	public static java.util.Iterator iterateImagenByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateImagenByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class ImagenDAO {
 	}
 	
 	public static java.util.Iterator iterateImagenByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Imagen as Imagen");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Imagen as Imagen");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class ImagenDAO {
 	}
 	
 	public static java.util.Iterator iterateImagenByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Imagen as Imagen");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Imagen as Imagen");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class ImagenDAO {
 	}
 	
 	public static Imagen createImagen() {
-		return new base_de_datos.Imagen();
+		return new Base_de_Datos.Imagen();
 	}
 	
-	public static boolean save(base_de_datos.Imagen imagen) throws PersistentException {
+	public static boolean save(Base_de_Datos.Imagen imagen) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(imagen);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(imagen);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class ImagenDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Imagen imagen) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Imagen imagen) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(imagen);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(imagen);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class ImagenDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Imagen imagen)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Imagen imagen)throws PersistentException {
 		try {
 			if (imagen.get_Producto() != null) {
 				imagen.get_Producto()._Imagen.remove(imagen);
@@ -335,7 +335,7 @@ public class ImagenDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Imagen imagen, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Imagen imagen, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (imagen.get_Producto() != null) {
 				imagen.get_Producto()._Imagen.remove(imagen);
@@ -354,9 +354,9 @@ public class ImagenDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Imagen imagen) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Imagen imagen) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(imagen);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(imagen);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class ImagenDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Imagen imagen) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Imagen imagen) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(imagen);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(imagen);
 			return true;
 		}
 		catch (Exception e) {

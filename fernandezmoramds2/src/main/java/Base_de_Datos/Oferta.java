@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -23,7 +23,7 @@ public class Oferta implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A) {
+		if (key == Base_de_Datos.ORMConstants.KEY_OFERTA__PERTENECE_A) {
 			return ORM__Pertenece_a;
 		}
 		
@@ -40,8 +40,8 @@ public class Oferta implements Serializable {
 	
 	@Column(name="Id_Oferta", nullable=false, length=10)	
 	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_OFERTA_ID_OFERTA_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_OFERTA_ID_OFERTA_GENERATOR", strategy="native")	
+	@GeneratedValue(generator="Base_de_Datos_OFERTA_ID_OFERTA_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="Base_de_Datos_OFERTA_ID_OFERTA_GENERATOR", strategy="native")	
 	private int id_Oferta;
 	
 	@Column(name="Nombre_Oferta", nullable=true, length=255)	
@@ -53,7 +53,7 @@ public class Oferta implements Serializable {
 	@Column(name="Fecha_registro", nullable=true, length=255)	
 	private String fecha_registro;
 	
-	@OneToMany(mappedBy="_Tiene", targetEntity=base_de_datos.Producto_Rebajado.class)	
+	@OneToMany(mappedBy="_Tiene", targetEntity=Base_de_Datos.Producto_Rebajado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Pertenece_a = new java.util.HashSet();
@@ -103,7 +103,7 @@ public class Oferta implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_RebajadoSetCollection _Pertenece_a = new base_de_datos.Producto_RebajadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A, base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final Base_de_Datos.Producto_RebajadoSetCollection _Pertenece_a = new Base_de_Datos.Producto_RebajadoSetCollection(this, _ormAdapter, Base_de_Datos.ORMConstants.KEY_OFERTA__PERTENECE_A, Base_de_Datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, Base_de_Datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Oferta());

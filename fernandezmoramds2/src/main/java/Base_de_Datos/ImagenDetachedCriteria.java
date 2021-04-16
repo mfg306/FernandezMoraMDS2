@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -26,7 +26,7 @@ public class ImagenDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final BooleanExpression principal;
 	
 	public ImagenDetachedCriteria() {
-		super(base_de_datos.Imagen.class, base_de_datos.ImagenCriteria.class);
+		super(Base_de_Datos.Imagen.class, Base_de_Datos.ImagenCriteria.class);
 		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		_ProductoId = new IntegerExpression("_Producto.id_Producto", this.getDetachedCriteria());
 		_Producto = new AssociationExpression("_Producto", this.getDetachedCriteria());
@@ -35,7 +35,7 @@ public class ImagenDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public ImagenDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, base_de_datos.ImagenCriteria.class);
+		super(aDetachedCriteria, Base_de_Datos.ImagenCriteria.class);
 		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		_ProductoId = new IntegerExpression("_Producto.id_Producto", this.getDetachedCriteria());
 		_Producto = new AssociationExpression("_Producto", this.getDetachedCriteria());

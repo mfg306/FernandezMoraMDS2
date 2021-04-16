@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class OfertaDAO {
 	public static Oferta loadOfertaByORMID(int id_Oferta) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadOfertaByORMID(session, id_Oferta);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class OfertaDAO {
 	
 	public static Oferta getOfertaByORMID(int id_Oferta) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getOfertaByORMID(session, id_Oferta);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class OfertaDAO {
 	
 	public static Oferta loadOfertaByORMID(int id_Oferta, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadOfertaByORMID(session, id_Oferta, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class OfertaDAO {
 	
 	public static Oferta getOfertaByORMID(int id_Oferta, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getOfertaByORMID(session, id_Oferta, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class OfertaDAO {
 	
 	public static Oferta loadOfertaByORMID(PersistentSession session, int id_Oferta) throws PersistentException {
 		try {
-			return (Oferta) session.load(base_de_datos.Oferta.class, new Integer(id_Oferta));
+			return (Oferta) session.load(Base_de_Datos.Oferta.class, new Integer(id_Oferta));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class OfertaDAO {
 	
 	public static Oferta getOfertaByORMID(PersistentSession session, int id_Oferta) throws PersistentException {
 		try {
-			return (Oferta) session.get(base_de_datos.Oferta.class, new Integer(id_Oferta));
+			return (Oferta) session.get(Base_de_Datos.Oferta.class, new Integer(id_Oferta));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class OfertaDAO {
 	
 	public static Oferta loadOfertaByORMID(PersistentSession session, int id_Oferta, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Oferta) session.load(base_de_datos.Oferta.class, new Integer(id_Oferta), lockMode);
+			return (Oferta) session.load(Base_de_Datos.Oferta.class, new Integer(id_Oferta), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class OfertaDAO {
 	
 	public static Oferta getOfertaByORMID(PersistentSession session, int id_Oferta, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Oferta) session.get(base_de_datos.Oferta.class, new Integer(id_Oferta), lockMode);
+			return (Oferta) session.get(Base_de_Datos.Oferta.class, new Integer(id_Oferta), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class OfertaDAO {
 	
 	public static List queryOferta(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryOferta(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class OfertaDAO {
 	
 	public static List queryOferta(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryOferta(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class OfertaDAO {
 	
 	public static Oferta[] listOfertaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listOfertaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class OfertaDAO {
 	
 	public static Oferta[] listOfertaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listOfertaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class OfertaDAO {
 	}
 	
 	public static List queryOferta(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Oferta as Oferta");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Oferta as Oferta");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class OfertaDAO {
 	}
 	
 	public static List queryOferta(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Oferta as Oferta");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Oferta as Oferta");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class OfertaDAO {
 	
 	public static Oferta loadOfertaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadOfertaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class OfertaDAO {
 	
 	public static Oferta loadOfertaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadOfertaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class OfertaDAO {
 	
 	public static java.util.Iterator iterateOfertaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateOfertaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class OfertaDAO {
 	
 	public static java.util.Iterator iterateOfertaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateOfertaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class OfertaDAO {
 	}
 	
 	public static java.util.Iterator iterateOfertaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Oferta as Oferta");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Oferta as Oferta");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class OfertaDAO {
 	}
 	
 	public static java.util.Iterator iterateOfertaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Oferta as Oferta");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Oferta as Oferta");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class OfertaDAO {
 	}
 	
 	public static Oferta createOferta() {
-		return new base_de_datos.Oferta();
+		return new Base_de_Datos.Oferta();
 	}
 	
-	public static boolean save(base_de_datos.Oferta oferta) throws PersistentException {
+	public static boolean save(Base_de_Datos.Oferta oferta) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(oferta);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(oferta);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class OfertaDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Oferta oferta) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Oferta oferta) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(oferta);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(oferta);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,9 +321,9 @@ public class OfertaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Oferta oferta)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Oferta oferta)throws PersistentException {
 		try {
-			base_de_datos.Producto_Rebajado[] l_Pertenece_as = oferta._Pertenece_a.toArray();
+			Base_de_Datos.Producto_Rebajado[] l_Pertenece_as = oferta._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
 				l_Pertenece_as[i].set_Tiene(null);
 			}
@@ -335,9 +335,9 @@ public class OfertaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Oferta oferta, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Oferta oferta, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			base_de_datos.Producto_Rebajado[] l_Pertenece_as = oferta._Pertenece_a.toArray();
+			Base_de_Datos.Producto_Rebajado[] l_Pertenece_as = oferta._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
 				l_Pertenece_as[i].set_Tiene(null);
 			}
@@ -354,9 +354,9 @@ public class OfertaDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Oferta oferta) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Oferta oferta) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(oferta);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(oferta);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class OfertaDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Oferta oferta) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Oferta oferta) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(oferta);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(oferta);
 			return true;
 		}
 		catch (Exception e) {

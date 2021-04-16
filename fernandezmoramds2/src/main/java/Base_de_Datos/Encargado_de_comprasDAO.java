@@ -11,7 +11,7 @@
  * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
-package base_de_datos;
+package Base_de_Datos;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class Encargado_de_comprasDAO {
 	public static Encargado_de_compras loadEncargado_de_comprasByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras getEncargado_de_comprasByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getEncargado_de_comprasByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras getEncargado_de_comprasByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return getEncargado_de_comprasByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByORMID(PersistentSession session, int idEmpleado) throws PersistentException {
 		try {
-			return (Encargado_de_compras) session.load(base_de_datos.Encargado_de_compras.class, new Integer(idEmpleado));
+			return (Encargado_de_compras) session.load(Base_de_Datos.Encargado_de_compras.class, new Integer(idEmpleado));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras getEncargado_de_comprasByORMID(PersistentSession session, int idEmpleado) throws PersistentException {
 		try {
-			return (Encargado_de_compras) session.get(base_de_datos.Encargado_de_compras.class, new Integer(idEmpleado));
+			return (Encargado_de_compras) session.get(Base_de_Datos.Encargado_de_compras.class, new Integer(idEmpleado));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByORMID(PersistentSession session, int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Encargado_de_compras) session.load(base_de_datos.Encargado_de_compras.class, new Integer(idEmpleado), lockMode);
+			return (Encargado_de_compras) session.load(Base_de_Datos.Encargado_de_compras.class, new Integer(idEmpleado), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras getEncargado_de_comprasByORMID(PersistentSession session, int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Encargado_de_compras) session.get(base_de_datos.Encargado_de_compras.class, new Integer(idEmpleado), lockMode);
+			return (Encargado_de_compras) session.get(Base_de_Datos.Encargado_de_compras.class, new Integer(idEmpleado), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static List queryEncargado_de_compras(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryEncargado_de_compras(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static List queryEncargado_de_compras(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return queryEncargado_de_compras(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras[] listEncargado_de_comprasByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listEncargado_de_comprasByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras[] listEncargado_de_comprasByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return listEncargado_de_comprasByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class Encargado_de_comprasDAO {
 	}
 	
 	public static List queryEncargado_de_compras(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Encargado_de_compras as Encargado_de_compras");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Encargado_de_compras as Encargado_de_compras");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class Encargado_de_comprasDAO {
 	}
 	
 	public static List queryEncargado_de_compras(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Encargado_de_compras as Encargado_de_compras");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Encargado_de_compras as Encargado_de_compras");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static java.util.Iterator iterateEncargado_de_comprasByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateEncargado_de_comprasByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static java.util.Iterator iterateEncargado_de_comprasByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = Base_de_Datos.HitoPersistentManager.instance().getSession();
 			return iterateEncargado_de_comprasByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -263,7 +263,7 @@ public class Encargado_de_comprasDAO {
 	}
 	
 	public static java.util.Iterator iterateEncargado_de_comprasByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Encargado_de_compras as Encargado_de_compras");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Encargado_de_compras as Encargado_de_compras");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -279,7 +279,7 @@ public class Encargado_de_comprasDAO {
 	}
 	
 	public static java.util.Iterator iterateEncargado_de_comprasByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From base_de_datos.Encargado_de_compras as Encargado_de_compras");
+		StringBuffer sb = new StringBuffer("From Base_de_Datos.Encargado_de_compras as Encargado_de_compras");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -296,12 +296,12 @@ public class Encargado_de_comprasDAO {
 	}
 	
 	public static Encargado_de_compras createEncargado_de_compras() {
-		return new base_de_datos.Encargado_de_compras();
+		return new Base_de_Datos.Encargado_de_compras();
 	}
 	
-	public static boolean save(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
+	public static boolean save(Base_de_Datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(encargado_de_compras);
+			Base_de_Datos.HitoPersistentManager.instance().saveObject(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class Encargado_de_comprasDAO {
 		}
 	}
 	
-	public static boolean delete(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
+	public static boolean delete(Base_de_Datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(encargado_de_compras);
+			Base_de_Datos.HitoPersistentManager.instance().deleteObject(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,13 +321,13 @@ public class Encargado_de_comprasDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Encargado_de_compras encargado_de_compras)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Encargado_de_compras encargado_de_compras)throws PersistentException {
 		try {
-			base_de_datos.Pendiente[] l_Pendientes = encargado_de_compras._Pendiente.toArray();
+			Base_de_Datos.Pendiente[] l_Pendientes = encargado_de_compras._Pendiente.toArray();
 			for(int i = 0; i < l_Pendientes.length; i++) {
 				l_Pendientes[i].set_Encargado_de_compras(null);
 			}
-			base_de_datos.Enviado[] l_Pedido_enviados = encargado_de_compras._Pedido_enviado.toArray();
+			Base_de_Datos.Enviado[] l_Pedido_enviados = encargado_de_compras._Pedido_enviado.toArray();
 			for(int i = 0; i < l_Pedido_enviados.length; i++) {
 				l_Pedido_enviados[i].set_Procesa(null);
 			}
@@ -339,13 +339,13 @@ public class Encargado_de_comprasDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(base_de_datos.Encargado_de_compras encargado_de_compras, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(Base_de_Datos.Encargado_de_compras encargado_de_compras, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			base_de_datos.Pendiente[] l_Pendientes = encargado_de_compras._Pendiente.toArray();
+			Base_de_Datos.Pendiente[] l_Pendientes = encargado_de_compras._Pendiente.toArray();
 			for(int i = 0; i < l_Pendientes.length; i++) {
 				l_Pendientes[i].set_Encargado_de_compras(null);
 			}
-			base_de_datos.Enviado[] l_Pedido_enviados = encargado_de_compras._Pedido_enviado.toArray();
+			Base_de_Datos.Enviado[] l_Pedido_enviados = encargado_de_compras._Pedido_enviado.toArray();
 			for(int i = 0; i < l_Pedido_enviados.length; i++) {
 				l_Pedido_enviados[i].set_Procesa(null);
 			}
@@ -362,9 +362,9 @@ public class Encargado_de_comprasDAO {
 		}
 	}
 	
-	public static boolean refresh(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
+	public static boolean refresh(Base_de_Datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(encargado_de_compras);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().refresh(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {
@@ -373,9 +373,9 @@ public class Encargado_de_comprasDAO {
 		}
 	}
 	
-	public static boolean evict(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
+	public static boolean evict(Base_de_Datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(encargado_de_compras);
+			Base_de_Datos.HitoPersistentManager.instance().getSession().evict(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {
