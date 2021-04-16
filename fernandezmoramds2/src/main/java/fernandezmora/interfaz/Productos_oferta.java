@@ -12,19 +12,19 @@ public class Productos_oferta extends VistaProductos_oferta{
 	public Oferta _list_Ofertas;
 	public Vector<Producto_oferta> _list_Producto_oferta = new Vector<Producto_oferta>();
 	
-	public Productos_oferta(Oferta of) {
-		inicializar(of);
+	public Productos_oferta(Oferta of, UR_UNR unrunr) {
+		inicializar(of, unrunr);
 	}
 	
-	public void inicializar(Oferta of) {
+	public void inicializar(Oferta of, UR_UNR unrunr) {
 		this._list_Ofertas = of;
-		add_productos_oferta();
-		add_productos_oferta();
+		add_productos_oferta(unrunr);
+		add_productos_oferta(unrunr);
 		abrir_Producto_Oferta();
 	}
 	
-	public void add_productos_oferta() {
-		Producto_oferta pof = new Producto_oferta(this);
+	public void add_productos_oferta(UR_UNR unrunr) {
+		Producto_oferta pof = new Producto_oferta(this, unrunr);
 		this._list_Producto_oferta.add(pof);
 		this.getLista_productos_oferta().add(pof);
 		

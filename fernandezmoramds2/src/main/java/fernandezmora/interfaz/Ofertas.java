@@ -22,13 +22,13 @@ public class Ofertas extends VistaOfertas {
 		this._list_Ofertas = new Vector<Oferta>();
 		
 		/*Ofertas de prueba para ver que cambian*/
-		Oferta of1 = new Oferta(this);
+		Oferta of1 = new Oferta(this, this._uR_UNR);
 		of1.getBotonOferta().setText("Prueba1");
 		this._list_Ofertas.add(of1);
-		Oferta of2 = new Oferta(this);
+		Oferta of2 = new Oferta(this, this._uR_UNR);
 		of2.getBotonOferta().setText("Prueba2");
 		this._list_Ofertas.add(of2);
-		Oferta of3 = new Oferta(this);
+		Oferta of3 = new Oferta(this, this._uR_UNR);
 		of3.getBotonOferta().setText("Prueba3");
 		this._list_Ofertas.add(of3);
 		
@@ -40,7 +40,7 @@ public class Ofertas extends VistaOfertas {
 	}
 
 	public void add_oferta() {
-		Oferta of = new Oferta(this);
+		Oferta of = new Oferta(this, this._uR_UNR);
 		this._list_Ofertas.add(of);
 	}
 
