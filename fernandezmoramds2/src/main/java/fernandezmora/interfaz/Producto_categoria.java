@@ -8,13 +8,17 @@ public class Producto_categoria extends VistaProducto_categoria{
 	public Productos_categoria _productos_categoria;
 	public Producto _producto;
 	
-	public Producto_categoria(Productos_categoria pc) {
-		inicializar(pc);
+	public Producto_categoria(Productos_categoria pc, UR_UNR unrunr) {
+		inicializar(pc, unrunr);
 	}
 	
-	public void inicializar(Productos_categoria pc) {
+	public void inicializar(Productos_categoria pc, UR_UNR unrunr) {
 		this._productos_categoria = pc;
-		this._producto = new Producto();
+		
+		if(unrunr instanceof UR) this._producto = new Ver_producto_UR(unrunr);
+		if(unrunr instanceof UNR_) this._producto = new Producto_UNR(unrunr);
+
+
 		abrir_Producto_Categoria();
 	}
 	

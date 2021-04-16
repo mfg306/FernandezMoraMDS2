@@ -9,14 +9,14 @@ public class Categoria extends VistaCategoria{
 	public Productos_categoria _productos_categoria;
 	public VerticalLayout layout;
 	
-	public Categoria(Categorias c) {
-		inicializar(c);
+	public Categoria(Categorias c, UR_UNR unrunr) {
+		inicializar(c, unrunr);
 	}
 	
-	public void inicializar(Categorias c) {
+	public void inicializar(Categorias c, UR_UNR unrunr) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this._categorias = c;
-		this._productos_categoria = new Productos_categoria(this);
+		this._productos_categoria = new Productos_categoria(this, unrunr);
 	}
 	
 	

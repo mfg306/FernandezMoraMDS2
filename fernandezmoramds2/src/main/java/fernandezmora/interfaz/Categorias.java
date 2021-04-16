@@ -66,7 +66,7 @@ public class Categorias extends VistaCategorias {
 	}
 
 	public void add_categoria() {
-		Categoria c = new Categoria(this);
+		Categoria c = new Categoria(this, this._ver_categorias._uR_UNR);
 		this._list_Categorias.add(c);
 		layout.add(c);
 
