@@ -78,7 +78,7 @@ public class Producto_Rebajado extends Base_de_Datos.Producto implements Seriali
 		return _Tiene;
 	}
 	
-	public base de datos.Producto_Rebajado[] cargarProductosOferta(base de datos.Oferta oferta) {
+	public Base_de_Datos.Producto_Rebajado[] cargarProductosOferta(Base_de_Datos.Oferta oferta) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}

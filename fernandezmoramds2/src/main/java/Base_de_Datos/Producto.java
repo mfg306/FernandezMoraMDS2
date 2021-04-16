@@ -228,7 +228,7 @@ public class Producto implements Serializable {
 		return _Valorado_por;
 	}
 	
-	public base de datos.Producto[] cargarProductos(String nombreProducto) {
+	public Base_de_Datos.Producto[] cargarProductos(String nombreProducto) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}
