@@ -24,16 +24,16 @@ import Base_de_Datos.Producto_Rebajado;
 import Base_de_Datos.Compra;
 // import Base_de_Datos.UR;
 import Base_de_Datos.Mensaje;
-import interfaz.Pedido_T;
 import Base_de_Datos.Pendiente;
-import interfaz.UR_UNR;
+import fernandezmora.interfaz.UR_UNR;
 // import interfaz.UR;
-import interfaz.Gestor_Banco;
-import interfaz.UNR_;
-import interfaz.Gestor_Correos;
-import interfaz.Transportista_Encargado_NR;
-import interfaz.Transportista;
-import interfaz.Encargado_de_compras;
+import fernandezmora.interfaz.Gestor_Banco;
+import fernandezmora.interfaz.UNR_;
+import fernandezmora.interfaz.Gestor_Correos;
+import fernandezmora.interfaz.Transportista_Encargado_NR;
+import fernandezmora.interfaz.Transportista;
+import fernandezmora.interfaz.Encargado_de_compras;
+import Base_de_Datos.Enviado;
 
 public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, eliminarCategoriaAdministrador, iTransportista, iEncargado_de_compras {
 	public BD_UR _bD_UNR;
@@ -122,10 +122,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Pedido_T[] cargarPedidosT(int aIdTransportista) {
-		throw new UnsupportedOperationException();
-	}
-
 	public void enviarMensajeT(String aMensaje, String aCorreEmisor, String aCorreoReceptor) {
 		throw new UnsupportedOperationException();
 	}
@@ -154,7 +150,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public interfaz.UR get_UR() {
+	public fernandezmora.interfaz.UR get_UR() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -179,6 +175,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public Encargado_de_compras get_Encargado_de_compras() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Enviado[] cargarPedidosT(int aIdTransportista) {
 		throw new UnsupportedOperationException();
 	}
 }
