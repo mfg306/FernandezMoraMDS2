@@ -1,6 +1,9 @@
 package vistas;
 
 import com.vaadin.flow.templatemodel.TemplateModel;
+
+import fernandezmora.interfaz.Producto_carrito;
+
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
@@ -27,8 +30,6 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 	private Image img;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinSelect")
-	private Select vaadinSelect;
 	@Id("vaadinButton")
 	private Button vaadinButton;
 	@Id("verProductoCarrito")
@@ -72,15 +73,6 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public Select getVaadinSelect() {
-		return vaadinSelect;
-	}
-
-	public void setVaadinSelect(Select vaadinSelect) {
-		this.vaadinSelect = vaadinSelect;
-	}
-
-
 	public Button getVaadinButton() {
 		return vaadinButton;
 	}
@@ -96,4 +88,5 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 	public void setVerProductoCarrito(Button verProductoCarrito) {
 		this.verProductoCarrito = verProductoCarrito;
 	}
+
 }
