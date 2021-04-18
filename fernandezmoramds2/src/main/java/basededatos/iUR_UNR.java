@@ -1,9 +1,9 @@
 package basededatos;
 
-import Base_de_Datos.Oferta;
-import Base_de_Datos.Producto;
-import Base_de_Datos.Categoria;
-import Base_de_Datos.Producto_Rebajado;
+import base_de_datos.Oferta;
+import base_de_datos.Producto;
+import base_de_datos.Categoria;
+import base_de_datos.Producto_Rebajado;
 
 public interface iUR_UNR {
 

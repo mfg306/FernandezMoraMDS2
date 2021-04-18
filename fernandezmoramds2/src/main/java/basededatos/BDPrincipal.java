@@ -1,32 +1,30 @@
 package basededatos;
 
-import Base_de_Datos.BD_UR;
-import Base_de_Datos.BD_Administrador;
-import Base_de_Datos.BD_Categorias;
-import Base_de_Datos.BD_Productos;
-import Base_de_Datos.BD_Ofertas;
-import Base_de_Datos.BD_Productos_Rebajados;
-import Base_de_Datos.BD_Transportistas;
-import Base_de_Datos.BD_Encargados_de_compras;
-import Base_de_Datos.BD_Comentarios;
-import Base_de_Datos.DB_Imagen;
-import Base_de_Datos.Empleado;
-import Base_de_Datos.BD_Enviado;
-import Base_de_Datos.BD_Recibido;
-import Base_de_Datos.BD_Pendiente;
-import Base_de_Datos.BD_Mensajes;
-import Base_de_Datos.BD_Productos_en_compra;
-import Base_de_Datos.BD_Valoracion;
-import Base_de_Datos.BD_Empleados;
-import Base_de_Datos.Oferta;
-import Base_de_Datos.Producto;
-import Base_de_Datos.Categoria;
-import Base_de_Datos.Producto_Rebajado;
-import Base_de_Datos.Recibido;
-import Base_de_Datos.Compra;
+import base_de_datos.BD_UR;
+import base_de_datos.BD_Administrador;
+import base_de_datos.BD_Categorias;
+import base_de_datos.BD_Productos;
+import base_de_datos.BD_Ofertas;
+import base_de_datos.BD_Productos_Rebajados;
+import base_de_datos.BD_Transportistas;
+import base_de_datos.BD_Encargados_de_compras;
+import base_de_datos.BD_Comentarios;
+import base_de_datos.DB_Imagen;
+import base_de_datos.BD_Enviado;
+import base_de_datos.BD_Recibido;
+import base_de_datos.BD_Pendiente;
+import base_de_datos.BD_Mensajes;
+import base_de_datos.BD_Productos_en_compra;
+import base_de_datos.BD_Valoracion;
+import base_de_datos.BD_Empleados;
+import base_de_datos.Oferta;
+import base_de_datos.Producto;
+import base_de_datos.Categoria;
+import base_de_datos.Producto_Rebajado;
+import base_de_datos.Compra;
 // import Base_de_Datos.UR;
-import Base_de_Datos.Mensaje;
-import Base_de_Datos.Pendiente;
+import base_de_datos.Mensaje;
+import base_de_datos.Pendiente;
 import fernandezmora.interfaz.UR_UNR;
 // import interfaz.UR;
 import fernandezmora.interfaz.Gestor_Banco;
@@ -35,10 +33,13 @@ import fernandezmora.interfaz.Gestor_Correos;
 import fernandezmora.interfaz.Transportista_Encargado_NR;
 import fernandezmora.interfaz.Transportista;
 import fernandezmora.interfaz.Encargado_de_compras;
-import Base_de_Datos.Enviado;
-import Base_de_Datos.Imagen;
+import base_de_datos.Enviado;
+import base_de_datos.Empleado;
+import base_de_datos.Recibido;
+import base_de_datos.UR;
+import base_de_datos.Imagen;
 
-public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, iAdministrador, iTransportista, iEncargado_de_compras {
+public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, iTransportista, iEncargado_de_compras, iAdministrador {
 	public BD_UR _bD_UNR;
 	public BD_Administrador _bD_Administrador;
 	public BD_Categorias _bD_Categorias;
@@ -97,7 +98,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Compra[] cargarPedidos(Base_de_Datos.UR aUsuario) {
+	public Compra[] cargarPedidos(base_de_datos.UR aUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -129,7 +130,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Base_de_Datos.UR[] cargarFichaCliente() {
+	public base_de_datos.UR[] cargarFichaCliente() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -185,131 +186,89 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public Empleado[] cargarEmpleados() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public Recibido[] cargarVentas() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void eliminarOfertaAdministrador(int aIdOferta) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void eliminarCategoriaAdministrador(int aIdCategoria) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void eliminarProductoAdministrador(int aIdProducto) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void eliminarEmpleado(int aIdEmpleado) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
-	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaRegistro) {
-		// TODO Auto-generated method stub
-		
+	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) {
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public Categoria[] cargarCategoriasAdministrador() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public Producto[] cargarProductosAdministrador() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void insertarProducto(String aNombreProducto, String aDescripcion) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void guardarImagenesProducto(Imagen[] aImagenes) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public Producto[] cargarProductosListado() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public Producto[] cargarProductosAdministracion() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void VerZonaProductos() {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void VerZonaProductosAnadidos() {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaActualizacion) {
-		// TODO Auto-generated method stub
-		
+	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion) {
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
-	@Override
 	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
+
+
 }

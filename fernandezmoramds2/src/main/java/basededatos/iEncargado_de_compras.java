@@ -1,7 +1,7 @@
 package basededatos;
 
-import Base_de_Datos.BD_Pendiente;
-import Base_de_Datos.Pendiente;
+import base_de_datos.BD_Pendiente;
+import base_de_datos.Pendiente;
 
 public interface iEncargado_de_compras {
 

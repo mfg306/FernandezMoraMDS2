@@ -37,12 +37,9 @@ import fernandezmora.interfaz.UR;
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
-
-	//Buscador b = new Buscador();
 	
 	 UNR_ unr = new UNR_();
-	
-	
+		
     /**
      * Construct a new Vaadin view.
      * <p>

@@ -1,12 +1,12 @@
 package basededatos;
 
-import Base_de_Datos.Oferta;
-import Base_de_Datos.Empleado;
-import Base_de_Datos.Recibido;
-import Base_de_Datos.Producto;
-import Base_de_Datos.Categoria;
-import Base_de_Datos.Imagen;
-import Base_de_Datos.Mensaje;
+import base_de_datos.Oferta;
+import base_de_datos.Empleado;
+import base_de_datos.Recibido;
+import base_de_datos.Producto;
+import base_de_datos.Categoria;
+import base_de_datos.Imagen;
+import base_de_datos.Mensaje;
 
 public interface iAdministrador {
 

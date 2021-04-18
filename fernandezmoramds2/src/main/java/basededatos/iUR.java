@@ -1,8 +1,8 @@
 package basededatos;
 
-import Base_de_Datos.Compra;
-import Base_de_Datos.UR;
-import Base_de_Datos.Mensaje;
+import base_de_datos.Compra;
+import base_de_datos.UR;
+import base_de_datos.Mensaje;
 
 public interface iUR extends iUR_UNR {
 

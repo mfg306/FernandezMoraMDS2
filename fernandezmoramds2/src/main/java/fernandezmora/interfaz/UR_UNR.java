@@ -2,6 +2,8 @@ package fernandezmora.interfaz;
 
 import java.util.Vector;
 
+import org.springframework.web.servlet.View;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
@@ -9,7 +11,7 @@ import vistas.VistaUrunr;
 
 //import basededatos.iUR_UNR;
 
-public abstract class UR_UNR extends VistaUrunr {
+public abstract class UR_UNR extends VistaUrunr{
 	// public iUR_UNR _iUR_UNR;
 	public Productos_mas_vendidos_por_categorias _productos_mas_vendidos_por_categorias;
 	public Ofertas _ofertas;
