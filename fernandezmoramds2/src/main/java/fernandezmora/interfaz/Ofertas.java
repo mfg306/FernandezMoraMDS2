@@ -53,6 +53,7 @@ public class Ofertas extends VistaOfertas {
 		for (Oferta of : this._list_Ofertas) {
 			of.getBotonOferta().addClickListener(event -> {
 				this._uR_UNR.layoutOfertas.remove(this._uR_UNR._ofertas);
+				this._uR_UNR.getBotonVerCategorias().setVisible(false);
 				this._uR_UNR.layoutProductosMasVendidosPorCategorias.setVisible(false);
 				this._uR_UNR.layoutOfertas.add(of._productos_oferta);
 			});

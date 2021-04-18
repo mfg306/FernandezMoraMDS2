@@ -14,6 +14,7 @@ public class Menu_UR extends Menu_UR_UNR {
 	public Select<String> datos = new Select<>();
 
 	public Menu_UR(UR ur) {
+		super(ur);
 		this._uR = ur;
 		this.getBoton_iniciar_sesion().setVisible(false);
 		this.layout = this.getMenu().as(VerticalLayout.class);

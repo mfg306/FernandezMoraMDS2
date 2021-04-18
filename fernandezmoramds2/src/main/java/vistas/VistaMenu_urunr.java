@@ -25,9 +25,6 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("logo_tienda")
 	private Image logo_tienda;
-	@Id("buscador_productos")
-	private Element buscador_productos;
-
 	@Id("boton_iniciar_sesion")
 	private Button boton_iniciar_sesion;
 	@Id("boton_carrito")
@@ -36,6 +33,8 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 	private Element menu;
 	@Id("seleccionarCategoria")
 	private HorizontalLayout seleccionarCategoria;
+	@Id("huecoBuscador")
+	private Element huecoBuscador;
 	
 
 	/**
@@ -76,15 +75,6 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 		this.logo_tienda = logo_tienda;
 	}
 
-
-	public Element getBuscador_productos() {
-		return buscador_productos;
-	}
-
-	public void setBuscador_productos(Element buscador_productos) {
-		this.buscador_productos = buscador_productos;
-	}
-
 	public Button getBoton_iniciar_sesion() {
 		return boton_iniciar_sesion;
 	}
@@ -107,5 +97,13 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 
 	public void setSeleccionarCategoria(HorizontalLayout seleccionarCategoria) {
 		this.seleccionarCategoria = seleccionarCategoria;
+	}
+
+	public Element getHuecoBuscador() {
+		return huecoBuscador;
+	}
+
+	public void setHuecoBuscador(Element huecoBuscador) {
+		this.huecoBuscador = huecoBuscador;
 	}
 }

@@ -18,12 +18,9 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-buscador.js")
 public class VistaBuscador extends PolymerTemplate<VistaBuscador.VistaBuscadorModel> {
 
-    @Id("vaadinVerticalLayout")
+
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("buscador")
-	private TextField buscador;
-	@Id("ironIcon")
-	private Element ironIcon;
 
 	/**
      * Creates a new VistaBuscador.
@@ -47,19 +44,4 @@ public class VistaBuscador extends PolymerTemplate<VistaBuscador.VistaBuscadorMo
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
-	public TextField getBuscador() {
-		return buscador;
-	}
-
-	public void setBuscador(TextField buscador) {
-		this.buscador = buscador;
-	}
-
-	public Element getIronIcon() {
-		return ironIcon;
-	}
-
-	public void setIronIcon(Element ironIcon) {
-		this.ironIcon = ironIcon;
-	}
 }

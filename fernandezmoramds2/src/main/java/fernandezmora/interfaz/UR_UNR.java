@@ -54,5 +54,11 @@ public abstract class UR_UNR extends VistaUrunr{
 
 		});
 	}
+	
+	public void limpiarInterfaz( ) {
+		this.layoutOfertas.removeAll();
+		this.layoutProductosMasVendidosPorCategorias.removeAll();
+		this.getBotonVerCategorias().setVisible(false);
+	}
 
 }

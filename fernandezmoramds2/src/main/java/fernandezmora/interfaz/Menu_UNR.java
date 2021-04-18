@@ -9,6 +9,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public VerticalLayout layout;
 
 	public Menu_UNR(UNR_ unr) {
+		super(unr);
 		inicializar(unr);
 	}
 
