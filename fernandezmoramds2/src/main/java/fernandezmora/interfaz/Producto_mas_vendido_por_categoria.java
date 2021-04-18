@@ -14,13 +14,9 @@ public class Producto_mas_vendido_por_categoria extends VistaProducto_mas_vendid
 	
 	public void inicializar(Productos_mas_vendidos_por_categorias pmc, UR_UNR urunr) {
 		this._productos_mas_vendidos_por_categorias = pmc;
-		if(urunr instanceof UNR_) {
-			this._producto = new Producto_UNR(urunr);
-		}
-		if(urunr instanceof UR) {
-			this._producto = new Ver_producto_UR(urunr);
-
-		}
+		if(urunr instanceof UNR_) this._producto = new Producto_UNR(urunr);
+		if(urunr instanceof UR) this._producto = new Ver_producto_UR(urunr);
+		
 	}
 }
 

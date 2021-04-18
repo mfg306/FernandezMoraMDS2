@@ -100,6 +100,7 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	@Id("valoracion_media")
 	private Span valoracion_media;
 
+
 	/**
      * Creates a new VistaProducto.
      */
@@ -418,4 +419,5 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	public void setValoracion_media(Span valoracion_media) {
 		this.valoracion_media = valoracion_media;
 	}
+
 }

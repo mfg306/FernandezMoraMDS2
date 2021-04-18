@@ -39,7 +39,6 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 						.remove(this._uR_UNR._productos_mas_vendidos_por_categorias);
 				this._uR_UNR.layoutOfertas.remove(this._uR_UNR._ofertas);
 				this._uR_UNR.getBotonVerCategorias().setVisible(false);
-				pcm._producto.getVaadinVerticalLayout2().setVisible(false);
 				this._uR_UNR.layoutProductosMasVendidosPorCategorias.add(pcm._producto);
 			});
 		}

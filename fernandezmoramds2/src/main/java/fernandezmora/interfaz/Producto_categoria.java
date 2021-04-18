@@ -19,14 +19,16 @@ public class Producto_categoria extends VistaProducto_categoria{
 		if(unrunr instanceof UNR_) this._producto = new Producto_UNR(unrunr);
 
 
-		abrir_Producto_Categoria();
+		abrir_Producto_Categoria(unrunr);
 	}
 	
-	public void abrir_Producto_Categoria() {
+	public void abrir_Producto_Categoria(UR_UNR unrunr) {
 		this.getVerProducto().addClickListener(event->{
 			this._productos_categoria.getVaadinHorizontalLayout().setVisible(false);
 			this._productos_categoria.getLista_productos_categoria().setVisible(false);
-			this._producto.getVaadinVerticalLayout2().setVisible(false);
+			
+			if(unrunr instanceof UR) this._producto = new Ver_producto_UR(unrunr);
+			if(unrunr instanceof UNR_) this._producto = new Producto_UNR(unrunr);
 			this._productos_categoria.getVerProductoCategoria().as(VerticalLayout.class).add(this._producto);
 		});
 	}

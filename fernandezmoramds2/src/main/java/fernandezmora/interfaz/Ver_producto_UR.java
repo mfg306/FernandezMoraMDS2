@@ -7,6 +7,8 @@ public class Ver_producto_UR extends Producto_UNR {
 	public Ver_producto_UR(UR_UNR _ur) {
 		super(_ur);
 		this._uR = (UR) _ur;
+		this.getVaadinVerticalLayout2().setVisible(true);
+
 	}
 
 	public void Comentar() {
