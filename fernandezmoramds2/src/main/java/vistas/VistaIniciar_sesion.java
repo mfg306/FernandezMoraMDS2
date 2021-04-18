@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.textfield.PasswordField;
 
 /**
  * A Designer generated component for the vista-iniciar_sesion template.
@@ -22,16 +23,9 @@ import com.vaadin.flow.component.html.Div;
 @JsModule("./src/vista-iniciarsesion.js")
 public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.VistaIniciar_sesionModel> {
 
-	@Id("boton_iniciar_sesion_facebook")
-	private Button boton_iniciar_sesion_facebook;
-	@Id("boton_iniciar_sesion_google")
-	private Button boton_iniciar_sesion_google;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+
 	@Id("boton_iniciar_sesion")
 	private Button boton_iniciar_sesion;
-	@Id("contrasenia")
-	private TextField contrasenia;
 	@Id("nombre_usuario")
 	private TextField nombre_usuario;
 	@Id("correo")
@@ -44,6 +38,8 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	private Button vaadinButton1;
 	@Id("botonRegistrarse")
 	private Button botonRegistrarse;
+	@Id("contrasenia")
+	private PasswordField contrasenia;
 
 	/**
 	 * Creates a new VistaIniciar_sesion.
@@ -60,44 +56,12 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 		// Add setters and getters for template properties here.
 	}
 
-	public Button getBoton_iniciar_sesion_facebook() {
-		return boton_iniciar_sesion_facebook;
-	}
-
-	public void setBoton_iniciar_sesion_facebook(Button boton_iniciar_sesion_facebook) {
-		this.boton_iniciar_sesion_facebook = boton_iniciar_sesion_facebook;
-	}
-
-	public Button getBoton_iniciar_sesion_google() {
-		return boton_iniciar_sesion_google;
-	}
-
-	public void setBoton_iniciar_sesion_google(Button boton_iniciar_sesion_google) {
-		this.boton_iniciar_sesion_google = boton_iniciar_sesion_google;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
 	public Button getBoton_iniciar_sesion() {
 		return boton_iniciar_sesion;
 	}
 
 	public void setBoton_iniciar_sesion(Button boton_iniciar_sesion) {
 		this.boton_iniciar_sesion = boton_iniciar_sesion;
-	}
-
-	public TextField getContrasenia() {
-		return contrasenia;
-	}
-
-	public void setContrasenia(TextField contrasenia) {
-		this.contrasenia = contrasenia;
 	}
 
 	public TextField getNombre_usuario() {

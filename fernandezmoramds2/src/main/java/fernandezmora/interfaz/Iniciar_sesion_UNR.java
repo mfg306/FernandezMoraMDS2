@@ -21,8 +21,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this._registrarse = new Registrarse(this);
 		this.getNombre_usuario().setVisible(false);
 		this.getCorreo().setVisible(true);
-		this.getBoton_iniciar_sesion_facebook().setVisible(true);
-		this.getBoton_iniciar_sesion_google().setVisible(true);
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
 	}

@@ -43,8 +43,6 @@ public class Iniciar_sesion extends VistaIniciar_sesion {
 
 	public void inicializar() {
 		this.getCorreo().setVisible(false);
-		this.getBoton_iniciar_sesion_facebook().setVisible(false);
-		this.getBoton_iniciar_sesion_google().setVisible(false);
 	}
 
 }

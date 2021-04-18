@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.PasswordField;
 
 /**
  * A Designer generated component for the vista-registrarse template.
@@ -34,22 +35,19 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 	private TextField apellidos;
 	@Id("correo")
 	private TextField correo;
-	@Id("contrasenia")
-	private TextField contrasenia;
+
 	@Id("boton_registrarse")
 	private Button boton_registrarse;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("boton_con_Google")
-	private Button boton_con_Google;
-	@Id("boton_con_Facebook")
-	private Button boton_con_Facebook;
-	@Id("confirmacion_contrasenia")
-	private TextField confirmacion_contrasenia;
 	@Id("botonIniciarSesion")
 	private Button botonIniciarSesion;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("nombre_usuario")
+	private TextField nombre_usuario;
+	@Id("contrasenia")
+	private PasswordField contrasenia;
+	@Id("confirmacionContrasenia")
+	private PasswordField confirmacionContrasenia;
 
 	/**
      * Creates a new VistaRegistrarse.
@@ -113,54 +111,12 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 		this.correo = correo;
 	}
 
-	public TextField getContrasenia() {
-		return contrasenia;
-	}
-
-	public void setContrasenia(TextField contrasenia) {
-		this.contrasenia = contrasenia;
-	}
-
 	public Button getBoton_registrarse() {
 		return boton_registrarse;
 	}
 
 	public void setBoton_registrarse(Button boton_registrarse) {
 		this.boton_registrarse = boton_registrarse;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Button getBoton_con_Google() {
-		return boton_con_Google;
-	}
-
-	public void setBoton_con_Google(Button boton_con_Google) {
-		this.boton_con_Google = boton_con_Google;
-	}
-
-	public Button getBoton_con_Facebook() {
-		return boton_con_Facebook;
-	}
-
-	public void setBoton_con_Facebook(Button boton_con_Facebook) {
-		this.boton_con_Facebook = boton_con_Facebook;
-	}
-
-
-
-	public TextField getConfirmacion_contrasenia() {
-		return confirmacion_contrasenia;
-	}
-
-	public void setConfirmacion_contrasenia(TextField confirmacion_contrasenia) {
-		this.confirmacion_contrasenia = confirmacion_contrasenia;
 	}
 
 	public Button getBotonIniciarSesion() {
@@ -177,5 +133,29 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public TextField getNombre_usuario() {
+		return nombre_usuario;
+	}
+
+	public void setNombre_usuario(TextField nombre_usuario) {
+		this.nombre_usuario = nombre_usuario;
+	}
+
+	public PasswordField getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(PasswordField contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
+	public PasswordField getConfirmacionContrasenia() {
+		return confirmacionContrasenia;
+	}
+
+	public void setConfirmacionContrasenia(PasswordField confirmacionContrasenia) {
+		this.confirmacionContrasenia = confirmacionContrasenia;
 	}
 }
