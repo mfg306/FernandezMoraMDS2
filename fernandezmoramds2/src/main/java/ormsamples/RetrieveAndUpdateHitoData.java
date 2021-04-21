@@ -9,63 +9,63 @@ public class RetrieveAndUpdateHitoData {
 	public void retrieveAndUpdateTestData() throws PersistentException {
 		PersistentTransaction t = base_de_datos.HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			base_de_datos.Usuario_General base_de_DatosUsuario_General = base_de_datos.Usuario_General.loadUsuario_GeneralByQuery(null, null);
+			base_de_datos.Usuario_General base_de_DatosUsuario_General = base_de_datos.Usuario_GeneralDAO.loadUsuario_GeneralByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosUsuario_General.save();
-			base_de_datos.UR base_de_DatosUR = base_de_datos.UR.loadURByQuery(null, null);
+			base_de_datos.Usuario_GeneralDAO.save(base_de_DatosUsuario_General);
+			base_de_datos.UR base_de_DatosUR = base_de_datos.URDAO.loadURByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosUR.save();
-			base_de_datos.Administrador base_de_DatosAdministrador = base_de_datos.Administrador.loadAdministradorByQuery(null, null);
+			base_de_datos.URDAO.save(base_de_DatosUR);
+			base_de_datos.Administrador base_de_DatosAdministrador = base_de_datos.AdministradorDAO.loadAdministradorByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosAdministrador.save();
-			base_de_datos.Categoria base_de_DatosCategoria = base_de_datos.Categoria.loadCategoriaByQuery(null, null);
+			base_de_datos.AdministradorDAO.save(base_de_DatosAdministrador);
+			base_de_datos.Categoria base_de_DatosCategoria = base_de_datos.CategoriaDAO.loadCategoriaByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosCategoria.save();
-			base_de_datos.Producto base_de_DatosProducto = base_de_datos.Producto.loadProductoByQuery(null, null);
+			base_de_datos.CategoriaDAO.save(base_de_DatosCategoria);
+			base_de_datos.Producto base_de_DatosProducto = base_de_datos.ProductoDAO.loadProductoByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosProducto.save();
-			base_de_datos.Imagen base_de_DatosImagen = base_de_datos.Imagen.loadImagenByQuery(null, null);
+			base_de_datos.ProductoDAO.save(base_de_DatosProducto);
+			base_de_datos.Imagen base_de_DatosImagen = base_de_datos.ImagenDAO.loadImagenByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosImagen.save();
-			base_de_datos.Oferta base_de_DatosOferta = base_de_datos.Oferta.loadOfertaByQuery(null, null);
+			base_de_datos.ImagenDAO.save(base_de_DatosImagen);
+			base_de_datos.Oferta base_de_DatosOferta = base_de_datos.OfertaDAO.loadOfertaByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosOferta.save();
-			base_de_datos.Producto_Rebajado base_de_DatosProducto_Rebajado = base_de_datos.Producto_Rebajado.loadProducto_RebajadoByQuery(null, null);
+			base_de_datos.OfertaDAO.save(base_de_DatosOferta);
+			base_de_datos.Producto_Rebajado base_de_DatosProducto_Rebajado = base_de_datos.Producto_RebajadoDAO.loadProducto_RebajadoByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosProducto_Rebajado.save();
-			base_de_datos.Empleado base_de_DatosEmpleado = base_de_datos.Empleado.loadEmpleadoByQuery(null, null);
+			base_de_datos.Producto_RebajadoDAO.save(base_de_DatosProducto_Rebajado);
+			base_de_datos.Transportista base_de_DatosTransportista = base_de_datos.TransportistaDAO.loadTransportistaByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosEmpleado.save();
-			base_de_datos.Transportista base_de_DatosTransportista = base_de_datos.Transportista.loadTransportistaByQuery(null, null);
+			base_de_datos.TransportistaDAO.save(base_de_DatosTransportista);
+			base_de_datos.Encargado_de_compras base_de_DatosEncargado_de_compras = base_de_datos.Encargado_de_comprasDAO.loadEncargado_de_comprasByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosTransportista.save();
-			base_de_datos.Encargado_de_compras base_de_DatosEncargado_de_compras = base_de_datos.Encargado_de_compras.loadEncargado_de_comprasByQuery(null, null);
+			base_de_datos.Encargado_de_comprasDAO.save(base_de_DatosEncargado_de_compras);
+			base_de_datos.Comentario base_de_DatosComentario = base_de_datos.ComentarioDAO.loadComentarioByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosEncargado_de_compras.save();
-			base_de_datos.Comentario base_de_DatosComentario = base_de_datos.Comentario.loadComentarioByQuery(null, null);
+			base_de_datos.ComentarioDAO.save(base_de_DatosComentario);
+			base_de_datos.Compra base_de_DatosCompra = base_de_datos.CompraDAO.loadCompraByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosComentario.save();
-			base_de_datos.Compra base_de_DatosCompra = base_de_datos.Compra.loadCompraByQuery(null, null);
+			base_de_datos.CompraDAO.save(base_de_DatosCompra);
+			base_de_datos.Producto_en_compra base_de_DatosProducto_en_compra = base_de_datos.Producto_en_compraDAO.loadProducto_en_compraByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosCompra.save();
-			base_de_datos.Producto_en_compra base_de_DatosProducto_en_compra = base_de_datos.Producto_en_compra.loadProducto_en_compraByQuery(null, null);
+			base_de_datos.Producto_en_compraDAO.save(base_de_DatosProducto_en_compra);
+			base_de_datos.Valoracion base_de_DatosValoracion = base_de_datos.ValoracionDAO.loadValoracionByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosProducto_en_compra.save();
-			base_de_datos.Valoracion base_de_DatosValoracion = base_de_datos.Valoracion.loadValoracionByQuery(null, null);
+			base_de_datos.ValoracionDAO.save(base_de_DatosValoracion);
+			base_de_datos.Pendiente base_de_DatosPendiente = base_de_datos.PendienteDAO.loadPendienteByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosValoracion.save();
-			base_de_datos.Pendiente base_de_DatosPendiente = base_de_datos.Pendiente.loadPendienteByQuery(null, null);
+			base_de_datos.PendienteDAO.save(base_de_DatosPendiente);
+			base_de_datos.Enviado base_de_DatosEnviado = base_de_datos.EnviadoDAO.loadEnviadoByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosPendiente.save();
-			base_de_datos.Enviado base_de_DatosEnviado = base_de_datos.Enviado.loadEnviadoByQuery(null, null);
+			base_de_datos.EnviadoDAO.save(base_de_DatosEnviado);
+			base_de_datos.Recibido base_de_DatosRecibido = base_de_datos.RecibidoDAO.loadRecibidoByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosEnviado.save();
-			base_de_datos.Recibido base_de_DatosRecibido = base_de_datos.Recibido.loadRecibidoByQuery(null, null);
+			base_de_datos.RecibidoDAO.save(base_de_DatosRecibido);
+			base_de_datos.Mensaje base_de_DatosMensaje = base_de_datos.MensajeDAO.loadMensajeByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosRecibido.save();
-			base_de_datos.Mensaje base_de_DatosMensaje = base_de_datos.Mensaje.loadMensajeByQuery(null, null);
+			base_de_datos.MensajeDAO.save(base_de_DatosMensaje);
+			base_de_datos.Empleado base_de_DatosEmpleado = base_de_datos.EmpleadoDAO.loadEmpleadoByQuery(null, null);
 			// Update the properties of the persistent object
-			base_de_DatosMensaje.save();
+			base_de_datos.EmpleadoDAO.save(base_de_DatosEmpleado);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -123,22 +123,16 @@ public class RetrieveAndUpdateHitoData {
 		//base_de_DatosProducto_RebajadoCriteria.id_Producto.eq();
 		System.out.println(base_de_DatosProducto_RebajadoCriteria.uniqueProducto_Rebajado());
 		
-		System.out.println("Retrieving Empleado by EmpleadoCriteria");
-		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
-		// Please uncomment the follow line and fill in parameter(s)
-		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
-		System.out.println(base_de_DatosEmpleadoCriteria.uniqueEmpleado());
-		
 		System.out.println("Retrieving Transportista by TransportistaCriteria");
 		base_de_datos.TransportistaCriteria base_de_DatosTransportistaCriteria = new base_de_datos.TransportistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//base_de_DatosTransportistaCriteria.idEmpleado.eq();
+		//base_de_DatosTransportistaCriteria.id_Transportista.eq();
 		System.out.println(base_de_DatosTransportistaCriteria.uniqueTransportista());
 		
 		System.out.println("Retrieving Encargado_de_compras by Encargado_de_comprasCriteria");
 		base_de_datos.Encargado_de_comprasCriteria base_de_DatosEncargado_de_comprasCriteria = new base_de_datos.Encargado_de_comprasCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//base_de_DatosEncargado_de_comprasCriteria.idEmpleado.eq();
+		//base_de_DatosEncargado_de_comprasCriteria.id_Encargado.eq();
 		System.out.println(base_de_DatosEncargado_de_comprasCriteria.uniqueEncargado_de_compras());
 		
 		System.out.println("Retrieving Comentario by ComentarioCriteria");
@@ -188,6 +182,12 @@ public class RetrieveAndUpdateHitoData {
 		// Please uncomment the follow line and fill in parameter(s)
 		//base_de_DatosMensajeCriteria.id_Mensaje.eq();
 		System.out.println(base_de_DatosMensajeCriteria.uniqueMensaje());
+		
+		System.out.println("Retrieving Empleado by EmpleadoCriteria");
+		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
+		// Please uncomment the follow line and fill in parameter(s)
+		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
+		System.out.println(base_de_DatosEmpleadoCriteria.uniqueEmpleado());
 		
 	}
 	

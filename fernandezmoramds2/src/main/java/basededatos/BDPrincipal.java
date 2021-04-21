@@ -22,7 +22,7 @@ import base_de_datos.Producto;
 import base_de_datos.Categoria;
 import base_de_datos.Producto_Rebajado;
 import base_de_datos.Compra;
-// import Base_de_Datos.UR;
+// import base_de_datos.UR;
 import base_de_datos.Mensaje;
 import base_de_datos.Pendiente;
 import fernandezmora.interfaz.UR_UNR;
@@ -36,7 +36,6 @@ import fernandezmora.interfaz.Encargado_de_compras;
 import base_de_datos.Enviado;
 import base_de_datos.Empleado;
 import base_de_datos.Recibido;
-import base_de_datos.UR;
 import base_de_datos.Imagen;
 
 public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, iTransportista, iEncargado_de_compras, iAdministrador {
@@ -154,7 +153,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public fernandezmora.interfaz.UR get_UR() {
+	public interfaz.UR get_UR() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -269,6 +268,4 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
 		throw new UnsupportedOperationException();
 	}
-
-
 }

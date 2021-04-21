@@ -1,8 +1,7 @@
 package basededatos;
 
-import base_de_datos.Compra;
-import base_de_datos.UR;
-import base_de_datos.Mensaje;
+import fernandezmora.interfaz.Mensaje_enviado;
+import fernandezmora.interfaz.Mensaje_recibido;
 
 public interface iUR extends iUR_UNR {
 
@@ -10,11 +9,11 @@ public interface iUR extends iUR_UNR {
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago);
 
-	public Compra[] cargarPedidos(UR aUsuario);
+	public void cargarPedidos();
 
-	public Mensaje[] cargarMensajesEnviados(String aCorreoEmisor);
+	public Mensaje_enviado[] cargarMensajesEnviados(String aCorreoEmisor);
 
-	public Mensaje[] cargarMensajesRecibidos(String aCorreoReceptor);
+	public Mensaje_recibido[] cargarMensajesRecibidos(String aCorreoReceptor);
 
-	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
+	public void enviarMensaje(int aIdMensaje, String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
 }

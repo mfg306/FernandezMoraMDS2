@@ -1,13 +1,15 @@
 package basededatos;
 
-import base_de_datos.Enviado;
+import fernandezmora.interfaz.Pedido_T;
 import base_de_datos.UR;
 
 public interface iTransportista {
 
-	public void enviarMensajeT(String aMensaje, String aCorreEmisor, String aCorreoReceptor);
+	public Pedido_T[] cargarPedidosT(int aIdTransportista);
 
-	public Enviado[] cargarPedidosT(int aIdTransportista);
+	public void pedidoEntregado(int aIdPedidoEnviado);
 
-	public UR[] cargarFichaCliente();
+	public UR cargarFichaCliente(int aIdUsuarioRegistrado);
+
+	public boolean buscarUsuarioPorCorreo(String aCorreo);
 }

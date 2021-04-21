@@ -10,7 +10,7 @@ public class ListHitoData {
 	
 	public void listTestData() throws PersistentException {
 		System.out.println("Listing Usuario_General...");
-		base_de_datos.Usuario_General[] base_de_DatosUsuario_Generals = base_de_datos.Usuario_General.listUsuario_GeneralByQuery(null, null);
+		base_de_datos.Usuario_General[] base_de_DatosUsuario_Generals = base_de_datos.Usuario_GeneralDAO.listUsuario_GeneralByQuery(null, null);
 		int length = Math.min(base_de_DatosUsuario_Generals.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosUsuario_Generals[i]);
@@ -18,7 +18,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing UR...");
-		base_de_datos.UR[] base_de_DatosURs = base_de_datos.UR.listURByQuery(null, null);
+		base_de_datos.UR[] base_de_DatosURs = base_de_datos.URDAO.listURByQuery(null, null);
 		length = Math.min(base_de_DatosURs.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosURs[i]);
@@ -26,7 +26,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Administrador...");
-		base_de_datos.Administrador[] base_de_DatosAdministradors = base_de_datos.Administrador.listAdministradorByQuery(null, null);
+		base_de_datos.Administrador[] base_de_DatosAdministradors = base_de_datos.AdministradorDAO.listAdministradorByQuery(null, null);
 		length = Math.min(base_de_DatosAdministradors.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosAdministradors[i]);
@@ -34,7 +34,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Categoria...");
-		base_de_datos.Categoria[] base_de_DatosCategorias = base_de_datos.Categoria.listCategoriaByQuery(null, null);
+		base_de_datos.Categoria[] base_de_DatosCategorias = base_de_datos.CategoriaDAO.listCategoriaByQuery(null, null);
 		length = Math.min(base_de_DatosCategorias.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosCategorias[i]);
@@ -42,7 +42,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Producto...");
-		base_de_datos.Producto[] base_de_DatosProductos = base_de_datos.Producto.listProductoByQuery(null, null);
+		base_de_datos.Producto[] base_de_DatosProductos = base_de_datos.ProductoDAO.listProductoByQuery(null, null);
 		length = Math.min(base_de_DatosProductos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosProductos[i]);
@@ -50,7 +50,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Imagen...");
-		base_de_datos.Imagen[] base_de_DatosImagens = base_de_datos.Imagen.listImagenByQuery(null, null);
+		base_de_datos.Imagen[] base_de_DatosImagens = base_de_datos.ImagenDAO.listImagenByQuery(null, null);
 		length = Math.min(base_de_DatosImagens.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosImagens[i]);
@@ -58,7 +58,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Oferta...");
-		base_de_datos.Oferta[] base_de_DatosOfertas = base_de_datos.Oferta.listOfertaByQuery(null, null);
+		base_de_datos.Oferta[] base_de_DatosOfertas = base_de_datos.OfertaDAO.listOfertaByQuery(null, null);
 		length = Math.min(base_de_DatosOfertas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosOfertas[i]);
@@ -66,23 +66,15 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Producto_Rebajado...");
-		base_de_datos.Producto_Rebajado[] base_de_DatosProducto_Rebajados = base_de_datos.Producto_Rebajado.listProducto_RebajadoByQuery(null, null);
+		base_de_datos.Producto_Rebajado[] base_de_DatosProducto_Rebajados = base_de_datos.Producto_RebajadoDAO.listProducto_RebajadoByQuery(null, null);
 		length = Math.min(base_de_DatosProducto_Rebajados.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosProducto_Rebajados[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
-		System.out.println("Listing Empleado...");
-		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_datos.Empleado.listEmpleadoByQuery(null, null);
-		length = Math.min(base_de_DatosEmpleados.length, ROW_COUNT);
-		for (int i = 0; i < length; i++) {
-			System.out.println(base_de_DatosEmpleados[i]);
-		}
-		System.out.println(length + " record(s) retrieved.");
-		
 		System.out.println("Listing Transportista...");
-		base_de_datos.Transportista[] base_de_DatosTransportistas = base_de_datos.Transportista.listTransportistaByQuery(null, null);
+		base_de_datos.Transportista[] base_de_DatosTransportistas = base_de_datos.TransportistaDAO.listTransportistaByQuery(null, null);
 		length = Math.min(base_de_DatosTransportistas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosTransportistas[i]);
@@ -90,7 +82,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Encargado_de_compras...");
-		base_de_datos.Encargado_de_compras[] base_de_DatosEncargado_de_comprases = base_de_datos.Encargado_de_compras.listEncargado_de_comprasByQuery(null, null);
+		base_de_datos.Encargado_de_compras[] base_de_DatosEncargado_de_comprases = base_de_datos.Encargado_de_comprasDAO.listEncargado_de_comprasByQuery(null, null);
 		length = Math.min(base_de_DatosEncargado_de_comprases.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosEncargado_de_comprases[i]);
@@ -98,7 +90,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Comentario...");
-		base_de_datos.Comentario[] base_de_DatosComentarios = base_de_datos.Comentario.listComentarioByQuery(null, null);
+		base_de_datos.Comentario[] base_de_DatosComentarios = base_de_datos.ComentarioDAO.listComentarioByQuery(null, null);
 		length = Math.min(base_de_DatosComentarios.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosComentarios[i]);
@@ -106,7 +98,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Compra...");
-		base_de_datos.Compra[] base_de_DatosCompras = base_de_datos.Compra.listCompraByQuery(null, null);
+		base_de_datos.Compra[] base_de_DatosCompras = base_de_datos.CompraDAO.listCompraByQuery(null, null);
 		length = Math.min(base_de_DatosCompras.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosCompras[i]);
@@ -114,7 +106,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Producto_en_compra...");
-		base_de_datos.Producto_en_compra[] base_de_DatosProducto_en_compras = base_de_datos.Producto_en_compra.listProducto_en_compraByQuery(null, null);
+		base_de_datos.Producto_en_compra[] base_de_DatosProducto_en_compras = base_de_datos.Producto_en_compraDAO.listProducto_en_compraByQuery(null, null);
 		length = Math.min(base_de_DatosProducto_en_compras.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosProducto_en_compras[i]);
@@ -122,7 +114,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Valoracion...");
-		base_de_datos.Valoracion[] base_de_DatosValoracions = base_de_datos.Valoracion.listValoracionByQuery(null, null);
+		base_de_datos.Valoracion[] base_de_DatosValoracions = base_de_datos.ValoracionDAO.listValoracionByQuery(null, null);
 		length = Math.min(base_de_DatosValoracions.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosValoracions[i]);
@@ -130,7 +122,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Pendiente...");
-		base_de_datos.Pendiente[] base_de_DatosPendientes = base_de_datos.Pendiente.listPendienteByQuery(null, null);
+		base_de_datos.Pendiente[] base_de_DatosPendientes = base_de_datos.PendienteDAO.listPendienteByQuery(null, null);
 		length = Math.min(base_de_DatosPendientes.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosPendientes[i]);
@@ -138,7 +130,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Enviado...");
-		base_de_datos.Enviado[] base_de_DatosEnviados = base_de_datos.Enviado.listEnviadoByQuery(null, null);
+		base_de_datos.Enviado[] base_de_DatosEnviados = base_de_datos.EnviadoDAO.listEnviadoByQuery(null, null);
 		length = Math.min(base_de_DatosEnviados.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosEnviados[i]);
@@ -146,7 +138,7 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Recibido...");
-		base_de_datos.Recibido[] base_de_DatosRecibidos = base_de_datos.Recibido.listRecibidoByQuery(null, null);
+		base_de_datos.Recibido[] base_de_DatosRecibidos = base_de_datos.RecibidoDAO.listRecibidoByQuery(null, null);
 		length = Math.min(base_de_DatosRecibidos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosRecibidos[i]);
@@ -154,10 +146,18 @@ public class ListHitoData {
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Mensaje...");
-		base_de_datos.Mensaje[] base_de_DatosMensajes = base_de_datos.Mensaje.listMensajeByQuery(null, null);
+		base_de_datos.Mensaje[] base_de_DatosMensajes = base_de_datos.MensajeDAO.listMensajeByQuery(null, null);
 		length = Math.min(base_de_DatosMensajes.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosMensajes[i]);
+		}
+		System.out.println(length + " record(s) retrieved.");
+		
+		System.out.println("Listing Empleado...");
+		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_datos.EmpleadoDAO.listEmpleadoByQuery(null, null);
+		length = Math.min(base_de_DatosEmpleados.length, ROW_COUNT);
+		for (int i = 0; i < length; i++) {
+			System.out.println(base_de_DatosEmpleados[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -260,22 +260,10 @@ public class ListHitoData {
 		}
 		System.out.println(length + " Producto_Rebajado record(s) retrieved."); 
 		
-		System.out.println("Listing Empleado by Criteria...");
-		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
-		// Please uncomment the follow line and fill in parameter(s) 
-		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
-		base_de_DatosEmpleadoCriteria.setMaxResults(ROW_COUNT);
-		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_DatosEmpleadoCriteria.listEmpleado();
-		length =base_de_DatosEmpleados== null ? 0 : Math.min(base_de_DatosEmpleados.length, ROW_COUNT); 
-		for (int i = 0; i < length; i++) {
-			 System.out.println(base_de_DatosEmpleados[i]);
-		}
-		System.out.println(length + " Empleado record(s) retrieved."); 
-		
 		System.out.println("Listing Transportista by Criteria...");
 		base_de_datos.TransportistaCriteria base_de_DatosTransportistaCriteria = new base_de_datos.TransportistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//base_de_DatosTransportistaCriteria.idEmpleado.eq();
+		//base_de_DatosTransportistaCriteria.id_Transportista.eq();
 		base_de_DatosTransportistaCriteria.setMaxResults(ROW_COUNT);
 		base_de_datos.Transportista[] base_de_DatosTransportistas = base_de_DatosTransportistaCriteria.listTransportista();
 		length =base_de_DatosTransportistas== null ? 0 : Math.min(base_de_DatosTransportistas.length, ROW_COUNT); 
@@ -287,7 +275,7 @@ public class ListHitoData {
 		System.out.println("Listing Encargado_de_compras by Criteria...");
 		base_de_datos.Encargado_de_comprasCriteria base_de_DatosEncargado_de_comprasCriteria = new base_de_datos.Encargado_de_comprasCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//base_de_DatosEncargado_de_comprasCriteria.idEmpleado.eq();
+		//base_de_DatosEncargado_de_comprasCriteria.id_Encargado.eq();
 		base_de_DatosEncargado_de_comprasCriteria.setMaxResults(ROW_COUNT);
 		base_de_datos.Encargado_de_compras[] base_de_DatosEncargado_de_comprases = base_de_DatosEncargado_de_comprasCriteria.listEncargado_de_compras();
 		length =base_de_DatosEncargado_de_comprases== null ? 0 : Math.min(base_de_DatosEncargado_de_comprases.length, ROW_COUNT); 
@@ -391,6 +379,18 @@ public class ListHitoData {
 			 System.out.println(base_de_DatosMensajes[i]);
 		}
 		System.out.println(length + " Mensaje record(s) retrieved."); 
+		
+		System.out.println("Listing Empleado by Criteria...");
+		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
+		// Please uncomment the follow line and fill in parameter(s) 
+		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
+		base_de_DatosEmpleadoCriteria.setMaxResults(ROW_COUNT);
+		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_DatosEmpleadoCriteria.listEmpleado();
+		length =base_de_DatosEmpleados== null ? 0 : Math.min(base_de_DatosEmpleados.length, ROW_COUNT); 
+		for (int i = 0; i < length; i++) {
+			 System.out.println(base_de_DatosEmpleados[i]);
+		}
+		System.out.println(length + " Empleado record(s) retrieved."); 
 		
 	}
 	

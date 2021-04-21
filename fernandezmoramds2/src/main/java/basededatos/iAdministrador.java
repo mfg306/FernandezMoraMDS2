@@ -1,20 +1,26 @@
 package basededatos;
 
-import base_de_datos.Oferta;
-import base_de_datos.Empleado;
-import base_de_datos.Recibido;
+import fernandezmora.interfaz.Oferta_administrador;
 import base_de_datos.Producto;
-import base_de_datos.Categoria;
+import fernandezmora.interfaz.Empleado;
+import fernandezmora.interfaz.Venta;
+import fernandezmora.interfaz.Producto_listado_administracion;
+import fernandezmora.interfaz.Producto_listado;
+import fernandezmora.interfaz.Categoria_administrador;
+import fernandezmora.interfaz.Producto_administrador;
 import base_de_datos.Imagen;
-import base_de_datos.Mensaje;
+import fernandezmora.interfaz.Mensaje_enviado;
+import fernandezmora.interfaz.Mensaje_recibido;
 
 public interface iAdministrador {
 
-	public Oferta[] cargarOfertas();
+	public Oferta_administrador[] cargarOfertas();
+
+	public Producto[] cargarProductos();
 
 	public Empleado[] cargarEmpleados();
 
-	public Recibido[] cargarVentas();
+	public Venta[] cargarVentas();
 
 	public void eliminarOfertaAdministrador(int aIdOferta);
 
@@ -26,41 +32,27 @@ public interface iAdministrador {
 
 	public Producto[] cargarProductos(String aProducto);
 
-	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro);
+	public void guardarOferta(String aNombreOferta, Producto[] aListaProductos, int aIdOferta, String aFechaCaducidad, String aFechaRegistro);
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro);
+	public void guardarCategoria(String aNombreCategoria, Producto[] aListaProductos, int aIdCategoria, String aFechaRegistro);
 
-	public Categoria[] cargarCategoriasAdministrador();
+	public Producto_listado_administracion[] cargarProductosListadoAdministracion();
 
-	public Producto[] cargarProductosAdministrador();
+	public Producto_listado[] cargarProductosListado();
 
-	public void insertarProducto(String aNombreProducto, String aDescripcion);
+	public Categoria_administrador[] cargarCategoriasAdministrador();
 
-	public void guardarImagenesProducto(Imagen[] aImagenes);
+	public Producto_administrador[] cargarProductosAdministrador();
 
-	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo);
+	public void guardarProducto(int aIdProducto, String aNombreProducto, String aDescripcion);
 
-	public Mensaje[] cargarMensajesEnviados(String aCorreoEmisor);
+	public void guardarImagenesProducto(int aIdProducto, Imagen[] aImagenes);
 
-	public Mensaje[] cargarMensajesRecibidos(String aCorreoReceptor);
+	public void guardarEmpleado(int aIdEmpleado, String aNombreUsuario, String aContrasenia, String aCorreo);
 
-	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
+	public Mensaje_enviado[] cargarMensajesEnviados(String aCorreoEmisor);
 
-	public void iniciarSesion(String aCorreo, String aContrasenia);
+	public Mensaje_recibido[] cargarMensajesRecibidos(String aCorreoReceptor);
 
-	public Producto[] cargarProductosListado();
-
-	public Producto[] cargarProductosAdministracion();
-
-	public void VerZonaProductos();
-
-	public void VerZonaProductosAnadidos();
-
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion);
-
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion);
-
-	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo);
-
-	public void actualizarProducto(String aNombreProducto, String aDescripcion);
+	public void enviarMensaje(int aIdMensaje, String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
 }
