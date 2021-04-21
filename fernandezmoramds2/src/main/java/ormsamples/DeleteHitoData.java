@@ -1,5 +1,5 @@
 /**
- * Licensee: martafernandez(University of Almeria)
+ * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -33,6 +33,9 @@ public class DeleteHitoData {
 			base_de_datos.Producto_Rebajado base_de_DatosProducto_Rebajado = base_de_datos.Producto_RebajadoDAO.loadProducto_RebajadoByQuery(null, null);
 			// Delete the persistent object
 			base_de_datos.Producto_RebajadoDAO.delete(base_de_DatosProducto_Rebajado);
+			base_de_datos.Empleado base_de_DatosEmpleado = base_de_datos.EmpleadoDAO.loadEmpleadoByQuery(null, null);
+			// Delete the persistent object
+			base_de_datos.EmpleadoDAO.delete(base_de_DatosEmpleado);
 			base_de_datos.Transportista base_de_DatosTransportista = base_de_datos.TransportistaDAO.loadTransportistaByQuery(null, null);
 			// Delete the persistent object
 			base_de_datos.TransportistaDAO.delete(base_de_DatosTransportista);
@@ -63,9 +66,6 @@ public class DeleteHitoData {
 			base_de_datos.Mensaje base_de_DatosMensaje = base_de_datos.MensajeDAO.loadMensajeByQuery(null, null);
 			// Delete the persistent object
 			base_de_datos.MensajeDAO.delete(base_de_DatosMensaje);
-			base_de_datos.Empleado base_de_DatosEmpleado = base_de_datos.EmpleadoDAO.loadEmpleadoByQuery(null, null);
-			// Delete the persistent object
-			base_de_datos.EmpleadoDAO.delete(base_de_DatosEmpleado);
 			t.commit();
 		}
 		catch (Exception e) {

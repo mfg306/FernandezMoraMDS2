@@ -1,8 +1,8 @@
-package base_de_datos;
+package Base_de_Datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
-import base_de_datos.UR;
+import Base_de_Datos.UR;
 
 public class BD_UR {
 	public BDPrincipal _bDPrincipal;

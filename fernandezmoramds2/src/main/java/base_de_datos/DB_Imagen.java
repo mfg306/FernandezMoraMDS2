@@ -1,14 +1,14 @@
-package base_de_datos;
+package Base_de_Datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
-import base_de_datos.Imagen;
+import Base_de_Datos.Imagen;
 
 public class DB_Imagen {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 
-	public void guardarImagenesProducto(Imagen[] aImagenes) {
+	public void guardarImagenesProducto(Imagen[] aImagenes, int aIdProducto) {
 		throw new UnsupportedOperationException();
 	}
 }

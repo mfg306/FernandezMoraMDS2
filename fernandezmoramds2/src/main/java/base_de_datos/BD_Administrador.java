@@ -1,4 +1,4 @@
-package base_de_datos;
+package Base_de_Datos;
 
 import basededatos.BDPrincipal;
 

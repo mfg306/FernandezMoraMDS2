@@ -24,19 +24,18 @@ import base_de_datos.Producto_Rebajado;
 import base_de_datos.Compra;
 // import base_de_datos.UR;
 import base_de_datos.Mensaje;
-import base_de_datos.Pendiente;
-import fernandezmora.interfaz.UR_UNR;
-// import interfaz.UR;
-import fernandezmora.interfaz.Gestor_Banco;
-import fernandezmora.interfaz.UNR_;
-import fernandezmora.interfaz.Gestor_Correos;
-import fernandezmora.interfaz.Transportista_Encargado_NR;
-import fernandezmora.interfaz.Transportista;
-import fernandezmora.interfaz.Encargado_de_compras;
 import base_de_datos.Enviado;
-import base_de_datos.Empleado;
-import base_de_datos.Recibido;
+import base_de_datos.Pendiente;
 import base_de_datos.Imagen;
+import interfaz.UR_UNR;
+// import interfaz.UR;
+import interfaz.Gestor_Banco;
+import interfaz.UNR_;
+import interfaz.Gestor_Correos;
+import interfaz.Transportista_Encargado_NR;
+import interfaz.Transportista;
+import interfaz.Encargado_de_compras;
+import interfaz.Administrador;
 
 public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, iTransportista, iEncargado_de_compras, iAdministrador {
 	public BD_UR _bD_UNR;
@@ -129,6 +128,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
+	public Enviado[] cargarPedidosT(int aIdTransportista) {
+		throw new UnsupportedOperationException();
+	}
+
 	public base_de_datos.UR[] cargarFichaCliente() {
 		throw new UnsupportedOperationException();
 	}
@@ -146,6 +149,14 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public void enviarMensajeE(String aMensaje, String aCorreoEmisor, String aCorreoReceptor) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void guardarImagenesProducto(int aIdProducto, Imagen[] aImagenes) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void insertarProducto(String aNombreProducto, String aDescripcion) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -181,91 +192,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Enviado[] cargarPedidosT(int aIdTransportista) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Empleado[] cargarEmpleados() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Recibido[] cargarVentas() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void eliminarOfertaAdministrador(int aIdOferta) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void eliminarCategoriaAdministrador(int aIdCategoria) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void eliminarProductoAdministrador(int aIdProducto) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void eliminarEmpleado(int aIdEmpleado) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Categoria[] cargarCategoriasAdministrador() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Producto[] cargarProductosAdministrador() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void insertarProducto(String aNombreProducto, String aDescripcion) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void guardarImagenesProducto(Imagen[] aImagenes) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
-		throw new UnsupportedOperationException();
-	}
-
-	public Producto[] cargarProductosListado() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Producto[] cargarProductosAdministracion() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void VerZonaProductos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void VerZonaProductosAnadidos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
+	public Administrador get_Administrador() {
 		throw new UnsupportedOperationException();
 	}
 }

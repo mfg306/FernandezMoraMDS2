@@ -1,5 +1,5 @@
 /**
- * Licensee: martafernandez(University of Almeria)
+ * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -33,6 +33,9 @@ public class RetrieveAndUpdateHitoData {
 			base_de_datos.Producto_Rebajado base_de_DatosProducto_Rebajado = base_de_datos.Producto_RebajadoDAO.loadProducto_RebajadoByQuery(null, null);
 			// Update the properties of the persistent object
 			base_de_datos.Producto_RebajadoDAO.save(base_de_DatosProducto_Rebajado);
+			base_de_datos.Empleado base_de_DatosEmpleado = base_de_datos.EmpleadoDAO.loadEmpleadoByQuery(null, null);
+			// Update the properties of the persistent object
+			base_de_datos.EmpleadoDAO.save(base_de_DatosEmpleado);
 			base_de_datos.Transportista base_de_DatosTransportista = base_de_datos.TransportistaDAO.loadTransportistaByQuery(null, null);
 			// Update the properties of the persistent object
 			base_de_datos.TransportistaDAO.save(base_de_DatosTransportista);
@@ -63,9 +66,6 @@ public class RetrieveAndUpdateHitoData {
 			base_de_datos.Mensaje base_de_DatosMensaje = base_de_datos.MensajeDAO.loadMensajeByQuery(null, null);
 			// Update the properties of the persistent object
 			base_de_datos.MensajeDAO.save(base_de_DatosMensaje);
-			base_de_datos.Empleado base_de_DatosEmpleado = base_de_datos.EmpleadoDAO.loadEmpleadoByQuery(null, null);
-			// Update the properties of the persistent object
-			base_de_datos.EmpleadoDAO.save(base_de_DatosEmpleado);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -123,16 +123,22 @@ public class RetrieveAndUpdateHitoData {
 		//base_de_DatosProducto_RebajadoCriteria.id_Producto.eq();
 		System.out.println(base_de_DatosProducto_RebajadoCriteria.uniqueProducto_Rebajado());
 		
+		System.out.println("Retrieving Empleado by EmpleadoCriteria");
+		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
+		// Please uncomment the follow line and fill in parameter(s)
+		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
+		System.out.println(base_de_DatosEmpleadoCriteria.uniqueEmpleado());
+		
 		System.out.println("Retrieving Transportista by TransportistaCriteria");
 		base_de_datos.TransportistaCriteria base_de_DatosTransportistaCriteria = new base_de_datos.TransportistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//base_de_DatosTransportistaCriteria.id_Transportista.eq();
+		//base_de_DatosTransportistaCriteria.idEmpleado.eq();
 		System.out.println(base_de_DatosTransportistaCriteria.uniqueTransportista());
 		
 		System.out.println("Retrieving Encargado_de_compras by Encargado_de_comprasCriteria");
 		base_de_datos.Encargado_de_comprasCriteria base_de_DatosEncargado_de_comprasCriteria = new base_de_datos.Encargado_de_comprasCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//base_de_DatosEncargado_de_comprasCriteria.id_Encargado.eq();
+		//base_de_DatosEncargado_de_comprasCriteria.idEmpleado.eq();
 		System.out.println(base_de_DatosEncargado_de_comprasCriteria.uniqueEncargado_de_compras());
 		
 		System.out.println("Retrieving Comentario by ComentarioCriteria");
@@ -182,12 +188,6 @@ public class RetrieveAndUpdateHitoData {
 		// Please uncomment the follow line and fill in parameter(s)
 		//base_de_DatosMensajeCriteria.id_Mensaje.eq();
 		System.out.println(base_de_DatosMensajeCriteria.uniqueMensaje());
-		
-		System.out.println("Retrieving Empleado by EmpleadoCriteria");
-		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
-		// Please uncomment the follow line and fill in parameter(s)
-		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
-		System.out.println(base_de_DatosEmpleadoCriteria.uniqueEmpleado());
 		
 	}
 	

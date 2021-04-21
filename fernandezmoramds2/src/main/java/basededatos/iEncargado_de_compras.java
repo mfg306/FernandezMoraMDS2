@@ -1,12 +1,15 @@
 package basededatos;
 
-import fernandezmora.interfaz.Pedido_E;
+import base_de_datos.BD_Pendiente;
+import base_de_datos.Pendiente;
 
 public interface iEncargado_de_compras {
 
-	public Pedido_E[] cargarPedidosPendientes(int aIdEncargado);
+	public BD_Pendiente[] cargarPedidosPendientes(int aIdEncargado);
 
-	public boolean buscarUsuarioPorCorreo(String aCorreo);
+	public void asignarPedidoTransportista(int aIdPedidoPendiente, int aIdTransportista);
 
-	public void pedidoEnviado(int aIdPedidoPendiente, int aIdTransportista);
+	public Pendiente[] cargarPedidosE(int aIdEncargado);
+
+	public void enviarMensajeE(String aMensaje, String aCorreoEmisor, String aCorreoReceptor);
 }

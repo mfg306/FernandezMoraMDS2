@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: martafernandez(University of Almeria)
+ * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -322,8 +322,8 @@ public class ProductoDAO {
 	}
 	
 	public static boolean deleteAndDissociate(base_de_datos.Producto producto)throws PersistentException {
-		if (producto instanceof base_de_datos.Producto_Rebajado) {
-			return base_de_datos.Producto_RebajadoDAO.deleteAndDissociate((base_de_datos.Producto_Rebajado) producto);
+		if (producto instanceof Base_de_Datos.Producto_Rebajado) {
+			return Base_de_Datos.Producto_RebajadoDAO.deleteAndDissociate((Base_de_Datos.Producto_Rebajado) producto);
 		}
 		
 		try {
@@ -356,8 +356,8 @@ public class ProductoDAO {
 	}
 	
 	public static boolean deleteAndDissociate(base_de_datos.Producto producto, org.orm.PersistentSession session)throws PersistentException {
-		if (producto instanceof base_de_datos.Producto_Rebajado) {
-			return base_de_datos.Producto_RebajadoDAO.deleteAndDissociate((base_de_datos.Producto_Rebajado) producto, session);
+		if (producto instanceof Base_de_Datos.Producto_Rebajado) {
+			return Base_de_Datos.Producto_RebajadoDAO.deleteAndDissociate((Base_de_Datos.Producto_Rebajado) producto, session);
 		}
 		
 		try {

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: martafernandez(University of Almeria)
+ * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -78,7 +78,7 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 		return _Tiene;
 	}
 	
-	public base_de_datos.Producto_Rebajado[] cargarProductosOferta(base_de_datos.Oferta oferta) {
+	public base de datos.Producto_Rebajado[] cargarProductosOferta(base de datos.Oferta oferta) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}

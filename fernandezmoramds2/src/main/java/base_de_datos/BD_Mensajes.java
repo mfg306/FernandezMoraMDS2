@@ -1,8 +1,8 @@
-package base_de_datos;
+package Base_de_Datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
-import base_de_datos.Mensaje;
+import Base_de_Datos.Mensaje;
 
 public class BD_Mensajes {
 	public BDPrincipal _bDPrincipal;

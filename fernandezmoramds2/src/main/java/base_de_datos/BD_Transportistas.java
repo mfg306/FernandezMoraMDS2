@@ -1,8 +1,8 @@
-package base_de_datos;
+package Base_de_Datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
-import base_de_datos.Transportista;
+import Base_de_Datos.Transportista;
 
 public class BD_Transportistas {
 	public BDPrincipal _bDPrincipal;

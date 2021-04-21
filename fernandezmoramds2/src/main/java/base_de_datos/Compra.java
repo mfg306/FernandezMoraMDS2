@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: martafernandez(University of Almeria)
+ * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -74,7 +74,7 @@ public class Compra implements Serializable {
 		return fecha_estado;
 	}
 	
-	public base_de_datos.Compra[] cargarPedidos(base_de_datos.UR usuario) {
+	public base de datos.Compra[] cargarPedidos(base de datos.UR usuario) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}

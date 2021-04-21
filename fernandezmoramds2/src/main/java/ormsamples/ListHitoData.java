@@ -1,5 +1,5 @@
 /**
- * Licensee: martafernandez(University of Almeria)
+ * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -70,6 +70,14 @@ public class ListHitoData {
 		length = Math.min(base_de_DatosProducto_Rebajados.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosProducto_Rebajados[i]);
+		}
+		System.out.println(length + " record(s) retrieved.");
+		
+		System.out.println("Listing Empleado...");
+		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_datos.EmpleadoDAO.listEmpleadoByQuery(null, null);
+		length = Math.min(base_de_DatosEmpleados.length, ROW_COUNT);
+		for (int i = 0; i < length; i++) {
+			System.out.println(base_de_DatosEmpleados[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -150,14 +158,6 @@ public class ListHitoData {
 		length = Math.min(base_de_DatosMensajes.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(base_de_DatosMensajes[i]);
-		}
-		System.out.println(length + " record(s) retrieved.");
-		
-		System.out.println("Listing Empleado...");
-		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_datos.EmpleadoDAO.listEmpleadoByQuery(null, null);
-		length = Math.min(base_de_DatosEmpleados.length, ROW_COUNT);
-		for (int i = 0; i < length; i++) {
-			System.out.println(base_de_DatosEmpleados[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -260,10 +260,22 @@ public class ListHitoData {
 		}
 		System.out.println(length + " Producto_Rebajado record(s) retrieved."); 
 		
+		System.out.println("Listing Empleado by Criteria...");
+		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
+		// Please uncomment the follow line and fill in parameter(s) 
+		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
+		base_de_DatosEmpleadoCriteria.setMaxResults(ROW_COUNT);
+		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_DatosEmpleadoCriteria.listEmpleado();
+		length =base_de_DatosEmpleados== null ? 0 : Math.min(base_de_DatosEmpleados.length, ROW_COUNT); 
+		for (int i = 0; i < length; i++) {
+			 System.out.println(base_de_DatosEmpleados[i]);
+		}
+		System.out.println(length + " Empleado record(s) retrieved."); 
+		
 		System.out.println("Listing Transportista by Criteria...");
 		base_de_datos.TransportistaCriteria base_de_DatosTransportistaCriteria = new base_de_datos.TransportistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//base_de_DatosTransportistaCriteria.id_Transportista.eq();
+		//base_de_DatosTransportistaCriteria.idEmpleado.eq();
 		base_de_DatosTransportistaCriteria.setMaxResults(ROW_COUNT);
 		base_de_datos.Transportista[] base_de_DatosTransportistas = base_de_DatosTransportistaCriteria.listTransportista();
 		length =base_de_DatosTransportistas== null ? 0 : Math.min(base_de_DatosTransportistas.length, ROW_COUNT); 
@@ -275,7 +287,7 @@ public class ListHitoData {
 		System.out.println("Listing Encargado_de_compras by Criteria...");
 		base_de_datos.Encargado_de_comprasCriteria base_de_DatosEncargado_de_comprasCriteria = new base_de_datos.Encargado_de_comprasCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//base_de_DatosEncargado_de_comprasCriteria.id_Encargado.eq();
+		//base_de_DatosEncargado_de_comprasCriteria.idEmpleado.eq();
 		base_de_DatosEncargado_de_comprasCriteria.setMaxResults(ROW_COUNT);
 		base_de_datos.Encargado_de_compras[] base_de_DatosEncargado_de_comprases = base_de_DatosEncargado_de_comprasCriteria.listEncargado_de_compras();
 		length =base_de_DatosEncargado_de_comprases== null ? 0 : Math.min(base_de_DatosEncargado_de_comprases.length, ROW_COUNT); 
@@ -379,18 +391,6 @@ public class ListHitoData {
 			 System.out.println(base_de_DatosMensajes[i]);
 		}
 		System.out.println(length + " Mensaje record(s) retrieved."); 
-		
-		System.out.println("Listing Empleado by Criteria...");
-		base_de_datos.EmpleadoCriteria base_de_DatosEmpleadoCriteria = new base_de_datos.EmpleadoCriteria();
-		// Please uncomment the follow line and fill in parameter(s) 
-		//base_de_DatosEmpleadoCriteria.idEmpleado.eq();
-		base_de_DatosEmpleadoCriteria.setMaxResults(ROW_COUNT);
-		base_de_datos.Empleado[] base_de_DatosEmpleados = base_de_DatosEmpleadoCriteria.listEmpleado();
-		length =base_de_DatosEmpleados== null ? 0 : Math.min(base_de_DatosEmpleados.length, ROW_COUNT); 
-		for (int i = 0; i < length; i++) {
-			 System.out.println(base_de_DatosEmpleados[i]);
-		}
-		System.out.println(length + " Empleado record(s) retrieved."); 
 		
 	}
 	

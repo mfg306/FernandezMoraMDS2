@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: martafernandez(University of Almeria)
+ * Licensee: jorge(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -228,7 +228,7 @@ public class Producto implements Serializable {
 		return _Valorado_por;
 	}
 	
-	public base_de_datos.Producto[] cargarProductos(String nombreProducto) {
+	public base de datos.Producto[] cargarProductos(String nombreProducto) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}

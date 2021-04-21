@@ -1,8 +1,8 @@
-package base_de_datos;
+package Base_de_Datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
-import base_de_datos.Encargado_de_compras;
+import Base_de_Datos.Encargado_de_compras;
 
 public class BD_Encargados_de_compras {
 	public BDPrincipal _bDPrincipal;
