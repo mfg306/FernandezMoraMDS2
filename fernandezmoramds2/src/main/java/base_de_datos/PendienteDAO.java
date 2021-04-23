@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -333,7 +333,7 @@ public class PendienteDAO {
 			
 			base_de_datos.Producto_en_compra[] l_Producto_en_compras = pendiente._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
-				l_Producto_en_compras[i]._Pendiente.remove(pendiente);
+				l_Producto_en_compras[i].set_Pendiente(null);
 			}
 			return delete(pendiente);
 		}
@@ -355,7 +355,7 @@ public class PendienteDAO {
 			
 			base_de_datos.Producto_en_compra[] l_Producto_en_compras = pendiente._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
-				l_Producto_en_compras[i]._Pendiente.remove(pendiente);
+				l_Producto_en_compras[i].set_Pendiente(null);
 			}
 			try {
 				session.delete(pendiente);

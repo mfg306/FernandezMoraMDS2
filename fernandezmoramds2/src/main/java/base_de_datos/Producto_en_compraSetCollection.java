@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -70,7 +70,6 @@ public class Producto_en_compraSetCollection extends org.orm.util.ORMSet {
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>id_Producto_en_compra</li>
 	 * <li>num_unidades_producto</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
@@ -82,7 +81,6 @@ public class Producto_en_compraSetCollection extends org.orm.util.ORMSet {
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>id_Producto_en_compra</li>
 	 * <li>num_unidades_producto</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;

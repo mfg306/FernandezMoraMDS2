@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -87,9 +87,8 @@ public class Producto implements Serializable {
 	@Column(name="Descripcion", nullable=true, length=255)	
 	private String descripcion;
 	
-	@ManyToMany(targetEntity=base_de_datos.Producto_en_compra.class)	
+	@OneToMany(mappedBy="_Producto", targetEntity=base_de_datos.Producto_en_compra.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Producto_en_compra_Producto", joinColumns={ @JoinColumn(name="ProductoId_Producto") }, inverseJoinColumns={ @JoinColumn(name="Producto_en_compraId_Producto_en_compra") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Producto_en_compra = new java.util.HashSet();
 	
@@ -180,7 +179,7 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Pertenece_a(java.util.Set value) {
 		this.ORM__Pertenece_a = value;

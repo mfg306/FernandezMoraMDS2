@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -64,9 +64,8 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKPendiente405808"))	
 	private base_de_datos.UR _Hace_compra;
 	
-	@ManyToMany(targetEntity=base_de_datos.Producto_en_compra.class)	
+	@OneToMany(mappedBy="_Pendiente", targetEntity=base_de_datos.Producto_en_compra.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinTable(name="Producto_en_compra_Pendiente", joinColumns={ @JoinColumn(name="PendienteCompraCodigo") }, inverseJoinColumns={ @JoinColumn(name="Producto_en_compraId_Producto_en_compra") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Producto_en_compra = new java.util.HashSet();
 	
@@ -79,7 +78,7 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void set_Hace_compra(base_de_datos.UR value) {
 		if (_Hace_compra != null) {

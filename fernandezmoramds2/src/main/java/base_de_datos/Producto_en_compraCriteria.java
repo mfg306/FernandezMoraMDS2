@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -19,17 +19,19 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class Producto_en_compraCriteria extends AbstractORMCriteria {
-	public final IntegerExpression id_Producto_en_compra;
+	public final IntegerExpression _PendienteId;
+	public final AssociationExpression _Pendiente;
+	public final IntegerExpression _ProductoId;
+	public final AssociationExpression _Producto;
 	public final IntegerExpression num_unidades_producto;
-	public final CollectionExpression _Producto;
-	public final CollectionExpression _Pendiente;
 	
 	public Producto_en_compraCriteria(Criteria criteria) {
 		super(criteria);
-		id_Producto_en_compra = new IntegerExpression("id_Producto_en_compra", this);
+		_PendienteId = new IntegerExpression("ORM__Pendiente.", this);
+		_Pendiente = new AssociationExpression("ORM__Pendiente", this);
+		_ProductoId = new IntegerExpression("ORM__Producto.id_Producto", this);
+		_Producto = new AssociationExpression("ORM__Producto", this);
 		num_unidades_producto = new IntegerExpression("num_unidades_producto", this);
-		_Producto = new CollectionExpression("ORM__Producto", this);
-		_Pendiente = new CollectionExpression("ORM__Pendiente", this);
 	}
 	
 	public Producto_en_compraCriteria(PersistentSession session) {
@@ -40,12 +42,12 @@ public class Producto_en_compraCriteria extends AbstractORMCriteria {
 		this(base_de_datos.HitoPersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.ProductoCriteria create_ProductoCriteria() {
-		return new base_de_datos.ProductoCriteria(createCriteria("ORM__Producto"));
+	public PendienteCriteria create_PendienteCriteria() {
+		return new PendienteCriteria(createCriteria("ORM__Pendiente"));
 	}
 	
-	public base_de_datos.PendienteCriteria create_PendienteCriteria() {
-		return new base_de_datos.PendienteCriteria(createCriteria("ORM__Pendiente"));
+	public ProductoCriteria create_ProductoCriteria() {
+		return new ProductoCriteria(createCriteria("ORM__Producto"));
 	}
 	
 	public Producto_en_compra uniqueProducto_en_compra() {

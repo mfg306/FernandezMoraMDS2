@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package base_de_datos;
@@ -337,7 +337,7 @@ public class ProductoDAO {
 			
 			base_de_datos.Producto_en_compra[] l_Producto_en_compras = producto._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
-				l_Producto_en_compras[i]._Producto.remove(producto);
+				l_Producto_en_compras[i].set_Producto(null);
 			}
 			base_de_datos.Comentario[] l_Pertenece_as = producto._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
@@ -371,7 +371,7 @@ public class ProductoDAO {
 			
 			base_de_datos.Producto_en_compra[] l_Producto_en_compras = producto._Producto_en_compra.toArray();
 			for(int i = 0; i < l_Producto_en_compras.length; i++) {
-				l_Producto_en_compras[i]._Producto.remove(producto);
+				l_Producto_en_compras[i].set_Producto(null);
 			}
 			base_de_datos.Comentario[] l_Pertenece_as = producto._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
