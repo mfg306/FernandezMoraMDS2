@@ -161,39 +161,4 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public UR_UNR get_UR_UNR() {
-		throw new UnsupportedOperationException();
-	}
-
-	public interfaz.UR get_UR() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Gestor_Banco get_Gestor_Banco() {
-		throw new UnsupportedOperationException();
-	}
-
-	public UNR_ get_UNR_() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Gestor_Correos get_Gestor_Correos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Transportista_Encargado_NR get_Transportista_Encargado_NR() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Transportista get_Transportista() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Encargado_de_compras get_Encargado_de_compras() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Administrador get_Administrador() {
-		throw new UnsupportedOperationException();
-	}
 }
