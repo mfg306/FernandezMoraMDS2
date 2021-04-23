@@ -1,6 +1,7 @@
 package basededatos;
 
 import base_de_datos.BD_UR;
+
 import base_de_datos.BD_Administrador;
 import base_de_datos.BD_Categorias;
 import base_de_datos.BD_Productos;
