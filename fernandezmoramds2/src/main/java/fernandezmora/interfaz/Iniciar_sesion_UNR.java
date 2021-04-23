@@ -1,6 +1,12 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
+import basededatos.iUNR_;
 
 public class Iniciar_sesion_UNR extends Iniciar_sesion {
 
@@ -23,6 +29,14 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this.getCorreo().setVisible(true);
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
+		
+		this.getBoton_iniciar_sesion().addClickListener(event ->{
+			try {
+				this.iniciarSesion();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		});
 	}
 
 	public void abrir_RecuperarContraseña() {
@@ -39,6 +53,22 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 			this._menu_UNR.layout.add(this._registrarse);
 
 		});
+	}
+	
+	
+	public void iniciarSesion() throws PersistentException {
+		iUNR_ iunr = new BDPrincipal();
+		iAdministrador iadmin = new BDPrincipal();
+
+
+		if(!iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue() )) {
+
+			/*if(!iadmin.iniciarSesion(null, null)) {
+			}*/
+		}
+
+
+		
 	}
 
 }

@@ -2,6 +2,8 @@ package basededatos;
 
 import base_de_datos.BD_UR;
 
+import org.orm.PersistentException;
+
 import base_de_datos.BD_Administrador;
 import base_de_datos.BD_Categorias;
 import base_de_datos.BD_Productos;
@@ -23,23 +25,17 @@ import base_de_datos.Producto;
 import base_de_datos.Categoria;
 import base_de_datos.Producto_Rebajado;
 import base_de_datos.Compra;
-// import base_de_datos.UR;
+import base_de_datos.UR;
 import base_de_datos.Mensaje;
 import base_de_datos.Enviado;
 import base_de_datos.Pendiente;
 import base_de_datos.Imagen;
-import interfaz.UR_UNR;
-// import interfaz.UR;
-import interfaz.Gestor_Banco;
-import interfaz.UNR_;
-import interfaz.Gestor_Correos;
-import interfaz.Transportista_Encargado_NR;
-import interfaz.Transportista;
-import interfaz.Encargado_de_compras;
-import interfaz.Administrador;
+import base_de_datos.Empleado;
+import base_de_datos.Recibido;
 
-public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR, iTransportista, iEncargado_de_compras, iAdministrador {
-	public BD_UR _bD_UNR;
+public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR,
+		iTransportista, iEncargado_de_compras, iAdministrador {
+	public BD_UR _bD_UNR = new BD_UR();
 	public BD_Administrador _bD_Administrador;
 	public BD_Categorias _bD_Categorias;
 	public BD_Productos _bD_Productos;
@@ -97,7 +93,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Compra[] cargarPedidos(base_de_datos.UR aUsuario) {
+	public Compra[] cargarPedidos(UR aUsuario) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -113,12 +109,30 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public void registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario, String aContrasenia, Object aContraseniaRepeticion) {
-		throw new UnsupportedOperationException();
+	public boolean registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
+			String aContrasenia, Object aContraseniaRepeticion) throws PersistentException {
+		boolean registrado = false;
+		try {
+			
+			registrado = this._bD_UNR.registrarse(aNombre, aApellidos, aCorreo, aNombreUsuario, aContrasenia,
+					aContrasenia);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return registrado;
 	}
 
-	public void iniciarSesion(String aCorreo, String aContrasenia) {
-		throw new UnsupportedOperationException();
+	public boolean iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
+		boolean existe = false;
+		
+		try {
+			existe = this._bD_UNR.iniciarSesion(aCorreo, aContrasenia);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return existe;
 	}
 
 	public boolean buscarUsuario(String aCampo) {
@@ -133,11 +147,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public base_de_datos.UR[] cargarFichaCliente() {
+	public UR[] cargarFichaCliente() {
 		throw new UnsupportedOperationException();
 	}
 
-	public BD_Pendiente[] cargarPedidosPendientes(int aIdEncargado) {
+	public Pendiente[] cargarPedidosPendientes(int aIdEncargado) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -161,4 +175,77 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
+	public void verZonaProductos() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void verZonaProductosAnadidos() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+			String aFechaRegistro) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+			String aFechaActualizacion) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void actualizarProducto(Imagen[] aImagenes, int aIdProducto) {
+		throw new UnsupportedOperationException();
+	}
+
+	public Categoria[] cargarCategoriasAdministrador() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void eliminarCategoria(int aIdCategoria) {
+		throw new UnsupportedOperationException();
+	}
+
+	public Empleado[] cargarEmpleados() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void eliminarEmpleado(int aIdEmpleado) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
+		throw new UnsupportedOperationException();
+	}
+
+	public void eliminarOferta(int aIdOferta) {
+		throw new UnsupportedOperationException();
+	}
+
+	public Producto[] cargarProductosAdministrador() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void eliminarProductoAdministrador(int aIdProducto) {
+		throw new UnsupportedOperationException();
+	}
+
+	public Recibido[] cargarVentas() {
+		throw new UnsupportedOperationException();
+	}
+
+	public Producto[] cargarProductosListado() {
+		throw new UnsupportedOperationException();
+	}
 }

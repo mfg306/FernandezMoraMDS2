@@ -1,8 +1,10 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 public interface iUNR_ extends iUR_UNR {
 
-	public void registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario, String aContrasenia, Object aContraseniaRepeticion);
+	public boolean registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario, String aContrasenia, Object aContraseniaRepeticion) throws PersistentException;
 
-	public void iniciarSesion(String aCorreo, String aContrasenia);
+	public boolean iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
 }

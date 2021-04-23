@@ -112,4 +112,12 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 		this.vaadinButton1 = vaadinButton1;
 	}
 
+	public PasswordField getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(PasswordField contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
 }

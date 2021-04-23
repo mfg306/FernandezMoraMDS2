@@ -15,6 +15,7 @@ package base_de_datos;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Usuario_General")
@@ -23,6 +24,8 @@ public class Usuario_General implements Serializable {
 	public Usuario_General() {
 	}
 	
+	
+
 	@Column(name="Id_Usuario", nullable=false, length=10)	
 	@Id	
 	@GeneratedValue(generator="BASE_DE_DATOS_USUARIO_GENERAL_ID_USUARIO_GENERATOR")	

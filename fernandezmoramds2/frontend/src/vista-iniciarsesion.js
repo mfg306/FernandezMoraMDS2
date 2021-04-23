@@ -19,7 +19,7 @@ class VistaIniciar_sesion extends PolymerElement {
  <span style="font-size: 4vw; font-weight: bold; width: 100%; text-align:center;" id="span">INICIA SESIÓN</span>
  <vaadin-text-field id="correo" style="width: 80%;" placeholder="Introduzca su correo electrónico" required></vaadin-text-field>
  <vaadin-text-field id="nombre_usuario" style="width: 80%;" placeholder="Introduzca su nombre de usuario" required></vaadin-text-field>
- <vaadin-password-field id="contrasenia" style="width: 80%;" required></vaadin-password-field>
+ <vaadin-password-field id="contrasenia" style="width: 80%;" required invalid></vaadin-password-field>
  <vaadin-button theme="primary" id="botonOlvidarContraseña" class="boton-enlace" style="align-self: center; ">
    Recuperar contraseña 
  </vaadin-button>
