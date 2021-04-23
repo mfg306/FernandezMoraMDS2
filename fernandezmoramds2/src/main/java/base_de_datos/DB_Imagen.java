@@ -1,8 +1,8 @@
-package Base_de_Datos;
+package base_de_datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
-import Base_de_Datos.Imagen;
+import base_de_datos.Imagen;
 
 public class DB_Imagen {
 	public BDPrincipal _bDPrincipal;

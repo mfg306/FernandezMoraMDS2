@@ -74,7 +74,7 @@ public class Compra implements Serializable {
 		return fecha_estado;
 	}
 	
-	public base de datos.Compra[] cargarPedidos(base de datos.UR usuario) {
+	public base_de_datos.Compra[] cargarPedidos(base_de_datos.UR usuario) {
 		//TODO: Implement Method
 		throw new UnsupportedOperationException();
 	}

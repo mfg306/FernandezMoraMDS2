@@ -1,8 +1,8 @@
-package Base_de_Datos;
+package base_de_datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
-import Base_de_Datos.Comentario;
+import base_de_datos.Comentario;
 
 public class BD_Comentarios {
 	public BDPrincipal _bDPrincipal;
