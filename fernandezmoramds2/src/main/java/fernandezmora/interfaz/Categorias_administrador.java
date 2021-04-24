@@ -2,9 +2,9 @@ package fernandezmora.interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import ch.qos.logback.core.Layout;
 import vistas.VistaCategorias_administrador;
 
 public class Categorias_administrador extends VistaCategorias_administrador{
@@ -18,16 +18,22 @@ public class Categorias_administrador extends VistaCategorias_administrador{
 	
 	public void inicializar(Gestionar_categorias gc) {
 		this._gestionar_categorias = gc; 
+		
 		this._list_Categoria_administrador = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		//addCategoriaAdministrador();
 	}
 	
-	/*Metodo para agregar categorias al listado. Cuando sepamos como se hace con la base de datos lo podemos mejorar*/
-	public void add_categorias() {
-		Categoria_administrador ca = new Categoria_administrador(this);
-		this._list_Categoria_administrador.add(ca); // En realidad no sé si se va a necesitar, con agregar la vista al layout es suficiente para que se vea
-		layout.add(ca);
-		
-		
+	public void addCategoriaAdministrador() {
+
+		for(base_de_datos.Categoria c : this._gestionar_categorias.categoriasAdmin) {
+			Categoria_administrador ca = new Categoria_administrador(this, c);
+			this._list_Categoria_administrador.add(ca);
+			this.layout.add(ca);
+			Notification.show("Categoria añadida");
+
+		}
 	}
+	
+
 }

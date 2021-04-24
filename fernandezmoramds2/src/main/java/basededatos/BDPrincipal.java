@@ -36,22 +36,22 @@ import base_de_datos.Recibido;
 public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR,
 		iTransportista, iEncargado_de_compras, iAdministrador {
 	public BD_UR _bD_UNR = new BD_UR();
-	public BD_Administrador _bD_Administrador;
-	public BD_Categorias _bD_Categorias;
-	public BD_Productos _bD_Productos;
-	public BD_Ofertas _bD_Ofertas;
-	public BD_Productos_Rebajados _bD_Productos_Rebajados;
-	public BD_Transportistas _bD_Transportistas;
-	public BD_Encargados_de_compras _bD_Encargados_de_compras;
-	public BD_Comentarios _bD_Comentarios;
-	public DB_Imagen _dB_Imagen;
-	public BD_Enviado _bD_Enviado;
-	public BD_Recibido _bD_Recibido;
-	public BD_Pendiente _bD_Pendiente;
-	public BD_Mensajes _bD_Mensajes;
-	public BD_Productos_en_compra _bD_Productos_en_compra;
-	public BD_Valoracion _bD_Valoracion;
-	public BD_Empleados _bD_Empleados;
+	public BD_Administrador _bD_Administrador = new BD_Administrador();
+	public BD_Categorias _bD_Categorias = new BD_Categorias();
+	public BD_Productos _bD_Productos = new BD_Productos();
+	public BD_Ofertas _bD_Ofertas = new BD_Ofertas();
+	public BD_Productos_Rebajados _bD_Productos_Rebajados = new BD_Productos_Rebajados();
+	public BD_Transportistas _bD_Transportistas = new BD_Transportistas();
+	public BD_Encargados_de_compras _bD_Encargados_de_compras = new BD_Encargados_de_compras();
+	public BD_Comentarios _bD_Comentarios = new BD_Comentarios();
+	public DB_Imagen _dB_Imagen = new DB_Imagen();
+	public BD_Enviado _bD_Enviado = new BD_Enviado();
+	public BD_Recibido _bD_Recibido = new BD_Recibido();
+	public BD_Pendiente _bD_Pendiente = new BD_Pendiente();
+	public BD_Mensajes _bD_Mensajes = new BD_Mensajes();
+	public BD_Productos_en_compra _bD_Productos_en_compra = new BD_Productos_en_compra();
+	public BD_Valoracion _bD_Valoracion = new BD_Valoracion();
+	public BD_Empleados _bD_Empleados = new BD_Empleados();
 
 	public Oferta[] cargarOfertas() {
 		throw new UnsupportedOperationException();
@@ -209,8 +209,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Categoria[] cargarCategoriasAdministrador() {
-		throw new UnsupportedOperationException();
+	public Categoria[] cargarCategoriasAdministrador() throws PersistentException {
+		return _bD_Categorias.cargarCategoriasAdministrador();
 	}
 
 	public void eliminarCategoria(int aIdCategoria) {

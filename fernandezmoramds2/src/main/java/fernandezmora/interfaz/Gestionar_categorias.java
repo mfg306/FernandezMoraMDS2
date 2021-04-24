@@ -1,7 +1,10 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 import vistas.VistaGestionarcategorias;
 
 public class Gestionar_categorias extends VistaGestionarcategorias {
@@ -10,25 +13,28 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	public Categorias_administrador _categorias_administrador;
 	public Crear_categoría _crear_categoría;
 	public VerticalLayout layout;
+	base_de_datos.Categoria[] categoriasAdmin;
 
 	
-	public Gestionar_categorias() {
+	public Gestionar_categorias()  {
 		inicializar();
 	}
 	
 	public void inicializar() {
+		//crear_Categorias();
+		//editar_Categoria();
+		
+		try {
+			abrirGestionarCategorias();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		Notification.show("1. Numero de categorias en GC : " + this.categoriasAdmin.length);
 		this._categorias_administrador = new Categorias_administrador(this); 
-		this._categorias_administrador.add_categorias();
-		this._categorias_administrador.add_categorias();
-		
+		Notification.show("2. Numero de categorias en GC : " + this.categoriasAdmin.length);
 
-		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-
-		layout.add(this._categorias_administrador);
-		
-		crear_Categorias();
-		editar_Categoria();
-	}
+}
 	
 	public void ocultar_Gestionar_Categorias() {
 		layout.remove(this._categorias_administrador);
@@ -59,6 +65,24 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 				layout.add(ca._editar_categoria);
 			});
 		}
+	}
+	
+	
+	/**
+	 * Este metodo inicializa las categorias de la base de datos.
+	 * @throws PersistentException excepcion si hay algun problema
+	 */
+	public void abrirGestionarCategorias() throws PersistentException {
+		iAdministrador iadmin = new BDPrincipal();
+
+		this.categoriasAdmin = iadmin.cargarCategoriasAdministrador();	
+		
+		for(base_de_datos.Categoria c : this.categoriasAdmin) {
+			Notification.show(c.getNombre_categoria());
+		}
+		
+
+
 	}
 	
 	

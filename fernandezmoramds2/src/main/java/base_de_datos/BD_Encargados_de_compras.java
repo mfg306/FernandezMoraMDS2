@@ -11,4 +11,4 @@ public class BD_Encargados_de_compras {
 	public boolean buscarUsuario(String aNombreUsuario) {
 		throw new UnsupportedOperationException();
 	}
-}
+} 

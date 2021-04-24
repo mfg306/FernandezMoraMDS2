@@ -1,12 +1,10 @@
 package base_de_datos;
 
-import basededatos.BDPrincipal;
-import java.util.Vector;
-import base_de_datos.Categoria;
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
 
 public class BD_Categorias {
-	public BDPrincipal _bDPrincipal;
-	public Vector<Categoria> _categoria = new Vector<Categoria>();
 
 	public Categoria[] cargarCategorias() {
 		throw new UnsupportedOperationException();
@@ -20,8 +18,16 @@ public class BD_Categorias {
 		throw new UnsupportedOperationException();
 	}
 
-	public Categoria[] cargarCategoriasAdministrador() {
-		throw new UnsupportedOperationException();
+	public Categoria[] cargarCategoriasAdministrador() throws PersistentException {
+		Categoria[] cat = null;
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		try {
+			cat = CategoriaDAO.listCategoriaByQuery(null, null);
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return cat;
 	}
 
 	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion) {
