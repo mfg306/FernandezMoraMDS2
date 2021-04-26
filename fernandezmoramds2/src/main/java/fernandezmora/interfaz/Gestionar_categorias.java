@@ -30,9 +30,9 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 			e.printStackTrace();
 		}
 		
-		Notification.show("1. Numero de categorias en GC : " + this.categoriasAdmin.length);
+		//Notification.show("1. Numero de categorias en GC : " + this.categoriasAdmin.length);
 		this._categorias_administrador = new Categorias_administrador(this); 
-		Notification.show("2. Numero de categorias en GC : " + this.categoriasAdmin.length);
+		//Notification.show("2. Numero de categorias en GC : " + this.categoriasAdmin.length);
 
 }
 	
@@ -77,11 +77,9 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 
 		this.categoriasAdmin = iadmin.cargarCategoriasAdministrador();	
 		
-		for(base_de_datos.Categoria c : this.categoriasAdmin) {
+		/*for(base_de_datos.Categoria c : this.categoriasAdmin) {
 			Notification.show(c.getNombre_categoria());
-		}
-		
-
+		}*/
 
 	}
 	

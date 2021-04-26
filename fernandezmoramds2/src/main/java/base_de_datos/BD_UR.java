@@ -24,17 +24,18 @@ public class BD_UR {
 			usuario.setContrasenia(aContrasenia);
 			usuario.setNombre_usuario(aNombreUsuario);
 			
-			UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
+			//UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
 
-			if (usuariosCorreo.length == 0 && usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return true;
+			/*if (usuariosCorreo.length == 0 && usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return true;
 			if (usuariosCorreo.length == 0 && usuariosCorreo[0].getNombre_usuario().equals(usuario.getNombre_usuario())) return true;
-
+			 */
 
 			URDAO.save(usuario);
 
 			t.commit();
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			t.rollback();
 			return false;
 		}

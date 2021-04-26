@@ -30,13 +30,13 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
 		
-		/*this.getBoton_iniciar_sesion().addClickListener(event ->{
+		this.getBoton_iniciar_sesion().addClickListener(event ->{
 			try {
 				this.iniciarSesion();
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		});*/
+		});
 	}
 
 	public void abrir_RecuperarContraseña() {
