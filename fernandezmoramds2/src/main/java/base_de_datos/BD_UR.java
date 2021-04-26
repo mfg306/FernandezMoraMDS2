@@ -16,21 +16,25 @@ public class BD_UR {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			UR usuario = URDAO.createUR();
-
-			usuario.setNombre(aNombre);
-			usuario.setCorreo_electronico(aCorreo);
-			usuario.setPrimer_apellido(aApellidos);
-			usuario.setContrasenia(aContrasenia);
-			usuario.setNombre_usuario(aNombreUsuario);
 			
-			//UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
-
-			/*if (usuariosCorreo.length == 0 && usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return true;
-			if (usuariosCorreo.length == 0 && usuariosCorreo[0].getNombre_usuario().equals(usuario.getNombre_usuario())) return true;
-			 */
-
-			URDAO.save(usuario);
+			base_de_datos.UR base_de_DatosUR = base_de_datos.URDAO.createUR();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Valora, _Envia, _recibido, _Compra, _Es_de_un, esta_operativo
+			base_de_datos.URDAO.save(base_de_DatosUR);
+//			UR usuario = URDAO.createUR();
+//
+//			usuario.setNombre(aNombre);
+//			usuario.setCorreo_electronico(aCorreo);
+//			usuario.setPrimer_apellido(aApellidos);
+//			usuario.setContrasenia(aContrasenia);
+//			usuario.setNombre_usuario(aNombreUsuario);
+//			
+//			//UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
+//
+//			/*if (usuariosCorreo.length == 0 && usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return true;
+//			if (usuariosCorreo.length == 0 && usuariosCorreo[0].getNombre_usuario().equals(usuario.getNombre_usuario())) return true;
+//			 */
+//
+//			URDAO.save(usuario);
 
 			t.commit();
 
