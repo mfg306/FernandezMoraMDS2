@@ -6,5 +6,5 @@ public interface iUNR_ extends iUR_UNR {
 
 	public boolean registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario, String aContrasenia, Object aContraseniaRepeticion) throws PersistentException;
 
-	public boolean iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
+	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
 }

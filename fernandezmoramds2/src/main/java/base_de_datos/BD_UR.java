@@ -17,24 +17,21 @@ public class BD_UR {
 
 		try {
 			
-			base_de_datos.UR base_de_DatosUR = base_de_datos.URDAO.createUR();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Valora, _Envia, _recibido, _Compra, _Es_de_un, esta_operativo
-			base_de_datos.URDAO.save(base_de_DatosUR);
-//			UR usuario = URDAO.createUR();
-//
-//			usuario.setNombre(aNombre);
-//			usuario.setCorreo_electronico(aCorreo);
-//			usuario.setPrimer_apellido(aApellidos);
-//			usuario.setContrasenia(aContrasenia);
-//			usuario.setNombre_usuario(aNombreUsuario);
-//			
-//			//UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
-//
-//			/*if (usuariosCorreo.length == 0 && usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return true;
-//			if (usuariosCorreo.length == 0 && usuariosCorreo[0].getNombre_usuario().equals(usuario.getNombre_usuario())) return true;
-//			 */
-//
-//			URDAO.save(usuario);
+			UR usuario = URDAO.createUR();
+
+			usuario.setNombre(aNombre);
+			usuario.setCorreo_electronico(aCorreo);
+			usuario.setPrimer_apellido(aApellidos);
+			usuario.setContrasenia(aContrasenia);
+			usuario.setNombre_usuario(aNombreUsuario);
+			
+			//UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
+
+			/*if (usuariosCorreo.length == 0 && usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return true;
+			if (usuariosCorreo.length == 0 && usuariosCorreo[0].getNombre_usuario().equals(usuario.getNombre_usuario())) return true;
+			 */
+
+			URDAO.save(usuario);
 
 			t.commit();
 
@@ -47,7 +44,7 @@ public class BD_UR {
 		return true;
 	}
 
-	public boolean iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
+	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
 
 		UR usuario = URDAO.createUR();
 
@@ -56,10 +53,10 @@ public class BD_UR {
 
 		UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
 
-		if(usuariosCorreo.length == 0) return false;
-		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return true;
+		if(usuariosCorreo.length == 0) return 0;
+		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) return 1;
 
-		return false;
+		return 0;
 
 	}
 

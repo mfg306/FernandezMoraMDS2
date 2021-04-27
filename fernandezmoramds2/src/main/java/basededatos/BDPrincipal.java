@@ -123,16 +123,18 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return registrado;
 	}
 
-	public boolean iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
-		boolean existe = false;
+	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
+		int existeUsuario = 0;
+		int existeAdmin = 0;
 		
 		try {
-			existe = this._bD_UNR.iniciarSesion(aCorreo, aContrasenia);
+			existeUsuario = this._bD_UNR.iniciarSesion(aCorreo, aContrasenia);
+			existeAdmin = this._bD_Administrador.iniciarSesion(aCorreo, aContrasenia);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return existe;
+		return (existeUsuario == 1) ? 1 : (existeAdmin == 2) ? 2 : 0;
 	}
 
 	public boolean buscarUsuario(String aCampo) {

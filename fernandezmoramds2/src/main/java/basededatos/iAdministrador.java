@@ -23,7 +23,7 @@ public interface iAdministrador {
 
 	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
 
-	public boolean iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
+	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
 
 	public void guardarImagenesProducto(int aIdProducto, Imagen[] aImagenes);
 
