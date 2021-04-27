@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Menu_UNR extends Menu_UR_UNR {
@@ -15,7 +16,6 @@ public class Menu_UNR extends Menu_UR_UNR {
 
 	public void inicializar(UNR_ unr) {
 		_uNR_ = unr;
-		_iniciar_sesion_UNR = new Iniciar_sesion_UNR(this);
 		layout = this.getMenu().as(VerticalLayout.class);
 
 		abrir_iniciar_sesion();
@@ -81,6 +81,9 @@ public class Menu_UNR extends Menu_UR_UNR {
 
 	public void abrir_iniciar_sesion() {
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
+			_iniciar_sesion_UNR = new Iniciar_sesion_UNR(this);
+			Notification.show("Se acaba de crear el iniciar sesion");
+
 			ocultarInformacionIniciarSesion();
 			ocultar_Informacion_PaginaInicial();
 			this.layout.removeAll();

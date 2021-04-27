@@ -2,5 +2,5 @@ package basededatos;
 
 public interface iTransportista_Encargado_NR {
 
-	public boolean buscarUsuario(String aCampo);
+	public int buscarUsuario(String aCampo, String aPassword);
 }

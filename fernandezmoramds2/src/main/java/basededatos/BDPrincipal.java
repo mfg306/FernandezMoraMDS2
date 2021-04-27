@@ -137,8 +137,20 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return (existeUsuario == 1) ? 1 : (existeAdmin == 2) ? 2 : 0;
 	}
 
-	public boolean buscarUsuario(String aCampo) {
-		throw new UnsupportedOperationException();
+	public int buscarUsuario(String aCampo, String aPassword) {
+		int existeTransportista = 0;
+		int existeEncargado = 0;
+		
+		try {
+			existeTransportista = this._bD_Transportistas.buscarUsuario(aCampo, aPassword);
+			existeEncargado = this._bD_Encargados_de_compras.buscarUsuario(aCampo, aPassword);
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return (existeTransportista == 1) ? 1 : (existeEncargado == 2) ? 2 : 0;
+		
 	}
 
 	public void enviarMensajeT(String aMensaje, String aCorreEmisor, String aCorreoReceptor) {
