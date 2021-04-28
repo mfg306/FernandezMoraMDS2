@@ -17,7 +17,7 @@ public class BD_Transportistas {
 		t.setCorreo(aNombreUsuario);
 		t.setContrasenia(aPassword);
 		
-		Transportista[] tEncontrados = TransportistaDAO.listTransportistaByQuery("correo_Transportista = '" +  aNombreUsuario + "'", "correo_Transportista");
+		Transportista[] tEncontrados = TransportistaDAO.listTransportistaByQuery("correo = '" +  aNombreUsuario + "'", "correo");
 		
 		if(tEncontrados.length == 0) return 0;
 		if(tEncontrados[0].getCorreo_Transportista().equals(t.getCorreo_Transportista()) && 
