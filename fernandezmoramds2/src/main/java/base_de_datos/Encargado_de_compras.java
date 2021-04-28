@@ -46,9 +46,6 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	@Column(name="Id_Encargado", nullable=false, length=10)	
 	private int id_Encargado;
 	
-	@Column(name="Correo_Empleado", nullable=true, length=255)	
-	private String correo_Empleado;
-	
 	@Column(name="Contrasenia", nullable=true, length=255)	
 	private String contrasenia;
 	
@@ -68,14 +65,6 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	
 	public int getId_Encargado() {
 		return id_Encargado;
-	}
-	
-	public void setCorreo_Empleado(String value) {
-		this.correo_Empleado = value;
-	}
-	
-	public String getCorreo_Empleado() {
-		return correo_Empleado;
 	}
 	
 	public void setContrasenia(String value) {

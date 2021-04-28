@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class Producto_en_compraDAO {
-	public static Producto_en_compra loadProducto_en_compraByORMID(base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto) throws PersistentException {
+	public static Producto_en_compra loadProducto_en_compraByORMID(int codigo) throws PersistentException {
 		try {
 			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
-			return loadProducto_en_compraByORMID(session, _Pendiente, _Producto);
+			return loadProducto_en_compraByORMID(session, codigo);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class Producto_en_compraDAO {
 		}
 	}
 	
-	public static Producto_en_compra getProducto_en_compraByORMID(base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto) throws PersistentException {
+	public static Producto_en_compra getProducto_en_compraByORMID(int codigo) throws PersistentException {
 		try {
 			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
-			return getProducto_en_compraByORMID(session, _Pendiente, _Producto);
+			return getProducto_en_compraByORMID(session, codigo);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class Producto_en_compraDAO {
 		}
 	}
 	
-	public static Producto_en_compra loadProducto_en_compraByORMID(base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Producto_en_compra loadProducto_en_compraByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
-			return loadProducto_en_compraByORMID(session, _Pendiente, _Producto, lockMode);
+			return loadProducto_en_compraByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class Producto_en_compraDAO {
 		}
 	}
 	
-	public static Producto_en_compra getProducto_en_compraByORMID(base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Producto_en_compra getProducto_en_compraByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
-			return getProducto_en_compraByORMID(session, _Pendiente, _Producto, lockMode);
+			return getProducto_en_compraByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,13 +63,9 @@ public class Producto_en_compraDAO {
 		}
 	}
 	
-	public static Producto_en_compra loadProducto_en_compraByORMID(PersistentSession session, base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto) throws PersistentException {
+	public static Producto_en_compra loadProducto_en_compraByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			Producto_en_compraPK producto_en_compra = new base_de_datos.Producto_en_compraPK();
-			producto_en_compra.set_Pendiente(_Pendiente);
-			producto_en_compra.set_Producto(_Producto);
-			
-			return (Producto_en_compra) session.load(base_de_datos.Producto_en_compra.class, producto_en_compra);
+			return (Producto_en_compra) session.load(base_de_datos.Producto_en_compra.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -77,13 +73,9 @@ public class Producto_en_compraDAO {
 		}
 	}
 	
-	public static Producto_en_compra getProducto_en_compraByORMID(PersistentSession session, base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto) throws PersistentException {
+	public static Producto_en_compra getProducto_en_compraByORMID(PersistentSession session, int codigo) throws PersistentException {
 		try {
-			Producto_en_compraPK producto_en_compra = new base_de_datos.Producto_en_compraPK();
-			producto_en_compra.set_Pendiente(_Pendiente);
-			producto_en_compra.set_Producto(_Producto);
-			
-			return (Producto_en_compra) session.get(base_de_datos.Producto_en_compra.class, producto_en_compra);
+			return (Producto_en_compra) session.get(base_de_datos.Producto_en_compra.class, new Integer(codigo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -91,13 +83,9 @@ public class Producto_en_compraDAO {
 		}
 	}
 	
-	public static Producto_en_compra loadProducto_en_compraByORMID(PersistentSession session, base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Producto_en_compra loadProducto_en_compraByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			Producto_en_compraPK producto_en_compra = new base_de_datos.Producto_en_compraPK();
-			producto_en_compra.set_Pendiente(_Pendiente);
-			producto_en_compra.set_Producto(_Producto);
-			
-			return (Producto_en_compra) session.load(base_de_datos.Producto_en_compra.class, producto_en_compra, lockMode);
+			return (Producto_en_compra) session.load(base_de_datos.Producto_en_compra.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,13 +93,9 @@ public class Producto_en_compraDAO {
 		}
 	}
 	
-	public static Producto_en_compra getProducto_en_compraByORMID(PersistentSession session, base_de_datos.Pendiente _Pendiente, base_de_datos.Producto _Producto, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Producto_en_compra getProducto_en_compraByORMID(PersistentSession session, int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			Producto_en_compraPK producto_en_compra = new base_de_datos.Producto_en_compraPK();
-			producto_en_compra.set_Pendiente(_Pendiente);
-			producto_en_compra.set_Producto(_Producto);
-			
-			return (Producto_en_compra) session.get(base_de_datos.Producto_en_compra.class, producto_en_compra, lockMode);
+			return (Producto_en_compra) session.get(base_de_datos.Producto_en_compra.class, new Integer(codigo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -339,17 +323,13 @@ public class Producto_en_compraDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Producto_en_compra producto_en_compra)throws PersistentException {
 		try {
-			base_de_datos.Pendiente _Pendiente = producto_en_compra.get_Pendiente();
 			if (producto_en_compra.get_Pendiente() != null) {
 				producto_en_compra.get_Pendiente()._Producto_en_compra.remove(producto_en_compra);
 			}
-			producto_en_compra.setORM__Pendiente(_Pendiente);
 			
-			base_de_datos.Producto _Producto = producto_en_compra.get_Producto();
 			if (producto_en_compra.get_Producto() != null) {
 				producto_en_compra.get_Producto()._Producto_en_compra.remove(producto_en_compra);
 			}
-			producto_en_compra.setORM__Producto(_Producto);
 			
 			return delete(producto_en_compra);
 		}
@@ -361,17 +341,13 @@ public class Producto_en_compraDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Producto_en_compra producto_en_compra, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			base_de_datos.Pendiente _Pendiente = producto_en_compra.get_Pendiente();
 			if (producto_en_compra.get_Pendiente() != null) {
 				producto_en_compra.get_Pendiente()._Producto_en_compra.remove(producto_en_compra);
 			}
-			producto_en_compra.setORM__Pendiente(_Pendiente);
 			
-			base_de_datos.Producto _Producto = producto_en_compra.get_Producto();
 			if (producto_en_compra.get_Producto() != null) {
 				producto_en_compra.get_Producto()._Producto_en_compra.remove(producto_en_compra);
 			}
-			producto_en_compra.setORM__Producto(_Producto);
 			
 			try {
 				session.delete(producto_en_compra);

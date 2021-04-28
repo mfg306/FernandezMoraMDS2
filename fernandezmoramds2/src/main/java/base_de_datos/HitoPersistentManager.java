@@ -51,7 +51,6 @@ public class HitoPersistentManager extends PersistentManager {
 		aMetadataSources.addAnnotatedClass(base_de_datos.Comentario.class);
 		aMetadataSources.addAnnotatedClass(base_de_datos.Compra.class);
 		aMetadataSources.addAnnotatedClass(base_de_datos.Producto_en_compra.class);
-		aMetadataSources.addAnnotatedClass(base_de_datos.Producto_en_compraPK.class);
 		aMetadataSources.addAnnotatedClass(base_de_datos.Valoracion.class);
 		aMetadataSources.addAnnotatedClass(base_de_datos.Pendiente.class);
 		aMetadataSources.addAnnotatedClass(base_de_datos.Enviado.class);

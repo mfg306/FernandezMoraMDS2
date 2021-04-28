@@ -23,7 +23,6 @@ public class TransportistaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression correo;
 	public final StringExpression contrasenia;
 	public final IntegerExpression id_Transportista;
-	public final StringExpression correo_Transportista;
 	public final CollectionExpression _Recibido;
 	public final CollectionExpression _Enviado;
 	
@@ -33,7 +32,6 @@ public class TransportistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
 		id_Transportista = new IntegerExpression("id_Transportista", this.getDetachedCriteria());
-		correo_Transportista = new StringExpression("correo_Transportista", this.getDetachedCriteria());
 		_Recibido = new CollectionExpression("ORM__Recibido", this.getDetachedCriteria());
 		_Enviado = new CollectionExpression("ORM__Enviado", this.getDetachedCriteria());
 	}
@@ -44,7 +42,6 @@ public class TransportistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
 		id_Transportista = new IntegerExpression("id_Transportista", this.getDetachedCriteria());
-		correo_Transportista = new StringExpression("correo_Transportista", this.getDetachedCriteria());
 		_Recibido = new CollectionExpression("ORM__Recibido", this.getDetachedCriteria());
 		_Enviado = new CollectionExpression("ORM__Enviado", this.getDetachedCriteria());
 	}

@@ -19,6 +19,7 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class Producto_en_compraDetachedCriteria extends AbstractORMDetachedCriteria {
+	public final IntegerExpression codigo;
 	public final IntegerExpression _PendienteId;
 	public final AssociationExpression _Pendiente;
 	public final IntegerExpression _ProductoId;
@@ -27,28 +28,30 @@ public class Producto_en_compraDetachedCriteria extends AbstractORMDetachedCrite
 	
 	public Producto_en_compraDetachedCriteria() {
 		super(base_de_datos.Producto_en_compra.class, base_de_datos.Producto_en_compraCriteria.class);
-		_PendienteId = new IntegerExpression("ORM__Pendiente.", this.getDetachedCriteria());
-		_Pendiente = new AssociationExpression("ORM__Pendiente", this.getDetachedCriteria());
-		_ProductoId = new IntegerExpression("ORM__Producto.id_Producto", this.getDetachedCriteria());
-		_Producto = new AssociationExpression("ORM__Producto", this.getDetachedCriteria());
+		codigo = new IntegerExpression("codigo", this.getDetachedCriteria());
+		_PendienteId = new IntegerExpression("_Pendiente.", this.getDetachedCriteria());
+		_Pendiente = new AssociationExpression("_Pendiente", this.getDetachedCriteria());
+		_ProductoId = new IntegerExpression("_Producto.id_Producto", this.getDetachedCriteria());
+		_Producto = new AssociationExpression("_Producto", this.getDetachedCriteria());
 		num_unidades_producto = new IntegerExpression("num_unidades_producto", this.getDetachedCriteria());
 	}
 	
 	public Producto_en_compraDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, base_de_datos.Producto_en_compraCriteria.class);
-		_PendienteId = new IntegerExpression("ORM__Pendiente.", this.getDetachedCriteria());
-		_Pendiente = new AssociationExpression("ORM__Pendiente", this.getDetachedCriteria());
-		_ProductoId = new IntegerExpression("ORM__Producto.id_Producto", this.getDetachedCriteria());
-		_Producto = new AssociationExpression("ORM__Producto", this.getDetachedCriteria());
+		codigo = new IntegerExpression("codigo", this.getDetachedCriteria());
+		_PendienteId = new IntegerExpression("_Pendiente.", this.getDetachedCriteria());
+		_Pendiente = new AssociationExpression("_Pendiente", this.getDetachedCriteria());
+		_ProductoId = new IntegerExpression("_Producto.id_Producto", this.getDetachedCriteria());
+		_Producto = new AssociationExpression("_Producto", this.getDetachedCriteria());
 		num_unidades_producto = new IntegerExpression("num_unidades_producto", this.getDetachedCriteria());
 	}
 	
 	public PendienteDetachedCriteria create_PendienteCriteria() {
-		return new PendienteDetachedCriteria(createCriteria("ORM__Pendiente"));
+		return new PendienteDetachedCriteria(createCriteria("_Pendiente"));
 	}
 	
 	public ProductoDetachedCriteria create_ProductoCriteria() {
-		return new ProductoDetachedCriteria(createCriteria("ORM__Producto"));
+		return new ProductoDetachedCriteria(createCriteria("_Producto"));
 	}
 	
 	public Producto_en_compra uniqueProducto_en_compra(PersistentSession session) {

@@ -20,18 +20,20 @@ import org.orm.criteria.*;
 
 public class ValoracionCriteria extends AbstractORMCriteria {
 	public final IntegerExpression id_valoracion;
+	public final IntegerExpression _ValoradoId;
+	public final AssociationExpression _Valorado;
 	public final IntegerExpression _Valorado_porId;
 	public final AssociationExpression _Valorado_por;
 	public final IntegerExpression valoracion;
-	public final CollectionExpression _Valorado;
 	
 	public ValoracionCriteria(Criteria criteria) {
 		super(criteria);
 		id_valoracion = new IntegerExpression("id_valoracion", this);
+		_ValoradoId = new IntegerExpression("_Valorado.id_Producto", this);
+		_Valorado = new AssociationExpression("_Valorado", this);
 		_Valorado_porId = new IntegerExpression("_Valorado_por.", this);
 		_Valorado_por = new AssociationExpression("_Valorado_por", this);
 		valoracion = new IntegerExpression("valoracion", this);
-		_Valorado = new CollectionExpression("ORM__Valorado", this);
 	}
 	
 	public ValoracionCriteria(PersistentSession session) {
@@ -42,12 +44,12 @@ public class ValoracionCriteria extends AbstractORMCriteria {
 		this(base_de_datos.HitoPersistentManager.instance().getSession());
 	}
 	
-	public URCriteria create_Valorado_porCriteria() {
-		return new URCriteria(createCriteria("_Valorado_por"));
+	public ProductoCriteria create_ValoradoCriteria() {
+		return new ProductoCriteria(createCriteria("_Valorado"));
 	}
 	
-	public base_de_datos.ProductoCriteria create_ValoradoCriteria() {
-		return new base_de_datos.ProductoCriteria(createCriteria("ORM__Valorado"));
+	public URCriteria create_Valorado_porCriteria() {
+		return new URCriteria(createCriteria("_Valorado_por"));
 	}
 	
 	public Valoracion uniqueValoracion() {

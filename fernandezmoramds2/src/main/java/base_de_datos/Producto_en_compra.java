@@ -18,41 +18,8 @@ import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
 @Table(name="Producto_en_compra")
-@IdClass(Producto_en_compraPK.class)
 public class Producto_en_compra implements Serializable {
 	public Producto_en_compra() {
-	}
-	
-	public boolean equals(Object aObj) {
-		if (aObj == this)
-			return true;
-		if (!(aObj instanceof Producto_en_compra))
-			return false;
-		Producto_en_compra producto_en_compra = (Producto_en_compra)aObj;
-		if (get_Pendiente() == null) {
-			if (producto_en_compra.get_Pendiente() != null)
-				return false;
-		}
-		else if (!get_Pendiente().equals(producto_en_compra.get_Pendiente()))
-			return false;
-		if (get_Producto() == null) {
-			if (producto_en_compra.get_Producto() != null)
-				return false;
-		}
-		else if (!get_Producto().equals(producto_en_compra.get_Producto()))
-			return false;
-		return true;
-	}
-	
-	public int hashCode() {
-		int hashcode = 0;
-		if (get_Pendiente() != null) {
-			hashcode = hashcode + (int) get_Pendiente().getORMID();
-		}
-		if (get_Producto() != null) {
-			hashcode = hashcode + (int) get_Producto().getORMID();
-		}
-		return hashcode;
 	}
 	
 	private void this_setOwner(Object owner, int key) {
@@ -73,45 +40,21 @@ public class Producto_en_compra implements Serializable {
 		
 	};
 	
-	@PrimaryKeyJoinColumn	
+	@Column(name="Codigo", nullable=false, length=10)	
+	@Id	
+	@GeneratedValue(generator="BASE_DE_DATOS_PRODUCTO_EN_COMPRA_CODIGO_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_PRODUCTO_EN_COMPRA_CODIGO_GENERATOR", strategy="native")	
+	private int codigo;
+	
 	@ManyToOne(targetEntity=base_de_datos.Pendiente.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="PendienteCompraCodigo", referencedColumnName="CompraCodigo", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto_e460560"))	
 	private base_de_datos.Pendiente _Pendiente;
 	
-	@Column(name="PendienteCompraCodigo", nullable=false, insertable=false, updatable=false)	
-	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_PRODUCTO_EN_COMPRA__PENDIENTEID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_PRODUCTO_EN_COMPRA__PENDIENTEID_GENERATOR", strategy="foreign", parameters=@org.hibernate.annotations.Parameter(name="property", value="_Pendiente"))	
-	private int _PendienteId;
-	
-	private void set_PendienteId(int value) {
-		this._PendienteId = value;
-	}
-	
-	public int get_PendienteId() {
-		return _PendienteId;
-	}
-	
-	@PrimaryKeyJoinColumn	
 	@ManyToOne(targetEntity=base_de_datos.Producto.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto_e986574"))	
 	private base_de_datos.Producto _Producto;
-	
-	@Column(name="ProductoId_Producto", nullable=false, insertable=false, updatable=false)	
-	@Id	
-	@GeneratedValue(generator="BASE_DE_DATOS_PRODUCTO_EN_COMPRA__PRODUCTOID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_PRODUCTO_EN_COMPRA__PRODUCTOID_GENERATOR", strategy="foreign", parameters=@org.hibernate.annotations.Parameter(name="property", value="_Producto"))	
-	private int _ProductoId;
-	
-	private void set_ProductoId(int value) {
-		this._ProductoId = value;
-	}
-	
-	public int get_ProductoId() {
-		return _ProductoId;
-	}
 	
 	@Column(name="Num_unidades_producto", nullable=false, length=10)	
 	private int num_unidades_producto;
@@ -122,6 +65,18 @@ public class Producto_en_compra implements Serializable {
 	
 	public int getNum_unidades_producto() {
 		return num_unidades_producto;
+	}
+	
+	private void setCodigo(int value) {
+		this.codigo = value;
+	}
+	
+	public int getCodigo() {
+		return codigo;
+	}
+	
+	public int getORMID() {
+		return getCodigo();
 	}
 	
 	public void set_Producto(base_de_datos.Producto value) {
@@ -173,7 +128,7 @@ public class Producto_en_compra implements Serializable {
 	}
 	
 	public String toString() {
-		return String.valueOf(((get_Pendiente() == null) ? "" : String.valueOf(get_Pendiente().getORMID())) + " " + ((get_Producto() == null) ? "" : String.valueOf(get_Producto().getORMID())));
+		return String.valueOf(getCodigo());
 	}
 	
 }

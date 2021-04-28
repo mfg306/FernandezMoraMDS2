@@ -1,10 +1,16 @@
 package base_de_datos;
 
+import basededatos.BDPrincipal;
+import java.util.Vector;
+
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import base_de_datos.Categoria;
 
 public class BD_Categorias {
+	public BDPrincipal _bDPrincipal;
+	public Vector<Categoria> _categoria = new Vector<Categoria>();
 
 	public Categoria[] cargarCategorias() throws PersistentException {
 		Categoria[] cat = null;

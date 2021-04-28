@@ -19,6 +19,7 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class Producto_en_compraCriteria extends AbstractORMCriteria {
+	public final IntegerExpression codigo;
 	public final IntegerExpression _PendienteId;
 	public final AssociationExpression _Pendiente;
 	public final IntegerExpression _ProductoId;
@@ -27,10 +28,11 @@ public class Producto_en_compraCriteria extends AbstractORMCriteria {
 	
 	public Producto_en_compraCriteria(Criteria criteria) {
 		super(criteria);
-		_PendienteId = new IntegerExpression("ORM__Pendiente.", this);
-		_Pendiente = new AssociationExpression("ORM__Pendiente", this);
-		_ProductoId = new IntegerExpression("ORM__Producto.id_Producto", this);
-		_Producto = new AssociationExpression("ORM__Producto", this);
+		codigo = new IntegerExpression("codigo", this);
+		_PendienteId = new IntegerExpression("_Pendiente.", this);
+		_Pendiente = new AssociationExpression("_Pendiente", this);
+		_ProductoId = new IntegerExpression("_Producto.id_Producto", this);
+		_Producto = new AssociationExpression("_Producto", this);
 		num_unidades_producto = new IntegerExpression("num_unidades_producto", this);
 	}
 	
@@ -43,11 +45,11 @@ public class Producto_en_compraCriteria extends AbstractORMCriteria {
 	}
 	
 	public PendienteCriteria create_PendienteCriteria() {
-		return new PendienteCriteria(createCriteria("ORM__Pendiente"));
+		return new PendienteCriteria(createCriteria("_Pendiente"));
 	}
 	
 	public ProductoCriteria create_ProductoCriteria() {
-		return new ProductoCriteria(createCriteria("ORM__Producto"));
+		return new ProductoCriteria(createCriteria("_Producto"));
 	}
 	
 	public Producto_en_compra uniqueProducto_en_compra() {

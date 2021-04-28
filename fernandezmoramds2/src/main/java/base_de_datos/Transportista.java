@@ -46,9 +46,6 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	@Column(name="Id_Transportista", nullable=false, length=10)	
 	private int id_Transportista;
 	
-	@Column(name="Correo_Transportista", nullable=true, length=255)	
-	private String correo_Transportista;
-	
 	@Column(name="Contrasenia", nullable=true, length=255)	
 	private String contrasenia;
 	
@@ -68,14 +65,6 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	
 	public int getId_Transportista() {
 		return id_Transportista;
-	}
-	
-	public void setCorreo_Transportista(String value) {
-		this.correo_Transportista = value;
-	}
-	
-	public String getCorreo_Transportista() {
-		return correo_Transportista;
 	}
 	
 	public void setContrasenia(String value) {

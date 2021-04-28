@@ -49,7 +49,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 
 		});
 	}
-	
+
 	public void limpiar_interfaz() {
 		this._menu_UNR.layout.remove(this);
 	}
@@ -66,14 +66,16 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 					limpiar_interfaz();
 					this._menu_UNR.layout.add(new UR());
 				} else if (iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 2) {
+					Notification.show("ESTE VALE :: " + iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()));
 					limpiar_interfaz();
 					this._menu_UNR.layout.add(new Administrador());
 				} else {
 					Notification.show("El usuario no está registrado");
 				}
-			} catch (PersistentException e1) {
-				e1.printStackTrace();
+			} catch (PersistentException e) {
+				e.printStackTrace();
 			}
+
 		});
 
 	}

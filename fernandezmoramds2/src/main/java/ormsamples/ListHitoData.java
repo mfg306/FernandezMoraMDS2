@@ -1,5 +1,5 @@
 /**
- * Licensee: jorge(University of Almeria)
+ * Licensee: martafernandez(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -323,7 +323,7 @@ public class ListHitoData {
 		System.out.println("Listing Producto_en_compra by Criteria...");
 		base_de_datos.Producto_en_compraCriteria base_de_DatosProducto_en_compraCriteria = new base_de_datos.Producto_en_compraCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//base_de_DatosProducto_en_compraCriteria.id_Producto_en_compra.eq();
+		//base_de_DatosProducto_en_compraCriteria.codigo.eq();
 		base_de_DatosProducto_en_compraCriteria.setMaxResults(ROW_COUNT);
 		base_de_datos.Producto_en_compra[] base_de_DatosProducto_en_compras = base_de_DatosProducto_en_compraCriteria.listProducto_en_compra();
 		length =base_de_DatosProducto_en_compras== null ? 0 : Math.min(base_de_DatosProducto_en_compras.length, ROW_COUNT); 

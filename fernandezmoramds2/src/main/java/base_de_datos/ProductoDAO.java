@@ -327,10 +327,6 @@ public class ProductoDAO {
 		}
 		
 		try {
-			if (producto.get_Valorado_por() != null) {
-				producto.get_Valorado_por()._Valorado.remove(producto);
-			}
-			
 			if (producto.get_Categoria() != null) {
 				producto.get_Categoria()._Producto.remove(producto);
 			}
@@ -346,6 +342,10 @@ public class ProductoDAO {
 			base_de_datos.Imagen[] l_Imagens = producto._Imagen.toArray();
 			for(int i = 0; i < l_Imagens.length; i++) {
 				l_Imagens[i].set_Producto(null);
+			}
+			base_de_datos.Valoracion[] l_Valorado_pors = producto._Valorado_por.toArray();
+			for(int i = 0; i < l_Valorado_pors.length; i++) {
+				l_Valorado_pors[i].set_Valorado(null);
 			}
 			return delete(producto);
 		}
@@ -361,10 +361,6 @@ public class ProductoDAO {
 		}
 		
 		try {
-			if (producto.get_Valorado_por() != null) {
-				producto.get_Valorado_por()._Valorado.remove(producto);
-			}
-			
 			if (producto.get_Categoria() != null) {
 				producto.get_Categoria()._Producto.remove(producto);
 			}
@@ -380,6 +376,10 @@ public class ProductoDAO {
 			base_de_datos.Imagen[] l_Imagens = producto._Imagen.toArray();
 			for(int i = 0; i < l_Imagens.length; i++) {
 				l_Imagens[i].set_Producto(null);
+			}
+			base_de_datos.Valoracion[] l_Valorado_pors = producto._Valorado_por.toArray();
+			for(int i = 0; i < l_Valorado_pors.length; i++) {
+				l_Valorado_pors[i].set_Valorado(null);
 			}
 			try {
 				session.delete(producto);

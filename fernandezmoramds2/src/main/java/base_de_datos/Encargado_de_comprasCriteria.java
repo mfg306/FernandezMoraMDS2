@@ -23,7 +23,6 @@ public class Encargado_de_comprasCriteria extends AbstractORMCriteria {
 	public final StringExpression correo;
 	public final StringExpression contrasenia;
 	public final IntegerExpression id_Encargado;
-	public final StringExpression correo_Empleado;
 	public final CollectionExpression _Pendiente;
 	public final CollectionExpression _Pedido_enviado;
 	
@@ -33,7 +32,6 @@ public class Encargado_de_comprasCriteria extends AbstractORMCriteria {
 		correo = new StringExpression("correo", this);
 		contrasenia = new StringExpression("contrasenia", this);
 		id_Encargado = new IntegerExpression("id_Encargado", this);
-		correo_Empleado = new StringExpression("correo_Empleado", this);
 		_Pendiente = new CollectionExpression("ORM__Pendiente", this);
 		_Pedido_enviado = new CollectionExpression("ORM__Pedido_enviado", this);
 	}

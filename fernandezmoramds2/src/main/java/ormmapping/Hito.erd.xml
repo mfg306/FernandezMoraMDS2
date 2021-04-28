@@ -120,18 +120,6 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="ValoracionId_valoracion">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Base de Datos.Valoracion.Id_valoracion</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="CategoriaId_Categoria">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
@@ -331,17 +319,6 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Correo_Transportista">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="Contrasenia">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
@@ -373,17 +350,6 @@
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="Correo_Empleado">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -519,9 +485,33 @@
     </Column>
   </Entity>
   <Entity name="Producto_en_compra" Unlogged="false" PKClustered="0">
-    <Column name="Id_Producto_en_compra">
+    <Column name="Codigo">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="PendienteCompraCodigo">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Base de Datos.Pendiente.CompraCodigo</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ProductoId_Producto">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Base de Datos.Producto.Id_Producto</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -546,6 +536,18 @@
     <Column name="Id_valoracion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="ProductoId_Producto">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Base de Datos.Producto.Id_Producto</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -910,58 +912,6 @@
       <UserTypes/>
     </Column>
   </Entity>
-  <Entity name="Producto_en_compra_Producto" Unlogged="false" PKClustered="0">
-    <Column name="Producto_en_compraId_Producto_en_compra">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Base de Datos.Producto_en_compra.Id_Producto_en_compra</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="ProductoId_Producto">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Base de Datos.Producto.Id_Producto</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
-  <Entity name="Producto_en_compra_Pendiente" Unlogged="false" PKClustered="0">
-    <Column name="Producto_en_compraId_Producto_en_compra">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Base de Datos.Producto_en_compra.Id_Producto_en_compra</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="PendienteCompraCodigo">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Base de Datos.Pendiente.CompraCodigo</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
   <ForeignKey name="FKUR630080">
     <ReferenceTable>UR</ReferenceTable>
     <ReferencedTable>Usuario_General</ReferencedTable>
@@ -1152,18 +1102,8 @@
       <Column>Usuario_GeneralId_Usuario</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKProducto_e707804">
-    <ReferenceTable>Producto_en_compra_Producto</ReferenceTable>
-    <ReferencedTable>Producto_en_compra</ReferencedTable>
-    <Columns>
-      <Column>Producto_en_compraId_Producto_en_compra</Column>
-    </Columns>
-    <RefColumns>
-      <Column>Id_Producto_en_compra</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKProducto_e87464">
-    <ReferenceTable>Producto_en_compra_Producto</ReferenceTable>
+  <ForeignKey name="FKProducto_e986574">
+    <ReferenceTable>Producto_en_compra</ReferenceTable>
     <ReferencedTable>Producto</ReferencedTable>
     <Columns>
       <Column>ProductoId_Producto</Column>
@@ -1172,18 +1112,8 @@
       <Column>Id_Producto</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKProducto_e805213">
-    <ReferenceTable>Producto_en_compra_Pendiente</ReferenceTable>
-    <ReferencedTable>Producto_en_compra</ReferencedTable>
-    <Columns>
-      <Column>Producto_en_compraId_Producto_en_compra</Column>
-    </Columns>
-    <RefColumns>
-      <Column>Id_Producto_en_compra</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKProducto_e658858">
-    <ReferenceTable>Producto_en_compra_Pendiente</ReferenceTable>
+  <ForeignKey name="FKProducto_e460560">
+    <ReferenceTable>Producto_en_compra</ReferenceTable>
     <ReferencedTable>Pendiente</ReferencedTable>
     <Columns>
       <Column>PendienteCompraCodigo</Column>
@@ -1202,14 +1132,14 @@
       <Column>Usuario_GeneralId_Usuario</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKProducto367958">
-    <ReferenceTable>Producto</ReferenceTable>
-    <ReferencedTable>Valoracion</ReferencedTable>
+  <ForeignKey name="FKValoracion99827">
+    <ReferenceTable>Valoracion</ReferenceTable>
+    <ReferencedTable>Producto</ReferencedTable>
     <Columns>
-      <Column>ValoracionId_valoracion</Column>
+      <Column>ProductoId_Producto</Column>
     </Columns>
     <RefColumns>
-      <Column>Id_valoracion</Column>
+      <Column>Id_Producto</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="FKEnviado870041">

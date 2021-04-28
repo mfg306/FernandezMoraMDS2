@@ -20,8 +20,6 @@ import org.orm.criteria.*;
 
 public class ProductoCriteria extends AbstractORMCriteria {
 	public final IntegerExpression id_Producto;
-	public final IntegerExpression _Valorado_porId;
-	public final AssociationExpression _Valorado_por;
 	public final IntegerExpression _CategoriaId;
 	public final AssociationExpression _Categoria;
 	public final DoubleExpression precio_producto;
@@ -31,12 +29,11 @@ public class ProductoCriteria extends AbstractORMCriteria {
 	public final CollectionExpression _Producto_en_compra;
 	public final CollectionExpression _Pertenece_a;
 	public final CollectionExpression _Imagen;
+	public final CollectionExpression _Valorado_por;
 	
 	public ProductoCriteria(Criteria criteria) {
 		super(criteria);
 		id_Producto = new IntegerExpression("id_Producto", this);
-		_Valorado_porId = new IntegerExpression("_Valorado_por.id_valoracion", this);
-		_Valorado_por = new AssociationExpression("_Valorado_por", this);
 		_CategoriaId = new IntegerExpression("_Categoria.id_Categoria", this);
 		_Categoria = new AssociationExpression("_Categoria", this);
 		precio_producto = new DoubleExpression("precio_producto", this);
@@ -46,6 +43,7 @@ public class ProductoCriteria extends AbstractORMCriteria {
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this);
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this);
 		_Imagen = new CollectionExpression("ORM__Imagen", this);
+		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this);
 	}
 	
 	public ProductoCriteria(PersistentSession session) {
@@ -54,10 +52,6 @@ public class ProductoCriteria extends AbstractORMCriteria {
 	
 	public ProductoCriteria() throws PersistentException {
 		this(base_de_datos.HitoPersistentManager.instance().getSession());
-	}
-	
-	public ValoracionCriteria create_Valorado_porCriteria() {
-		return new ValoracionCriteria(createCriteria("_Valorado_por"));
 	}
 	
 	public CategoriaCriteria create_CategoriaCriteria() {
@@ -74,6 +68,10 @@ public class ProductoCriteria extends AbstractORMCriteria {
 	
 	public base_de_datos.ImagenCriteria create_ImagenCriteria() {
 		return new base_de_datos.ImagenCriteria(createCriteria("ORM__Imagen"));
+	}
+	
+	public base_de_datos.ValoracionCriteria create_Valorado_porCriteria() {
+		return new base_de_datos.ValoracionCriteria(createCriteria("ORM__Valorado_por"));
 	}
 	
 	public Producto uniqueProducto() {

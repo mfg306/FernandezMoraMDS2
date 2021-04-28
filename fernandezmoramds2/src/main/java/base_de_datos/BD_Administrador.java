@@ -42,5 +42,4 @@ public class BD_Administrador {
 
 		return 2;
 	}
-
 }

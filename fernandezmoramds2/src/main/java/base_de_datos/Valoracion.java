@@ -22,26 +22,18 @@ public class Valoracion implements Serializable {
 	public Valoracion() {
 	}
 	
-	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_VALORACION__VALORADO) {
-			return ORM__Valorado;
-		}
-		
-		return null;
-	}
-	
 	private void this_setOwner(Object owner, int key) {
 		if (key == base_de_datos.ORMConstants.KEY_VALORACION__VALORADO_POR) {
 			this._Valorado_por = (base_de_datos.UR) owner;
+		}
+		
+		else if (key == base_de_datos.ORMConstants.KEY_VALORACION__VALORADO) {
+			this._Valorado = (base_de_datos.Producto) owner;
 		}
 	}
 	
 	@Transient	
 	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
-		public java.util.Set getSet(int key) {
-			return this_getSet(key);
-		}
-		
 		public void setOwner(Object owner, int key) {
 			this_setOwner(owner, key);
 		}
@@ -54,6 +46,11 @@ public class Valoracion implements Serializable {
 	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_VALORACION_ID_VALORACION_GENERATOR", strategy="native")	
 	private int id_valoracion;
 	
+	@ManyToOne(targetEntity=base_de_datos.Producto.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto", nullable=false) }, foreignKey=@ForeignKey(name="FKValoracion99827"))	
+	private base_de_datos.Producto _Valorado;
+	
 	@ManyToOne(targetEntity=base_de_datos.UR.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKValoracion23089"))	
@@ -61,11 +58,6 @@ public class Valoracion implements Serializable {
 	
 	@Column(name="Valoracion", nullable=false, length=10)	
 	private int valoracion;
-	
-	@OneToMany(mappedBy="_Valorado_por", targetEntity=base_de_datos.Producto.class)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM__Valorado = new java.util.HashSet();
 	
 	private void setId_valoracion(int value) {
 		this.id_valoracion = value;
@@ -111,16 +103,29 @@ public class Valoracion implements Serializable {
 		return _Valorado_por;
 	}
 	
-	private void setORM__Valorado(java.util.Set value) {
-		this.ORM__Valorado = value;
+	public void set_Valorado(base_de_datos.Producto value) {
+		if (_Valorado != null) {
+			_Valorado._Valorado_por.remove(this);
+		}
+		if (value != null) {
+			value._Valorado_por.add(this);
+		}
 	}
 	
-	private java.util.Set getORM__Valorado() {
-		return ORM__Valorado;
+	public base_de_datos.Producto get_Valorado() {
+		return _Valorado;
 	}
 	
-	@Transient	
-	public final base_de_datos.ProductoSetCollection _Valorado = new base_de_datos.ProductoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_VALORACION__VALORADO, base_de_datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM__Valorado(base_de_datos.Producto value) {
+		this._Valorado = value;
+	}
+	
+	private base_de_datos.Producto getORM__Valorado() {
+		return _Valorado;
+	}
 	
 	public String toString() {
 		return String.valueOf(getId_valoracion());

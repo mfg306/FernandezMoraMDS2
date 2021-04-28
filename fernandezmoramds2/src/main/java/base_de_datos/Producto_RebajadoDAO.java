@@ -327,10 +327,6 @@ public class Producto_RebajadoDAO {
 				producto_Rebajado.get_Tiene()._Pertenece_a.remove(producto_Rebajado);
 			}
 			
-			if (producto_Rebajado.get_Valorado_por() != null) {
-				producto_Rebajado.get_Valorado_por()._Valorado.remove(producto_Rebajado);
-			}
-			
 			if (producto_Rebajado.get_Categoria() != null) {
 				producto_Rebajado.get_Categoria()._Producto.remove(producto_Rebajado);
 			}
@@ -346,6 +342,10 @@ public class Producto_RebajadoDAO {
 			base_de_datos.Imagen[] l_Imagens = producto_Rebajado._Imagen.toArray();
 			for(int i = 0; i < l_Imagens.length; i++) {
 				l_Imagens[i].set_Producto(null);
+			}
+			base_de_datos.Valoracion[] l_Valorado_pors = producto_Rebajado._Valorado_por.toArray();
+			for(int i = 0; i < l_Valorado_pors.length; i++) {
+				l_Valorado_pors[i].set_Valorado(null);
 			}
 			return delete(producto_Rebajado);
 		}
@@ -361,10 +361,6 @@ public class Producto_RebajadoDAO {
 				producto_Rebajado.get_Tiene()._Pertenece_a.remove(producto_Rebajado);
 			}
 			
-			if (producto_Rebajado.get_Valorado_por() != null) {
-				producto_Rebajado.get_Valorado_por()._Valorado.remove(producto_Rebajado);
-			}
-			
 			if (producto_Rebajado.get_Categoria() != null) {
 				producto_Rebajado.get_Categoria()._Producto.remove(producto_Rebajado);
 			}
@@ -380,6 +376,10 @@ public class Producto_RebajadoDAO {
 			base_de_datos.Imagen[] l_Imagens = producto_Rebajado._Imagen.toArray();
 			for(int i = 0; i < l_Imagens.length; i++) {
 				l_Imagens[i].set_Producto(null);
+			}
+			base_de_datos.Valoracion[] l_Valorado_pors = producto_Rebajado._Valorado_por.toArray();
+			for(int i = 0; i < l_Valorado_pors.length; i++) {
+				l_Valorado_pors[i].set_Valorado(null);
 			}
 			try {
 				session.delete(producto_Rebajado);

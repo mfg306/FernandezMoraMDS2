@@ -20,35 +20,38 @@ import org.orm.criteria.*;
 
 public class ValoracionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression id_valoracion;
+	public final IntegerExpression _ValoradoId;
+	public final AssociationExpression _Valorado;
 	public final IntegerExpression _Valorado_porId;
 	public final AssociationExpression _Valorado_por;
 	public final IntegerExpression valoracion;
-	public final CollectionExpression _Valorado;
 	
 	public ValoracionDetachedCriteria() {
 		super(base_de_datos.Valoracion.class, base_de_datos.ValoracionCriteria.class);
 		id_valoracion = new IntegerExpression("id_valoracion", this.getDetachedCriteria());
+		_ValoradoId = new IntegerExpression("_Valorado.id_Producto", this.getDetachedCriteria());
+		_Valorado = new AssociationExpression("_Valorado", this.getDetachedCriteria());
 		_Valorado_porId = new IntegerExpression("_Valorado_por.", this.getDetachedCriteria());
 		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
 		valoracion = new IntegerExpression("valoracion", this.getDetachedCriteria());
-		_Valorado = new CollectionExpression("ORM__Valorado", this.getDetachedCriteria());
 	}
 	
 	public ValoracionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, base_de_datos.ValoracionCriteria.class);
 		id_valoracion = new IntegerExpression("id_valoracion", this.getDetachedCriteria());
+		_ValoradoId = new IntegerExpression("_Valorado.id_Producto", this.getDetachedCriteria());
+		_Valorado = new AssociationExpression("_Valorado", this.getDetachedCriteria());
 		_Valorado_porId = new IntegerExpression("_Valorado_por.", this.getDetachedCriteria());
 		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
 		valoracion = new IntegerExpression("valoracion", this.getDetachedCriteria());
-		_Valorado = new CollectionExpression("ORM__Valorado", this.getDetachedCriteria());
+	}
+	
+	public ProductoDetachedCriteria create_ValoradoCriteria() {
+		return new ProductoDetachedCriteria(createCriteria("_Valorado"));
 	}
 	
 	public URDetachedCriteria create_Valorado_porCriteria() {
 		return new URDetachedCriteria(createCriteria("_Valorado_por"));
-	}
-	
-	public base_de_datos.ProductoDetachedCriteria create_ValoradoCriteria() {
-		return new base_de_datos.ProductoDetachedCriteria(createCriteria("ORM__Valorado"));
 	}
 	
 	public Valoracion uniqueValoracion(PersistentSession session) {

@@ -129,8 +129,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		
 		try {
 			existeUsuario = this._bD_UNR.iniciarSesion(aCorreo, aContrasenia);
+			System.out.println("Existe usuario tiene un valor de = " + existeUsuario);
 			if(existeUsuario == 1) return 1;
 			existeAdmin = this._bD_Administrador.iniciarSesion(aCorreo, aContrasenia);
+			System.out.println("Existe admin tiene un valor de = " + existeAdmin);
+
 			if(existeAdmin == 2) return 2;
 		}catch(Exception e) {
 			e.printStackTrace();

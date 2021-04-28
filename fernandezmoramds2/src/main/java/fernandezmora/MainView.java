@@ -63,31 +63,32 @@ public class MainView extends VerticalLayout {
 		inicio_sesion.getBoton_iniciar_sesion().addClickListener(event -> {
 
 			try {
-				if (iunr.iniciarSesion(inicio_sesion.getCorreo().getValue(), inicio_sesion.getContrasenia().getValue()) == 1) {
+				if (iunr.iniciarSesion(inicio_sesion.getCorreo().getValue(),
+						inicio_sesion.getContrasenia().getValue()) == 1) {
 					UR ur = new UR();
 					remove(unr);
 					add(ur);
-				} else if (iadmin.iniciarSesion(inicio_sesion.getCorreo().getValue(), inicio_sesion.getContrasenia().getValue()) == 2) {
+				} else if (iadmin.iniciarSesion(inicio_sesion.getCorreo().getValue(),
+						inicio_sesion.getContrasenia().getValue()) == 2) {
 					Administrador admin = new Administrador();
 					remove(unr);
 					add(admin);
 				} else {
 					Notification.show("No esta registrado main");
 				}
-
-				/*
-				 * 
-				 * } else if(inicio_sesion.getCorreo().getValue().equals("t")) { Transportista t
-				 * = new Transportista(); remove(unr); add(t); } else
-				 * if(inicio_sesion.getCorreo().getValue().equals("e")) { Encargado_de_compras e
-				 * = new Encargado_de_compras(); remove(unr); add(e); }
-				 * 
-				 * else { Notification.show("Este usuario no esta registrado"); }
-				 */
-
-			} catch (PersistentException e1) {
-				e1.printStackTrace();
+			} catch (PersistentException e) {
+				e.printStackTrace();
 			}
+
+			/*
+			 * 
+			 * } else if(inicio_sesion.getCorreo().getValue().equals("t")) { Transportista t
+			 * = new Transportista(); remove(unr); add(t); } else
+			 * if(inicio_sesion.getCorreo().getValue().equals("e")) { Encargado_de_compras e
+			 * = new Encargado_de_compras(); remove(unr); add(e); }
+			 * 
+			 * else { Notification.show("Este usuario no esta registrado"); }
+			 */
 
 		});
 

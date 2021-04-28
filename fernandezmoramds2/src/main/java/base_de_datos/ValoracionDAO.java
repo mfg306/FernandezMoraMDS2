@@ -323,14 +323,14 @@ public class ValoracionDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Valoracion valoracion)throws PersistentException {
 		try {
+			if (valoracion.get_Valorado() != null) {
+				valoracion.get_Valorado()._Valorado_por.remove(valoracion);
+			}
+			
 			if (valoracion.get_Valorado_por() != null) {
 				valoracion.get_Valorado_por()._Valora.remove(valoracion);
 			}
 			
-			base_de_datos.Producto[] l_Valorados = valoracion._Valorado.toArray();
-			for(int i = 0; i < l_Valorados.length; i++) {
-				l_Valorados[i].set_Valorado_por(null);
-			}
 			return delete(valoracion);
 		}
 		catch(Exception e) {
@@ -341,14 +341,14 @@ public class ValoracionDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Valoracion valoracion, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			if (valoracion.get_Valorado() != null) {
+				valoracion.get_Valorado()._Valorado_por.remove(valoracion);
+			}
+			
 			if (valoracion.get_Valorado_por() != null) {
 				valoracion.get_Valorado_por()._Valora.remove(valoracion);
 			}
 			
-			base_de_datos.Producto[] l_Valorados = valoracion._Valorado.toArray();
-			for(int i = 0; i < l_Valorados.length; i++) {
-				l_Valorados[i].set_Valorado_por(null);
-			}
 			try {
 				session.delete(valoracion);
 				return true;

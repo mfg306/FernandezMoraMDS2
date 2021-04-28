@@ -23,7 +23,6 @@ public class TransportistaCriteria extends AbstractORMCriteria {
 	public final StringExpression correo;
 	public final StringExpression contrasenia;
 	public final IntegerExpression id_Transportista;
-	public final StringExpression correo_Transportista;
 	public final CollectionExpression _Recibido;
 	public final CollectionExpression _Enviado;
 	
@@ -33,7 +32,6 @@ public class TransportistaCriteria extends AbstractORMCriteria {
 		correo = new StringExpression("correo", this);
 		contrasenia = new StringExpression("contrasenia", this);
 		id_Transportista = new IntegerExpression("id_Transportista", this);
-		correo_Transportista = new StringExpression("correo_Transportista", this);
 		_Recibido = new CollectionExpression("ORM__Recibido", this);
 		_Enviado = new CollectionExpression("ORM__Enviado", this);
 	}

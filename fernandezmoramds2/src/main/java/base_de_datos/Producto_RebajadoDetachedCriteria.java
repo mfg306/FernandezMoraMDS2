@@ -20,8 +20,6 @@ import org.orm.criteria.*;
 
 public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression id_Producto;
-	public final IntegerExpression _Valorado_porId;
-	public final AssociationExpression _Valorado_por;
 	public final IntegerExpression _CategoriaId;
 	public final AssociationExpression _Categoria;
 	public final DoubleExpression precio_producto;
@@ -31,6 +29,7 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	public final CollectionExpression _Producto_en_compra;
 	public final CollectionExpression _Pertenece_a;
 	public final CollectionExpression _Imagen;
+	public final CollectionExpression _Valorado_por;
 	public final DoubleExpression precio_rebajado;
 	public final IntegerExpression _TieneId;
 	public final AssociationExpression _Tiene;
@@ -38,8 +37,6 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	public Producto_RebajadoDetachedCriteria() {
 		super(base_de_datos.Producto_Rebajado.class, base_de_datos.Producto_RebajadoCriteria.class);
 		id_Producto = new IntegerExpression("id_Producto", this.getDetachedCriteria());
-		_Valorado_porId = new IntegerExpression("_Valorado_por.id_valoracion", this.getDetachedCriteria());
-		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
 		_CategoriaId = new IntegerExpression("_Categoria.id_Categoria", this.getDetachedCriteria());
 		_Categoria = new AssociationExpression("_Categoria", this.getDetachedCriteria());
 		precio_producto = new DoubleExpression("precio_producto", this.getDetachedCriteria());
@@ -49,6 +46,7 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this.getDetachedCriteria());
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());
+		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this.getDetachedCriteria());
 		precio_rebajado = new DoubleExpression("precio_rebajado", this.getDetachedCriteria());
 		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this.getDetachedCriteria());
 		_Tiene = new AssociationExpression("_Tiene", this.getDetachedCriteria());
@@ -57,8 +55,6 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	public Producto_RebajadoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, base_de_datos.Producto_RebajadoCriteria.class);
 		id_Producto = new IntegerExpression("id_Producto", this.getDetachedCriteria());
-		_Valorado_porId = new IntegerExpression("_Valorado_por.id_valoracion", this.getDetachedCriteria());
-		_Valorado_por = new AssociationExpression("_Valorado_por", this.getDetachedCriteria());
 		_CategoriaId = new IntegerExpression("_Categoria.id_Categoria", this.getDetachedCriteria());
 		_Categoria = new AssociationExpression("_Categoria", this.getDetachedCriteria());
 		precio_producto = new DoubleExpression("precio_producto", this.getDetachedCriteria());
@@ -68,6 +64,7 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this.getDetachedCriteria());
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());
+		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this.getDetachedCriteria());
 		precio_rebajado = new DoubleExpression("precio_rebajado", this.getDetachedCriteria());
 		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this.getDetachedCriteria());
 		_Tiene = new AssociationExpression("_Tiene", this.getDetachedCriteria());
@@ -75,10 +72,6 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	
 	public OfertaDetachedCriteria create_TieneCriteria() {
 		return new OfertaDetachedCriteria(createCriteria("_Tiene"));
-	}
-	
-	public ValoracionDetachedCriteria create_Valorado_porCriteria() {
-		return new ValoracionDetachedCriteria(createCriteria("_Valorado_por"));
 	}
 	
 	public CategoriaDetachedCriteria create_CategoriaCriteria() {
@@ -95,6 +88,10 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	
 	public base_de_datos.ImagenDetachedCriteria create_ImagenCriteria() {
 		return new base_de_datos.ImagenDetachedCriteria(createCriteria("ORM__Imagen"));
+	}
+	
+	public base_de_datos.ValoracionDetachedCriteria create_Valorado_porCriteria() {
+		return new base_de_datos.ValoracionDetachedCriteria(createCriteria("ORM__Valorado_por"));
 	}
 	
 	public Producto_Rebajado uniqueProducto_Rebajado(PersistentSession session) {
