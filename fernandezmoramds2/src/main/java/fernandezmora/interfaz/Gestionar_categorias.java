@@ -21,19 +21,16 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	}
 	
 	public void inicializar() {
-		//crear_Categorias();
-		//editar_Categoria();
+		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+				
+		this._categorias_administrador = new Categorias_administrador(this); 
+		this.layout.add(this._categorias_administrador);
 		
 		try {
 			abrirGestionarCategorias();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		//Notification.show("1. Numero de categorias en GC : " + this.categoriasAdmin.length);
-		this._categorias_administrador = new Categorias_administrador(this); 
-		//Notification.show("2. Numero de categorias en GC : " + this.categoriasAdmin.length);
-
 }
 	
 	public void ocultar_Gestionar_Categorias() {
@@ -54,19 +51,7 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 		});
 	}
 	
-	/**
-	 * Cuando se pulse el boton de editar categoria de cada categoria
-	 */
-	public void editar_Categoria() {
-		for(Categoria_administrador ca : this._categorias_administrador._list_Categoria_administrador) {
-			ca.getVaadinButton().addClickListener(event ->{
-				ca._editar_categoria = new Editar_categoria(ca);
-				this.ocultar_Gestionar_Categorias();
-				layout.add(ca._editar_categoria);
-			});
-		}
-	}
-	
+
 	
 	/**
 	 * Este metodo inicializa las categorias de la base de datos.
@@ -75,12 +60,12 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	public void abrirGestionarCategorias() throws PersistentException {
 		iAdministrador iadmin = new BDPrincipal();
 
-		this.categoriasAdmin = iadmin.cargarCategoriasAdministrador();	
-		
-		/*for(base_de_datos.Categoria c : this.categoriasAdmin) {
-			Notification.show(c.getNombre_categoria());
-		}*/
+		this.categoriasAdmin = iadmin.cargarCategoriasAdministrador();
+		for(base_de_datos.Categoria c : this.categoriasAdmin) {
+			Categoria_administrador ca = new Categoria_administrador(this._categorias_administrador, c);
+			this._categorias_administrador.addCategoria(ca);
 
+		}
 	}
 	
 	

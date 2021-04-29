@@ -25,17 +25,33 @@ public class BD_UR {
 			usuario.setPrimer_apellido(aApellidos);
 			usuario.setContrasenia(aContrasenia);
 			usuario.setNombre_usuario(aNombreUsuario);
+			
+			boolean hayDigitos = false, mayorDe8Caracteres = true, hayMayuscula = false, hayCaracteres = false;
+			
+			if(usuario.getContrasenia().length() > 8) mayorDe8Caracteres = false;
+			if(!mayorDe8Caracteres) return false;
+			
+			for(Character c : usuario.getContrasenia().toCharArray()) {
+				if(Character.isDigit(c)) hayDigitos = true;
+				if(Character.isLetter(c)) {
+					hayCaracteres = true;
+					if(Character.isUpperCase(c)) hayMayuscula = true;
+				}
+			}
+			
+			if(!hayDigitos || !hayMayuscula || !hayCaracteres) return false;
+			
 
-			// UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo
-			// + "'", "correo_electronico");
 
-			/*
-			 * if (usuariosCorreo.length == 0 &&
-			 * usuariosCorreo[0].getCorreo_electronico().equals(usuario.
-			 * getCorreo_electronico())) return true; if (usuariosCorreo.length == 0 &&
-			 * usuariosCorreo[0].getNombre_usuario().equals(usuario.getNombre_usuario()))
-			 * return true;
-			 */
+			 UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo
+			 + "'", "correo_electronico");
+
+			  if (usuariosCorreo.length == 0 &&
+			  usuariosCorreo[0].getCorreo_electronico().equals(usuario.
+			  getCorreo_electronico())) return true; if (usuariosCorreo.length == 0 &&
+			  usuariosCorreo[0].getNombre_usuario().equals(usuario.getNombre_usuario()))
+			  return true;
+			 
 
 			URDAO.save(usuario);
 
@@ -56,7 +72,7 @@ public class BD_UR {
 		usuario.setCorreo_electronico(aCorreo);
 		usuario.setContrasenia(aContrasenia);
 
-		UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
+		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
 
 		if (usuariosCorreo.length == 0)
 			return 0;

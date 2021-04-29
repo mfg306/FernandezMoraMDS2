@@ -1,6 +1,11 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 
 
 public class Zona_productos extends Administrar_productos_anadidos {
@@ -32,6 +37,15 @@ public class Zona_productos extends Administrar_productos_anadidos {
 			});
 			
 		}
+	}
+	
+	public void abrirZonaProductos() throws PersistentException {
+		iAdministrador admin = new BDPrincipal();
+		
+		base_de_datos.Producto productos [] = admin.cargarProductosListado();
+		
+		System.out.println(productos.length);
+		
 	}
 	
 	public void incorporar_producto_eliminado_administracion(Producto_listado_administracion p) {

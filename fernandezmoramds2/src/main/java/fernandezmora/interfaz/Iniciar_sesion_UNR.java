@@ -66,7 +66,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 					limpiar_interfaz();
 					this._menu_UNR.layout.add(new UR());
 				} else if (iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 2) {
-					Notification.show("ESTE VALE :: " + iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()));
 					limpiar_interfaz();
 					this._menu_UNR.layout.add(new Administrador());
 				} else {

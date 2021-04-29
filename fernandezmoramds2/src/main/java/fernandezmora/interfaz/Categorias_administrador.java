@@ -21,18 +21,11 @@ public class Categorias_administrador extends VistaCategorias_administrador{
 		
 		this._list_Categoria_administrador = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		//addCategoriaAdministrador();
 	}
 	
-	public void addCategoriaAdministrador() {
-
-		for(base_de_datos.Categoria c : this._gestionar_categorias.categoriasAdmin) {
-			Categoria_administrador ca = new Categoria_administrador(this, c);
-			this._list_Categoria_administrador.add(ca);
-			this.layout.add(ca);
-			Notification.show("Categoria añadida");
-
-		}
+	public void addCategoria(Categoria_administrador c) {
+		this._list_Categoria_administrador.add(c);
+		this.layout.add(c);
 	}
 	
 

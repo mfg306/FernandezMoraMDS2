@@ -57,11 +57,9 @@ public interface iAdministrador {
 
 	public void eliminarOferta(int aIdOferta);
 
-	public Producto[] cargarProductosAdministrador();
-
 	public void eliminarProductoAdministrador(int aIdProducto);
 
 	public Recibido[] cargarVentas();
 
-	public Producto[] cargarProductosListado();
+	public Producto[] cargarProductosListado() throws PersistentException;
 }

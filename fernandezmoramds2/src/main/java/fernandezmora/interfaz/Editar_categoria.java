@@ -2,6 +2,12 @@ package fernandezmora.interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Editar_categoria extends Zona_productos {
 	public Categoria_administrador _categoria_administrador;
 	VerticalLayout layout;
@@ -47,7 +53,20 @@ public class Editar_categoria extends Zona_productos {
 			this._categoria_administrador._categorias_administrador._gestionar_categorias = new Gestionar_categorias();
 			layout.add(this._categoria_administrador._categorias_administrador._gestionar_categorias);
 		});
+	}
+	
+	public void editarCategoria() {
+		
+	}
+	
+	public void guardarCategoria() {
+		iAdministrador admin = new BDPrincipal();
 		
 		
+	    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+	    Date date = new Date();  
+	    formatter.format(date);
+			
+		admin.actualizarCategoria(this.getCampoCategoria().getValue(), null, date.toString());
 	}
 }

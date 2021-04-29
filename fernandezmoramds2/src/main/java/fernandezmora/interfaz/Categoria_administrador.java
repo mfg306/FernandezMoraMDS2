@@ -14,9 +14,18 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 	
 	public void inicializar(Categorias_administrador ca, base_de_datos.Categoria c) {
 		this._categorias_administrador = ca;
-		this._editar_categoria = new Editar_categoria(this);
 		this.categoria = c;
-		//this.getH1().setText(c.getNombre_categoria());
+		abrir_editar_categoria();
+		this.getH1().setText(c.getNombre_categoria());
+	}
+	
+	public void abrir_editar_categoria() {
+		this.getVaadinButton().addClickListener(event -> {
+			this._editar_categoria = new Editar_categoria(this);
+			this._categorias_administrador._gestionar_categorias.ocultar_Gestionar_Categorias();
+			this._categorias_administrador._gestionar_categorias.layout.add(this._editar_categoria);
+		});
+
 	}
 
 	public void Eliminar_categoria() {

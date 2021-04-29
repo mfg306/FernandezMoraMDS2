@@ -2,6 +2,9 @@ package base_de_datos;
 
 import basededatos.BDPrincipal;
 import java.util.Vector;
+
+import org.orm.PersistentException;
+
 import base_de_datos.Producto;
 
 public class BD_Productos {
@@ -32,16 +35,13 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto[] cargarProductosAdministrador() {
-		throw new UnsupportedOperationException();
-	}
-
 	public void insertarProducto(String aNombreProducto, String aDescripcion) {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto[] cargarProductosListado() {
-		throw new UnsupportedOperationException();
+	public Producto[] cargarProductosListado() throws PersistentException {
+		return ProductoDAO.listProductoByQuery(null,null);
+		
 	}
 
 	public void VerZonaProductosAnadidos() {

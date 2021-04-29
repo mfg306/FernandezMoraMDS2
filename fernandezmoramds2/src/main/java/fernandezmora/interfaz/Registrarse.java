@@ -5,6 +5,9 @@ import java.io.Serializable;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import basededatos.BDPrincipal;
 import basededatos.iUNR_;
 import vistas.VistaRegistrarse;
@@ -32,6 +35,10 @@ public class Registrarse extends VistaRegistrarse implements Serializable {
 			}
 		});
 	}
+	
+	public void limpiar_interfaz() {
+		this._iniciar_sesion_UNR.layout.remove(this);
+	}
 
 	public void abrir_Iniciar_Sesion_Registrarse() {
 
@@ -43,9 +50,16 @@ public class Registrarse extends VistaRegistrarse implements Serializable {
 
 	public void registrarse() throws PersistentException {
 		iUNR_ iunr = new BDPrincipal();
-
-		iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(), this.getApellidos().getValue(),
+		boolean registroRealizado = iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(), this.getApellidos().getValue(),
 				this.getContrasenia().getValue(), this.getConfirmacionContrasenia().getValue(), iunr);
+
+		if(registroRealizado) {
+			limpiar_interfaz();
+		}else {
+			Span mensajeError = new Span("La contraseña no debe ser mayor de 8 caracteres, debe contener al menos una mayuscula y un digito.");
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(mensajeError);
+		}
+		
 	}
 
 }
