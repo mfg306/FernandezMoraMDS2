@@ -94,8 +94,16 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public Producto[] cargarProductosCategoria(Categoria aCategoria) {
-		throw new UnsupportedOperationException();
+		Producto[] cts = null;
+		try {
+			cts = this._bD_Productos.cargarProductosCategoria(aCategoria);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cts;
 	}
+	
 
 	public Producto[] cargarProductos(String aNombreProducto) {
 		throw new UnsupportedOperationException();
