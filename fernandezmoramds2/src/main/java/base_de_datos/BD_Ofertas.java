@@ -1,15 +1,28 @@
 package base_de_datos;
 
 import basededatos.BDPrincipal;
+
+
 import java.util.Vector;
-import base_de_datos.Oferta;
+
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 public class BD_Ofertas {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Oferta> _oferta = new Vector<Oferta>();
 
-	public Oferta[] cargarOfertas() {
-		throw new UnsupportedOperationException();
+	public Oferta[] cargarOfertas() throws PersistentException{
+		Oferta[] ofertas = null;
+		PersistentTransaction oferta = HitoPersistentManager.instance().getSession().beginTransaction();
+		try {
+			ofertas = OfertaDAO.listOfertaByCriteria(null);
+
+		} catch (Exception e) {
+			oferta.rollback();
+		}
+
+		return ofertas;
 	}
 
 	public void eliminarOfertaAdministrador(int aIdOferta) {

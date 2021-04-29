@@ -4,6 +4,7 @@ import basededatos.BDPrincipal;
 import java.util.Vector;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import base_de_datos.Producto;
 
@@ -19,8 +20,17 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto[] cargarProductosCategoria(Categoria aCategoria) {
-		throw new UnsupportedOperationException();
+	public Producto[] cargarProductosCategoria(Categoria aCategoria) throws PersistentException {
+		Producto[] pds = null;
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Categoria c = CategoriaDAO.loadCategoriaByORMID(aCategoria.getId_Categoria());
+			pds = c._Producto.toArray();
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return pds;
 	}
 
 	public Producto[] cargarProductos() {

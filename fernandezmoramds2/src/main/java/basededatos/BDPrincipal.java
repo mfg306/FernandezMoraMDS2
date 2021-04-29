@@ -2,6 +2,8 @@ package basededatos;
 
 import base_de_datos.BD_UR;
 
+import java.util.List;
+
 import org.orm.PersistentException;
 
 import base_de_datos.BD_Administrador;
@@ -54,7 +56,14 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public BD_Empleados _bD_Empleados = new BD_Empleados();
 
 	public Oferta[] cargarOfertas() {
-		throw new UnsupportedOperationException();
+		Oferta[] ofs = null;
+		try {
+			ofs = this._bD_Ofertas.cargarOfertas();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ofs;
 	}
 
 	public Producto[] cargarProductosMasVendidos() {
@@ -62,7 +71,14 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public Categoria[] cargarCategorias() {
-		throw new UnsupportedOperationException();
+		Categoria[] cts = null;
+		try {
+			cts = this._bD_Categorias.cargarCategorias();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return cts;
 	}
 
 	public Producto[] cargarProductosMasVendidos(String aNombreCategoria) {
