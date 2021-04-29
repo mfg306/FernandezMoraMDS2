@@ -1,9 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaAdministrar_productos_anadidos extends PolymerElement {
 
@@ -59,9 +58,7 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" id="botonesCG" style="width: 100%;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; justify-content: center;">
-   <vaadin-text-field placeholder="Search" id="buscador" style="align-self: center; padding: var(--lumo-space-m); padding-left: var(--lumo-space-xl); padding-bottom: var(--lumo-space-m); flex-grow: 0; width: 100%;">
-    <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
-   </vaadin-text-field>
+   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="width: 100%;"></vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%; align-self: center; align-items: center; justify-content: center;">
     <vaadin-button theme="primary" id="botonCancelar">
       Cancelar 

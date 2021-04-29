@@ -79,8 +79,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private HorizontalLayout layoutNombreCategoria;
 	@Id("nombreCategoria")
 	private Label nombreCategoria;
-	@Id("campoCategoria")
-	private TextField campoCategoria;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("layoutNombreOferta")
@@ -91,14 +89,16 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private TextField campoOferta;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("buscador")
-	private TextField buscador;
 	@Id("huecoProductos")
 	private HorizontalLayout huecoProductos;
 	@Id("huecoIzquierda")
 	private Element huecoIzquierda;
 	@Id("huecoDerecha")
 	private Element huecoDerecha;
+	@Id("vaadinHorizontalLayout2")
+	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("campoCategoria")
+	private TextField campoCategoria;
 	/**
      * Creates a new VistaAdministrar_productos_anadidos.
      */
@@ -330,14 +330,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 		this.nombreCategoria = nombreCategoria;
 	}
 
-	public TextField getCampoCategoria() {
-		return campoCategoria;
-	}
-
-	public void setCampoCategoria(TextField campoCategoria) {
-		this.campoCategoria = campoCategoria;
-	}
-
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
 	}
@@ -378,14 +370,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
 	}
 
-	public TextField getBuscador() {
-		return buscador;
-	}
-
-	public void setBuscador(TextField buscador) {
-		this.buscador = buscador;
-	}
-
 	public HorizontalLayout getHuecoProductos() {
 		return huecoProductos;
 	}
@@ -408,6 +392,22 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setHuecoDerecha(Element huecoDerecha) {
 		this.huecoDerecha = huecoDerecha;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public TextField getCampoCategoria() {
+		return campoCategoria;
+	}
+
+	public void setCampoCategoria(TextField campoCategoria) {
+		this.campoCategoria = campoCategoria;
 	}
 
 

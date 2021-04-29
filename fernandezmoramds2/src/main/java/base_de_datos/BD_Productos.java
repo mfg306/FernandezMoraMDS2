@@ -31,7 +31,7 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto[] cargarProductos(String aProducto) {
+	public Producto[] cargarProductos(String aProducto) throws PersistentException {
 		throw new UnsupportedOperationException();
 	}
 
@@ -54,5 +54,9 @@ public class BD_Productos {
 
 	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
 		throw new UnsupportedOperationException();
+	}
+	
+	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException{	
+		return ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aProducto + "%'", "nombre");
 	}
 }

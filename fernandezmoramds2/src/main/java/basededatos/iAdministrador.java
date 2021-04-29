@@ -15,7 +15,7 @@ public interface iAdministrador {
 
 	public Oferta[] cargarOfertas();
 
-	public Producto[] cargarProductos(String aProducto);
+	public Producto[] cargarProductos(String aProducto) throws PersistentException;
 
 	public Mensaje[] cargarMensajesEnviados(String aCorreoEmisor);
 
@@ -62,4 +62,7 @@ public interface iAdministrador {
 	public Recibido[] cargarVentas();
 
 	public Producto[] cargarProductosListado() throws PersistentException;
+	
+	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException;
+	
 }

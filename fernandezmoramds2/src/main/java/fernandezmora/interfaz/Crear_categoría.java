@@ -30,7 +30,6 @@ public class Crear_categoría extends Zona_productos {
 	
 	public void ocultar_crear_categoria() {
 		
-		this.getCampoCategoria().setVisible(false);
 		this.getNombreCategoria().setVisible(false);
 		
 		this.getH1CrearCategoria().setVisible(false);
