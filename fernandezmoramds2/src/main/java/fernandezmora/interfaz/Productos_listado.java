@@ -11,7 +11,8 @@ public class Productos_listado extends VistaProductos_listado {
 	public Vector<Producto_listado> _list_Producto_listado = new Vector<Producto_listado>();
 	public VerticalLayout layout;
 	
-	public Productos_listado() {
+	public Productos_listado(Zona_productos zp) {
+		this._zona_productos = zp;
 		inicializar();
 	}
 	
@@ -24,6 +25,11 @@ public class Productos_listado extends VistaProductos_listado {
 	public void add_productos_listado(Producto_listado pl) {
 		if(!this._list_Producto_listado.contains(pl)) this._list_Producto_listado.add(pl);
 		this.layout.add(pl);
+	}
+	
+	public void aceptar_Producto_listado_administracion(base_de_datos.Producto p) {
+		Producto_listado pl = new Producto_listado(p, this);
+		this.add_productos_listado(pl);
 	}
 	
 }

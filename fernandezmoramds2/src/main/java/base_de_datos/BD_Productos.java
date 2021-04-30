@@ -54,14 +54,6 @@ public class BD_Productos {
 		
 	}
 
-	public void VerZonaProductosAnadidos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void VerZonaProductos() {
-		throw new UnsupportedOperationException();
-	}
-
 	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
 		throw new UnsupportedOperationException();
 	}

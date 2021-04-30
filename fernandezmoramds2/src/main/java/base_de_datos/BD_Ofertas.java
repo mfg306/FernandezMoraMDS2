@@ -25,15 +25,15 @@ public class BD_Ofertas {
 		return ofertas;
 	}
 
-	public void eliminarOfertaAdministrador(int aIdOferta) {
-		throw new UnsupportedOperationException();
-	}
-
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) {
 		throw new UnsupportedOperationException();
 	}
 
 	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion) {
+		throw new UnsupportedOperationException();
+	}
+	
+	public boolean eliminarOfertaAdmin(int aIdOferta) {
 		throw new UnsupportedOperationException();
 	}
 }

@@ -9,6 +9,7 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 	public base_de_datos.Categoria categoria;
 
 	public Categoria_administrador(Categorias_administrador ca, base_de_datos.Categoria c) {
+		this.categoria = c;
 		inicializar(ca, c);
 	}
 	
