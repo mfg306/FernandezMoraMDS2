@@ -74,7 +74,7 @@ public class BD_Categorias {
 
 	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException {
 		if(eliminarCategoriaAdmin(aIdCategoria, aListaProductos)) System.out.println("Se ha eliminado la categoria");
-//		insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
+		insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
 	}
 
 	public boolean eliminarCategoriaAdmin(int aIdCategoria, Producto[] aListaProductos) throws PersistentException {
@@ -94,7 +94,8 @@ public class BD_Categorias {
 		try {
 			for(Producto p : aListaProductos) { 
 				Producto pr = ProductoDAO.getProductoByORMID(p.getId_Producto());
-//				pr.set_Categoria(c);
+				pr.setORM__Categoria(null);
+//				pr.set_Categoria(null);
 			}
 			t2.commit();			
 		} catch(Exception e) {

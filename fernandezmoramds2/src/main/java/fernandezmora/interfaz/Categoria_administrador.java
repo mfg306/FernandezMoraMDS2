@@ -35,7 +35,6 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 			this._categorias_administrador._gestionar_categorias.ocultar_Gestionar_Categorias();
 			this._categorias_administrador._gestionar_categorias.layout.add(this._editar_categoria);
 		});
-
 	}
 
 	public void Eliminar_categoria() {
@@ -43,12 +42,10 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 		this.getVaadinButton1().addClickListener(event ->{
 			iAdministrador admin = new BDPrincipal();
 			try {
+				base_de_datos.Producto[] productosCategoria = this.categoria._Producto.toArray();
 
-				Vector<Producto_listado_administracion> listaProductos = this._editar_categoria._productos_listado_administracion._list_Producto_listado_administracion;
-				base_de_datos.Producto[] productosCategoria = new base_de_datos.Producto[listaProductos.size()];
-
-				for (int i = 0; i < listaProductos.size(); i++) {
-					productosCategoria[i] = listaProductos.get(i).producto;
+				for (int i = 0; i < productosCategoria.length; i++) {
+					productosCategoria[i] = productosCategoria[i];
 				}
 				
 				
