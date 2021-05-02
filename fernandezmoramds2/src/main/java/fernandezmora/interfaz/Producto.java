@@ -14,7 +14,7 @@ public class Producto extends VistaProducto{
 	public Comentarios _comentarios;
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 	
-	public Producto() {
+	public Producto(base_de_datos.Producto p) {
 		inicializar();
 	}
 	

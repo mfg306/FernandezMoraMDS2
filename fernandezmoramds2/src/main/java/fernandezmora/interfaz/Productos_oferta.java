@@ -18,13 +18,11 @@ public class Productos_oferta extends VistaProductos_oferta{
 	
 	public void inicializar(Oferta of, UR_UNR unrunr) {
 		this._list_Ofertas = of;
-		add_productos_oferta(unrunr);
-		add_productos_oferta(unrunr);
 		abrir_Producto_Oferta();
 	}
 	
-	public void add_productos_oferta(UR_UNR unrunr) {
-		Producto_oferta pof = new Producto_oferta(this, unrunr);
+	public void add_productos_oferta(UR_UNR unrunr,base_de_datos.Producto p) {
+		Producto_oferta pof = new Producto_oferta(this, unrunr,p);
 		this._list_Producto_oferta.add(pof);
 		this.getLista_productos_oferta().add(pof);
 		

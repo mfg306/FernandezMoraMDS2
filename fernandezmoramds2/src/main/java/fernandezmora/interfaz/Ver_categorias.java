@@ -16,8 +16,9 @@ public class Ver_categorias extends VistaVercategorias {
 
 	public Ver_categorias(UR_UNR unr) {
 		this._categorias = new Categorias(this);
-		inicializar(unr);
 		verCategorias();
+		inicializar(unr);
+		
 	}
 	
 	

@@ -21,13 +21,11 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 		this._uR_UNR = urunr;
 		this._list_Producto_mas_vendido_por_categoria = new Vector<Producto_mas_vendido_por_categoria>();
 		this.getListaCategoriasMasVendidos().as(VerticalLayout.class).add(this.categoriasMasVendidos);
-		add_Producto_Mas_Vendido_Por_Categoria();
-		add_Producto_Mas_Vendido_Por_Categoria();
 		abrir_Producto_MasVendido_Por_Categoria();
 	}
 
-	public void add_Producto_Mas_Vendido_Por_Categoria() {
-		Producto_mas_vendido_por_categoria pmc = new Producto_mas_vendido_por_categoria(this, this._uR_UNR);
+	public void add_Producto_Mas_Vendido_Por_Categoria(base_de_datos.Producto p) {
+		Producto_mas_vendido_por_categoria pmc = new Producto_mas_vendido_por_categoria(this, this._uR_UNR,p);
 		this._list_Producto_mas_vendido_por_categoria.add(pmc);
 		this.getLista_productos_categoria().add(pmc);
 	}
