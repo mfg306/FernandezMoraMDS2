@@ -1,6 +1,7 @@
 package base_de_datos;
 
 import basededatos.BDPrincipal;
+
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -16,8 +17,8 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto cargarProducto(int aIdProducto) {
-		throw new UnsupportedOperationException();
+	public Producto cargarProducto(int aIdProducto) throws PersistentException {
+		return ProductoDAO.listProductoByQuery("IdProducto = '"+aIdProducto+"'",null )[0];
 	}
 
 	public Producto[] cargarProductosCategoria(Categoria aCategoria) throws PersistentException {
