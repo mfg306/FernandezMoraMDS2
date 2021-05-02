@@ -90,14 +90,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public Producto cargarProducto(int aIdProducto) {
-		Producto ps = null;
-		try {
-			ps =  this._bD_Productos.cargarProducto(aIdProducto);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ps;
+		throw new UnsupportedOperationException();
 	}
 
 	public Producto[] cargarProductosCategoria(Categoria aCategoria) {
