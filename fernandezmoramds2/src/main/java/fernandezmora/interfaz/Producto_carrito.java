@@ -12,12 +12,12 @@ public class Producto_carrito extends VistaProducto_carrito {
 	public int cantidad = 0;
 	public VerticalLayout layout;
 
-	public Producto_carrito(Producto p) {
+	public Producto_carrito(Producto p,base_de_datos.Producto pc) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		seleccionCantidad.setItems("0", "1", "2", "3", "4");
 		this.layout.add(seleccionCantidad);
 		this._producto = p;
-		inicializar();
+		inicializar(pc);
 	}
 
 	public void incrementarCantidad() {
@@ -33,9 +33,9 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this._productos_carrito = pc;
 	}
 
-	public void inicializar() {
+	public void inicializar(base_de_datos.Producto p) {
 		Eliminar();
-		this._producto = new Producto();
+		this._producto = new Producto(p);
 	}
 
 	public void Editar_cantidad() {
