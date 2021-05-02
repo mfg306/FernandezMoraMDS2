@@ -1,5 +1,7 @@
 package fernandezmora.interfaz;
 
+import java.util.Vector;
+
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.notification.Notification;
@@ -40,10 +42,17 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 		
 		this.getVaadinButton1().addClickListener(event ->{
 			iAdministrador admin = new BDPrincipal();
-			Notification.show(categoria.getNombre_categoria() + " eliminada");
 			try {
-				Notification.show("ID : " + categoria.getId_Categoria());
-				admin.eliminarCategoriaAdmin(categoria.getId_Categoria());
+
+				Vector<Producto_listado_administracion> listaProductos = this._editar_categoria._productos_listado_administracion._list_Producto_listado_administracion;
+				base_de_datos.Producto[] productosCategoria = new base_de_datos.Producto[listaProductos.size()];
+
+				for (int i = 0; i < listaProductos.size(); i++) {
+					productosCategoria[i] = listaProductos.get(i).producto;
+				}
+				
+				
+				admin.eliminarCategoriaAdmin(categoria.getId_Categoria(), productosCategoria);
 				this._categorias_administrador.removeCategoria(this);
 //				this._categorias_administrador.inicializar(this._categorias_administrador._gestionar_categorias);
 			

@@ -277,8 +277,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public boolean eliminarCategoriaAdmin(int aIdCategoria) throws PersistentException {
-		return this._bD_Categorias.eliminarCategoriaAdmin(aIdCategoria);
+	public boolean eliminarCategoriaAdmin(int aIdCategoria, Producto[] aListaProductos) throws PersistentException {
+		return this._bD_Categorias.eliminarCategoriaAdmin(aIdCategoria, aListaProductos);
 	}
 
 	@Override

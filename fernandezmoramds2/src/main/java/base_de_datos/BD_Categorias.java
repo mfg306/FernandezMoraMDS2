@@ -73,11 +73,11 @@ public class BD_Categorias {
 	}
 
 	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException {
-		if(eliminarCategoriaAdmin(aIdCategoria)) System.out.println("Se ha eliminad la categoria");
-		insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
+		if(eliminarCategoriaAdmin(aIdCategoria, aListaProductos)) System.out.println("Se ha eliminado la categoria");
+//		insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
 	}
 
-	public boolean eliminarCategoriaAdmin(int aIdCategoria) throws PersistentException {
+	public boolean eliminarCategoriaAdmin(int aIdCategoria, Producto[] aListaProductos) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		try {
@@ -88,6 +88,19 @@ public class BD_Categorias {
 		} catch(Exception e) {
 			t.rollback();
 		}
+		
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			for(Producto p : aListaProductos) { 
+				Producto pr = ProductoDAO.getProductoByORMID(p.getId_Producto());
+//				pr.set_Categoria(c);
+			}
+			t2.commit();			
+		} catch(Exception e) {
+			e.printStackTrace();
+			t2.rollback();
+		}	
 		
 		return false;
 	}

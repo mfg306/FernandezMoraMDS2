@@ -57,7 +57,7 @@ public interface iAdministrador {
 	
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException;
 	
-	public boolean eliminarCategoriaAdmin(int aIdCategoria) throws PersistentException;
+	public boolean eliminarCategoriaAdmin(int aIdCategoria, Producto[] aListaProductos) throws PersistentException;
 	
 	public boolean eliminarOfertaAdmin(int aIdOferta);
 	
