@@ -1,14 +1,11 @@
 package base_de_datos;
 
 import basededatos.BDPrincipal;
-
-import java.util.Iterator;
 import java.util.Vector;
 
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
-import base_de_datos.Categoria;
 
 public class BD_Categorias {
 	public BDPrincipal _bDPrincipal;
@@ -26,67 +23,74 @@ public class BD_Categorias {
 		return cat;
 	}
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro)
-			throws PersistentException {
+	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-
+		Categoria c = null;
+		
 		try {
-			Categoria c = CategoriaDAO.createCategoria();
+			c = CategoriaDAO.createCategoria();
 
 			c.setNombre_categoria(aNombreCategoria);
 			c.setFecha_registro(aFechaRegistro);
 
-			for (Producto p : aListaProductos) {
-				p.set_Categoria(c);
-				c._Producto.add(p);
-			}
-
 			CategoriaDAO.save(c);
+
 			t.commit();
-			HitoPersistentManager.instance().disposePersistentManager();
+			
+			System.out.println("Se ha creado la categoria");
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
+		
+		/*Hasta este punto tenemos la categoria creada. Vamos a coger la lista de productos y actualizarle 
+		 * su categoria*/
+		
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			for(Producto p : aListaProductos) { 
+				Producto pr = ProductoDAO.getProductoByORMID(p.getId_Producto());
+				pr.set_Categoria(c);
+			}
+			t2.commit();			
+		} catch(Exception e) {
+			e.printStackTrace();
+			t2.rollback();
+		}		
 	}
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException {
 		Categoria[] cat = null;
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			cat = CategoriaDAO.listCategoriaByQuery(null, null);
-			
+			cat = CategoriaDAO.listCategoriaByQuery("Nombre_categoria != 'AUX'", null);
 		} catch (Exception e) {
 			t.rollback();
 		}
-		
-		HitoPersistentManager.instance().disposePersistentManager();
-		
+				
 		return cat;
 	}
 
 	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException {
-		
-//		Categoria c = CategoriaDAO.getCategoriaByORMID(aIdCategoria);
-//		Iterator<Producto> listaProductosC = c._Producto.getIterator();
-//		
-//		while(listaProductosC.hasNext()) {
-//			listaProductosC.next().set_Categoria(null);
-//		}
-			
-		eliminarCategoriaAdmin(aIdCategoria);
-		HitoPersistentManager.instance().disposePersistentManager();
+		if(eliminarCategoriaAdmin(aIdCategoria)) System.out.println("Se ha eliminad la categoria");
 		insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
-		HitoPersistentManager.instance().disposePersistentManager();
-
 	}
 
 	public boolean eliminarCategoriaAdmin(int aIdCategoria) throws PersistentException {
-		Categoria c = CategoriaDAO.getCategoriaByORMID(aIdCategoria);
-		if (CategoriaDAO.delete(c)) {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			Categoria c = CategoriaDAO.getCategoriaByORMID(aIdCategoria);
+			CategoriaDAO.delete(c);
+			t.commit();
 			return true;
+		} catch(Exception e) {
+			t.rollback();
 		}
+		
 		return false;
 	}
+	
 
 }

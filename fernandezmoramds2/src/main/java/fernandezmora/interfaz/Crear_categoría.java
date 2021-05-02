@@ -6,6 +6,7 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -79,8 +80,9 @@ public class Crear_categoría extends Zona_productos {
 
 			try {
 				admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString());
+				Notification.show("Categoria creada con exito");
+				this.inicializar();
 			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});

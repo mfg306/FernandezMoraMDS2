@@ -247,10 +247,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return _bD_Categorias.cargarCategoriasAdministrador();
 	}
 
-	public void eliminarCategoria(int aIdCategoria) {
-		throw new UnsupportedOperationException();
-	}
-
 	public Empleado[] cargarEmpleados() {
 		throw new UnsupportedOperationException();
 	}
@@ -281,9 +277,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public boolean eliminarCategoriaAdmin(int aIdCategoria) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean eliminarCategoriaAdmin(int aIdCategoria) throws PersistentException {
+		return this._bD_Categorias.eliminarCategoriaAdmin(aIdCategoria);
 	}
 
 	@Override
