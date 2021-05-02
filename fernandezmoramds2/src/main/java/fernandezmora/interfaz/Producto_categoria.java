@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaProducto_categoria;
@@ -15,8 +16,12 @@ public class Producto_categoria extends VistaProducto_categoria{
 	public void inicializar(Productos_categoria pc, UR_UNR unrunr) {
 		this._productos_categoria = pc;
 		
-		if(unrunr instanceof UR) this._producto = new Ver_producto_UR(unrunr);
-		if(unrunr instanceof UNR_) this._producto = new Producto_UNR(unrunr);
+		if(unrunr instanceof UR) {
+			this._producto = new Ver_producto_UR(unrunr);
+		}
+		if(unrunr instanceof UNR_) {
+			this._producto = new Producto_UNR(unrunr);
+		}
 
 
 		abrir_Producto_Categoria(unrunr);
@@ -27,8 +32,16 @@ public class Producto_categoria extends VistaProducto_categoria{
 			this._productos_categoria.getVaadinHorizontalLayout().setVisible(false);
 			this._productos_categoria.getLista_productos_categoria().setVisible(false);
 			
-			if(unrunr instanceof UR) this._producto = new Ver_producto_UR(unrunr);
-			if(unrunr instanceof UNR_) this._producto = new Producto_UNR(unrunr);
+			
+			if(unrunr instanceof UR) {
+				this._producto = new Ver_producto_UR(unrunr);
+				
+			}
+			if(unrunr instanceof UNR_) {
+				this._producto = new Producto_UNR(unrunr);
+				
+			}
+		
 			this._productos_categoria.getVerProductoCategoria().as(VerticalLayout.class).add(this._producto);
 		});
 	}

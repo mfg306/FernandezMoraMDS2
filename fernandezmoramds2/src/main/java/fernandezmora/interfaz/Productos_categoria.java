@@ -10,6 +10,7 @@ public class Productos_categoria extends VistaProductos_categoria {
 
 	public Productos_categoria(Categoria c, UR_UNR unrunr) {
 		inicializar(c, unrunr);
+		
 	}
 
 	public void inicializar(Categoria c, UR_UNR unrunr) {

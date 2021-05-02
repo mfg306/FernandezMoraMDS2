@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -17,6 +18,7 @@ public class Categorias extends VistaCategorias {
 	public VerticalLayout layout = this.getLista_categorias().as(VerticalLayout.class);
 	public Span pagina, de, primeraPagina, ultimaPagina;
 	public Button  siguiente, anterior;
+	
 
 	private static int contador = 0;
 
@@ -27,10 +29,7 @@ public class Categorias extends VistaCategorias {
 	public void inicializar(Ver_categorias vCategorias) {
 		this._ver_categorias = vCategorias;
 		this._list_Categorias = new Vector<Categoria>();
-		add_categoria();
-		add_categoria();
 		parte_paginacion();
-		abrir_Categoria();
 		Ver_anteriores();
 		Ver_siguientes();
 	}
@@ -60,28 +59,11 @@ public class Categorias extends VistaCategorias {
 		paginacion.add(siguiente);
 		
 		
-		this.getLista_categorias().as(VerticalLayout.class).add(paginacion);
+		this.layout.add(paginacion);
 
 
 	}
 
-	public void add_categoria() {
-		Categoria c = new Categoria(this, this._ver_categorias._uR_UNR);
-		this._list_Categorias.add(c);
-		layout.add(c);
-
-	}
-	
-	public void abrir_Categoria() {
-		for(Categoria c : this._list_Categorias) {
-			c.getCategoria1().addClickListener(event->{
-				layout.removeAll();
-				layout.add(c._productos_categoria);
-				
-				
-			});
-		}
-	}
 
 	/*Esto hay que cambiarlo y ver el numero de categorias que se muestra por pagina y en funcion de esto 
 	 * calcular el numero total de paginas*/

@@ -16,8 +16,8 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto cargarProducto(int aIdProducto) {
-		throw new UnsupportedOperationException();
+	public Producto cargarProducto(int aIdProducto) throws PersistentException {
+		return ProductoDAO.listProductoByQuery("IdProducto = '"+aIdProducto+"'",null )[0];
 	}
 
 	public Producto[] cargarProductosCategoria(Categoria aCategoria) throws PersistentException {
@@ -52,14 +52,6 @@ public class BD_Productos {
 	public Producto[] cargarProductosListado() throws PersistentException {
 		return ProductoDAO.listProductoByQuery(null,null);
 		
-	}
-
-	public void VerZonaProductosAnadidos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void VerZonaProductos() {
-		throw new UnsupportedOperationException();
 	}
 
 	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
