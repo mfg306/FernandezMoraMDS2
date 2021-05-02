@@ -25,7 +25,8 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 				
 		this._categorias_administrador = new Categorias_administrador(this); 
 		this.layout.add(this._categorias_administrador);
-		
+		crear_Categorias();
+
 		try {
 			abrirGestionarCategorias();
 		} catch(Exception e) {
@@ -34,6 +35,7 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 }
 	
 	public void ocultar_Gestionar_Categorias() {
+		
 		layout.remove(this._categorias_administrador);
 		this.getTitulo().setVisible(false);
 		this.getBotonNuevaCategoria().setVisible(false);

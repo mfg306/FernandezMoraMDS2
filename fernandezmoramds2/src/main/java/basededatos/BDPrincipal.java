@@ -224,25 +224,17 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public void verZonaProductos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void verZonaProductosAnadidos() {
-		throw new UnsupportedOperationException();
-	}
-
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaRegistro) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) {
-		throw new UnsupportedOperationException();
+	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException {
+		this._bD_Categorias.insertarCategoria(aNombreCategoria, aListaProductos, aFechaRegistro);
 	}
 
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion) {
-		throw new UnsupportedOperationException();
+	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException {
+		this._bD_Categorias.actualizarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion, aIdCategoria);
 	}
 
 	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
@@ -262,10 +254,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return _bD_Categorias.cargarCategoriasAdministrador();
 	}
 
-	public void eliminarCategoria(int aIdCategoria) {
-		throw new UnsupportedOperationException();
-	}
-
 	public Empleado[] cargarEmpleados() {
 		throw new UnsupportedOperationException();
 	}
@@ -277,11 +265,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
 		throw new UnsupportedOperationException();
 	}
-
-	public void eliminarOferta(int aIdOferta) {
-		throw new UnsupportedOperationException();
-	}
-
 
 	public void eliminarProductoAdministrador(int aIdProducto) {
 		throw new UnsupportedOperationException();
@@ -298,6 +281,17 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	@Override
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException {
 		return this._bD_Productos.cargarProductosBusquedaZonaProductos(aProducto);
+	}
+
+	@Override
+	public boolean eliminarCategoriaAdmin(int aIdCategoria) throws PersistentException {
+		return this._bD_Categorias.eliminarCategoriaAdmin(aIdCategoria);
+	}
+
+	@Override
+	public boolean eliminarOfertaAdmin(int aIdOferta) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

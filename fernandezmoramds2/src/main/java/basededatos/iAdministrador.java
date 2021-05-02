@@ -29,15 +29,11 @@ public interface iAdministrador {
 
 	public void insertarProducto(String aNombreProducto, String aDescripcion);
 
-	public void verZonaProductos();
-
-	public void verZonaProductosAnadidos();
-
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro);
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro);
+	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException;
 
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion);
+	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException ;
 
 	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo);
 
@@ -47,15 +43,11 @@ public interface iAdministrador {
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException;
 
-	public void eliminarCategoria(int aIdCategoria);
-
 	public Empleado[] cargarEmpleados();
 
 	public void eliminarEmpleado(int aIdEmpleado);
 
 	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo);
-
-	public void eliminarOferta(int aIdOferta);
 
 	public void eliminarProductoAdministrador(int aIdProducto);
 
@@ -64,5 +56,9 @@ public interface iAdministrador {
 	public Producto[] cargarProductosListado() throws PersistentException;
 	
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException;
+	
+	public boolean eliminarCategoriaAdmin(int aIdCategoria) throws PersistentException;
+	
+	public boolean eliminarOfertaAdmin(int aIdOferta);
 	
 }

@@ -16,25 +16,22 @@ public class Zona_productos extends Administrar_productos_anadidos {
 	public VerticalLayout layoutIzquierda;
 	TextField buscadorZona = new TextField();
 
-
 	public Zona_productos() {
-		this._productos_listado = new Productos_listado();
+		this._productos_listado = new Productos_listado(this);
 		this.layoutIzquierda = this.getHuecoIzquierda().as(VerticalLayout.class);
 
 		Icon icon = new Icon("lumo", "search");
 		buscadorZona.setPrefixComponent(icon);
 		buscadorZona.setWidth("100%");
-		
+
 		this.getVaadinHorizontalLayout2().add(buscadorZona);
-		
+
 		this.inicializar_zona();
 	}
 
 	public void inicializar_zona() {
 
-		inicializar_administrar();
 		this.layoutIzquierda.add(this._productos_listado);
-		eliminar_productos_listado_administracion();
 
 		try {
 			abrirZonaProductos();
@@ -45,33 +42,20 @@ public class Zona_productos extends Administrar_productos_anadidos {
 
 	}
 
-	public void eliminar_productos_listado_administracion() {
-		for (Producto_listado_administracion p : this._productos_listado_administracion._list_Producto_listado_administracion) {
-			p.getVaadinButton().addClickListener(event -> {
-				this._productos_listado_administracion._list_Producto_listado_administracion.remove(p);
-				this._productos_listado_administracion.layout.remove(p);
-				this.incorporar_producto_eliminado_administracion(p);
-
-				inicializar_administrar();
-			});
-
-		}
-	}
-
+	
 	public void abrirZonaProductos() throws PersistentException {
 		iAdministrador admin = new BDPrincipal();
 
 		base_de_datos.Producto productos[] = admin.cargarProductosListado();
 
 		for (base_de_datos.Producto p : productos) {
-			Producto_listado pl = new Producto_listado(p);
+			Producto_listado pl = new Producto_listado(p, this._productos_listado);
 			this._productos_listado.add_productos_listado(pl);
 		}
 	}
-	
+
 	public void buscarProductos() throws PersistentException {
 		iAdministrador admin = new BDPrincipal();
-		
 
 		this.buscadorZona.addKeyPressListener(Key.ENTER, e -> {
 			base_de_datos.Producto productos[];
@@ -79,22 +63,14 @@ public class Zona_productos extends Administrar_productos_anadidos {
 				productos = admin.cargarProductosBusquedaZonaProductos(this.buscadorZona.getValue());
 				this._productos_listado.layout.removeAll();
 				for (base_de_datos.Producto p : productos) {
-					Producto_listado pl = new Producto_listado(p);
+					/*Comprobar que si el producto esta en administrar productos anadidos no volver a incluirlo aqui*/
+					Producto_listado pl = new Producto_listado(p, this._productos_listado);
 					this._productos_listado.add_productos_listado(pl);
 				}
-				
 			} catch (PersistentException e1) {
 				e1.printStackTrace();
 			}
-			
 		});
-		
-
 	}
-
-	public void incorporar_producto_eliminado_administracion(Producto_listado_administracion p) {
-		this._productos_listado.layout.add(p);
-
-		this.inicializar_zona();
-	}
+	
 }

@@ -1,5 +1,11 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+
+import com.vaadin.flow.component.notification.Notification;
+
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 import vistas.VistaCategoria_administrador;
 
 public class Categoria_administrador extends VistaCategoria_administrador {
@@ -9,6 +15,8 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 	public base_de_datos.Categoria categoria;
 
 	public Categoria_administrador(Categorias_administrador ca, base_de_datos.Categoria c) {
+		this.categoria = c;
+		Eliminar_categoria();
 		inicializar(ca, c);
 	}
 	
@@ -29,7 +37,23 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 	}
 
 	public void Eliminar_categoria() {
-		throw new UnsupportedOperationException();
+		
+		this.getVaadinButton1().addClickListener(event ->{
+			iAdministrador admin = new BDPrincipal();
+			Notification.show(categoria.getNombre_categoria() + " eliminada");
+			try {
+				Notification.show("ID : " + categoria.getId_Categoria());
+				admin.eliminarCategoriaAdmin(categoria.getId_Categoria());
+				this._categorias_administrador.removeCategoria(this);
+//				this._categorias_administrador.inicializar(this._categorias_administrador._gestionar_categorias);
+			
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+		});
+		
+
+		
 	}
 	
 
