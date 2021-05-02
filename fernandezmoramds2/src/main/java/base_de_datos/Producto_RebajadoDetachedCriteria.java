@@ -26,13 +26,13 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	public final StringExpression num_Unidades_Vendidas;
 	public final IntegerExpression num_Unidades_Restantes;
 	public final StringExpression descripcion;
+	public final StringExpression nombre;
 	public final CollectionExpression _Producto_en_compra;
 	public final CollectionExpression _Pertenece_a;
 	public final CollectionExpression _Imagen;
 	public final CollectionExpression _Valorado_por;
 	public final DoubleExpression precio_rebajado;
-	public final IntegerExpression _TieneId;
-	public final AssociationExpression _Tiene;
+	public final CollectionExpression _Tiene;
 	
 	public Producto_RebajadoDetachedCriteria() {
 		super(base_de_datos.Producto_Rebajado.class, base_de_datos.Producto_RebajadoCriteria.class);
@@ -43,13 +43,13 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 		num_Unidades_Vendidas = new StringExpression("num_Unidades_Vendidas", this.getDetachedCriteria());
 		num_Unidades_Restantes = new IntegerExpression("num_Unidades_Restantes", this.getDetachedCriteria());
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
+		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this.getDetachedCriteria());
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());
 		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this.getDetachedCriteria());
 		precio_rebajado = new DoubleExpression("precio_rebajado", this.getDetachedCriteria());
-		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this.getDetachedCriteria());
-		_Tiene = new AssociationExpression("_Tiene", this.getDetachedCriteria());
+		_Tiene = new CollectionExpression("ORM__Tiene", this.getDetachedCriteria());
 	}
 	
 	public Producto_RebajadoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -61,17 +61,17 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 		num_Unidades_Vendidas = new StringExpression("num_Unidades_Vendidas", this.getDetachedCriteria());
 		num_Unidades_Restantes = new IntegerExpression("num_Unidades_Restantes", this.getDetachedCriteria());
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
+		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this.getDetachedCriteria());
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());
 		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this.getDetachedCriteria());
 		precio_rebajado = new DoubleExpression("precio_rebajado", this.getDetachedCriteria());
-		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this.getDetachedCriteria());
-		_Tiene = new AssociationExpression("_Tiene", this.getDetachedCriteria());
+		_Tiene = new CollectionExpression("ORM__Tiene", this.getDetachedCriteria());
 	}
 	
-	public OfertaDetachedCriteria create_TieneCriteria() {
-		return new OfertaDetachedCriteria(createCriteria("_Tiene"));
+	public base_de_datos.OfertaDetachedCriteria create_TieneCriteria() {
+		return new base_de_datos.OfertaDetachedCriteria(createCriteria("ORM__Tiene"));
 	}
 	
 	public CategoriaDetachedCriteria create_CategoriaCriteria() {

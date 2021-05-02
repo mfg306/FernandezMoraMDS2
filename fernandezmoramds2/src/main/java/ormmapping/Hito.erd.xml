@@ -126,7 +126,7 @@
       <ReferencedColumn>Base de Datos.Categoria.Id_Categoria</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
-      <Nullable>false</Nullable>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -297,18 +297,6 @@
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
       <ReferencedColumn>Base de Datos.Producto.Id_Producto</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="OfertaId_Oferta">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Base de Datos.Oferta.Id_Oferta</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -923,6 +911,32 @@
       <UserTypes/>
     </Column>
   </Entity>
+  <Entity name="Producto_Rebajado_Oferta" Unlogged="false" PKClustered="0">
+    <Column name="Producto_RebajadoProductoId_Producto">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Base de Datos.Producto_Rebajado.ProductoId_Producto</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="OfertaId_Oferta">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Base de Datos.Oferta.Id_Oferta</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
   <ForeignKey name="FKUR630080">
     <ReferenceTable>UR</ReferenceTable>
     <ReferencedTable>Usuario_General</ReferencedTable>
@@ -1003,8 +1017,18 @@
       <Column>Codigo</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKProducto_R263979">
-    <ReferenceTable>Producto_Rebajado</ReferenceTable>
+  <ForeignKey name="FKProducto_R824849">
+    <ReferenceTable>Producto_Rebajado_Oferta</ReferenceTable>
+    <ReferencedTable>Producto_Rebajado</ReferencedTable>
+    <Columns>
+      <Column>Producto_RebajadoProductoId_Producto</Column>
+    </Columns>
+    <RefColumns>
+      <Column>ProductoId_Producto</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKProducto_R98365">
+    <ReferenceTable>Producto_Rebajado_Oferta</ReferenceTable>
     <ReferencedTable>Oferta</ReferencedTable>
     <Columns>
       <Column>OfertaId_Oferta</Column>

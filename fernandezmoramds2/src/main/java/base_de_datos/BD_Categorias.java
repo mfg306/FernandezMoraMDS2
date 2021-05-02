@@ -64,7 +64,7 @@ public class BD_Categorias {
 		Categoria[] cat = null;
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			cat = CategoriaDAO.listCategoriaByQuery("Nombre_categoria != 'AUX'", null);
+			cat = CategoriaDAO.listCategoriaByQuery(null, null);
 		} catch (Exception e) {
 			t.rollback();
 		}

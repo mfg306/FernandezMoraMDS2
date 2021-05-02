@@ -15,12 +15,12 @@ package base_de_datos;
 
 import org.orm.*;
 
-public class ProductoSetCollection extends org.orm.util.ORMSet {
-	public ProductoSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int targetKey, int collType) {
+public class OfertaSetCollection extends org.orm.util.ORMSet {
+	public OfertaSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int targetKey, int collType) {
 		super(owner, adapter, ownerKey, targetKey, true, collType);
 	}
 	
-	public ProductoSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int collType) {
+	public OfertaSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int collType) {
 		super(owner, adapter, ownerKey, -1, false, collType);
 	}
 	
@@ -36,7 +36,7 @@ public class ProductoSetCollection extends org.orm.util.ORMSet {
 	 * Add the specified persistent object to ORMSet
 	 * @param value the persistent object
 	 */
-	public void add(Producto value) {
+	public void add(Oferta value) {
 		if (value != null) {
 			super.add(value, value._ormAdapter);
 		}
@@ -46,7 +46,7 @@ public class ProductoSetCollection extends org.orm.util.ORMSet {
 	 * Remove the specified persistent object from ORMSet
 	 * @param value the persistent object
 	 */
-	public void remove(Producto value) {
+	public void remove(Oferta value) {
 		super.remove(value, value._ormAdapter);
 	}
 	
@@ -55,7 +55,7 @@ public class ProductoSetCollection extends org.orm.util.ORMSet {
 	 * @param value the persistent object
 	 * @return True if this contains the specified persistent object
 	 */
-	public boolean contains(Producto value) {
+	public boolean contains(Oferta value) {
 		return super.contains(value);
 	}
 	
@@ -63,41 +63,37 @@ public class ProductoSetCollection extends org.orm.util.ORMSet {
 	 * Return an array containing all of the persistent objects in ORMSet
 	 * @return The persistent objects array
 	 */
-	public Producto[] toArray() {
-		return (Producto[]) super.toArray(new Producto[size()]);
+	public Oferta[] toArray() {
+		return (Oferta[]) super.toArray(new Oferta[size()]);
 	}
 	
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>id_Producto</li>
-	 * <li>precio_producto</li>
-	 * <li>num_Unidades_Vendidas</li>
-	 * <li>num_Unidades_Restantes</li>
-	 * <li>descripcion</li>
-	 * <li>nombre</li>
+	 * <li>id_Oferta</li>
+	 * <li>nombre_Oferta</li>
+	 * <li>fecha_caducidad</li>
+	 * <li>fecha_registro</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
-	public Producto[] toArray(String propertyName) {
+	public Oferta[] toArray(String propertyName) {
 		return toArray(propertyName, true);
 	}
 	
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>id_Producto</li>
-	 * <li>precio_producto</li>
-	 * <li>num_Unidades_Vendidas</li>
-	 * <li>num_Unidades_Restantes</li>
-	 * <li>descripcion</li>
-	 * <li>nombre</li>
+	 * <li>id_Oferta</li>
+	 * <li>nombre_Oferta</li>
+	 * <li>fecha_caducidad</li>
+	 * <li>fecha_registro</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
 	 */
-	public Producto[] toArray(String propertyName, boolean ascending) {
-		return (Producto[]) super.toArray(new Producto[size()], propertyName, ascending);
+	public Oferta[] toArray(String propertyName, boolean ascending) {
+		return (Oferta[]) super.toArray(new Oferta[size()], propertyName, ascending);
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {

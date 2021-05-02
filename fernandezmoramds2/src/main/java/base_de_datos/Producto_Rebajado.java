@@ -24,16 +24,18 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 	public Producto_Rebajado() {
 	}
 	
-	private void this_setOwner(Object owner, int key) {
+	private java.util.Set this_getSet (int key) {
 		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE) {
-			this._Tiene = (base_de_datos.Oferta) owner;
+			return ORM__Tiene;
 		}
+		
+		return null;
 	}
 	
 	@Transient	
 	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
-		public void setOwner(Object owner, int key) {
-			this_setOwner(owner, key);
+		public java.util.Set getSet(int key) {
+			return this_getSet(key);
 		}
 		
 	};
@@ -41,10 +43,10 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 	@Column(name="Precio_rebajado", nullable=false)	
 	private double precio_rebajado;
 	
-	@ManyToOne(targetEntity=base_de_datos.Oferta.class, fetch=FetchType.LAZY)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="OfertaId_Oferta", referencedColumnName="Id_Oferta", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto_R263979"))	
-	private base_de_datos.Oferta _Tiene;
+	@ManyToMany(mappedBy="ORM__Pertenece_a", targetEntity=base_de_datos.Oferta.class)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	private java.util.Set ORM__Tiene = new java.util.HashSet();
 	
 	public void setPrecio_rebajado(double value) {
 		this.precio_rebajado = value;
@@ -54,29 +56,16 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 		return precio_rebajado;
 	}
 	
-	public void set_Tiene(base_de_datos.Oferta value) {
-		if (_Tiene != null) {
-			_Tiene._Pertenece_a.remove(this);
-		}
-		if (value != null) {
-			value._Pertenece_a.add(this);
-		}
+	private void setORM__Tiene(java.util.Set value) {
+		this.ORM__Tiene = value;
 	}
 	
-	public base_de_datos.Oferta get_Tiene() {
-		return _Tiene;
+	private java.util.Set getORM__Tiene() {
+		return ORM__Tiene;
 	}
 	
-	/**
-	 * This method is for internal use only.
-	 */
-	public void setORM__Tiene(base_de_datos.Oferta value) {
-		this._Tiene = value;
-	}
-	
-	private base_de_datos.Oferta getORM__Tiene() {
-		return _Tiene;
-	}
+	@Transient	
+	public final base_de_datos.OfertaSetCollection _Tiene = new base_de_datos.OfertaSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public base_de_datos.Producto_Rebajado[] cargarProductosOferta(base_de_datos.Oferta oferta) {
 		//TODO: Implement Method

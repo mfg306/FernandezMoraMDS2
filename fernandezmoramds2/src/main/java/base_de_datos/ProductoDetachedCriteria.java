@@ -26,6 +26,7 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression num_Unidades_Vendidas;
 	public final IntegerExpression num_Unidades_Restantes;
 	public final StringExpression descripcion;
+	public final StringExpression nombre;
 	public final CollectionExpression _Producto_en_compra;
 	public final CollectionExpression _Pertenece_a;
 	public final CollectionExpression _Imagen;
@@ -40,6 +41,7 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 		num_Unidades_Vendidas = new StringExpression("num_Unidades_Vendidas", this.getDetachedCriteria());
 		num_Unidades_Restantes = new IntegerExpression("num_Unidades_Restantes", this.getDetachedCriteria());
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
+		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this.getDetachedCriteria());
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());
@@ -55,6 +57,7 @@ public class ProductoDetachedCriteria extends AbstractORMDetachedCriteria {
 		num_Unidades_Vendidas = new StringExpression("num_Unidades_Vendidas", this.getDetachedCriteria());
 		num_Unidades_Restantes = new IntegerExpression("num_Unidades_Restantes", this.getDetachedCriteria());
 		descripcion = new StringExpression("descripcion", this.getDetachedCriteria());
+		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this.getDetachedCriteria());
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());

@@ -53,8 +53,9 @@ public class Oferta implements Serializable {
 	@Column(name="Fecha_registro", nullable=true, length=255)	
 	private String fecha_registro;
 	
-	@OneToMany(mappedBy="_Tiene", targetEntity=base_de_datos.Producto_Rebajado.class)	
+	@ManyToMany(targetEntity=base_de_datos.Producto_Rebajado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinTable(name="Producto_Rebajado_Oferta", joinColumns={ @JoinColumn(name="OfertaId_Oferta") }, inverseJoinColumns={ @JoinColumn(name="Producto_RebajadoProductoId_Producto") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Pertenece_a = new java.util.HashSet();
 	
@@ -103,7 +104,7 @@ public class Oferta implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_RebajadoSetCollection _Pertenece_a = new base_de_datos.Producto_RebajadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A, base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.Producto_RebajadoSetCollection _Pertenece_a = new base_de_datos.Producto_RebajadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A, base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Oferta());

@@ -19,10 +19,10 @@ public class CreateHitoData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Envia
 			base_de_datos.AdministradorDAO.save(base_de_DatosAdministrador);
 			base_de_datos.Categoria base_de_DatosCategoria = base_de_datos.CategoriaDAO.createCategoria();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Producto
+			// Initialize the properties of the persistent object here
 			base_de_datos.CategoriaDAO.save(base_de_DatosCategoria);
 			base_de_datos.Producto base_de_DatosProducto = base_de_datos.ProductoDAO.createProducto();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Valorado_por, _Imagen, _Pertenece_a, _Producto_en_compra, num_Unidades_Restantes, precio_producto, _Categoria
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Valorado_por, _Imagen, _Pertenece_a, _Producto_en_compra, num_Unidades_Restantes, precio_producto
 			base_de_datos.ProductoDAO.save(base_de_DatosProducto);
 			base_de_datos.Imagen base_de_DatosImagen = base_de_datos.ImagenDAO.createImagen();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : principal, _Producto

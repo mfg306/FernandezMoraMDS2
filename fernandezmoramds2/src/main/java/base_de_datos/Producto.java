@@ -66,7 +66,7 @@ public class Producto implements Serializable {
 	
 	@ManyToOne(targetEntity=base_de_datos.Categoria.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="CategoriaId_Categoria", referencedColumnName="Id_Categoria", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto634639"))	
+	@JoinColumns(value={ @JoinColumn(name="CategoriaId_Categoria", referencedColumnName="Id_Categoria") }, foreignKey=@ForeignKey(name="FKProducto634639"))	
 	private base_de_datos.Categoria _Categoria;
 	
 	@Column(name="Precio_producto", nullable=false)	

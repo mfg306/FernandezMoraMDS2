@@ -26,13 +26,13 @@ public class Producto_RebajadoCriteria extends AbstractORMCriteria {
 	public final StringExpression num_Unidades_Vendidas;
 	public final IntegerExpression num_Unidades_Restantes;
 	public final StringExpression descripcion;
+	public final StringExpression nombre;
 	public final CollectionExpression _Producto_en_compra;
 	public final CollectionExpression _Pertenece_a;
 	public final CollectionExpression _Imagen;
 	public final CollectionExpression _Valorado_por;
 	public final DoubleExpression precio_rebajado;
-	public final IntegerExpression _TieneId;
-	public final AssociationExpression _Tiene;
+	public final CollectionExpression _Tiene;
 	
 	public Producto_RebajadoCriteria(Criteria criteria) {
 		super(criteria);
@@ -43,13 +43,13 @@ public class Producto_RebajadoCriteria extends AbstractORMCriteria {
 		num_Unidades_Vendidas = new StringExpression("num_Unidades_Vendidas", this);
 		num_Unidades_Restantes = new IntegerExpression("num_Unidades_Restantes", this);
 		descripcion = new StringExpression("descripcion", this);
+		nombre = new StringExpression("nombre", this);
 		_Producto_en_compra = new CollectionExpression("ORM__Producto_en_compra", this);
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this);
 		_Imagen = new CollectionExpression("ORM__Imagen", this);
 		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this);
 		precio_rebajado = new DoubleExpression("precio_rebajado", this);
-		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this);
-		_Tiene = new AssociationExpression("_Tiene", this);
+		_Tiene = new CollectionExpression("ORM__Tiene", this);
 	}
 	
 	public Producto_RebajadoCriteria(PersistentSession session) {
@@ -60,8 +60,8 @@ public class Producto_RebajadoCriteria extends AbstractORMCriteria {
 		this(base_de_datos.HitoPersistentManager.instance().getSession());
 	}
 	
-	public OfertaCriteria create_TieneCriteria() {
-		return new OfertaCriteria(createCriteria("_Tiene"));
+	public base_de_datos.OfertaCriteria create_TieneCriteria() {
+		return new base_de_datos.OfertaCriteria(createCriteria("ORM__Tiene"));
 	}
 	
 	public CategoriaCriteria create_CategoriaCriteria() {
