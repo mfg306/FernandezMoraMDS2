@@ -1,6 +1,7 @@
 package fernandezmora.interfaz;
 
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
@@ -15,6 +16,11 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 	
 	public Menu_UR_UNR(UR_UNR urunr) {
 		this._uR_UNR = urunr;
+		this.getLogo_tienda().setSrc("icons/logo.jpg");
+		this.getLogo_tienda().setWidth("20%");
+		this.getLogo_tienda().setHeight("20%");
+		this.getLogo_tienda().setAlt("Logo de la tienda");
+		
 		inicializar();
 	}
 	

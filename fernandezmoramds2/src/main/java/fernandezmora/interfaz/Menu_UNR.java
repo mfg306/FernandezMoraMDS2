@@ -1,6 +1,5 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Menu_UNR extends Menu_UR_UNR {
@@ -17,7 +16,6 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public void inicializar(UNR_ unr) {
 		_uNR_ = unr;
 		layout = this.getMenu().as(VerticalLayout.class);
-
 		abrir_iniciar_sesion();
 		abrir_carrito();
 	}
