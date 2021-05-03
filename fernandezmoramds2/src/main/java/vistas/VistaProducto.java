@@ -16,14 +16,14 @@ import com.vaadin.flow.component.select.Select;
 /**
  * A Designer generated component for the vista-producto template.
  *
- * Designer will add and remove fields with @Id mappings but
- * does not overwrite or otherwise change this file.
+ * Designer will add and remove fields with @Id mappings but does not overwrite
+ * or otherwise change this file.
  */
 @Tag("vista-producto")
 @JsModule("./src/vista-producto.js")
 public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoModel> {
 
-    @Id("vaadinVerticalLayout")
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
@@ -53,22 +53,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Element vaadinVerticalLayout2;
 	@Id("dejar_comentario")
 	private TextField dejar_comentario;
-	@Id("dejar_valoracion")
-	private Select dejar_valoracion;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
-	@Id("vaadinItem3")
-	private Element vaadinItem3;
-	@Id("vaadinItem4")
-	private Element vaadinItem4;
-	@Id("vaadinItem5")
-	private Element vaadinItem5;
 	@Id("enviar_comentario")
 	private Button enviar_comentario;
 	@Id("vaadinVerticalLayout3")
@@ -87,33 +71,30 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Element caracteristicas_producto;
 	@Id("vaadinItem6")
 	private Element vaadinItem6;
-	@Id("vaadinItem7")
-	private Element vaadinItem7;
 	@Id("lista_comentarios")
 	private Element lista_comentarios;
-	@Id("vaadinItem8")
-	private Element vaadinItem8;
 	@Id("vaadinVerticalLayout5")
 	private Element vaadinVerticalLayout5;
 	@Id("span")
 	private Span span;
 	@Id("valoracion_media")
 	private Span valoracion_media;
-
+	@Id("valorarProducto")
+	private Element valorarProducto;
 
 	/**
-     * Creates a new VistaProducto.
-     */
-    public VistaProducto() {
-        // You can initialise any data required for the connected UI components here.
-    }
+	 * Creates a new VistaProducto.
+	 */
+	public VistaProducto() {
+		// You can initialise any data required for the connected UI components here.
+	}
 
-    /**
-     * This model binds properties between VistaProducto and vista-producto
-     */
-    public interface VistaProductoModel extends TemplateModel {
-        // Add setters and getters for template properties here.
-    }
+	/**
+	 * This model binds properties between VistaProducto and vista-producto
+	 */
+	public interface VistaProductoModel extends TemplateModel {
+		// Add setters and getters for template properties here.
+	}
 
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
@@ -122,7 +103,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
-
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
@@ -236,70 +216,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 		this.dejar_comentario = dejar_comentario;
 	}
 
-	public Select getDejar_valoracion() {
-		return dejar_valoracion;
-	}
-
-	public void setDejar_valoracion(Select dejar_valoracion) {
-		this.dejar_valoracion = dejar_valoracion;
-	}
-
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
-
-	public Element getVaadinItem3() {
-		return vaadinItem3;
-	}
-
-	public void setVaadinItem3(Element vaadinItem3) {
-		this.vaadinItem3 = vaadinItem3;
-	}
-
-	public Element getVaadinItem4() {
-		return vaadinItem4;
-	}
-
-	public void setVaadinItem4(Element vaadinItem4) {
-		this.vaadinItem4 = vaadinItem4;
-	}
-
-	public Element getVaadinItem5() {
-		return vaadinItem5;
-	}
-
-	public void setVaadinItem5(Element vaadinItem5) {
-		this.vaadinItem5 = vaadinItem5;
-	}
-
 	public Button getEnviar_comentario() {
 		return enviar_comentario;
 	}
@@ -372,28 +288,12 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 		this.vaadinItem6 = vaadinItem6;
 	}
 
-	public Element getVaadinItem7() {
-		return vaadinItem7;
-	}
-
-	public void setVaadinItem7(Element vaadinItem7) {
-		this.vaadinItem7 = vaadinItem7;
-	}
-
 	public Element getLista_comentarios() {
 		return lista_comentarios;
 	}
 
 	public void setLista_comentarios(Element lista_comentarios) {
 		this.lista_comentarios = lista_comentarios;
-	}
-
-	public Element getVaadinItem8() {
-		return vaadinItem8;
-	}
-
-	public void setVaadinItem8(Element vaadinItem8) {
-		this.vaadinItem8 = vaadinItem8;
 	}
 
 	public Element getVaadinVerticalLayout5() {
@@ -418,6 +318,14 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 
 	public void setValoracion_media(Span valoracion_media) {
 		this.valoracion_media = valoracion_media;
+	}
+
+	public Element getValorarProducto() {
+		return valorarProducto;
+	}
+
+	public void setValorarProducto(Element valorarProducto) {
+		this.valorarProducto = valorarProducto;
 	}
 
 }
