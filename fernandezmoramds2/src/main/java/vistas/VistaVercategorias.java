@@ -20,6 +20,7 @@ public class VistaVercategorias extends PolymerTemplate<VistaVercategorias.Vista
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 
+
 	/**
      * Creates a new VistaVercategorias.
      */
@@ -41,4 +42,6 @@ public class VistaVercategorias extends PolymerTemplate<VistaVercategorias.Vista
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
+
+	
 }

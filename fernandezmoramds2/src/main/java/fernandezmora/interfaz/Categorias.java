@@ -15,7 +15,7 @@ public class Categorias extends VistaCategorias {
 	public Ver_categorias _ver_categorias;
 	public Vector<Categoria> _list_Categorias = new Vector<Categoria>();
 	public HorizontalLayout paginacion;
-	public VerticalLayout layout = this.getLista_categorias().as(VerticalLayout.class);
+	public VerticalLayout layout = this.getLista_Categorias().as(VerticalLayout.class);
 	public Span pagina, de, primeraPagina, ultimaPagina;
 	public Button  siguiente, anterior;
 	
@@ -59,7 +59,7 @@ public class Categorias extends VistaCategorias {
 		paginacion.add(siguiente);
 		
 		
-		this.layout.add(paginacion);
+		this.getPartePaginacion().as(VerticalLayout.class).add(paginacion);
 
 
 	}
