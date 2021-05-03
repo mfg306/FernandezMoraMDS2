@@ -84,9 +84,10 @@ public class BD_Categorias {
 			Categoria c = CategoriaDAO.getCategoriaByORMID(aIdCategoria);
 			CategoriaDAO.delete(c);
 			t.commit();
-			return true;
 		} catch(Exception e) {
 			t.rollback();
+			e.printStackTrace();
+			return false;
 		}
 		
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
@@ -101,9 +102,10 @@ public class BD_Categorias {
 		} catch(Exception e) {
 			e.printStackTrace();
 			t2.rollback();
+			return false;
 		}	
 		
-		return false;
+		return true;
 	}
 	
 

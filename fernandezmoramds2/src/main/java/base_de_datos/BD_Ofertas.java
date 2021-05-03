@@ -16,7 +16,7 @@ public class BD_Ofertas {
 		Oferta[] ofertas = null;
 		PersistentTransaction oferta = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			ofertas = OfertaDAO.listOfertaByCriteria(null);
+			ofertas = OfertaDAO.listOfertaByQuery(null,null);
 
 		} catch (Exception e) {
 			oferta.rollback();
@@ -33,7 +33,43 @@ public class BD_Ofertas {
 		throw new UnsupportedOperationException();
 	}
 	
-	public boolean eliminarOfertaAdmin(int aIdOferta) {
-		throw new UnsupportedOperationException();
+	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Oferta o = null;
+		try {
+			o = OfertaDAO.getOfertaByORMID(aIdOferta);
+			OfertaDAO.delete(o);			
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+			e.printStackTrace();
+			return false;
+		}
+		
+	
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		Producto_RebajadoSetCollection pr = o._Pertenece_a;
+		Producto_Rebajado productoR;
+
+		try {
+			for(Producto p : aListaProductos) {
+				productoR = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + p.getId_Producto(), null)[0];
+				pr.remove(productoR);
+			}
+			
+			t2.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t2.rollback();
+			return false;
+		}
+		
+		/*Lo que tenemos que hacer es para cada producto que tenemos, ver si el id de
+		 * alguno coincide con el id Producto de la tabla ProductoRebajado. Si coincide
+		 * es que estaba rebajado y hay que eliminarlo
+		 * */
+		
+		
+		return true;
 	}
 }

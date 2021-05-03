@@ -60,7 +60,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		try {
 			ofs = this._bD_Ofertas.cargarOfertas();
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return ofs;
@@ -290,7 +289,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public boolean eliminarOfertaAdmin(int aIdOferta) {
+	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) {
 		// TODO Auto-generated method stub
 		return false;
 	}
