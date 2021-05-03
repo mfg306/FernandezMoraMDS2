@@ -6,6 +6,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import base_de_datos.UR;
 
 public class BD_UR {
@@ -26,9 +28,9 @@ public class BD_UR {
 			usuario.setContrasenia(aContrasenia);
 			usuario.setNombre_usuario(aNombreUsuario);
 			
-			boolean hayDigitos = false, mayorDe8Caracteres = true, hayMayuscula = false, hayCaracteres = false;
+			boolean hayDigitos = false, mayorDe8Caracteres = false, hayMayuscula = false, hayCaracteres = false;
 			
-			if(usuario.getContrasenia().length() > 8) mayorDe8Caracteres = false;
+			if(usuario.getContrasenia().length() > 8) mayorDe8Caracteres = true;
 			if(!mayorDe8Caracteres) return false;
 			
 			for(Character c : usuario.getContrasenia().toCharArray()) {
@@ -39,17 +41,17 @@ public class BD_UR {
 				}
 			}
 			
-			if(!hayDigitos || !hayMayuscula || !hayCaracteres) return false;
-			
-
-
+			if(!hayDigitos || !hayMayuscula || !hayCaracteres) {
+				return false;
+			}
+	
 			 UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
 
-			  if (usuariosCorreo.length == 0) return true; 
-			 
-
-			URDAO.save(usuario);
-
+			  if (usuariosCorreo.length == 0) {
+				  Notification.show("Registrado, inicia sesión " + usuario.getNombre().toString());
+				  URDAO.save(usuario);
+			  }
+				  
 			t.commit();
 
 		} catch (Exception e) {

@@ -37,7 +37,8 @@ public class Registrarse extends VistaRegistrarse implements Serializable {
 	}
 	
 	public void limpiar_interfaz() {
-		this._iniciar_sesion_UNR.layout.remove(this);
+		this._iniciar_sesion_UNR._menu_UNR.layout.remove(this);
+		this._iniciar_sesion_UNR._menu_UNR.layout.add(this._iniciar_sesion_UNR);
 	}
 
 	public void abrir_Iniciar_Sesion_Registrarse() {
@@ -50,7 +51,7 @@ public class Registrarse extends VistaRegistrarse implements Serializable {
 
 	public void registrarse() throws PersistentException {
 		iUNR_ iunr = new BDPrincipal();
-		boolean registroRealizado = iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(), this.getApellidos().getValue(),
+		boolean registroRealizado = iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(), this.getCorreo().getValue(),
 				this.getContrasenia().getValue(), this.getConfirmacionContrasenia().getValue(), iunr);
 
 		if(registroRealizado) {
