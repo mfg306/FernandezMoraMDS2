@@ -1,6 +1,17 @@
 package fernandezmora.interfaz;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Vector;
+
+import org.orm.PersistentException;
+
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 
 public class Crear_oferta extends Zona_productos {
 	public Gestionar_ofertas _gestionar_ofertas;
@@ -8,6 +19,7 @@ public class Crear_oferta extends Zona_productos {
 
 	public Crear_oferta() {
 		inicializar();
+		guardarOferta();
 	}
 	
 	public void inicializar() {
@@ -47,5 +59,41 @@ public class Crear_oferta extends Zona_productos {
 			
 			layout.add(this._gestionar_ofertas);
 		});
+	}
+	
+	public void guardarOferta() {
+		
+		this.getVaadinButton().addClickListener(event ->{
+			iAdministrador admin = new BDPrincipal();
+			
+			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+			Date date = new Date();
+			formatter.format(date);
+			String inputDate = this.getCampoFechaCaducidad().getValue();
+			Date dateCaducidad = null;
+			
+			try {
+				dateCaducidad = formatter.parse(inputDate);
+			} catch (ParseException e1) {
+				e1.printStackTrace();
+			}
+			
+			Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
+			base_de_datos.Producto[] productosOferta = new base_de_datos.Producto[listaProductos.size()];
+			
+			for(int i=0; i< listaProductos.size(); i++) {
+				productosOferta[i] = listaProductos.get(i).producto;
+			}
+			
+			
+			try {
+				admin.insertarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString());
+				Notification.show("Oferta creada con exito");
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+		});
+
+		
 	}
 }

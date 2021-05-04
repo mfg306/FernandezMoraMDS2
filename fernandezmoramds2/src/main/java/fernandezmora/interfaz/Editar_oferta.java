@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
@@ -67,16 +68,26 @@ public class Editar_oferta extends Zona_productos {
 			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 			Date date = new Date();
 			formatter.format(date);
+			String inputDate = this.getCampoFechaCaducidad().getValue();
+			Date dateCaducidad = null;
+			
 			
 			try {
-				Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
-				base_de_datos.Producto[] productosOferta = new base_de_datos.Producto[listaProductos.size()];
-				
+				dateCaducidad = formatter.parse(inputDate);
+			} catch (ParseException e1) {
+				e1.printStackTrace();
+			}
+
+			Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
+			base_de_datos.Producto[] productosOferta = new base_de_datos.Producto[listaProductos.size()];
+						
+			try {
+
 				for(int i=0; i< listaProductos.size(); i++) {
 					productosOferta[i] = listaProductos.get(i).producto;
 				}
 				
-				admin.actualizarOferta(this.getCampoOferta().getValue(), productosOferta, this.getCampoFechaCaducidad().getValue(), date.toString(), this._oferta_administrador.oferta.getId_Oferta());
+				admin.actualizarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString(), this._oferta_administrador.oferta.getId_Oferta());
 				
 			} catch(Exception e) {
 				e.printStackTrace();
