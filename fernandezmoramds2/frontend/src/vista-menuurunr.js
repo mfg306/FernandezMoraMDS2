@@ -20,10 +20,10 @@ class VistaMenu_urunr extends PolymerElement {
   <img style="width: 100%;" id="logo_tienda">
   <vaadin-horizontal-layout theme="spacing" id="seleccionarCategoria" style="align-self: center; justify-content: center; align-items: center;"></vaadin-horizontal-layout>
   <vaadin-vertical-layout id="huecoBuscador" style="width: 100%; align-self: center; align-items: center; justify-content: center;"></vaadin-vertical-layout>
-  <vaadin-button theme="primary" id="boton_iniciar_sesion" style="align-self: center;">
+  <vaadin-button theme="primary" id="boton_iniciar_sesion" style="align-self: center; background-color: #ae1641;">
     Iniciar sesión 
   </vaadin-button>
-  <vaadin-button theme="primary" id="boton_carrito" style="align-self: center;">
+  <vaadin-button theme="primary" id="boton_carrito" style="align-self: center; background-color: #ae1641;">
     Carrito 
   </vaadin-button>
  </vaadin-horizontal-layout>

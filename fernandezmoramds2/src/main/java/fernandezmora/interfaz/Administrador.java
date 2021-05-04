@@ -40,9 +40,7 @@ public class Administrador extends VistaAdministrador{
 	public void ocultarAdministrador() {
 		this.getVaadinHorizontalLayout().setVisible(false);
 		this.getVaadinHorizontalLayout1().setVisible(false);
-		this.getH1().setVisible(false);
-		this.getVaadinHorizontalLayout2().setVisible(false);
-		
+		this.getH1().setVisible(false);		
 	}
 	
 	

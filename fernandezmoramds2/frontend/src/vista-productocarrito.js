@@ -18,10 +18,10 @@ class VistaProducto_carrito extends PolymerElement {
 <vaadin-vertical-layout id="vaadinVerticalLayout">
  <img id="img">
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout">
-  <vaadin-button style="width: 100%;" id="vaadinButton">
+  <vaadin-button style="width: 100%;color: #ae1641;" id="vaadinButton">
     Eliminar 
   </vaadin-button>
-  <vaadin-button id="verProductoCarrito" style="width: 100%;">
+  <vaadin-button id="verProductoCarrito" style="width: 100%; color: #ae1641;">
     Ver producto 
   </vaadin-button>
  </vaadin-horizontal-layout>

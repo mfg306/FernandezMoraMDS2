@@ -46,10 +46,10 @@ public class VistaEditar_producto extends PolymerTemplate<VistaEditar_producto.V
 	private H2 h2;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinButton")
-	private Button vaadinButton;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
+	@Id("vaadinButton")
+	private Button vaadinButton;
 
 	/**
      * Creates a new VistaEditar_producto.

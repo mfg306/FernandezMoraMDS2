@@ -16,13 +16,13 @@ class VistaTransportista extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout-transportista">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout-transportista">
-  <vaadin-button theme="primary" id="vaadinButton-transportista" style="margin: var(--lumo-space-m);">
+  <vaadin-button theme="primary" id="vaadinButton-transportista" style="margin: var(--lumo-space-m); background-color: #ae1641;">
     Cerrar sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>
  <h1 style="align-self: center;" id="h1-transportista">Lista pedidos</h1>
  <vaadin-vertical-layout theme="spacing" id="huecoListaPedidos" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
- <h3 style="align-self: center; padding: var(--lumo-space-s); background-color: #6ECCFC; border-radius: 15px;" id="h3-transportista">Nombre empresa</h3>
+ <h3 style="align-self: center; padding: var(--lumo-space-s); background-color: #ae1641;; border-radius: 15px; color: white;" id="h3-transportista">Nombre empresa</h3>
 </vaadin-vertical-layout>
 `;
     }

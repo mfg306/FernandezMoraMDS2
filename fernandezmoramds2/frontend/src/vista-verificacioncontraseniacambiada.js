@@ -17,7 +17,7 @@ class VistaVerificacion_contrasenia_cambiada extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <span style="font-size: 4vw; font-weight: bold; align-self: center; height: 100%; width: 100%; text-align: center; margin-top: var(--lumo-space-xl);" id="span">Su contraseña se ha modificado con éxito</span>
- <vaadin-button theme="primary" style="align-self: center;" id="boton_aceptar">
+ <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_aceptar">
    Aceptar 
  </vaadin-button>
 </vaadin-vertical-layout>

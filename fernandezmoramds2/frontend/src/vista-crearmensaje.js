@@ -20,10 +20,10 @@ class VistaCrear_mensaje extends PolymerElement {
  <span style="font-size: 4vw; font-weight: bold; align-self: center; text-align: center; margin-top: var(--lumo-space-xl);" id="span">BANDEJA DE ENTRADA</span>
  <vaadin-vertical-layout theme="spacing" style="width: 80%; height: 100%; align-self: center;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-   <vaadin-button id="boton_recibidos">
+   <vaadin-button id="boton_recibidos" style="color: #ae1641;">
      Recibidos 
    </vaadin-button>
-   <vaadin-button id="boton_enviados">
+   <vaadin-button id="boton_enviados" style="color: #ae1641;">
      Enviados 
    </vaadin-button>
   </vaadin-horizontal-layout>
@@ -33,10 +33,10 @@ class VistaCrear_mensaje extends PolymerElement {
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 <vaadin-horizontal-layout theme="spacing" style="justify-content: space-around; width: 100%; align-items: center; flex-direction: row;" id="vaadinHorizontalLayout1">
- <vaadin-button id="boton_atras" style="align-self: center;">
+ <vaadin-button id="boton_atras" style="align-self: center; color: #ae1641;">
    Volver atrás 
  </vaadin-button>
- <vaadin-button theme="primary" id="boton_enviar" style="align-self: center;">
+ <vaadin-button theme="primary" id="boton_enviar" style="align-self: center; background-color: #ae1641;">
    Enviar mensaje 
  </vaadin-button>
 </vaadin-horizontal-layout>

@@ -37,16 +37,16 @@ class VistaCrear_producto extends PolymerElement {
      <img id="img4" style="width: 100%; height: 100%;">
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
-   <vaadin-button theme="primary" id="vaadinButton">
+   <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
      Añadir imagen 
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; margin-top: var(--lumo-space-l); justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout3">
-  <vaadin-button theme="primary" id="vaadinButton1">
+  <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
     Guardar 
   </vaadin-button>
-  <vaadin-button theme="primary" id="vaadinButton2">
+  <vaadin-button theme="primary" id="vaadinButton2" style="background-color: #ae1641;">
     Cancelar 
   </vaadin-button>
  </vaadin-horizontal-layout>

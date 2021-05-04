@@ -17,7 +17,7 @@ class VistaEncargado_de_compras extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-l); align-self: flex-end;" id="vaadinHorizontalLayout">
-  <vaadin-button theme="primary" id="vaadinButton">
+  <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
     Cerrar sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>

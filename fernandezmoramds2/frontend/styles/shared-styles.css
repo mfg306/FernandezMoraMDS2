@@ -14,9 +14,12 @@
 	font-family: 'Poppins';
 }
 
-.boton-enlace {
-	align-self: center;
-	background-color: white;
-	color: #FF2D2D;
-	font-family: poppins;
+.botonPersonalizado{
+	color: white;
+	background-color: red;
+}
+
+.v-button-botonPersonalizado {
+	color: white;
+	background-color: red;
 }

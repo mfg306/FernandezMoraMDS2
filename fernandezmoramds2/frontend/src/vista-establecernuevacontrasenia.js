@@ -21,7 +21,7 @@ class VistaEstablecer_nueva_contrasenia extends PolymerElement {
    <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span">RECUPERA TU CONTRASEÑA</span>
    <vaadin-text-field style="width: 100%;" placeholder="Introduzca su nueva contraseña" id="nueva_contrasenia"></vaadin-text-field>
    <vaadin-text-field style="width: 100%;" placeholder="Confirme su nueva contraseña" id="confirmacion_nueva_contrasenia"></vaadin-text-field>
-   <vaadin-button theme="primary" id="boton_continuar">
+   <vaadin-button theme="primary" id="boton_continuar" style="background-color: #ae1641;">
      Continuar 
    </vaadin-button>
   </vaadin-vertical-layout>

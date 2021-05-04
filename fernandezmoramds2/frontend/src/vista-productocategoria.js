@@ -20,8 +20,8 @@ class VistaProducto_categoria extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout">
   <span style="align-self: center;" id="nombre_producto">Nombre Producto</span>
   <span id="precio_producto" style="align-self: center;">Precio</span>
-  <vaadin-button id="verProducto">
-   Ver producto
+  <vaadin-button id="verProducto" style="color: #ae1641;">
+    Ver producto 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

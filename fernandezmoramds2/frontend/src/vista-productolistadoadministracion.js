@@ -21,7 +21,7 @@ class VistaProducto_listado_administracion extends PolymerElement {
    <label style="align-self: center; margin-left: var(--lumo-space-l);" id="label">Nombre producto</label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; justify-content: flex-end;" id="vaadinHorizontalLayout2">
-   <vaadin-button theme="primary" style="align-self: center; flex-grow: 0; flex-shrink: 0; margin-right: var(--lumo-space-m);" id="vaadinButton">
+   <vaadin-button theme="primary" style="align-self: center; flex-grow: 0; flex-shrink: 0; margin-right: var(--lumo-space-m); background-color: #ae1641;" id="vaadinButton">
      Eliminar 
    </vaadin-button>
   </vaadin-horizontal-layout>

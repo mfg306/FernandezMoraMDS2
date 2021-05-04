@@ -24,7 +24,7 @@ class VistaProducto_listado extends PolymerElement {
    <label style="align-self: center;" id="label1">Precio</label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout3">
-   <vaadin-button theme="primary" style="align-self: center; margin-right: var(--lumo-space-m);" id="vaadinButton">
+   <vaadin-button theme="primary" style="align-self: center; margin-right: var(--lumo-space-m); background-color: #ae1641;" id="vaadinButton">
      Añadir 
    </vaadin-button>
   </vaadin-horizontal-layout>

@@ -15,11 +15,11 @@ class VistaOfertas extends PolymerElement {
                 }
             </style>
 <vaadin-horizontal-layout class="content" style="justify-content: center;" id="vaadinHorizontalLayout">
- <vaadin-button style="align-self: center;" id="boton_anterior">
+ <vaadin-button style="align-self: center; background-color: #454545; color: white;" id="boton_anterior">
    &lt; 
  </vaadin-button>
  <vaadin-horizontal-layout theme="spacing" id="listaOfertas" style="width: 100%;"></vaadin-horizontal-layout>
- <vaadin-button style="align-self: center;" id="boton_siguiente">
+ <vaadin-button style="align-self: center; background-color: #454545; color: white;" id="boton_siguiente">
    &gt; 
  </vaadin-button>
 </vaadin-horizontal-layout>

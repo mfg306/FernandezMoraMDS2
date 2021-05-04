@@ -22,10 +22,10 @@ class VistaEditar_empleado extends PolymerElement {
   <vaadin-text-field style="align-self: center; width: 50%;" placeholder="Introducir nuevo correo" id="vaadinTextField1"></vaadin-text-field>
   <vaadin-text-field style="align-self: center; width: 50%;" placeholder="Introducir nueva contraseña" id="vaadinTextField"></vaadin-text-field>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout">
-   <vaadin-button theme="primary" id="vaadinButton">
+   <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
      Guardar 
    </vaadin-button>
-   <vaadin-button theme="primary" id="vaadinButton1">
+   <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
      Cancelar 
    </vaadin-button>
   </vaadin-horizontal-layout>

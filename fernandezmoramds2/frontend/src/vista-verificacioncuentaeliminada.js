@@ -16,7 +16,7 @@ class VistaVerificacion_cuenta_eliminada extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayout">
  <span style="align-self: center;" id="span">¡Su cuenta ha sido eliminada con éxito! </span>
- <vaadin-button theme="primary" style="align-self: center;" id="boton_volver">
+ <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_volver">
    Volver a la pantalla de inicio 
  </vaadin-button>
 </vaadin-vertical-layout>

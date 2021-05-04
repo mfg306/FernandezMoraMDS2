@@ -19,7 +19,7 @@ class VistaCrear_empleados extends PolymerElement {
  <h1 style="align-self: center;" id="h1">Crear empleado</h1>
  <vaadin-text-field style="align-self: center;" label="Introduzca un correo:" id="introduzcaUnCorreo"></vaadin-text-field>
  <vaadin-text-field style="align-self: center; margin: var(--lumo-space-m);" label="Introduzca una contraseña:" id="introduzcaUnaContraseña"></vaadin-text-field>
- <vaadin-button theme="primary" style="align-self: center;" id="vaadinButton">
+ <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="vaadinButton">
    Crear 
  </vaadin-button>
 </vaadin-vertical-layout>

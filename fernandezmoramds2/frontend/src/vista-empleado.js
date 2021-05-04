@@ -20,10 +20,10 @@ class VistaEmpleado extends PolymerElement {
   <label style="align-self: center;" id="label">Correo: </label>
   <label style="align-self: center; margin-left: 10%;" id="label1">Nombre usuario:</label>
   <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; width: 100%;" id="vaadinHorizontalLayout1">
-   <vaadin-button theme="primary" style="margin-left: 40%;" id="vaadinButton">
+   <vaadin-button theme="primary" style="margin-left: 40%; background-color: #ae1641;" id="vaadinButton">
      Editar 
    </vaadin-button>
-   <vaadin-button theme="primary" id="vaadinButton1">
+   <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
      Eliminar 
    </vaadin-button>
   </vaadin-horizontal-layout>

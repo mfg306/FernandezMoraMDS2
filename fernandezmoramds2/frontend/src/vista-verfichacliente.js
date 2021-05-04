@@ -16,7 +16,7 @@ class VistaVer_ficha_cliente extends PolymerElement {
             </style>
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout style="width: 80%; background-color:#D0D1D1; flex-direction: column; align-items: flex-start; margin-top: 25%;" id="vaadinVerticalLayout1">
-  <vaadin-button theme="primary" style="align-self: flex-end; margin-right: var(--lumo-space-s);" id="vaadinButton">
+  <vaadin-button theme="primary" style="align-self: flex-end; margin-right: var(--lumo-space-s); background-color: #ae1641;" id="vaadinButton">
     Cerrar 
   </vaadin-button>
   <h3 style="align-self: center;" id="h3">Código cliente</h3>

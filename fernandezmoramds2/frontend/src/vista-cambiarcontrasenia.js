@@ -22,7 +22,7 @@ class VistaCambiar_contrasenia extends PolymerElement {
    <vaadin-text-field style="width: 100%;" placeholder="Contraseña actual" id="contrasenia_actual"></vaadin-text-field>
    <vaadin-text-field style="width: 100%;" placeholder="Nueva contraseña" id="nueva_contrasenia"></vaadin-text-field>
    <vaadin-text-field style="width: 100%;" placeholder="Confirmación nueva contraseña" id="confirmacion_nueva_contrasenia"></vaadin-text-field>
-   <vaadin-button theme="primary" id="boton_guardar">
+   <vaadin-button theme="primary" id="boton_guardar" style="background-color: #ae1641;">
      Guardar 
    </vaadin-button>
   </vaadin-vertical-layout>

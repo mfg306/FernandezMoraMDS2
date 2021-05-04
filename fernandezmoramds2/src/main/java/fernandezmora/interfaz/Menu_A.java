@@ -51,7 +51,6 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 			this.getMenuAdmin().setVisible(true);
 			_administrador.getVaadinHorizontalLayout().setVisible(false);
 			_administrador.getVaadinHorizontalLayout1().setVisible(false);
-			_administrador.getVaadinHorizontalLayout2().setVisible(false);
 			_administrador.getH1().setVisible(false);
 			this.getBoton_enviados().setVisible(true); 
 			this.getBoton_recibidos().setVisible(true);

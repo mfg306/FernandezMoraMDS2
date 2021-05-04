@@ -24,8 +24,6 @@ import com.vaadin.flow.component.textfield.PasswordField;
 public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.VistaIniciar_sesionModel> {
 
 
-	@Id("boton_iniciar_sesion")
-	private Button boton_iniciar_sesion;
 	@Id("nombre_usuario")
 	private TextField nombre_usuario;
 	@Id("correo")
@@ -40,6 +38,8 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	private Button botonRegistrarse;
 	@Id("contrasenia")
 	private PasswordField contrasenia;
+	@Id("boton_iniciar_sesion")
+	private Button boton_iniciar_sesion;
 
 	/**
 	 * Creates a new VistaIniciar_sesion.

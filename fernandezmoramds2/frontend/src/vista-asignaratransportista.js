@@ -19,7 +19,7 @@ class VistaAsignar_a_transportista extends PolymerElement {
  <h1 style="margin: var(--lumo-space-l); margin-left: 10%;" id="h1-asignar_a_transportista">Compras</h1>
  <vaadin-vertical-layout theme="spacing" style="width: 80%; align-self: center; background-color: #F1F2F2; padding: var(--lumo-space-xl);" id="vertical-layout_2_asignar_a_transportista">
   <vaadin-select value="Item one" style="align-self: center; width: 60%;" placeholder="Nombre transportista" id="Seleccion-asignar_a_transportista"></vaadin-select>
-  <vaadin-button theme="primary" style="align-self: center;" id="aceptar-asignar_a_transportista">
+  <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="aceptar-asignar_a_transportista">
     Aceptar 
   </vaadin-button>
  </vaadin-vertical-layout>

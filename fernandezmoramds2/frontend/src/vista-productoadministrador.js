@@ -38,10 +38,10 @@ class VistaProducto_administrador extends PolymerElement {
   <h2 style="flex-grow: 1; flex-shrink: 0; align-self: center; margin-left: 50%; width: 15%;" id="h2">Imagen</h2>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; justify-content: flex-end; margin-top: var(--lumo-space-l);" id="vaadinHorizontalLayout2">
-  <vaadin-button theme="primary" id="vaadinButton">
+  <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
     Editar 
   </vaadin-button>
-  <vaadin-button theme="primary" id="vaadinButton1">
+  <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
     Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>

@@ -57,8 +57,6 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 	private H2 h23;
 	@Id("boton_gestionar_empleados")
 	private Button boton_gestionar_empleados;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("vaadinVerticalLayout5")
 	private Element vaadinVerticalLayout5;
 	@Id("boton_gestionar_ventas")
@@ -212,14 +210,6 @@ public class VistaAdministrador extends PolymerTemplate<VistaAdministrador.Vista
 
 	public void setBoton_gestionar_empleados(Button boton_gestionar_empleados) {
 		this.boton_gestionar_empleados = boton_gestionar_empleados;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
 	}
 
 	public Element getVaadinVerticalLayout5() {

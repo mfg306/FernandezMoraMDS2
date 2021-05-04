@@ -17,10 +17,10 @@ class VistaProductos_carrito extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;" id="vaadinHorizontalLayout">
-  <vaadin-button id="vaadinButton1">
+  <vaadin-button id="vaadinButton1" style="color: #ae1641;">
     Seleccionar varios 
   </vaadin-button>
-  <vaadin-button id="vaadinButton">
+  <vaadin-button id="vaadinButton" style="color: #ae1641;">
     Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>

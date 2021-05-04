@@ -26,12 +26,12 @@ class VistaRegistrarse extends PolymerElement {
    <vaadin-text-field id="nombre_usuario" style="width: 100%;" placeholder="Introduzca su nombre de usuario" required></vaadin-text-field>
    <vaadin-password-field id="contrasenia" style="width: 100%;" required></vaadin-password-field>
    <vaadin-password-field id="confirmacionContrasenia" style="width: 100%;" required></vaadin-password-field>
-   <vaadin-button theme="primary" style="align-self: center;" id="boton_registrarse">
+   <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_registrarse">
      Registrarse 
    </vaadin-button>
   </vaadin-vertical-layout>
  </div>
- <vaadin-button theme="primary" id="botonIniciarSesion" style="align-self: center; margin: var(--lumo-space-m);">
+ <vaadin-button theme="tertiary-inline" id="botonIniciarSesion" style="align-self: center; margin: var(--lumo-space-m); color: #ae1641;">
    ¿Ya tienes cuenta? Haz click aquí para iniciar sesión 
  </vaadin-button>
 </vaadin-vertical-layout>

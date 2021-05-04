@@ -28,7 +28,7 @@ class VistaPedido_t extends PolymerElement {
    <vaadin-checkbox style="align-self: center;" id="vaadinCheckbox">
     <iron-icon icon="lumo:bell" style="vertical-align: top;" id="ironIcon"></iron-icon>Entregado 
    </vaadin-checkbox>
-   <vaadin-button theme="primary" style="align-self: center; flex-grow: 0; margin-top: 50%;" id="vaadinButton">
+   <vaadin-button theme="primary" style="align-self: center; flex-grow: 0; margin-top: 50%; background-color: #ae1641;" id="vaadinButton">
      Ver ficha 
    </vaadin-button>
   </vaadin-vertical-layout>

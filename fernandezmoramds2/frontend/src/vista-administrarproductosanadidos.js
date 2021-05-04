@@ -62,10 +62,10 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="width: 100%;"></vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%; align-self: center; align-items: center; justify-content: center;">
-    <vaadin-button theme="primary" id="botonCancelar">
+    <vaadin-button theme="primary" id="botonCancelar" style="background-color: #ae1641;">
       Cancelar 
     </vaadin-button>
-    <vaadin-button theme="primary" id="vaadinButton">
+    <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
       Guardar 
     </vaadin-button>
    </vaadin-horizontal-layout>
