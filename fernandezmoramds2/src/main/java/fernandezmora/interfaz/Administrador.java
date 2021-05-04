@@ -1,11 +1,13 @@
 package fernandezmora.interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.Route;
 
 import vistas.VistaAdministrador;
 
 //import basededatos.iAdministrador;
 
+@Route(value = "inicialAdmin")
 public class Administrador extends VistaAdministrador{
 	public Gestionar_empleados _gestionar_empleados;
 	public Gestionar_categorias _gestionar_categorias;

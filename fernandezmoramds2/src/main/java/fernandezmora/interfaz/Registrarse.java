@@ -8,11 +8,14 @@ import org.orm.PersistentTransaction;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.Route;
 
 import basededatos.BDPrincipal;
 import basededatos.iUNR_;
 import vistas.VistaRegistrarse;
 
+
+@Route(value = "registro")
 public class Registrarse extends VistaRegistrarse implements Serializable {
 
 	public Iniciar_sesion_UNR _iniciar_sesion_UNR;

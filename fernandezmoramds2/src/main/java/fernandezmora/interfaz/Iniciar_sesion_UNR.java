@@ -3,15 +3,16 @@ package fernandezmora.interfaz;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.Route;
 
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import basededatos.iUNR_;
 
-public class Iniciar_sesion_UNR extends Iniciar_sesion {
+@Route(value = "iniciosesion")
+public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 
 	public Menu_UNR _menu_UNR;
 	public Iniciar_sesion_con_Facebook _iniciar_sesion_con_Facebook;
@@ -21,6 +22,9 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	public VerticalLayout layout;
 	
 	public Iniciar_sesion_UNR(Menu_UNR munr) {
+		
+		UI.getCurrent().getPage().setTitle("Iniciar sesion");
+		
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this.inicializarUNR(munr);
 	}
@@ -81,5 +85,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		});
 
 	}
+
 
 }

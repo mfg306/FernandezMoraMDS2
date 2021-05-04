@@ -1,11 +1,7 @@
 package fernandezmora.interfaz;
 
 import java.util.Vector;
-
-import org.springframework.web.servlet.View;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.select.Select;
 
 import vistas.VistaUrunr;
 

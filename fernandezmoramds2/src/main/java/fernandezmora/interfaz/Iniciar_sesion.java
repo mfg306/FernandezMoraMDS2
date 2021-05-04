@@ -4,11 +4,13 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.Route;
 
 import basededatos.BDPrincipal;
 import basededatos.iTransportista_Encargado_NR;
 import vistas.VistaIniciar_sesion;
 
+@Route(value = "iniciarSesionEmpleados")
 public class Iniciar_sesion extends VistaIniciar_sesion {
 
 	public Transportista_Encargado_NR _iniciar_sesion;
