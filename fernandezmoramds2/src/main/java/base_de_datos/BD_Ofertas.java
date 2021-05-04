@@ -44,32 +44,7 @@ public class BD_Ofertas {
 			t.rollback();
 			e.printStackTrace();
 			return false;
-		}
-						
-	
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
-		Producto_RebajadoSetCollection pr = o._Pertenece_a;
-		Producto_Rebajado productoR;
-
-		try {
-			for(Producto p : aListaProductos) {
-				productoR = Producto_RebajadoDAO.listProducto_RebajadoByQuery("Producto_RebajadoProductoId_Producto = " + p.getId_Producto(), null)[0];
-				pr.remove(productoR);
-			}
-			
-			t2.commit();
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-			t2.rollback();
-			return false;
-		}
-		
-		/*Lo que tenemos que hacer es para cada producto que tenemos, ver si el id de
-		 * alguno coincide con el id Producto de la tabla ProductoRebajado. Si coincide
-		 * es que estaba rebajado y hay que eliminarlo
-		 * */
-		
+		}					
 		
 		return true;
 	}
