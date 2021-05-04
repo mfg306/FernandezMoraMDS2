@@ -289,9 +289,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
+		return this._bD_Ofertas.eliminarOfertaAdmin(aIdOferta, aListaProductos);
 	}
 	
 }

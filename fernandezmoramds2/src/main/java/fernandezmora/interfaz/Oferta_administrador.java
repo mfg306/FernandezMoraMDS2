@@ -13,6 +13,7 @@ public class Oferta_administrador extends VistaOferta_administrador {
 		this.oferta = o;
 		abrir_editar_Oferta();
 		Eliminar_oferta();
+		abrir_editar_categoria();
 		inicializar(oa, o);
 	}
 
@@ -21,7 +22,15 @@ public class Oferta_administrador extends VistaOferta_administrador {
 		this._editar_oferta = new Editar_oferta(this);
 		this.getH1().setText(o.getNombre_Oferta());
 	}
-
+	
+	public void abrir_editar_categoria()
+	{
+		this.getVaadinButton().addClickListener(event -> {
+			this._editar_oferta = new Editar_oferta(this);
+			this._ofertas_administrador._gestionar_ofertas.ocultar_Gestionar_Ofertas();
+			this._ofertas_administrador._gestionar_ofertas.layout.add(this._editar_oferta);
+		});
+	}
 	public void Eliminar_oferta() {
 		this.getVaadinButton1().addClickListener(event ->{
 			iAdministrador admin = new BDPrincipal();

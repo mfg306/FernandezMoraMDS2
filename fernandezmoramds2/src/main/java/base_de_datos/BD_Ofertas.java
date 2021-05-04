@@ -45,9 +45,7 @@ public class BD_Ofertas {
 			e.printStackTrace();
 			return false;
 		}
-		
-		System.out.println("Oferta eliminada");
-		
+						
 	
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		Producto_RebajadoSetCollection pr = o._Pertenece_a;
@@ -55,13 +53,12 @@ public class BD_Ofertas {
 
 		try {
 			for(Producto p : aListaProductos) {
-				productoR = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + p.getId_Producto(), null)[0];
+				productoR = Producto_RebajadoDAO.listProducto_RebajadoByQuery("Producto_RebajadoProductoId_Producto = " + p.getId_Producto(), null)[0];
 				pr.remove(productoR);
 			}
 			
 			t2.commit();
 			
-			System.out.println("Productos eliminados");
 		} catch(Exception e) {
 			e.printStackTrace();
 			t2.rollback();
