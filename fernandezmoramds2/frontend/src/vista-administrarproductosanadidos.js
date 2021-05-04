@@ -40,8 +40,10 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%;">
   <vaadin-horizontal-layout theme="spacing" id="layoutNombreOferta" style="width: 100%;">
-   <label id="nombreOferta" style="padding: var(--lumo-space-m);">Nombre oferta</label>
+   <span id="campoOferta1">Nombre oferta</span>
    <vaadin-text-field id="campoOferta" style="align-self: center;"></vaadin-text-field>
+   <span id="fechaCaducidad">Fecha caducidad</span>
+   <vaadin-text-field id="campoFechaCaducidad"></vaadin-text-field>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout_administrador_productos_anadidos" style="width: 100%;">

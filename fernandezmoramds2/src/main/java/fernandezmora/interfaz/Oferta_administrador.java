@@ -42,7 +42,6 @@ public class Oferta_administrador extends VistaOferta_administrador {
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
-			
 		});
 	}
 

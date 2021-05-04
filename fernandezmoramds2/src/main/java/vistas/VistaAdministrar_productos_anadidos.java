@@ -12,6 +12,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-administrar_productos_anadidos template.
@@ -83,10 +84,7 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private Element vaadinVerticalLayout1;
 	@Id("layoutNombreOferta")
 	private HorizontalLayout layoutNombreOferta;
-	@Id("nombreOferta")
-	private Label nombreOferta;
-	@Id("campoOferta")
-	private TextField campoOferta;
+
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("huecoProductos")
@@ -99,6 +97,14 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("campoCategoria")
 	private TextField campoCategoria;
+	@Id("campoFechaCaducidad")
+	private TextField campoFechaCaducidad;
+	@Id("campoOferta")
+	private TextField campoOferta;
+	@Id("campoOferta1")
+	private Span campoOferta1;
+	@Id("fechaCaducidad")
+	private Span fechaCaducidad;
 	/**
      * Creates a new VistaAdministrar_productos_anadidos.
      */
@@ -346,21 +352,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 		this.layoutNombreOferta = layoutNombreOferta;
 	}
 
-	public Label getNombreOferta() {
-		return nombreOferta;
-	}
-
-	public void setNombreOferta(Label nombreOferta) {
-		this.nombreOferta = nombreOferta;
-	}
-
-	public TextField getCampoOferta() {
-		return campoOferta;
-	}
-
-	public void setCampoOferta(TextField campoOferta) {
-		this.campoOferta = campoOferta;
-	}
 
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
@@ -409,6 +400,39 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	public void setCampoCategoria(TextField campoCategoria) {
 		this.campoCategoria = campoCategoria;
 	}
+
+	public TextField getCampoFechaCaducidad() {
+		return campoFechaCaducidad;
+	}
+
+	public void setCampoFechaCaducidad(TextField campoFechaCaducidad) {
+		this.campoFechaCaducidad = campoFechaCaducidad;
+	}
+
+	public TextField getCampoOferta() {
+		return campoOferta;
+	}
+
+	public void setCampoOferta(TextField campoOferta) {
+		this.campoOferta = campoOferta;
+	}
+
+	public Span getCampoOferta1() {
+		return campoOferta1;
+	}
+
+	public void setCampoOferta1(Span campoOferta1) {
+		this.campoOferta1 = campoOferta1;
+	}
+
+	public Span getFechaCaducidad() {
+		return fechaCaducidad;
+	}
+
+	public void setFechaCaducidad(Span fechaCaducidad) {
+		this.fechaCaducidad = fechaCaducidad;
+	}
+
 
 
 

@@ -32,7 +32,7 @@ public class Crear_categoría extends Zona_productos {
 		this.getH2EditarOferta().setVisible(false);
 
 		this.getCampoOferta().setVisible(false);
-		this.getNombreOferta().setVisible(false);
+		this.getCampoOferta1().setVisible(false);
 
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 

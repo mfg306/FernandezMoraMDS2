@@ -29,7 +29,7 @@ public class Crear_oferta extends Zona_productos {
 	
 	public void ocultar_crear_oferta() {
 		this.getCampoOferta().setVisible(false);
-		this.getNombreOferta().setVisible(false);
+		this.getCampoOferta1().setVisible(false);
 		
 		this.getH1CrearOferta().setVisible(false);
 		this.getH2CrearOferta().setVisible(false);

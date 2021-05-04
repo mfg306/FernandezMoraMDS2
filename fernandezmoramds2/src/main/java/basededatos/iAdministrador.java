@@ -29,7 +29,7 @@ public interface iAdministrador {
 
 	public void insertarProducto(String aNombreProducto, String aDescripcion);
 
-	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro);
+	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) throws PersistentException;
 
 	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException;
 
@@ -37,7 +37,7 @@ public interface iAdministrador {
 
 	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo);
 
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion);
+	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta)  throws PersistentException ;
 
 	public void actualizarProducto(Imagen[] aImagenes, int aIdProducto);
 

@@ -225,8 +225,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaRegistro) {
-		throw new UnsupportedOperationException();
+			String aFechaRegistro) throws PersistentException {
+		this._bD_Ofertas.insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaRegistro);
 	}
 
 	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException {
@@ -242,8 +242,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaActualizacion) {
-		throw new UnsupportedOperationException();
+			String aFechaActualizacion, int aIdOferta) throws PersistentException {
+		this._bD_Ofertas.actualizarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion, aIdOferta);
 	}
 
 	public void actualizarProducto(Imagen[] aImagenes, int aIdProducto) {

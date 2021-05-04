@@ -31,7 +31,7 @@ public class Editar_categoria extends Zona_productos {
 		this.getH2EditarOferta().setVisible(false);
 
 		this.getCampoOferta().setVisible(false);
-		this.getNombreOferta().setVisible(false);
+		this.getCampoOferta1().setVisible(false);
 
 		this.getCampoCategoria().setValue(ca.categoria.getNombre_categoria());
 
@@ -46,6 +46,8 @@ public class Editar_categoria extends Zona_productos {
 		this.getH2().setVisible(false);
 		this.getH21().setVisible(false);
 		this.getVaadinHorizontalLayout().setVisible(false);
+		
+		this.getCampoFechaCaducidad().setVisible(false);
 
 		this.getCampoCategoria().setVisible(false);
 		this.getNombreCategoria().setVisible(false);
@@ -70,7 +72,6 @@ public class Editar_categoria extends Zona_productos {
 			formatter.format(date);
 
 			try {
-				// null = los productos
 				Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
 				base_de_datos.Producto[] productosCategoria = new base_de_datos.Producto[listaProductos.size()];
 
