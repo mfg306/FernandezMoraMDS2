@@ -46,6 +46,8 @@ public class BD_Ofertas {
 			return false;
 		}
 		
+		System.out.println("Oferta eliminada");
+		
 	
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		Producto_RebajadoSetCollection pr = o._Pertenece_a;
@@ -58,6 +60,8 @@ public class BD_Ofertas {
 			}
 			
 			t2.commit();
+			
+			System.out.println("Productos eliminados");
 		} catch(Exception e) {
 			e.printStackTrace();
 			t2.rollback();

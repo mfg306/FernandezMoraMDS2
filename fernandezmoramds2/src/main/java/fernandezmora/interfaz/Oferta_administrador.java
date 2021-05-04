@@ -1,5 +1,7 @@
 package fernandezmora.interfaz;
 
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 import vistas.VistaOferta_administrador;
 
 public class Oferta_administrador extends VistaOferta_administrador {
@@ -10,6 +12,7 @@ public class Oferta_administrador extends VistaOferta_administrador {
 	public Oferta_administrador(Ofertas_administrador oa, base_de_datos.Oferta o) {
 		this.oferta = o;
 		abrir_editar_Oferta();
+		Eliminar_oferta();
 		inicializar(oa, o);
 	}
 
@@ -20,7 +23,18 @@ public class Oferta_administrador extends VistaOferta_administrador {
 	}
 
 	public void Eliminar_oferta() {
-		throw new UnsupportedOperationException();
+		this.getVaadinButton1().addClickListener(event ->{
+			iAdministrador admin = new BDPrincipal();
+			try {
+				base_de_datos.Producto[] productosOferta = this.oferta._Pertenece_a.toArray();
+				
+				admin.eliminarOfertaAdmin(this.oferta.getId_Oferta(), productosOferta);
+				this._ofertas_administrador.removeOferta(this);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		});
 	}
 
 	public void abrir_editar_Oferta() {

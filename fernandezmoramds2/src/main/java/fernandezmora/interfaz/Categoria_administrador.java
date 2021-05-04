@@ -43,15 +43,9 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 			iAdministrador admin = new BDPrincipal();
 			try {
 				base_de_datos.Producto[] productosCategoria = this.categoria._Producto.toArray();
-
-				for (int i = 0; i < productosCategoria.length; i++) {
-					productosCategoria[i] = productosCategoria[i];
-				}
-				
-				
+								
 				admin.eliminarCategoriaAdmin(categoria.getId_Categoria(), productosCategoria);
 				this._categorias_administrador.removeCategoria(this);
-//				this._categorias_administrador.inicializar(this._categorias_administrador._gestionar_categorias);
 			
 			} catch (PersistentException e) {
 				e.printStackTrace();
