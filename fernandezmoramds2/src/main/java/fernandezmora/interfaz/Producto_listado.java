@@ -16,7 +16,6 @@ public class Producto_listado extends VistaProducto_listado {
 		this.getVaadinButton().addClickListener(event ->{
 			this._productos_listado._list_Producto_listado.remove(this);
 			this._productos_listado.layout.remove(this);	
-			
 			this._productos_listado._zona_productos.incorporarProductoListado(p, this._productos_listado._zona_productos);
 		});
 	}

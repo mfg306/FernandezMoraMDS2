@@ -18,6 +18,7 @@ public class Crear_oferta extends Zona_productos {
 	VerticalLayout layout;
 
 	public Crear_oferta() {
+		super(null,null);
 		inicializar();
 		guardarOferta();
 	}

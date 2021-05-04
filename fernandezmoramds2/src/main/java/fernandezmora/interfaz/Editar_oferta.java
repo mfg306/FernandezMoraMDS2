@@ -15,6 +15,7 @@ public class Editar_oferta extends Zona_productos {
 
 	
 	public Editar_oferta(Oferta_administrador oa) {
+		super(null, oa.oferta);
 		inicializar(oa);
 	}
 	

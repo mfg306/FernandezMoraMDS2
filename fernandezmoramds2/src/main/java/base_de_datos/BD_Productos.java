@@ -33,6 +33,21 @@ public class BD_Productos {
 
 		return pds;
 	}
+	
+	
+	public Producto[] cargarProductosOferta(Oferta aOferta) throws PersistentException {
+		Producto[] pds = null;
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			Oferta o = OfertaDAO.loadOfertaByORMID(aOferta.getId_Oferta());
+			pds = o._Pertenece_a.toArray();
+		} catch(Exception e) {
+			t.rollback();
+		}
+		
+		return pds;		
+	}
 
 	public Producto[] cargarProductos() {
 		throw new UnsupportedOperationException();
@@ -62,4 +77,5 @@ public class BD_Productos {
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException{	
 		return ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aProducto + "%'", "nombre");
 	}
+	
 }

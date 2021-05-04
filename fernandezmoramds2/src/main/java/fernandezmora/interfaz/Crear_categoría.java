@@ -17,6 +17,7 @@ public class Crear_categoría extends Zona_productos {
 	VerticalLayout layout;
 
 	public Crear_categoría() {
+		super(null, null);
 		inicializar();
 		guardarCategoria();
 
@@ -33,6 +34,9 @@ public class Crear_categoría extends Zona_productos {
 
 		this.getCampoOferta().setVisible(false);
 		this.getCampoOferta1().setVisible(false);
+		
+		this.getCampoFechaCaducidad().setVisible(false);
+		this.getFechaCaducidad().setVisible(false);
 
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 

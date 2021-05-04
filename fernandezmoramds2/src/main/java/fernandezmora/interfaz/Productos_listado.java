@@ -23,8 +23,10 @@ public class Productos_listado extends VistaProductos_listado {
 	
 	
 	public void add_productos_listado(Producto_listado pl) {
-		if(!this._list_Producto_listado.contains(pl)) this._list_Producto_listado.add(pl);
-		this.layout.add(pl);
+		if(!this._list_Producto_listado.contains(pl)) {
+			this._list_Producto_listado.add(pl);
+			this.layout.add(pl);
+		}
 	}
 	
 	public void aceptar_Producto_listado_administracion(base_de_datos.Producto p) {

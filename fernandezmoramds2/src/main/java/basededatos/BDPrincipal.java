@@ -292,5 +292,16 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
 		return this._bD_Ofertas.eliminarOfertaAdmin(aIdOferta, aListaProductos);
 	}
+
+	@Override
+	public Producto[] cargarProductosCategoriaAdmin(Categoria aCategoria) throws PersistentException {
+		return this._bD_Productos.cargarProductosCategoria(aCategoria);
+	}
+
+	@Override
+	public Producto[] cargarProductosOfertaaAdmin(Oferta aOferta) throws PersistentException {
+		return this._bD_Productos.cargarProductosOferta(aOferta);
+	}
+
 	
 }

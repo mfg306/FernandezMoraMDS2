@@ -25,8 +25,10 @@ public class Productos_listado_administracion extends VistaProductos_listado_adm
 	}
 	
 	public void add_productos_listado_administracion(Producto_listado_administracion pla) {
-		if(!this._list_Producto_listado_administracion.contains(pla)) this._list_Producto_listado_administracion.add(pla);
-		this.layout.add(pla);
+		if(!this._list_Producto_listado_administracion.contains(pla)) {
+			this._list_Producto_listado_administracion.add(pla);
+			this.layout.add(pla);
+		}
 		this.inicializar();
 	}
 	

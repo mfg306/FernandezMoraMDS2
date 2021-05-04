@@ -16,6 +16,7 @@ public class Editar_categoria extends Zona_productos {
 	VerticalLayout layout;
 
 	public Editar_categoria(Categoria_administrador ca) {
+		super(ca.categoria, null);
 		inicializar(ca);
 		guardarCategoria();
 	}
@@ -32,6 +33,9 @@ public class Editar_categoria extends Zona_productos {
 
 		this.getCampoOferta().setVisible(false);
 		this.getCampoOferta1().setVisible(false);
+		
+		this.getCampoFechaCaducidad().setVisible(false);
+		this.getFechaCaducidad().setVisible(false);
 
 		this.getCampoCategoria().setValue(ca.categoria.getNombre_categoria());
 

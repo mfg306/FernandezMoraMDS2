@@ -1,5 +1,8 @@
 package fernandezmora.interfaz;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.Key;
@@ -16,7 +19,9 @@ public class Zona_productos extends Administrar_productos_anadidos {
 	public VerticalLayout layoutIzquierda;
 	TextField buscadorZona = new TextField();
 
-	public Zona_productos() {
+	public Zona_productos(base_de_datos.Categoria categoria, base_de_datos.Oferta oferta) {
+		super(categoria, oferta);
+
 		this._productos_listado = new Productos_listado(this);
 		this.layoutIzquierda = this.getHuecoIzquierda().as(VerticalLayout.class);
 
@@ -25,12 +30,11 @@ public class Zona_productos extends Administrar_productos_anadidos {
 		buscadorZona.setWidth("100%");
 
 		this.getVaadinHorizontalLayout2().add(buscadorZona);
-
 		this.inicializar_zona();
+		eliminarProductosListado();
 	}
 
 	public void inicializar_zona() {
-
 		this.layoutIzquierda.add(this._productos_listado);
 
 		try {
@@ -50,7 +54,8 @@ public class Zona_productos extends Administrar_productos_anadidos {
 
 		for (base_de_datos.Producto p : productos) {
 			Producto_listado pl = new Producto_listado(p, this._productos_listado);
-			this._productos_listado.add_productos_listado(pl);
+			ArrayList<base_de_datos.Producto> listaArray = new ArrayList<>(Arrays.asList(this.listadoProductos));
+			if(!listaArray.contains(p)) this._productos_listado.add_productos_listado(pl);
 		}
 	}
 
@@ -71,6 +76,15 @@ public class Zona_productos extends Administrar_productos_anadidos {
 				e1.printStackTrace();
 			}
 		});
+	}
+	
+	public void eliminarProductosListado() {
+		for(Producto_listado_administracion pla : this._productos_listado_administracion._list_Producto_listado_administracion) {
+			pla.getVaadinButton().addClickListener(event ->{
+				pla.eliminar_de_listado_para_zona_productos();
+				this._productos_listado.aceptar_Producto_listado_administracion(pla.producto);
+			});
+		}
 	}
 	
 }
