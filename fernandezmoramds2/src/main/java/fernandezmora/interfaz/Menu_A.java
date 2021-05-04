@@ -1,5 +1,8 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
+
 public class Menu_A extends Ver_bandeja_de_entrada {
 	public Administrador _administrador;
 	
@@ -32,12 +35,9 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 	 * Destruir al Administrador y volver a la vista inicial
 	 */
 	public void cerrar_sesion() {
-		
+				
 		this.getCerrar_sesion().addClickListener(event ->{
-			_administrador.layout.removeAll();
-			UNR_ unr = new UNR_();
-			_administrador.layout.add(unr);
-
+			UI.getCurrent().getSession().close();
 		});
 		
 	}

@@ -144,7 +144,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 			String aContrasenia, Object aContraseniaRepeticion) throws PersistentException {
 		boolean registrado = false;
 		try {
-			
 			registrado = this._bD_UNR.registrarse(aNombre, aApellidos, aCorreo, aNombreUsuario, aContrasenia,
 					aContrasenia);
 

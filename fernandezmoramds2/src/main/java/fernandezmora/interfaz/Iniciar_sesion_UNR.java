@@ -2,6 +2,8 @@ package fernandezmora.interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -17,8 +19,9 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	public Registrarse _registrarse;
 	public Recuperar_contrasenia _recuperar_contrasenia;
 	public VerticalLayout layout;
-
+	
 	public Iniciar_sesion_UNR(Menu_UNR munr) {
+		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this.inicializarUNR(munr);
 	}
 

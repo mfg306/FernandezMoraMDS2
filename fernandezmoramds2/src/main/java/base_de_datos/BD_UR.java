@@ -31,7 +31,8 @@ public class BD_UR {
 			boolean hayDigitos = false, mayorDe8Caracteres = false, hayMayuscula = false, hayCaracteres = false;
 			
 			if(usuario.getContrasenia().length() > 8) mayorDe8Caracteres = true;
-			if(!mayorDe8Caracteres) return false;
+			if(mayorDe8Caracteres) return false;
+			
 			
 			for(Character c : usuario.getContrasenia().toCharArray()) {
 				if(Character.isDigit(c)) hayDigitos = true;
@@ -44,11 +45,11 @@ public class BD_UR {
 			if(!hayDigitos || !hayMayuscula || !hayCaracteres) {
 				return false;
 			}
+			
 	
 			 UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
 
 			  if (usuariosCorreo.length == 0) {
-				  Notification.show("Registrado, inicia sesión " + usuario.getNombre().toString());
 				  URDAO.save(usuario);
 			  }
 				  

@@ -6,6 +6,7 @@ import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -56,6 +57,7 @@ public class Registrarse extends VistaRegistrarse implements Serializable {
 
 		if(registroRealizado) {
 			limpiar_interfaz();
+			Notification.show("Se ha registrado con exito. Inicie sesion");
 		}else {
 			Span mensajeError = new Span("La contraseña no debe ser mayor de 8 caracteres, debe contener al menos una mayuscula y un digito.");
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(mensajeError);

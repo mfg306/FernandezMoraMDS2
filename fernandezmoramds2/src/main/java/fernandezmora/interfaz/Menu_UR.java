@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
@@ -149,11 +150,7 @@ public class Menu_UR extends Menu_UR_UNR {
 	}
 
 	public void cerrar_sesion() {
-		_uR.layout.removeAll();
-		UNR_ unr = new UNR_();
-		_uR.layout.setPadding(false);
-		_uR.layout.setMargin(false);
-		_uR.layout.add(unr);
+		UI.getCurrent().getSession().close();
 	}
 
 }
