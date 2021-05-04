@@ -49,13 +49,23 @@ public class Zona_productos extends Administrar_productos_anadidos {
 	
 	public void abrirZonaProductos() throws PersistentException {
 		iAdministrador admin = new BDPrincipal();
-
 		base_de_datos.Producto productos[] = admin.cargarProductosListado();
+		ArrayList<base_de_datos.Producto> listaArray = null;
 
 		for (base_de_datos.Producto p : productos) {
 			Producto_listado pl = new Producto_listado(p, this._productos_listado);
-			ArrayList<base_de_datos.Producto> listaArray = new ArrayList<>(Arrays.asList(this.listadoProductos));
-			if(!listaArray.contains(p)) this._productos_listado.add_productos_listado(pl);
+			
+			/*esCategorias se hereda de Administrar_productos_anadidos. Para el caso en el que venimos
+			 * de la interfaz editar categoria o interfaz.*/
+			if(this.esCategorias == 1 || this.esCategorias == 2) {
+				listaArray = new ArrayList<>(Arrays.asList(this.listadoProductos));
+			}
+			if(listaArray != null && !listaArray.contains(p)) this._productos_listado.add_productos_listado(pl);
+			
+			/*Si listaArray == null es porque hemos entrado a traves de la interfaz de Crear categoria/oferta y no a traves de una categoria
+			 * o de una oferta con la interfaz de Editar, por tanto, no tenemos una lista de productos con la que comparar por lo que simplemente
+			 * insertaremos todos en el listado*/
+			if(listaArray == null) this._productos_listado.add_productos_listado(pl);
 		}
 	}
 

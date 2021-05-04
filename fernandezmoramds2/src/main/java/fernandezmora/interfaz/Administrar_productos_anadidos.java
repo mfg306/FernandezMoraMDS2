@@ -18,7 +18,7 @@ public class Administrar_productos_anadidos extends VistaAdministrar_productos_a
 	 * Este atributo nos va a decir si hemos accedido a esta interfaz a traves de
 	 * una categoria o a traves de una oferta
 	 */
-	private int esCategorias;
+	public int esCategorias;
 
 	base_de_datos.Categoria categoria;
 	base_de_datos.Oferta oferta;

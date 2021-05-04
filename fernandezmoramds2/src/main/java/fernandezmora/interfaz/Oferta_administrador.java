@@ -11,19 +11,17 @@ public class Oferta_administrador extends VistaOferta_administrador {
 
 	public Oferta_administrador(Ofertas_administrador oa, base_de_datos.Oferta o) {
 		this.oferta = o;
-		abrir_editar_Oferta();
 		Eliminar_oferta();
-		abrir_editar_categoria();
+		abrir_editar_oferta();
 		inicializar(oa, o);
 	}
 
 	public void inicializar(Ofertas_administrador oa, base_de_datos.Oferta o) {
 		this._ofertas_administrador = oa;
-		this._editar_oferta = new Editar_oferta(this);
 		this.getH1().setText(o.getNombre_Oferta());
 	}
 	
-	public void abrir_editar_categoria()
+	public void abrir_editar_oferta()
 	{
 		this.getVaadinButton().addClickListener(event -> {
 			this._editar_oferta = new Editar_oferta(this);
