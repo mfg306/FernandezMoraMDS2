@@ -96,7 +96,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return ps;
 	}
 
@@ -110,7 +110,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		}
 		return cts;
 	}
-	
 
 	public Producto[] cargarProductos(String aNombreProducto) {
 		throw new UnsupportedOperationException();
@@ -156,35 +155,39 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
 		int existeUsuario = 0;
 		int existeAdmin = 0;
-		
+
 		try {
 			existeUsuario = this._bD_UNR.iniciarSesion(aCorreo, aContrasenia);
-			if(existeUsuario == 1) return 1;
+			if (existeUsuario == 1)
+				return 1;
 			existeAdmin = this._bD_Administrador.iniciarSesion(aCorreo, aContrasenia);
-			if(existeAdmin == 2) return 2;
-		}catch(Exception e) {
+			if (existeAdmin == 2)
+				return 2;
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return 0;
 	}
 
 	public int buscarUsuario(String aCampo, String aPassword) {
 		int existeTransportista = 0;
 		int existeEncargado = 0;
-		
+
 		try {
 			existeTransportista = this._bD_Transportistas.buscarUsuario(aCampo, aPassword);
-			if(existeTransportista == 1) return 1;
+			if (existeTransportista == 1)
+				return 1;
 			existeEncargado = this._bD_Encargados_de_compras.buscarUsuario(aCampo, aPassword);
-			if(existeEncargado == 2 ) return 2;
+			if (existeEncargado == 2)
+				return 2;
 
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return 0;
-		
+
 	}
 
 	public void enviarMensajeT(String aMensaje, String aCorreEmisor, String aCorreoReceptor) {
@@ -219,7 +222,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException {
+	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades)
+			throws PersistentException {
 		return this._bD_Productos.insertarProducto(aNombreProducto, aDescripcion, aPrecio, aNumUnidades);
 	}
 
@@ -228,11 +232,13 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_Ofertas.insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaRegistro);
 	}
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException {
+	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro)
+			throws PersistentException {
 		this._bD_Categorias.insertarCategoria(aNombreCategoria, aListaProductos, aFechaRegistro);
 	}
 
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException {
+	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion,
+			int aIdCategoria) throws PersistentException {
 		this._bD_Categorias.actualizarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion, aIdCategoria);
 	}
 
@@ -242,7 +248,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 
 	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaActualizacion, int aIdOferta) throws PersistentException {
-		this._bD_Ofertas.actualizarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion, aIdOferta);
+		this._bD_Ofertas.actualizarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion,
+				aIdOferta);
 	}
 
 	public void actualizarProducto(Imagen[] aImagenes, int aIdProducto) {
@@ -276,9 +283,9 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public Producto[] cargarProductosListado() throws PersistentException {
 		return this._bD_Productos.cargarProductosListado();
 	}
-	
+
 	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario) throws PersistentException {
-		return this._bD_Comentarios.comentar(aComentario,aIdProducto,aIdUsuario);
+		return this._bD_Comentarios.comentar(aComentario, aIdProducto, aIdUsuario);
 	}
 
 	@Override
@@ -306,5 +313,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_Productos.cargarProductosOferta(aOferta);
 	}
 
-	
+	public boolean valorar(int aIdProducto, int aIdUsuario, String aValoracion) {
+		return false;
+
+	}
 }

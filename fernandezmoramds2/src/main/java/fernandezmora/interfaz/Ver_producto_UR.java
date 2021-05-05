@@ -15,10 +15,13 @@ public class Ver_producto_UR extends Producto_UNR {
 
 	public Ver_producto_UR(UR_UNR _ur,base_de_datos.Producto p) {
 		super(_ur, p);
+		inicializar(_ur,p);
+	}
+	
+	public void inicializar(UR_UNR _ur,base_de_datos.Producto p) {
 		this._uR = (UR) _ur;
 		this.getVaadinVerticalLayout2().setVisible(true);
 		Comentar();
-
 	}
 
 	public void Comentar() {

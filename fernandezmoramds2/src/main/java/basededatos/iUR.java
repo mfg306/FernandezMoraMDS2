@@ -21,4 +21,6 @@ public interface iUR extends iUR_UNR {
 	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
 	
 	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario)throws PersistentException;;
+	
+	public boolean valorar( int aIdProducto, int aIdUsuario,String aValoracion);
 }

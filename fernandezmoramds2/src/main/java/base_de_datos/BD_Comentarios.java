@@ -21,7 +21,7 @@ public class BD_Comentarios {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
 			UR usuario = URDAO.getURByORMID(aIdUsuario);
-			System.out.println(aIdUsuario);
+			System.out.println(usuario.getId_Usuario());
 			System.out.println(usuario.getNombre());
 			Producto producto = ProductoDAO.getProductoByORMID(aIdProducto);
 			Comentario comentario = ComentarioDAO.createComentario();
@@ -41,5 +41,10 @@ public class BD_Comentarios {
 		}
 
 		return true;
+	}
+	
+	public boolean valorar( int aIdProducto, int aIdUsuario,String aValoracion) {
+		return false;
+		
 	}
 }
