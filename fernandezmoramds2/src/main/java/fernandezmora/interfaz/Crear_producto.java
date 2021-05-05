@@ -48,6 +48,8 @@ public class Crear_producto extends VistaCrear_producto {
 				System.out.println("Error con la consulta");
 				e.printStackTrace();
 			}
+			
+			admin.guardarImagenesProducto(0, null);
 		});
 
 	}

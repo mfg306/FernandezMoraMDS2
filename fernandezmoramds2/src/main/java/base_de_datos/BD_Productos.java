@@ -58,10 +58,10 @@ public class BD_Productos {
 	}
 
 	public Producto[] cargarProductos(String aProducto) throws PersistentException {
-		throw new UnsupportedOperationException();
+		return ProductoDAO.listProductoByQuery(null,null);
 	}
 
-	public void insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException {
+	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		
 		try {
@@ -73,13 +73,15 @@ public class BD_Productos {
 			 p.setNum_Unidades_Restantes(aNumUnidades);
 			 
 			 ProductoDAO.save(p);
+			
+			 t.commit();
 			 
-			 System.out.println("Producto insertado");
-			 
-			t.commit();
+			 return p;	 
 		} catch(Exception e) {
 			t.rollback();
 		}
+		
+		return null;
 		
 	}
 
