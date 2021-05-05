@@ -1,13 +1,17 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
+
+import javax.validation.ConstraintViolationException;
 
 import org.orm.PersistentException;
 
@@ -33,7 +37,7 @@ public class Editar_categoria extends Zona_productos {
 
 		this.getCampoOferta().setVisible(false);
 		this.getCampoOferta1().setVisible(false);
-		
+
 		this.getCampoFechaCaducidad().setVisible(false);
 		this.getFechaCaducidad().setVisible(false);
 
@@ -50,7 +54,7 @@ public class Editar_categoria extends Zona_productos {
 		this.getH2().setVisible(false);
 		this.getH21().setVisible(false);
 		this.getVaadinHorizontalLayout().setVisible(false);
-		
+
 		this.getCampoFechaCaducidad().setVisible(false);
 
 		this.getCampoCategoria().setVisible(false);
@@ -75,20 +79,20 @@ public class Editar_categoria extends Zona_productos {
 			Date date = new Date();
 			formatter.format(date);
 
+			Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
+			base_de_datos.Producto[] productosCategoria = new base_de_datos.Producto[listaProductos.size()];
+
+			for (int i = 0; i < listaProductos.size(); i++) {
+				productosCategoria[i] = listaProductos.get(i).producto;
+			}
+			
 			try {
-				Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
-				base_de_datos.Producto[] productosCategoria = new base_de_datos.Producto[listaProductos.size()];
-
-				for (int i = 0; i < listaProductos.size(); i++) {
-					productosCategoria[i] = listaProductos.get(i).producto;
-				}
-
 				admin.actualizarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString(),
 						this._categoria_administrador.categoria.getId_Categoria());
 			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
+				Notification.show("Una categoría no puede quedarse sin productos.");
 				e.printStackTrace();
-			}
+			} 
 		});
 
 	}

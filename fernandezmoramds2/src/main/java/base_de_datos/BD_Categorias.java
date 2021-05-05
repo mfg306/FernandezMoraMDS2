@@ -3,6 +3,8 @@ package base_de_datos;
 import basededatos.BDPrincipal;
 import java.util.Vector;
 
+import javax.validation.ConstraintViolationException;
+
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -72,7 +74,7 @@ public class BD_Categorias {
 		return cat;
 	}
 
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException {
+	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException, ConstraintViolationException {
 		if(eliminarCategoriaAdmin(aIdCategoria, aListaProductos)) System.out.println("Se ha eliminado la categoria");
 		insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
 	}
