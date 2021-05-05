@@ -116,8 +116,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean buscarUsuarioPorCorreo(String aCorreo) {
-		throw new UnsupportedOperationException();
+	public UR buscarUsuarioPorCorreo(String aCorreo) throws PersistentException {
+		return this._bD_UNR.buscarUsuarioPorCorreo(aCorreo);
 	}
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {

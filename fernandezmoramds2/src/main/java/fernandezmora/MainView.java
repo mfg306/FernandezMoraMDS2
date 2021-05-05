@@ -59,13 +59,14 @@ public class MainView extends VerticalLayout {
 		Iniciar_sesion_UNR inicio_sesion = unr._menu_UNR._iniciar_sesion_UNR;
 		iUNR_ iunr = new BDPrincipal();
 		iAdministrador iadmin = new BDPrincipal();
-
+		iUR iur = new BDPrincipal();
 		inicio_sesion.getBoton_iniciar_sesion().addClickListener(event -> {
-
 			try {
+				base_de_datos.UR UR = null;
 				if (iunr.iniciarSesion(inicio_sesion.getCorreo().getValue(),
 						inicio_sesion.getContrasenia().getValue()) == 1) {
-					UR ur = new UR();
+					UR = iur.buscarUsuarioPorCorreo(inicio_sesion.getCorreo().getValue());
+					UR ur = new UR(UR);
 					remove(unr);
 					add(ur);
 				} else if (iadmin.iniciarSesion(inicio_sesion.getCorreo().getValue(),

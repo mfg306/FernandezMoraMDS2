@@ -13,7 +13,7 @@ public class Producto extends VistaProducto{
 	public Producto_oferta _producto_oferta;
 	public Comentarios _comentarios;
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
-	private base_de_datos.Producto producto;
+	public base_de_datos.Producto producto;
 	
 	public Producto(base_de_datos.Producto p) {
 		this.producto = p;

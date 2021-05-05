@@ -1,18 +1,38 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+
+import com.vaadin.flow.component.notification.Notification;
+
+import basededatos.BDPrincipal;
+import basededatos.iTransportista_Encargado_NR;
+import basededatos.iUR;
+
 public class Ver_producto_UR extends Producto_UNR {
 
 	public UR _uR;
+	
 
 	public Ver_producto_UR(UR_UNR _ur,base_de_datos.Producto p) {
 		super(_ur, p);
 		this._uR = (UR) _ur;
 		this.getVaadinVerticalLayout2().setVisible(true);
+		Comentar();
 
 	}
 
 	public void Comentar() {
-		throw new UnsupportedOperationException();
+		this.getEnviar_comentario().addClickListener(event -> {
+			iUR ur = new BDPrincipal();
+			try {
+				ur.comentar(this.getDejar_comentario().getValue(),this._uR.UR.getId_Usuario(), this.producto.getId_Producto());
+				Notification.show("Comentario enviado");
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		
 	}
 
 	public void Valorar() {

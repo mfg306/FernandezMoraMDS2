@@ -11,9 +11,11 @@ public class UR extends UR_UNR{
 	//public iUR _iUR;
 	public Menu_UR _menu_UR;
 	public Ver_producto_UR _ver_producto_UR;
+	public base_de_datos.UR UR;
 	
-	public UR() {
+	public UR(base_de_datos.UR ur) {
 		super();
+		this.UR = ur;
 		listaAux = new Vector<Producto_carrito>();
 		inicializar();
 	}

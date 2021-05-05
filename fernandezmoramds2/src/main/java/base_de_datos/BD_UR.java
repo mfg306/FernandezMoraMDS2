@@ -80,8 +80,23 @@ public class BD_UR {
 		return 0;
 	}
 
-	public boolean buscarUsuarioPorCorreo(String aCorreo) {
-		throw new UnsupportedOperationException();
+	public UR buscarUsuarioPorCorreo(String aCorreo) throws PersistentException {
+		
+		UR usuario = URDAO.createUR();
+		usuario.setCorreo_electronico(aCorreo);
+		base_de_datos.UR usuarioEncontrado = null;
+		
+		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
+		try {
+			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
+				usuarioEncontrado = usuariosCorreo[0];
+				System.out.println("Usuario encontrado" + usuariosCorreo[0].getCorreo_electronico());
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+			return null;
+		}
+	return usuarioEncontrado;
 	}
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {

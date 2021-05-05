@@ -10,6 +10,7 @@ import com.vaadin.flow.router.Route;
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import basededatos.iUNR_;
+import basededatos.iUR;
 
 @Route(value = "iniciosesion")
 public class Iniciar_sesion_UNR extends Iniciar_sesion  {
@@ -67,11 +68,14 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 
 			iUNR_ iunr = new BDPrincipal();
 			iAdministrador iadmin = new BDPrincipal();
+			iUR iur = new BDPrincipal();
+			base_de_datos.UR UR = null;
 
 			try {
 				if (iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 1) {
 					limpiar_interfaz();
-					this._menu_UNR.layout.add(new UR());
+					UR = iur.buscarUsuarioPorCorreo(this.getCorreo().getValue());
+					this._menu_UNR.layout.add(new UR(UR));
 				} else if (iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 2) {
 					limpiar_interfaz();
 					this._menu_UNR.layout.add(new Administrador());
