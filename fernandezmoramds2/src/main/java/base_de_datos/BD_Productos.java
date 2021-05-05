@@ -74,6 +74,8 @@ public class BD_Productos {
 			 
 			 ProductoDAO.save(p);
 			 
+			 System.out.println("Producto insertado");
+			 
 			t.commit();
 		} catch(Exception e) {
 			t.rollback();

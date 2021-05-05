@@ -63,6 +63,8 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 	private Button vaadinButton1;
 	@Id("vaadinButton2")
 	private Button vaadinButton2;
+	@Id("cantidadProducto")
+	private TextField cantidadProducto;
 
 	/**
      * Creates a new VistaCrear_producto.
@@ -236,5 +238,13 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 
 	public void setVaadinButton2(Button vaadinButton2) {
 		this.vaadinButton2 = vaadinButton2;
+	}
+
+	public TextField getCantidadProducto() {
+		return cantidadProducto;
+	}
+
+	public void setCantidadProducto(TextField cantidadProducto) {
+		this.cantidadProducto = cantidadProducto;
 	}
 }

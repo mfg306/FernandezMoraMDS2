@@ -2,6 +2,8 @@ package fernandezmora.interfaz;
 
 import java.util.Vector;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -15,6 +17,7 @@ public class Crear_producto extends VistaCrear_producto {
 
 	public Crear_producto() {
 		inicializar();
+		crearProducto();
 	}
 
 	public void inicializar() {
@@ -33,8 +36,19 @@ public class Crear_producto extends VistaCrear_producto {
 	}
 	
 	public void crearProducto() {
-		iAdministrador admin = new BDPrincipal();
-		
-		admin.insertarProducto(this.getNombreProducto(), this.getAñadeUnaDescripciónAlProducto().getValue(), this.getPrecio(), 0);
+		this.getVaadinButton1().addClickListener(event -> {
+			iAdministrador admin = new BDPrincipal();
+			
+			try {				
+				admin.insertarProducto(this.getNombreProducto().getValue(), this.getAñadeUnaDescripciónAlProducto().getValue(), Double.parseDouble(this.getPrecio().getValue()), Integer.parseInt(this.getCantidadProducto().getValue()));
+			} catch (NumberFormatException e) {
+				System.out.println("Error al hacer el parse");
+				e.printStackTrace();
+			} catch (PersistentException e) {
+				System.out.println("Error con la consulta");
+				e.printStackTrace();
+			}
+		});
+
 	}
 }

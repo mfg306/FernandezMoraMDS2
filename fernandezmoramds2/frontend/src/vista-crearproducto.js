@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaCrear_producto extends PolymerElement {
 
@@ -26,6 +26,7 @@ class VistaCrear_producto extends PolymerElement {
    </vaadin-horizontal-layout>
    <vaadin-text-field label="Precio:" placeholder="Introduzca un precio" id="precio"></vaadin-text-field>
    <vaadin-text-area label="Añade una descripción al producto:" placeholder="Descripción" style="width: 50%;" id="añadeUnaDescripciónAlProducto"></vaadin-text-area>
+   <vaadin-text-field label="Cantidad disponible:" placeholder="Cantidad" id="cantidadProducto"></vaadin-text-field>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 60%;" id="vaadinVerticalLayout2">
    <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout2">
