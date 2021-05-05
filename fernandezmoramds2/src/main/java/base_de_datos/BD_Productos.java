@@ -61,8 +61,24 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void insertarProducto(String aNombreProducto, String aDescripcion) {
-		throw new UnsupportedOperationException();
+	public void insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			 Producto p = ProductoDAO.createProducto();
+			 
+			 p.setNombre(aNombreProducto);
+			 p.setDescripcion(aDescripcion);
+			 p.setPrecio_producto(aPrecio);
+			 p.setNum_Unidades_Restantes(aNumUnidades);
+			 
+			 ProductoDAO.save(p);
+			 
+			t.commit();
+		} catch(Exception e) {
+			t.rollback();
+		}
+		
 	}
 
 	public Producto[] cargarProductosListado() throws PersistentException {
