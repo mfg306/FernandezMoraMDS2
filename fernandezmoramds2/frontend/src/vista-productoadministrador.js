@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
+import '@vaadin/vaadin-item/src/vaadin-item.js';
 
 class VistaProducto_administrador extends PolymerElement {
 
@@ -27,12 +27,6 @@ class VistaProducto_administrador extends PolymerElement {
   <vaadin-list-box style="margin-top: var(--lumo-space-xl); padding: var(--lumo-space-l); background-color:#D0D1D1; width: 100%;" id="vaadinListBox">
    <vaadin-item id="vaadinItem">
      Características 
-   </vaadin-item>
-   <vaadin-item id="vaadinItem1">
-     · ----------------- 
-   </vaadin-item>
-   <vaadin-item id="vaadinItem2">
-     · ----------------- 
    </vaadin-item>
   </vaadin-list-box>
   <h2 style="flex-grow: 1; flex-shrink: 0; align-self: center; margin-left: 50%; width: 15%;" id="h2">Imagen</h2>

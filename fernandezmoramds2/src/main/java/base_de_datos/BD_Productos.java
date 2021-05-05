@@ -58,7 +58,7 @@ public class BD_Productos {
 	}
 
 	public Producto[] cargarProductos(String aProducto) throws PersistentException {
-		return ProductoDAO.listProductoByQuery(null,null);
+		throw new UnsupportedOperationException();
 	}
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException {

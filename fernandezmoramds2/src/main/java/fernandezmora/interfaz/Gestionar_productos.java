@@ -1,7 +1,11 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 import vistas.VistaGestionar_productos;
 
 public class Gestionar_productos extends VistaGestionar_productos {
@@ -9,6 +13,7 @@ public class Gestionar_productos extends VistaGestionar_productos {
 	public Productos_administrador _productos_administrador;
 	public Editar_producto _editar_producto;
 	public VerticalLayout layout;
+	public base_de_datos.Producto productos[];
 
 	public Gestionar_productos() {
 		inicializar();
@@ -16,15 +21,13 @@ public class Gestionar_productos extends VistaGestionar_productos {
 	
 	public void inicializar() {
 		this._productos_administrador = new Productos_administrador();
-		this._productos_administrador.add_Productos();
-		this._productos_administrador.add_Productos();
 
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-
 		layout.add(this._productos_administrador);
 
 		editar_Producto();
 		crear_Producto();
+		abrirGestionarProductos();
 	}
 
 	public void ocultar_Gestionar_Ofertas() {
@@ -51,6 +54,20 @@ public class Gestionar_productos extends VistaGestionar_productos {
 			layout.add(cp);
 		});
 
+	}
+	
+	public void abrirGestionarProductos() {
+		iAdministrador admin = new BDPrincipal();
+		
+		try {
+			productos = admin.cargarProductosListado();
+			
+			for(base_de_datos.Producto p : productos) {
+				this._productos_administrador.add_Productos(p);
+			}
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

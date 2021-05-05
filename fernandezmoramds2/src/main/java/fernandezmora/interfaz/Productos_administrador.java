@@ -21,8 +21,8 @@ public class Productos_administrador extends VistaProductos_administrador{
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);		
 	}
 	
-	public void add_Productos() {
-		Producto_administrador pa = new Producto_administrador();
+	public void add_Productos(base_de_datos.Producto p) {
+		Producto_administrador pa = new Producto_administrador(p);
 		this._list_Producto_administrador.add(pa);
 		layout.add(pa);
 	}

@@ -37,10 +37,6 @@ public class VistaProducto_administrador extends PolymerTemplate<VistaProducto_a
 	private Element vaadinListBox;
 	@Id("vaadinItem")
 	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("vaadinHorizontalLayout2")
 	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("h2")
@@ -128,21 +124,6 @@ public class VistaProducto_administrador extends PolymerTemplate<VistaProducto_a
 		this.vaadinItem = vaadinItem;
 	}
 
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
 
 	public HorizontalLayout getVaadinHorizontalLayout2() {
 		return vaadinHorizontalLayout2;
