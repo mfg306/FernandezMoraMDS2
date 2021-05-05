@@ -27,7 +27,7 @@ public interface iAdministrador {
 
 	public void guardarImagenesProducto(int aIdProducto, Imagen[] aImagenes);
 
-	public void insertarProducto(String aNombreProducto, String aDescripcion);
+	public void insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException;
 
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) throws PersistentException;
 
