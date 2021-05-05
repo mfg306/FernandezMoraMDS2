@@ -219,8 +219,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public void insertarProducto(String aNombreProducto, String aDescripcion) {
-		throw new UnsupportedOperationException();
+	public void insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException {
+		this._bD_Productos.insertarProducto(aNombreProducto, aDescripcion, aPrecio, aNumUnidades);
 	}
 
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
