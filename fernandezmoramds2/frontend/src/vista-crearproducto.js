@@ -2,8 +2,9 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-upload/src/vaadin-upload.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaCrear_producto extends PolymerElement {
 
@@ -38,9 +39,7 @@ class VistaCrear_producto extends PolymerElement {
      <img id="img4" style="width: 100%; height: 100%;">
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
-   <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
-     Añadir imagen 
-   </vaadin-button>
+   <vaadin-upload id="vaadinUpload"></vaadin-upload>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; margin-top: var(--lumo-space-l); justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout3">

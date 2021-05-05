@@ -12,6 +12,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-crear_producto template.
@@ -55,8 +56,6 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 	private Image img3;
 	@Id("img4")
 	private Image img4;
-	@Id("vaadinButton")
-	private Button vaadinButton;
 	@Id("vaadinHorizontalLayout3")
 	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("vaadinButton1")
@@ -65,6 +64,8 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 	private Button vaadinButton2;
 	@Id("cantidadProducto")
 	private TextField cantidadProducto;
+	@Id("vaadinUpload")
+	private Upload vaadinUpload;
 
 	/**
      * Creates a new VistaCrear_producto.
@@ -208,14 +209,6 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 		this.img4 = img4;
 	}
 
-	public Button getVaadinButton() {
-		return vaadinButton;
-	}
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
-	}
-
 	public HorizontalLayout getVaadinHorizontalLayout3() {
 		return vaadinHorizontalLayout3;
 	}
@@ -246,5 +239,13 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 
 	public void setCantidadProducto(TextField cantidadProducto) {
 		this.cantidadProducto = cantidadProducto;
+	}
+
+	public Upload getVaadinUpload() {
+		return vaadinUpload;
+	}
+
+	public void setVaadinUpload(Upload vaadinUpload) {
+		this.vaadinUpload = vaadinUpload;
 	}
 }

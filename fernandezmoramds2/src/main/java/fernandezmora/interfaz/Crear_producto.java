@@ -1,14 +1,17 @@
 package fernandezmora.interfaz;
 
 import java.util.Vector;
-
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.upload.receivers.MultiFileMemoryBuffer;
 
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import vistas.VistaCrear_producto;
+import java.io.OutputStream;
+
 
 public class Crear_producto extends VistaCrear_producto {
 	public Producto_administrador _producto_administrador;
@@ -48,6 +51,10 @@ public class Crear_producto extends VistaCrear_producto {
 				System.out.println("Error con la consulta");
 				e.printStackTrace();
 			}
+			
+			this.getVaadinUpload().setAcceptedFileTypes("image/jpeg", "image/png");
+			
+			System.out.println(this.getVaadinUpload().getReceiver());
 			
 			admin.guardarImagenesProducto(0, null);
 		});
