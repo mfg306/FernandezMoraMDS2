@@ -90,6 +90,7 @@ public class BD_UR {
 		try {
 			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
 				usuarioEncontrado = usuariosCorreo[0];
+				System.out.println(usuarioEncontrado.getId_Usuario());
 			}
 		} catch (Exception e) {
 			e.getStackTrace();

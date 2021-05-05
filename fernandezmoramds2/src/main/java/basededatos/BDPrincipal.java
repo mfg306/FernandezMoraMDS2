@@ -317,4 +317,5 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return false;
 
 	}
+	
 }

@@ -81,7 +81,10 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Span valoracion_media;
 	@Id("valorarProducto")
 	private Element valorarProducto;
-
+	@Id("espacioBotonEnviarValoracion")
+	private Element espacioBotonEnviarValoracion;
+	@Id("botonEnviarValoracion")
+	private Button botonEnviarValoracion;
 	/**
 	 * Creates a new VistaProducto.
 	 */
@@ -326,6 +329,22 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 
 	public void setValorarProducto(Element valorarProducto) {
 		this.valorarProducto = valorarProducto;
+	}
+
+	public Element getEspacioBotonEnviarValoracion() {
+		return espacioBotonEnviarValoracion;
+	}
+
+	public void setEspacioBotonEnviarValoracion(Element espacioBotonEnviarValoracion) {
+		this.espacioBotonEnviarValoracion = espacioBotonEnviarValoracion;
+	}
+
+	public Button getBotonEnviarValoracion() {
+		return botonEnviarValoracion;
+	}
+
+	public void setBotonEnviarValoracion(Button botonEnviarValoracion) {
+		this.botonEnviarValoracion = botonEnviarValoracion;
 	}
 
 }

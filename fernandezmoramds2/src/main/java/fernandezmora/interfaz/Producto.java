@@ -3,6 +3,7 @@ package fernandezmora.interfaz;
 import java.util.Vector;
 
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.select.Select;
 
 import vistas.VistaProducto;
 
@@ -13,6 +14,7 @@ public class Producto extends VistaProducto{
 	public Producto_oferta _producto_oferta;
 	public Comentarios _comentarios;
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
+	public Select<String> valoracion = new Select<>();
 	public base_de_datos.Producto producto;
 	
 	public Producto(base_de_datos.Producto p) {

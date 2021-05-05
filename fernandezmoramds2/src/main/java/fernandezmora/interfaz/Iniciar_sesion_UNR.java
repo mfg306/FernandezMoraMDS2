@@ -69,9 +69,9 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 			iUNR_ iunr = new BDPrincipal();
 			iAdministrador iadmin = new BDPrincipal();
 			iUR iur = new BDPrincipal();
-			base_de_datos.UR UR = null;
-
+			
 			try {
+				base_de_datos.UR UR = null;
 				if (iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 1) {
 					limpiar_interfaz();
 					UR = iur.buscarUsuarioPorCorreo(this.getCorreo().getValue());

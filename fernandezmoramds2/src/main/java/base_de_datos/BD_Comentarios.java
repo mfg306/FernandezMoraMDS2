@@ -21,8 +21,6 @@ public class BD_Comentarios {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
 			UR usuario = URDAO.getURByORMID(aIdUsuario);
-			System.out.println(usuario.getId_Usuario());
-			System.out.println(usuario.getNombre());
 			Producto producto = ProductoDAO.getProductoByORMID(aIdProducto);
 			Comentario comentario = ComentarioDAO.createComentario();
 			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

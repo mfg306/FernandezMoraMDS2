@@ -1,11 +1,11 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import './vista-comentarios.js';
 import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaProducto extends PolymerElement {
 
@@ -39,8 +39,13 @@ class VistaProducto extends PolymerElement {
    <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; background-color: #F5F5F5; padding: var(--lumo-space-l);" id="vaadinVerticalLayout2">
     <vaadin-text-field placeholder="Deja tu comentario ..." style="height: 100%; padding: var(--lumo-space-m); align-self: center; width: 100%;" required name="comentario" invalid id="dejar_comentario"></vaadin-text-field>
     <vaadin-vertical-layout theme="spacing" id="valorarProducto"></vaadin-vertical-layout>
+    <vaadin-vertical-layout theme="spacing" id="espacioBotonEnviarValoracion">
+     <vaadin-button theme="primary" id="botonEnviarValoracion" style="align-self: flex-end; background-color: #ae1641;">
+       Enviar valoracion 
+     </vaadin-button>
+    </vaadin-vertical-layout>
     <vaadin-button theme="primary" style="align-self: flex-end; background-color: #ae1641;" id="enviar_comentario">
-      Enviar 
+     Enviar comentario
     </vaadin-button>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
