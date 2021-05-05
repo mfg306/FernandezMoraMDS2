@@ -4,6 +4,8 @@ import java.util.Vector;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
 import vistas.VistaCrear_producto;
 
 public class Crear_producto extends VistaCrear_producto {
@@ -28,5 +30,11 @@ public class Crear_producto extends VistaCrear_producto {
 			this.getVaadinHorizontalLayout1().setVisible(false);
 			layout.add(gp);
 		});
+	}
+	
+	public void crearProducto() {
+		iAdministrador admin = new BDPrincipal();
+		
+		admin.insertarProducto(this.getNombreProducto(), this.getAñadeUnaDescripciónAlProducto().getValue(), this.getPrecio(), 0);
 	}
 }
