@@ -1,5 +1,7 @@
 package basededatos;
 
+import org.orm.PersistentException;
+
 import base_de_datos.Compra;
 import base_de_datos.UR;
 import base_de_datos.Mensaje;
@@ -17,4 +19,6 @@ public interface iUR extends iUR_UNR {
 	public Mensaje[] cargarMensajesRecibidos(String aCorreoReceptor);
 
 	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
+	
+	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario)throws PersistentException;;
 }

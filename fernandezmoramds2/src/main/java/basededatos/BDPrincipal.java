@@ -276,6 +276,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public Producto[] cargarProductosListado() throws PersistentException {
 		return this._bD_Productos.cargarProductosListado();
 	}
+	
+	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario) throws PersistentException {
+		return this._bD_Comentarios.comentar(aComentario,aIdProducto,aIdUsuario);
+	}
 
 	@Override
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException {

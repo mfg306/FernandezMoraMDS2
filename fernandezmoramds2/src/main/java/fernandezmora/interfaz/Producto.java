@@ -34,6 +34,7 @@ public class Producto extends VistaProducto{
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
 		
 		
+		
 	}
 	
 }
