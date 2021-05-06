@@ -72,10 +72,8 @@ public class BD_UR {
 
 		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
 
-		if (usuariosCorreo.length == 0)
-			return 0;
-		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico()))
-			return 1;
+		if (usuariosCorreo.length == 0) return 0;
+		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico()) && usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia())) return 1;
 
 		return 0;
 	}
@@ -90,7 +88,6 @@ public class BD_UR {
 		try {
 			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
 				usuarioEncontrado = usuariosCorreo[0];
-				System.out.println(usuarioEncontrado.getId_Usuario());
 			}
 		} catch (Exception e) {
 			e.getStackTrace();

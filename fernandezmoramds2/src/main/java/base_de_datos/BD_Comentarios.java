@@ -20,16 +20,24 @@ public class BD_Comentarios {
 	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			UR usuario = URDAO.getURByORMID(aIdUsuario);
+			
 			Producto producto = ProductoDAO.getProductoByORMID(aIdProducto);
+			
+			UR usuario = URDAO.getURByORMID(aIdUsuario);
 			Comentario comentario = ComentarioDAO.createComentario();
 			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 			Date date = new Date();
+
 			formatter.format(date);
 			comentario.set_Tiene(producto);
 			comentario.set_Realiza(usuario);
 			comentario.setComentario(aComentario);
-			comentario.setFecha(date.toString());
+			comentario.setFecha(date.toString());			
+			
+			comentario.setORM__Realiza(usuario);
+			comentario.setORM__Tiene(producto);
+			
+			
 			ComentarioDAO.save(comentario);
 			t.commit();
 

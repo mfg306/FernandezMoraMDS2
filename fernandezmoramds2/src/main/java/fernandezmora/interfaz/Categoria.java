@@ -42,6 +42,8 @@ public class Categoria extends VistaCategoria{
     	iUR_UNR iUr_UNR = new BDPrincipal(); 
     	String nombreCategoria =  this.getCategoria1().getText();
     	base_de_datos.Categoria[] cat = null;
+    	
+    	/*Esto hay que cambiarlo. Se incumple el diagrama de secuencias*/
 		try {
 			cat = CategoriaDAO.listCategoriaByQuery("Nombre_Categoria LIKE '%" + nombreCategoria + "%'",null);
 		} catch (PersistentException e) {

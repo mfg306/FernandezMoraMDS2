@@ -18,14 +18,6 @@ public class Producto_categoria extends VistaProducto_categoria{
 	public void inicializar(Productos_categoria pc, UR_UNR unrunr,base_de_datos.Producto p) {
 		this._productos_categoria = pc;
 		
-		if(unrunr instanceof UR) {
-			this._producto = new Ver_producto_UR(unrunr,p);
-		}
-		if(unrunr instanceof UNR_) {
-			this._producto = new Producto_UNR(unrunr,p);
-		}
-
-
 		abrir_Producto_Categoria(unrunr,p);
 	}
 	
@@ -43,7 +35,6 @@ public class Producto_categoria extends VistaProducto_categoria{
 				this._producto = new Producto_UNR(unrunr,p);
 				
 			}
-		
 			this._productos_categoria.getVerProductoCategoria().as(VerticalLayout.class).add(this._producto);
 		});
 	}
