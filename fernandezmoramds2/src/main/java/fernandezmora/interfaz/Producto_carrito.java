@@ -12,18 +12,28 @@ public class Producto_carrito extends VistaProducto_carrito {
 	public int cantidad = 0;
 	public VerticalLayout layout;
 
-	public Producto_carrito(Producto p,base_de_datos.Producto pc) {
+	public Producto_carrito(Producto p,base_de_datos.Producto pc, UR_UNR usuario) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		seleccionCantidad.setItems("0", "1", "2", "3", "4");
 		this.layout.add(seleccionCantidad);
 		this._producto = p;
+		
+//		if((this._producto instanceof Producto_UNR) && !(this._producto instanceof Ver_producto_UR)) {
+//			System.out.println("Es producto UNR");
+//			this._producto = new Producto_UNR(usuario,pc);
+//		}
+//		
+//		if(this._producto instanceof Ver_producto_UR) {
+//			System.out.println("Es producto UR");
+//			this._producto = new Ver_producto_UR(usuario, pc);
+//		}		
+		
 		inicializar(pc);
 	}
 
 	public void incrementarCantidad() {
 		this.cantidad++;
 		seleccionCantidad.setValue("" + this.cantidad);
-
 	}
 	
 	/**
@@ -35,7 +45,6 @@ public class Producto_carrito extends VistaProducto_carrito {
 
 	public void inicializar(base_de_datos.Producto p) {
 		Eliminar();
-		this._producto = new Producto(p);
 	}
 
 	public void Editar_cantidad() {

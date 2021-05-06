@@ -12,12 +12,13 @@ public class Producto_UNR extends Producto {
 		if (unr instanceof UNR_) this._uNR_ = (UNR_) unr;
 		Anadir_al_carrito(p);
 		this.getVaadinVerticalLayout2().setVisible(false);
+		Notification.show("Producto UNR creado");
 	}
 
 	public void Anadir_al_carrito(base_de_datos.Producto p) {
 		this.getBoton_anadir_carrito().addClickListener(event -> {
 			// Formar el producto_carrito
-			Producto_carrito pc = new Producto_carrito(this,p);
+			Producto_carrito pc = new Producto_carrito(this , p, this._uNR_);
 
 			
 			/*Falta en Producto_carrito implementar el equals pero nos hace falta la base de datos*/

@@ -16,8 +16,8 @@ public class Ver_producto_UR extends Producto_UNR {
 
 	public Ver_producto_UR(UR_UNR _ur,base_de_datos.Producto p) {
 		super(_ur, p);
-		
 		inicializar(_ur,p);
+		
 	}
 	
 	public void inicializar(UR_UNR _ur,base_de_datos.Producto p) {
@@ -26,6 +26,7 @@ public class Ver_producto_UR extends Producto_UNR {
 		this.valoracion.setItems("1", "2", "3", "4", "5");
 		this.getValorarProducto().as(VerticalLayout.class).add(this.valoracion);
 		Comentar();
+		Notification.show("Producto UR creado");
 	}
 
 	public void Comentar() {
@@ -50,7 +51,7 @@ public class Ver_producto_UR extends Producto_UNR {
 	public void Anadir_al_carrito(base_de_datos.Producto p) {
 		this.getBoton_anadir_carrito().addClickListener(event -> {
 			// Formar el producto_carrito
-			Producto_carrito pc = new Producto_carrito(this,p);
+			Producto_carrito pc = new Producto_carrito(this , p , this._uR);
 
 			// Anadirlo al listado de productos del usuario
 			this._uR.miListadoProductos(pc);

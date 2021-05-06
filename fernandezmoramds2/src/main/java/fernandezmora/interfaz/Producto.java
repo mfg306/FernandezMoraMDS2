@@ -21,22 +21,17 @@ public class Producto extends VistaProducto{
 		this.producto = p;
 		verProducto();
 		inicializar(p);
+		Notification.show("Producto General creado");
 	}
 	
 	public void inicializar(base_de_datos.Producto p) {
 		this._comentarios = new Comentarios();
-		
-
 	}
 	
 	public void verProducto() {
-		
 		this.getNombre_producto().setText(this.producto.getNombre());
 		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()));
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
-		
-		
-		
 	}
 	
 }
