@@ -71,8 +71,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Element caracteristicas_producto;
 	@Id("vaadinItem6")
 	private Element vaadinItem6;
-	@Id("lista_comentarios")
-	private Element lista_comentarios;
 	@Id("vaadinVerticalLayout5")
 	private Element vaadinVerticalLayout5;
 	@Id("span")
@@ -85,6 +83,8 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Element espacioBotonEnviarValoracion;
 	@Id("botonEnviarValoracion")
 	private Button botonEnviarValoracion;
+	@Id("listaComentarios")
+	private Element listaComentarios;
 	/**
 	 * Creates a new VistaProducto.
 	 */
@@ -291,13 +291,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 		this.vaadinItem6 = vaadinItem6;
 	}
 
-	public Element getLista_comentarios() {
-		return lista_comentarios;
-	}
-
-	public void setLista_comentarios(Element lista_comentarios) {
-		this.lista_comentarios = lista_comentarios;
-	}
 
 	public Element getVaadinVerticalLayout5() {
 		return vaadinVerticalLayout5;
@@ -345,6 +338,14 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 
 	public void setBotonEnviarValoracion(Button botonEnviarValoracion) {
 		this.botonEnviarValoracion = botonEnviarValoracion;
+	}
+
+	public Element getListaComentarios() {
+		return listaComentarios;
+	}
+
+	public void setListaComentarios(Element listaComentarios) {
+		this.listaComentarios = listaComentarios;
 	}
 
 }

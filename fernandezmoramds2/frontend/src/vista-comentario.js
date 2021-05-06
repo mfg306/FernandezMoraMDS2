@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaComentario extends PolymerElement {
@@ -13,10 +14,16 @@ class VistaComentario extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; align-items: flex-start; padding: var(--lumo-space-s); " id="comentario">
- <span style="align-self: flex-start;" id="span">Comentario de un usuario</span>
- <span style="align-self: flex-end;" id="span1">Valoración</span>
- <span style="align-self: flex-end; " id="span2">5/5</span>
+<vaadin-vertical-layout style="width: 100%; padding: var(--lumo-space-s); align-items: center;" id="comentario">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-items: center;">
+  <vaadin-vertical-layout theme="spacing" id="huecoNombreUsuarioComentario" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center;">
+   <span id="nombreComentarioUsuario"></span>
+  </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="flex-grow: 1; align-self: center; align-items: center; justify-content: center;">
+   <span id="valoracionProducto" style="align-self: center;"></span>
+   <vaadin-vertical-layout theme="spacing" id="huecoComentario" style="width: 100%;"></vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
     }

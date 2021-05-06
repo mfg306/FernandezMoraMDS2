@@ -22,6 +22,8 @@ public class VistaComentarios extends PolymerTemplate<VistaComentarios.VistaCome
 	private Element lista_comentarios;
 	@Id("span")
 	private Span span;
+	@Id("huecoComentarios")
+	private Element huecoComentarios;
 
 	/**
      * Creates a new VistaComentarios.
@@ -51,5 +53,13 @@ public class VistaComentarios extends PolymerTemplate<VistaComentarios.VistaCome
 
 	public void setSpan(Span span) {
 		this.span = span;
+	}
+
+	public Element getHuecoComentarios() {
+		return huecoComentarios;
+	}
+
+	public void setHuecoComentarios(Element huecoComentarios) {
+		this.huecoComentarios = huecoComentarios;
 	}
 }

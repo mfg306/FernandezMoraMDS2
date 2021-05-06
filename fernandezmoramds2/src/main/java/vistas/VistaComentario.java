@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-comentario template.
@@ -20,12 +21,19 @@ public class VistaComentario extends PolymerTemplate<VistaComentario.VistaComent
 
     @Id("comentario")
 	private Element comentario;
-	@Id("span")
-	private Span span;
-	@Id("span1")
-	private Span span1;
-	@Id("span2")
-	private Span span2;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("huecoNombreUsuarioComentario")
+	private Element huecoNombreUsuarioComentario;
+	@Id("nombreComentarioUsuario")
+	private Span nombreComentarioUsuario;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("valoracionProducto")
+	private Span valoracionProducto;
+	@Id("huecoComentario")
+	private Element huecoComentario;
+
 
 	/**
      * Creates a new VistaComentario.
@@ -49,27 +57,53 @@ public class VistaComentario extends PolymerTemplate<VistaComentario.VistaComent
 		this.comentario = comentario;
 	}
 
-	public Span getSpan() {
-		return span;
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
 	}
 
-	public void setSpan(Span span) {
-		this.span = span;
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public Span getSpan1() {
-		return span1;
+	public Element getHuecoNombreUsuarioComentario() {
+		return huecoNombreUsuarioComentario;
 	}
 
-	public void setSpan1(Span span1) {
-		this.span1 = span1;
+	public void setHuecoNombreUsuarioComentario(Element huecoNombreUsuarioComentario) {
+		this.huecoNombreUsuarioComentario = huecoNombreUsuarioComentario;
 	}
 
-	public Span getSpan2() {
-		return span2;
+	public Span getNombreComentarioUsuario() {
+		return nombreComentarioUsuario;
 	}
 
-	public void setSpan2(Span span2) {
-		this.span2 = span2;
+	public void setNombreComentarioUsuario(Span nombreComentarioUsuario) {
+		this.nombreComentarioUsuario = nombreComentarioUsuario;
 	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Span getValoracionProducto() {
+		return valoracionProducto;
+	}
+
+	public void setValoracionProducto(Span valoracionProducto) {
+		this.valoracionProducto = valoracionProducto;
+	}
+
+	public Element getHuecoComentario() {
+		return huecoComentario;
+	}
+
+	public void setHuecoComentario(Element huecoComentario) {
+		this.huecoComentario = huecoComentario;
+	}
+
+
 }
