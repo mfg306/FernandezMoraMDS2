@@ -38,13 +38,12 @@ import javax.xml.bind.DatatypeConverter;
  */
 public class Uploader
 {
-    public static final String UPLOAD_API_URL = "https://api.imgur.com/3/image";
-    public static final String ALBUM_API_URL = "https://api.imgur.com/3/album";
+    public static final String UPLOAD_API_URL = "https://api.imgur.com/3/";
+    public static final String ALBUM_API_URL = "https://api.imgur.com/3/";
     public static final int MAX_UPLOAD_ATTEMPTS = 3;
 
     //CHANGE TO @CLIENT_ID@ and replace with buildscript.
-    private final static String CLIENT_ID = "5c053a64a27b581";
-
+    private final static String CLIENT_ID = "4cc6b99496df94f";
     /**
      * Takes a file and uploads it to Imgur.
      * Does not check to see if the file is an image, this should be done
@@ -85,6 +84,7 @@ public class Uploader
         }
         writeToConnection(conn, "ids=" + ids);
         return getResponse(conn);
+        
     }
     
     /**
