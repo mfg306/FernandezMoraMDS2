@@ -3,6 +3,8 @@ package fernandezmora.interfaz;
 import java.util.Vector;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iUR_UNR;
 import vistas.VistaUrunr;
 
 //import basededatos.iUR_UNR;
@@ -17,6 +19,7 @@ public abstract class UR_UNR extends VistaUrunr{
 	public VerticalLayout layoutOfertas;
 	public VerticalLayout layoutProductosMasVendidosPorCategorias;
 	public Vector<Producto_carrito> listaAux;
+	public base_de_datos.Oferta[] ofertas;
 
 
 	public UR_UNR() {
@@ -33,6 +36,13 @@ public abstract class UR_UNR extends VistaUrunr{
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		abrir_Ver_Categorias();
 		this._ofertas = new Ofertas(this);
+		iUR_UNR ur_unr = new BDPrincipal();
+		ofertas = ur_unr.cargarOfertas();
+		for(base_de_datos.Oferta of : this.ofertas) {
+			Oferta oferta = new Oferta(this._ofertas,this,of);
+			this._ofertas._list_Ofertas.add(oferta);
+			this._ofertas.getListaOfertas().add(this._ofertas._list_Ofertas.get(0));
+		}
 		this.layoutOfertas.add(this._ofertas);
 		this._productos_mas_vendidos_por_categorias = new Productos_mas_vendidos_por_categorias(this);
 		this.layoutProductosMasVendidosPorCategorias = this.getProductosMasVendidosPorCategorias()

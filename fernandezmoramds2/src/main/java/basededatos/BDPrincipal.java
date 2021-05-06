@@ -313,8 +313,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_Productos.cargarProductosOferta(aOferta);
 	}
 
-	public boolean valorar(int aIdProducto, int aIdUsuario, String aValoracion) {
-		return false;
+	public boolean valorar(int aIdProducto, int aIdUsuario, String aValoracion) throws PersistentException {
+		return this._bD_Comentarios.valorar(aIdProducto, aIdUsuario, aValoracion);
 
 	}
 	

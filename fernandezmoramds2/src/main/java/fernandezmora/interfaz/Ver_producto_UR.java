@@ -26,6 +26,7 @@ public class Ver_producto_UR extends Producto_UNR {
 		this.valoracion.setItems("1", "2", "3", "4", "5");
 		this.getValorarProducto().as(VerticalLayout.class).add(this.valoracion);
 		Comentar();
+		Valorar();
 		Notification.show("Producto UR creado");
 	}
 
@@ -44,7 +45,16 @@ public class Ver_producto_UR extends Producto_UNR {
 	}
 
 	public void Valorar() {
-		throw new UnsupportedOperationException();
+		iUR ur = new BDPrincipal();
+		this.getBotonEnviarValoracion().addClickListener(event ->{
+			try {
+				ur.valorar(this.producto.getId_Producto(), this._uR.UR.getId_Usuario(), this.valoracion.getValue());
+				Notification.show("Valoracion enviada");
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 	}
 
 	@Override

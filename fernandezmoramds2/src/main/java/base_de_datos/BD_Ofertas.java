@@ -2,6 +2,8 @@ package base_de_datos;
 
 import basededatos.BDPrincipal;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -10,13 +12,19 @@ import org.orm.PersistentTransaction;
 public class BD_Ofertas {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Oferta> _oferta = new Vector<Oferta>();
+	private Oferta[] ofertas_Bs;
 
 	public Oferta[] cargarOfertas() throws PersistentException {
 		Oferta[] ofertas = null;
+		int contador = 0;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		PersistentTransaction oferta = HitoPersistentManager.instance().getSession().beginTransaction();
+		
 		try {
+			
+			Date fecha;
 			ofertas = OfertaDAO.listOfertaByQuery(null, null);
-
+				
 		} catch (Exception e) {
 			oferta.rollback();
 		}
