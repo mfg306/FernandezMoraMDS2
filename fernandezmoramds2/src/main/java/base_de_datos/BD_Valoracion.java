@@ -41,4 +41,18 @@ public class BD_Valoracion {
 		}
 		return true;
 	}
+	
+	public Valoracion[] cargarValoraciones(int aIdProducto) throws PersistentException {
+		Valoracion[] v = null;
+
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		try {
+			v = ValoracionDAO.listValoracionByQuery("ProductoId_Producto LIKE '%" + aIdProducto + "%'", null);
+
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return v;
+		
+	}
 }

@@ -25,9 +25,11 @@ import base_de_datos.BD_Empleados;
 import base_de_datos.Oferta;
 import base_de_datos.Producto;
 import base_de_datos.Categoria;
+import base_de_datos.Comentario;
 import base_de_datos.Producto_Rebajado;
 import base_de_datos.Compra;
 import base_de_datos.UR;
+import base_de_datos.Valoracion;
 import base_de_datos.Mensaje;
 import base_de_datos.Enviado;
 import base_de_datos.Pendiente;
@@ -96,6 +98,16 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		}
 
 		return ps;
+	}
+	
+	public Comentario[] cargarComentarios(int aIdProducto) throws PersistentException {
+		return this._bD_Comentarios.cargarComentarios(aIdProducto);
+		
+	}
+	
+	public Valoracion[] cargarValoraciones(int aIdProducto) throws PersistentException {
+		return this._bD_Valoracion.cargarValoraciones(aIdProducto);
+		
 	}
 
 	public Producto[] cargarProductosCategoria(Categoria aCategoria) {

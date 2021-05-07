@@ -2,8 +2,13 @@ package basededatos;
 
 import base_de_datos.Oferta;
 import base_de_datos.Producto;
+
+import org.orm.PersistentException;
+
 import base_de_datos.Categoria;
+import base_de_datos.Comentario;
 import base_de_datos.Producto_Rebajado;
+import base_de_datos.Valoracion;
 
 public interface iUR_UNR {
 
@@ -22,4 +27,8 @@ public interface iUR_UNR {
 	public Producto[] cargarProductosCategoria(Categoria aCategoria);
 
 	public Producto[] cargarProductos(String aNombreProducto);
+	
+	public Comentario[] cargarComentarios(int aIdProducto) throws PersistentException;
+	
+	public Valoracion[] cargarValoraciones(int aIdProducto) throws PersistentException;
 }

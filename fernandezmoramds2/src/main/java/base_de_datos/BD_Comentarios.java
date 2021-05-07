@@ -50,4 +50,17 @@ public class BD_Comentarios {
 		return true;
 	}
 
+	public Comentario[] cargarComentarios(int aIdProducto) throws PersistentException {
+		Comentario[] c = null;
+
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		try {
+			c = ComentarioDAO.listComentarioByQuery("ProductoId_Producto LIKE '%" + aIdProducto + "%'", "Fecha");
+
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return c;
+	}
+
 }
