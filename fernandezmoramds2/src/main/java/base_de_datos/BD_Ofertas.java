@@ -37,11 +37,8 @@ public class BD_Ofertas {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Oferta o = null;
 		Producto_Rebajado pr = null;
-		/*¿Al indicarle aqui que el owner es "o" ya se crea la relacion?*/
-		Producto_RebajadoSetCollection prCollection = new Producto_RebajadoSetCollection(o, null, 0, 0);
 
 		try {
-
 			o = OfertaDAO.createOferta();
 			o.setNombre_Oferta(aNombreOferta);
 			o.setFecha_registro(aFechaRegistro);
@@ -55,12 +52,18 @@ public class BD_Ofertas {
 			e.printStackTrace();
 			t.rollback();
 		}
+		
+		
+		/*¿Al indicarle aqui que el owner es "o" ya se crea la relacion?*/
+		Producto_RebajadoSetCollection prCollection = new Producto_RebajadoSetCollection(o, null, 0, 0);
 
 		/*
 		 * Hasta este punto tenemos la oferta creada. Nos falta relacionarla con los
 		 * productos rebajados
 		 */
 
+		
+		
 		/*
 		 * A partir del listado de productos que nos han pasado tenemos que crear los
 		 * Productos_Rebajados, puesto que al incorporarlos en una oferta pasan a ser
@@ -68,16 +71,18 @@ public class BD_Ofertas {
 		 */
 
 		for (Producto p : aListaProductos) {
-			pr = Producto_RebajadoDAO.createProducto_Rebajado();
+			pr = (Producto_Rebajado)p;
 			pr.setPrecio_rebajado(0.0);
 			
-			/*¿Como indicar que este producto rebajado se corresponde con el producto p?*/
-			Producto_RebajadoDAO.save(pr);
 			
-			prCollection.add(pr);
+//			prCollection.add(pr);
+			o._Pertenece_a.add(pr);
+
 			
-			/*¿Como indicar que este producto rebajado pertenece a la oferta "o"*/
+			
 		}
+		
+		OfertaDAO.save(o);
 		
 		/*¿Como indicar que la oferta "o" tiene los productos rebajados "prCollection"?*/
 
