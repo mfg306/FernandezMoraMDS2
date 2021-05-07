@@ -30,10 +30,6 @@ public class VistaVenta extends PolymerTemplate<VistaVenta.VistaVentaModel> {
 	private Element vaadinListBox;
 	@Id("vaadinItem")
 	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("label")
 	private Label label;
 
@@ -89,22 +85,6 @@ public class VistaVenta extends PolymerTemplate<VistaVenta.VistaVentaModel> {
 
 	public void setVaadinItem(Element vaadinItem) {
 		this.vaadinItem = vaadinItem;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
 	}
 
 	public Label getLabel() {

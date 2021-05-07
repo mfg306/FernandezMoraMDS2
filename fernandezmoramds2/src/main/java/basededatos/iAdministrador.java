@@ -1,6 +1,7 @@
 package basededatos;
 
 import base_de_datos.Oferta;
+import base_de_datos.Pendiente;
 import base_de_datos.Producto;
 import base_de_datos.Mensaje;
 import base_de_datos.Imagen;
@@ -9,6 +10,7 @@ import org.orm.PersistentException;
 
 import base_de_datos.Categoria;
 import base_de_datos.Empleado;
+import base_de_datos.Enviado;
 import base_de_datos.Recibido;
 
 public interface iAdministrador {
@@ -43,15 +45,13 @@ public interface iAdministrador {
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException;
 
-	public Empleado[] cargarEmpleados();
+	public Empleado[] cargarEmpleados() throws PersistentException;
 
-	public void eliminarEmpleado(int aIdEmpleado);
+	public void eliminarEmpleado(int aIdEmpleado) throws PersistentException;
 
-	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo);
+	public void insertarEmpleado(String aContrasenia, String aCorreo, boolean aEsEncargado) throws PersistentException;
 
 	public void eliminarProductoAdministrador(int aIdProducto)  throws PersistentException;
-
-	public Recibido[] cargarVentas();
 
 	public Producto[] cargarProductosListado() throws PersistentException;
 	
@@ -65,6 +65,11 @@ public interface iAdministrador {
 	
 	public Producto[] cargarProductosOfertaaAdmin(Oferta aOferta) throws PersistentException ;
 
+	public Recibido[] cargarRecibidos() throws PersistentException;
+	
+	public Enviado[] cargarEnviados() throws PersistentException;
+	
+	public Pendiente[] cargarPendientes() throws PersistentException;
 	
 	
 }

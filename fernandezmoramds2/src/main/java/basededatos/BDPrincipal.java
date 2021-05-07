@@ -74,7 +74,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		try {
 			cts = this._bD_Categorias.cargarCategorias();
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return cts;
@@ -93,7 +92,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		try {
 			ps = this._bD_Productos.cargarProducto(aIdProducto);
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -105,7 +103,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		try {
 			cts = this._bD_Productos.cargarProductosCategoria(aCategoria);
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return cts;
@@ -260,24 +257,20 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return _bD_Categorias.cargarCategoriasAdministrador();
 	}
 
-	public Empleado[] cargarEmpleados() {
-		throw new UnsupportedOperationException();
+	public Empleado[] cargarEmpleados() throws PersistentException {
+		return this._bD_Empleados.cargarEmpleados();
 	}
 
-	public void eliminarEmpleado(int aIdEmpleado) {
-		throw new UnsupportedOperationException();
+	public void eliminarEmpleado(int aIdEmpleado) throws PersistentException {
+		this._bD_Empleados.eliminarEmpleado(aIdEmpleado);
 	}
 
-	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
-		throw new UnsupportedOperationException();
+	public void insertarEmpleado(String aContrasenia, String aCorreo, boolean aEsEncargado) throws PersistentException {
+		this._bD_Empleados.insertarEmpleado(aContrasenia, aCorreo, aEsEncargado);
 	}
 
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
 		this._bD_Productos.eliminarProductoAdministrador(aIdProducto);
-	}
-
-	public Recibido[] cargarVentas() {
-		throw new UnsupportedOperationException();
 	}
 
 	public Producto[] cargarProductosListado() throws PersistentException {
@@ -316,6 +309,21 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public boolean valorar(int aIdProducto, int aIdUsuario, String aValoracion) throws PersistentException {
 		return this._bD_Valoracion.valorar(aIdProducto, aIdUsuario, aValoracion);
 
+	}
+
+	@Override
+	public Recibido[] cargarRecibidos() throws PersistentException {
+		return this._bD_Recibido.cargarRecibidos();
+	}
+
+	@Override
+	public Enviado[] cargarEnviados() throws PersistentException {
+		return this._bD_Enviado.cargarEnviados();
+	}
+
+	@Override
+	public Pendiente[] cargarPendientes() throws PersistentException {
+		return this._bD_Pendiente.cargarPendientes();
 	}
 	
 }

@@ -21,11 +21,9 @@ public class Ventas extends VistaVentas{
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 	}
 	
-	public void add_ventas() {
-		Venta v = new Venta();
+	public void add_ventas(base_de_datos.Compra compra) {
+		Venta v = new Venta(compra);
 		this._list_Venta.add(v);
-		
 		layout.add(v);
-			
 	}
 }

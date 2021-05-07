@@ -23,12 +23,6 @@ class VistaVenta extends PolymerElement {
    <vaadin-item id="vaadinItem">
      Características 
    </vaadin-item>
-   <vaadin-item id="vaadinItem1">
-     ·-------------------------- 
-   </vaadin-item>
-   <vaadin-item id="vaadinItem2">
-     ·-------------------------- 
-   </vaadin-item>
   </vaadin-list-box>
   <label style="align-self: center; flex-grow: 0; flex-shrink: 1; margin-right: var(--lumo-space-l);" id="label">Estado venta</label>
  </vaadin-horizontal-layout>

@@ -9,6 +9,8 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.checkbox.Checkbox;
 
 /**
  * A Designer generated component for the vista-crear_empleados template.
@@ -31,6 +33,12 @@ public class VistaCrear_empleados extends PolymerTemplate<VistaCrear_empleados.V
 	private TextField introduzcaUnaContraseña;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinCheckbox")
+	private Checkbox vaadinCheckbox;
+	@Id("vaadinCheckbox1")
+	private Checkbox vaadinCheckbox1;
 
 	/**
      * Creates a new VistaCrear_empleados.
@@ -84,5 +92,29 @@ public class VistaCrear_empleados extends PolymerTemplate<VistaCrear_empleados.V
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Checkbox getVaadinCheckbox() {
+		return vaadinCheckbox;
+	}
+
+	public void setVaadinCheckbox(Checkbox vaadinCheckbox) {
+		this.vaadinCheckbox = vaadinCheckbox;
+	}
+
+	public Checkbox getVaadinCheckbox1() {
+		return vaadinCheckbox1;
+	}
+
+	public void setVaadinCheckbox1(Checkbox vaadinCheckbox1) {
+		this.vaadinCheckbox1 = vaadinCheckbox1;
 	}
 }

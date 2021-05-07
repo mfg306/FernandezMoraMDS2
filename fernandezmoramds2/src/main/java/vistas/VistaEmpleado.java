@@ -26,8 +26,6 @@ public class VistaEmpleado extends PolymerTemplate<VistaEmpleado.VistaEmpleadoMo
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("label")
 	private Label label;
-	@Id("label1")
-	private Label label1;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("vaadinButton")
@@ -71,14 +69,6 @@ public class VistaEmpleado extends PolymerTemplate<VistaEmpleado.VistaEmpleadoMo
 
 	public void setLabel(Label label) {
 		this.label = label;
-	}
-
-	public Label getLabel1() {
-		return label1;
-	}
-
-	public void setLabel1(Label label1) {
-		this.label1 = label1;
 	}
 
 	public HorizontalLayout getVaadinHorizontalLayout1() {

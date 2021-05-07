@@ -32,10 +32,6 @@ public class Crear_producto extends VistaCrear_producto {
 	public VerticalLayout layout;
 	Upload upload;
 	MemoryBuffer buffer;
-	
-	/**
-	 * This is where any upload content will be written to
-	 */
 
 	public Crear_producto() {
 		inicializar();
