@@ -1,6 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import './vista-comentarios.js';
 import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-item/src/vaadin-item.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
@@ -45,7 +44,7 @@ class VistaProducto extends PolymerElement {
      </vaadin-button>
     </vaadin-vertical-layout>
     <vaadin-button theme="primary" style="align-self: flex-end; background-color: #ae1641;" id="enviar_comentario">
-     Enviar comentario
+      Enviar comentario 
     </vaadin-button>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
@@ -59,13 +58,13 @@ class VistaProducto extends PolymerElement {
      <vaadin-list-box style="background-color: white; align-self: center; width: 100%;" id="caracteristicas_producto">
       <vaadin-item id="vaadinItem6"></vaadin-item>
      </vaadin-list-box>
-     <vista-comentarios id="lista_comentarios"></vista-comentarios>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; width: 80%; flex-grow: 1;" id="vaadinVerticalLayout5">
      <span style="font-weight: bold; align-self: center; width: 100%; flex-grow: 0;" id="span">Valoración media:</span>
      <span style="align-self: center;" id="valoracion_media"></span>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
+   <vaadin-vertical-layout theme="spacing" id="listaComentarios"></vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
