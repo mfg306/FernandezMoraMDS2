@@ -272,8 +272,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminarProductoAdministrador(int aIdProducto) {
-		throw new UnsupportedOperationException();
+	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
+		this._bD_Productos.eliminarProductoAdministrador(aIdProducto);
 	}
 
 	public Recibido[] cargarVentas() {

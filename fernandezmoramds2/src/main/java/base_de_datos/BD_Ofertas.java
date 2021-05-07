@@ -53,38 +53,57 @@ public class BD_Ofertas {
 			t.rollback();
 		}
 		
-		
-		/*¿Al indicarle aqui que el owner es "o" ya se crea la relacion?*/
-		Producto_RebajadoSetCollection prCollection = new Producto_RebajadoSetCollection(o, null, 0, 0);
-
-		/*
-		 * Hasta este punto tenemos la oferta creada. Nos falta relacionarla con los
-		 * productos rebajados
-		 */
 
 		
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		this._bDPrincipal = new BDPrincipal();
 		
-		/*
-		 * A partir del listado de productos que nos han pasado tenemos que crear los
-		 * Productos_Rebajados, puesto que al incorporarlos en una oferta pasan a ser
-		 * rebajados
-		 */
+		
 
-		for (Producto p : aListaProductos) {
-			pr = (Producto_Rebajado)p;
-			pr.setPrecio_rebajado(0.0);
-			
-			
-//			prCollection.add(pr);
-			o._Pertenece_a.add(pr);
+		try {
+			for (Producto p : aListaProductos) {
+				/*Crear el producto rebajado que va a ser una copia del Producto p pero con el 
+				 * precio rebajado*/
+				pr = Producto_RebajadoDAO.createProducto_Rebajado();
+				pr.setPrecio_producto(0.0);
+				pr.setNombre(p.getNombre());
+				pr.setDescripcion(p.getDescripcion());
+				pr.set_Categoria(p.get_Categoria());
+				pr.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
+				pr.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
+				pr.setPrecio_producto(p.getPrecio_producto());
+				
+								
+				for(Comentario c : p._Pertenece_a.toArray()) {
+					pr._Pertenece_a.add(c);
+				}
+				
+				for(Producto_en_compra pc : p._Producto_en_compra.toArray()) {
+					pr._Producto_en_compra.add(pc);
+				}
+				
+				for(Valoracion v : p._Valorado_por.toArray()) {
+					pr._Valorado_por.add(v);
+				}
 
+				/*Guardamos los cambios*/
+				Producto_RebajadoDAO.save(pr);				
+				o._Pertenece_a.add(pr);
+			}
+
+			OfertaDAO.save(o);
 			
-			
+			t2.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t2.rollback();
 		}
 		
-		OfertaDAO.save(o);
 		
-		/*¿Como indicar que la oferta "o" tiene los productos rebajados "prCollection"?*/
+		/*Eliminamos el producto p porque ya lo tenemos con Producto_Rebajado y no lo queremos repetido*/
+		for (Producto p : aListaProductos) {
+			this._bDPrincipal.eliminarProductoAdministrador(p.getId_Producto());
+		}	
 
 	}
 

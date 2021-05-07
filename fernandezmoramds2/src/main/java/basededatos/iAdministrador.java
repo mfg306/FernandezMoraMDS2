@@ -49,7 +49,7 @@ public interface iAdministrador {
 
 	public void insertarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo);
 
-	public void eliminarProductoAdministrador(int aIdProducto);
+	public void eliminarProductoAdministrador(int aIdProducto)  throws PersistentException;
 
 	public Recibido[] cargarVentas();
 

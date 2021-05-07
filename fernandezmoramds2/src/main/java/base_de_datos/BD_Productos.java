@@ -53,8 +53,19 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminarProductoAdministrador(int aIdProducto) {
-		throw new UnsupportedOperationException();
+	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Producto p = null;
+		
+		try {
+			p = ProductoDAO.getProductoByORMID(aIdProducto);
+			ProductoDAO.delete(p);
+			t.commit();			
+		} catch(Exception e) {
+			t.rollback();
+			e.printStackTrace();
+		}
+		
 	}
 
 	public Producto[] cargarProductos(String aProducto) throws PersistentException {
