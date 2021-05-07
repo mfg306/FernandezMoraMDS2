@@ -18,36 +18,49 @@ public class Producto extends VistaProducto{
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 	public Select<String> valoracion = new Select<>();
 	public base_de_datos.Producto producto;
+	public base_de_datos.Valoracion[]valoraciones;
 	public base_de_datos.Comentario[] comentarios;
+	public VerticalLayout listaComentarios;
 	
 	public Producto(base_de_datos.Producto p) {
 		this.producto = p;
+		this._comentarios = new Comentarios(this);
 		inicializar();
-		//verProducto();
 		Notification.show("Producto General creado");
 	}
 	
 	public void inicializar() {
-		this._comentarios = new Comentarios(this);
 		verProducto();
-		this.getListaComentarios().as(VerticalLayout.class).add(this._comentarios);
+		listaComentarios = this.getListaComentarios().as(VerticalLayout.class);
+		this.listaComentarios.removeAll();
+		this.listaComentarios.add(this._comentarios);
+		
+		
 	}
 	
 	public void verProducto() {
+		int valoracion = 0;
+		double mediaValoracion = 0.0;
+		this.valoraciones = this.producto._Valorado_por.toArray();
 		this.getNombre_producto().setText(this.producto.getNombre());
 		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()));
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
-		this.comentarios = this.producto._Pertenece_a.toArray();
 		
-		for(base_de_datos.Comentario c : this.comentarios) {
-			fernandezmora.interfaz.Comentario comentario = new fernandezmora.interfaz.Comentario(c,this._comentarios);
-			comentario.getValoracionProducto().setText(c.getComentario());
-		    this._comentarios._list_Comentario.add(comentario);
-		    this._comentarios.layout.add(comentario);
-			
+		
+		for(base_de_datos.Valoracion v : this.valoraciones) {
+			valoracion += v.getValoracion();
 		}
 		
+		mediaValoracion = valoracion/this.valoraciones.length;
+		this.getValoracion_media().setText(String.valueOf(mediaValoracion) + " estrellas");
 		
-	}
+		this.comentarios = this.producto._Pertenece_a.toArray();
+		for(base_de_datos.Comentario c : this.comentarios) {
+			this._comentarios.anadirComentarios(c);
+		}
+		
+		}
+	
+	
 	
 }

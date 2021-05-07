@@ -33,6 +33,8 @@ public class VistaComentario extends PolymerTemplate<VistaComentario.VistaComent
 	private Span valoracionProducto;
 	@Id("huecoComentario")
 	private Element huecoComentario;
+	@Id("comentarioProducto")
+	private Span comentarioProducto;
 
 
 	/**
@@ -103,6 +105,14 @@ public class VistaComentario extends PolymerTemplate<VistaComentario.VistaComent
 
 	public void setHuecoComentario(Element huecoComentario) {
 		this.huecoComentario = huecoComentario;
+	}
+
+	public Span getComentarioProducto() {
+		return comentarioProducto;
+	}
+
+	public void setComentarioProducto(Span comentarioProducto) {
+		this.comentarioProducto = comentarioProducto;
 	}
 
 

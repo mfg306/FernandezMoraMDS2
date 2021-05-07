@@ -28,6 +28,7 @@ public class Ver_producto_UR extends Producto_UNR {
 		Comentar();
 		Valorar();
 		Notification.show("Producto UR creado");
+		
 	}
 
 	public void Comentar() {
@@ -36,6 +37,8 @@ public class Ver_producto_UR extends Producto_UNR {
 			try {
 				ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(), this._uR.UR.getId_Usuario());
 				Notification.show("Comentario enviado");
+				this.inicializar();
+				inicializar(this._uR,this.producto);
 			} catch (PersistentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -314,7 +314,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public boolean valorar(int aIdProducto, int aIdUsuario, String aValoracion) throws PersistentException {
-		return this._bD_Comentarios.valorar(aIdProducto, aIdUsuario, aValoracion);
+		return this._bD_Valoracion.valorar(aIdProducto, aIdUsuario, aValoracion);
 
 	}
 	

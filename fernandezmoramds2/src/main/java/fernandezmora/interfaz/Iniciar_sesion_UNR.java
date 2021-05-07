@@ -21,6 +21,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 	public Registrarse _registrarse;
 	public Recuperar_contrasenia _recuperar_contrasenia;
 	public VerticalLayout layout;
+	public base_de_datos.UR UR;
 	
 	public Iniciar_sesion_UNR(Menu_UNR munr) {
 		
@@ -71,10 +72,9 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 			iUR iur = new BDPrincipal();
 			
 			try {
-				base_de_datos.UR UR = null;
 				if (iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 1) {
 					limpiar_interfaz();
-					UR = iur.buscarUsuarioPorCorreo(this.getCorreo().getValue());
+					this.UR = iur.buscarUsuarioPorCorreo(this.getCorreo().getValue());
 					this._menu_UNR.layout.add(new UR(UR));
 				} else if (iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 2) {
 					limpiar_interfaz();
