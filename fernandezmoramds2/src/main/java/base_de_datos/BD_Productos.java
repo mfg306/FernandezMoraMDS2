@@ -59,6 +59,14 @@ public class BD_Productos {
 		
 		try {
 			p = ProductoDAO.getProductoByORMID(aIdProducto);
+			
+			for(Comentario c : p._Pertenece_a.toArray()) {
+				p._Pertenece_a.remove(c);
+			}
+			
+			/*Hay que eliminar los comentarios del producto*/
+			
+			
 			ProductoDAO.delete(p);
 			t.commit();			
 		} catch(Exception e) {

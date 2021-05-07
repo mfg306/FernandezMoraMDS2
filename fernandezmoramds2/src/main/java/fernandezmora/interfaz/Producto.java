@@ -31,15 +31,14 @@ public class Producto extends VistaProducto{
 	public void inicializar() {
 		this.listaComentarios.removeAll();
 		this._comentarios = new Comentarios(this);
+		
+		/*Por mucho que actualicemos estos valores, si no actualizamos el contenido de la variable de producto
+		 * de la base de datos, no vamos a tener nuevos valores. Mi recomendación es que los comentarios y las
+		 * valoraciones se carguen de la base de datos para poder refrescar con mas facilidad. */
 		this.comentarios = this.producto._Pertenece_a.toArray();
 		this.valoraciones = this.producto._Valorado_por.toArray();	
 		verProducto();
-		this.listaComentarios.add(this._comentarios);
-		
-		for(Comentario c : this.comentarios) {
-			System.out.println(c.getComentario());
-		}
-		System.out.println("------------------");
+		this.listaComentarios.add(this._comentarios);	
 	}
 	
 	public void verProducto() {

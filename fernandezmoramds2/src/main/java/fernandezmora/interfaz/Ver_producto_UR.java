@@ -33,6 +33,7 @@ public class Ver_producto_UR extends Producto_UNR {
 			iUR ur = new BDPrincipal();
 			try {
 				ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(), this._uR.UR.getId_Usuario());
+				System.out.println("Comentario añadido en la base de datos");
 				this.inicializar();
 				Notification.show("Se ha refrescado");
 			} catch (PersistentException e) {
