@@ -16,8 +16,9 @@ public class Ver_producto_UR extends Producto_UNR {
 
 	public Ver_producto_UR(UR_UNR _ur,base_de_datos.Producto p) {
 		super(_ur, p);
+		Comentar();
+		Valorar();
 		inicializar(_ur,p);
-		
 	}
 	
 	public void inicializar(UR_UNR _ur,base_de_datos.Producto p) {
@@ -25,10 +26,6 @@ public class Ver_producto_UR extends Producto_UNR {
 		this.getVaadinVerticalLayout2().setVisible(true);
 		this.valoracion.setItems("1", "2", "3", "4", "5");
 		this.getValorarProducto().as(VerticalLayout.class).add(this.valoracion);
-		Comentar();
-		Valorar();
-		Notification.show("Producto UR creado");
-		
 	}
 
 	public void Comentar() {
@@ -36,9 +33,8 @@ public class Ver_producto_UR extends Producto_UNR {
 			iUR ur = new BDPrincipal();
 			try {
 				ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(), this._uR.UR.getId_Usuario());
-				Notification.show("Comentario enviado");
 				this.inicializar();
-				inicializar(this._uR,this.producto);
+				Notification.show("Se ha refrescado");
 			} catch (PersistentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -52,7 +48,6 @@ public class Ver_producto_UR extends Producto_UNR {
 		this.getBotonEnviarValoracion().addClickListener(event ->{
 			try {
 				ur.valorar(this.producto.getId_Producto(), this._uR.UR.getId_Usuario(), this.valoracion.getValue());
-				Notification.show("Valoracion enviada");
 			} catch (PersistentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
