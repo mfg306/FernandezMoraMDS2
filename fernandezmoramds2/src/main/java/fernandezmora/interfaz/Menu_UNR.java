@@ -57,8 +57,10 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this._uNR_.getBotonVerCategorias().setVisible(false);
 		this._uNR_.getProductosMasVendidosPorCategorias().setVisible(false);
 
-		if (this._uNR_._ver_categorias != null)
-			this._uNR_._ver_categorias._categorias.setVisible(false);
+		if (this._uNR_._ver_categorias != null) {
+			this._uNR_._ver_categorias.layout.removeAll();
+		}
+//			this._uNR_._ver_categorias._categorias.setVisible(false);
 
 		if (this._ver_carrito_UNR != null) {
 			this._ver_carrito_UNR.setVisible(false);
