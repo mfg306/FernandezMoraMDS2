@@ -17,6 +17,8 @@ public class Editar_oferta extends Zona_productos {
 	public Editar_oferta(Oferta_administrador oa) {
 		super(null, oa.oferta);
 		inicializar(oa);
+		
+		guardarOferta();
 	}
 	
 	
@@ -66,7 +68,7 @@ public class Editar_oferta extends Zona_productos {
 		this.getVaadinButton().addClickListener(event ->{
 			iAdministrador admin = new BDPrincipal();
 			
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 			Date date = new Date();
 			formatter.format(date);
 			String inputDate = this.getCampoFechaCaducidad().getValue();

@@ -38,6 +38,7 @@ public class BD_Ofertas {
 		Oferta o = null;
 		Producto_Rebajado pr = null;
 
+		/*Paso 1. Crear la oferta*/
 		try {
 			o = OfertaDAO.createOferta();
 			o.setNombre_Oferta(aNombreOferta);
@@ -53,13 +54,10 @@ public class BD_Ofertas {
 			t.rollback();
 		}
 		
-
-		
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
 		
-		
-
+		/*Paso 2. Crear los productos rebajados basados en el producto seleccionado de la lista y enlazar este producto rebajado con la oferta*/
 		try {
 			for (Producto p : aListaProductos) {
 				/*Crear el producto rebajado que va a ser una copia del Producto p pero con el 
@@ -78,7 +76,7 @@ public class BD_Ofertas {
 					pr._Pertenece_a.add(c);
 				}
 				
-				for(Producto_en_compra pc : p._Producto_en_compra.toArray()) {
+				for(Producto_en_compra pc : p._Producto_en_compra.toArray()){
 					pr._Producto_en_compra.add(pc);
 				}
 				
@@ -100,17 +98,15 @@ public class BD_Ofertas {
 		}
 		
 		
-		/*Eliminamos el producto p porque ya lo tenemos con Producto_Rebajado y no lo queremos repetido*/
+		/* Paso 3. Eliminar el producto de la lista porque ya lo tenemos con Producto_Rebajado y no lo queremos repetido*/
 		for (Producto p : aListaProductos) {
 			this._bDPrincipal.eliminarProductoAdministrador(p.getId_Producto());
 		}	
 
 	}
 
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaActualizacion, int aIdOferta) throws PersistentException {
-		if (eliminarOfertaAdmin(aIdOferta, aListaProductos))
-			System.out.println("Se ha eliminado la oferta");
+	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta) throws PersistentException {
+		eliminarOfertaAdmin(aIdOferta, aListaProductos);
 		insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion);
 	}
 

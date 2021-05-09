@@ -261,8 +261,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 				aIdOferta);
 	}
 
-	public void actualizarProducto(Imagen[] aImagenes, int aIdProducto) {
-		throw new UnsupportedOperationException();
+	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion) throws PersistentException  {
+		this._bD_Productos.actualizarProducto(aIdProducto, aNombre, aPrecio, aDescripcion);
 	}
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException {

@@ -56,22 +56,19 @@ public class BD_Productos {
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Producto p = null;
-		
 		try {
 			p = ProductoDAO.getProductoByORMID(aIdProducto);
-			
-			for(Comentario c : p._Pertenece_a.toArray()) {
-				p._Pertenece_a.remove(c);
-			}
-			
-			/*Hay que eliminar los comentarios del producto*/
-			
-			
-			ProductoDAO.delete(p);
+			ProductoDAO.deleteAndDissociate(p);
 			t.commit();			
 		} catch(Exception e) {
 			t.rollback();
 			e.printStackTrace();
+		}
+		
+		this._bDPrincipal = new BDPrincipal();
+		
+		if(p != null) {
+			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
 		}
 		
 	}
@@ -97,11 +94,11 @@ public class BD_Productos {
 			 
 			 return p;	 
 		} catch(Exception e) {
+			e.printStackTrace();
 			t.rollback();
 		}
 		
 		return null;
-		
 	}
 
 	public Producto[] cargarProductosListado() throws PersistentException {
@@ -109,8 +106,10 @@ public class BD_Productos {
 		
 	}
 
-	public void actualizarProducto(String aNombreProducto, String aDescripcion) {
-		throw new UnsupportedOperationException();
+	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion) throws PersistentException {
+		System.out.println("Se va a ejecutar este metodo");
+		eliminarProductoAdministrador(aIdProducto);
+		insertarProducto(aNombre, aDescripcion, aPrecio, aIdProducto);
 	}
 	
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException{	
