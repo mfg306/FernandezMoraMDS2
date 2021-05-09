@@ -4,6 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
+
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -91,7 +93,7 @@ public class Editar_oferta extends Zona_productos {
 				}
 				
 				admin.actualizarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString(), this._oferta_administrador.oferta.getId_Oferta());
-				
+				Notification.show("Oferta editada con exito");
 			} catch(Exception e) {
 				e.printStackTrace();
 			}

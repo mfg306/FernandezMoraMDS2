@@ -2,6 +2,7 @@ package fernandezmora.interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -44,6 +45,7 @@ public class Editar_producto extends VistaEditar_producto {
 			iAdministrador admin = new BDPrincipal();
 			try {
 				admin.actualizarProducto(this._producto_administrador.p.getId_Producto(), this.getNuevoNombreProducto().getValue(), Double.parseDouble(this.getNuevoPrecio().getValue()), this.getAñadeUnaNuevaDescripción().getValue());
+				Notification.show("Producto editado con exito");
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 			} catch (PersistentException e) {

@@ -25,6 +25,7 @@ class VistaEmpleado extends PolymerElement {
    <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
      Eliminar 
    </vaadin-button>
+   <span id="tipoEmpleado">Span</span>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

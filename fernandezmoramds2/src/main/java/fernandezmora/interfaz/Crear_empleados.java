@@ -24,14 +24,18 @@ public class Crear_empleados extends VistaCrear_empleados{
 			try {
 				if(!this.getVaadinCheckbox().isEmpty()) {
 					esEncargado = false;
-				}
+				} 
+				
 				if(!this.getVaadinCheckbox1().isEmpty()) {
 					esEncargado = true;
-				}
+				} 
 				
-				if(!this.getVaadinCheckbox().isEmpty() || !this.getVaadinCheckbox1().isEmpty()) {
+				if(!this.getVaadinCheckbox().isEmpty() && !this.getVaadinCheckbox1().isEmpty()) {
+					Notification.show("Debe marcar únicamente una opción");
+				} else if(!this.getVaadinCheckbox().isEmpty() || !this.getVaadinCheckbox1().isEmpty()) {
 					admin.insertarEmpleado(this.getIntroduzcaUnaContraseña().getValue(), this.getIntroduzcaUnCorreo().getValue(), esEncargado);
 					this._gestionar_empleados.inicializar();
+					Notification.show("Empleado creado con éxito");
 				} else {
 					Notification.show("Debe marcar si es encargado o transportista");
 				}

@@ -16,17 +16,16 @@ public class Gestionar_productos extends VistaGestionar_productos {
 	public base_de_datos.Producto productos[];
 
 	public Gestionar_productos() {
+		
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		inicializar();
 	}
 	
 	public void inicializar() {
+		if(this._productos_administrador != null) this.layout.remove(this._productos_administrador);
 		this._productos_administrador = new Productos_administrador(this);
-		
 		crear_Producto();
 		abrirGestionarProductos();
-		
-		this.layout.removeAll();
 		this.layout.add(this._productos_administrador);
 	}
 

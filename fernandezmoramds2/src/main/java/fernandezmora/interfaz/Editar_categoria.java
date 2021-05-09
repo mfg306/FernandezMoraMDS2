@@ -89,6 +89,7 @@ public class Editar_categoria extends Zona_productos {
 			try {
 				admin.actualizarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString(),
 						this._categoria_administrador.categoria.getId_Categoria());
+				Notification.show("Categoria creada con éxito");
 			} catch (PersistentException e) {
 				Notification.show("Una categoría no puede quedarse sin productos.");
 				e.printStackTrace();

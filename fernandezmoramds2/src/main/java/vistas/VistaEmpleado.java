@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-empleado template.
@@ -32,6 +33,8 @@ public class VistaEmpleado extends PolymerTemplate<VistaEmpleado.VistaEmpleadoMo
 	private Button vaadinButton;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
+	@Id("tipoEmpleado")
+	private Span tipoEmpleado;
 
 	/**
      * Creates a new VistaEmpleado.
@@ -93,5 +96,13 @@ public class VistaEmpleado extends PolymerTemplate<VistaEmpleado.VistaEmpleadoMo
 
 	public void setVaadinButton1(Button vaadinButton1) {
 		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public Span getTipoEmpleado() {
+		return tipoEmpleado;
+	}
+
+	public void setTipoEmpleado(Span tipoEmpleado) {
+		this.tipoEmpleado = tipoEmpleado;
 	}
 }

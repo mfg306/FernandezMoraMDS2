@@ -101,7 +101,20 @@ public class BD_Empleados {
 		}
 	}
 
-	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
-		throw new UnsupportedOperationException();
+	public void actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Empleado e = null;
+		
+		try {
+			e = EmpleadoDAO.getEmpleadoByORMID(aIdEmpleado);
+			e.setCorreo(correo);
+			e.setContrasenia(contrasenia);
+			
+			EmpleadoDAO.save(e);
+			t.commit();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			t.rollback();
+		}
 	}
 }

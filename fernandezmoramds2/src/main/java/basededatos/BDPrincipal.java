@@ -251,8 +251,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_Categorias.actualizarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion, aIdCategoria);
 	}
 
-	public void actualizarEmpleado(String aNombreUsuario, String aContrasenia, String aCorreo) {
-		throw new UnsupportedOperationException();
+	public void actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException {
+		this._bD_Empleados.actualizarEmpleado(aIdEmpleado, correo, contrasenia);
 	}
 
 	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,

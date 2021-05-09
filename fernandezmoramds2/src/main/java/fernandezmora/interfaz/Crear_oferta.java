@@ -86,7 +86,6 @@ public class Crear_oferta extends Zona_productos {
 				productosOferta[i] = listaProductos.get(i).producto;
 			}
 			
-			
 			try {
 				admin.insertarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString());
 				Notification.show("Oferta creada con exito");
