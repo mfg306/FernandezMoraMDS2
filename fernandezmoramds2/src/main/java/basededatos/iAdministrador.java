@@ -25,7 +25,7 @@ public interface iAdministrador {
 
 	public Mensaje[] cargarMensajesRecibidos(Usuario_General aUsuario) throws PersistentException;
 
-	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
+	public void enviarMensaje(String aCorreoReceptor, String aMensaje, String aAsunto, Usuario_General aEmisor) throws PersistentException;
 
 	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
 

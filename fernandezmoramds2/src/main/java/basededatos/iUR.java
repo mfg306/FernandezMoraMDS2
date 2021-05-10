@@ -19,7 +19,7 @@ public interface iUR extends iUR_UNR {
 
 	public Mensaje[] cargarMensajesRecibidos(Usuario_General aUsuario) throws PersistentException;
 
-	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
+	public void enviarMensaje(String aCorreoReceptor, String aMensaje, String aAsunto, Usuario_General aEmisor) throws PersistentException;
 	
 	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario)throws PersistentException;
 	

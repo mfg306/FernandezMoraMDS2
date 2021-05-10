@@ -12,7 +12,8 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 	public VerticalLayout layoutEnviados;
 
 	
-	public Mensajes_enviados() {
+	public Mensajes_enviados(base_de_datos.Usuario_General general, Ver_mensajes_enviados vme) {
+		super(general, vme);
 		inicializarEnviados();
 	}
 	

@@ -146,8 +146,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_Mensajes.cargarMensajesRecibidos(aUsuario);
 	}
 
-	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje) {
-		throw new UnsupportedOperationException();
+	public void enviarMensaje(String aCorreoReceptor, String aMensaje, String aAsunto, Usuario_General aEmisor) throws PersistentException {
+		this._bD_Mensajes.enviarMensaje(aCorreoReceptor, aMensaje, aAsunto, aEmisor);
 	}
 
 	public boolean registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
