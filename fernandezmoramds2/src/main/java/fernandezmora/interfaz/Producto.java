@@ -2,11 +2,15 @@ package fernandezmora.interfaz;
 
 import java.util.Vector;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
 import base_de_datos.Comentario;
+import basededatos.BDPrincipal;
+import basededatos.iUR_UNR;
 import vistas.VistaProducto;
 
 public class Producto extends VistaProducto{
@@ -31,12 +35,6 @@ public class Producto extends VistaProducto{
 	public void inicializar() {
 		this.listaComentarios.removeAll();
 		this._comentarios = new Comentarios(this);
-		
-		/*Por mucho que actualicemos estos valores, si no actualizamos el contenido de la variable de producto
-		 * de la base de datos, no vamos a tener nuevos valores. Mi recomendación es que los comentarios y las
-		 * valoraciones se carguen de la base de datos para poder refrescar con mas facilidad. */
-		this.comentarios = this.producto._Pertenece_a.toArray();
-		this.valoraciones = this.producto._Valorado_por.toArray();	
 		verProducto();
 		this.listaComentarios.add(this._comentarios);	
 	}
@@ -44,9 +42,28 @@ public class Producto extends VistaProducto{
 	public void verProducto() {
 		int valoracion = 0;
 		double mediaValoracion = 0.0;
+		
+		iUR_UNR iUr_UNR = new BDPrincipal();
+		this.producto = iUr_UNR.cargarProducto(this.producto.getId_Producto());
+		
 		this.getNombre_producto().setText(this.producto.getNombre());
 		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()));
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
+		
+		
+		try {
+			this.comentarios = iUr_UNR.cargarComentarios(this.producto.getId_Producto());
+		} catch (PersistentException e) {
+			
+			e.printStackTrace();
+		}
+		
+		try {
+			this.valoraciones = iUr_UNR.cargarValoraciones(this.producto.getId_Producto());
+		} catch (PersistentException e) {
+			
+			e.printStackTrace();
+		}
 		
 		
 		for(base_de_datos.Valoracion v : this.valoraciones) {
