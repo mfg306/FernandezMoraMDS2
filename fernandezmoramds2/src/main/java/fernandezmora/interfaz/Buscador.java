@@ -16,6 +16,7 @@ public class Buscador extends VistaBuscador {
 		this.buscador = new TextField();
 		Icon icon = new Icon("lumo", "search");
 		buscador.setPrefixComponent(icon);
+		buscador.setWidth("100%");
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this.layout.add(buscador);		
 	}
