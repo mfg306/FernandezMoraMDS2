@@ -41,7 +41,7 @@ public class Producto extends VistaProducto{
 	
 	public void verProducto() {
 		int valoracion = 0;
-		double mediaValoracion = 0.0;
+		double mediaValoracion = 0;
 		
 		iUR_UNR iUr_UNR = new BDPrincipal();
 		this.producto = iUr_UNR.cargarProducto(this.producto.getId_Producto());
