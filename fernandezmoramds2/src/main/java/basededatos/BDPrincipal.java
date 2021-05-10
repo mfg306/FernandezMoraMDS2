@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.orm.PersistentException;
 
+import base_de_datos.Administrador;
 import base_de_datos.BD_Administrador;
 import base_de_datos.BD_Categorias;
 import base_de_datos.BD_Productos;
@@ -29,6 +30,7 @@ import base_de_datos.Comentario;
 import base_de_datos.Producto_Rebajado;
 import base_de_datos.Compra;
 import base_de_datos.UR;
+import base_de_datos.Usuario_General;
 import base_de_datos.Valoracion;
 import base_de_datos.Mensaje;
 import base_de_datos.Enviado;
@@ -136,12 +138,12 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Mensaje[] cargarMensajesEnviados(String aCorreoEmisor) {
-		throw new UnsupportedOperationException();
+	public Mensaje[] cargarMensajesEnviados(Usuario_General aUsuario) throws PersistentException {
+		return this._bD_Mensajes.cargarMensajesEnviados(aUsuario);
 	}
 
-	public Mensaje[] cargarMensajesRecibidos(String aCorreoReceptor) {
-		throw new UnsupportedOperationException();
+	public Mensaje[] cargarMensajesRecibidos(Usuario_General aUsuario) throws PersistentException {
+		return this._bD_Mensajes.cargarMensajesRecibidos(aUsuario);
 	}
 
 	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje) {
@@ -336,6 +338,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	@Override
 	public Pendiente[] cargarPendientes() throws PersistentException {
 		return this._bD_Pendiente.cargarPendientes();
+	}
+
+	@Override
+	public Administrador buscarAdministradorPorCorreo(String aCorreo) throws PersistentException {
+		return this._bD_Administrador.buscarAdministradorPorCorreo(aCorreo);
 	}
 	
 }

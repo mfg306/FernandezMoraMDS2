@@ -20,11 +20,10 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 		this._list_Mensaje_enviado = new Vector<Mensaje_enviado>();
 		this.layoutEnviados = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
 		this.layout.removeAll(); //Vaciamos los mensajes recibidos que hubiese
-		obtener_mensajes_enviados();
 	}
 	
-	public void obtener_mensajes_enviados() {
-		Mensaje_enviado me = new Mensaje_enviado();
+	public void add_mensaje_enviado(base_de_datos.Mensaje mensaje) {
+		Mensaje_enviado me = new Mensaje_enviado(mensaje);
 		this._list_Mensaje_enviado.add(me);
 		layoutEnviados.add(me);
 		

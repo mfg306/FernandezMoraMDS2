@@ -33,7 +33,7 @@ class VistaIniciar_sesion extends PolymerElement {
      Iniciar sesión 
    </vaadin-button>
    <vaadin-button theme="tertiary-inline" id="botonRegistrarse" style="align-self: center; color: #ae1641;">
-     ¿Ya tienes cuenta? Registrate 
+    ¿No tienes cuenta? Registrate
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>

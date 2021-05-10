@@ -14,14 +14,14 @@ public class Menu_UR extends Menu_UR_UNR {
 	public VerticalLayout layout;
 	public Select<String> datos = new Select<>();
 
-	public Menu_UR(UR ur) {
+	public Menu_UR(UR ur, base_de_datos.UR usuario) {
 		super(ur);
 		this._uR = ur;
 		this.getBoton_iniciar_sesion().setVisible(false);
 		this.layout = this.getMenu().as(VerticalLayout.class);
 		this._editar_perfil = new Editar_perfil(this);
 		this._ver_pedidos = new Ver_pedidos(this);
-		this._ver_bandeja_de_entrada = new Ver_bandeja_de_entrada();
+		this._ver_bandeja_de_entrada = new Ver_bandeja_de_entrada(usuario);
 
 		datos.setItems("Nombre de Usuario", "Mis pedidos", "Mis correos", "Configuración", "Cerrar sesion");
 

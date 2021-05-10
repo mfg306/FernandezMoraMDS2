@@ -19,14 +19,10 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	
 	public void inicializar() {
 		this.layout = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
-		//obtener_mensajes_recibidos();
-		obtener_mensajes_recibidos();
-
 	}
 	
-	public void obtener_mensajes_recibidos() {
-		Mensaje_recibido mr = new Mensaje_recibido();
-		
+	public void add_mensaje_recibido(base_de_datos.Mensaje mensaje) {
+		Mensaje_recibido mr = new Mensaje_recibido(mensaje);
 		this._list_Mensaje_recibido.add(mr);
 		this.layout.add(mr);
 	}

@@ -22,6 +22,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 	public Recuperar_contrasenia _recuperar_contrasenia;
 	public VerticalLayout layout;
 	public base_de_datos.UR UR;
+	public base_de_datos.Administrador admin;
 	
 	public Iniciar_sesion_UNR(Menu_UNR munr) {
 		
@@ -78,7 +79,8 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 					this._menu_UNR.layout.add(new UR(UR));
 				} else if (iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 2) {
 					limpiar_interfaz();
-					this._menu_UNR.layout.add(new Administrador());
+					this.admin = iadmin.buscarAdministradorPorCorreo(this.getCorreo().getValue());
+					this._menu_UNR.layout.add(new Administrador(this.admin));
 				} else {
 					Notification.show("El usuario no está registrado");
 				}

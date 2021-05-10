@@ -1,26 +1,32 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
 import vistas.VistaVer_bandeja_de_entrada;
 
 public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	public Menu_UR _menu_UR;
 	public Mensajes_recibidos _mensajes_recibidos;
 	public VerticalLayout layout;
+	base_de_datos.Usuario_General general;
 	
-	public Ver_bandeja_de_entrada() {
-		this._mensajes_recibidos = new Mensajes_recibidos();
+	public Ver_bandeja_de_entrada(base_de_datos.Usuario_General general) {
+		this.general = general;
 		inicializar();
 		abrir_mensajes_recibidos();
 		abrir_mensajes_enviados();
-
 	}
 	
 	public void inicializar() {
+		this._mensajes_recibidos = new Mensajes_recibidos();
 		this.layout = this.getVaadinVerticalLayoutGeneral().as(VerticalLayout.class);
 		this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos);
 		this.getMenuAdmin().setVisible(false);
+		
+		VerBandejaDeEntrada();
 	}
 	
 	public void limpiar_interfaz() {
@@ -30,10 +36,9 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	public void abrir_mensajes_enviados() {
 		this.getBoton_enviados().addClickListener(event ->{
 			limpiar_mensajes();
-			this._mensajes_recibidos._list_Ver_mensajes_enviados = new Ver_mensajes_enviados();
+			this._mensajes_recibidos._list_Ver_mensajes_enviados = new Ver_mensajes_enviados(this.general);
 			this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos._list_Ver_mensajes_enviados._mensajes_enviados);
 		});
-		
 	}
 	
 	public void limpiar_mensajes() {
@@ -45,6 +50,31 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 			limpiar_mensajes();
 			this.inicializar();
 		});
-
+	}
+	
+	public void VerBandejaDeEntrada() {
+		base_de_datos.Mensaje mensajes[] = null;
+		if(this.general instanceof base_de_datos.Administrador) {
+			basededatos.iAdministrador iadmin = new BDPrincipal();
+			try {
+				mensajes = iadmin.cargarMensajesRecibidos(this.general);		
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+		}
+				
+		if(this.general instanceof base_de_datos.UR) {
+			basededatos.iUR ur = new BDPrincipal();
+			try {
+				mensajes = ur.cargarMensajesRecibidos(this.general);
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(base_de_datos.Mensaje m : mensajes) {
+			this._mensajes_recibidos.add_mensaje_recibido(m);
+			this.inicializar();
+		}
 	}
 }

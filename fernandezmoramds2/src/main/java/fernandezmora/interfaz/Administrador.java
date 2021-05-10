@@ -18,12 +18,12 @@ public class Administrador extends VistaAdministrador{
 	public VerticalLayout layout;
 
 	
-	public Administrador() {
+	public Administrador(base_de_datos.Administrador admin) {
+		_menu_A = new Menu_A(this, admin);
 		inicializar();
 	}
 	
 	public void inicializar() {
-		_menu_A = new Menu_A(this);
 		this._menu_A.getMenuAdmin().setVisible(true);
 		
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);	

@@ -24,7 +24,7 @@ public class UR extends UR_UNR{
 	
 	
 	public void inicializar() {
-		_menu_UR = new Menu_UR(this);
+		_menu_UR = new Menu_UR(this, UR);
 		this.getHuecoMenu().as(VerticalLayout.class).add(_menu_UR);	
 	}
 

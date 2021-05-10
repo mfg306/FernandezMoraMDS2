@@ -71,7 +71,8 @@ public class MainView extends VerticalLayout {
 					add(ur);
 				} else if (iadmin.iniciarSesion(inicio_sesion.getCorreo().getValue(),
 						inicio_sesion.getContrasenia().getValue()) == 2) {
-					Administrador admin = new Administrador();
+					base_de_datos.Administrador bdadmin = iadmin.buscarAdministradorPorCorreo(inicio_sesion.getCorreo().getValue());
+					Administrador admin = new Administrador(bdadmin);
 					remove(unr);
 					add(admin);
 				} else {

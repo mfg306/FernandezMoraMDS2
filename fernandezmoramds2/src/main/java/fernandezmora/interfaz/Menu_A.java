@@ -9,8 +9,8 @@ public class Menu_A extends Ver_bandeja_de_entrada {
 	/*Entendemos que en el momento en el que se crea un objeto Menu_A ya existe un Administrador.
 	 * No nos interesa instanciar un nuevo Administrador, sino asignarnos el que ya está creado*/
 
-	public Menu_A(Administrador _administrador) {
-		
+	public Menu_A(Administrador _administrador, base_de_datos.Usuario_General admin) {
+		super(admin);
 		inicializarMenu(_administrador);
 		
 	}

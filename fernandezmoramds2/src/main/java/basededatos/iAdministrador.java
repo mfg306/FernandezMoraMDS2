@@ -8,10 +8,12 @@ import base_de_datos.Imagen;
 
 import org.orm.PersistentException;
 
+import base_de_datos.Administrador;
 import base_de_datos.Categoria;
 import base_de_datos.Empleado;
 import base_de_datos.Enviado;
 import base_de_datos.Recibido;
+import base_de_datos.Usuario_General;
 
 public interface iAdministrador {
 
@@ -19,9 +21,9 @@ public interface iAdministrador {
 
 	public Producto[] cargarProductos(String aProducto) throws PersistentException;
 
-	public Mensaje[] cargarMensajesEnviados(String aCorreoEmisor);
+	public Mensaje[] cargarMensajesEnviados(Usuario_General aUsuario) throws PersistentException;
 
-	public Mensaje[] cargarMensajesRecibidos(String aCorreoReceptor);
+	public Mensaje[] cargarMensajesRecibidos(Usuario_General aUsuario) throws PersistentException;
 
 	public void enviarMensaje(String aCorreoEmisor, String aCorreoReceptor, String aCodigo, String aMensaje);
 
@@ -70,6 +72,8 @@ public interface iAdministrador {
 	public Enviado[] cargarEnviados() throws PersistentException;
 	
 	public Pendiente[] cargarPendientes() throws PersistentException;
+	
+	public Administrador buscarAdministradorPorCorreo(String aCorreo) throws PersistentException ;
 	
 	
 }

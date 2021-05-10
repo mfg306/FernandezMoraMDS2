@@ -25,4 +25,10 @@ public class BD_Administrador {
 		return 0;
 
 	}
+	
+	public Administrador buscarAdministradorPorCorreo(String aCorreo) throws PersistentException {
+		Administrador[] admin = AdministradorDAO.listAdministradorByQuery("correo_electronico = '" + aCorreo +"'", "correo_electronico");
+		return admin[0];
+	}
+
 }
