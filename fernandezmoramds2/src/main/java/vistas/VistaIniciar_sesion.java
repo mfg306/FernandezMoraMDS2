@@ -12,6 +12,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.html.H1;
 
 /**
  * A Designer generated component for the vista-iniciar_sesion template.
@@ -40,6 +41,14 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	private PasswordField contrasenia;
 	@Id("boton_iniciar_sesion")
 	private Button boton_iniciar_sesion;
+	@Id("h1")
+	private H1 h1;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("vaadinVerticalLayout2")
+	private Element vaadinVerticalLayout2;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
 
 	/**
 	 * Creates a new VistaIniciar_sesion.

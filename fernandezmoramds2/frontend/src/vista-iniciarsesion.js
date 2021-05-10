@@ -17,11 +17,11 @@ class VistaIniciar_sesion extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: center;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="width: 100%;">
-  <vaadin-vertical-layout theme="spacing" style="width: 100%; background-color: #ae1641;">
-   <h1 style="align-self: center; color: white; text-align: center; flex-grow: 1; height: 100%;">¡Bienvenido a nuestra página!</h1>
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout">
+  <vaadin-vertical-layout theme="spacing" style="width: 100%; background-color: #ae1641;" id="vaadinVerticalLayout2">
+   <h1 style="align-self: center; color: white; text-align: center; flex-grow: 0; margin: auto;" id="h1">¡Bienvenido a nuestra página!</h1>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" style="width: 100%;">
+  <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout1">
    <span style="font-size: 4vw; font-weight: bold; width: 100%; text-align:center;" id="span">INICIA SESIÓN</span>
    <vaadin-text-field id="correo" style="width: 80%; align-self: center;" placeholder="Introduzca su correo electrónico" required autofocus></vaadin-text-field>
    <vaadin-text-field id="nombre_usuario" style="width: 80%; align-self: center;" placeholder="Introduzca su nombre de usuario" required autofocus></vaadin-text-field>
@@ -33,7 +33,7 @@ class VistaIniciar_sesion extends PolymerElement {
      Iniciar sesión 
    </vaadin-button>
    <vaadin-button theme="tertiary-inline" id="botonRegistrarse" style="align-self: center; color: #ae1641;">
-    ¿No tienes cuenta? Registrate
+     ¿No tienes cuenta? Registrate 
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
