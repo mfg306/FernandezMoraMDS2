@@ -15,22 +15,25 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	
 	public Ver_bandeja_de_entrada(base_de_datos.Usuario_General general) {
 		this.general = general;
+		this._mensajes_recibidos = new Mensajes_recibidos(this.general,this);
+		this.layout = this.getVaadinVerticalLayoutGeneral().as(VerticalLayout.class);
+		this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos);
 		inicializar();
+	}
+	
+	public void inicializar() {
+		this._mensajes_recibidos = new Mensajes_recibidos(this.general,this);
+		this.getMenuAdmin().setVisible(false);
+		
+		VerBandejaDeEntrada();
 		abrir_mensajes_recibidos();
 		abrir_mensajes_enviados();
 	}
 	
-	public void inicializar() {
-		this._mensajes_recibidos = new Mensajes_recibidos();
-		this.layout = this.getVaadinVerticalLayoutGeneral().as(VerticalLayout.class);
-		this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos);
-		this.getMenuAdmin().setVisible(false);
-		
-		VerBandejaDeEntrada();
-	}
-	
 	public void limpiar_interfaz() {
-		this.layout.removeAll();
+		this.getSpan().setVisible(false);
+		this.getBoton_enviados().setVisible(false);
+		this.getBoton_recibidos().setVisible(false);
 	}
 	
 	public void abrir_mensajes_enviados() {
