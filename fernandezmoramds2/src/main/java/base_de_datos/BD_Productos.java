@@ -18,7 +18,7 @@ public class BD_Productos {
 	}
 
 	public Producto cargarProducto(int aIdProducto) throws PersistentException {
-		return ProductoDAO.listProductoByQuery("IdProducto = '"+aIdProducto+"'",null )[0];
+		return ProductoDAO.listProductoByQuery("Id_Producto = '"+aIdProducto+"'",null )[0];
 	}
 
 	public Producto[] cargarProductosCategoria(Categoria aCategoria) throws PersistentException {
