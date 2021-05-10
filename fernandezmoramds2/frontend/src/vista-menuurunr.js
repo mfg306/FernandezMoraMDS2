@@ -15,7 +15,7 @@ class VistaMenu_urunr extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="justify-content: center; align-items: center;" id="menu">
+<vaadin-vertical-layout style="justify-content: center; align-items: center; width: 100%;" id="menu">
  <vaadin-horizontal-layout theme="spacing" style="width: 90%; align-self: center; align-items: center; justify-content: center;" id="vaadinHorizontalLayout">
   <img style="width: 100%;" id="logo_tienda">
   <vaadin-horizontal-layout theme="spacing" id="seleccionarCategoria" style="align-self: center; justify-content: center; align-items: center;"></vaadin-horizontal-layout>

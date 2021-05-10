@@ -51,6 +51,7 @@ public class MainView extends VerticalLayout {
 
 	public MainView() {
 		this.add(unr);
+		this.setPadding(false);
 
 //		login();
 	}
