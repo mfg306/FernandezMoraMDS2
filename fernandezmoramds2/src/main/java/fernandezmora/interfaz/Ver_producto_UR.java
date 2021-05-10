@@ -12,16 +12,14 @@ import basededatos.iUR;
 public class Ver_producto_UR extends Producto_UNR {
 
 	public UR _uR;
-	
 
-	public Ver_producto_UR(UR_UNR _ur,base_de_datos.Producto p) {
+	public Ver_producto_UR(UR_UNR _ur, base_de_datos.Producto p) {
 		super(_ur, p);
 		Comentar();
-		Valorar();
-		inicializar(_ur,p);
+		inicializar(_ur, p);
 	}
-	
-	public void inicializar(UR_UNR _ur,base_de_datos.Producto p) {
+
+	public void inicializar(UR_UNR _ur, base_de_datos.Producto p) {
 		this._uR = (UR) _ur;
 		this.getVaadinVerticalLayout2().setVisible(true);
 		this.valoracion.setItems("1", "2", "3", "4", "5");
@@ -32,22 +30,44 @@ public class Ver_producto_UR extends Producto_UNR {
 		this.getEnviar_comentario().addClickListener(event -> {
 			iUR ur = new BDPrincipal();
 			try {
-				ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(), this._uR.UR.getId_Usuario());
-				System.out.println("Comentario añadido en la base de datos");
-				this.inicializar();
-				Notification.show("Se ha refrescado");
+				if (this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() != null) {
+					Valorar();
+					Notification.show("Valoración enviada");
+				}
+				if (!this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() != null) {
+					ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(),
+							this._uR.UR.getId_Usuario());
+
+					Notification.show("Comentario y valoracion enviada");
+					this.inicializar();
+
+				}
+
+				if (!this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() == null) {
+					ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(),
+							this._uR.UR.getId_Usuario());
+
+					Notification.show("Comentario enviado");
+					this.inicializar();
+
+				}
+
+				if (this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() == null) {
+					Notification.show("Por favor, realice un comentario o añada una valoración");
+				}
 			} catch (PersistentException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
-		
+
 	}
 
 	public void Valorar() {
 		iUR ur = new BDPrincipal();
-		this.getBotonEnviarValoracion().addClickListener(event ->{
+		this.getEnviar_comentario().addClickListener(event -> {
 			try {
+
 				ur.valorar(this.producto.getId_Producto(), this._uR.UR.getId_Usuario(), this.valoracion.getValue());
 			} catch (PersistentException e) {
 				// TODO Auto-generated catch block
@@ -60,7 +80,7 @@ public class Ver_producto_UR extends Producto_UNR {
 	public void Anadir_al_carrito(base_de_datos.Producto p) {
 		this.getBoton_anadir_carrito().addClickListener(event -> {
 			// Formar el producto_carrito
-			Producto_carrito pc = new Producto_carrito(this , p , this._uR);
+			Producto_carrito pc = new Producto_carrito(this, p, this._uR);
 
 			// Anadirlo al listado de productos del usuario
 			this._uR.miListadoProductos(pc);
