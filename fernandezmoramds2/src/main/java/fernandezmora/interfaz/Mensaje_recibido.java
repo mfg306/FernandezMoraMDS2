@@ -10,4 +10,8 @@ public class Mensaje_recibido extends VistaMensaje_recibido {
 		this.mensaje = mensaje;
 		this.getSpan1().setText(this.mensaje.getMensaje());
 	}
+	
+	public void responderMensaje() {
+		
+	}
 }

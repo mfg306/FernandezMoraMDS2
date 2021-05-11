@@ -74,7 +74,6 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * <li>correo_emisor</li>
 	 * <li>correo_receptor</li>
 	 * <li>mensaje</li>
-	 * <li>codigo</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -89,7 +88,6 @@ public class MensajeSetCollection extends org.orm.util.ORMSet {
 	 * <li>correo_emisor</li>
 	 * <li>correo_receptor</li>
 	 * <li>mensaje</li>
-	 * <li>codigo</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

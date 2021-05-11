@@ -353,4 +353,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_UNR.actualizarContrasenia(aContraseniaActual, aNuevaContrasenia, aConfirmacionNuevaContrasenia);
 	}
 	
+	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) {
+		throw new UnsupportedOperationException();
+	}
+	
 }

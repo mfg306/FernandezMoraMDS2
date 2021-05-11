@@ -76,4 +76,6 @@ public interface iAdministrador {
 	
 	public UR[] cargarClientes() throws PersistentException;
 	
+	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo);
+	
 }

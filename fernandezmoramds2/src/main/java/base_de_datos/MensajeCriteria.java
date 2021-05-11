@@ -29,7 +29,6 @@ public class MensajeCriteria extends AbstractORMCriteria {
 	public final StringExpression correo_emisor;
 	public final StringExpression correo_receptor;
 	public final StringExpression mensaje;
-	public final StringExpression codigo;
 	public final IntegerExpression _MensajeId;
 	public final AssociationExpression _Mensaje;
 	
@@ -45,7 +44,6 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this);
 		correo_receptor = new StringExpression("correo_receptor", this);
 		mensaje = new StringExpression("mensaje", this);
-		codigo = new StringExpression("codigo", this);
 		_MensajeId = new IntegerExpression("_Mensaje.id_Mensaje", this);
 		_Mensaje = new AssociationExpression("_Mensaje", this);
 	}

@@ -8,6 +8,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-mensaje_recibido template.
@@ -29,6 +30,8 @@ public class VistaMensaje_recibido extends PolymerTemplate<VistaMensaje_recibido
 	private Span span1;
 	@Id("span2")
 	private Span span2;
+	@Id("responder")
+	private Button responder;
 
 	/**
      * Creates a new VistaMensaje_recibido.
@@ -82,5 +85,13 @@ public class VistaMensaje_recibido extends PolymerTemplate<VistaMensaje_recibido
 
 	public void setSpan2(Span span2) {
 		this.span2 = span2;
+	}
+
+	public Button getResponder() {
+		return responder;
+	}
+
+	public void setResponder(Button responder) {
+		this.responder = responder;
 	}
 }

@@ -71,4 +71,8 @@ public class BD_Mensajes {
 			t.rollback();
 		}
 	}
+	
+	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) {
+		return false;
+	}
 }

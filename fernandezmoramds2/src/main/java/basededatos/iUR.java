@@ -32,4 +32,7 @@ public interface iUR extends iUR_UNR {
 	public void eliminarUsuario(String aCorreo) throws PersistentException;
 	
 	public void actualizarContrasenia(String aContraseniaActual,String aNuevaContrasenia, String aConfirmacionNuevaContrasenia) throws PersistentException;
+	
+	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo);
+
 }

@@ -64,7 +64,7 @@ public class CreateHitoData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Recoge, _recibe
 			base_de_datos.RecibidoDAO.save(base_de_DatosRecibido);
 			base_de_datos.Mensaje base_de_DatosMensaje = base_de_datos.MensajeDAO.createMensaje();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Mensaje, _Responder_a, _Enviado_por_UR, _Enviado_por_Admin
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Enviado_por_UR, _Enviado_por_Admin
 			base_de_datos.MensajeDAO.save(base_de_DatosMensaje);
 			t.commit();
 		}

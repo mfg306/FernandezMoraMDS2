@@ -29,7 +29,6 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression correo_emisor;
 	public final StringExpression correo_receptor;
 	public final StringExpression mensaje;
-	public final StringExpression codigo;
 	public final IntegerExpression _MensajeId;
 	public final AssociationExpression _Mensaje;
 	
@@ -45,7 +44,6 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this.getDetachedCriteria());
 		correo_receptor = new StringExpression("correo_receptor", this.getDetachedCriteria());
 		mensaje = new StringExpression("mensaje", this.getDetachedCriteria());
-		codigo = new StringExpression("codigo", this.getDetachedCriteria());
 		_MensajeId = new IntegerExpression("_Mensaje.id_Mensaje", this.getDetachedCriteria());
 		_Mensaje = new AssociationExpression("_Mensaje", this.getDetachedCriteria());
 	}
@@ -62,7 +60,6 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this.getDetachedCriteria());
 		correo_receptor = new StringExpression("correo_receptor", this.getDetachedCriteria());
 		mensaje = new StringExpression("mensaje", this.getDetachedCriteria());
-		codigo = new StringExpression("codigo", this.getDetachedCriteria());
 		_MensajeId = new IntegerExpression("_Mensaje.id_Mensaje", this.getDetachedCriteria());
 		_Mensaje = new AssociationExpression("_Mensaje", this.getDetachedCriteria());
 	}

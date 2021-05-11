@@ -64,9 +64,9 @@ public class Mensaje implements Serializable {
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKMensaje321457"))	
 	private base_de_datos.UR _Enviado_por_UR;
 	
-	@OneToOne(optional=false, targetEntity=base_de_datos.Mensaje.class, fetch=FetchType.LAZY)	
+	@OneToOne(targetEntity=base_de_datos.Mensaje.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="MensajeId_Mensaje", referencedColumnName="Id_Mensaje", nullable=false) }, foreignKey=@ForeignKey(name="FKMensaje231121"))	
+	@JoinColumns(value={ @JoinColumn(name="MensajeId_Mensaje", referencedColumnName="Id_Mensaje") }, foreignKey=@ForeignKey(name="FKMensaje231121"))	
 	private base_de_datos.Mensaje _Responder_a;
 	
 	@Column(name="Correo_emisor", nullable=true, length=255)	
@@ -77,9 +77,6 @@ public class Mensaje implements Serializable {
 	
 	@Column(name="Mensaje", nullable=true, length=255)	
 	private String mensaje;
-	
-	@Column(name="Codigo", nullable=true, length=255)	
-	private String codigo;
 	
 	@OneToOne(mappedBy="_Responder_a", targetEntity=base_de_datos.Mensaje.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
@@ -107,14 +104,6 @@ public class Mensaje implements Serializable {
 	
 	public String getMensaje() {
 		return mensaje;
-	}
-	
-	public void setCodigo(String value) {
-		this.codigo = value;
-	}
-	
-	public String getCodigo() {
-		return codigo;
 	}
 	
 	private void setId_Mensaje(int value) {
