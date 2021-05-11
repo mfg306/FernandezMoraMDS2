@@ -21,7 +21,6 @@ public class Menu_UR extends Menu_UR_UNR {
 		this.layout = this.getMenu().as(VerticalLayout.class);
 		this._editar_perfil = new Editar_perfil(this);
 		this._ver_pedidos = new Ver_pedidos(this);
-		this._ver_bandeja_de_entrada = new Ver_bandeja_de_entrada(usuario);
 
 		datos.setItems("Nombre de Usuario", "Mis pedidos", "Mis correos", "Configuración", "Cerrar sesion");
 
@@ -38,6 +37,7 @@ public class Menu_UR extends Menu_UR_UNR {
 			}
 
 			if (event.getValue().equals("Mis correos")) {
+				this._ver_bandeja_de_entrada = new Ver_bandeja_de_entrada(usuario);
 				abrir_bandeja_entrada();
 			}
 

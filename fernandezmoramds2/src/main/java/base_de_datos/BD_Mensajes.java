@@ -53,7 +53,6 @@ public class BD_Mensajes {
 			m.setMensaje(aMensaje);
 			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
 			
-			m.set_Mensaje(m);
 		
 			System.out.println("Mensaje se envia a : " + aCorreoReceptor);
 			System.out.println("El mensaje es : " + aMensaje);
@@ -61,10 +60,7 @@ public class BD_Mensajes {
 			System.out.println("Mensaje enviado por : " + aEmisor.getCorreo_electronico());
 			
 			MensajeDAO.save(m);
-			
-			/*Se inicia el hilo*/
-			m.set_Responder_a(m);
-			
+					
 			t.commit();
 		} catch(Exception e) {
 			e.printStackTrace();
