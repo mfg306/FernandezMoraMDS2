@@ -100,6 +100,28 @@ public class BD_UR {
 		}
 		return usuarioEncontrado;
 	}
+	
+		public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		UR usuario = URDAO.createUR();
+		usuario.setCorreo_electronico(aCorreo);
+		base_de_datos.UR usuarioEncontrado = null;
+
+		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
+		try {
+			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
+				usuarioEncontrado = usuariosCorreo[0];
+				usuarioEncontrado.setContrasenia(aContrasenia);
+				URDAO.save(usuarioEncontrado);
+				t.commit();
+			}
+		} catch (Exception e) {
+			t.rollback();
+			e.getStackTrace();
+			
+		}
+		
+	}
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
 		throw new UnsupportedOperationException();
