@@ -141,12 +141,50 @@ public class BD_UR {
 		
 	}
 	
-	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) {
-		
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		UR usuario = URDAO.createUR();
+		usuario.setCorreo_electronico(aCorreo);
+		base_de_datos.UR usuarioEncontrado = null;
+
+		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
+		try {
+			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
+				usuarioEncontrado = usuariosCorreo[0];
+				usuarioEncontrado.setNombre_usuario(aNombreUsuario);
+				usuarioEncontrado.setNombre(aNombre);
+				usuarioEncontrado.setPrimer_apellido(aApellidos);
+				usuarioEncontrado.setDireccion_envio(aDireccion);
+				usuarioEncontrado.setMetodo_pago(aMetodoDePago);
+				URDAO.save(usuarioEncontrado);
+				t.commit();
+			}
+		} catch (Exception e) {
+			t.rollback();
+			e.getStackTrace();
+			
+		}
 	}
 	
-	public void eliminarUsuario(int aIdUsuario) {
-		
+	public void eliminarUsuario(String aCorreo) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		UR usuario = URDAO.createUR();
+		usuario.setCorreo_electronico(aCorreo);
+		base_de_datos.UR usuarioEncontrado = null;
+
+		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
+		try {
+			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
+				usuarioEncontrado = usuariosCorreo[0];
+				usuarioEncontrado.setEsta_operativo(false);
+				URDAO.save(usuarioEncontrado);
+				t.commit();
+			}
+		} catch (Exception e) {
+			t.rollback();
+			e.getStackTrace();
+			
+		}
 	}
 
 }

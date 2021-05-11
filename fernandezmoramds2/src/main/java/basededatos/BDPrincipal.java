@@ -341,15 +341,15 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_UNR.cargarClientes();
 	}
 	
-	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) {
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) throws PersistentException {
 		this._bD_UNR.cambiarDatosUsuario(aNombreUsuario, aNombre, aApellidos, aCorreo, aDireccion, aMetodoDePago);
 	}
 	
-	public void eliminarUsuario(int aIdUsuario) {
-		this._bD_UNR.eliminarUsuario(aIdUsuario);
+	public void eliminarUsuario(String aCorreo) throws PersistentException {
+		this._bD_UNR.eliminarUsuario(aCorreo);
 	}
 
-	public void actualizarContrasenia(String aContraseniaActual,String aNuevaContrasenia, String aConfirmacionNuevaContrasenia) {
+	public void actualizarContrasenia(String aContraseniaActual,String aNuevaContrasenia, String aConfirmacionNuevaContrasenia) throws PersistentException {
 		this._bD_UNR.actualizarContrasenia(aContraseniaActual, aNuevaContrasenia, aConfirmacionNuevaContrasenia);
 	}
 	
