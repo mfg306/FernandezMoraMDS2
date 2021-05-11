@@ -69,21 +69,21 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
 
 			iUNR_ iunr = new BDPrincipal();
-			iAdministrador iadmin = new BDPrincipal();
-			iUR iur = new BDPrincipal();
-			
+			base_de_datos.Usuario_General usuario = null;
+
 			try {
-				if (iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 1) {
+				usuario = iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue());
+				
+				if(usuario != null && usuario instanceof base_de_datos.UR) {
 					limpiar_interfaz();
-					this.UR = iur.buscarUsuarioPorCorreo(this.getCorreo().getValue());
-					this._menu_UNR.layout.add(new UR(UR));
-				} else if (iadmin.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue()) == 2) {
+					this._menu_UNR.layout.add(new UR(usuario));
+				} else if(usuario != null && usuario instanceof base_de_datos.Administrador) {
 					limpiar_interfaz();
-					this.admin = iadmin.buscarAdministradorPorCorreo(this.getCorreo().getValue());
-					this._menu_UNR.layout.add(new Administrador(this.admin));
+					this._menu_UNR.layout.add(new Administrador(usuario));
 				} else {
 					Notification.show("El usuario no está registrado");
 				}
+		
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}

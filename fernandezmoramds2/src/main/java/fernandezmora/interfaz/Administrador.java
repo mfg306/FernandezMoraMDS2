@@ -18,7 +18,7 @@ public class Administrador extends VistaAdministrador{
 	public VerticalLayout layout;
 
 	
-	public Administrador(base_de_datos.Administrador admin) {
+	public Administrador(base_de_datos.Usuario_General admin) {
 		_menu_A = new Menu_A(this, admin);
 		inicializar();
 	}

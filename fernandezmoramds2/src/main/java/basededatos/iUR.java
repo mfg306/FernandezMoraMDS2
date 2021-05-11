@@ -9,8 +9,6 @@ import base_de_datos.Mensaje;
 
 public interface iUR extends iUR_UNR {
 
-	public UR buscarUsuarioPorCorreo(String aCorreo)throws PersistentException;
-
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago);
 
 	public Compra[] cargarPedidos(UR aUsuario);

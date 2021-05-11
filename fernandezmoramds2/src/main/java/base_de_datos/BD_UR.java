@@ -64,7 +64,7 @@ public class BD_UR {
 		return true;
 	}
 
-	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
+	public Usuario_General iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
 		UR usuario = URDAO.createUR();
 
 		usuario.setCorreo_electronico(aCorreo);
@@ -72,30 +72,13 @@ public class BD_UR {
 
 		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
 
-		if (usuariosCorreo.length == 0) return 0;
-		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico()) && usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia())) return 1;
+		if (usuariosCorreo.length == 0) return null;
+		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico()) 
+				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia())) return usuariosCorreo[0];
 
-		return 0;
+		return null;
 	}
-
-	public UR buscarUsuarioPorCorreo(String aCorreo) throws PersistentException {
-		
-		UR usuario = URDAO.createUR();
-		usuario.setCorreo_electronico(aCorreo);
-		base_de_datos.UR usuarioEncontrado = null;
-		
-		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
-		try {
-			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
-				usuarioEncontrado = usuariosCorreo[0];
-			}
-		} catch (Exception e) {
-			e.getStackTrace();
-			return null;
-		}
-	return usuarioEncontrado;
-	}
-
+	
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
 		throw new UnsupportedOperationException();
 	}

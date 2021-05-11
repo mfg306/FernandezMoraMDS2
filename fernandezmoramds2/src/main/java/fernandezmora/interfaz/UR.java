@@ -15,9 +15,9 @@ public class UR extends UR_UNR{
 	public Ver_producto_UR _ver_producto_UR;
 	public base_de_datos.UR UR;
 	
-	public UR(base_de_datos.UR ur) {
+	public UR(base_de_datos.Usuario_General ur) {
 		super();
-		this.UR = ur;
+		this.UR = (base_de_datos.UR)ur;
 		listaAux = new Vector<Producto_carrito>();
 		inicializar();
 	}

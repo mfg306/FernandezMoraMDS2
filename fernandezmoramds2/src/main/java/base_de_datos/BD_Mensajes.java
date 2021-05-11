@@ -29,6 +29,7 @@ public class BD_Mensajes {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		
 		try {
+			
 			Mensaje m = MensajeDAO.createMensaje();
 			if(aEmisor instanceof base_de_datos.Administrador) {
 				m.set_Enviado_por_Admin((base_de_datos.Administrador)aEmisor);
@@ -43,6 +44,12 @@ public class BD_Mensajes {
 			m.setMensaje(aMensaje);
 			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
 			
+			System.out.println("Mensaje se envia a : " + aCorreoReceptor);
+			System.out.println("El mensaje es : " + aMensaje);
+			System.out.println("El asunto es : " + aAsunto);
+			System.out.println("Mensaje enviado por : " + aEmisor.getCorreo_electronico());
+			
+			MensajeDAO.save(m);
 			
 			t.commit();
 		} catch(Exception e) {

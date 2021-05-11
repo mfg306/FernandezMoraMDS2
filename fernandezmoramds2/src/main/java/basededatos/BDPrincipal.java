@@ -126,10 +126,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public UR buscarUsuarioPorCorreo(String aCorreo) throws PersistentException {
-		return this._bD_UNR.buscarUsuarioPorCorreo(aCorreo);
-	}
-
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
 		throw new UnsupportedOperationException();
 	}
@@ -163,22 +159,15 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return registrado;
 	}
 
-	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
-		int existeUsuario = 0;
-		int existeAdmin = 0;
-
+	public Usuario_General iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
+		Usuario_General resultado = null;
 		try {
-			existeUsuario = this._bD_UNR.iniciarSesion(aCorreo, aContrasenia);
-			if (existeUsuario == 1)
-				return 1;
-			existeAdmin = this._bD_Administrador.iniciarSesion(aCorreo, aContrasenia);
-			if (existeAdmin == 2)
-				return 2;
+			resultado = this._bD_UNR.iniciarSesion(aCorreo, aContrasenia);
+			if(resultado == null) resultado = this._bD_Administrador.iniciarSesion(aCorreo, aContrasenia);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		return 0;
+		return resultado;
 	}
 
 	public int buscarUsuario(String aCampo, String aPassword) {
@@ -340,9 +329,5 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_Pendiente.cargarPendientes();
 	}
 
-	@Override
-	public Administrador buscarAdministradorPorCorreo(String aCorreo) throws PersistentException {
-		return this._bD_Administrador.buscarAdministradorPorCorreo(aCorreo);
-	}
 	
 }

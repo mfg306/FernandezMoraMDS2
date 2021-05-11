@@ -9,7 +9,7 @@ public class BD_Administrador {
 	public BDPrincipal _bDPrincipal;
 	public Administrador _administrador;
 
-	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
+	public Usuario_General iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {
 
 		Administrador admin = AdministradorDAO.createAdministrador();
 
@@ -19,16 +19,10 @@ public class BD_Administrador {
 		Administrador[] administradores = AdministradorDAO
 				.listAdministradorByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
 
-		if (administradores.length == 0) return 0;
-		if (administradores[0].getCorreo_electronico().equals(admin.getCorreo_electronico())) return 2;
+		if (administradores.length == 0) return null;
+		if (administradores[0].getCorreo_electronico().equals(admin.getCorreo_electronico())) return administradores[0];
 
-		return 0;
+		return null;
 
 	}
-	
-	public Administrador buscarAdministradorPorCorreo(String aCorreo) throws PersistentException {
-		Administrador[] admin = AdministradorDAO.listAdministradorByQuery("correo_electronico = '" + aCorreo +"'", "correo_electronico");
-		return admin[0];
-	}
-
 }

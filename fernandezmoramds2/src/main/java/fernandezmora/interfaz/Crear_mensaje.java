@@ -2,6 +2,8 @@ package fernandezmora.interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import basededatos.iUR;
@@ -22,6 +24,7 @@ public class Crear_mensaje extends VistaCrear_mensaje{
 			if(this.general instanceof base_de_datos.Administrador) {
 				iAdministrador iadmin = new BDPrincipal();
 				try {
+					System.out.println("Es un administrador");
 					iadmin.enviarMensaje(this.getDestinatario().getValue(), 
 							this.getMensaje().getValue(), this.getAsunto().getValue(), this.general);
 				} catch (PersistentException e) {
@@ -31,13 +34,17 @@ public class Crear_mensaje extends VistaCrear_mensaje{
 			
 			if(this.general instanceof base_de_datos.UR) {
 				iUR iur = new BDPrincipal();
-				try {
+				try {					
+					System.out.println("Es un UR");
 					iur.enviarMensaje(this.getDestinatario().getValue(), 
 							this.getMensaje().getValue(), this.getAsunto().getValue(), this.general);
 				} catch (PersistentException e) {
 					e.printStackTrace();
 				}
 			}
+			
+			
+			Notification.show("Mensaje enviado con exito");
 		});
 	}
 }

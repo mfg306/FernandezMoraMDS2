@@ -27,7 +27,7 @@ public interface iAdministrador {
 
 	public void enviarMensaje(String aCorreoReceptor, String aMensaje, String aAsunto, Usuario_General aEmisor) throws PersistentException;
 
-	public int iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
+	public Usuario_General iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
 
 	public void guardarImagenesProducto(int aIdProducto, Imagen[] aImagenes);
 
@@ -72,8 +72,5 @@ public interface iAdministrador {
 	public Enviado[] cargarEnviados() throws PersistentException;
 	
 	public Pendiente[] cargarPendientes() throws PersistentException;
-	
-	public Administrador buscarAdministradorPorCorreo(String aCorreo) throws PersistentException ;
-	
 	
 }
