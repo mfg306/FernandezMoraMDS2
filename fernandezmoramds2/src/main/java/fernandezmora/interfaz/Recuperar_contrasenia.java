@@ -19,6 +19,7 @@ import com.vaadin.flow.component.notification.Notification;
 import basededatos.BDPrincipal;
 import basededatos.iUR;
 import basededatos.iUR_UNR;
+import generarContrasenia.PasswordGenerator;
 import vistas.VistaRecuperar_contrasenia;
 
 public class Recuperar_contrasenia extends VistaRecuperar_contrasenia {
