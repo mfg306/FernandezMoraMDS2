@@ -86,6 +86,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public UR buscarUsuarioPorCorreo(String aCorreo) throws PersistentException {
 		return this._bD_UNR.buscarUsuarioPorCorreo(aCorreo);
 	}
+			
+	public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException {
+		this._bD_UNR.cambiarContraseniaUsuario(aCorreo, aContrasenia);
+	}
 
 	public Producto[] cargarProductosMasVendidos(String aNombreCategoria) {
 		throw new UnsupportedOperationException();
