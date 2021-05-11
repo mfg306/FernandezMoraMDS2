@@ -24,4 +24,6 @@ public interface iUR extends iUR_UNR {
 	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario)throws PersistentException;
 	
 	public boolean valorar( int aIdProducto, int aIdUsuario,String aValoracion)throws PersistentException;
+	
+	public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException;
 }
