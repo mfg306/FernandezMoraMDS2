@@ -76,4 +76,14 @@ public class Crear_mensaje extends VistaCrear_mensaje{
 			Notification.show("Mensaje enviado con exito");
 		});
 	}
+	
+	public void responderMensaje() {
+		this.getResponder().addClickListener(event ->{
+			if(this._mensajes_recibidos.general instanceof base_de_datos.UR) {
+				iUR iur = new BDPrincipal();
+				
+				iur.responderMensaje(this.mensaje.getCorreo_receptor(), null, null, mensaje)
+			}
+		});
+	}
 }

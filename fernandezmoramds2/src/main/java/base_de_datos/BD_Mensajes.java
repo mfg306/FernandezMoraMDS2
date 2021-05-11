@@ -23,7 +23,6 @@ public class BD_Mensajes {
 
 	public Mensaje[] cargarMensajesRecibidos(Usuario_General aUsuario) throws PersistentException {
 		Mensaje[] mensajes = MensajeDAO.listMensajeByQuery("correo_receptor = '" + aUsuario.getCorreo_electronico()+ "'", null);
-		
 		return mensajes;
 		
 	}
