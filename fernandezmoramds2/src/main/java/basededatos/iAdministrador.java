@@ -13,6 +13,7 @@ import base_de_datos.Categoria;
 import base_de_datos.Empleado;
 import base_de_datos.Enviado;
 import base_de_datos.Recibido;
+import base_de_datos.UR;
 import base_de_datos.Usuario_General;
 
 public interface iAdministrador {
@@ -72,5 +73,7 @@ public interface iAdministrador {
 	public Enviado[] cargarEnviados() throws PersistentException;
 	
 	public Pendiente[] cargarPendientes() throws PersistentException;
+	
+	public UR[] cargarClientes() throws PersistentException;
 	
 }

@@ -35,8 +35,6 @@ public class VistaCrear_mensaje extends PolymerTemplate<VistaCrear_mensaje.Vista
 	private Button boton_enviados;
 	@Id("asunto")
 	private TextField asunto;
-	@Id("destinatario")
-	private TextField destinatario;
 	@Id("mensaje")
 	private TextField mensaje;
 	@Id("vaadinHorizontalLayout1")
@@ -45,6 +43,8 @@ public class VistaCrear_mensaje extends PolymerTemplate<VistaCrear_mensaje.Vista
 	private Button boton_atras;
 	@Id("boton_enviar")
 	private Button boton_enviar;
+	@Id("huecoSelect")
+	private HorizontalLayout huecoSelect;
 
 	/**
      * Creates a new VistaCrear_mensaje.
@@ -116,14 +116,6 @@ public class VistaCrear_mensaje extends PolymerTemplate<VistaCrear_mensaje.Vista
 		this.asunto = asunto;
 	}
 
-	public TextField getDestinatario() {
-		return destinatario;
-	}
-
-	public void setDestinatario(TextField destinatario) {
-		this.destinatario = destinatario;
-	}
-
 	public TextField getMensaje() {
 		return mensaje;
 	}
@@ -154,5 +146,13 @@ public class VistaCrear_mensaje extends PolymerTemplate<VistaCrear_mensaje.Vista
 
 	public void setBoton_enviar(Button boton_enviar) {
 		this.boton_enviar = boton_enviar;
+	}
+
+	public HorizontalLayout getHuecoSelect() {
+		return huecoSelect;
+	}
+
+	public void setHuecoSelect(HorizontalLayout huecoSelect) {
+		this.huecoSelect = huecoSelect;
 	}
 }

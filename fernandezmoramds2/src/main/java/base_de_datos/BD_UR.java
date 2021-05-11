@@ -108,4 +108,11 @@ public class BD_UR {
 	public UR[] cargarFichaCliente() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public UR[] cargarClientes() throws PersistentException{
+		UR[] usuarios = URDAO.listURByQuery(null, null);
+		return usuarios;
+
+	}
+
 }

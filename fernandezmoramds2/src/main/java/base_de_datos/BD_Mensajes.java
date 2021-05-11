@@ -1,6 +1,9 @@
 package base_de_datos;
 
 import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
+import basededatos.iUR;
+
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -31,19 +34,27 @@ public class BD_Mensajes {
 		try {
 			
 			Mensaje m = MensajeDAO.createMensaje();
+			this._bDPrincipal = new BDPrincipal();
 			if(aEmisor instanceof base_de_datos.Administrador) {
+				iUR user = this._bDPrincipal;
+				UR usuarioReceptor = user.buscarUsuarioPorCorreo(aCorreoReceptor);
 				m.set_Enviado_por_Admin((base_de_datos.Administrador)aEmisor);
+				m.set_Enviado_por_UR(usuarioReceptor);
 			}
 			
 			if(aEmisor instanceof base_de_datos.UR) {
+				iAdministrador admin = this._bDPrincipal;
+//				Hacer lo mismo pero al reves (que lo del if de arriba)
+				/*Necesito el metodo de buscarAdmin*/
 				m.set_Enviado_por_UR((base_de_datos.UR)aEmisor);
 			}
 			
-			/*Si el usuario receptor no existe, entonces no mandar el mensaje ==> modificar el diagrama de secuencias*/
 			m.setCorreo_receptor(aCorreoReceptor);
 			m.setMensaje(aMensaje);
 			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
 			
+			m.set_Mensaje(m);
+		
 			System.out.println("Mensaje se envia a : " + aCorreoReceptor);
 			System.out.println("El mensaje es : " + aMensaje);
 			System.out.println("El asunto es : " + aAsunto);
@@ -51,10 +62,15 @@ public class BD_Mensajes {
 			
 			MensajeDAO.save(m);
 			
+			
+			/*Se inicia el hilo*/
+			m.set_Responder_a(m);
+			
 			t.commit();
 		} catch(Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
+		
 	}
 }

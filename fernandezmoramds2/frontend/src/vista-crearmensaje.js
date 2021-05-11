@@ -1,8 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaCrear_mensaje extends PolymerElement {
 
@@ -28,7 +28,7 @@ class VistaCrear_mensaje extends PolymerElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-text-field id="asunto" style="width: 100%;" placeholder="Introduzca un asunto"></vaadin-text-field>
-  <vaadin-text-field id="destinatario" placeholder="Destinatario"></vaadin-text-field>
+  <vaadin-horizontal-layout id="huecoSelect" style="width: 100%;"></vaadin-horizontal-layout>
   <vaadin-text-field id="mensaje" style="width: 100%; height: 100%;" placeholder="Introduzca su mensaje"></vaadin-text-field>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

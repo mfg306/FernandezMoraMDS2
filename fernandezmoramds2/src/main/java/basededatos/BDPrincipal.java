@@ -332,6 +332,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public Pendiente[] cargarPendientes() throws PersistentException {
 		return this._bD_Pendiente.cargarPendientes();
 	}
+	
+	public UR[] cargarClientes() throws PersistentException{
+		return this._bD_UNR.cargarClientes();
+	}
+
 
 	
 }
