@@ -26,4 +26,10 @@ public interface iUR extends iUR_UNR {
 	public boolean valorar( int aIdProducto, int aIdUsuario,String aValoracion)throws PersistentException;
 	
 	public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException;
+	
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago);
+	
+	public void eliminarUsuario(int aIdUsuario);
+	
+	public void actualizarContrasenia(String aContraseniaActual,String aNuevaContrasenia, String aConfirmacionNuevaContrasenia);
 }

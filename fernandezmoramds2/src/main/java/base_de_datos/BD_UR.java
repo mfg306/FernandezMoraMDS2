@@ -136,5 +136,17 @@ public class BD_UR {
 		return usuarios;
 
 	}
+	
+	public void actualizarContrasenia(String aContraseniaActual,String aNuevaContrasenia, String aConfirmacionNuevaContrasenia) {
+		
+	}
+	
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) {
+		
+	}
+	
+	public void eliminarUsuario(int aIdUsuario) {
+		
+	}
 
 }
