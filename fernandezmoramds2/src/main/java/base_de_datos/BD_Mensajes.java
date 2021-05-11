@@ -62,7 +62,6 @@ public class BD_Mensajes {
 			
 			MensajeDAO.save(m);
 			
-			
 			/*Se inicia el hilo*/
 			m.set_Responder_a(m);
 			
@@ -71,6 +70,5 @@ public class BD_Mensajes {
 			e.printStackTrace();
 			t.rollback();
 		}
-		
 	}
 }
