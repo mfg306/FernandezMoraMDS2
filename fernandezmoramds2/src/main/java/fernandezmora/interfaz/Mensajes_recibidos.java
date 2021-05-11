@@ -26,24 +26,27 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	}
 	
 	public void add_mensaje_recibido(base_de_datos.Mensaje mensaje) {
-		Mensaje_recibido mr = new Mensaje_recibido(mensaje);
+		Mensaje_recibido mr = new Mensaje_recibido(general,mensaje,this);
 		this._list_Mensaje_recibido.add(mr);
 		this.layout.add(mr);
 	}
 	
+	public void limpiar_interfaz() {
+		this._crear_mensaje = new Crear_mensaje(this.general);
+		this.getBoton_crear_mensaje().setVisible(false);
+		this.getBoton_pagina_anterior().setVisible(false);
+		this.getBoton_pagina_siguiente().setVisible(false);
+		this.getNumero_de_pagina().setVisible(false);
+	}
+	
 	public void abrir_Crear_Mensaje() {
 		this.getBoton_crear_mensaje().addClickListener(event ->{
-			this._crear_mensaje = new Crear_mensaje(this.general);
-			this.getBoton_crear_mensaje().setVisible(false);
-			this.getBoton_pagina_anterior().setVisible(false);
-			this.getBoton_pagina_siguiente().setVisible(false);
-			this.getNumero_de_pagina().setVisible(false);
-			
+			limpiar_interfaz();
 			this._ver_bandeja_de_entrada.limpiar_interfaz();
 			this._ver_bandeja_de_entrada.layout.add(this._crear_mensaje);
 		});
 	}
-		
+	
 	public void Ver_mensajes_anteriores() {
 		throw new UnsupportedOperationException();
 	}

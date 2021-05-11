@@ -10,10 +10,12 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 	public Vector<Mensaje_enviado> _list_Mensaje_enviado = new Vector<Mensaje_enviado>();
 	public Crear_mensaje _crear_mensaje;
 	public VerticalLayout layoutEnviados;
+	base_de_datos.Usuario_General general;
 
 	
 	public Mensajes_enviados(base_de_datos.Usuario_General general, Ver_mensajes_enviados vme) {
 		super(general, vme);
+		this.general = general;
 		inicializarEnviados();
 	}
 	
@@ -24,7 +26,7 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 	}
 	
 	public void add_mensaje_enviado(base_de_datos.Mensaje mensaje) {
-		Mensaje_enviado me = new Mensaje_enviado(mensaje);
+		Mensaje_enviado me = new Mensaje_enviado(this.general, mensaje, this);
 		this._list_Mensaje_enviado.add(me);
 		layoutEnviados.add(me);
 		
