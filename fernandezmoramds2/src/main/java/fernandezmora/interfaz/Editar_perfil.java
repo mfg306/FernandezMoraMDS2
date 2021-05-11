@@ -2,8 +2,10 @@ package fernandezmora.interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import base_de_datos.UR;
 import basededatos.BDPrincipal;
 import basededatos.iUR;
 import vistas.VistaEditar_perfil;
@@ -48,26 +50,40 @@ public class Editar_perfil extends VistaEditar_perfil {
 	public void editarPerfil() {
 
 		iUR iur = new BDPrincipal();
+		
 		try {
-			base_de_datos.UR ur = iur.buscarUsuarioPorCorreo(this._menu_UR._uR.UR.getCorreo_electronico());
-			this.getNombre_usuario().setValue(ur.getNombre_usuario().toString());
-			this.getNombre().setValue(ur.getNombre().toString());
-			this.getCorreo_electronico().setValue(ur.getCorreo_electronico().toString());
-			this.getApellidos().setValue(ur.getPrimer_apellido().toString());
+		
+			this._menu_UR._uR.UR = iur.buscarUsuarioPorCorreo(this._menu_UR._uR.UR.getCorreo_electronico());
+			this.getNombre_usuario().setValue(this._menu_UR._uR.UR.getNombre_usuario().toString());
+			this.getNombre().setValue(this._menu_UR._uR.UR.getNombre().toString());
+			this.getCorreo_electronico().setValue(this._menu_UR._uR.UR.getCorreo_electronico().toString());
+			this.getApellidos().setValue(this._menu_UR._uR.UR.getPrimer_apellido().toString());
 			
-			if (this.getDireccion_envio().getValue().equals("")) {
+			if (this._menu_UR._uR.UR.getDireccion_envio() == null) {
 				this.getDireccion_envio().setValue("Ninguna dirección de envío añadida");
 			} else {
-				this.getDireccion_envio().setValue(ur.getDireccion_envio());
+				this.getDireccion_envio().setValue(this._menu_UR._uR.UR.getDireccion_envio().toString());
 			}
-			if (this.getMetodo_pago().getValue().equals("")) {
+			if (this._menu_UR._uR.UR.getMetodo_pago() == null) {
 				this.getMetodo_pago().setValue("Ningún método de pago añadido");
 			} else {
-				this.getMetodo_pago().setValue(ur.getMetodo_pago());
+				this.getMetodo_pago().setValue(this._menu_UR._uR.UR.getMetodo_pago().toString());
 			}
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
-
+		
+		this.getBoton_guardar().addClickListener(event ->{
+			try {
+				iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue()
+						, this.getCorreo_electronico().getValue(), this.getDireccion_envio().getValue(), this.getMetodo_pago().getValue());
+				Notification.show("Configuración guardada con éxito");
+				
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		
 	}
 }
