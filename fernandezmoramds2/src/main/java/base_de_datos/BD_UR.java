@@ -27,32 +27,34 @@ public class BD_UR {
 			usuario.setPrimer_apellido(aApellidos);
 			usuario.setContrasenia(aContrasenia);
 			usuario.setNombre_usuario(aNombreUsuario);
-			
+
 			boolean hayDigitos = false, mayorDe8Caracteres = false, hayMayuscula = false, hayCaracteres = false;
-			
-			if(usuario.getContrasenia().length() > 8) mayorDe8Caracteres = true;
-			if(mayorDe8Caracteres) return false;
-			
-			
-			for(Character c : usuario.getContrasenia().toCharArray()) {
-				if(Character.isDigit(c)) hayDigitos = true;
-				if(Character.isLetter(c)) {
+
+			if (usuario.getContrasenia().length() > 8)
+				mayorDe8Caracteres = true;
+			if (mayorDe8Caracteres)
+				return false;
+
+			for (Character c : usuario.getContrasenia().toCharArray()) {
+				if (Character.isDigit(c))
+					hayDigitos = true;
+				if (Character.isLetter(c)) {
 					hayCaracteres = true;
-					if(Character.isUpperCase(c)) hayMayuscula = true;
+					if (Character.isUpperCase(c))
+						hayMayuscula = true;
 				}
 			}
-			
-			if(!hayDigitos || !hayMayuscula || !hayCaracteres) {
+
+			if (!hayDigitos || !hayMayuscula || !hayCaracteres) {
 				return false;
 			}
-			
-	
-			 UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
 
-			  if (usuariosCorreo.length == 0) {
-				  URDAO.save(usuario);
-			  }
-				  
+			UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
+
+			if (usuariosCorreo.length == 0) {
+				URDAO.save(usuario);
+			}
+
 			t.commit();
 
 		} catch (Exception e) {
@@ -72,13 +74,33 @@ public class BD_UR {
 
 		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
 
-		if (usuariosCorreo.length == 0) return null;
-		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico()) 
-				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia())) return usuariosCorreo[0];
+		if (usuariosCorreo.length == 0)
+			return null;
+		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())
+				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia()))
+			return usuariosCorreo[0];
 
 		return null;
 	}
-	
+
+	public UR buscarUsuarioPorCorreo(String aCorreo) throws PersistentException {
+
+		UR usuario = URDAO.createUR();
+		usuario.setCorreo_electronico(aCorreo);
+		base_de_datos.UR usuarioEncontrado = null;
+
+		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
+		try {
+			if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())) {
+				usuarioEncontrado = usuariosCorreo[0];
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+			return null;
+		}
+		return usuarioEncontrado;
+	}
+
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
 		throw new UnsupportedOperationException();
 	}

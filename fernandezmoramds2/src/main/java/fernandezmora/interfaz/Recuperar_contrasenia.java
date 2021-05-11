@@ -12,10 +12,13 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-
+import org.orm.PersistentException;
 
 import com.vaadin.flow.component.notification.Notification;
 
+import basededatos.BDPrincipal;
+import basededatos.iUR;
+import basededatos.iUR_UNR;
 import vistas.VistaRecuperar_contrasenia;
 
 public class Recuperar_contrasenia extends VistaRecuperar_contrasenia {
@@ -31,49 +34,29 @@ public class Recuperar_contrasenia extends VistaRecuperar_contrasenia {
 
 	public void inicializar(Iniciar_sesion_UNR iunr) {
 		this._iniciar_sesion_UNR = iunr;
-		Enviar_enlace_recuperacion();
+		recuperarContrasenia();
 
 	}
 
-	public void Enviar_enlace_recuperacion() {
+	public void recuperarContrasenia() {
+		
+		iUR iur = new BDPrincipal();
+		
 		this.getBoton_enviar_correo().addClickListener(event -> {
-			enviarConGMail(this.getCorreo().getValue(), "Tu nueva contraseña de TiendaElectrodomesticos", "Nueva contraseña");
-			Notification.show("Enlace de recuperación enviado. Revise su bandeja de entrada del correo "
-					+ this.getCorreo().getValue());
+		try {
+			base_de_datos.UR ur = iur.buscarUsuarioPorCorreo(this.getCorreo().getValue());
+			if(ur != null) {
+				Gestor_Correos.enviarPasswordTemporal(ur.getCorreo_electronico(), "Tu nueva contraseña de TiendaElectrodomésticos", "Nueva contraseña");
+				Notification.show("Le acabamos de enviar una contraseña temporal a su correo  " + ur.getCorreo_electronico() + "  revise su bandeja de entrada");
+			}else {
+				Notification.show("No esta registrado ese correo");
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		});
-	}
-
-	public static void enviarConGMail(String destinatario, String Asunto, String cuerpo) {
-		 Properties propiedad = new Properties();
-	        propiedad.setProperty("mail.smtp.host", "smtp.gmail.com");
-	        propiedad.setProperty("mail.smtp.starttls.enable", "true");
-	        propiedad.setProperty("mail.smtp.port", "587");
-	        propiedad.setProperty("mail.smtp.auth","true");
-	        
-	        Session sesion = Session.getDefaultInstance(propiedad);
-	        String correoEnvia = "tiendaelectrodomesticosmds2@gmail.com";
-	        String contrasena = "JorgeMarta9900..es";
-	        String receptor = destinatario ;
-	        String asunto = Asunto;
-	        String mensaje= cuerpo;
-	        
-	        MimeMessage mail = new MimeMessage(sesion);
-	        try {
-	            mail.setFrom(new InternetAddress (correoEnvia));
-	            mail.addRecipient(Message.RecipientType.TO, new InternetAddress (receptor));
-	            mail.setSubject(asunto);
-	            mail.setText(mensaje);
-	            
-	            Transport transportar = sesion.getTransport("smtp");
-	            transportar.connect(correoEnvia,contrasena);
-	            transportar.sendMessage(mail, mail.getRecipients(Message.RecipientType.TO));          
-	            transportar.close();
-	            
-	            
-	        } catch (AddressException ex) {
-	            Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
-	        } catch (MessagingException ex) {
-	            Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
-	        }
+	
 	}
 }

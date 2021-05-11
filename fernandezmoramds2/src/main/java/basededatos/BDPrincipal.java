@@ -82,6 +82,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		}
 		return cts;
 	}
+	
+	public UR buscarUsuarioPorCorreo(String aCorreo) throws PersistentException {
+		return this._bD_UNR.buscarUsuarioPorCorreo(aCorreo);
+	}
 
 	public Producto[] cargarProductosMasVendidos(String aNombreCategoria) {
 		throw new UnsupportedOperationException();
