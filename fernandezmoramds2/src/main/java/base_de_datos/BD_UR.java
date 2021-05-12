@@ -137,8 +137,18 @@ public class BD_UR {
 
 	}
 	
-	public void actualizarContrasenia(String aContraseniaActual,String aNuevaContrasenia, String aConfirmacionNuevaContrasenia) {
+	public void actualizarContrasenia(UR ur, String aNuevaContrasenia) throws PersistentException  {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		
+		try {
+			ur.setContrasenia(aNuevaContrasenia);
+			URDAO.save(ur);
+			t.commit();
+		} catch (PersistentException e) {
+		
+			e.printStackTrace();
+		}
+			
 	}
 	
 	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) throws PersistentException {
