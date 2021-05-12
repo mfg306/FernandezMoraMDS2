@@ -353,8 +353,13 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_UNR.actualizarContrasenia(aContraseniaActual, aNuevaContrasenia, aConfirmacionNuevaContrasenia);
 	}
 	
-	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) {
-		throw new UnsupportedOperationException();
+	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException {
+		return this._bD_Mensajes.responderMensaje(aCorreoReceptor, aMensaje, aEmisor, mensajeHilo);
+	}
+
+	@Override
+	public Administrador buscarAdmin(String aCorreo) throws PersistentException {
+		return this._bD_Administrador.buscarAdmin(aCorreo);
 	}
 	
 }

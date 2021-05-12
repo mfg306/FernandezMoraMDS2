@@ -31,7 +31,6 @@ public class BD_Mensajes {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		
 		try {
-			
 			Mensaje m = MensajeDAO.createMensaje();
 			this._bDPrincipal = new BDPrincipal();
 			if(aEmisor instanceof base_de_datos.Administrador) {
@@ -42,22 +41,16 @@ public class BD_Mensajes {
 			}
 			
 			if(aEmisor instanceof base_de_datos.UR) {
-				iAdministrador admin = this._bDPrincipal;
-//				Hacer lo mismo pero al reves (que lo del if de arriba)
-				/*Necesito el metodo de buscarAdmin*/
+				iAdministrador iadmin = this._bDPrincipal;
+				Administrador admin = iadmin.buscarAdmin(aCorreoReceptor);
 				m.set_Enviado_por_UR((base_de_datos.UR)aEmisor);
+				m.set_Enviado_por_Admin(admin);
 			}
 			
 			m.setCorreo_receptor(aCorreoReceptor);
 			m.setMensaje(aMensaje);
 			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
-			
-		
-			System.out.println("Mensaje se envia a : " + aCorreoReceptor);
-			System.out.println("El mensaje es : " + aMensaje);
-			System.out.println("El asunto es : " + aAsunto);
-			System.out.println("Mensaje enviado por : " + aEmisor.getCorreo_electronico());
-			
+						
 			MensajeDAO.save(m);
 					
 			t.commit();
@@ -67,7 +60,42 @@ public class BD_Mensajes {
 		}
 	}
 	
-	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) {
+	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			Mensaje m = MensajeDAO.createMensaje();
+			this._bDPrincipal = new BDPrincipal();
+
+			if(aEmisor instanceof base_de_datos.Administrador) {
+				iUR user = this._bDPrincipal;
+				UR usuarioReceptor = user.buscarUsuarioPorCorreo(aCorreoReceptor);
+				m.set_Enviado_por_Admin((base_de_datos.Administrador)aEmisor);
+				m.set_Enviado_por_UR(usuarioReceptor);
+			}
+			
+			if(aEmisor instanceof base_de_datos.UR) {
+				iAdministrador iadmin = this._bDPrincipal;
+				Administrador admin = iadmin.buscarAdmin(aCorreoReceptor);
+				m.set_Enviado_por_UR((base_de_datos.UR)aEmisor);
+				m.set_Enviado_por_Admin(admin);
+			}
+			
+			m.setCorreo_receptor(aCorreoReceptor);
+			m.setMensaje(aMensaje);
+			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
+			m.set_Responder_a(mensajeHilo);
+						
+			MensajeDAO.save(m);
+					
+			t.commit();
+			return true;
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		}
+		
 		return false;
 	}
 }

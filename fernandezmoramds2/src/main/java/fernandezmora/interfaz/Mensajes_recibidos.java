@@ -32,7 +32,6 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	}
 	
 	public void limpiar_interfaz() {
-		this._crear_mensaje = new Crear_mensaje(this.general);
 		this.getBoton_crear_mensaje().setVisible(false);
 		this.getBoton_pagina_anterior().setVisible(false);
 		this.getBoton_pagina_siguiente().setVisible(false);
@@ -42,8 +41,10 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	public void abrir_Crear_Mensaje() {
 		this.getBoton_crear_mensaje().addClickListener(event ->{
 			limpiar_interfaz();
+			this._crear_mensaje = new Crear_mensaje(this.general);
 			this._ver_bandeja_de_entrada.limpiar_interfaz();
 			this._ver_bandeja_de_entrada.layout.add(this._crear_mensaje);
+			this.layout.removeAll();
 		});
 	}
 	

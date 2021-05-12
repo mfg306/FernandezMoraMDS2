@@ -27,12 +27,6 @@ public class VistaCrear_mensaje extends PolymerTemplate<VistaCrear_mensaje.Vista
 	private Span span;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("boton_recibidos")
-	private Button boton_recibidos;
-	@Id("boton_enviados")
-	private Button boton_enviados;
 	@Id("asunto")
 	private TextField asunto;
 	@Id("mensaje")
@@ -82,30 +76,6 @@ public class VistaCrear_mensaje extends PolymerTemplate<VistaCrear_mensaje.Vista
 
 	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public Button getBoton_recibidos() {
-		return boton_recibidos;
-	}
-
-	public void setBoton_recibidos(Button boton_recibidos) {
-		this.boton_recibidos = boton_recibidos;
-	}
-
-	public Button getBoton_enviados() {
-		return boton_enviados;
-	}
-
-	public void setBoton_enviados(Button boton_enviados) {
-		this.boton_enviados = boton_enviados;
 	}
 
 	public TextField getAsunto() {
