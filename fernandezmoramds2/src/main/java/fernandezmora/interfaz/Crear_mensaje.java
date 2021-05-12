@@ -21,7 +21,6 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 
 	public Crear_mensaje(base_de_datos.Usuario_General general) {
 		this.general = general;
-		System.out.println("Se quiere crear un mensaje");
 		crearMensaje();
 		inicializar();
 	}
@@ -34,7 +33,6 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 	public Crear_mensaje(base_de_datos.Usuario_General general, base_de_datos.Mensaje mensaje) {
 		this.general = general;
 		this.mensaje = mensaje;
-		System.out.println("Se quiere responder a un mensaje");
 		this.getAsunto().setVisible(false);
 		responderMensaje();
 		inicializar();
@@ -68,11 +66,9 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 
 	public void crearMensaje() {
 		this.getBoton_enviar().addClickListener(event -> {
-			System.out.println("Creando mensaje ... ");
 			if (this.general instanceof base_de_datos.Administrador) {
 				iAdministrador iadmin = new BDPrincipal();
 				try {
-					System.out.println("Es un administrador");
 					iadmin.enviarMensaje(posiblesUsuarios.getValue(), this.getMensaje().getValue(),
 							this.getAsunto().getValue(), this.general);
 				} catch (PersistentException e) {
@@ -83,7 +79,6 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 			if (this.general instanceof base_de_datos.UR) {
 				iUR iur = new BDPrincipal();
 				try {
-					System.out.println("Es un UR");
 					iur.enviarMensaje("admin@admin.es", this.getMensaje().getValue(), this.getAsunto().getValue(),
 							this.general);
 				} catch (PersistentException e) {
@@ -97,7 +92,6 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 	public void responderMensaje() {
 		this.getBoton_enviar().addClickListener(event -> {
 			if(this.general instanceof base_de_datos.UR) {
-				System.out.println("Respondiendo al mensaje ... ");
 				iUR iur = new BDPrincipal();
 				try {
 					iur.responderMensaje(this.mensaje.getCorreo_emisor(), this.getMensaje().getValue(), this.general, mensaje);
@@ -109,10 +103,8 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 			}
 			
 			if(this.general instanceof base_de_datos.Administrador) {
-				System.out.println("Respondiendo al mensaje ... ");
 				iAdministrador iadmin = new BDPrincipal();
 				try {
-					System.out.println("Se va a mandar el mensaje a : " + this.mensaje.getCorreo_receptor());
 					iadmin.responderMensaje(this.mensaje.getCorreo_emisor(), this.getMensaje().getValue(), this.general, mensaje);
 					Notification.show("Su respuesta se ha mandado con éxito");
 				} catch (PersistentException e) {

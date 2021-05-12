@@ -39,7 +39,6 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	
 	public void abrir_mensajes_enviados() {
 		this.getBoton_enviados().addClickListener(event ->{
-			Notification.show("ENVIADOS");
 			limpiar_mensajes();
 			this._mensajes_recibidos._list_Ver_mensajes_enviados = new Ver_mensajes_enviados(this.general);
 			this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos._list_Ver_mensajes_enviados._mensajes_enviados);
@@ -52,7 +51,6 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	
 	public void abrir_mensajes_recibidos() {
 		this.getBoton_recibidos().addClickListener(event ->{
-			Notification.show("ENVIADOS");
 			limpiar_mensajes();
 			this.inicializar();
 		});
