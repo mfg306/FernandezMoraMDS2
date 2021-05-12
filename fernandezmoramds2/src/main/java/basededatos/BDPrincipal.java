@@ -349,8 +349,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_UNR.eliminarUsuario(aCorreo);
 	}
 
-	public void actualizarContrasenia(String aContraseniaActual,String aNuevaContrasenia, String aConfirmacionNuevaContrasenia) throws PersistentException {
-		this._bD_UNR.actualizarContrasenia(aContraseniaActual, aNuevaContrasenia, aConfirmacionNuevaContrasenia);
+	public void actualizarContrasenia(UR aUr ,String aNuevaContrasenia) throws PersistentException {
+		this._bD_UNR.actualizarContrasenia(aUr,aNuevaContrasenia);
 	}
 	
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException {
