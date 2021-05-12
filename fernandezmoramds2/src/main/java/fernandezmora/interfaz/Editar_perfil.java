@@ -22,7 +22,7 @@ public class Editar_perfil extends VistaEditar_perfil {
 	public void inicializar(Menu_UR _menu_UR) {
 		this._menu_UR = _menu_UR;
 		editarPerfil();
-		eliminar_cuenta();
+		eliminarCuenta();
 		cambiar_contrasenia();
 	}
 
@@ -34,14 +34,14 @@ public class Editar_perfil extends VistaEditar_perfil {
 		});
 	}
 
-	public void eliminar_cuenta() {
+	/*public void eliminar_cuenta() {
 		this.getBoton_eliminar_cuenta().addClickListener(event -> {
 			Verificacion_cuenta_eliminada vce = new Verificacion_cuenta_eliminada(this._menu_UR);
 			limpiar_interfaz();
 			this._menu_UR.layout.add(vce);
 
 		});
-	}
+	}*/
 
 	public void limpiar_interfaz() {
 		this._menu_UR.layout.remove(this);
@@ -85,5 +85,20 @@ public class Editar_perfil extends VistaEditar_perfil {
 			}
 		});
 		
+	}
+	
+	public void eliminarCuenta() {
+		iUR iur = new BDPrincipal();
+		this.getBoton_eliminar_cuenta().addClickListener(event ->{
+			try {
+				iur.eliminarUsuario(this._menu_UR._uR.UR.getCorreo_electronico());
+				Verificacion_cuenta_eliminada vce = new Verificacion_cuenta_eliminada(this._menu_UR);
+				limpiar_interfaz();
+				this._menu_UR.layout.add(vce);
+			} catch (PersistentException e) {
+			
+				e.printStackTrace();
+			}
+		});
 	}
 }
