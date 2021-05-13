@@ -12,6 +12,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		super(unr);
 		inicializar(unr);
 	}
+	
 
 	public void inicializar(UNR_ unr) {
 		_uNR_ = unr;

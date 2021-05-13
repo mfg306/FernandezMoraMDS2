@@ -25,12 +25,12 @@ public class VistaAsignar_a_transportista extends PolymerTemplate<VistaAsignar_a
 	private Element verticalLayout_asignar_a_transportista;
 	@Id("h1-asignar_a_transportista")
 	private H1 h1Asignar_a_transportista;
-	@Id("vertical-layout_2_asignar_a_transportista")
-	private Element verticalLayout_2_asignar_a_transportista;
-	@Id("Seleccion-asignar_a_transportista")
-	private Select seleccionAsignar_a_transportista;
 	@Id("aceptar-asignar_a_transportista")
 	private Button aceptarAsignar_a_transportista;
+	@Id("huecoSeleccion")
+	private HorizontalLayout huecoSeleccion;
+	@Id("vertical-layout_2_asignar_a_transportista")
+	private Element verticalLayout_2_asignar_a_transportista;
 
 	/**
      * Creates a new VistaAsignar_a_transportista.
@@ -70,19 +70,19 @@ public class VistaAsignar_a_transportista extends PolymerTemplate<VistaAsignar_a
 		this.verticalLayout_2_asignar_a_transportista = verticalLayout_2_asignar_a_transportista;
 	}
 
-	public Select getSeleccionAsignar_a_transportista() {
-		return seleccionAsignar_a_transportista;
-	}
-
-	public void setSeleccionAsignar_a_transportista(Select seleccionAsignar_a_transportista) {
-		this.seleccionAsignar_a_transportista = seleccionAsignar_a_transportista;
-	}
-
 	public Button getAceptarAsignar_a_transportista() {
 		return aceptarAsignar_a_transportista;
 	}
 
 	public void setAceptarAsignar_a_transportista(Button aceptarAsignar_a_transportista) {
 		this.aceptarAsignar_a_transportista = aceptarAsignar_a_transportista;
+	}
+
+	public HorizontalLayout getHuecoSeleccion() {
+		return huecoSeleccion;
+	}
+
+	public void setHuecoSeleccion(HorizontalLayout huecoSeleccion) {
+		this.huecoSeleccion = huecoSeleccion;
 	}
 }

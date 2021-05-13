@@ -3,8 +3,11 @@ package fernandezmora.interfaz;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.BeforeEnterEvent;
+import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 
 import basededatos.BDPrincipal;
@@ -13,7 +16,7 @@ import basededatos.iUNR_;
 import basededatos.iUR;
 
 @Route(value = "iniciosesion")
-public class Iniciar_sesion_UNR extends Iniciar_sesion  {
+public class Iniciar_sesion_UNR extends Iniciar_sesion {
 
 	public Menu_UNR _menu_UNR;
 	public Iniciar_sesion_con_Facebook _iniciar_sesion_con_Facebook;
@@ -66,6 +69,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 
 	@Override
 	public void iniciarSesion() throws PersistentException {
+			
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
 
 			iUNR_ iunr = new BDPrincipal();
@@ -91,6 +95,5 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion  {
 		});
 
 	}
-
 
 }

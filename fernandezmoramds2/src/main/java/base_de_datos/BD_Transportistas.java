@@ -4,6 +4,7 @@ import basededatos.BDPrincipal;
 import java.util.Vector;
 
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 import base_de_datos.Transportista;
 
@@ -19,10 +20,6 @@ public class BD_Transportistas {
 
 		Transportista[] tEncontrados = TransportistaDAO.listTransportistaByQuery("correo = '" + aNombreUsuario + "'",
 				"correo");
-		
-		for(Transportista te : tEncontrados) {
-			System.out.println(te.getCorreo());
-		}
 
 		if (tEncontrados.length == 0) return null;
 		if (tEncontrados[0].getCorreo().equals(t.getCorreo())
@@ -33,7 +30,12 @@ public class BD_Transportistas {
 	}
 	
 	public Transportista[] cargarTransportistas() throws PersistentException {
-		Transportista[] transportistas = TransportistaDAO.listTransportistaByQuery(null, null);
+		Transportista[] transportistas = null;
+		try {
+			transportistas = TransportistaDAO.listTransportistaByQuery(null, null);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return transportistas;
 	}
 }

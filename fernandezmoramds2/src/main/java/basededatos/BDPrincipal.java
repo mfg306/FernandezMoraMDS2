@@ -38,6 +38,7 @@ import base_de_datos.Enviado;
 import base_de_datos.Pendiente;
 import base_de_datos.Imagen;
 import base_de_datos.Empleado;
+import base_de_datos.Encargado_de_compras;
 import base_de_datos.Recibido;
 import base_de_datos.Transportista;
 
@@ -211,8 +212,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public void asignarPedidoTransportista(int aIdPedidoPendiente, int aIdTransportista) {
-		throw new UnsupportedOperationException();
+	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Transportista aTransportista, Encargado_de_compras aEncargado) throws PersistentException {
+		this._bD_Enviado.asignarPedidoTransportista(aPedidoPendiente, aTransportista, aEncargado);
 	}
 
 	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException {
@@ -363,5 +364,12 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public Transportista[] cargarTransportistas() throws PersistentException {
 		return this._bD_Transportistas.cargarTransportistas();
 	}
+
+	@Override
+	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException {
+		return this._bD_Pendiente.eliminarPendiente(aPedidoPendiente);
+	}
+	
+
 	
 }

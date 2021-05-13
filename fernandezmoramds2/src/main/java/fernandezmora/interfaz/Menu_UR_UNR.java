@@ -24,7 +24,6 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 		inicializar();
 	}
 	
-	
 	public void inicializar() {
 		layout = this.getMenu().as(VerticalLayout.class);
 		this._buscador = new Buscador();

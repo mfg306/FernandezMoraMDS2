@@ -22,12 +22,12 @@ public class Pedido_E extends VistaPedido_e{
 	
 	public void inicializar(Pedidos_E pedidos_E) {
 		this._pedidos_E = pedidos_E;
-		this._asignar_a_transportista = new Asignar_a_transportista(this);	
+		this._asignar_a_transportista = new Asignar_a_transportista(this, this.pendiente);	
 	}
 	
 	public void asignar_a_transportista() {
 		this.getBotonAsignar().addClickListener(event ->{
-			this._asignar_a_transportista = new Asignar_a_transportista(this);
+			this._asignar_a_transportista = new Asignar_a_transportista(this, this.pendiente);
 			this._pedidos_E._encargado_de_compras.ocultar_encargado();
 			this._pedidos_E._encargado_de_compras.getVaadinVerticalLayout().as(VerticalLayout.class).add(this._asignar_a_transportista);
 		});
