@@ -31,4 +31,9 @@ public class BD_Transportistas {
 
 		return null;
 	}
+	
+	public Transportista[] cargarTransportistas() throws PersistentException {
+		Transportista[] transportistas = TransportistaDAO.listTransportistaByQuery(null, null);
+		return transportistas;
+	}
 }

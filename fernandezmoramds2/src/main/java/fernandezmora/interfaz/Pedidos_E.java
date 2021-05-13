@@ -13,17 +13,17 @@ public class Pedidos_E extends VistaPedidos_e {
 	
 	public Pedidos_E(Encargado_de_compras e) {
 		inicializar(e);
+		this._list_Pedido_E = new Vector<>();
 	}
 	
 	public void inicializar(Encargado_de_compras e) {
 		this._encargado_de_compras = e;
-		this._list_Pedido_E = new Vector<>();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 	}
 	
 	
-	public void add_pedidos() {
-		Pedido_E p = new Pedido_E(this);
+	public void add_pedidos(base_de_datos.Pendiente pendiente) {
+		Pedido_E p = new Pedido_E(this, pendiente);
 		this._list_Pedido_E.add(p);
 		layout.add(p);	
 	}

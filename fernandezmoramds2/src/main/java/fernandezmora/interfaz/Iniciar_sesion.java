@@ -46,7 +46,7 @@ public class Iniciar_sesion extends VistaIniciar_sesion {
 			this.ocultar_iniciar_sesion();
 			
 			if(empleado instanceof base_de_datos.Encargado_de_compras) {
-				this.layout.add(new Encargado_de_compras());
+				this.layout.add(new Encargado_de_compras((base_de_datos.Encargado_de_compras)empleado));
 			}
 			
 			if(empleado instanceof base_de_datos.Transportista) {

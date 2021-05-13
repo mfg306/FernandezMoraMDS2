@@ -1,8 +1,12 @@
 package fernandezmora.interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iEncargado_de_compras;
 import vistas.VistaEncargado_de_compras;
 
 //import basededatos.iEncargado_de_compras;
@@ -10,21 +14,21 @@ import vistas.VistaEncargado_de_compras;
 public class Encargado_de_compras extends VistaEncargado_de_compras{
 	public Pedidos_E _pedidos_E;
 	VerticalLayout layout;
+	base_de_datos.Encargado_de_compras encargado;
 	
-	public Encargado_de_compras() {
+	public Encargado_de_compras(base_de_datos.Encargado_de_compras encargado) {
+		this.encargado = encargado;
 		cerrar_sesion();
 		inicializar();
 	}
 	
 	public void inicializar() {
 		_pedidos_E = new Pedidos_E(this);
-		_pedidos_E.add_pedidos();
-		_pedidos_E.add_pedidos();
 
 		layout = this.getHuecoListaPedidos().as(VerticalLayout.class);
 		layout.add(_pedidos_E);
 		
-		asignar_a_transportista();
+		cargarPedidos();
 	}
 	
 	
@@ -35,19 +39,22 @@ public class Encargado_de_compras extends VistaEncargado_de_compras{
 	}
 	
 	
-	public void asignar_a_transportista() {
-		for(Pedido_E pe : this._pedidos_E._list_Pedido_E) {
-			pe.getBotonAsignar().addClickListener(event ->{
-				pe._asignar_a_transportista = new Asignar_a_transportista(pe);
-				ocultar_encargado();
-				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(pe._asignar_a_transportista);
-			});
-		}
-	}
-
 	public void cerrar_sesion() {
 		this.getVaadinButton().addClickListener(event ->{
 			UI.getCurrent().getSession().close();
 		});
+	}
+	
+	public void cargarPedidos() {
+		iEncargado_de_compras iE = new BDPrincipal();
+		base_de_datos.Pendiente pendientes[] = null;
+		try {
+			pendientes = iE.cargarPedidosE(this.encargado.getIdEmpleado());
+			for(base_de_datos.Pendiente p : pendientes) {
+				this._pedidos_E.add_pedidos(p);
+			}
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -27,4 +27,6 @@ public class BD_Encargados_de_compras {
 
 		return null;
 	}
+	
+	
 }

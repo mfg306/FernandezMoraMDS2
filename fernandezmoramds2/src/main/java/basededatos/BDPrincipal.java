@@ -2,6 +2,7 @@ package basededatos;
 
 import base_de_datos.BD_UR;
 
+
 import java.util.List;
 
 import org.orm.PersistentException;
@@ -38,6 +39,7 @@ import base_de_datos.Pendiente;
 import base_de_datos.Imagen;
 import base_de_datos.Empleado;
 import base_de_datos.Recibido;
+import base_de_datos.Transportista;
 
 public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_Correos, iTransportista_Encargado_NR,
 		iTransportista, iEncargado_de_compras, iAdministrador {
@@ -213,8 +215,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Pendiente[] cargarPedidosE(int aIdEncargado) {
-		throw new UnsupportedOperationException();
+	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException {
+		return this._bD_Pendiente.cargarPedidosE(aIdEncargado);
 	}
 
 	public void enviarMensajeE(String aMensaje, String aCorreoEmisor, String aCorreoReceptor) {
@@ -355,6 +357,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	@Override
 	public Administrador buscarAdmin(String aCorreo) throws PersistentException {
 		return this._bD_Administrador.buscarAdmin(aCorreo);
+	}
+
+	@Override
+	public Transportista[] cargarTransportistas() throws PersistentException {
+		return this._bD_Transportistas.cargarTransportistas();
 	}
 	
 }

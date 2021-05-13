@@ -28,9 +28,9 @@ public class Asignar_a_transportista extends VistaAsignar_a_transportista {
 	public void guardar_Cambios() {
 		this.getAceptarAsignar_a_transportista().addClickListener(event ->{
 			ocultar_Asignar_a_transportista();
-			this._list_Pedido_E._pedidos_E._encargado_de_compras = new Encargado_de_compras();
+//			this._list_Pedido_E._pedidos_E._encargado_de_compras = new Encargado_de_compras();
 			
-			this.layout.add(this._list_Pedido_E._pedidos_E._encargado_de_compras);
+//			this.layout.add(this._list_Pedido_E._pedidos_E._encargado_de_compras);
 			
 			
 			

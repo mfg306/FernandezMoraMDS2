@@ -20,8 +20,19 @@ public class BD_Pendiente {
 		throw new UnsupportedOperationException();
 	}
 
-	public Pendiente[] cargarPedidosE(int aIdEncargado) {
-		throw new UnsupportedOperationException();
+	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Pendiente[] pendientes = null;
+		
+		try {
+			pendientes = PendienteDAO.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = "+ aIdEncargado, null);
+			t.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		}
+		
+		return pendientes;
 	}
 	
 	public Pendiente[] cargarPendientes() throws PersistentException {
