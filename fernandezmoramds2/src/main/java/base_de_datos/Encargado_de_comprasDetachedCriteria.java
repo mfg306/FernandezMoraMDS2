@@ -22,7 +22,6 @@ public class Encargado_de_comprasDetachedCriteria extends AbstractORMDetachedCri
 	public final IntegerExpression idEmpleado;
 	public final StringExpression correo;
 	public final StringExpression contrasenia;
-	public final IntegerExpression id_Encargado;
 	public final CollectionExpression _Pendiente;
 	public final CollectionExpression _Pedido_enviado;
 	
@@ -31,7 +30,6 @@ public class Encargado_de_comprasDetachedCriteria extends AbstractORMDetachedCri
 		idEmpleado = new IntegerExpression("idEmpleado", this.getDetachedCriteria());
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
-		id_Encargado = new IntegerExpression("id_Encargado", this.getDetachedCriteria());
 		_Pendiente = new CollectionExpression("ORM__Pendiente", this.getDetachedCriteria());
 		_Pedido_enviado = new CollectionExpression("ORM__Pedido_enviado", this.getDetachedCriteria());
 	}
@@ -41,7 +39,6 @@ public class Encargado_de_comprasDetachedCriteria extends AbstractORMDetachedCri
 		idEmpleado = new IntegerExpression("idEmpleado", this.getDetachedCriteria());
 		correo = new StringExpression("correo", this.getDetachedCriteria());
 		contrasenia = new StringExpression("contrasenia", this.getDetachedCriteria());
-		id_Encargado = new IntegerExpression("id_Encargado", this.getDetachedCriteria());
 		_Pendiente = new CollectionExpression("ORM__Pendiente", this.getDetachedCriteria());
 		_Pedido_enviado = new CollectionExpression("ORM__Pedido_enviado", this.getDetachedCriteria());
 	}

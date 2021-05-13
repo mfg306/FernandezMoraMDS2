@@ -43,12 +43,6 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 		
 	};
 	
-	@Column(name="Id_Encargado", nullable=false, length=10)	
-	private int id_Encargado;
-	
-	@Column(name="Contrasenia", nullable=true, length=255)	
-	private String contrasenia;
-	
 	@OneToMany(mappedBy="_Encargado_de_compras", targetEntity=base_de_datos.Pendiente.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -58,22 +52,6 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Pedido_enviado = new java.util.HashSet();
-	
-	public void setId_Encargado(int value) {
-		this.id_Encargado = value;
-	}
-	
-	public int getId_Encargado() {
-		return id_Encargado;
-	}
-	
-	public void setContrasenia(String value) {
-		this.contrasenia = value;
-	}
-	
-	public String getContrasenia() {
-		return contrasenia;
-	}
 	
 	private void setORM__Pendiente(java.util.Set value) {
 		this.ORM__Pendiente = value;

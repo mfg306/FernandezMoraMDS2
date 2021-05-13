@@ -332,13 +332,13 @@ public class MensajeDAO {
 			}
 			
 			if (mensaje.get_Responder_a() != null) {
-				mensaje.get_Responder_a().set_Mensaje(null);
+				mensaje.get_Responder_a()._Mensaje.remove(mensaje);
 			}
 			
-			if (mensaje.get_Mensaje() != null) {
-				mensaje.get_Mensaje().set_Responder_a(null);
+			base_de_datos.Mensaje[] l_Mensajes = mensaje._Mensaje.toArray();
+			for(int i = 0; i < l_Mensajes.length; i++) {
+				l_Mensajes[i].set_Responder_a(null);
 			}
-			
 			return delete(mensaje);
 		}
 		catch(Exception e) {
@@ -358,13 +358,13 @@ public class MensajeDAO {
 			}
 			
 			if (mensaje.get_Responder_a() != null) {
-				mensaje.get_Responder_a().set_Mensaje(null);
+				mensaje.get_Responder_a()._Mensaje.remove(mensaje);
 			}
 			
-			if (mensaje.get_Mensaje() != null) {
-				mensaje.get_Mensaje().set_Responder_a(null);
+			base_de_datos.Mensaje[] l_Mensajes = mensaje._Mensaje.toArray();
+			for(int i = 0; i < l_Mensajes.length; i++) {
+				l_Mensajes[i].set_Responder_a(null);
 			}
-			
 			try {
 				session.delete(mensaje);
 				return true;

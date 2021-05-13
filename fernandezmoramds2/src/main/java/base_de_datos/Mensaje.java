@@ -22,6 +22,14 @@ public class Mensaje implements Serializable {
 	public Mensaje() {
 	}
 	
+	private java.util.Set this_getSet (int key) {
+		if (key == base_de_datos.ORMConstants.KEY_MENSAJE__MENSAJE) {
+			return ORM__Mensaje;
+		}
+		
+		return null;
+	}
+	
 	private void this_setOwner(Object owner, int key) {
 		if (key == base_de_datos.ORMConstants.KEY_MENSAJE__RESPONDER_A) {
 			this._Responder_a = (base_de_datos.Mensaje) owner;
@@ -34,14 +42,14 @@ public class Mensaje implements Serializable {
 		else if (key == base_de_datos.ORMConstants.KEY_MENSAJE__ENVIADO_POR_ADMIN) {
 			this._Enviado_por_Admin = (base_de_datos.Administrador) owner;
 		}
-		
-		else if (key == base_de_datos.ORMConstants.KEY_MENSAJE__MENSAJE) {
-			this._Mensaje = (base_de_datos.Mensaje) owner;
-		}
 	}
 	
 	@Transient	
 	org.orm.util.ORMAdapter _ormAdapter = new org.orm.util.AbstractORMAdapter() {
+		public java.util.Set getSet(int key) {
+			return this_getSet(key);
+		}
+		
 		public void setOwner(Object owner, int key) {
 			this_setOwner(owner, key);
 		}
@@ -64,8 +72,8 @@ public class Mensaje implements Serializable {
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKMensaje321457"))	
 	private base_de_datos.UR _Enviado_por_UR;
 	
-	@OneToOne(targetEntity=base_de_datos.Mensaje.class, fetch=FetchType.LAZY)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@ManyToOne(targetEntity=base_de_datos.Mensaje.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="MensajeId_Mensaje", referencedColumnName="Id_Mensaje") }, foreignKey=@ForeignKey(name="FKMensaje231121"))	
 	private base_de_datos.Mensaje _Responder_a;
 	
@@ -78,9 +86,10 @@ public class Mensaje implements Serializable {
 	@Column(name="Mensaje", nullable=true, length=255)	
 	private String mensaje;
 	
-	@OneToOne(mappedBy="_Responder_a", targetEntity=base_de_datos.Mensaje.class, fetch=FetchType.LAZY)	
+	@OneToMany(mappedBy="_Responder_a", targetEntity=base_de_datos.Mensaje.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	private base_de_datos.Mensaje _Mensaje;
+	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
+	private java.util.Set ORM__Mensaje = new java.util.HashSet();
 	
 	public void setCorreo_emisor(String value) {
 		this.correo_emisor = value;
@@ -119,19 +128,26 @@ public class Mensaje implements Serializable {
 	}
 	
 	public void set_Responder_a(base_de_datos.Mensaje value) {
-		if (this._Responder_a != value) {
-			base_de_datos.Mensaje l_Responder_a = this._Responder_a;
-			this._Responder_a = value;
-			if (value != null) {
-				_Responder_a.set_Mensaje(this);
-			}
-			if (l_Responder_a != null && l_Responder_a.get_Mensaje() == this) {
-				l_Responder_a.set_Mensaje(null);
-			}
+		if (_Responder_a != null) {
+			_Responder_a._Mensaje.remove(this);
+		}
+		if (value != null) {
+			value._Mensaje.add(this);
 		}
 	}
 	
 	public base_de_datos.Mensaje get_Responder_a() {
+		return _Responder_a;
+	}
+	
+	/**
+	 * This method is for internal use only.
+	 */
+	public void setORM__Responder_a(base_de_datos.Mensaje value) {
+		this._Responder_a = value;
+	}
+	
+	private base_de_datos.Mensaje getORM__Responder_a() {
 		return _Responder_a;
 	}
 	
@@ -183,22 +199,16 @@ public class Mensaje implements Serializable {
 		return _Enviado_por_Admin;
 	}
 	
-	public void set_Mensaje(base_de_datos.Mensaje value) {
-		if (this._Mensaje != value) {
-			base_de_datos.Mensaje l_Mensaje = this._Mensaje;
-			this._Mensaje = value;
-			if (value != null) {
-				_Mensaje.set_Responder_a(this);
-			}
-			if (l_Mensaje != null && l_Mensaje.get_Responder_a() == this) {
-				l_Mensaje.set_Responder_a(null);
-			}
-		}
+	private void setORM__Mensaje(java.util.Set value) {
+		this.ORM__Mensaje = value;
 	}
 	
-	public base_de_datos.Mensaje get_Mensaje() {
-		return _Mensaje;
+	private java.util.Set getORM__Mensaje() {
+		return ORM__Mensaje;
 	}
+	
+	@Transient	
+	public final base_de_datos.MensajeSetCollection _Mensaje = new base_de_datos.MensajeSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_MENSAJE__MENSAJE, base_de_datos.ORMConstants.KEY_MENSAJE__RESPONDER_A, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Mensaje());

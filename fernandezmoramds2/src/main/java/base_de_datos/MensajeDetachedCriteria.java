@@ -29,8 +29,7 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression correo_emisor;
 	public final StringExpression correo_receptor;
 	public final StringExpression mensaje;
-	public final IntegerExpression _MensajeId;
-	public final AssociationExpression _Mensaje;
+	public final CollectionExpression _Mensaje;
 	
 	public MensajeDetachedCriteria() {
 		super(base_de_datos.Mensaje.class, base_de_datos.MensajeCriteria.class);
@@ -44,8 +43,7 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this.getDetachedCriteria());
 		correo_receptor = new StringExpression("correo_receptor", this.getDetachedCriteria());
 		mensaje = new StringExpression("mensaje", this.getDetachedCriteria());
-		_MensajeId = new IntegerExpression("_Mensaje.id_Mensaje", this.getDetachedCriteria());
-		_Mensaje = new AssociationExpression("_Mensaje", this.getDetachedCriteria());
+		_Mensaje = new CollectionExpression("ORM__Mensaje", this.getDetachedCriteria());
 	}
 	
 	public MensajeDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -60,8 +58,7 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this.getDetachedCriteria());
 		correo_receptor = new StringExpression("correo_receptor", this.getDetachedCriteria());
 		mensaje = new StringExpression("mensaje", this.getDetachedCriteria());
-		_MensajeId = new IntegerExpression("_Mensaje.id_Mensaje", this.getDetachedCriteria());
-		_Mensaje = new AssociationExpression("_Mensaje", this.getDetachedCriteria());
+		_Mensaje = new CollectionExpression("ORM__Mensaje", this.getDetachedCriteria());
 	}
 	
 	public AdministradorDetachedCriteria create_Enviado_por_AdminCriteria() {
@@ -76,8 +73,8 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new MensajeDetachedCriteria(createCriteria("_Responder_a"));
 	}
 	
-	public MensajeDetachedCriteria create_MensajeCriteria() {
-		return new MensajeDetachedCriteria(createCriteria("_Mensaje"));
+	public base_de_datos.MensajeDetachedCriteria create_MensajeCriteria() {
+		return new base_de_datos.MensajeDetachedCriteria(createCriteria("ORM__Mensaje"));
 	}
 	
 	public Mensaje uniqueMensaje(PersistentSession session) {

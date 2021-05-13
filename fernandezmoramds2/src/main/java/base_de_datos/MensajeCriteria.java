@@ -29,8 +29,7 @@ public class MensajeCriteria extends AbstractORMCriteria {
 	public final StringExpression correo_emisor;
 	public final StringExpression correo_receptor;
 	public final StringExpression mensaje;
-	public final IntegerExpression _MensajeId;
-	public final AssociationExpression _Mensaje;
+	public final CollectionExpression _Mensaje;
 	
 	public MensajeCriteria(Criteria criteria) {
 		super(criteria);
@@ -44,8 +43,7 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this);
 		correo_receptor = new StringExpression("correo_receptor", this);
 		mensaje = new StringExpression("mensaje", this);
-		_MensajeId = new IntegerExpression("_Mensaje.id_Mensaje", this);
-		_Mensaje = new AssociationExpression("_Mensaje", this);
+		_Mensaje = new CollectionExpression("ORM__Mensaje", this);
 	}
 	
 	public MensajeCriteria(PersistentSession session) {
@@ -68,8 +66,8 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		return new MensajeCriteria(createCriteria("_Responder_a"));
 	}
 	
-	public MensajeCriteria create_MensajeCriteria() {
-		return new MensajeCriteria(createCriteria("_Mensaje"));
+	public base_de_datos.MensajeCriteria create_MensajeCriteria() {
+		return new base_de_datos.MensajeCriteria(createCriteria("ORM__Mensaje"));
 	}
 	
 	public Mensaje uniqueMensaje() {
