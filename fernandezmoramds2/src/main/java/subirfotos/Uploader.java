@@ -181,6 +181,8 @@ public class Uploader
         BufferedReader reader;
         try
         {
+        	System.out.println(conn.getResponseCode());
+        	System.out.println(conn.getResponseMessage());
             if (conn.getResponseCode() != StatusCode.SUCCESS.getHttpCode())
             {
                 throw new WebException(conn.getResponseCode());

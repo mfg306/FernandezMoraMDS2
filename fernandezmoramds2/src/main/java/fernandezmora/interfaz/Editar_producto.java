@@ -26,6 +26,7 @@ public class Editar_producto extends VistaEditar_producto {
 	
 	public void inicializar() {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		this.getImagen("src/main/resources" + this._producto_administrador.p.get) //poner la ruta de la imagen
 		cancelar_edicion();	
 		editarProducto();
 	}

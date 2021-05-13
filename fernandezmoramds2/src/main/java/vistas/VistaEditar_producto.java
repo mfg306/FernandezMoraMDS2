@@ -13,6 +13,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 
 /**
  * A Designer generated component for the vista-editar_producto template.
@@ -40,17 +41,28 @@ public class VistaEditar_producto extends PolymerTemplate<VistaEditar_producto.V
 	private Element vaadinVerticalLayout2;
 	@Id("nuevoPrecio")
 	private TextField nuevoPrecio;
-	@Id("label")
-	private Label label;
-	@Id("h2")
-	private H2 h2;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-
+	@Id("vaadinVerticalLayout3")
+	private Element vaadinVerticalLayout3;
+	@Id("ruta2")
+	private TextField ruta2;
+	@Id("rutaPrincipal")
+	private TextField rutaPrincipal;
+	@Id("ruta3")
+	private TextField ruta3;
+	@Id("label")
+	private Label label;
+	@Id("ruta5")
+	private TextField ruta5;
+	@Id("ruta4")
+	private TextField ruta4;
+	@Id("imagen")
+	private Image imagen;
 	/**
      * Creates a new VistaEditar_producto.
      */
@@ -137,14 +149,6 @@ public class VistaEditar_producto extends PolymerTemplate<VistaEditar_producto.V
 		this.label = label;
 	}
 
-	public H2 getH2() {
-		return h2;
-	}
-
-	public void setH2(H2 h2) {
-		this.h2 = h2;
-	}
-
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
 	}
@@ -167,5 +171,61 @@ public class VistaEditar_producto extends PolymerTemplate<VistaEditar_producto.V
 
 	public void setVaadinButton1(Button vaadinButton1) {
 		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public Element getVaadinVerticalLayout3() {
+		return vaadinVerticalLayout3;
+	}
+
+	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
+		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
+	}
+
+	public TextField getRuta2() {
+		return ruta2;
+	}
+
+	public void setRuta2(TextField ruta2) {
+		this.ruta2 = ruta2;
+	}
+
+	public TextField getRutaPrincipal() {
+		return rutaPrincipal;
+	}
+
+	public void setRutaPrincipal(TextField rutaPrincipal) {
+		this.rutaPrincipal = rutaPrincipal;
+	}
+
+	public TextField getRuta3() {
+		return ruta3;
+	}
+
+	public void setRuta3(TextField ruta3) {
+		this.ruta3 = ruta3;
+	}
+
+	public TextField getRuta5() {
+		return ruta5;
+	}
+
+	public void setRuta5(TextField ruta5) {
+		this.ruta5 = ruta5;
+	}
+
+	public TextField getRuta4() {
+		return ruta4;
+	}
+
+	public void setRuta4(TextField ruta4) {
+		this.ruta4 = ruta4;
+	}
+
+	public Image getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(Image imagen) {
+		this.imagen = imagen;
 	}
 }

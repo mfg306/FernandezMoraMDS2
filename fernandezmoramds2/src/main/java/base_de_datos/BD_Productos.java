@@ -77,11 +77,11 @@ public class BD_Productos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException {
+	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String aRuta) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-		
+		Producto p = null;
 		try {
-			 Producto p = ProductoDAO.createProducto();
+			 p = ProductoDAO.createProducto();
 			 
 			 p.setNombre(aNombreProducto);
 			 p.setDescripcion(aDescripcion);
@@ -91,14 +91,16 @@ public class BD_Productos {
 			 ProductoDAO.save(p);
 			
 			 t.commit();
-			 
-			 return p;	 
 		} catch(Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
 		
-		return null;
+		System.out.println("AQUIIIII :) ");
+		this._bDPrincipal = new BDPrincipal();
+		this._bDPrincipal.guardarImagenesProducto(aRuta, p);
+		
+		return p;
 	}
 
 	public Producto[] cargarProductosListado() throws PersistentException {
@@ -107,9 +109,9 @@ public class BD_Productos {
 	}
 
 	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion) throws PersistentException {
-		System.out.println("Se va a ejecutar este metodo");
-		eliminarProductoAdministrador(aIdProducto);
-		insertarProducto(aNombre, aDescripcion, aPrecio, aIdProducto);
+//		System.out.println("Se va a ejecutar este metodo");
+//		eliminarProductoAdministrador(aIdProducto);
+//		insertarProducto(aNombre, aDescripcion, aPrecio, aIdProducto);
 	}
 	
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException{	

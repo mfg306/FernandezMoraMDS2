@@ -30,9 +30,9 @@ public interface iAdministrador {
 
 	public Usuario_General iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException;
 
-	public void guardarImagenesProducto(int aIdProducto, Imagen[] aImagenes);
+	public void guardarImagenesProducto(String aImagenes, Producto aProducto) throws PersistentException;
 
-	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades) throws PersistentException;
+	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String aRuta) throws PersistentException;
 
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) throws PersistentException;
 
