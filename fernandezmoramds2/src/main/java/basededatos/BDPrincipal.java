@@ -178,23 +178,18 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return resultado;
 	}
 
-	public int buscarUsuario(String aCampo, String aPassword) {
-		int existeTransportista = 0;
-		int existeEncargado = 0;
+	public Empleado iniciarSesionEmpleados(String aCampo, String aPassword) {
+		Empleado resultado = null;
 
 		try {
-			existeTransportista = this._bD_Transportistas.buscarUsuario(aCampo, aPassword);
-			if (existeTransportista == 1)
-				return 1;
-			existeEncargado = this._bD_Encargados_de_compras.buscarUsuario(aCampo, aPassword);
-			if (existeEncargado == 2)
-				return 2;
+			resultado = this._bD_Transportistas.iniciarSesionEmpleados(aCampo, aPassword);
+			if (resultado == null) 	resultado = this._bD_Encargados_de_compras.iniciarSesionEmpleados(aCampo, aPassword);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return 0;
+		return resultado;
 
 	}
 

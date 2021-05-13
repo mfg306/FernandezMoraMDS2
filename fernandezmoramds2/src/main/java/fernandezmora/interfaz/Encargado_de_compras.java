@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaEncargado_de_compras;
@@ -11,6 +12,7 @@ public class Encargado_de_compras extends VistaEncargado_de_compras{
 	VerticalLayout layout;
 	
 	public Encargado_de_compras() {
+		cerrar_sesion();
 		inicializar();
 	}
 	
@@ -44,6 +46,8 @@ public class Encargado_de_compras extends VistaEncargado_de_compras{
 	}
 
 	public void cerrar_sesion() {
-		throw new UnsupportedOperationException();
+		this.getVaadinButton().addClickListener(event ->{
+			UI.getCurrent().getSession().close();
+		});
 	}
 }

@@ -11,7 +11,7 @@ public class BD_Encargados_de_compras {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Encargado_de_compras> _encargado_de_compras = new Vector<Encargado_de_compras>();
 
-	public int buscarUsuario(String aNombreUsuario, String aPassword) throws PersistentException {
+	public Empleado iniciarSesionEmpleados(String aNombreUsuario, String aPassword) throws PersistentException {
 		Encargado_de_compras e = Encargado_de_comprasDAO.createEncargado_de_compras();
 
 		e.setCorreo(aNombreUsuario);
@@ -21,11 +21,10 @@ public class BD_Encargados_de_compras {
 				.listEncargado_de_comprasByQuery("correo = '" + aNombreUsuario + "'", "correo");
 
 		if (eEncontrados.length == 0)
-			return 0;
+			return null;
 		if (eEncontrados[0].getCorreo().equals(e.getCorreo())
-				&& eEncontrados[0].getContrasenia().equals(e.getContrasenia()))
-			return 2;
+				&& eEncontrados[0].getContrasenia().equals(e.getContrasenia())) return eEncontrados[0];
 
-		return 0;
+		return null;
 	}
 }

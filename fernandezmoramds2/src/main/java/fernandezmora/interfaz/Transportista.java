@@ -1,5 +1,6 @@
 package fernandezmora.interfaz;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaTransportista;
@@ -11,6 +12,7 @@ public class Transportista extends VistaTransportista {
 	VerticalLayout layout;
 	
 	public Transportista() {
+		cerrar_sesion();
 		inicializar();
 	}
 	
@@ -46,6 +48,8 @@ public class Transportista extends VistaTransportista {
 	}
 
 	public void cerrar_sesion() {
-		throw new UnsupportedOperationException();
+		this.getVaadinButton().addClickListener(event ->{
+			UI.getCurrent().getSession().close();
+		});
 	}
 }
