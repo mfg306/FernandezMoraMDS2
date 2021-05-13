@@ -27,6 +27,7 @@ public class BD_UR {
 			usuario.setPrimer_apellido(aApellidos);
 			usuario.setContrasenia(aContrasenia);
 			usuario.setNombre_usuario(aNombreUsuario);
+			usuario.setEsta_operativo(true);
 
 			boolean hayDigitos = false, mayorDe8Caracteres = false, hayMayuscula = false, hayCaracteres = false;
 
@@ -74,8 +75,8 @@ public class BD_UR {
 
 		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
 
-		if (usuariosCorreo.length == 0)
-			return null;
+		if (usuariosCorreo.length == 0) return null;
+		if(!usuariosCorreo[0].getEsta_operativo()) return null;
 		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())
 				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia()))
 			return usuariosCorreo[0];
