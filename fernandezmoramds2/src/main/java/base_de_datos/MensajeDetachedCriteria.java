@@ -29,6 +29,8 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression correo_emisor;
 	public final StringExpression correo_receptor;
 	public final StringExpression mensaje;
+	public final StringExpression asunto;
+	public final StringExpression fecha;
 	public final CollectionExpression _Mensaje;
 	
 	public MensajeDetachedCriteria() {
@@ -43,6 +45,8 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this.getDetachedCriteria());
 		correo_receptor = new StringExpression("correo_receptor", this.getDetachedCriteria());
 		mensaje = new StringExpression("mensaje", this.getDetachedCriteria());
+		asunto = new StringExpression("asunto", this.getDetachedCriteria());
+		fecha = new StringExpression("fecha", this.getDetachedCriteria());
 		_Mensaje = new CollectionExpression("ORM__Mensaje", this.getDetachedCriteria());
 	}
 	
@@ -58,6 +62,8 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this.getDetachedCriteria());
 		correo_receptor = new StringExpression("correo_receptor", this.getDetachedCriteria());
 		mensaje = new StringExpression("mensaje", this.getDetachedCriteria());
+		asunto = new StringExpression("asunto", this.getDetachedCriteria());
+		fecha = new StringExpression("fecha", this.getDetachedCriteria());
 		_Mensaje = new CollectionExpression("ORM__Mensaje", this.getDetachedCriteria());
 	}
 	

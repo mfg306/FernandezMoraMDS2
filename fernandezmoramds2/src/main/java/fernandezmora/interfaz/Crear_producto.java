@@ -50,27 +50,27 @@ public class Crear_producto extends VistaCrear_producto {
 		upload = new Upload(buffer);
 		this.layout.add(upload);
 		
-//		upload.setAcceptedFileTypes("image/jpeg", "image/png");
-//		
-//		upload.addSucceededListener(e -> {
-//			Component component = createComponent(e.getMIMEType(), e.getFileName(), buffer.getInputStream());
-//			this.layout.add(component);
-//			File targetFile = new File("src/main/resources/targetFile.tmp");
-//			System.out.println(e.getFileName());
-//
-//			try {
-//				FileUtils.copyInputStreamToFile(buffer.getInputStream(), targetFile);
-//			} catch (IOException ex) {
-//				ex.printStackTrace();
-//			}
-//			
-//			String rutaImgur = Uploader.upload(targetFile); //FALLO
-//			String rutaImagen = "https://i.imgur.com/" +  rutaImgur.subSequence(15, 22) + ".jpg";
-//
-//			System.out.println("La ruta : " + targetFile);
-//			this.getImg().setSrc(rutaImagen);
-//			System.out.println("JEJE2");
-//		});
+		upload.setAcceptedFileTypes("image/jpeg", "image/png");
+		
+		upload.addSucceededListener(e -> {
+			Component component = createComponent(e.getMIMEType(), e.getFileName(), buffer.getInputStream());
+			this.layout.add(component);
+			File targetFile = new File("src/main/resources/targetFile.tmp");
+			System.out.println(e.getFileName());
+
+			try {
+				FileUtils.copyInputStreamToFile(buffer.getInputStream(), targetFile);
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+			
+			String rutaImgur = Uploader.upload(targetFile); //FALLO
+			String rutaImagen = "https://i.imgur.com/" +  rutaImgur.subSequence(15, 22) + ".jpg";
+
+			System.out.println("La ruta : " + targetFile);
+			this.getImg().setSrc(rutaImagen);
+			System.out.println("JEJE2");
+		});
 		
 		
 		cancelar_creacion();
@@ -102,51 +102,51 @@ public class Crear_producto extends VistaCrear_producto {
 		});
 	}
 
-//	private Component createComponent(String mimeType, String fileName, InputStream stream) {
-//		if (mimeType.startsWith("text")) {
-//			return createTextComponent(stream);
-//		} else if (mimeType.startsWith("image")) {
-//			Image image = new Image();
-//			try {
-//
-//				byte[] bytes = IOUtils.toByteArray(stream);
-//				image.getElement().setAttribute("src",
-//						new StreamResource(fileName, () -> new ByteArrayInputStream(bytes)));
-//				try (ImageInputStream in = ImageIO.createImageInputStream(new ByteArrayInputStream(bytes))) {
-//					final Iterator<ImageReader> readers = ImageIO.getImageReaders(in);
-//					if (readers.hasNext()) {
-//						ImageReader reader = readers.next();
-//						try {
-//							reader.setInput(in);
-//							image.setWidth(reader.getWidth(0) + "px");
-//							image.setHeight(reader.getHeight(0) + "px");
-//						} finally {
-//							reader.dispose();
-//						}
-//					}
-//				}
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			return image;
-//		}
-//		
-//        Div content = new Div();
-//        String text = String.format("Mime type: '%s'\nSHA-256 hash: '%s'",
-//                mimeType, MessageDigestUtil.sha256(stream.toString()));
-//        content.setText(text);
-//        return content;
-//	}
-//
-//	private Component createTextComponent(InputStream stream) {
-//		String text;
-//		try {
-//			text = IOUtils.toString(stream, StandardCharsets.UTF_8);
-//		} catch (IOException e) {
-//			text = "exception reading stream";
-//		}
-//		return new Text(text);
-//	}
+	private Component createComponent(String mimeType, String fileName, InputStream stream) {
+		if (mimeType.startsWith("text")) {
+			return createTextComponent(stream);
+		} else if (mimeType.startsWith("image")) {
+			Image image = new Image();
+			try {
+
+				byte[] bytes = IOUtils.toByteArray(stream);
+				image.getElement().setAttribute("src",
+						new StreamResource(fileName, () -> new ByteArrayInputStream(bytes)));
+				try (ImageInputStream in = ImageIO.createImageInputStream(new ByteArrayInputStream(bytes))) {
+					final Iterator<ImageReader> readers = ImageIO.getImageReaders(in);
+					if (readers.hasNext()) {
+						ImageReader reader = readers.next();
+						try {
+							reader.setInput(in);
+							image.setWidth(reader.getWidth(0) + "px");
+							image.setHeight(reader.getHeight(0) + "px");
+						} finally {
+							reader.dispose();
+						}
+					}
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return image;
+		}
+		
+        Div content = new Div();
+        String text = String.format("Mime type: '%s'\nSHA-256 hash: '%s'",
+                mimeType, MessageDigestUtil.sha256(stream.toString()));
+        content.setText(text);
+        return content;
+	}
+
+	private Component createTextComponent(InputStream stream) {
+		String text;
+		try {
+			text = IOUtils.toString(stream, StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			text = "exception reading stream";
+		}
+		return new Text(text);
+	}
 
 
 }

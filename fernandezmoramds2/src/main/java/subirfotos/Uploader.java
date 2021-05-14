@@ -43,7 +43,7 @@ public class Uploader
     public static final int MAX_UPLOAD_ATTEMPTS = 3;
 
     //CHANGE TO @CLIENT_ID@ and replace with buildscript.
-    private final static String CLIENT_ID = "4cc6b99496df94f";
+    private final static String CLIENT_ID = "efce6070269a7f1";
     /**
      * Takes a file and uploads it to Imgur.
      * Does not check to see if the file is an image, this should be done

@@ -86,6 +86,12 @@ public class Mensaje implements Serializable {
 	@Column(name="Mensaje", nullable=true, length=255)	
 	private String mensaje;
 	
+	@Column(name="Asunto", nullable=true, length=255)	
+	private String asunto;
+	
+	@Column(name="Fecha", nullable=true, length=255)	
+	private String fecha;
+	
 	@OneToMany(mappedBy="_Responder_a", targetEntity=base_de_datos.Mensaje.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -125,6 +131,22 @@ public class Mensaje implements Serializable {
 	
 	public int getORMID() {
 		return getId_Mensaje();
+	}
+	
+	public void setAsunto(String value) {
+		this.asunto = value;
+	}
+	
+	public String getAsunto() {
+		return asunto;
+	}
+	
+	public void setFecha(String value) {
+		this.fecha = value;
+	}
+	
+	public String getFecha() {
+		return fecha;
 	}
 	
 	public void set_Responder_a(base_de_datos.Mensaje value) {

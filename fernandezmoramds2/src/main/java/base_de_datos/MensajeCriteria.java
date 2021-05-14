@@ -29,6 +29,8 @@ public class MensajeCriteria extends AbstractORMCriteria {
 	public final StringExpression correo_emisor;
 	public final StringExpression correo_receptor;
 	public final StringExpression mensaje;
+	public final StringExpression asunto;
+	public final StringExpression fecha;
 	public final CollectionExpression _Mensaje;
 	
 	public MensajeCriteria(Criteria criteria) {
@@ -43,6 +45,8 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		correo_emisor = new StringExpression("correo_emisor", this);
 		correo_receptor = new StringExpression("correo_receptor", this);
 		mensaje = new StringExpression("mensaje", this);
+		asunto = new StringExpression("asunto", this);
+		fecha = new StringExpression("fecha", this);
 		_Mensaje = new CollectionExpression("ORM__Mensaje", this);
 	}
 	
