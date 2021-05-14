@@ -49,7 +49,7 @@ public class Recuperar_contrasenia extends VistaRecuperar_contrasenia {
 			if(ur != null) {
 				String contrasenia = PasswordGenerator.getPassword(10);
 				iur.cambiarContraseniaUsuario(this.getCorreo().getValue(), contrasenia);
-				Gestor_Correos.enviarPasswordTemporal(ur.getCorreo_electronico(), "Tu nueva contraseña de TiendaElectrodomésticos", contrasenia);
+				Gestor_Correos.enviarCorreo(ur.getCorreo_electronico(), "Tu nueva contraseña de TiendaElectrodomésticos", contrasenia);
 				Notification.show("Le acabamos de enviar una contraseña temporal a su correo  " + ur.getCorreo_electronico() + "  revise su bandeja de entrada");
 			}else {
 				Notification.show("No esta registrado este correo");

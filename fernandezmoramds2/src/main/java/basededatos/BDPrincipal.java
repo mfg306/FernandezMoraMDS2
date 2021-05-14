@@ -200,8 +200,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Enviado[] cargarPedidosT(int aIdTransportista) {
-		throw new UnsupportedOperationException();
+	public Enviado[] cargarPedidosT(Transportista aTransportista) throws PersistentException {
+		return this._bD_Enviado.cargarEnviados();
 	}
 
 	public UR[] cargarFichaCliente() {

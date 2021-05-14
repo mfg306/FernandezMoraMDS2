@@ -50,7 +50,7 @@ public class Iniciar_sesion extends VistaIniciar_sesion {
 			}
 			
 			if(empleado instanceof base_de_datos.Transportista) {
-				this.layout.add(new Transportista());
+				this.layout.add(new Transportista((base_de_datos.Transportista)empleado));
 			}
 			
 			if(empleado == null) {

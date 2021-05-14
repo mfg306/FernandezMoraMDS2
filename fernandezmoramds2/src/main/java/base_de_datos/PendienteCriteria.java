@@ -23,6 +23,7 @@ public class PendienteCriteria extends AbstractORMCriteria {
 	public final IntegerExpression num_total_unidades;
 	public final DoubleExpression precio_total;
 	public final StringExpression fecha_estado;
+	public final BooleanExpression asignado;
 	public final IntegerExpression _Encargado_de_comprasId;
 	public final AssociationExpression _Encargado_de_compras;
 	public final IntegerExpression _Hace_compraId;
@@ -35,6 +36,7 @@ public class PendienteCriteria extends AbstractORMCriteria {
 		num_total_unidades = new IntegerExpression("num_total_unidades", this);
 		precio_total = new DoubleExpression("precio_total", this);
 		fecha_estado = new StringExpression("fecha_estado", this);
+		asignado = new BooleanExpression("asignado", this);
 		_Encargado_de_comprasId = new IntegerExpression("_Encargado_de_compras.", this);
 		_Encargado_de_compras = new AssociationExpression("_Encargado_de_compras", this);
 		_Hace_compraId = new IntegerExpression("_Hace_compra.", this);

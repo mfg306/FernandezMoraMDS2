@@ -22,8 +22,8 @@ public class Pedidos_T extends VistaPedidos_t {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 	}
 	
-	public void add_pedidos_T() {
-		Pedido_T p = new Pedido_T(this);
+	public void add_pedidos_T(base_de_datos.Enviado e) {
+		Pedido_T p = new Pedido_T(this, e);
 		this._list_Pedido_T.add(p);
 		layout.add(p);
 		

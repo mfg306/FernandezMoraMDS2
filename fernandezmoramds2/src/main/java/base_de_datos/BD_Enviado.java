@@ -14,8 +14,19 @@ public class BD_Enviado {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Enviado> _enviado = new Vector<Enviado>();
 
-	public Enviado[] cargarPedidosT(int aIdTransportista) {
-		throw new UnsupportedOperationException();
+	public Enviado[] cargarPedidosT(Transportista aTransportista) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Enviado[] e = null;
+		try {
+			e = EnviadoDAO.listEnviadoByQuery("TransportistaEmpleadoIdEmpleado = " + aTransportista.getIdEmpleado() , null);
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			t.rollback();
+		}
+		
+		HitoPersistentManager.instance().disposePersistentManager();
+		
+		return e;
 	}
 
 	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Transportista aTransportista, Encargado_de_compras aEncargado) throws PersistentException {

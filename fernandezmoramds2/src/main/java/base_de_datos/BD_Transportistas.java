@@ -20,7 +20,7 @@ public class BD_Transportistas {
 
 		Transportista[] tEncontrados = TransportistaDAO.listTransportistaByQuery("correo = '" + aNombreUsuario + "'",
 				"correo");
-
+		
 		if (tEncontrados.length == 0) return null;
 		if (tEncontrados[0].getCorreo().equals(t.getCorreo())
 				&& tEncontrados[0].getContrasenia().equals(t.getContrasenia()))

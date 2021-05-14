@@ -54,6 +54,9 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 		
 	};
 	
+	@Column(name="Asignado", nullable=false, length=1)	
+	private boolean asignado;
+	
 	@ManyToOne(targetEntity=base_de_datos.Encargado_de_compras.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="Encargado_de_comprasEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKPendiente822971"))	
@@ -68,6 +71,14 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Producto_en_compra = new java.util.HashSet();
+	
+	public void setAsignado(boolean value) {
+		this.asignado = value;
+	}
+	
+	public boolean getAsignado() {
+		return asignado;
+	}
 	
 	private void setORM__Producto_en_compra(java.util.Set value) {
 		this.ORM__Producto_en_compra = value;
