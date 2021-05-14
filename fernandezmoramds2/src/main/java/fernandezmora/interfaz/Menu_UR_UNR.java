@@ -33,18 +33,17 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 		layout = this.getMenu().as(VerticalLayout.class);
 		this._buscador = new Buscador();
 		this.getHuecoBuscador().as(VerticalLayout.class).add(this._buscador);
-		abrirProductoBusqueda();
+		//abrirProductoBusqueda();
 	}
 	
 	public abstract void abrir_carrito();
 	public abstract void ocultar_Informacion_PaginaInicial();
-	public abstract void volver_a_Pagina_Inicial();
 
 	
 	public void abrirProductoBusqueda() {
 		this._buscador._busquedaTF.addKeyPressListener(Key.ENTER, e -> {
 			if(this._buscador._productos_busqueda != null) this.layout.remove(this._buscador._productos_busqueda); 
-			this._buscador._productos_busqueda = new Productos_busqueda();
+			this._buscador._productos_busqueda = new Productos_busqueda(this._buscador);
 			this._uR_UNR.limpiarInterfaz();
 			this.layout.add(this._buscador._productos_busqueda);
 
