@@ -23,6 +23,7 @@ public class RecibidoCriteria extends AbstractORMCriteria {
 	public final IntegerExpression num_total_unidades;
 	public final DoubleExpression precio_total;
 	public final StringExpression fecha_estado;
+	public final BooleanExpression recibido;
 	public final IntegerExpression _recibeId;
 	public final AssociationExpression _recibe;
 	public final IntegerExpression _RecogeId;
@@ -34,6 +35,7 @@ public class RecibidoCriteria extends AbstractORMCriteria {
 		num_total_unidades = new IntegerExpression("num_total_unidades", this);
 		precio_total = new DoubleExpression("precio_total", this);
 		fecha_estado = new StringExpression("fecha_estado", this);
+		recibido = new BooleanExpression("recibido", this);
 		_recibeId = new IntegerExpression("_recibe.", this);
 		_recibe = new AssociationExpression("_recibe", this);
 		_RecogeId = new IntegerExpression("_Recoge.", this);

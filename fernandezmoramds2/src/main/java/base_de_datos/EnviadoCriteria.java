@@ -23,6 +23,7 @@ public class EnviadoCriteria extends AbstractORMCriteria {
 	public final IntegerExpression num_total_unidades;
 	public final DoubleExpression precio_total;
 	public final StringExpression fecha_estado;
+	public final BooleanExpression enviado;
 	public final IntegerExpression _TransportistaId;
 	public final AssociationExpression _Transportista;
 	public final IntegerExpression _ProcesaId;
@@ -34,6 +35,7 @@ public class EnviadoCriteria extends AbstractORMCriteria {
 		num_total_unidades = new IntegerExpression("num_total_unidades", this);
 		precio_total = new DoubleExpression("precio_total", this);
 		fecha_estado = new StringExpression("fecha_estado", this);
+		enviado = new BooleanExpression("enviado", this);
 		_TransportistaId = new IntegerExpression("_Transportista.", this);
 		_Transportista = new AssociationExpression("_Transportista", this);
 		_ProcesaId = new IntegerExpression("_Procesa.", this);

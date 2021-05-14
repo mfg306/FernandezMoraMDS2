@@ -14,5 +14,7 @@ public interface iTransportista {
 
 	public UR[] cargarFichaCliente();
 
-	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado);
+	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) throws PersistentException;
+	
+	public boolean repartirACliente(UR aCliente, Enviado aEnviado) throws PersistentException;
 }

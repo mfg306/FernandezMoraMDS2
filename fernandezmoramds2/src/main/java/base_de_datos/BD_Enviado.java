@@ -79,9 +79,10 @@ public class BD_Enviado {
 		
 	}
 	
-	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) {
+	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) throws PersistentException {
 		Encargado_de_compras encargado = aEnviado.get_Procesa();
-		Pendiente[] pendientes = encargado._Pendiente.toArray();
+		
+		Pendiente pendientes[] = PendienteDAO.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = " + encargado.getIdEmpleado(), null);
 		
 		for(Pendiente p : pendientes) {
 			if(p.getId_cola() == aTransportista.getId_cola()) {

@@ -382,8 +382,13 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) {
+	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) throws PersistentException {
 		return this._bD_Enviado.cargarClienteEnviado(aTransportista, aEnviado);
+	}
+
+	@Override
+	public boolean repartirACliente(UR aCliente, Enviado aEnviado) throws PersistentException {
+		return this._bD_Recibido.repartirACliente(aCliente, aEnviado);
 	}
 
 	

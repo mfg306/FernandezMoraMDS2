@@ -607,6 +607,17 @@
     </Column>
   </Entity>
   <Entity name="Enviado" Unlogged="false" PKClustered="0">
+    <Column name="Enviado">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>1</Type>
+      <Length>1</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
     <Column name="CompraCodigo">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
@@ -645,6 +656,17 @@
     </Column>
   </Entity>
   <Entity name="Recibido" Unlogged="false" PKClustered="0">
+    <Column name="Recibido">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>1</Type>
+      <Length>1</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
     <Column name="CompraCodigo">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>

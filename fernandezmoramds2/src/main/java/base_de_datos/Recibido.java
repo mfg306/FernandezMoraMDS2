@@ -42,6 +42,9 @@ public class Recibido extends base_de_datos.Compra implements Serializable {
 		
 	};
 	
+	@Column(name="Recibido", nullable=false, length=1)	
+	private boolean recibido;
+	
 	@ManyToOne(targetEntity=base_de_datos.UR.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario", nullable=false) }, foreignKey=@ForeignKey(name="FKRecibido916793"))	
@@ -51,6 +54,14 @@ public class Recibido extends base_de_datos.Compra implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="TransportistaEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKRecibido615365"))	
 	private base_de_datos.Transportista _Recoge;
+	
+	public void setRecibido(boolean value) {
+		this.recibido = value;
+	}
+	
+	public boolean getRecibido() {
+		return recibido;
+	}
 	
 	public void set_Recoge(base_de_datos.Transportista value) {
 		if (_Recoge != null) {

@@ -23,6 +23,7 @@ public class RecibidoDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression num_total_unidades;
 	public final DoubleExpression precio_total;
 	public final StringExpression fecha_estado;
+	public final BooleanExpression recibido;
 	public final IntegerExpression _recibeId;
 	public final AssociationExpression _recibe;
 	public final IntegerExpression _RecogeId;
@@ -34,6 +35,7 @@ public class RecibidoDetachedCriteria extends AbstractORMDetachedCriteria {
 		num_total_unidades = new IntegerExpression("num_total_unidades", this.getDetachedCriteria());
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());
 		fecha_estado = new StringExpression("fecha_estado", this.getDetachedCriteria());
+		recibido = new BooleanExpression("recibido", this.getDetachedCriteria());
 		_recibeId = new IntegerExpression("_recibe.", this.getDetachedCriteria());
 		_recibe = new AssociationExpression("_recibe", this.getDetachedCriteria());
 		_RecogeId = new IntegerExpression("_Recoge.", this.getDetachedCriteria());
@@ -46,6 +48,7 @@ public class RecibidoDetachedCriteria extends AbstractORMDetachedCriteria {
 		num_total_unidades = new IntegerExpression("num_total_unidades", this.getDetachedCriteria());
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());
 		fecha_estado = new StringExpression("fecha_estado", this.getDetachedCriteria());
+		recibido = new BooleanExpression("recibido", this.getDetachedCriteria());
 		_recibeId = new IntegerExpression("_recibe.", this.getDetachedCriteria());
 		_recibe = new AssociationExpression("_recibe", this.getDetachedCriteria());
 		_RecogeId = new IntegerExpression("_Recoge.", this.getDetachedCriteria());
