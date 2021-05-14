@@ -1,5 +1,7 @@
 package fernandezmora.interfaz;
 
+import basededatos.BDPrincipal;
+import basededatos.iTransportista;
 import vistas.VistaPedido_t;
 
 public class Pedido_T extends VistaPedido_t {
@@ -26,6 +28,19 @@ public class Pedido_T extends VistaPedido_t {
 	public void inicializar(Pedidos_T p) {
 		this._pedidos_T = p;
 		this._ver_ficha_cliente = new Ver_ficha_cliente(this, this.enviado);
+	}
+	
+	/*Incluir en el vpp*/
+	public void obtenerClientePedido() {
+		iTransportista iT = new BDPrincipal();
+		
+		 /*Seria irnos a la tabla de Enviado y buscar los Pendiente del Encargado de ese Pendiente y que el id_cola coincida con el de 
+		 * transportista
+		 * Parametros: 
+		 * Transportista
+		 * Encargado
+		 * Enviado
+		 */
 	}
 	
 

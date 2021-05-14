@@ -78,4 +78,16 @@ public class BD_Enviado {
 		return enviados;
 		
 	}
+	
+	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) {
+		Encargado_de_compras encargado = aEnviado.get_Procesa();
+		Pendiente[] pendientes = encargado._Pendiente.toArray();
+		
+		for(Pendiente p : pendientes) {
+			if(p.getId_cola() == aTransportista.getId_cola()) {
+				return p.get_Hace_compra();
+			}
+		}
+		return null;
+	}
 }

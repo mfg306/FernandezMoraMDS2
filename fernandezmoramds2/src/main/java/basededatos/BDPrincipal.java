@@ -381,5 +381,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return null;
 	}
 
+	@Override
+	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) {
+		return this._bD_Enviado.cargarClienteEnviado(aTransportista, aEnviado);
+	}
+
 	
 }
