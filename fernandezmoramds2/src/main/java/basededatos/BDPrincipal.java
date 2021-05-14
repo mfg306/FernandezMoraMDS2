@@ -390,6 +390,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public boolean repartirACliente(UR aCliente, Enviado aEnviado) throws PersistentException {
 		return this._bD_Recibido.repartirACliente(aCliente, aEnviado);
 	}
+			
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria,String aNombreProducto) throws PersistentException {
+		return this._bD_Productos.cargarProductosPorCategoria(aNombreCategoria, aNombreProducto);
+	}
 
 	
 }
