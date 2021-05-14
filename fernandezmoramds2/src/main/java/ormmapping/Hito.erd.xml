@@ -307,6 +307,17 @@
     </Column>
   </Entity>
   <Entity name="Transportista" Unlogged="false" PKClustered="0">
+    <Column name="Id_cola">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
     <Column name="EmpleadoIdEmpleado">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
@@ -547,6 +558,17 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="Id_cola">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
     <Column name="CompraCodigo">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
@@ -585,17 +607,6 @@
     </Column>
   </Entity>
   <Entity name="Enviado" Unlogged="false" PKClustered="0">
-    <Column name="Id_Cola">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="CompraCodigo">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>

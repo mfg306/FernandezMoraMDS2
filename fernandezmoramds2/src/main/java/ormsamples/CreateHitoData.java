@@ -55,10 +55,10 @@ public class CreateHitoData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : valoracion, _Valorado_por, _Valorado
 			base_de_datos.ValoracionDAO.save(base_de_DatosValoracion);
 			base_de_datos.Pendiente base_de_DatosPendiente = base_de_datos.PendienteDAO.createPendiente();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Producto_en_compra, _Hace_compra, _Encargado_de_compras, asignado
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Producto_en_compra, _Hace_compra, _Encargado_de_compras, id_cola, asignado
 			base_de_datos.PendienteDAO.save(base_de_DatosPendiente);
 			base_de_datos.Enviado base_de_DatosEnviado = base_de_datos.EnviadoDAO.createEnviado();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Procesa, _Transportista, id_Cola
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Procesa, _Transportista
 			base_de_datos.EnviadoDAO.save(base_de_DatosEnviado);
 			base_de_datos.Recibido base_de_DatosRecibido = base_de_datos.RecibidoDAO.createRecibido();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : _Recoge, _recibe

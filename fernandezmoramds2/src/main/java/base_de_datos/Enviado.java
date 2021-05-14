@@ -42,9 +42,6 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 		
 	};
 	
-	@Column(name="Id_Cola", nullable=false, length=10)	
-	private int id_Cola;
-	
 	@ManyToOne(targetEntity=base_de_datos.Transportista.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="TransportistaEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKEnviado870041"))	
@@ -54,14 +51,6 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="Encargado_de_comprasEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKEnviado404928"))	
 	private base_de_datos.Encargado_de_compras _Procesa;
-	
-	public void setId_Cola(int value) {
-		this.id_Cola = value;
-	}
-	
-	public int getId_Cola() {
-		return id_Cola;
-	}
 	
 	public void set_Procesa(base_de_datos.Encargado_de_compras value) {
 		if (_Procesa != null) {

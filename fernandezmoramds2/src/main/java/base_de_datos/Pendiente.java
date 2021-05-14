@@ -57,6 +57,9 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	@Column(name="Asignado", nullable=false, length=1)	
 	private boolean asignado;
 	
+	@Column(name="Id_cola", nullable=false, length=10)	
+	private int id_cola;
+	
 	@ManyToOne(targetEntity=base_de_datos.Encargado_de_compras.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="Encargado_de_comprasEmpleadoIdEmpleado", referencedColumnName="EmpleadoIdEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKPendiente822971"))	
@@ -78,6 +81,14 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	
 	public boolean getAsignado() {
 		return asignado;
+	}
+	
+	public void setId_cola(int value) {
+		this.id_cola = value;
+	}
+	
+	public int getId_cola() {
+		return id_cola;
 	}
 	
 	private void setORM__Producto_en_compra(java.util.Set value) {

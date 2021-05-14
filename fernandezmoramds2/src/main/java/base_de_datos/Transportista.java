@@ -43,6 +43,9 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 		
 	};
 	
+	@Column(name="Id_cola", nullable=true, length=10)	
+	private int id_cola;
+	
 	@OneToMany(mappedBy="_Recoge", targetEntity=base_de_datos.Recibido.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
@@ -52,6 +55,14 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Enviado = new java.util.HashSet();
+	
+	public void setId_cola(int value) {
+		this.id_cola = value;
+	}
+	
+	public int getId_cola() {
+		return id_cola;
+	}
 	
 	private void setORM__Recibido(java.util.Set value) {
 		this.ORM__Recibido = value;

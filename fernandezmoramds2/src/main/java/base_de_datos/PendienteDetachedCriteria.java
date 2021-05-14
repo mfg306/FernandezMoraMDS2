@@ -24,6 +24,7 @@ public class PendienteDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final DoubleExpression precio_total;
 	public final StringExpression fecha_estado;
 	public final BooleanExpression asignado;
+	public final IntegerExpression id_cola;
 	public final IntegerExpression _Encargado_de_comprasId;
 	public final AssociationExpression _Encargado_de_compras;
 	public final IntegerExpression _Hace_compraId;
@@ -37,6 +38,7 @@ public class PendienteDetachedCriteria extends AbstractORMDetachedCriteria {
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());
 		fecha_estado = new StringExpression("fecha_estado", this.getDetachedCriteria());
 		asignado = new BooleanExpression("asignado", this.getDetachedCriteria());
+		id_cola = new IntegerExpression("id_cola", this.getDetachedCriteria());
 		_Encargado_de_comprasId = new IntegerExpression("_Encargado_de_compras.", this.getDetachedCriteria());
 		_Encargado_de_compras = new AssociationExpression("_Encargado_de_compras", this.getDetachedCriteria());
 		_Hace_compraId = new IntegerExpression("_Hace_compra.", this.getDetachedCriteria());
@@ -51,6 +53,7 @@ public class PendienteDetachedCriteria extends AbstractORMDetachedCriteria {
 		precio_total = new DoubleExpression("precio_total", this.getDetachedCriteria());
 		fecha_estado = new StringExpression("fecha_estado", this.getDetachedCriteria());
 		asignado = new BooleanExpression("asignado", this.getDetachedCriteria());
+		id_cola = new IntegerExpression("id_cola", this.getDetachedCriteria());
 		_Encargado_de_comprasId = new IntegerExpression("_Encargado_de_compras.", this.getDetachedCriteria());
 		_Encargado_de_compras = new AssociationExpression("_Encargado_de_compras", this.getDetachedCriteria());
 		_Hace_compraId = new IntegerExpression("_Hace_compra.", this.getDetachedCriteria());
