@@ -42,7 +42,6 @@ public class Ver_mensajes_enviados extends Ver_bandeja_de_entrada {
 		
 		for(base_de_datos.Mensaje m : mensajes) {
 			this._mensajes_enviados.add_mensaje_enviado(m);
-			this.inicializarMensajesEnviados();
 		}
 	}
 

@@ -25,16 +25,16 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("logo_tienda")
 	private Image logo_tienda;
-	@Id("boton_iniciar_sesion")
-	private Button boton_iniciar_sesion;
-	@Id("boton_carrito")
-	private Button boton_carrito;
 	@Id("menu")
 	private Element menu;
 	@Id("seleccionarCategoria")
 	private HorizontalLayout seleccionarCategoria;
 	@Id("huecoBuscador")
 	private Element huecoBuscador;
+	@Id("boton_carrito")
+	private Image boton_carrito;
+	@Id("boton_iniciar_sesion")
+	private Image boton_iniciar_sesion;
 	
 
 	/**
@@ -75,22 +75,6 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 		this.logo_tienda = logo_tienda;
 	}
 
-	public Button getBoton_iniciar_sesion() {
-		return boton_iniciar_sesion;
-	}
-
-	public void setBoton_iniciar_sesion(Button boton_iniciar_sesion) {
-		this.boton_iniciar_sesion = boton_iniciar_sesion;
-	}
-
-	public Button getBoton_carrito() {
-		return boton_carrito;
-	}
-
-	public void setBoton_carrito(Button boton_carrito) {
-		this.boton_carrito = boton_carrito;
-	}
-
 	public HorizontalLayout getSeleccionarCategoria() {
 		return seleccionarCategoria;
 	}
@@ -105,5 +89,21 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 
 	public void setHuecoBuscador(Element huecoBuscador) {
 		this.huecoBuscador = huecoBuscador;
+	}
+
+	public Image getBoton_carrito() {
+		return boton_carrito;
+	}
+
+	public void setBoton_carrito(Image boton_carrito) {
+		this.boton_carrito = boton_carrito;
+	}
+
+	public Image getBoton_iniciar_sesion() {
+		return boton_iniciar_sesion;
+	}
+
+	public void setBoton_iniciar_sesion(Image boton_iniciar_sesion) {
+		this.boton_iniciar_sesion = boton_iniciar_sesion;
 	}
 }

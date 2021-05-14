@@ -11,6 +11,9 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public Menu_UNR(UNR_ unr) {
 		super(unr);
 		inicializar(unr);
+		
+		this.getBoton_iniciar_sesion().setSrc("login.png");
+		this.getBoton_iniciar_sesion().setWidth("3vw");
 	}
 	
 

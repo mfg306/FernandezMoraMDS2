@@ -3,13 +3,9 @@ package base_de_datos;
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import basededatos.iUR;
-
 import java.util.Vector;
-
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
-
-import base_de_datos.Mensaje;
 
 public class BD_Mensajes {
 	public BDPrincipal _bDPrincipal;
@@ -50,6 +46,7 @@ public class BD_Mensajes {
 			m.setCorreo_receptor(aCorreoReceptor);
 			m.setMensaje(aMensaje);
 			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
+			m.setAsunto(aAsunto);
 						
 			MensajeDAO.save(m);
 					
@@ -58,6 +55,9 @@ public class BD_Mensajes {
 			e.printStackTrace();
 			t.rollback();
 		}
+		
+		HitoPersistentManager.instance().disposePersistentManager();
+
 	}
 	
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException {
@@ -85,6 +85,7 @@ public class BD_Mensajes {
 			m.setMensaje(aMensaje);
 			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
 			m.set_Responder_a(mensajeHilo);
+			m.setAsunto("Re : " + mensajeHilo.getAsunto());
 						
 			MensajeDAO.save(m);
 					
@@ -96,6 +97,8 @@ public class BD_Mensajes {
 			t.rollback();
 		}
 		
+		HitoPersistentManager.instance().disposePersistentManager();
+
 		return false;
 	}
 }

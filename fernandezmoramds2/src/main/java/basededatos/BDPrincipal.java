@@ -369,6 +369,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException {
 		return this._bD_Pendiente.eliminarPendiente(aPedidoPendiente);
 	}
+
+	@Override
+	public boolean eliminarProductosEnCompra(Pendiente aPendiente) throws PersistentException {
+		return this._bD_Productos_en_compra.eliminarProductosEnCompra(aPendiente);
+	}
 	
 
 	

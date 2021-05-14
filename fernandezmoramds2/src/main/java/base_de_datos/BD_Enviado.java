@@ -27,8 +27,9 @@ public class BD_Enviado {
 		Date date = new Date();
 		formatter.format(date);
 		
-		e.set_Transportista(aTransportista);
-		e.set_Procesa(aEncargado);
+//		e.set_Transportista(aTransportista);
+		e.setORM__Procesa(aEncargado);
+		e.setORM__Transportista(aTransportista);
 		e.setFecha_estado(date.toString());
 		e.setNum_total_unidades(aPedidoPendiente.getNum_total_unidades());
 		e.setPrecio_total(aPedidoPendiente.getPrecio_total());
@@ -52,13 +53,17 @@ public class BD_Enviado {
 	
 	public Enviado[] cargarEnviados() throws PersistentException {
 		Enviado[] enviados = null;
-		
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+
 		try {
 			enviados = EnviadoDAO.listEnviadoByQuery(null, null);
 		} catch(Exception e) {
 			e.printStackTrace();
+			t.rollback();
 		}
 		
+		HitoPersistentManager.instance().disposePersistentManager();
+
 		return enviados;
 		
 	}

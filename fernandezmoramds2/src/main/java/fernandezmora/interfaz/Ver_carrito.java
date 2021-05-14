@@ -3,6 +3,7 @@ package fernandezmora.interfaz;
 import java.util.Vector;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaVer_carrito;
@@ -27,7 +28,7 @@ public abstract class Ver_carrito extends VistaVer_carrito {
 		}
 	}
 
-	public void cerrar_Producto(Button b, Vector<Producto_carrito> lista, VerticalLayout layout) {
+	public void cerrar_Producto(Image b, Vector<Producto_carrito> lista, VerticalLayout layout) {
 		b.addClickListener(event -> {
 			for (Producto_carrito pca : lista) {
 				layout.remove(pca._producto);

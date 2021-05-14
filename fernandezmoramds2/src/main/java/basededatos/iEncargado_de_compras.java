@@ -19,4 +19,6 @@ public interface iEncargado_de_compras {
 	public Transportista[] cargarTransportistas() throws PersistentException;
 	
 	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException;
+	
+	public boolean eliminarProductosEnCompra(Pendiente aPendiente) throws PersistentException;
 }

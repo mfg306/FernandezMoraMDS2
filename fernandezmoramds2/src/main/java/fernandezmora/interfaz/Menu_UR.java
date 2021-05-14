@@ -1,6 +1,7 @@
 package fernandezmora.interfaz;
 
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
@@ -21,8 +22,9 @@ public class Menu_UR extends Menu_UR_UNR {
 		this.layout = this.getMenu().as(VerticalLayout.class);
 		this._editar_perfil = new Editar_perfil(this);
 		this._ver_pedidos = new Ver_pedidos(this);
-
-		datos.setItems("Nombre de Usuario", "Mis pedidos", "Mis correos", "Configuración", "Cerrar sesion");
+		
+		datos.setLabel("Hola " + usuario.getNombre_usuario() + "!");
+		datos.setItems("Mis pedidos", "Mis correos", "Configuración", "Cerrar sesion");
 
 		datos.addValueChangeListener(event -> {
 			if (event.getValue().equals("Configuración")) {

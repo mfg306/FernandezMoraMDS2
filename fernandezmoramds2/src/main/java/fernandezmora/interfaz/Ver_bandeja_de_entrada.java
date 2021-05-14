@@ -58,6 +58,7 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	
 	public void VerBandejaDeEntrada() {
 		base_de_datos.Mensaje mensajes[] = null;
+		
 		if(this.general instanceof base_de_datos.Administrador) {
 			basededatos.iAdministrador iadmin = new BDPrincipal();
 			try {

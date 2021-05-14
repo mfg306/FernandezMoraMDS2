@@ -34,6 +34,7 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 		this.general = general;
 		this.mensaje = mensaje;
 		this.getAsunto().setVisible(false);
+		this.posiblesUsuarios.setVisible(false);
 		responderMensaje();
 		inicializar();
 	}
@@ -87,6 +88,7 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 			}
 			Notification.show("Mensaje enviado con exito");
 		});
+		
 	}
 
 	public void responderMensaje() {
