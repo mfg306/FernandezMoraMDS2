@@ -8,7 +8,7 @@ import com.vaadin.flow.router.Route;
 
 //import basededatos.iUR;
 
-
+@Route(value = "inicioRegistrado")
 public class UR extends UR_UNR{
 	//public iUR _iUR;
 	public Menu_UR _menu_UR;

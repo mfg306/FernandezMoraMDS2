@@ -38,6 +38,7 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 	
 	public abstract void abrir_carrito();
 	public abstract void ocultar_Informacion_PaginaInicial();
+	public abstract void volver_a_Pagina_Inicial();
 
 	
 	public void abrirProductoBusqueda() {

@@ -12,7 +12,8 @@ public class Productos_carrito extends VistaProductos_carrito {
 	public Producto_carrito _producto_carrito;
 	public VerticalLayout layout;
 
-	public Productos_carrito(Vector<Producto_carrito> aux) {
+	public Productos_carrito(Vector<Producto_carrito> aux, Ver_carrito vc) {
+		this._ver_carrito = vc;
 		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
 		inicializar();
 	}
@@ -24,10 +25,14 @@ public class Productos_carrito extends VistaProductos_carrito {
 	}
 	
 	public void mostrarProductos() {
+		double precio = .0;
 		for(Producto_carrito pc : this._list_Producto_carrito) {
 			pc.actualizarListado(this);
 			this.layout.add(pc);
+			precio += pc.producto.getPrecio_producto();
 		}
+		
+		this._ver_carrito.getSpan1().setText("" + precio);
 	}
 	
 	public void actualizarListaProductos(Vector<Producto_carrito> aux) {

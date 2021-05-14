@@ -6,7 +6,7 @@ import com.vaadin.flow.router.Route;
 
 //import basededatos.iUNR_;
 
-
+@Route(value = "inicioUNR")
 public class UNR_ extends UR_UNR{
 	public Menu_UNR _menu_UNR;
 	public Producto_UNR _producto_UNR;

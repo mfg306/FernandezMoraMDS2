@@ -11,12 +11,14 @@ public class Producto_carrito extends VistaProducto_carrito {
 	public Select<String> seleccionCantidad = new Select<>();
 	public int cantidad = 0;
 	public VerticalLayout layout;
+	base_de_datos.Producto producto;
 
 	public Producto_carrito(Producto p,base_de_datos.Producto pc, UR_UNR usuario) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		seleccionCantidad.setItems("0", "1", "2", "3", "4");
 		this.layout.add(seleccionCantidad);
 		this._producto = p;
+		this.producto = pc;
 		
 //		if((this._producto instanceof Producto_UNR) && !(this._producto instanceof Ver_producto_UR)) {
 //			System.out.println("Es producto UNR");

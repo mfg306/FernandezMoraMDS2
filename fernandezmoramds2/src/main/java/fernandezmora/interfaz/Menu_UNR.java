@@ -2,6 +2,7 @@ package fernandezmora.interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+
 public class Menu_UNR extends Menu_UR_UNR {
 	public UNR_ _uNR_;
 	public Ver_carrito_UNR _ver_carrito_UNR;
@@ -22,6 +23,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		layout = this.getMenu().as(VerticalLayout.class);
 		abrir_iniciar_sesion();
 		abrir_carrito();
+		volver_a_Pagina_Inicial();
 	}
 
 	public void ocultar_Informacion_Al_Abrir_Carrito() {
@@ -91,6 +93,31 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this.layout.removeAll();
 			this.layout.add(this._iniciar_sesion_UNR);
 
+		});
+
+	}
+
+
+	@Override
+	public void volver_a_Pagina_Inicial() {
+		this.getLogo_tienda().addClickListener(event ->{
+			if(this._iniciar_sesion_UNR != null) {
+				this._iniciar_sesion_UNR.ocultar_iniciar_sesion();
+			}
+			
+			if(this._ver_carrito_UNR != null) {
+				this._ver_carrito_UNR.ocultar_informacion_al_realizar_compra();
+			}
+			
+			if(this._uNR_._ver_categorias != null) {
+				this._uNR_._ver_categorias.layout.removeAll();
+			}
+			
+//			this.layout.add(this._uNR_._ofertas);
+//			this.layout.add(this._uNR_._productos_mas_vendidos_por_categorias);
+//			this.layout.add(this._uNR_.getBotonVerCategorias());
+			
+			
 		});
 
 	}
