@@ -13,7 +13,7 @@ public class Ver_carrito_UR extends Ver_carrito {
 
 	public Ver_carrito_UR(Menu_UR _menu_UR) {
 		this._menu_UR = _menu_UR;
-		this._productos_carrito = new Productos_carrito(this._menu_UR._uR.listaAux);
+		this._productos_carrito = new Productos_carrito(this._productos_carrito._list_Producto_carrito,this);
 
 		layout = this.getVaadinVerticalLayout1().as(VerticalLayout.class);
 		inicializar();

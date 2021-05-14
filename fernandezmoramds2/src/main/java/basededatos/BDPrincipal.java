@@ -133,9 +133,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return cts;
 	}
 
-	public Producto[] cargarProductosPorCategoria(String aNombreCategoria,String aNombreProducto) {
-		return this._bD_Productos.cargarProductosPorCategoria(aNombreCategoria, aNombreProducto);
-	}
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
 		throw new UnsupportedOperationException();

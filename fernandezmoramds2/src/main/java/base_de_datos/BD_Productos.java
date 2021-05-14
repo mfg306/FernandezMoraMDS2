@@ -115,9 +115,7 @@ public class BD_Productos {
 		return ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aProducto + "%'", "nombre");
 	}
 	
-	public Producto[] cargarProductosPorCategoria(String aNombreCategoria,String aNombreProducto) {
-		throw new UnsupportedOperationException();
-	}
+	
 	
 	public Producto[] cargarProductos(String aProducto) throws PersistentException {
 	
