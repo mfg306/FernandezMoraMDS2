@@ -50,7 +50,7 @@ public class BD_Productos {
 	}
 
 	public Producto[] cargarProductos() {
-		throw new UnsupportedOperationException();
+		return null;
 	}
 
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
@@ -73,9 +73,6 @@ public class BD_Productos {
 		
 	}
 
-	public Producto[] cargarProductos(String aProducto) throws PersistentException {
-		throw new UnsupportedOperationException();
-	}
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String aRuta) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
@@ -116,6 +113,15 @@ public class BD_Productos {
 	
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException{	
 		return ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aProducto + "%'", "nombre");
+	}
+	
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria,String aNombreProducto) {
+		throw new UnsupportedOperationException();
+	}
+	
+	public Producto[] cargarProductos(String aProducto) throws PersistentException {
+	
+		return null;
 	}
 	
 }

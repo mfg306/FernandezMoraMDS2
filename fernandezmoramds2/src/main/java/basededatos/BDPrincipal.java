@@ -133,8 +133,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return cts;
 	}
 
-	public Producto[] cargarProductos(String aNombreProducto) {
-		throw new UnsupportedOperationException();
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria,String aNombreProducto) {
+		return this._bD_Productos.cargarProductosPorCategoria(aNombreCategoria, aNombreProducto);
 	}
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
@@ -374,7 +374,12 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public boolean eliminarProductosEnCompra(Pendiente aPendiente) throws PersistentException {
 		return this._bD_Productos_en_compra.eliminarProductosEnCompra(aPendiente);
 	}
-	
+
+	@Override
+	public Producto[] cargarProductos(String aProducto) throws PersistentException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	
 }

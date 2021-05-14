@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
  * A Designer generated component for the vista-buscador template.
@@ -21,6 +22,8 @@ public class VistaBuscador extends PolymerTemplate<VistaBuscador.VistaBuscadorMo
 
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("espacioBuscador")
+	private HorizontalLayout espacioBuscador;
 
 	/**
      * Creates a new VistaBuscador.
@@ -42,6 +45,14 @@ public class VistaBuscador extends PolymerTemplate<VistaBuscador.VistaBuscadorMo
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public HorizontalLayout getEspacioBuscador() {
+		return espacioBuscador;
+	}
+
+	public void setEspacioBuscador(HorizontalLayout espacioBuscador) {
+		this.espacioBuscador = espacioBuscador;
 	}
 
 }

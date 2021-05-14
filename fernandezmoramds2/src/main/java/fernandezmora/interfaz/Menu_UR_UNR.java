@@ -13,7 +13,7 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 	public Ver_carrito _ver_carrito;
 	public Buscador _buscador;
 	public VerticalLayout layout;
-	public Select<String> categoriasBuscador = new Select<>();
+	
 	
 	public Menu_UR_UNR(UR_UNR urunr) {
 		this._uR_UNR = urunr;
@@ -33,7 +33,6 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 		layout = this.getMenu().as(VerticalLayout.class);
 		this._buscador = new Buscador();
 		this.getHuecoBuscador().as(VerticalLayout.class).add(this._buscador);
-		this.getSeleccionarCategoria().add(categoriasBuscador);
 		abrirProductoBusqueda();
 	}
 	
@@ -42,7 +41,7 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 
 	
 	public void abrirProductoBusqueda() {
-		this._buscador.buscador.addKeyPressListener(Key.ENTER, e -> {
+		this._buscador._busquedaTF.addKeyPressListener(Key.ENTER, e -> {
 			if(this._buscador._productos_busqueda != null) this.layout.remove(this._buscador._productos_busqueda); 
 			this._buscador._productos_busqueda = new Productos_busqueda();
 			this._uR_UNR.limpiarInterfaz();

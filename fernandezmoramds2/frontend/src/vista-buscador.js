@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 class VistaBuscador extends PolymerElement {
 
@@ -13,7 +14,9 @@ class VistaBuscador extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing" id="espacioBuscador" style="width: 100%;"></vaadin-horizontal-layout>
+</vaadin-vertical-layout>
 `;
     }
 
