@@ -124,4 +124,13 @@ public class BD_Productos {
 		return null;
 	}
 	
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto) throws PersistentException {
+
+		Categoria c = CategoriaDAO.loadCategoriaByQuery("Nombre_categoria LIKE '%" + aNombreCategoria + "%'", null);
+		Producto[] p = ProductoDAO.listProductoByQuery("CategoriaId_Categoria = " + c.getId_Categoria() + " AND Nombre LIKE '%" + aNombreProducto + "%'", null);
+		
+		return p;
+		
+	}
+	
 }
