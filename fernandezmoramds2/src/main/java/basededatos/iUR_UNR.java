@@ -33,6 +33,8 @@ public interface iUR_UNR {
 	public Valoracion[] cargarValoraciones(int aIdProducto) throws PersistentException;
 	
 	public Producto[] cargarProductos(String aProducto) throws PersistentException;
+	
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria,String aNombreProducto) throws PersistentException;
 		
 	
 }
