@@ -61,9 +61,9 @@ public class Buscador extends VistaBuscador {
 				this._productos_busqueda.getVaadinHorizontalLayout().removeAll();
 				this._productos_busqueda.getVaadinHorizontalLayout1().removeAll();
 				
-				if(this._busquedaTF.getValue().toString().equals("") || this.categoriasBuscador.getValue().toString().equals("")) {
-					Notification.show("Introduzca un producto en el buscador o categoria para realizar la busqueda");
-					
+				if(this._busquedaTF.getValue().toString().equals("")) {
+				Notification.show("Introduzca un producto en el buscador para realizar la busqueda");
+				
 				}else {
 					this.listaProductosBusqueda = i.cargarProductosPorCategoria(this.categoriasBuscador.getValue(),
 							this._busquedaTF.getValue());

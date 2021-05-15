@@ -54,14 +54,14 @@ public class BD_Productos {
 
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
 		Producto p = ProductoDAO.getProductoByORMID(aIdProducto);
-		
+
 		this._bDPrincipal = new BDPrincipal();
-		
+
 		if (p != null) {
 			this._bDPrincipal.eliminarImagenProducto(p);
 			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
 		}
-		
+
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		try {
@@ -71,7 +71,7 @@ public class BD_Productos {
 			t.rollback();
 			e.printStackTrace();
 		}
-		
+
 		this._bDPrincipal.eliminarComentarioProducto(p);
 		this._bDPrincipal.eliminarValoracionesProducto(p);
 	}
@@ -97,9 +97,10 @@ public class BD_Productos {
 		}
 
 		this._bDPrincipal = new BDPrincipal();
-		for(String ruta : aRuta) {
+		for (String ruta : aRuta) {
 			System.out.println(ruta);
-			if(ruta != null) this._bDPrincipal.guardarImagenesProducto(ruta, p);
+			if (ruta != null)
+				this._bDPrincipal.guardarImagenesProducto(ruta, p);
 		}
 
 		return p;
@@ -126,16 +127,18 @@ public class BD_Productos {
 		return null;
 	}
 
-	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto)
-			throws PersistentException {
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto) throws PersistentException {
+		if (aNombreCategoria != null) {
+			Categoria c = CategoriaDAO.loadCategoriaByQuery("Nombre_categoria LIKE '%" + aNombreCategoria + "%'", null);
+			Producto[] p = ProductoDAO.listProductoByQuery(
+					"CategoriaId_Categoria = " + c.getId_Categoria() + " AND Nombre LIKE '%" + aNombreProducto + "%'",
+					null);
 
-		Categoria c = CategoriaDAO.loadCategoriaByQuery("Nombre_categoria LIKE '%" + aNombreCategoria + "%'", null);
-		Producto[] p = ProductoDAO.listProductoByQuery(
-				"CategoriaId_Categoria = " + c.getId_Categoria() + " AND Nombre LIKE '%" + aNombreProducto + "%'",
-				null);
-
-		return p;
-
+			return p;
+		} else {
+			Producto[] p = ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aNombreProducto + "%'", "Nombre");
+			return p;
+		}
 	}
 
 }
