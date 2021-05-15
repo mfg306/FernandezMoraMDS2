@@ -12,17 +12,17 @@ public class DB_Imagen {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 
-	public void guardarImagenesProducto(String aImagenes, Producto aProducto) throws PersistentException {
+	public void guardarImagenesProducto(String aImagenes, Producto aProducto, boolean aEsPrincipal) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		Imagen imagen = ImagenDAO.createImagen();
 		imagen.setRuta(aImagenes);
 		imagen.set_Producto(aProducto);
 		
-		System.out.println("La ruta : " +  aImagenes);
+		if(aEsPrincipal) imagen.setPrincipal(true);
+		else imagen.setPrincipal(false);
 		
 		try {
-			
 			ImagenDAO.save(imagen);
 			t.commit();
 		} catch(Exception e) {

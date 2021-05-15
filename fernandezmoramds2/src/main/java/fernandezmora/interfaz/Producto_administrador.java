@@ -24,14 +24,11 @@ public class Producto_administrador extends VistaProducto_administrador {
 		if(this.p._Imagen != null) {
 			base_de_datos.Imagen imagenes[] = this.p._Imagen.toArray();
 			
-			this.getFotoProducto().setWidth("30vw");
+			this.getFotoProducto().setWidth("10vw");
 			this.getFotoProducto().setHeight("auto");
 			
 			for(base_de_datos.Imagen i : imagenes){
-//				if(i.getPrincipal())
-				System.out.println(i.getRuta());
-				System.out.println(i.getID());
-				this.getFotoProducto().setSrc(i.getRuta());
+				if(i.getPrincipal()) this.getFotoProducto().setSrc(i.getRuta());
 			}
 		}
 		
@@ -56,7 +53,7 @@ public class Producto_administrador extends VistaProducto_administrador {
 	public void Editar_producto() {
 		this.getVaadinButton().addClickListener(event ->{
 			this._editar_producto = new Editar_producto(this);
-//			this._productos_administrador._gestionar_productos.ocultar_Gestionar_Ofertas();
+			this._productos_administrador._gestionar_productos.ocultar_Gestionar_Ofertas();
 			this.layout.add(this._editar_producto);
 		});
 	}

@@ -221,8 +221,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public void guardarImagenesProducto(String aImagenes, Producto aProducto) throws PersistentException {
-		this._dB_Imagen.guardarImagenesProducto(aImagenes, aProducto);
+	public void guardarImagenesProducto(String aImagenes, Producto aProducto, boolean aEsPrincipal) throws PersistentException {
+		this._dB_Imagen.guardarImagenesProducto(aImagenes, aProducto, aEsPrincipal);
 	}
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String[] aRuta)
@@ -255,7 +255,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 				aIdOferta);
 	}
 
-	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String aRutaImagen,int aNumUnidades) throws PersistentException  {
+	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String[] aRutaImagen,int aNumUnidades) throws PersistentException  {
 		this._bD_Productos.actualizarProducto(aIdProducto, aNombre, aPrecio, aDescripcion, aRutaImagen, aNumUnidades);
 	}
 

@@ -47,12 +47,20 @@ public class VistaEditar_producto extends PolymerTemplate<VistaEditar_producto.V
 	private Button vaadinButton1;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-	@Id("label")
-	private Label label;
 	@Id("imagen")
 	private Image imagen;
 	@Id("numUnidades")
 	private TextField numUnidades;
+	@Id("imagen1")
+	private Image imagen1;
+	@Id("imagen2")
+	private Image imagen2;
+	@Id("imagen3")
+	private Image imagen3;
+	@Id("imagen4")
+	private Image imagen4;
+	@Id("huecoUpload")
+	private HorizontalLayout huecoUpload;
 	/**
      * Creates a new VistaEditar_producto.
      */
@@ -131,14 +139,6 @@ public class VistaEditar_producto extends PolymerTemplate<VistaEditar_producto.V
 		this.nuevoPrecio = nuevoPrecio;
 	}
 
-	public Label getLabel() {
-		return label;
-	}
-
-	public void setLabel(Label label) {
-		this.label = label;
-	}
-
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
 	}
@@ -177,5 +177,45 @@ public class VistaEditar_producto extends PolymerTemplate<VistaEditar_producto.V
 
 	public void setNumUnidades(TextField numUnidades) {
 		this.numUnidades = numUnidades;
+	}
+
+	public Image getImagen1() {
+		return imagen1;
+	}
+
+	public void setImagen1(Image imagen1) {
+		this.imagen1 = imagen1;
+	}
+
+	public Image getImagen2() {
+		return imagen2;
+	}
+
+	public void setImagen2(Image imagen2) {
+		this.imagen2 = imagen2;
+	}
+
+	public Image getImagen3() {
+		return imagen3;
+	}
+
+	public void setImagen3(Image imagen3) {
+		this.imagen3 = imagen3;
+	}
+
+	public Image getImagen4() {
+		return imagen4;
+	}
+
+	public void setImagen4(Image imagen4) {
+		this.imagen4 = imagen4;
+	}
+
+	public HorizontalLayout getHuecoUpload() {
+		return huecoUpload;
+	}
+
+	public void setHuecoUpload(HorizontalLayout huecoUpload) {
+		this.huecoUpload = huecoUpload;
 	}
 }

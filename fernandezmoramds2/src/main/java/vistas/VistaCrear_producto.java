@@ -55,6 +55,8 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 	private Element huecoUpload;
 	@Id("fotoProducto")
 	private Image fotoProducto;
+	@Id("vaadinHorizontalLayout4")
+	private HorizontalLayout vaadinHorizontalLayout4;
 
 	/**
      * Creates a new VistaCrear_producto.
@@ -196,6 +198,14 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 
 	public void setFotoProducto(Image fotoProducto) {
 		this.fotoProducto = fotoProducto;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout4() {
+		return vaadinHorizontalLayout4;
+	}
+
+	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
+		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
 	}
 
 }

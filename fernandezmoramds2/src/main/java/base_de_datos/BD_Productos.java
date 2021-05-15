@@ -80,6 +80,8 @@ public class BD_Productos {
 			String[] aRuta) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Producto p = null;
+		int contador = 0 ;
+		boolean esPrincipal = false;
 		try {
 			p = ProductoDAO.createProducto();
 
@@ -98,9 +100,13 @@ public class BD_Productos {
 
 		this._bDPrincipal = new BDPrincipal();
 		for (String ruta : aRuta) {
-			System.out.println(ruta);
-			if (ruta != null)
-				this._bDPrincipal.guardarImagenesProducto(ruta, p);
+			
+			if (ruta != null) {
+				if(contador == 0) esPrincipal = true;
+				this._bDPrincipal.guardarImagenesProducto(ruta, p, esPrincipal);
+				esPrincipal = false;
+				contador ++;
+			}
 		}
 
 		return p;
@@ -112,10 +118,9 @@ public class BD_Productos {
 	}
 
 	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion,
-			String aRutaImagen, int aNumUnidades) throws PersistentException {
-		System.out.println("Se va a ejecutar este metodo");
-		eliminarProductoAdministrador(aIdProducto);
-//		insertarProducto(aNombre, aDescripcion, aPrecio, aNumUnidades, aRutaImagen);
+			String[] aRutaImagen, int aNumUnidades) throws PersistentException {
+		eliminarProductoAdministrador(aIdProducto);		
+		insertarProducto(aNombre, aDescripcion, aPrecio, aNumUnidades, aRutaImagen);
 	}
 
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException {
