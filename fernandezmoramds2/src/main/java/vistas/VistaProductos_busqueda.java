@@ -26,14 +26,14 @@ public class VistaProductos_busqueda extends PolymerTemplate<VistaProductos_busq
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("numero_pagina")
 	private Span numero_pagina;
 	@Id("boton_pagina_anterior")
 	private Button boton_pagina_anterior;
 	@Id("boton_pagina_siguiente")
 	private Button boton_pagina_siguiente;
+	@Id("vaadinHorizontalLayout2")
+	private HorizontalLayout vaadinHorizontalLayout2;
 
 	/**
      * Creates a new VistaProductos_busqueda.
@@ -55,5 +55,53 @@ public class VistaProductos_busqueda extends PolymerTemplate<VistaProductos_busq
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public Span getNumero_pagina() {
+		return numero_pagina;
+	}
+
+	public void setNumero_pagina(Span numero_pagina) {
+		this.numero_pagina = numero_pagina;
+	}
+
+	public Button getBoton_pagina_anterior() {
+		return boton_pagina_anterior;
+	}
+
+	public void setBoton_pagina_anterior(Button boton_pagina_anterior) {
+		this.boton_pagina_anterior = boton_pagina_anterior;
+	}
+
+	public Button getBoton_pagina_siguiente() {
+		return boton_pagina_siguiente;
+	}
+
+	public void setBoton_pagina_siguiente(Button boton_pagina_siguiente) {
+		this.boton_pagina_siguiente = boton_pagina_siguiente;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
 	}
 }

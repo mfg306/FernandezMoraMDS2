@@ -23,7 +23,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 		layout = this.getMenu().as(VerticalLayout.class);
 		abrir_iniciar_sesion();
 		abrir_carrito();
-		volver_a_Pagina_Inicial();
+		//volver_a_Pagina_Inicial();
 	}
 
 	public void ocultar_Informacion_Al_Abrir_Carrito() {
@@ -98,8 +98,8 @@ public class Menu_UNR extends Menu_UR_UNR {
 	}
 
 
-	@Override
-	public void volver_a_Pagina_Inicial() {
+	//@Override
+	/*public void volver_a_Pagina_Inicial() {
 		this.getLogo_tienda().addClickListener(event ->{
 			if(this._iniciar_sesion_UNR != null) {
 				this._iniciar_sesion_UNR.ocultar_iniciar_sesion();
@@ -111,15 +111,14 @@ public class Menu_UNR extends Menu_UR_UNR {
 			
 			if(this._uNR_._ver_categorias != null) {
 				this._uNR_._ver_categorias.layout.removeAll();
-			}
+			}*/
 			
 //			this.layout.add(this._uNR_._ofertas);
 //			this.layout.add(this._uNR_._productos_mas_vendidos_por_categorias);
 //			this.layout.add(this._uNR_.getBotonVerCategorias());
 			
 			
-		});
+		//});
 
 	}
 
-}

@@ -155,10 +155,10 @@ public class Menu_UR extends Menu_UR_UNR {
 		UI.getCurrent().getSession().close();
 	}
 
-	@Override
+	/*@Override
 	public void volver_a_Pagina_Inicial() {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
 }
