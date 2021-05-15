@@ -67,10 +67,6 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 	@Transient	
 	public final base_de_datos.OfertaSetCollection _Tiene = new base_de_datos.OfertaSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public base_de_datos.Producto_Rebajado[] cargarProductosOferta(base_de_datos.Oferta oferta) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
 	
 	public String toString() {
 		return super.toString();

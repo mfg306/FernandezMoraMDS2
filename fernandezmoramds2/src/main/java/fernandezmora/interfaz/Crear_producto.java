@@ -42,21 +42,32 @@ public class Crear_producto extends VistaCrear_producto {
 	public Crear_producto() {
 		inicializar();
 		crearProducto();
+		
+		
 	}
 
 	public void inicializar() {
-		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		layout = this.getHuecoUpload().as(VerticalLayout.class);
 		buffer = new MemoryBuffer();
 		upload = new Upload(buffer);
+		
 		this.layout.add(upload);
+		
+		cambiar_Foto_Producto();
+		cancelar_creacion();
+	}
+	
+	public void cambiar_Foto_Producto() {
 		
 		upload.setAcceptedFileTypes("image/jpeg", "image/png");
 		
 		upload.addSucceededListener(e -> {
 			Component component = createComponent(e.getMIMEType(), e.getFileName(), buffer.getInputStream());
-			this.layout.add(component);
+			Image img = (Image)component;
+			img.setWidth("30vw");
+			img.setHeight("auto");
+			this.getVaadinHorizontalLayout2().add(img);
 			File targetFile = new File("src/main/resources/targetFile.tmp");
-			System.out.println(e.getFileName());
 
 			try {
 				FileUtils.copyInputStreamToFile(buffer.getInputStream(), targetFile);
@@ -64,16 +75,14 @@ public class Crear_producto extends VistaCrear_producto {
 				ex.printStackTrace();
 			}
 			
-			String rutaImgur = Uploader.upload(targetFile); //FALLO
+			String rutaImgur = Uploader.upload(targetFile);
 			String rutaImagen = "https://i.imgur.com/" +  rutaImgur.subSequence(15, 22) + ".jpg";
-
-			System.out.println("La ruta : " + targetFile);
-			this.getImg().setSrc(rutaImagen);
-			System.out.println("JEJE2");
+			img.removeAll();
+			this.getVaadinHorizontalLayout2().remove(img);
+			this.getFotoProducto().setSrc(rutaImagen);
+			this.getFotoProducto().setWidth("30vw");
+			this.getFotoProducto().setHeight("auto");
 		});
-		
-		
-		cancelar_creacion();
 	}
 
 	public void cancelar_creacion() {
@@ -93,7 +102,7 @@ public class Crear_producto extends VistaCrear_producto {
 			try {				
 				base_de_datos.Producto p = admin.insertarProducto(this.getNombreProducto().getValue(), 
 						this.getAñadeUnaDescripciónAlProducto().getValue(), Double.parseDouble(this.getPrecio().getValue()),
-						Integer.parseInt(this.getCantidadProducto().getValue()), this.getRutaPrincipal().getValue());
+						Integer.parseInt(this.getCantidadProducto().getValue()), this.getFotoProducto().getSrc());
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 			} catch (PersistentException e) {

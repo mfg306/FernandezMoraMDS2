@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 
 /**
  * A Designer generated component for the vista-producto_administrador template.
@@ -39,12 +40,12 @@ public class VistaProducto_administrador extends PolymerTemplate<VistaProducto_a
 	private Element vaadinItem;
 	@Id("vaadinHorizontalLayout2")
 	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("h2")
-	private H2 h2;
 	@Id("vaadinButton")
 	private Button vaadinButton;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
+	@Id("fotoProducto")
+	private Image fotoProducto;
 
 	/**
      * Creates a new VistaProducto_administrador.
@@ -133,14 +134,6 @@ public class VistaProducto_administrador extends PolymerTemplate<VistaProducto_a
 		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
 	}
 
-	public H2 getH2() {
-		return h2;
-	}
-
-	public void setH2(H2 h2) {
-		this.h2 = h2;
-	}
-
 	public Button getVaadinButton() {
 		return vaadinButton;
 	}
@@ -155,5 +148,13 @@ public class VistaProducto_administrador extends PolymerTemplate<VistaProducto_a
 
 	public void setVaadinButton1(Button vaadinButton1) {
 		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public Image getFotoProducto() {
+		return fotoProducto;
+	}
+
+	public void setFotoProducto(Image fotoProducto) {
+		this.fotoProducto = fotoProducto;
 	}
 }

@@ -43,18 +43,6 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 	private Element vaadinVerticalLayout2;
 	@Id("vaadinHorizontalLayout2")
 	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("img")
-	private Image img;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
-	@Id("img1")
-	private Image img1;
-	@Id("img2")
-	private Image img2;
-	@Id("img3")
-	private Image img3;
-	@Id("img4")
-	private Image img4;
 	@Id("vaadinHorizontalLayout3")
 	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("vaadinButton1")
@@ -77,6 +65,10 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 	private TextField ruta4;
 	@Id("ruta5")
 	private TextField ruta5;
+	@Id("huecoUpload")
+	private Element huecoUpload;
+	@Id("fotoProducto")
+	private Image fotoProducto;
 
 	/**
      * Creates a new VistaCrear_producto.
@@ -172,54 +164,6 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
 	}
 
-	public Image getImg() {
-		return img;
-	}
-
-	public void setImg(Image img) {
-		this.img = img;
-	}
-
-	public Element getVaadinVerticalLayout3() {
-		return vaadinVerticalLayout3;
-	}
-
-	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
-		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
-	}
-
-	public Image getImg1() {
-		return img1;
-	}
-
-	public void setImg1(Image img1) {
-		this.img1 = img1;
-	}
-
-	public Image getImg2() {
-		return img2;
-	}
-
-	public void setImg2(Image img2) {
-		this.img2 = img2;
-	}
-
-	public Image getImg3() {
-		return img3;
-	}
-
-	public void setImg3(Image img3) {
-		this.img3 = img3;
-	}
-
-	public Image getImg4() {
-		return img4;
-	}
-
-	public void setImg4(Image img4) {
-		this.img4 = img4;
-	}
-
 	public HorizontalLayout getVaadinHorizontalLayout3() {
 		return vaadinHorizontalLayout3;
 	}
@@ -306,6 +250,22 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 
 	public void setRuta5(TextField ruta5) {
 		this.ruta5 = ruta5;
+	}
+
+	public Element getHuecoUpload() {
+		return huecoUpload;
+	}
+
+	public void setHuecoUpload(Element huecoUpload) {
+		this.huecoUpload = huecoUpload;
+	}
+
+	public Image getFotoProducto() {
+		return fotoProducto;
+	}
+
+	public void setFotoProducto(Image fotoProducto) {
+		this.fotoProducto = fotoProducto;
 	}
 
 }

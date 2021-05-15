@@ -255,8 +255,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 				aIdOferta);
 	}
 
-	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion) throws PersistentException  {
-		this._bD_Productos.actualizarProducto(aIdProducto, aNombre, aPrecio, aDescripcion);
+	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String aRutaImagen,int aNumUnidades) throws PersistentException  {
+		this._bD_Productos.actualizarProducto(aIdProducto, aNombre, aPrecio, aDescripcion, aRutaImagen, aNumUnidades);
 	}
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException {
@@ -390,6 +390,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 			
 	public Producto[] cargarProductosPorCategoria(String aNombreCategoria,String aNombreProducto) throws PersistentException {
 		return this._bD_Productos.cargarProductosPorCategoria(aNombreCategoria, aNombreProducto);
+	}
+	
+	public boolean eliminarImagenProducto(Producto aProducto) throws PersistentException{
+		return this._dB_Imagen.eliminarImagenProducto(aProducto);
 	}
 
 	

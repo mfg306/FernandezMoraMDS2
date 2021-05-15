@@ -15,19 +15,42 @@ public class DB_Imagen {
 	public void guardarImagenesProducto(String aImagenes, Producto aProducto) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
+		System.out.println("En la imagen el idProducto es : " + aProducto.getId_Producto());
 		Imagen imagen = ImagenDAO.createImagen();
-		imagen.setRuta("samsung.png");
+		imagen.setRuta(aImagenes);
 		imagen.set_Producto(aProducto);
 		
 		try {
 			
 			ImagenDAO.save(imagen);
-			System.out.println("EJECUTANDO ESTO");
 			t.commit();
 		} catch(Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
+
+	}
+	
+	public boolean eliminarImagenProducto(Producto aProducto) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Imagen[] imagenes = null;
+		
+		try {
+			System.out.println("ID : " + aProducto.getId_Producto());
+			imagenes = ImagenDAO.listImagenByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
+			for(Imagen i : imagenes) {
+				ImagenDAO.deleteAndDissociate(i);
+			}
+			t.commit();
+			HitoPersistentManager.instance().disposePersistentManager();
+			return true;
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+			HitoPersistentManager.instance().disposePersistentManager();
+			return false;
+		}
+		
 
 	}
 }

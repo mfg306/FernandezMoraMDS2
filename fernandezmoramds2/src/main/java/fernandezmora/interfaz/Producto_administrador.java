@@ -21,10 +21,20 @@ public class Producto_administrador extends VistaProducto_administrador {
 		this.getLabel2().setText("" + p.getPrecio_producto());
 		this.getVaadinItem().setText(p.getDescripcion());
 		this.p = p;
+		base_de_datos.Imagen imagenes[] = this.p._Imagen.toArray();
+		
+		this.getFotoProducto().setWidth("30vw");
+		this.getFotoProducto().setHeight("auto");
+		
+		for(base_de_datos.Imagen i : imagenes){
+//			if(i.getPrincipal())
+			this.getFotoProducto().setSrc(i.getRuta());
+		}
+
 		this._productos_administrador = pa;
 		this.layout = this._productos_administrador._gestionar_productos.layout;
 		Eliminar_producto();
-		 Editar_producto();
+		Editar_producto();
 	}
 
 	public void Eliminar_producto() {

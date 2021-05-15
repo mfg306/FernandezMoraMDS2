@@ -27,4 +27,8 @@ public class BD_Productos_Rebajados {
 			t.rollback();
 		}
 	}
+	
+	public Producto_Rebajado[] cargarProductos(Oferta aOferta) {
+		return null;
+	}
 }

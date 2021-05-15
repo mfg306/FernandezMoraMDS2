@@ -1,9 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaCrear_producto extends PolymerElement {
 
@@ -30,14 +30,9 @@ class VistaCrear_producto extends PolymerElement {
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 60%;" id="vaadinVerticalLayout2">
    <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout2">
-    <img id="img" style="width: 100%; height: 100%;">
-    <vaadin-vertical-layout theme="spacing" style="width: 100%; margin-left: var(--lumo-space-xl); align-items: center; flex-grow: 1; flex-shrink: 1;" id="vaadinVerticalLayout3">
-     <img id="img1" style="width: 100%; height: 100%;">
-     <img id="img2" style="width: 100%; height: 100%;">
-     <img id="img3" style="width: 100%; height: 100%;">
-     <img id="img4" style="width: 100%; height: 100%;">
-    </vaadin-vertical-layout>
+    <img id="fotoProducto">
    </vaadin-horizontal-layout>
+   <vaadin-vertical-layout theme="spacing" id="huecoUpload" style="width: 100%;"></vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout4">
     <vaadin-text-field id="rutaPrincipal" placeholder="Ruta de la imagen principal"></vaadin-text-field>
     <vaadin-text-field id="ruta2"></vaadin-text-field>

@@ -29,7 +29,7 @@ class VistaProducto_administrador extends PolymerElement {
      Características 
    </vaadin-item>
   </vaadin-list-box>
-  <h2 style="flex-grow: 1; flex-shrink: 0; align-self: center; margin-left: 50%; width: 15%;" id="h2">Imagen</h2>
+  <img id="fotoProducto" style="width: 100%; height: 100%;">
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; justify-content: flex-end; margin-top: var(--lumo-space-l);" id="vaadinHorizontalLayout2">
   <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
