@@ -137,16 +137,18 @@ public class BD_Productos {
 		return null;
 	}
 
-	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto)
-			throws PersistentException {
-
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto)throws PersistentException {
+		if(aNombreCategoria != null) {
 		Categoria c = CategoriaDAO.loadCategoriaByQuery("Nombre_categoria LIKE '%" + aNombreCategoria + "%'", null);
 		Producto[] p = ProductoDAO.listProductoByQuery(
 				"CategoriaId_Categoria = " + c.getId_Categoria() + " AND Nombre LIKE '%" + aNombreProducto + "%'",
 				null);
 
 		return p;
-
+		}else {
+			Producto[] p = ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aNombreProducto + "%'","Nombre");
+			return p;
+		}
 	}
 
 }
