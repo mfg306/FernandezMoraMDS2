@@ -67,6 +67,7 @@ public class Producto implements Serializable {
 	@ManyToOne(targetEntity=base_de_datos.Categoria.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="CategoriaId_Categoria", referencedColumnName="Id_Categoria") }, foreignKey=@ForeignKey(name="FKProducto634639"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private base_de_datos.Categoria _Categoria;
 	
 	@Column(name="Precio_producto", nullable=false)	
@@ -223,11 +224,6 @@ public class Producto implements Serializable {
 	
 	@Transient	
 	public final base_de_datos.ValoracionSetCollection _Valorado_por = new base_de_datos.ValoracionSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR, base_de_datos.ORMConstants.KEY_VALORACION__VALORADO, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
-	
-	public base_de_datos.Producto[] cargarProductos(String nombreProducto) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
 	
 	public String toString() {
 		return String.valueOf(getId_Producto());

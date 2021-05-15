@@ -45,6 +45,7 @@ public class Imagen implements Serializable {
 	@ManyToOne(targetEntity=base_de_datos.Producto.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto", nullable=false) }, foreignKey=@ForeignKey(name="FKImagen195906"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private base_de_datos.Producto _Producto;
 	
 	@Column(name="Ruta", nullable=true, length=255)	

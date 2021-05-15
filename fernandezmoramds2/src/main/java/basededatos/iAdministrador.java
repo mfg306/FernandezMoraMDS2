@@ -32,7 +32,7 @@ public interface iAdministrador {
 
 	public void guardarImagenesProducto(String aImagenes, Producto aProducto) throws PersistentException;
 
-	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String aRuta) throws PersistentException;
+	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String[] aRuta) throws PersistentException;
 
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) throws PersistentException;
 
@@ -79,4 +79,10 @@ public interface iAdministrador {
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException;
 	
 	public Administrador buscarAdmin(String aCorreo) throws PersistentException;
+	
+	public boolean eliminarImagenProducto(Producto aProducto) throws PersistentException;
+	
+	public boolean eliminarComentarioProducto(Producto aProducto) throws PersistentException;
+	
+	public boolean eliminarValoracionesProducto(Producto aProducto) throws PersistentException;
 }

@@ -2,8 +2,8 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaCrear_producto extends PolymerElement {
 
@@ -33,13 +33,6 @@ class VistaCrear_producto extends PolymerElement {
     <img id="fotoProducto">
    </vaadin-horizontal-layout>
    <vaadin-vertical-layout theme="spacing" id="huecoUpload" style="width: 100%;"></vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout4">
-    <vaadin-text-field id="rutaPrincipal" placeholder="Ruta de la imagen principal"></vaadin-text-field>
-    <vaadin-text-field id="ruta2"></vaadin-text-field>
-    <vaadin-text-field id="ruta3"></vaadin-text-field>
-    <vaadin-text-field id="ruta4"></vaadin-text-field>
-    <vaadin-text-field id="ruta5"></vaadin-text-field>
-   </vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; margin-top: var(--lumo-space-l); justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout3">

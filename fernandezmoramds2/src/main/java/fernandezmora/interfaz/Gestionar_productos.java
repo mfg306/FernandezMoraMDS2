@@ -2,6 +2,7 @@ package fernandezmora.interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -14,6 +15,7 @@ public class Gestionar_productos extends VistaGestionar_productos {
 	public Editar_producto _editar_producto;
 	public VerticalLayout layout;
 	public base_de_datos.Producto productos[];
+	Span aviso = new Span();
 
 	public Gestionar_productos() {
 		
@@ -33,6 +35,7 @@ public class Gestionar_productos extends VistaGestionar_productos {
 		layout.remove(this._productos_administrador);
 		this.getVaadinButton().setVisible(false);
 		this.getH1().setVisible(false);
+		this.aviso.setVisible(false);
 	}
 
 
@@ -51,10 +54,15 @@ public class Gestionar_productos extends VistaGestionar_productos {
 		
 		try {
 			productos = admin.cargarProductosListado();
-			
-			for(base_de_datos.Producto p : productos) {
-				this._productos_administrador.add_Productos(p);
+			if(productos != null && productos.length > 0) {
+				for(base_de_datos.Producto p : productos) {
+					this._productos_administrador.add_Productos(p);
+				}
+			} else {
+				aviso.setText("No hay ningún producto registrado en la base de datos.");
+				this.layout.add(aviso);
 			}
+
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}

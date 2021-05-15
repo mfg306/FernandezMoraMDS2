@@ -62,5 +62,25 @@ public class BD_Comentarios {
 		}
 		return c;
 	}
+	
+	public boolean eliminarComentarioProducto(Producto aProducto) throws PersistentException {
+		Comentario[] comentarios = ComentarioDAO.listComentarioByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			for(Comentario c : comentarios) {
+				ComentarioDAO.deleteAndDissociate(c);
+			}
+			t.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+			
+			return false;
+		}
+		
+		return true;
+
+	}
 
 }

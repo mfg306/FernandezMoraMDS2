@@ -49,11 +49,13 @@ public class Producto_en_compra implements Serializable {
 	@ManyToOne(targetEntity=base_de_datos.Pendiente.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="PendienteCompraCodigo", referencedColumnName="CompraCodigo", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto_e460560"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private base_de_datos.Pendiente _Pendiente;
 	
 	@ManyToOne(targetEntity=base_de_datos.Producto.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinColumns(value={ @JoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto", nullable=false) }, foreignKey=@ForeignKey(name="FKProducto_e986574"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private base_de_datos.Producto _Producto;
 	
 	@Column(name="Num_unidades_producto", nullable=false, length=10)	

@@ -38,12 +38,11 @@ public class Crear_producto extends VistaCrear_producto {
 	public VerticalLayout layout;
 	Upload upload;
 	MemoryBuffer buffer;
+	String[] imagenes = new String[5];
+	int contador = 0;
 
 	public Crear_producto() {
 		inicializar();
-		crearProducto();
-		
-		
 	}
 
 	public void inicializar() {
@@ -55,21 +54,24 @@ public class Crear_producto extends VistaCrear_producto {
 		
 		cambiar_Foto_Producto();
 		cancelar_creacion();
+		crearProducto();
 	}
 	
 	public void cambiar_Foto_Producto() {
-		
 		upload.setAcceptedFileTypes("image/jpeg", "image/png");
+		upload.setMaxFiles(5);
+
 		
 		upload.addSucceededListener(e -> {
 			Component component = createComponent(e.getMIMEType(), e.getFileName(), buffer.getInputStream());
 			Image img = (Image)component;
-			img.setWidth("30vw");
+			img.setWidth("20vw");
 			img.setHeight("auto");
 			this.getVaadinHorizontalLayout2().add(img);
 			File targetFile = new File("src/main/resources/targetFile.tmp");
 
 			try {
+				
 				FileUtils.copyInputStreamToFile(buffer.getInputStream(), targetFile);
 			} catch (IOException ex) {
 				ex.printStackTrace();
@@ -77,10 +79,12 @@ public class Crear_producto extends VistaCrear_producto {
 			
 			String rutaImgur = Uploader.upload(targetFile);
 			String rutaImagen = "https://i.imgur.com/" +  rutaImgur.subSequence(15, 22) + ".jpg";
+			this.imagenes[contador] = rutaImagen;
+			contador++;
 			img.removeAll();
 			this.getVaadinHorizontalLayout2().remove(img);
 			this.getFotoProducto().setSrc(rutaImagen);
-			this.getFotoProducto().setWidth("30vw");
+			this.getFotoProducto().setWidth("20vw");
 			this.getFotoProducto().setHeight("auto");
 		});
 	}
@@ -102,7 +106,7 @@ public class Crear_producto extends VistaCrear_producto {
 			try {				
 				base_de_datos.Producto p = admin.insertarProducto(this.getNombreProducto().getValue(), 
 						this.getAñadeUnaDescripciónAlProducto().getValue(), Double.parseDouble(this.getPrecio().getValue()),
-						Integer.parseInt(this.getCantidadProducto().getValue()), this.getFotoProducto().getSrc());
+						Integer.parseInt(this.getCantidadProducto().getValue()), this.imagenes);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 			} catch (PersistentException e) {

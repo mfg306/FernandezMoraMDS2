@@ -53,6 +53,23 @@ public class BD_Valoracion {
 			t.rollback();
 		}
 		return v;
-		
+	}
+	
+	public boolean eliminarValoracionesProducto(Producto aProducto) throws PersistentException {
+		Valoracion valoraciones[] = ValoracionDAO.listValoracionByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			for(Valoracion v : valoraciones) {
+				ValoracionDAO.deleteAndDissociate(v);
+			}
+			t.commit();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+			return false;
+		}
+		return true;
 	}
 }

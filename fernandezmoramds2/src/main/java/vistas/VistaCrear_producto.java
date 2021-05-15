@@ -51,20 +51,6 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 	private Button vaadinButton2;
 	@Id("cantidadProducto")
 	private TextField cantidadProducto;
-	@Id("vaadinVerticalLayout4")
-	private Element vaadinVerticalLayout4;
-	@Id("rutaPrincipal")
-	private TextField rutaPrincipal;
-	@Id("ruta2")
-	private TextField ruta2;
-	@Id("ruta3")
-	private TextField ruta3;
-	@Id("ruta5")
-	private TextField vaadinTextField;
-	@Id("ruta4")
-	private TextField ruta4;
-	@Id("ruta5")
-	private TextField ruta5;
 	@Id("huecoUpload")
 	private Element huecoUpload;
 	@Id("fotoProducto")
@@ -194,62 +180,6 @@ public class VistaCrear_producto extends PolymerTemplate<VistaCrear_producto.Vis
 
 	public void setCantidadProducto(TextField cantidadProducto) {
 		this.cantidadProducto = cantidadProducto;
-	}
-
-	public Element getVaadinVerticalLayout4() {
-		return vaadinVerticalLayout4;
-	}
-
-	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
-		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
-	}
-
-	public TextField getRutaPrincipal() {
-		return rutaPrincipal;
-	}
-
-	public void setRutaPrincipal(TextField rutaPrincipal) {
-		this.rutaPrincipal = rutaPrincipal;
-	}
-
-	public TextField getRuta2() {
-		return ruta2;
-	}
-
-	public void setRuta2(TextField ruta2) {
-		this.ruta2 = ruta2;
-	}
-
-	public TextField getRuta3() {
-		return ruta3;
-	}
-
-	public void setRuta3(TextField ruta3) {
-		this.ruta3 = ruta3;
-	}
-
-	public TextField getVaadinTextField() {
-		return vaadinTextField;
-	}
-
-	public void setVaadinTextField(TextField vaadinTextField) {
-		this.vaadinTextField = vaadinTextField;
-	}
-
-	public TextField getRuta4() {
-		return ruta4;
-	}
-
-	public void setRuta4(TextField ruta4) {
-		this.ruta4 = ruta4;
-	}
-
-	public TextField getRuta5() {
-		return ruta5;
-	}
-
-	public void setRuta5(TextField ruta5) {
-		this.ruta5 = ruta5;
 	}
 
 	public Element getHuecoUpload() {

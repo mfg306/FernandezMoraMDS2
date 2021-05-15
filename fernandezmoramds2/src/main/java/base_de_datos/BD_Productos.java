@@ -54,44 +54,30 @@ public class BD_Productos {
 
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
 		Producto p = ProductoDAO.getProductoByORMID(aIdProducto);
-
+		
 		this._bDPrincipal = new BDPrincipal();
+		
 		if (p != null) {
+			this._bDPrincipal.eliminarImagenProducto(p);
 			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
-			this._bDPrincipal._dB_Imagen.eliminarImagenProducto(p);
 		}
-
+		
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		try {
-
-			Producto_en_compra pLista[] = p._Producto_en_compra.toArray();
-			for (Producto_en_compra pEC : pLista) {
-				p._Producto_en_compra.remove(pEC);
-			}
-
-			Comentario comentarios[] = p._Pertenece_a.toArray();
-			for(Comentario c : comentarios) {
-				p._Pertenece_a.remove(c);
-			}
-			
-			Valoracion valoraciones[] = p._Valorado_por.toArray();
-			for(Valoracion v : valoraciones) {
-				p._Valorado_por.remove(v);
-			}
-			
-			
 			ProductoDAO.delete(p);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 			e.printStackTrace();
 		}
-
+		
+		this._bDPrincipal.eliminarComentarioProducto(p);
+		this._bDPrincipal.eliminarValoracionesProducto(p);
 	}
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades,
-			String aRuta) throws PersistentException {
+			String[] aRuta) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Producto p = null;
 		try {
@@ -111,7 +97,10 @@ public class BD_Productos {
 		}
 
 		this._bDPrincipal = new BDPrincipal();
-		this._bDPrincipal.guardarImagenesProducto(aRuta, p);
+		for(String ruta : aRuta) {
+			System.out.println(ruta);
+			if(ruta != null) this._bDPrincipal.guardarImagenesProducto(ruta, p);
+		}
 
 		return p;
 	}

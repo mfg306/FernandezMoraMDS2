@@ -225,7 +225,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._dB_Imagen.guardarImagenesProducto(aImagenes, aProducto);
 	}
 
-	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String aRuta)
+	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String[] aRuta)
 			throws PersistentException {
 		return this._bD_Productos.insertarProducto(aNombreProducto, aDescripcion, aPrecio, aNumUnidades, aRuta);
 	}
@@ -394,6 +394,16 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	
 	public boolean eliminarImagenProducto(Producto aProducto) throws PersistentException{
 		return this._dB_Imagen.eliminarImagenProducto(aProducto);
+	}
+
+	@Override
+	public boolean eliminarComentarioProducto(Producto aProducto) throws PersistentException {
+		return this._bD_Comentarios.eliminarComentarioProducto(aProducto);
+	}
+
+	@Override
+	public boolean eliminarValoracionesProducto(Producto aProducto) throws PersistentException {
+		return this._bD_Valoracion.eliminarValoracionesProducto(aProducto);
 	}
 
 	
