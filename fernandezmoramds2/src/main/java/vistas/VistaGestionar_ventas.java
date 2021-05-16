@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-gestionar_ventas template.
@@ -22,6 +23,8 @@ public class VistaGestionar_ventas extends PolymerTemplate<VistaGestionar_ventas
 	private Element vaadinVerticalLayout;
 	@Id("h1")
 	private H1 h1;
+	@Id("retroceder")
+	private Button retroceder;
 
 
 	/**
@@ -52,6 +55,14 @@ public class VistaGestionar_ventas extends PolymerTemplate<VistaGestionar_ventas
 
 	public void setH1(H1 h1) {
 		this.h1 = h1;
+	}
+
+	public Button getRetroceder() {
+		return retroceder;
+	}
+
+	public void setRetroceder(Button retroceder) {
+		this.retroceder = retroceder;
 	}
 
 }

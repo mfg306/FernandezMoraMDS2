@@ -91,7 +91,7 @@ public class Administrador extends VistaAdministrador{
 	public void gestionarVentas() {
 		this.getBoton_gestionar_ventas().addClickListener(event ->{
 			this.ocultarAdministrador();
-			this._gestionar_ventas = new Gestionar_ventas();
+			this._gestionar_ventas = new Gestionar_ventas(this);
 			layout.add(this._gestionar_ventas);
 		});
 		

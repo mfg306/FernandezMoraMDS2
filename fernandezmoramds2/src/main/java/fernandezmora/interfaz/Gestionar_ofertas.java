@@ -37,8 +37,6 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 	
 	public void retroceder() {
 		this.getRetroceder().addClickListener(event ->{
-			this.ocultar_Gestionar_Ofertas();
-			
 			/*Si viene del inicio*/
 			if(this._administrador.padre != null) {
 				this._administrador.padre.removeAll();
