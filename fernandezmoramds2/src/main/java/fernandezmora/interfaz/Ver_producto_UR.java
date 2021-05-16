@@ -15,6 +15,10 @@ public class Ver_producto_UR extends Producto_UNR {
 
 	public Ver_producto_UR(UR_UNR _ur, base_de_datos.Producto p) {
 		super(_ur, p);
+		if (_ur instanceof UR) {
+			this._uR = (UR) _ur;
+		this.Anadir_al_carrito(p);
+		}
 		Comentar();
 		inicializar(_ur, p);
 	}
@@ -83,9 +87,18 @@ public class Ver_producto_UR extends Producto_UNR {
 			Producto_carrito pc = new Producto_carrito(this, p, this._uR);
 
 			// Anadirlo al listado de productos del usuario
-			this._uR.miListadoProductos(pc);
-
+			if(!this._uR.listaAux.contains(pc)) {
+				pc.incrementarCantidad();
+				this._uR.miListadoProductos(pc);
+				Notification.show("" + this._uR.listaAux.size());
+			} else {
+				int index = 0;
+				index = this._uR.listaAux.indexOf(pc);
+				this._uR.listaAux.get(index).incrementarCantidad();
+			}
+			
 		});
+
 
 	}
 

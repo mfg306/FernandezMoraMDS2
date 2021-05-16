@@ -58,6 +58,9 @@ public class Ofertas extends VistaOfertas {
 		iUR_UNR ur_unr = new BDPrincipal();
 		this._list_Ofertas = new Vector<Oferta>();
 		ofertas = ur_unr.cargarOfertas();
+		if(this.ofertas.length == 0) {
+			this.getListaOfertas().removeAll();
+		}else {
 		for(base_de_datos.Oferta of : this.ofertas) {
 			Oferta oferta = new Oferta(this,this._uR_UNR,of);
 			this._list_Ofertas.add(oferta);
@@ -65,5 +68,6 @@ public class Ofertas extends VistaOfertas {
 		this.getListaOfertas().removeAll();
 		this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
 		this._uR_UNR.layoutOfertas.add(this);
+	}
 	}
 }
