@@ -18,7 +18,7 @@ public class Oferta extends VistaOferta{
 		this._ofertas = listaOfertas;
 		this._productos_oferta = new Productos_oferta(this, this._ofertas._uR_UNR);
 		this.oferta = of;
-		this.getBotonOferta().setText(this.oferta.getNombre_Oferta());
+		this.getBotonOferta().setText(of.getNombre_Oferta());
 		abrir_Oferta();
 	}
 	

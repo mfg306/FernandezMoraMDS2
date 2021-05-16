@@ -6,6 +6,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import base_de_datos.Producto_Rebajado;
 
 public class BD_Productos_Rebajados {
@@ -29,7 +31,11 @@ public class BD_Productos_Rebajados {
 	}
 	
 	public Producto_Rebajado[] cargarProductos(Oferta aOferta) throws PersistentException {
-
-		return Producto_RebajadoDAO.listProducto_RebajadoByQuery("OfertaId_Oferta = " + aOferta.getId_Oferta(), null);
+		Producto_Rebajado[] poferta = null;
+		Oferta oferta = OfertaDAO.loadOfertaByQuery("Id_Oferta = " + aOferta.getId_Oferta(), null);
+		poferta = oferta._Pertenece_a.toArray();
+		Notification.show(String.valueOf(oferta._Pertenece_a.toArray().length));
+		return poferta;
+	
 	}
 }
