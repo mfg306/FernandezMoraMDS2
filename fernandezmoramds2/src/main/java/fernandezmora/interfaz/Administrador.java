@@ -16,9 +16,19 @@ public class Administrador extends VistaAdministrador{
 	public Gestionar_productos _gestionar_productos;
 	public Menu_A _menu_A;
 	public VerticalLayout layout;
+	public base_de_datos.Administrador admin;
+	public VerticalLayout padre;
 
 	
+	public Administrador(base_de_datos.Usuario_General admin, Iniciar_sesion_UNR vistaInicial) {
+		this.admin = (base_de_datos.Administrador)admin;
+		_menu_A = new Menu_A(this, admin);
+		this.padre = vistaInicial.layout;
+		inicializar();
+	}
+	
 	public Administrador(base_de_datos.Usuario_General admin) {
+		this.admin = (base_de_datos.Administrador)admin;
 		_menu_A = new Menu_A(this, admin);
 		inicializar();
 	}
@@ -57,7 +67,7 @@ public class Administrador extends VistaAdministrador{
 	public void gestionarCategorias() {
 		this.getBoton_gestionar_categorias().addClickListener(event -> {
 			this.ocultarAdministrador();
-			this._gestionar_categorias = new Gestionar_categorias(); 
+			this._gestionar_categorias = new Gestionar_categorias(this); 
 			layout.add(this._gestionar_categorias);
 		});
 	}
@@ -65,7 +75,7 @@ public class Administrador extends VistaAdministrador{
 	public void gestionarOfertas() {
 		this.getBoton_gestionar_ofertas().addClickListener(event ->{
 			this.ocultarAdministrador();
-			this._gestionar_ofertas = new Gestionar_ofertas(); 
+			this._gestionar_ofertas = new Gestionar_ofertas(this); 
 			layout.add(this._gestionar_ofertas);
 		});
 	}

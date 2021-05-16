@@ -17,9 +17,9 @@ class VistaVer_bandeja_de_entrada extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayoutGeneral">
  <vaadin-vertical-layout style="width: 100%; " id="menuAdmin">
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout">
+  <vaadin-horizontal-layout style="width: 100%;" id="vaadinHorizontalLayout">
    <img id="logo">
-   <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout1">
+   <vaadin-horizontal-layout style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout1">
     <vaadin-button theme="primary" style="margin: var(--lumo-space-xl); background-color: #ae1641;" id="correo">
       Correo 
     </vaadin-button>
@@ -30,8 +30,8 @@ class VistaVer_bandeja_de_entrada extends PolymerElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <span style="font-size: 4vw; font-weight: bold; align-self: center; text-align: center; margin-top: var(--lumo-space-xl);" id="span">BANDEJA DE ENTRADA</span>
- <vaadin-vertical-layout theme="spacing" style="width: 80%; align-self: center;" id="vaadinVerticalLayout1">
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
+ <vaadin-vertical-layout style="width: 80%; align-self: center;" id="vaadinVerticalLayout1">
+  <vaadin-horizontal-layout id="vaadinHorizontalLayout">
    <vaadin-button id="boton_recibidos" style="color: #ae1641;">
      Recibidos 
    </vaadin-button>
@@ -41,7 +41,7 @@ class VistaVer_bandeja_de_entrada extends PolymerElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
-<vaadin-vertical-layout theme="spacing" id="huecoMensajes" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
+<vaadin-vertical-layout id="huecoMensajes" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 `;
     }
 

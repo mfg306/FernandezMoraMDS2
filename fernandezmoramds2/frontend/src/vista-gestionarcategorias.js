@@ -15,6 +15,9 @@ class VistaGestionarcategorias extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+ <vaadin-button id="retroceder" style="align-self: flex-start; border-radius: 4vw; background-color: black;  color: white;">
+  &lt;
+ </vaadin-button>
  <h1 id="titulo" style="align-self: center;">Mis categorías</h1>
  <vaadin-button theme="primary" id="botonNuevaCategoria" style="background-color: #ae1641;">
    Nueva categoria 

@@ -39,7 +39,7 @@ public class Editar_empleado extends VistaEditar_empleado {
 			iAdministrador admin = new BDPrincipal();
 			
 			try {
-				admin.actualizarEmpleado(this._empleado.e.getIdEmpleado(), this.getVaadinTextField1().getValue(), this.getVaadinTextField().getValue());
+				this._empleado.e = admin.actualizarEmpleado(this._empleado.e.getIdEmpleado(), this.getVaadinTextField1().getValue(), this.getVaadinTextField().getValue());
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}

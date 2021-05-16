@@ -25,13 +25,16 @@ public class BD_Categorias {
 		return cat;
 	}
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException {
+	public Categoria insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-		Categoria c = null;
-		
+		Categoria c = CategoriaDAO.createCategoria();
+			
 		try {
-			c = CategoriaDAO.createCategoria();
 
+			if(c == null) System.out.println("C ES NULL");
+			else System.out.println("NO ES NULL");
+			
+			
 			c.setNombre_categoria(aNombreCategoria);
 			c.setFecha_registro(aFechaRegistro);
 
@@ -52,14 +55,20 @@ public class BD_Categorias {
 		
 		try {
 			for(Producto p : aListaProductos) { 
+				System.out.println("Tratando el producto : " + p.getNombre() + " para introducirlo en la categoria : " + c.getNombre_categoria());
 				Producto pr = ProductoDAO.getProductoByORMID(p.getId_Producto());
-				pr.set_Categoria(c);
+				System.out.println("ENTONRADO");
+//				pr.set_Categoria(c);
+				pr.setORM__Categoria(c);
+				System.out.println("INTRODUCIDO");
 			}
 			t2.commit();			
 		} catch(Exception e) {
 			e.printStackTrace();
 			t2.rollback();
-		}		
+		}	
+		
+		return c;
 	}
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException {
@@ -74,9 +83,9 @@ public class BD_Categorias {
 		return cat;
 	}
 
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException, ConstraintViolationException {
-		if(eliminarCategoriaAdmin(aIdCategoria, aListaProductos)) System.out.println("Se ha eliminado la categoria");
-		insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
+	public Categoria actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, Categoria aCategoria) throws PersistentException, ConstraintViolationException {
+		eliminarCategoriaAdmin(aCategoria.getId_Categoria(), aListaProductos);
+		return insertarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion);
 	}
 
 	public boolean eliminarCategoriaAdmin(int aIdCategoria, Producto[] aListaProductos) throws PersistentException {

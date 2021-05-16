@@ -1,7 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import './vista-ofertasadministrador.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaGestionar_ofertas extends PolymerElement {
 
@@ -16,11 +16,14 @@ class VistaGestionar_ofertas extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: flex-start;" id="vaadinVerticalLayout">
+ <vaadin-button id="retroceder" style="align-self: flex-start; border-radius: 4vw; background-color: black;  color: white;">
+   &lt; 
+ </vaadin-button>
  <h1 style="align-self: center;" id="h1">Mis ofertas</h1>
  <vaadin-button theme="primary" style="margin: var(--lumo-space-l); background-color: #ae1641;" id="vaadinButton">
    Nueva oferta 
  </vaadin-button>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1">
+ <vaadin-vertical-layout id="vaadinVerticalLayout1">
   <vista-ofertasadministrador id="vistaOfertasadministrador"></vista-ofertasadministrador>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

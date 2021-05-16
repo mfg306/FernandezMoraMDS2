@@ -230,28 +230,28 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_Productos.insertarProducto(aNombreProducto, aDescripcion, aPrecio, aNumUnidades, aRuta);
 	}
 
-	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaRegistro) throws PersistentException {
-		this._bD_Ofertas.insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaRegistro);
+		return this._bD_Ofertas.insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaRegistro);
 	}
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro)
+	public Categoria insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro)
 			throws PersistentException {
-		this._bD_Categorias.insertarCategoria(aNombreCategoria, aListaProductos, aFechaRegistro);
+		return this._bD_Categorias.insertarCategoria(aNombreCategoria, aListaProductos, aFechaRegistro);
 	}
 
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion,
-			int aIdCategoria) throws PersistentException {
-		this._bD_Categorias.actualizarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion, aIdCategoria);
+	public Categoria actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion,
+			Categoria aCategoria) throws PersistentException {
+		return this._bD_Categorias.actualizarCategoria(aNombreCategoria, aListaProductos, aFechaActualizacion, aCategoria);
 	}
 
-	public void actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException {
-		this._bD_Empleados.actualizarEmpleado(aIdEmpleado, correo, contrasenia);
+	public Empleado actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException {
+		return this._bD_Empleados.actualizarEmpleado(aIdEmpleado, correo, contrasenia);
 	}
 
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaActualizacion, int aIdOferta) throws PersistentException {
-		this._bD_Ofertas.actualizarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion,
+		return this._bD_Ofertas.actualizarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion,
 				aIdOferta);
 	}
 

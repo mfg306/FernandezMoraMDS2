@@ -71,7 +71,8 @@ public class Editar_oferta extends Zona_productos {
 	
 	public void retroceder() {
 		ocultar_editar_oferta();
-		this._oferta_administrador._ofertas_administrador._gestionar_ofertas = new Gestionar_ofertas();
+		this._oferta_administrador._ofertas_administrador._gestionar_ofertas = new Gestionar_ofertas(
+				this._oferta_administrador._ofertas_administrador._gestionar_ofertas._administrador);
 		layout.add(this._oferta_administrador._ofertas_administrador._gestionar_ofertas);
 	}
 	
@@ -100,7 +101,10 @@ public class Editar_oferta extends Zona_productos {
 				for(int i=0; i< listaProductos.size(); i++) {
 					productosOferta[i] = listaProductos.get(i).producto;
 				}
-				admin.actualizarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString(), this._oferta_administrador.oferta.getId_Oferta());
+				base_de_datos.Oferta ofertaActualizada = admin.actualizarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString(), this._oferta_administrador.oferta.getId_Oferta());
+				
+				this._oferta_administrador.oferta = ofertaActualizada;
+				this._oferta_administrador.inicializar(this._oferta_administrador._ofertas_administrador, ofertaActualizada);
 				
 				Notification.show("Oferta editada con exito");
 				this.retroceder();

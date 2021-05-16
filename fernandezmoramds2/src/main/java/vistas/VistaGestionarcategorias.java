@@ -28,6 +28,8 @@ public class VistaGestionarcategorias extends PolymerTemplate<VistaGestionarcate
 	private Button botonNuevaCategoria;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
+	@Id("retroceder")
+	private Button retroceder;
 
 
 	/**
@@ -74,6 +76,14 @@ public class VistaGestionarcategorias extends PolymerTemplate<VistaGestionarcate
 
 	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public Button getRetroceder() {
+		return retroceder;
+	}
+
+	public void setRetroceder(Button retroceder) {
+		this.retroceder = retroceder;
 	}
 
 }

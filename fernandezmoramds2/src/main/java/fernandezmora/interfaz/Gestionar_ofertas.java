@@ -14,7 +14,9 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 	base_de_datos.Oferta[] ofertasAdmin;
 
 	
-	public Gestionar_ofertas() {		
+	public Gestionar_ofertas(Administrador admin) {	
+		this._administrador = admin;
+		retroceder();
 		inicializar();
 	}
 	
@@ -33,15 +35,32 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 		}
 	}
 	
-	public void ocultar_Gestionar_Ofertas() {
-		this.getH1().setVisible(false);
-		layout.remove(this._ofertas_administrador);
-		this.getVaadinButton().setVisible(false);
+	public void retroceder() {
+		this.getRetroceder().addClickListener(event ->{
+			this.ocultar_Gestionar_Ofertas();
+			
+			/*Si viene del inicio*/
+			if(this._administrador.padre != null) {
+				this._administrador.padre.removeAll();
+			}
+			
+			/*Si ya se viene de un retroceder ==> se ha creado aqui en este metodo*/
+			if(this._administrador.padre == null) {
+				this._administrador.layout.removeAll();
+			}
+			
+			Administrador admin = new Administrador(this._administrador.admin);
+			this.ocultar_Gestionar_Ofertas();
+			this._administrador._menu_A.layout.removeAll();
+			this._administrador.layout.add(admin);
+		});
 	}
 	
-	/**
-	 * Cuando se pulse el boton de crear una nueva oferta
-	 */
+	public void ocultar_Gestionar_Ofertas() {
+		this.layout.removeAll();
+	}
+	
+
 	public void crear_Ofertas() {
 				
 		this.getVaadinButton().addClickListener(event ->{

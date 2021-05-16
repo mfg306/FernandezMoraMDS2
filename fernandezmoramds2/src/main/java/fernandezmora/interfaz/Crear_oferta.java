@@ -61,7 +61,7 @@ public class Crear_oferta extends Zona_productos {
 	public void retroceder() {
 		ocultar_crear_oferta();
 		
-		this._gestionar_ofertas = new Gestionar_ofertas();
+		this._gestionar_ofertas = new Gestionar_ofertas(this._gestionar_ofertas._administrador);
 		layout.add(this._gestionar_ofertas);
 	}
 	

@@ -101,7 +101,7 @@ public class BD_Empleados {
 		}
 	}
 
-	public void actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException {
+	public Empleado actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Empleado e = null;
 		
@@ -116,5 +116,7 @@ public class BD_Empleados {
 			ex.printStackTrace();
 			t.rollback();
 		}
+		
+		return e;
 	}
 }

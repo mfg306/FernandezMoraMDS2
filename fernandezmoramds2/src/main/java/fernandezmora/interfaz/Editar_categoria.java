@@ -60,13 +60,19 @@ public class Editar_categoria extends Zona_productos {
 		this.getCampoCategoria().setVisible(false);
 		this.getNombreCategoria().setVisible(false);
 	}
+	
+	public void retroceder() {
+		ocultar_editar_categoria();
+		this._categoria_administrador._categorias_administrador._gestionar_categorias = new Gestionar_categorias(this._categoria_administrador._categorias_administrador._gestionar_categorias._administrador);
+		layout.add(this._categoria_administrador._categorias_administrador._gestionar_categorias);
+		
+		this.getHuecoDerecha().setVisible(false);
+		this.getHuecoIzquierda().setVisible(false);
+	}
 
 	public void cancelar_edicion() {
-
 		this.getBotonCancelar().addClickListener(event -> {
-			ocultar_editar_categoria();
-			this._categoria_administrador._categorias_administrador._gestionar_categorias = new Gestionar_categorias();
-			layout.add(this._categoria_administrador._categorias_administrador._gestionar_categorias);
+			retroceder();
 		});
 	}
 
@@ -87,9 +93,16 @@ public class Editar_categoria extends Zona_productos {
 			}
 			
 			try {
-				admin.actualizarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString(),
-						this._categoria_administrador.categoria.getId_Categoria());
+				
+				for(base_de_datos.Producto p : productosCategoria) {
+					System.out.println("EN LA INTERFAZ ==> " + p.getNombre());
+				}
+				
+				
+				this._categoria_administrador.categoria = admin.actualizarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString(),
+						this._categoria_administrador.categoria);
 				Notification.show("Categoria creada con éxito");
+				retroceder();
 			} catch (PersistentException e) {
 				Notification.show("Una categoría no puede quedarse sin productos.");
 				e.printStackTrace();

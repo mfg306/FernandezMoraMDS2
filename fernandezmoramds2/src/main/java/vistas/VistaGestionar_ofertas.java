@@ -29,6 +29,8 @@ public class VistaGestionar_ofertas extends PolymerTemplate<VistaGestionar_ofert
 	private Element vistaOfertasadministrador;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
+	@Id("retroceder")
+	private Button retroceder;
 	/**
      * Creates a new VistaGestionar_ofertas.
      */
@@ -81,5 +83,13 @@ public class VistaGestionar_ofertas extends PolymerTemplate<VistaGestionar_ofert
 
 	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public Button getRetroceder() {
+		return retroceder;
+	}
+
+	public void setRetroceder(Button retroceder) {
+		this.retroceder = retroceder;
 	}
 }

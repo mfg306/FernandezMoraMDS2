@@ -16,8 +16,10 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	base_de_datos.Categoria[] categoriasAdmin;
 
 	
-	public Gestionar_categorias()  {
+	public Gestionar_categorias(Administrador admin)  {
+		this._administrador = admin;
 		inicializar();
+		retroceder();
 	}
 	
 	public void inicializar() {
@@ -34,11 +36,29 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 		}
 }
 	
+	public void retroceder() {
+		this.getRetroceder().addClickListener(event ->{
+			this.ocultar_Gestionar_Categorias();
+			
+			/*Si viene del inicio*/
+			if(this._administrador.padre != null) {
+				this._administrador.padre.removeAll();
+			}
+			
+			/*Si ya se viene de un retroceder ==> se ha creado aqui en este metodo*/
+			if(this._administrador.padre == null) {
+				this._administrador.layout.removeAll();
+			}
+			
+			Administrador admin = new Administrador(this._administrador.admin);
+			this.ocultar_Gestionar_Categorias();
+			this._administrador._menu_A.layout.removeAll();
+			this._administrador.layout.add(admin);
+		});
+	}
+	
 	public void ocultar_Gestionar_Categorias() {
-		
-		layout.remove(this._categorias_administrador);
-		this.getTitulo().setVisible(false);
-		this.getBotonNuevaCategoria().setVisible(false);
+		this.layout.removeAll();
 	}
 	
 	

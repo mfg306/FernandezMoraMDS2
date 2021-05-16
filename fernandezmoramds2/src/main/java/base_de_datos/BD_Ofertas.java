@@ -45,7 +45,7 @@ public class BD_Ofertas {
 		return ofertasResultado;
 	}
 
-	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaRegistro) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Oferta o = null;
@@ -67,8 +67,6 @@ public class BD_Ofertas {
 			t.rollback();
 		}
 		
-		HitoPersistentManager.instance().disposePersistentManager();
-
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
 
@@ -90,6 +88,11 @@ public class BD_Ofertas {
 				pr.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
 				pr.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
 				pr.setPrecio_producto(p.getPrecio_producto());
+				
+				
+				for(Imagen i : p._Imagen.toArray()) {
+					pr._Imagen.add(i);
+				}
 
 				for (Comentario c : p._Pertenece_a.toArray()) {
 					pr._Pertenece_a.add(c);
@@ -117,7 +120,7 @@ public class BD_Ofertas {
 		}
 		
 		HitoPersistentManager.instance().disposePersistentManager();
-
+		
 		/*
 		 * Paso 3. Eliminar el producto de la lista porque ya lo tenemos con
 		 * Producto_Rebajado y no lo queremos repetido
@@ -125,13 +128,15 @@ public class BD_Ofertas {
 		for (Producto p : aListaProductos) {
 			this._bDPrincipal.eliminarProductoAdministrador(p.getId_Producto());
 		}
+		
+		return o;
 
 	}
 
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaActualizacion, int aIdOferta) throws PersistentException {
 		eliminarOfertaAdmin(aIdOferta, aListaProductos);
-		insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion);
+		return insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion);
 	}
 
 	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
@@ -149,8 +154,6 @@ public class BD_Ofertas {
 
 			return false;
 		}
-
-		HitoPersistentManager.instance().disposePersistentManager();
 
 		return true;
 	}

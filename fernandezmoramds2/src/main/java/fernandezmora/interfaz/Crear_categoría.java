@@ -53,16 +53,20 @@ public class Crear_categoría extends Zona_productos {
 		this.getH21().setVisible(false);
 
 		this.getVaadinHorizontalLayout().setVisible(false);
-
+	}
+	
+	public void retroceder() {
+		ocultar_crear_categoria();
+		this._gestionar_categorias = new Gestionar_categorias(this._gestionar_categorias._administrador);
+		layout.add(this._gestionar_categorias);
+		
+		this.getHuecoDerecha().setVisible(false);
+		this.getHuecoIzquierda().setVisible(false);
 	}
 
 	public void cancelar_creacion() {
-
 		this.getBotonCancelar().addClickListener(event -> {
-			ocultar_crear_categoria();
-			this._gestionar_categorias = new Gestionar_categorias();
-
-			layout.add(this._gestionar_categorias);
+			retroceder();
 		});
 	}
 
@@ -85,6 +89,7 @@ public class Crear_categoría extends Zona_productos {
 			try {
 				admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString());
 				Notification.show("Categoria creada con exito");
+				retroceder();
 				this.inicializar();
 			} catch (PersistentException e) {
 				e.printStackTrace();

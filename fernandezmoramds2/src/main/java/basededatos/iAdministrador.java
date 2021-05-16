@@ -34,15 +34,15 @@ public interface iAdministrador {
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String[] aRuta) throws PersistentException;
 
-	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) throws PersistentException;
+	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) throws PersistentException;
 
-	public void insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException;
+	public Categoria insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException;
 
-	public void actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, int aIdCategoria) throws PersistentException ;
+	public Categoria actualizarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaActualizacion, Categoria aCategoria) throws PersistentException ;
 
-	public void actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException ;
+	public Empleado actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException ;
 
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta)  throws PersistentException ;
+	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta)  throws PersistentException ;
 
 	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String[] aRutaImagen, int aNumUnidades)  throws PersistentException;
 
