@@ -23,7 +23,6 @@ public class Ofertas extends VistaOfertas {
 
 	public void inicializar(UR_UNR urunr) {
 		this._uR_UNR = urunr;
-		this._list_Ofertas = new Vector<Oferta>();
 		verOfertas();
 		Ver_anteriores();
 		Ver_siguientes();
@@ -37,7 +36,7 @@ public class Ofertas extends VistaOfertas {
 				this._uR_UNR.indiceOfertas--;
 				this.getListaOfertas().removeAll();
 				this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
-				//this.inicializar(this._uR_UNR);
+				this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta.inicializar(this._list_Ofertas.get(this._uR_UNR.indiceOfertas), _uR_UNR);
 			}
 
 		});
@@ -49,19 +48,22 @@ public class Ofertas extends VistaOfertas {
 				this._uR_UNR.indiceOfertas++;
 				this.getListaOfertas().removeAll();
 				this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
-				//this.inicializar(this._uR_UNR);	
+				this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta.inicializar(this._list_Ofertas.get(this._uR_UNR.indiceOfertas), _uR_UNR);
+					
 			}
 		});
 	}
 	
 	public void verOfertas() {
 		iUR_UNR ur_unr = new BDPrincipal();
+		this._list_Ofertas = new Vector<Oferta>();
 		ofertas = ur_unr.cargarOfertas();
 		for(base_de_datos.Oferta of : this.ofertas) {
 			Oferta oferta = new Oferta(this,this._uR_UNR,of);
 			this._list_Ofertas.add(oferta);
-			this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
 		}
+		this.getListaOfertas().removeAll();
+		this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
 		this._uR_UNR.layoutOfertas.add(this);
 	}
 }
