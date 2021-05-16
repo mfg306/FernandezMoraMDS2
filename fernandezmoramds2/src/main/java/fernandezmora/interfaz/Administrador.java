@@ -83,7 +83,7 @@ public class Administrador extends VistaAdministrador{
 	public void gestionarProductos() {
 		this.getBoton_gestionar_productos().addClickListener(event ->{
 			this.ocultarAdministrador();
-			this._gestionar_productos = new Gestionar_productos(); 
+			this._gestionar_productos = new Gestionar_productos(this); 
 			layout.add(this._gestionar_productos);
 		});
 	}

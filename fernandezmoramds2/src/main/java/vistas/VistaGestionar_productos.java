@@ -25,6 +25,8 @@ public class VistaGestionar_productos extends PolymerTemplate<VistaGestionar_pro
 	private H1 h1;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("retroceder")
+	private Button retroceder;
 
 	/**
      * Creates a new VistaGestionar_productos.
@@ -62,6 +64,14 @@ public class VistaGestionar_productos extends PolymerTemplate<VistaGestionar_pro
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public Button getRetroceder() {
+		return retroceder;
+	}
+
+	public void setRetroceder(Button retroceder) {
+		this.retroceder = retroceder;
 	}
 
 }

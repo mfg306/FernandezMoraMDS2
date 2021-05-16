@@ -17,10 +17,11 @@ public class Gestionar_productos extends VistaGestionar_productos {
 	public base_de_datos.Producto productos[];
 	Span aviso = new Span();
 
-	public Gestionar_productos() {
-		
+	public Gestionar_productos(Administrador admin) {
+		this._administrador = admin;
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		inicializar();
+		retroceder();
 	}
 	
 	public void inicializar() {
@@ -30,18 +31,38 @@ public class Gestionar_productos extends VistaGestionar_productos {
 		abrirGestionarProductos();
 		this.layout.add(this._productos_administrador);
 	}
+	
+	public void retroceder() {
+		this.getRetroceder().addClickListener(event ->{
+			/*Si viene del inicio*/
+			if(this._administrador.padre != null) {
+				this._administrador.padre.removeAll();
+			}
+			
+			/*Si ya se viene de un retroceder ==> se ha creado aqui en este metodo*/
+			if(this._administrador.padre == null) {
+				this._administrador.layout.removeAll();
+			}
+			
+			Administrador admin = new Administrador(this._administrador.admin);
+			this.ocultar_Gestionar_Productos();
+			this._administrador._menu_A.layout.removeAll();
+			this._administrador.layout.add(admin);
+		});
+	}
 
-	public void ocultar_Gestionar_Ofertas() {
+	public void ocultar_Gestionar_Productos() {
 		layout.remove(this._productos_administrador);
 		this.getVaadinButton().setVisible(false);
 		this.getH1().setVisible(false);
 		this.aviso.setVisible(false);
+		this.getRetroceder().setVisible(false);
 	}
 
 
 	public void crear_Producto() {
 		this.getVaadinButton().addClickListener(event ->{
-			ocultar_Gestionar_Ofertas();
+			ocultar_Gestionar_Productos();
 			
 			Crear_producto cp = new Crear_producto();
 			layout.add(cp);

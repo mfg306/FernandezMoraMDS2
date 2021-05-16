@@ -44,7 +44,7 @@ public interface iAdministrador {
 
 	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta)  throws PersistentException ;
 
-	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String[] aRutaImagen, int aNumUnidades)  throws PersistentException;
+	public Producto actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String[] aRutaImagen, int aNumUnidades)  throws PersistentException;
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException;
 

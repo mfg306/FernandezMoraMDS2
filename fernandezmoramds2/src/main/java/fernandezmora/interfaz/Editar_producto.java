@@ -58,7 +58,7 @@ public class Editar_producto extends VistaEditar_producto {
 	}
 	
 	public void retroceder() {
-		Gestionar_productos gp = new Gestionar_productos();
+		Gestionar_productos gp = new Gestionar_productos(this._gestionar_productos._administrador);
 		this.layout.removeAll();
 		layout.add(gp);
 	}
@@ -73,7 +73,7 @@ public class Editar_producto extends VistaEditar_producto {
 		this.getVaadinButton().addClickListener(event -> {
 			iAdministrador admin = new BDPrincipal();
 			try {
-				admin.actualizarProducto(this._producto_administrador.p.getId_Producto(),
+				this._producto_administrador.p =  admin.actualizarProducto(this._producto_administrador.p.getId_Producto(),
 						this.getNuevoNombreProducto().getValue(), Double.parseDouble(this.getNuevoPrecio().getValue()),
 						this.getAñadeUnaNuevaDescripción().getValue(), this.imagenes,
 						Integer.parseInt(this.getNumUnidades().getValue()));

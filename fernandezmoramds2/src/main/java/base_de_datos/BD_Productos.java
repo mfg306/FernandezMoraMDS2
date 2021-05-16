@@ -100,7 +100,6 @@ public class BD_Productos {
 
 		this._bDPrincipal = new BDPrincipal();
 		for (String ruta : aRuta) {
-			
 			if (ruta != null) {
 				if(contador == 0) esPrincipal = true;
 				this._bDPrincipal.guardarImagenesProducto(ruta, p, esPrincipal);
@@ -117,10 +116,41 @@ public class BD_Productos {
 
 	}
 
-	public void actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion,
+	public Producto actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion,
 			String[] aRutaImagen, int aNumUnidades) throws PersistentException {
-		eliminarProductoAdministrador(aIdProducto);		
-		insertarProducto(aNombre, aDescripcion, aPrecio, aNumUnidades, aRutaImagen);
+		
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Producto p = null;
+		int contador = 0 ;
+		boolean esPrincipal = false;
+		
+		try {
+			p = ProductoDAO.getProductoByORMID(aIdProducto);
+			
+			p.setNombre(aNombre);
+			p.setDescripcion(aDescripcion);
+			p.setPrecio_producto(aPrecio);
+			p.setNum_Unidades_Restantes(aNumUnidades);
+					
+			ProductoDAO.save(p);
+			
+			t.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		}
+		
+
+		this._bDPrincipal = new BDPrincipal();
+		for (String ruta : aRutaImagen) {
+			if (ruta != null) {
+				if(contador == 0) esPrincipal = true;
+				this._bDPrincipal.guardarImagenesProducto(ruta, p, esPrincipal);
+				esPrincipal = false;
+				contador ++;
+			}
+		}
+		return p;
 	}
 
 	public Producto[] cargarProductosBusquedaZonaProductos(String aProducto) throws PersistentException {

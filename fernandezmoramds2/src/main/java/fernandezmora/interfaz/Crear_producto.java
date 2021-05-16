@@ -90,7 +90,7 @@ public class Crear_producto extends VistaCrear_producto {
 	}
 	
 	public void retroceder() {
-		Gestionar_productos gp = new Gestionar_productos();
+		Gestionar_productos gp = new Gestionar_productos(this._producto_administrador._productos_administrador._gestionar_productos._administrador);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(gp);
 	}

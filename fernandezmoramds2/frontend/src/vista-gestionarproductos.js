@@ -14,6 +14,9 @@ class VistaGestionar_productos extends PolymerElement {
 
                 }
             </style>
+<vaadin-button id="retroceder" style="align-self: flex-start; border-radius: 4vw; background-color: black;  color: white;">
+ &lt;
+</vaadin-button>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <h1 style="align-self: center;" id="h1">Mis productos</h1>
  <vaadin-button theme="primary" style="margin: var(--lumo-space-l); background-color: #ae1641;" id="vaadinButton">
