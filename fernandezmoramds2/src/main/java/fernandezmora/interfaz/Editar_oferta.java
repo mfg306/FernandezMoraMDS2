@@ -55,15 +55,24 @@ public class Editar_oferta extends Zona_productos {
 		this.getH21().setVisible(false);
 		
 		this.getVaadinHorizontalLayout().setVisible(false);
+		
+		this.getVaadinVerticalLayout1().setVisible(false);
+//		this._productos_listado.setVisible(false);
+		
+		this.getHuecoIzquierda().setVisible(false);
+		this.getHuecoDerecha().setVisible(false);
 	}
 	
 	public void cancelar_edicion() {
 		this.getBotonCancelar().addClickListener(event ->{
-			ocultar_editar_oferta();
-			this._oferta_administrador._ofertas_administrador._gestionar_ofertas = new Gestionar_ofertas();
-			layout.add(this._oferta_administrador._ofertas_administrador._gestionar_ofertas);
-
+			retroceder();
 		});
+	}
+	
+	public void retroceder() {
+		ocultar_editar_oferta();
+		this._oferta_administrador._ofertas_administrador._gestionar_ofertas = new Gestionar_ofertas();
+		layout.add(this._oferta_administrador._ofertas_administrador._gestionar_ofertas);
 	}
 	
 	public void guardarOferta() {
@@ -91,9 +100,10 @@ public class Editar_oferta extends Zona_productos {
 				for(int i=0; i< listaProductos.size(); i++) {
 					productosOferta[i] = listaProductos.get(i).producto;
 				}
-				
 				admin.actualizarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString(), this._oferta_administrador.oferta.getId_Oferta());
+				
 				Notification.show("Oferta editada con exito");
+				this.retroceder();
 			} catch(Exception e) {
 				e.printStackTrace();
 			}

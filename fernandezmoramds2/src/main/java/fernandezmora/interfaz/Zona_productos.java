@@ -46,7 +46,6 @@ public class Zona_productos extends Administrar_productos_anadidos {
 
 	}
 
-	
 	public void abrirZonaProductos() throws PersistentException {
 		iAdministrador admin = new BDPrincipal();
 		base_de_datos.Producto productos[] = admin.cargarProductosListado();

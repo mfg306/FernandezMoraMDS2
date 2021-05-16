@@ -51,14 +51,23 @@ public class Crear_oferta extends Zona_productos {
 		
 		this.getVaadinHorizontalLayout().setVisible(false);
 		
+		this.getVaadinVerticalLayout1().setVisible(false);
+//		this._productos_listado.setVisible(false);
+		this.getHuecoIzquierda().setVisible(false);
+		this.getHuecoDerecha().setVisible(false);
+		
+	}
+	
+	public void retroceder() {
+		ocultar_crear_oferta();
+		
+		this._gestionar_ofertas = new Gestionar_ofertas();
+		layout.add(this._gestionar_ofertas);
 	}
 	
 	public void cancelar_creacion() {
 		this.getBotonCancelar().addClickListener(event ->{
-			ocultar_crear_oferta();
-			this._gestionar_ofertas = new Gestionar_ofertas();
-			
-			layout.add(this._gestionar_ofertas);
+			retroceder();
 		});
 	}
 	
@@ -89,6 +98,7 @@ public class Crear_oferta extends Zona_productos {
 			try {
 				admin.insertarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString());
 				Notification.show("Oferta creada con exito");
+				retroceder();
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}

@@ -66,6 +66,8 @@ public class BD_Ofertas {
 			e.printStackTrace();
 			t.rollback();
 		}
+		
+		HitoPersistentManager.instance().disposePersistentManager();
 
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
@@ -113,6 +115,8 @@ public class BD_Ofertas {
 			e.printStackTrace();
 			t2.rollback();
 		}
+		
+		HitoPersistentManager.instance().disposePersistentManager();
 
 		/*
 		 * Paso 3. Eliminar el producto de la lista porque ya lo tenemos con
@@ -140,8 +144,13 @@ public class BD_Ofertas {
 		} catch (Exception e) {
 			t.rollback();
 			e.printStackTrace();
+			
+			HitoPersistentManager.instance().disposePersistentManager();
+
 			return false;
 		}
+
+		HitoPersistentManager.instance().disposePersistentManager();
 
 		return true;
 	}
