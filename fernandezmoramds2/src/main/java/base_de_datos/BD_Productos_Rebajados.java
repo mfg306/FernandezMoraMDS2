@@ -34,7 +34,6 @@ public class BD_Productos_Rebajados {
 		Producto_Rebajado[] poferta = null;
 		Oferta oferta = OfertaDAO.loadOfertaByQuery("Id_Oferta = " + aOferta.getId_Oferta(), null);
 		poferta = oferta._Pertenece_a.toArray();
-		Notification.show(String.valueOf(oferta._Pertenece_a.toArray().length));
 		return poferta;
 	
 	}

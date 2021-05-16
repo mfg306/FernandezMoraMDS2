@@ -19,10 +19,12 @@ public abstract class UR_UNR extends VistaUrunr{
 	public VerticalLayout layoutOfertas;
 	public VerticalLayout layoutProductosMasVendidosPorCategorias;
 	public Vector<Producto_carrito> listaAux;
+	public int indiceOfertas;
 
 
 
 	public UR_UNR() {
+		this.indiceOfertas = 0;
 		inicializarURUNR();
 	}
 	

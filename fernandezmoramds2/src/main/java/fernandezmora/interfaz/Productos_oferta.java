@@ -19,12 +19,12 @@ public class Productos_oferta extends VistaProductos_oferta{
 	public Producto_oferta producto_oferta;
 	
 	public Productos_oferta(Oferta of, UR_UNR unrunr) {
+		this._list_Ofertas = of;
+		verProductosOferta();
 		inicializar(of, unrunr);
 	}
 	
 	public void inicializar(Oferta of, UR_UNR unrunr) {
-		this._list_Ofertas = of;
-		verProductosOferta();
 		abrir_Producto_Oferta();
 	}
 	
@@ -43,7 +43,7 @@ public class Productos_oferta extends VistaProductos_oferta{
 		iUR_UNR iur = new BDPrincipal();
 		
 		try {
-			Producto_Rebajado[] productos = iur.cargarProductosOferta(this._list_Ofertas._ofertas.ofertas[this._list_Ofertas._ofertas.indice]);
+			Producto_Rebajado[] productos = iur.cargarProductosOferta(this._list_Ofertas._ofertas.ofertas[this._list_Ofertas._ofertas._uR_UNR.indiceOfertas]);
 			for(base_de_datos.Producto_Rebajado p : productos) {
 				Producto_oferta po = new Producto_oferta(this, this._list_Ofertas._ofertas._uR_UNR,p);
 				this._list_Producto_oferta.add(po);
