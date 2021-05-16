@@ -152,8 +152,24 @@ public class BD_UR {
 			
 	}
 	
-	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) throws PersistentException {
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, 
+			String aMetodoDePago, String aRutaFoto) throws PersistentException {
+		
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		Imagen i = null;
+		
+		try {
+			i = ImagenDAO.createImagen();
+			i.setRuta(aRutaFoto);
+			
+			ImagenDAO.save(i);
+			t.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		}
+		
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		UR usuario = URDAO.createUR();
 		usuario.setCorreo_electronico(aCorreo);
 		base_de_datos.UR usuarioEncontrado = null;
@@ -167,11 +183,14 @@ public class BD_UR {
 				usuarioEncontrado.setPrimer_apellido(aApellidos);
 				usuarioEncontrado.setDireccion_envio(aDireccion);
 				usuarioEncontrado.setMetodo_pago(aMetodoDePago);
+				
+				if(i != null) usuarioEncontrado.setImagen(i);
+				
 				URDAO.save(usuarioEncontrado);
-				t.commit();
+				t2.commit();
 			}
 		} catch (Exception e) {
-			t.rollback();
+			t2.rollback();
 			e.getStackTrace();
 			
 		}

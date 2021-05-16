@@ -35,6 +35,8 @@ public class URCriteria extends AbstractORMCriteria {
 	public final CollectionExpression _recibido;
 	public final CollectionExpression _Envia;
 	public final CollectionExpression _Valora;
+	public final IntegerExpression imagenId;
+	public final AssociationExpression imagen;
 	
 	public URCriteria(Criteria criteria) {
 		super(criteria);
@@ -54,6 +56,8 @@ public class URCriteria extends AbstractORMCriteria {
 		_recibido = new CollectionExpression("ORM__recibido", this);
 		_Envia = new CollectionExpression("ORM__Envia", this);
 		_Valora = new CollectionExpression("ORM__Valora", this);
+		imagenId = new IntegerExpression("imagen.", this);
+		imagen = new AssociationExpression("imagen", this);
 	}
 	
 	public URCriteria(PersistentSession session) {
@@ -82,6 +86,10 @@ public class URCriteria extends AbstractORMCriteria {
 	
 	public base_de_datos.ValoracionCriteria create_ValoraCriteria() {
 		return new base_de_datos.ValoracionCriteria(createCriteria("ORM__Valora"));
+	}
+	
+	public ImagenCriteria createImagenCriteria() {
+		return new ImagenCriteria(createCriteria("imagen"));
 	}
 	
 	public UR uniqueUR() {

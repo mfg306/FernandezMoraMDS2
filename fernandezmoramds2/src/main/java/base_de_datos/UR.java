@@ -89,6 +89,11 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM__Valora = new java.util.HashSet();
 	
+	@OneToOne(mappedBy="uR", targetEntity=base_de_datos.Imagen.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
+	private base_de_datos.Imagen imagen;
+	
 	public void setDireccion_envio(String value) {
 		this.direccion_envio = value;
 	}
@@ -175,6 +180,23 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	
 	@Transient	
 	public final base_de_datos.ValoracionSetCollection _Valora = new base_de_datos.ValoracionSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__VALORA, base_de_datos.ORMConstants.KEY_VALORACION__VALORADO_POR, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	
+	public void setImagen(base_de_datos.Imagen value) {
+		if (this.imagen != value) {
+			base_de_datos.Imagen limagen = this.imagen;
+			this.imagen = value;
+			if (value != null) {
+				imagen.setuR(this);
+			}
+			if (limagen != null && limagen.getuR() == this) {
+				limagen.setuR(null);
+			}
+		}
+	}
+	
+	public base_de_datos.Imagen getImagen() {
+		return imagen;
+	}
 	
 	public String toString() {
 		return super.toString();

@@ -27,7 +27,8 @@ public interface iUR extends iUR_UNR {
 	
 	public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException;
 	
-	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, String aMetodoDePago) throws PersistentException;
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, 
+			String aMetodoDePago, String aRutaFoto) throws PersistentException;
 	
 	public void eliminarUsuario(String aCorreo) throws PersistentException;
 	

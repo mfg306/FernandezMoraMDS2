@@ -20,6 +20,8 @@ import org.orm.criteria.*;
 
 public class ImagenDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression ID;
+	public final IntegerExpression uRId;
+	public final AssociationExpression uR;
 	public final IntegerExpression _ProductoId;
 	public final AssociationExpression _Producto;
 	public final StringExpression ruta;
@@ -28,6 +30,8 @@ public class ImagenDetachedCriteria extends AbstractORMDetachedCriteria {
 	public ImagenDetachedCriteria() {
 		super(base_de_datos.Imagen.class, base_de_datos.ImagenCriteria.class);
 		ID = new IntegerExpression("ID", this.getDetachedCriteria());
+		uRId = new IntegerExpression("uR.", this.getDetachedCriteria());
+		uR = new AssociationExpression("uR", this.getDetachedCriteria());
 		_ProductoId = new IntegerExpression("_Producto.id_Producto", this.getDetachedCriteria());
 		_Producto = new AssociationExpression("_Producto", this.getDetachedCriteria());
 		ruta = new StringExpression("ruta", this.getDetachedCriteria());
@@ -37,10 +41,16 @@ public class ImagenDetachedCriteria extends AbstractORMDetachedCriteria {
 	public ImagenDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, base_de_datos.ImagenCriteria.class);
 		ID = new IntegerExpression("ID", this.getDetachedCriteria());
+		uRId = new IntegerExpression("uR.", this.getDetachedCriteria());
+		uR = new AssociationExpression("uR", this.getDetachedCriteria());
 		_ProductoId = new IntegerExpression("_Producto.id_Producto", this.getDetachedCriteria());
 		_Producto = new AssociationExpression("_Producto", this.getDetachedCriteria());
 		ruta = new StringExpression("ruta", this.getDetachedCriteria());
 		principal = new BooleanExpression("principal", this.getDetachedCriteria());
+	}
+	
+	public URDetachedCriteria createURCriteria() {
+		return new URDetachedCriteria(createCriteria("uR"));
 	}
 	
 	public ProductoDetachedCriteria create_ProductoCriteria() {

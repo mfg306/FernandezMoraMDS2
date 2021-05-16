@@ -20,6 +20,8 @@ import org.orm.criteria.*;
 
 public class ImagenCriteria extends AbstractORMCriteria {
 	public final IntegerExpression ID;
+	public final IntegerExpression uRId;
+	public final AssociationExpression uR;
 	public final IntegerExpression _ProductoId;
 	public final AssociationExpression _Producto;
 	public final StringExpression ruta;
@@ -28,6 +30,8 @@ public class ImagenCriteria extends AbstractORMCriteria {
 	public ImagenCriteria(Criteria criteria) {
 		super(criteria);
 		ID = new IntegerExpression("ID", this);
+		uRId = new IntegerExpression("uR.", this);
+		uR = new AssociationExpression("uR", this);
 		_ProductoId = new IntegerExpression("_Producto.id_Producto", this);
 		_Producto = new AssociationExpression("_Producto", this);
 		ruta = new StringExpression("ruta", this);
@@ -40,6 +44,10 @@ public class ImagenCriteria extends AbstractORMCriteria {
 	
 	public ImagenCriteria() throws PersistentException {
 		this(base_de_datos.HitoPersistentManager.instance().getSession());
+	}
+	
+	public URCriteria createURCriteria() {
+		return new URCriteria(createCriteria("uR"));
 	}
 	
 	public ProductoCriteria create_ProductoCriteria() {

@@ -323,6 +323,10 @@ public class ImagenDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Imagen imagen)throws PersistentException {
 		try {
+			if (imagen.getuR() != null) {
+				imagen.getuR().setImagen(null);
+			}
+			
 			if (imagen.get_Producto() != null) {
 				imagen.get_Producto()._Imagen.remove(imagen);
 			}
@@ -337,6 +341,10 @@ public class ImagenDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Imagen imagen, org.orm.PersistentSession session)throws PersistentException {
 		try {
+			if (imagen.getuR() != null) {
+				imagen.getuR().setImagen(null);
+			}
+			
 			if (imagen.get_Producto() != null) {
 				imagen.get_Producto()._Imagen.remove(imagen);
 			}

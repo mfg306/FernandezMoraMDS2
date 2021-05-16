@@ -32,6 +32,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_IMAGEN__PRODUCTO = -1731398605;
 	
+	final int KEY_IMAGEN_UR = 1126569897;
+	
 	final int KEY_MENSAJE__ENVIADO_POR_ADMIN = -1751776843;
 	
 	final int KEY_MENSAJE__ENVIADO_POR_UR = -193390121;
@@ -81,6 +83,8 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_UR__VALORA = 1620587962;
 	
 	final int KEY_UR__RECIBIDO = -1142669656;
+	
+	final int KEY_UR_IMAGEN = -610026923;
 	
 	final int KEY_VALORACION__VALORADO = -47547030;
 	

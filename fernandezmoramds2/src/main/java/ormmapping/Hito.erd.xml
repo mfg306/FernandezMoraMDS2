@@ -200,13 +200,25 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="URUsuario_GeneralId_Usuario">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Base de Datos.UR.Usuario_GeneralId_Usuario</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
     <Column name="ProductoId_Producto">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
       <ReferencedColumn>Base de Datos.Producto.Id_Producto</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
-      <Nullable>false</Nullable>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -1210,6 +1222,16 @@
   </ForeignKey>
   <ForeignKey name="FKRecibido916793">
     <ReferenceTable>Recibido</ReferenceTable>
+    <ReferencedTable>UR</ReferencedTable>
+    <Columns>
+      <Column>URUsuario_GeneralId_Usuario</Column>
+    </Columns>
+    <RefColumns>
+      <Column>Usuario_GeneralId_Usuario</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKImagen698946">
+    <ReferenceTable>Imagen</ReferenceTable>
     <ReferencedTable>UR</ReferencedTable>
     <Columns>
       <Column>URUsuario_GeneralId_Usuario</Column>

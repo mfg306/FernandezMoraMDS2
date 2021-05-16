@@ -35,6 +35,8 @@ public class URDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression _recibido;
 	public final CollectionExpression _Envia;
 	public final CollectionExpression _Valora;
+	public final IntegerExpression imagenId;
+	public final AssociationExpression imagen;
 	
 	public URDetachedCriteria() {
 		super(base_de_datos.UR.class, base_de_datos.URCriteria.class);
@@ -54,6 +56,8 @@ public class URDetachedCriteria extends AbstractORMDetachedCriteria {
 		_recibido = new CollectionExpression("ORM__recibido", this.getDetachedCriteria());
 		_Envia = new CollectionExpression("ORM__Envia", this.getDetachedCriteria());
 		_Valora = new CollectionExpression("ORM__Valora", this.getDetachedCriteria());
+		imagenId = new IntegerExpression("imagen.", this.getDetachedCriteria());
+		imagen = new AssociationExpression("imagen", this.getDetachedCriteria());
 	}
 	
 	public URDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -74,6 +78,8 @@ public class URDetachedCriteria extends AbstractORMDetachedCriteria {
 		_recibido = new CollectionExpression("ORM__recibido", this.getDetachedCriteria());
 		_Envia = new CollectionExpression("ORM__Envia", this.getDetachedCriteria());
 		_Valora = new CollectionExpression("ORM__Valora", this.getDetachedCriteria());
+		imagenId = new IntegerExpression("imagen.", this.getDetachedCriteria());
+		imagen = new AssociationExpression("imagen", this.getDetachedCriteria());
 	}
 	
 	public base_de_datos.ComentarioDetachedCriteria create_Es_de_unCriteria() {
@@ -94,6 +100,10 @@ public class URDetachedCriteria extends AbstractORMDetachedCriteria {
 	
 	public base_de_datos.ValoracionDetachedCriteria create_ValoraCriteria() {
 		return new base_de_datos.ValoracionDetachedCriteria(createCriteria("ORM__Valora"));
+	}
+	
+	public ImagenDetachedCriteria createImagenCriteria() {
+		return new ImagenDetachedCriteria(createCriteria("imagen"));
 	}
 	
 	public UR uniqueUR(PersistentSession session) {

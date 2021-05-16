@@ -26,6 +26,10 @@ public class Imagen implements Serializable {
 		if (key == base_de_datos.ORMConstants.KEY_IMAGEN__PRODUCTO) {
 			this._Producto = (base_de_datos.Producto) owner;
 		}
+		
+		else if (key == base_de_datos.ORMConstants.KEY_IMAGEN_UR) {
+			this.uR = (base_de_datos.UR) owner;
+		}
 	}
 	
 	@Transient	
@@ -42,9 +46,15 @@ public class Imagen implements Serializable {
 	@org.hibernate.annotations.GenericGenerator(name="BASE_DE_DATOS_IMAGEN_ID_GENERATOR", strategy="native")	
 	private int ID;
 	
+	@OneToOne(targetEntity=base_de_datos.UR.class, fetch=FetchType.LAZY)	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@JoinColumns(value={ @JoinColumn(name="URUsuario_GeneralId_Usuario", referencedColumnName="Usuario_GeneralId_Usuario") }, foreignKey=@ForeignKey(name="FKImagen698946"))	
+	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
+	private base_de_datos.UR uR;
+	
 	@ManyToOne(targetEntity=base_de_datos.Producto.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto", nullable=false) }, foreignKey=@ForeignKey(name="FKImagen195906"))	
+	@JoinColumns(value={ @JoinColumn(name="ProductoId_Producto", referencedColumnName="Id_Producto") }, foreignKey=@ForeignKey(name="FKImagen195906"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private base_de_datos.Producto _Producto;
 	
@@ -104,6 +114,23 @@ public class Imagen implements Serializable {
 	
 	private base_de_datos.Producto getORM__Producto() {
 		return _Producto;
+	}
+	
+	public void setuR(base_de_datos.UR value) {
+		if (this.uR != value) {
+			base_de_datos.UR luR = this.uR;
+			this.uR = value;
+			if (value != null) {
+				uR.setImagen(this);
+			}
+			if (luR != null && luR.getImagen() == this) {
+				luR.setImagen(null);
+			}
+		}
+	}
+	
+	public base_de_datos.UR getuR() {
+		return uR;
 	}
 	
 	public String toString() {

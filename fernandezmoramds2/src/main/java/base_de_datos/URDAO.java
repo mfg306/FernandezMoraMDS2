@@ -343,6 +343,10 @@ public class URDAO {
 			for(int i = 0; i < l_Valoras.length; i++) {
 				l_Valoras[i].set_Valorado_por(null);
 			}
+			if (uR.getImagen() != null) {
+				uR.getImagen().setuR(null);
+			}
+			
 			return delete(uR);
 		}
 		catch(Exception e) {
@@ -373,6 +377,10 @@ public class URDAO {
 			for(int i = 0; i < l_Valoras.length; i++) {
 				l_Valoras[i].set_Valorado_por(null);
 			}
+			if (uR.getImagen() != null) {
+				uR.getImagen().setuR(null);
+			}
+			
 			try {
 				session.delete(uR);
 				return true;
