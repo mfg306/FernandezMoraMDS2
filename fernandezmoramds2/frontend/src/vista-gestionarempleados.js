@@ -1,5 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaGestionar_empleados extends PolymerElement {
 
@@ -13,6 +14,9 @@ class VistaGestionar_empleados extends PolymerElement {
 
                 }
             </style>
+<vaadin-button id="retroceder" style="align-self: flex-start; border-radius: 4vw; background-color: black;  color: white;">
+  &lt; 
+</vaadin-button>
 <vaadin-vertical-layout style="width: 100%; align-items: center;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout theme="spacing" id="huecoCrearEmpleados" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
  <h1 id="h1">Empleados</h1>

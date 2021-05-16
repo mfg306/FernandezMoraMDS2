@@ -38,7 +38,6 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	
 	public void retroceder() {
 		this.getRetroceder().addClickListener(event ->{
-			this.ocultar_Gestionar_Categorias();
 			
 			/*Si viene del inicio*/
 			if(this._administrador.padre != null) {

@@ -27,7 +27,7 @@ public class Editar_empleado extends VistaEditar_empleado {
 	
 	public void cancelar_edicion() {
 		this.getVaadinButton1().addClickListener(event ->{
-			Gestionar_empleados ge = new Gestionar_empleados();
+			Gestionar_empleados ge = new Gestionar_empleados(this._empleado._empleados._gestionar_empleados._administrador);
 			this.getVaadinVerticalLayout1().setVisible(false);
 			this.getH1().setVisible(false);
 			layout.add(ge);

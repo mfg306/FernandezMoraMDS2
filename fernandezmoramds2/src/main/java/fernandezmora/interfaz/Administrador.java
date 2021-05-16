@@ -59,7 +59,7 @@ public class Administrador extends VistaAdministrador{
 	public void gestionarEmpleados() {
 		this.getBoton_gestionar_empleados().addClickListener(event -> {
 			this.ocultarAdministrador();
-			this._gestionar_empleados = new Gestionar_empleados(); 
+			this._gestionar_empleados = new Gestionar_empleados(this); 
 			layout.add(this._gestionar_empleados);
 		});
 	}

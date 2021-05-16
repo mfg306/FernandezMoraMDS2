@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-gestionar_empleados template.
@@ -24,6 +25,8 @@ public class VistaGestionar_empleados extends PolymerTemplate<VistaGestionar_emp
 	private H1 h1;
 	@Id("huecoCrearEmpleados")
 	private Element huecoCrearEmpleados;
+	@Id("retroceder")
+	private Button retroceder;
 
 	/**
      * Creates a new VistaGestionar_empleados.
@@ -62,5 +65,13 @@ public class VistaGestionar_empleados extends PolymerTemplate<VistaGestionar_emp
 
 	public void setHuecoCrearEmpleados(Element huecoCrearEmpleados) {
 		this.huecoCrearEmpleados = huecoCrearEmpleados;
+	}
+
+	public Button getRetroceder() {
+		return retroceder;
+	}
+
+	public void setRetroceder(Button retroceder) {
+		this.retroceder = retroceder;
 	}
 }
