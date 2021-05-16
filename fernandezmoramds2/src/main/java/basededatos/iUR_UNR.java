@@ -20,7 +20,7 @@ public interface iUR_UNR {
 
 	public Producto[] cargarProductosMasVendidos(String aNombreCategoria);
 
-	public Producto_Rebajado[] cargarProductosOferta(Oferta aOferta);
+	public Producto_Rebajado[] cargarProductosOferta(Oferta aOferta) throws PersistentException;
 
 	public Producto cargarProducto(int aIdProducto);
 

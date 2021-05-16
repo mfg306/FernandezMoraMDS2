@@ -2,7 +2,10 @@ package base_de_datos;
 
 import basededatos.BDPrincipal;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Vector;
 
@@ -12,24 +15,34 @@ import org.orm.PersistentTransaction;
 public class BD_Ofertas {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Oferta> _oferta = new Vector<Oferta>();
-	private Oferta[] ofertas_Bs;
 
+	
 	public Oferta[] cargarOfertas() throws PersistentException {
 		Oferta[] ofertas = null;
-		int contador = 0;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		PersistentTransaction oferta = HitoPersistentManager.instance().getSession().beginTransaction();
-		
-		try {
-			
-			Date fecha;
-			ofertas = OfertaDAO.listOfertaByQuery(null, null);
-				
-		} catch (Exception e) {
-			oferta.rollback();
-		}
+		Oferta[] ofertasResultado = null;
 
-		return ofertas;
+		ofertas = OfertaDAO.listOfertaByQuery(null, null);
+		ofertasResultado = new Oferta[ofertas.length];
+			
+			/*LocalDate fecha1 = LocalDate.now();
+			String fecha_Actual = fecha1.toString();
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Date fecha_hoy = sdf.parse(fecha_Actual);
+			
+			Date fecha_O = null;*/
+			int contador = 0;
+			//String fecha_Oferta = null;
+			
+			for (int i = 0; i < ofertas.length; i++) {
+				//fecha_Oferta = ofertas[i].getFecha_caducidad();
+			//	fecha_O = sdf.parse(fecha_Oferta.toString());
+				ofertasResultado[contador] = ofertas[i];
+				contador++;
+			}
+	
+
+		return ofertasResultado;
 	}
 
 	public void insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
@@ -38,7 +51,7 @@ public class BD_Ofertas {
 		Oferta o = null;
 		Producto_Rebajado pr = null;
 
-		/*Paso 1. Crear la oferta*/
+		/* Paso 1. Crear la oferta */
 		try {
 			o = OfertaDAO.createOferta();
 			o.setNombre_Oferta(aNombreOferta);
@@ -53,15 +66,20 @@ public class BD_Ofertas {
 			e.printStackTrace();
 			t.rollback();
 		}
-		
+
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
-		
-		/*Paso 2. Crear los productos rebajados basados en el producto seleccionado de la lista y enlazar este producto rebajado con la oferta*/
+
+		/*
+		 * Paso 2. Crear los productos rebajados basados en el producto seleccionado de
+		 * la lista y enlazar este producto rebajado con la oferta
+		 */
 		try {
 			for (Producto p : aListaProductos) {
-				/*Crear el producto rebajado que va a ser una copia del Producto p pero con el 
-				 * precio rebajado*/
+				/*
+				 * Crear el producto rebajado que va a ser una copia del Producto p pero con el
+				 * precio rebajado
+				 */
 				pr = Producto_RebajadoDAO.createProducto_Rebajado();
 				pr.setPrecio_producto(0.0);
 				pr.setNombre(p.getNombre());
@@ -70,42 +88,44 @@ public class BD_Ofertas {
 				pr.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
 				pr.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
 				pr.setPrecio_producto(p.getPrecio_producto());
-				
-								
-				for(Comentario c : p._Pertenece_a.toArray()) {
+
+				for (Comentario c : p._Pertenece_a.toArray()) {
 					pr._Pertenece_a.add(c);
 				}
-				
-				for(Producto_en_compra pc : p._Producto_en_compra.toArray()){
+
+				for (Producto_en_compra pc : p._Producto_en_compra.toArray()) {
 					pr._Producto_en_compra.add(pc);
 				}
-				
-				for(Valoracion v : p._Valorado_por.toArray()) {
+
+				for (Valoracion v : p._Valorado_por.toArray()) {
 					pr._Valorado_por.add(v);
 				}
 
-				/*Guardamos los cambios*/
-				Producto_RebajadoDAO.save(pr);				
+				/* Guardamos los cambios */
+				Producto_RebajadoDAO.save(pr);
 				o._Pertenece_a.add(pr);
 			}
 
 			OfertaDAO.save(o);
-			
+
 			t2.commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			t2.rollback();
 		}
-		
-		
-		/* Paso 3. Eliminar el producto de la lista porque ya lo tenemos con Producto_Rebajado y no lo queremos repetido*/
+
+		/*
+		 * Paso 3. Eliminar el producto de la lista porque ya lo tenemos con
+		 * Producto_Rebajado y no lo queremos repetido
+		 */
 		for (Producto p : aListaProductos) {
 			this._bDPrincipal.eliminarProductoAdministrador(p.getId_Producto());
-		}	
+		}
 
 	}
 
-	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta) throws PersistentException {
+	public void actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
+			String aFechaActualizacion, int aIdOferta) throws PersistentException {
 		eliminarOfertaAdmin(aIdOferta, aListaProductos);
 		insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion);
 	}

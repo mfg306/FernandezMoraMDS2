@@ -28,7 +28,8 @@ public class BD_Productos_Rebajados {
 		}
 	}
 	
-	public Producto_Rebajado[] cargarProductos(Oferta aOferta) {
-		return null;
+	public Producto_Rebajado[] cargarProductos(Oferta aOferta) throws PersistentException {
+
+		return Producto_RebajadoDAO.listProducto_RebajadoByQuery("OfertaId_Oferta = " + aOferta.getId_Oferta(), null);
 	}
 }

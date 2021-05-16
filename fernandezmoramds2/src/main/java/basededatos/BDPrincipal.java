@@ -98,8 +98,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public Producto_Rebajado[] cargarProductosOferta(Oferta aOferta) {
-		throw new UnsupportedOperationException();
+	public Producto_Rebajado[] cargarProductosOferta(Oferta aOferta) throws PersistentException {
+		return this._bD_Productos_Rebajados.cargarProductos(aOferta);
 	}
 
 	public Producto cargarProducto(int aIdProducto) {

@@ -9,6 +9,7 @@ public class Producto_oferta extends VistaProducto_oferta{
 	public Producto _producto;
 	
 	public Producto_oferta(Productos_oferta pof, UR_UNR unrunr,base_de_datos.Producto p) {
+		this.getNombre_producto().setText(p.getNombre());
 		inicializar(pof, unrunr,p);
 	}
 	
