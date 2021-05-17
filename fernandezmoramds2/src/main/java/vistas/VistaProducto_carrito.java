@@ -2,7 +2,7 @@ package vistas;
 
 import com.vaadin.flow.templatemodel.TemplateModel;
 
-import fernandezmora.interfaz.Producto_carrito;
+import interfaz.Producto_carrito;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;

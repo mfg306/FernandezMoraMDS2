@@ -14,13 +14,13 @@ import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import basededatos.iUNR_;
 import basededatos.iUR;
-import fernandezmora.interfaz.Administrador;
-import fernandezmora.interfaz.Encargado_de_compras;
-import fernandezmora.interfaz.Gestionar_categorias;
-import fernandezmora.interfaz.Iniciar_sesion_UNR;
-import fernandezmora.interfaz.Transportista;
-import fernandezmora.interfaz.UNR_;
-import fernandezmora.interfaz.UR;
+import interfaz.Administrador;
+import interfaz.Encargado_de_compras;
+import interfaz.Gestionar_categorias;
+import interfaz.Iniciar_sesion_UNR;
+import interfaz.Transportista;
+import interfaz.UNR_;
+import interfaz.UR;
 
 /**
  * A sample Vaadin view class.
