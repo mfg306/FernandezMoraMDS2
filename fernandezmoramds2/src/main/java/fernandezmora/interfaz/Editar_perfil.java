@@ -25,6 +25,8 @@ public class Editar_perfil extends VistaEditar_perfil {
 	String imagenPerfil = "";
 
 	public Editar_perfil(Menu_UR _menu_UR) {
+		this.getImg().setWidth("10vw");
+		this.getImg().setHeight("10vw");
 		inicializar(_menu_UR);
 	}
 
@@ -36,7 +38,8 @@ public class Editar_perfil extends VistaEditar_perfil {
 		
 		buffer = new MemoryBuffer();
 		upload = new Upload(buffer);
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(upload);
+		this.getHuecoImagen().as(VerticalLayout.class).removeAll();
+		this.getHuecoImagen().as(VerticalLayout.class).add(upload);
 		cambiar_Foto_Producto();
 	}
 
@@ -124,8 +127,8 @@ public class Editar_perfil extends VistaEditar_perfil {
 			imagenPerfil = rutaImagen;
 			
 			this.getImg().setSrc(rutaImagen);
-			this.getImg().setWidth("20vw");
-			this.getImg().setHeight("auto");	
+			this.getImg().setWidth("10vw");
+			this.getImg().setHeight("10vw");	
 		});
 	}
 	

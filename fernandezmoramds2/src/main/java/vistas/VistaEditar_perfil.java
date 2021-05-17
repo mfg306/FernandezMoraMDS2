@@ -27,8 +27,6 @@ public class VistaEditar_perfil extends PolymerTemplate<VistaEditar_perfil.Vista
 	private Span span;
 	@Id("img")
 	private Image img;
-	@Id("editar_imagen_perfil")
-	private Button editar_imagen_perfil;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("span1")
@@ -53,6 +51,8 @@ public class VistaEditar_perfil extends PolymerTemplate<VistaEditar_perfil.Vista
 	private Span span2;
 	@Id("boton_eliminar_cuenta")
 	private Button boton_eliminar_cuenta;
+	@Id("huecoImagen")
+	private Element huecoImagen;
 
 	/**
      * Creates a new VistaEditar_perfil.
@@ -90,14 +90,6 @@ public class VistaEditar_perfil extends PolymerTemplate<VistaEditar_perfil.Vista
 
 	public void setImg(Image img) {
 		this.img = img;
-	}
-
-	public Button getEditar_imagen_perfil() {
-		return editar_imagen_perfil;
-	}
-
-	public void setEditar_imagen_perfil(Button editar_imagen_perfil) {
-		this.editar_imagen_perfil = editar_imagen_perfil;
 	}
 
 	public Element getVaadinVerticalLayout1() {
@@ -194,5 +186,13 @@ public class VistaEditar_perfil extends PolymerTemplate<VistaEditar_perfil.Vista
 
 	public void setBoton_eliminar_cuenta(Button boton_eliminar_cuenta) {
 		this.boton_eliminar_cuenta = boton_eliminar_cuenta;
+	}
+
+	public Element getHuecoImagen() {
+		return huecoImagen;
+	}
+
+	public void setHuecoImagen(Element huecoImagen) {
+		this.huecoImagen = huecoImagen;
 	}
 }

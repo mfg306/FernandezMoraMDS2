@@ -17,10 +17,9 @@ class VistaEditar_perfil extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <span style="align-self: center; margin-top: var(--lumo-space-xl); background-color: #737373; color: white; padding: 0 2vw; border-radius: 1vw;" id="span">Mi perfil</span>
- <img style="width: 50%; height: 50%; border-radius: 100%;" id="img">
- <vaadin-button style="align-self: center; color: #ae1641;" id="editar_imagen_perfil">
-   Editar imagen 
- </vaadin-button>
+ <vaadin-vertical-layout theme="spacing" id="huecoImagen" style="align-self: center; width: 100%; margin: var(--lumo-space-l); align-items: center; justify-content: center;">
+  <img style="width: 50%; height: 50%; border-radius: 100%;" id="img">
+ </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 80%; height: 100%; flex-grow: 0; align-self: center; " id="vaadinVerticalLayout1">
   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span1">Editar perfil</span>
   <vaadin-text-field style="align-self: center; width: 80%;" placeholder="Nombre de usuario" id="nombre_usuario"></vaadin-text-field>
