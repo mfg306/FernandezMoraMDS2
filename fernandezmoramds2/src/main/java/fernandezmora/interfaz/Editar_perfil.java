@@ -25,8 +25,8 @@ public class Editar_perfil extends VistaEditar_perfil {
 	String imagenPerfil = "";
 
 	public Editar_perfil(Menu_UR _menu_UR) {
-		this.getImg().setWidth("10vw");
-		this.getImg().setHeight("10vw");
+		this.getImg().setWidth("15vw");
+		this.getImg().setHeight("15vw");	
 		inicializar(_menu_UR);
 	}
 
@@ -35,7 +35,6 @@ public class Editar_perfil extends VistaEditar_perfil {
 		editarPerfil();
 		eliminarCuenta();
 		cambiar_contrasenia();
-		
 		buffer = new MemoryBuffer();
 		upload = new Upload(buffer);
 		this.getHuecoImagen().as(VerticalLayout.class).removeAll();
