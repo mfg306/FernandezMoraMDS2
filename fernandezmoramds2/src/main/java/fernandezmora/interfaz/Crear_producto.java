@@ -41,7 +41,8 @@ public class Crear_producto extends VistaCrear_producto {
 	String[] imagenes = new String[5];
 	int contador = 0;
 
-	public Crear_producto() {
+	public Crear_producto(Producto_administrador pa) {
+		this._producto_administrador = pa;
 		inicializar();
 	}
 

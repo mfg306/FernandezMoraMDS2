@@ -24,7 +24,10 @@ class VistaMensajes_recibidos extends PolymerElement {
   <vaadin-button id="boton_pagina_anterior">
     &lt; 
   </vaadin-button>
-  <span id="numero_de_pagina">Pagina x de X</span>
+  <span id="numero_de_pagina">Pagina</span>
+  <span id="paginaActual">Span</span>
+  <span id="span">de</span>
+  <span id="totalPaginas">Span</span>
   <vaadin-button id="boton_pagina_siguiente">
     &gt; 
   </vaadin-button>

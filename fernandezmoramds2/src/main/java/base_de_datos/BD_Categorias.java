@@ -55,12 +55,8 @@ public class BD_Categorias {
 		
 		try {
 			for(Producto p : aListaProductos) { 
-				System.out.println("Tratando el producto : " + p.getNombre() + " para introducirlo en la categoria : " + c.getNombre_categoria());
 				Producto pr = ProductoDAO.getProductoByORMID(p.getId_Producto());
-				System.out.println("ENTONRADO");
-//				pr.set_Categoria(c);
 				pr.setORM__Categoria(c);
-				System.out.println("INTRODUCIDO");
 			}
 			t2.commit();			
 		} catch(Exception e) {
@@ -89,10 +85,28 @@ public class BD_Categorias {
 	}
 
 	public boolean eliminarCategoriaAdmin(int aIdCategoria, Producto[] aListaProductos) throws PersistentException {
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			for(Producto p : aListaProductos) { 
+				Producto pr = ProductoDAO.getProductoByORMID(p.getId_Producto());
+				pr.setORM__Categoria(null);
+			}
+			t2.commit();			
+		} catch(Exception e) {
+			e.printStackTrace();
+			t2.rollback();
+			return false;
+		}	
+		
+		
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		System.out.println("ID llegado: " + aIdCategoria);
 
 		try {
 			Categoria c = CategoriaDAO.getCategoriaByORMID(aIdCategoria);
+			System.out.println("ID encontrado: " + c.getId_Categoria());
+
 			CategoriaDAO.delete(c);
 			t.commit();
 		} catch(Exception e) {
@@ -101,20 +115,6 @@ public class BD_Categorias {
 			return false;
 		}
 		
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
-		
-		try {
-			for(Producto p : aListaProductos) { 
-				Producto pr = ProductoDAO.getProductoByORMID(p.getId_Producto());
-				pr.setORM__Categoria(null);
-//				pr.set_Categoria(null);
-			}
-			t2.commit();			
-		} catch(Exception e) {
-			e.printStackTrace();
-			t2.rollback();
-			return false;
-		}	
 		
 		return true;
 	}

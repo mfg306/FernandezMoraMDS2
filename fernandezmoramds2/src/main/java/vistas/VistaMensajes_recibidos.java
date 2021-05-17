@@ -34,6 +34,12 @@ public class VistaMensajes_recibidos extends PolymerTemplate<VistaMensajes_recib
 	private Button boton_pagina_siguiente;
 	@Id("hueco_mensajes_recibidos")
 	private Element hueco_mensajes_recibidos;
+	@Id("totalPaginas")
+	private Span totalPaginas;
+	@Id("span")
+	private Span span;
+	@Id("paginaActual")
+	private Span paginaActual;
 	/**
      * Creates a new VistaMensajes_recibidos.
      */
@@ -102,5 +108,29 @@ public class VistaMensajes_recibidos extends PolymerTemplate<VistaMensajes_recib
 
 	public void setHueco_mensajes_recibidos(Element hueco_mensajes_recibidos) {
 		this.hueco_mensajes_recibidos = hueco_mensajes_recibidos;
+	}
+
+	public Span getTotalPaginas() {
+		return totalPaginas;
+	}
+
+	public void setTotalPaginas(Span totalPaginas) {
+		this.totalPaginas = totalPaginas;
+	}
+
+	public Span getSpan() {
+		return span;
+	}
+
+	public void setSpan(Span span) {
+		this.span = span;
+	}
+
+	public Span getPaginaActual() {
+		return paginaActual;
+	}
+
+	public void setPaginaActual(Span paginaActual) {
+		this.paginaActual = paginaActual;
 	}
 }

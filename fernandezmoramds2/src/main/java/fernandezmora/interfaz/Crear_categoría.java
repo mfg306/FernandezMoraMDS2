@@ -16,8 +16,9 @@ public class Crear_categoría extends Zona_productos {
 	public Gestionar_categorias _gestionar_categorias;
 	VerticalLayout layout;
 
-	public Crear_categoría() {
+	public Crear_categoría(Gestionar_categorias gc) {
 		super(null, null);
+		this._gestionar_categorias = gc;
 		inicializar();
 		guardarCategoria();
 
@@ -87,7 +88,9 @@ public class Crear_categoría extends Zona_productos {
 			}
 
 			try {
-				admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString());
+				base_de_datos.Categoria c = admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString());
+				Categoria_administrador ca = new Categoria_administrador(this._gestionar_categorias._categorias_administrador, c);
+				this._gestionar_categorias._categorias_administrador.addCategoria(ca);
 				Notification.show("Categoria creada con exito");
 				retroceder();
 				this.inicializar();

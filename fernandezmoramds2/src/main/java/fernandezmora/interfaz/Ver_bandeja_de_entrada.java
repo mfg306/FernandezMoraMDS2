@@ -1,11 +1,6 @@
 package fernandezmora.interfaz;
 
-import org.orm.PersistentException;
-
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
-import basededatos.BDPrincipal;
 import vistas.VistaVer_bandeja_de_entrada;
 
 public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
@@ -21,12 +16,14 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 	}
 	
 	public void inicializar() {
+		this.getSpan().setVisible(true);
+		this.getBoton_enviados().setVisible(true);
+		this.getBoton_recibidos().setVisible(true);
 		this._mensajes_recibidos = new Mensajes_recibidos(this.general,this);
 		this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos);
 
 		this.getMenuAdmin().setVisible(false);
 		
-		VerBandejaDeEntrada();
 		abrir_mensajes_recibidos();
 		abrir_mensajes_enviados();
 	}
@@ -35,11 +32,12 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 		this.getSpan().setVisible(false);
 		this.getBoton_enviados().setVisible(false);
 		this.getBoton_recibidos().setVisible(false);
+		this.getHuecoMensajes().as(VerticalLayout.class).remove(this._mensajes_recibidos);
 	}
 	
 	public void abrir_mensajes_enviados() {
 		this.getBoton_enviados().addClickListener(event ->{
-			limpiar_mensajes();
+			this.limpiar_mensajes();
 			this._mensajes_recibidos._list_Ver_mensajes_enviados = new Ver_mensajes_enviados(this.general);
 			this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos._list_Ver_mensajes_enviados._mensajes_enviados);
 		});
@@ -56,29 +54,4 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 		});
 	}
 	
-	public void VerBandejaDeEntrada() {
-		base_de_datos.Mensaje mensajes[] = null;
-		
-		if(this.general instanceof base_de_datos.Administrador) {
-			basededatos.iAdministrador iadmin = new BDPrincipal();
-			try {
-				mensajes = iadmin.cargarMensajesRecibidos(this.general);		
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
-		}
-				
-		if(this.general instanceof base_de_datos.UR) {
-			basededatos.iUR ur = new BDPrincipal();
-			try {
-				mensajes = ur.cargarMensajesRecibidos(this.general);
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		for(base_de_datos.Mensaje m : mensajes) {
-			this._mensajes_recibidos.add_mensaje_recibido(m);
-		}
-	}
 }

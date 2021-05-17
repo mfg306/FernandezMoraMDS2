@@ -66,7 +66,7 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	 */
 	public void crear_Categorias() {
 		this.getBotonNuevaCategoria().addClickListener(event ->{
-			this._crear_categoría = new Crear_categoría();
+			this._crear_categoría = new Crear_categoría(this);
 			ocultar_Gestionar_Categorias();
 			layout.add(this._crear_categoría);
 		});

@@ -9,7 +9,7 @@ public class Mensaje_enviado extends Mensaje_recibido {
 		super(general,mensaje, mEnviados);
 		this._mensajes_enviados = mEnviados;
 		this.getSpan1().setText(mensaje.getMensaje());
-		this.getSpan().setText(mensaje.getCorreo_receptor());
+		this.getSpan().setText(mensaje.getCorreo_emisor());
 		this.getResponder().setVisible(false);
 	}
 }

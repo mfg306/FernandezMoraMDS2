@@ -17,6 +17,7 @@ public class Mensaje_recibido extends VistaMensaje_recibido {
 		this._mensajes_recibidos = mensajesR;
 		this.getSpan1().setText(this.mensaje.getMensaje());
 		this.getSpan().setText(this.mensaje.getCorreo_emisor());
+		this.getSpan2().setText(this.mensaje.getFecha());
 		
 		abrir_Crear_Mensaje_Responder();
 	}	
@@ -37,7 +38,7 @@ public class Mensaje_recibido extends VistaMensaje_recibido {
 					}
 				}
 				
-				this._crear_mensaje = new Crear_mensaje(general, mensaje);
+				this._crear_mensaje = new Crear_mensaje(general, mensaje, this._mensajes_recibidos._ver_bandeja_de_entrada._mensajes_recibidos);
 				this._mensajes_recibidos.limpiar_interfaz();
 				this._mensajes_recibidos._ver_bandeja_de_entrada.limpiar_interfaz();
 				this._mensajes_recibidos._ver_bandeja_de_entrada.layout.add(this._crear_mensaje);

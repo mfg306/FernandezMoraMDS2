@@ -17,8 +17,9 @@ public class Crear_oferta extends Zona_productos {
 	public Gestionar_ofertas _gestionar_ofertas;
 	VerticalLayout layout;
 
-	public Crear_oferta() {
+	public Crear_oferta(Gestionar_ofertas go) {
 		super(null,null);
+		this._gestionar_ofertas = go;
 		inicializar();
 		guardarOferta();
 	}
