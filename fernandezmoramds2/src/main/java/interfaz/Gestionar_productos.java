@@ -63,8 +63,14 @@ public class Gestionar_productos extends VistaGestionar_productos {
 	public void crear_Producto() {
 		this.getVaadinButton().addClickListener(event ->{
 			ocultar_Gestionar_Productos();
+			Crear_producto cp = null;
+			if(this._productos_administrador._list_Producto_administrador.size() > 0 ) {
+				cp = new Crear_producto(this._productos_administrador._list_Producto_administrador.get(0));
+			} else {
+				cp = new Crear_producto(null);
+
+			}
 			
-			Crear_producto cp = new Crear_producto(this._productos_administrador._list_Producto_administrador.get(0));
 			layout.add(cp);
 		});
 
