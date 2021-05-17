@@ -39,6 +39,7 @@ public class Menu_UR extends Menu_UR_UNR {
 			}
 
 			if (event.getValue().equals("Mis correos")) {
+				ocultarCarrito();
 				this._ver_bandeja_de_entrada = new Ver_bandeja_de_entrada(usuario);
 				abrir_bandeja_entrada();
 			}
@@ -83,7 +84,7 @@ public class Menu_UR extends Menu_UR_UNR {
 
 			this._ver_carrito_UR._productos_carrito.actualizarListaProductos(this._uR.listaAux);
 			ocultar_Informacion_Al_Abrir_Carrito();
-
+			ocultarInformacionVerBandejaDeEntrada();
 			ocultarInformacionPedidos();
 			ocultarInformacionEditarPerfil();
 			this._ver_carrito_UR.getVaadinHorizontalLayout().setVisible(true);
