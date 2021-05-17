@@ -11,12 +11,12 @@ public class Ver_categorias extends VistaVercategorias {
 	public UR_UNR _uR_UNR;
 	public Categorias _categorias;
 	public VerticalLayout layout;
-	public base_de_datos.Categoria[]categorias;
+	
 	
 
 	public Ver_categorias(UR_UNR unr) {
 		this._categorias = new Categorias(this);
-		verCategorias();
+		//verCategorias();
 		inicializar(unr);
 		
 	}
@@ -29,7 +29,7 @@ public class Ver_categorias extends VistaVercategorias {
 	    
 	}
 	
-	public void verCategorias() {
+	/*public void verCategorias() {
 		iUR_UNR ur_unr = new BDPrincipal();
 		categorias = ur_unr.cargarCategorias();
 		for(base_de_datos.Categoria c : this.categorias) {
@@ -38,6 +38,6 @@ public class Ver_categorias extends VistaVercategorias {
 			this._categorias.layout.add(cat);	
 		}
 		this.inicializar(this._uR_UNR);
-	}
+	}*/
 	
 }

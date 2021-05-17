@@ -33,7 +33,7 @@ public class Categoria extends VistaCategoria {
 	public void abrir_Categoria() {
 		this.getCategoria1().addClickListener(event -> {
 			this._categorias._ver_categorias.layout.removeAll();
-			// this._categorias._ver_categorias.layout.add(this._productos_categoria);
+			//this._categorias._ver_categorias.layout.add(this._productos_categoria);
 			verCategoria();
 		});
 	}

@@ -29,6 +29,7 @@ public class Oferta extends VistaOferta{
 				this._ofertas._uR_UNR.getBotonVerCategorias().setVisible(false);
 				this._ofertas._uR_UNR.layoutProductosMasVendidosPorCategorias.setVisible(false);
 				this._ofertas._uR_UNR.layoutOfertas.add(of._productos_oferta);
+				Notification.show("AQUI");
 			});
 		}
 	}
