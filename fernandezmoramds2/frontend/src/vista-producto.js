@@ -22,9 +22,9 @@ class VistaProducto extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; margin-top: var(--lumo-space-l);" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; padding: var(--lumo-space-m);" id="vaadinVerticalLayout1">
    <vaadin-horizontal-layout theme="spacing" style="align-self: center; justify-content: space-between; width: 100%; height: 100%; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout1">
-    <span id="nombre_producto" style="font-size: 10vw;"></span>
+    <span id="nombre_producto" style="font-size: 2vw;"></span>
     <vaadin-button id="boton_anadir_carrito" style="color: #ae1641;">
-     Anadir a carrito
+      Anadir a carrito 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <img style="width: 100%; height: 100%; align-self: center;" id="img">

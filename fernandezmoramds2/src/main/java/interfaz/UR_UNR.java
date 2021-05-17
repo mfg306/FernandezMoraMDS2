@@ -22,20 +22,29 @@ public abstract class UR_UNR extends VistaUrunr{
 
 	public UR_UNR() {
 		this.indiceOfertas = 0;
+		
+		this.layoutOfertas = this.getOfertas().as(VerticalLayout.class);
+		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		this.layoutProductosMasVendidosPorCategorias = this.getProductosMasVendidosPorCategorias()
+				.as(VerticalLayout.class);
+
 		inicializarURUNR();
 	}
 	
 	public void inicializarURUNR() {
-		this.layoutOfertas = this.getOfertas().as(VerticalLayout.class);
+		this.getBotonVerCategorias().setVisible(true);
+		this.layoutOfertas.removeAll();
+		this.layoutProductosMasVendidosPorCategorias.removeAll();
+		
+		
 		this._ver_categorias = new Ver_categorias(this);
-		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-		abrir_Ver_Categorias();
 		this._ofertas = new Ofertas(this);
 		this._productos_mas_vendidos_por_categorias = new Productos_mas_vendidos_por_categorias(this);
-		this.layoutProductosMasVendidosPorCategorias = this.getProductosMasVendidosPorCategorias()
-				.as(VerticalLayout.class);
-		this.layoutProductosMasVendidosPorCategorias.add(this._productos_mas_vendidos_por_categorias);
 
+		this.layoutOfertas.add(this._ofertas);
+		this.layoutProductosMasVendidosPorCategorias.add(this._productos_mas_vendidos_por_categorias);
+		
+		abrir_Ver_Categorias();
 	}
 
 	public void abrir_Ver_Categorias() {

@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Ver_carrito_UNR extends Ver_carrito {
@@ -16,6 +17,7 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		layout = this.getVaadinVerticalLayout1().as(VerticalLayout.class);
 		
 		inicializar();
+		retroceder();
 	}
 
 	public void inicializar() {
@@ -23,6 +25,23 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		this.getProductosCarrito().add(this._productos_carrito);
 		abrir_Producto(this._menu_UNR._uNR_.listaAuxUNR, this.layout);
 		cerrar_Producto(this._menu_UNR.getBoton_carrito(), this._menu_UNR._uNR_.listaAuxUNR, this.layout);
+	}
+	
+	public void retroceder(){
+		Button retroceder = new Button();
+		retroceder.setText("Atras");
+		this.layout.add(retroceder);
+		
+		retroceder.addClickListener(event ->{
+			this._menu_UNR._uNR_.inicializarURUNR();
+			limpiarInterfaz();
+		});
+		
+	}
+	
+	public void limpiarInterfaz() {
+		this._menu_UNR._uNR_.layout.remove(this);
+
 	}
 
 	@Override

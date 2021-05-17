@@ -33,5 +33,22 @@ public class UR extends UR_UNR{
 		System.out.println("Añadiendo producto");
 		listaAuxUR.add(p);
 	}
+	
+	public boolean estaElProducto(Producto_carrito pc) {
+		for(Producto_carrito p : listaAuxUR) {
+			if(p.producto.getId_Producto() == pc.producto.getId_Producto()) return true;
+		}
+		return false;
+	}
+	
+	public int indiceProducto(Producto_carrito pc) {
+		int contador = 0;
+		for(Producto_carrito p: listaAuxUR) {
+			if(p.producto.getId_Producto() == pc.producto.getId_Producto()) return contador;
+			contador++;
+		}
+		
+		return -1;
+	}
 
 }

@@ -6,7 +6,6 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
-import basededatos.iTransportista_Encargado_NR;
 import basededatos.iUR;
 
 public class Ver_producto_UR extends Producto_UNR {
@@ -17,7 +16,6 @@ public class Ver_producto_UR extends Producto_UNR {
 		super(_ur, p);
 		if (_ur instanceof UR) {
 			this._uR = (UR) _ur;
-			this.Anadir_al_carrito(p);
 		}
 		Comentar();
 		inicializar(_ur, p);
@@ -82,17 +80,14 @@ public class Ver_producto_UR extends Producto_UNR {
 	@Override
 	public void Anadir_al_carrito(base_de_datos.Producto p) {
 		this.getBoton_anadir_carrito().addClickListener(event -> {
-			// Formar el producto_carrito
 			Producto_carrito pc = new Producto_carrito(this, p, this._uR);
 
-			// Anadirlo al listado de productos del usuario
-			if (!this._uR.listaAuxUR.contains(pc)) {
+			if (!this._uR.estaElProducto(pc)) {
 				pc.incrementarCantidad();
 				this._uR.miListadoProductos(pc);
-				Notification.show("" + this._uR.listaAuxUR.size());
 			} else {
 				int index = 0;
-				index = this._uR.listaAuxUR.indexOf(pc);
+				index = this._uR.indiceProducto(pc);
 				this._uR.listaAuxUR.get(index).incrementarCantidad();
 			}
 
