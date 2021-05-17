@@ -20,15 +20,8 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this._producto = p;
 		this.producto = pc;
 		
-//		if((this._producto instanceof Producto_UNR) && !(this._producto instanceof Ver_producto_UR)) {
-//			System.out.println("Es producto UNR");
-//			this._producto = new Producto_UNR(usuario,pc);
-//		}
-//		
-//		if(this._producto instanceof Ver_producto_UR) {
-//			System.out.println("Es producto UR");
-//			this._producto = new Ver_producto_UR(usuario, pc);
-//		}		
+		this.getImg().setWidth("10vw");
+		this.getImg().setSrc(pc._Imagen.toArray()[0].getRuta());
 		
 		inicializar(pc);
 	}
@@ -59,12 +52,6 @@ public class Producto_carrito extends VistaProducto_carrito {
 			this._productos_carrito._list_Producto_carrito.remove(this);
 
 		});
-
-	}
-	
-	public boolean equals(Producto_carrito pc) {
-		/* Necesitamos el objeto de la base de datos para comparar el funcion del nomnre o id*/
-		return true;
 
 	}
 	

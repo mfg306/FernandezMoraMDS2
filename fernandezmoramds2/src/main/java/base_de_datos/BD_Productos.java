@@ -25,7 +25,6 @@ public class BD_Productos {
 		Producto[] pds = null;
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			System.out.println("El id que me ha llegado es : " + aCategoria.getId_Categoria());
 			Categoria c = CategoriaDAO.loadCategoriaByORMID(aCategoria.getId_Categoria());
 			pds = c._Producto.toArray();
 		} catch (Exception e) {

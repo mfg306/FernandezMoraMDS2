@@ -22,9 +22,9 @@ class VistaProducto extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; margin-top: var(--lumo-space-l);" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; padding: var(--lumo-space-m);" id="vaadinVerticalLayout1">
    <vaadin-horizontal-layout theme="spacing" style="align-self: center; justify-content: space-between; width: 100%; height: 100%; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout1">
-    <span id="nombre_producto"></span>
+    <span id="nombre_producto" style="font-size: 10vw;"></span>
     <vaadin-button id="boton_anadir_carrito" style="color: #ae1641;">
-      Añadir a carrito 
+     Anadir a carrito
     </vaadin-button>
    </vaadin-horizontal-layout>
    <img style="width: 100%; height: 100%; align-self: center;" id="img">
@@ -47,7 +47,7 @@ class VistaProducto extends PolymerElement {
    <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout3">
     <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout4">
      <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: stretch;" id="vaadinHorizontalLayout4">
-      <span style="align-self: center; flex-grow: 0; flex-shrink: 0;" id="etiqueta_descripcion">Descripción</span>
+      <span style="align-self: center; flex-grow: 0; flex-shrink: 0;" id="etiqueta_descripcion">Descripcion</span>
       <span style="align-self: center; background-color: grey; padding: 1vw; color: white; border-radius: 2vw; text-align: center; height: 50%;" id="precio"></span>
      </vaadin-horizontal-layout>
      <vaadin-list-box style="background-color: white; align-self: center; width: 100%;" id="caracteristicas_producto">
@@ -55,7 +55,7 @@ class VistaProducto extends PolymerElement {
      </vaadin-list-box>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" style="align-self: center; align-items: center; justify-content: center; width: 80%; flex-grow: 1;" id="vaadinVerticalLayout5">
-     <span style="font-weight: bold; align-self: center; width: 100%; flex-grow: 0;" id="span">Valoración media:</span>
+     <span style="font-weight: bold; align-self: center; width: 100%; flex-grow: 0;" id="span">Valoracion media:</span>
      <span style="align-self: center;" id="valoracion_media"></span>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>

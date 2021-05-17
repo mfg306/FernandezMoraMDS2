@@ -17,7 +17,7 @@ class VistaCategoria_administrador extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; flex-grow: 0; margin-top: var(--lumo-space-l);background-color: #F1F2F2;" id="vaadinHorizontalLayout">
-  <h1 style="align-self: center; margin-left: var(--lumo-space-l);" id="h1">Nombre categoria</h1>
+  <h1 style="align-self: center; margin-left: var(--lumo-space-l);" id="h1"></h1>
   <vaadin-button theme="primary" style="align-self: center; margin-left: 35%; background-color: #ae1641;" id="vaadinButton">
     Editar 
   </vaadin-button>

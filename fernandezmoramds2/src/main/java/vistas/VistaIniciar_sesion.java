@@ -49,6 +49,10 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	private Element vaadinVerticalLayout2;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("modoEmpleado")
+	private H1 modoEmpleado;
+	@Id("enlaceEmpleados")
+	private Element enlaceEmpleados;
 
 	/**
 	 * Creates a new VistaIniciar_sesion.
@@ -127,6 +131,54 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 
 	public void setContrasenia(PasswordField contrasenia) {
 		this.contrasenia = contrasenia;
+	}
+
+	public H1 getH1() {
+		return h1;
+	}
+
+	public void setH1(H1 h1) {
+		this.h1 = h1;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public Element getVaadinVerticalLayout2() {
+		return vaadinVerticalLayout2;
+	}
+
+	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
+		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public H1 getModoEmpleado() {
+		return modoEmpleado;
+	}
+
+	public void setModoEmpleado(H1 modoEmpleado) {
+		this.modoEmpleado = modoEmpleado;
+	}
+
+	public Element getEnlaceEmpleados() {
+		return enlaceEmpleados;
+	}
+
+	public void setEnlaceEmpleados(Element enlaceEmpleados) {
+		this.enlaceEmpleados = enlaceEmpleados;
 	}
 
 }

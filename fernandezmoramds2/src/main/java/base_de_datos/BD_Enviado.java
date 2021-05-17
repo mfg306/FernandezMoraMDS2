@@ -38,7 +38,6 @@ public class BD_Enviado {
 		Date date = new Date();
 		formatter.format(date);
 		
-//		e.set_Transportista(aTransportista);
 		e.setORM__Procesa(aEncargado);
 		e.setORM__Transportista(aTransportista);
 		e.setFecha_estado(date.toString());
@@ -90,5 +89,21 @@ public class BD_Enviado {
 			}
 		}
 		return null;
+	}
+	
+	public boolean eliminarEnviado(Enviado aEnviado) throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			aEnviado.setEnviado(true);
+			EnviadoDAO.save(aEnviado);
+			t.commit();
+		} catch(Exception e){
+			e.printStackTrace();
+			t.rollback();
+			return false;
+		}
+		
+		return true;
 	}
 }

@@ -19,20 +19,20 @@ class VistaRegistrarse extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <div style="width: 80%; align-self: center;" id="div">
   <vaadin-vertical-layout theme="spacing" style="width: 100%; justify-content: center; height: 100%;" id="vaadinVerticalLayout1">
-   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span">REGÍSTRATE</span>
-   <vaadin-text-field id="nombre" style="width: 100%;" placeholder="Introduzca su nombre" required></vaadin-text-field>
-   <vaadin-text-field id="apellidos" style="width: 100%;" placeholder="Introduzca sus apellidos" required></vaadin-text-field>
+   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span">REGISTRATE</span>
+   <vaadin-text-field id="nombre" style="width: 100%;" placeholder="Introduzca su nombre" required invalid></vaadin-text-field>
+   <vaadin-text-field id="apellidos" style="width: 100%;" placeholder="Introduzca sus apellidos" required invalid></vaadin-text-field>
    <vaadin-text-field id="correo" style="width: 100%;" placeholder="Introduzca su correo" required></vaadin-text-field>
-   <vaadin-text-field id="nombre_usuario" style="width: 100%;" placeholder="Introduzca su nombre de usuario" required></vaadin-text-field>
-   <vaadin-password-field id="contrasenia" style="width: 100%;" required></vaadin-password-field>
-   <vaadin-password-field id="confirmacionContrasenia" style="width: 100%;" required></vaadin-password-field>
+   <vaadin-text-field id="nombre_usuario" style="width: 100%;" placeholder="Introduzca su nombre de usuario" required invalid></vaadin-text-field>
+   <vaadin-password-field id="contrasenia" style="width: 100%;" required invalid></vaadin-password-field>
+   <vaadin-password-field id="confirmacionContrasenia" style="width: 100%;" required invalid></vaadin-password-field>
    <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_registrarse">
      Registrarse 
    </vaadin-button>
   </vaadin-vertical-layout>
  </div>
  <vaadin-button theme="tertiary-inline" id="botonIniciarSesion" style="align-self: center; margin: var(--lumo-space-m); color: #ae1641;">
-   ¿Ya tienes cuenta? Haz click aquí para iniciar sesión 
+  ¿Ya tienes cuenta? Haz click aqui para iniciar sesion
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

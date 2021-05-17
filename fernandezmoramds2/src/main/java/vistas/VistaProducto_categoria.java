@@ -31,8 +31,6 @@ public class VistaProducto_categoria extends PolymerTemplate<VistaProducto_categ
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("precio_producto")
 	private Span precio_producto;
-	@Id("verProducto")
-	private Button verProducto;
 
 	/**
      * Creates a new VistaProducto_categoria.
@@ -88,11 +86,4 @@ public class VistaProducto_categoria extends PolymerTemplate<VistaProducto_categ
 		this.precio_producto = precio_producto;
 	}
 
-	public Button getVerProducto() {
-		return verProducto;
-	}
-
-	public void setVerProducto(Button verProducto) {
-		this.verProducto = verProducto;
-	}
 }

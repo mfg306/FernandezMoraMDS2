@@ -14,18 +14,24 @@ public class UR extends UR_UNR{
 	public Menu_UR _menu_UR;
 	public Ver_producto_UR _ver_producto_UR;
 	public base_de_datos.UR UR;
+	public Vector<Producto_carrito> listaAuxUR;
+
 	
 	public UR(base_de_datos.Usuario_General ur) {
 		super();
 		this.UR = (base_de_datos.UR)ur;
-		listaAux = new Vector<Producto_carrito>();
+		listaAuxUR = new Vector<Producto_carrito>();
 		inicializar();
 	}
-	
 	
 	public void inicializar() {
 		_menu_UR = new Menu_UR(this, UR);
 		this.getHuecoMenu().as(VerticalLayout.class).add(_menu_UR);	
+	}
+	
+	public void miListadoProductos(Producto_carrito p) {
+		System.out.println("Añadiendo producto");
+		listaAuxUR.add(p);
 	}
 
 }

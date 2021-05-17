@@ -15,7 +15,7 @@ class VistaProductos_mas_vendidos_por_categorias extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
- <h2 id="getTituloMasVendidos" style="align-self: center;">Los productos más vendidos</h2>
+ <h2 id="getTituloMasVendidos" style="align-self: center;">Los productos mas vendidos</h2>
  <vaadin-vertical-layout theme="spacing" id="listaCategoriasMasVendidos"></vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="height: 100%; width: 100%; padding: var(--lumo-space-m); align-self: center; align-items: center; justify-content: center;" id="lista_productos_categoria"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>

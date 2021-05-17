@@ -25,7 +25,7 @@ class VistaCrear_producto extends PolymerElement {
     <vaadin-text-field label="Nombre producto:" placeholder="Introduzca un nombre producto" style="flex-grow: 1; width: 100%;" id="nombreProducto"></vaadin-text-field>
    </vaadin-horizontal-layout>
    <vaadin-text-field label="Precio:" placeholder="Introduzca un precio" id="precio"></vaadin-text-field>
-   <vaadin-text-area label="Añade una descripción al producto:" placeholder="Descripción" style="width: 50%;" id="añadeUnaDescripciónAlProducto"></vaadin-text-area>
+   <vaadin-text-area label="Anade una descripcion al producto:" placeholder="Descripcion" style="width: 50%;" id="añadeUnaDescripciónAlProducto"></vaadin-text-area>
    <vaadin-text-field label="Cantidad disponible:" placeholder="Cantidad" id="cantidadProducto"></vaadin-text-field>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 60%;" id="vaadinVerticalLayout2">

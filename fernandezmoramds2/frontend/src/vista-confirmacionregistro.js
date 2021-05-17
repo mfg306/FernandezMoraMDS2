@@ -17,9 +17,9 @@ class VistaConfirmacion_registro extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <div style="align-self: center; width: 80%; height: 80%; flex-grow: 0; margin: var(--lumo-space-xl); background-color: #F5F5F5; " id="div">
   <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: center; flex-direction: column; width: 100%; height: 100%;" id="panel_confirmacion_registro">
-   <span id="span">¡Su registro ha sido realizado con éxito!</span>
+   <span id="span">¡Su registro ha sido realizado con exito!</span>
    <vaadin-button theme="primary" id="boton_iniciar_sesion" style="background-color: #ae1641;">
-     Iniciar sesión 
+    Iniciar sesion
    </vaadin-button>
   </vaadin-vertical-layout>
  </div>

@@ -1,8 +1,6 @@
 package fernandezmora.interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import vistas.VistaProducto_categoria;
 
 public class Producto_categoria extends VistaProducto_categoria{
@@ -11,7 +9,9 @@ public class Producto_categoria extends VistaProducto_categoria{
 	
 	public Producto_categoria(Productos_categoria pc, UR_UNR unrunr, base_de_datos.Producto p) {
 		this.getNombre_producto().setText(p.getNombre());
-		this.getPrecio_producto().setText(String.valueOf(p.getPrecio_producto()));
+		this.getPrecio_producto().setText(String.valueOf(p.getPrecio_producto()) + " €");
+		this.getImagen_producto().setWidth("10vw");
+		this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
 		inicializar(pc, unrunr,p);
 	}
 	
@@ -22,7 +22,7 @@ public class Producto_categoria extends VistaProducto_categoria{
 	}
 	
 	public void abrir_Producto_Categoria(UR_UNR unrunr,base_de_datos.Producto p) {
-		this.getVerProducto().addClickListener(event->{
+		this.getImagen_producto().addClickListener(event->{
 			this._productos_categoria.getVaadinHorizontalLayout().setVisible(false);
 			this._productos_categoria.getLista_productos_categoria().setVisible(false);
 			

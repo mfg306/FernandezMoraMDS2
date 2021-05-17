@@ -2,6 +2,8 @@ package fernandezmora.interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import basededatos.BDPrincipal;
 import basededatos.iTransportista;
 import vistas.VistaPedido_t;
@@ -12,20 +14,32 @@ public class Pedido_T extends VistaPedido_t {
 	public Gestor_Correos _unnamed_Gestor_Correos_;
 	base_de_datos.Enviado enviado;
 	base_de_datos.UR cliente;
+	public VerticalLayout layout;
 
 	public Pedido_T(Pedidos_T p, base_de_datos.Enviado enviado) {
 		this.enviado = enviado;
 		this.getLabel().setText("" + enviado.getCodigo());
 		this.getLabel2().setText("" + enviado.getFecha_estado());
 
+		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		
 		inicializar(p);
 
-		obtenerClientePedido();
 	}
 
 	public void inicializar(Pedidos_T p) {
 		this._pedidos_T = p;
-		this._ver_ficha_cliente = new Ver_ficha_cliente(this, this.enviado);
+		obtenerClientePedido();
+		abrirFichaCliente();
+		Marcar_como_entregado();
+	}
+	
+	public void abrirFichaCliente() {
+		this.getVaadinButton().addClickListener(event ->{
+			this._ver_ficha_cliente = new Ver_ficha_cliente(this, this.cliente);
+			this.layout.removeAll();
+			this.layout.add(this._ver_ficha_cliente);
+		});
 	}
 
 	public void obtenerClientePedido() {
@@ -33,8 +47,6 @@ public class Pedido_T extends VistaPedido_t {
 
 		try {
 			this.cliente = iT.cargarClienteEnviado(this._pedidos_T._transportista.transportista, this.enviado);
-
-			System.out.println("Cliente encontrado : " + cliente.getCorreo_electronico());
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -44,7 +56,7 @@ public class Pedido_T extends VistaPedido_t {
 	}
 
 	public void Marcar_como_entregado() {
-		this.getVaadinCheckbox().addClickListener(event -> {
+		this.getVaadinButton1().addClickListener(event -> {
 			iTransportista iT = new BDPrincipal();
 			
 			try {
@@ -53,6 +65,8 @@ public class Pedido_T extends VistaPedido_t {
 				String cuerpo = "El pedido con código " + this.enviado.getCodigo() + " ha sido enviado con éxito. Valore el producto"
 						+ "si ha quedado satisfecho con el mismo.";
 				this.Enviar_mensaje_a_cliente_T(this.cliente.getCorreo_electronico(), asunto, cuerpo);
+				
+				this._pedidos_T._transportista.inicializar();
 				
 			} catch (PersistentException e) {
 				e.printStackTrace();

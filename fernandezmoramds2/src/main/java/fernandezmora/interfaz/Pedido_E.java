@@ -13,8 +13,9 @@ public class Pedido_E extends VistaPedido_e{
 	public Pedido_E(Pedidos_E pedidos_E, base_de_datos.Pendiente pendiente) {
 		this.pendiente = pendiente;
 		inicializar(pedidos_E);
-		this.getLabel1().setText("" + this.pendiente.getCodigo());
-		this.getLabel2().setText("" + this.pendiente.getFecha_estado());
+		this.getLabel1().setText("Codigo : " + this.pendiente.getCodigo());
+		this.getLabel2().setText("Fecha ultima actualizacion : " + this.pendiente.getFecha_estado());
+		this.getNumTotalUnidades().setText("Numero total unidades : " + this.pendiente.getNum_total_unidades() );
 		
 		asignar_a_transportista();
 	}

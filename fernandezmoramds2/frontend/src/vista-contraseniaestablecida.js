@@ -17,9 +17,9 @@ class VistaContrasenia_establecida extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <div style="width: 80%; height: 100%; align-self: center;" id="div">
   <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: center; width: 100%; height: 100%;" id="vaadinVerticalLayout1">
-   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span">NUEVA CONTRASEÑA ESTABLECIDA</span>
+   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span">NUEVA CONTRASENA ESTABLECIDA</span>
    <vaadin-button theme="primary" id="boton_iniciar_sesion" style="background-color: #ae1641;">
-     Iniciar sesión 
+    Iniciar sesion
    </vaadin-button>
   </vaadin-vertical-layout>
  </div>

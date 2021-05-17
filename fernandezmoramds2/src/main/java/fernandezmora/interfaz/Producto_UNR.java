@@ -19,14 +19,14 @@ public class Producto_UNR extends Producto {
 			// Formar el producto_carrito
 			Producto_carrito pc = new Producto_carrito(this , p, this._uNR_);
 			
-			if(!this._uNR_.listaAux.contains(pc)) {
+			if(!this._uNR_.listaAuxUNR.contains(pc)) {
 				pc.incrementarCantidad();
 				this._uNR_.miListadoProductos(pc);
-				Notification.show("" + this._uNR_.listaAux.size());
+				Notification.show("" + this._uNR_.listaAuxUNR.size());
 			} else {
 				int index = 0;
-				index = this._uNR_.listaAux.indexOf(pc);
-				this._uNR_.listaAux.get(index).incrementarCantidad();
+				index = this._uNR_.listaAuxUNR.indexOf(pc);
+				this._uNR_.listaAuxUNR.get(index).incrementarCantidad();
 			}
 			
 		});

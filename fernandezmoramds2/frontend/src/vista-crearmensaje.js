@@ -26,7 +26,7 @@ class VistaCrear_mensaje extends PolymerElement {
 </vaadin-vertical-layout>
 <vaadin-horizontal-layout theme="spacing" style="justify-content: space-around; width: 100%; align-items: center; flex-direction: row;" id="vaadinHorizontalLayout1">
  <vaadin-button id="boton_atras" style="align-self: center; color: #ae1641;">
-   Volver atrás 
+  Volver atras
  </vaadin-button>
  <vaadin-button theme="primary" id="boton_enviar" style="align-self: center; background-color: #ae1641;">
    Enviar mensaje 

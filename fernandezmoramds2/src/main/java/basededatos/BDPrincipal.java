@@ -193,10 +193,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 
 	}
 
-	public void enviarMensajeT(String aMensaje, String aCorreEmisor, String aCorreoReceptor) {
-		throw new UnsupportedOperationException();
-	}
-
 	public Enviado[] cargarPedidosT(Transportista aTransportista) throws PersistentException {
 		return this._bD_Enviado.cargarEnviados();
 	}
@@ -405,6 +401,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	@Override
 	public boolean eliminarValoracionesProducto(Producto aProducto) throws PersistentException {
 		return this._bD_Valoracion.eliminarValoracionesProducto(aProducto);
+	}
+
+	@Override
+	public boolean eliminarEnviado(Enviado aEnviado) throws PersistentException {
+		return this._bD_Enviado.eliminarEnviado(aEnviado);
 	}
 
 	

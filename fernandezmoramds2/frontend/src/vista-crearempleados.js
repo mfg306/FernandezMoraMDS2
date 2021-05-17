@@ -20,13 +20,13 @@ class VistaCrear_empleados extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <h1 style="align-self: center;" id="h1">Crear empleado</h1>
  <vaadin-text-field style="align-self: center;" label="Introduzca un correo:" id="introduzcaUnCorreo"></vaadin-text-field>
- <vaadin-text-field style="align-self: center; margin: var(--lumo-space-m);" label="Introduzca una contraseña:" id="introduzcaUnaContraseña"></vaadin-text-field>
+ <vaadin-text-field style="align-self: center; margin: var(--lumo-space-m);" label="Introduzca una contrasena:" id="introduzcaUnaContraseña"></vaadin-text-field>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-self: center; align-items: center; justify-content: center;">
   <vaadin-checkbox id="vaadinCheckbox" style="align-self: center;">
-   Transportista
+    Transportista 
   </vaadin-checkbox>
   <vaadin-checkbox id="vaadinCheckbox1" style="align-self: center;">
-   Encargado
+    Encargado 
   </vaadin-checkbox>
  </vaadin-horizontal-layout>
  <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="vaadinButton">

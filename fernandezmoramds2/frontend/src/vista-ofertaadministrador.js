@@ -17,7 +17,7 @@ class VistaOferta_administrador extends PolymerElement {
 <vaadin-vertical-layout style="align-items: center; background-color: #F1F2F2; justify-content: center;" id="vaadinVerticalLayout">
  <h1 id="h1" style="width: 50%; align-self: center;">Nombre oferta</h1>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-grow: 1; margin-top: var(--lumo-space-l); flex-shrink: 0; align-items: center; align-self: stretch; justify-content: center;" id="vaadinHorizontalLayout">
-  <label style="margin: var(--lumo-space-l);" id="label">Código oferta</label>
+  <label style="margin: var(--lumo-space-l);" id="label">Codigo oferta</label>
   <vaadin-button theme="primary" style="margin-left: var(--lumo-space-m); background-color: #ae1641;" id="vaadinButton1">
     Eliminar 
   </vaadin-button>

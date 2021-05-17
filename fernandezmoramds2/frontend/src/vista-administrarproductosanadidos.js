@@ -22,7 +22,7 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" id="layoutEditarCategoria" style="width: 100%; align-items: center;">
   <h1 id="h1EditarCategoria">Mis categorias</h1>
-  <h2 id="h2EditarCategoria">Editar categoría</h2>
+  <h2 id="h2EditarCategoria">Editar categoria</h2>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" id="layoutCrearOferta" style="width: 100%; align-items: center;">
   <h1 id="h1CrearOferta">Mis ofertas</h1>
@@ -54,7 +54,7 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1_productos_anadidos" style="width: 100%; align-self: flex-end;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2_productos_anadidos" style="width: 100%; justify-content: center;">
-    <h2 id="h21">Añadidos:</h2>
+    <h2 id="h21">Anadidos:</h2>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>

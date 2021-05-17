@@ -28,7 +28,6 @@ public class Transportista extends VistaTransportista {
 		layout = this.getHuecoListaPedidos().as(VerticalLayout.class);
 		layout.add(this._pedidos_T);
 		cargarPedidosT();
-		ver_ficha_cliente();
 	}
 	
 	public void ocultar_Transportista() {
@@ -37,16 +36,6 @@ public class Transportista extends VistaTransportista {
 		this.getVaadinButton().setVisible(false);
 		this.getHuecoListaPedidos().setVisible(false);
 		
-	}
-	
-	public void ver_ficha_cliente() {
-		for(Pedido_T p : _pedidos_T._list_Pedido_T) {
-			p.getVaadinButton().addClickListener(event ->{
-				ocultar_Transportista();
-				p._ver_ficha_cliente = new Ver_ficha_cliente(p, p.enviado);
-				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(p._ver_ficha_cliente);
-			});
-		}
 	}
 	
 	public void cargarPedidosT(){
@@ -60,7 +49,7 @@ public class Transportista extends VistaTransportista {
 		}
 		
 		for(base_de_datos.Enviado e : listaEnviados) {
-			this._pedidos_T.add_pedidos_T(e);
+			if(!e.getEnviado()) this._pedidos_T.add_pedidos_T(e);
 		}
 		
 	}

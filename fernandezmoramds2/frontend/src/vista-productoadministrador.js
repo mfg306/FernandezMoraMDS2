@@ -21,12 +21,12 @@ class VistaProducto_administrador extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; background-color: #F1F2F2; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout">
   <label style="margin-left: var(--lumo-space-xl);" id="label">Nombre producto </label>
   <label style="margin-left: 15%;" id="label2">Precio</label>
-  <label style="margin-left: 45%; width: 100%;" id="label1">Código producto</label>
+  <label style="margin-left: 45%; width: 100%;" id="label1">Codigo producto</label>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; background-color: #F1F2F2; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout1">
   <vaadin-list-box style="margin-top: var(--lumo-space-xl); padding: var(--lumo-space-l); background-color:#D0D1D1; width: 100%;" id="vaadinListBox">
    <vaadin-item id="vaadinItem">
-     Características 
+    Caracteristicas
    </vaadin-item>
   </vaadin-list-box>
   <img id="fotoProducto" style="width: 100%; height: 100%;">

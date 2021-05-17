@@ -57,39 +57,34 @@ public class Buscador extends VistaBuscador {
 
 		iUR_UNR i = new BDPrincipal();
 		this._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
+			System.out.println("AA");
 			try {
-				this._productos_busqueda.getVaadinHorizontalLayout().removeAll();
 				this._productos_busqueda.getVaadinHorizontalLayout1().removeAll();
-				
-				if(this._busquedaTF.getValue().toString().equals("")) {
-				Notification.show("Introduzca un producto en el buscador para realizar la busqueda");
-				
-				}else {
+
+				if (this._busquedaTF.getValue().toString().equals("")) {
+					Notification.show("Introduzca un producto en el buscador para realizar la busqueda");
+
+				} else {
 					this.listaProductosBusqueda = i.cargarProductosPorCategoria(this.categoriasBuscador.getValue(),
 							this._busquedaTF.getValue());
 				}
-				if(this.listaProductosBusqueda != null) {
-					int contador = 1;
+				
+				if (this.listaProductosBusqueda != null) {
 					for (base_de_datos.Producto producto : this.listaProductosBusqueda) {
-						Producto_busqueda pb = new Producto_busqueda(this._productos_busqueda, producto);
+						Producto_busqueda pb = new Producto_busqueda(this._productos_busqueda, producto, this._menu_UR_UNR._uR_UNR);
 						this._productos_busqueda._list_Producto_busqueda.add(pb);
-						if (contador % 2 != 0) {
-							this._productos_busqueda.getVaadinHorizontalLayout1().add(pb);
-							contador++;
-						} else {
-							this._productos_busqueda.getVaadinHorizontalLayout().add(pb);
-							contador++;
-						}
+						VerticalLayout productoNuevo = new VerticalLayout();
+						productoNuevo.add(pb);
+						this._productos_busqueda.getVaadinHorizontalLayout1().add(productoNuevo);
 					}
 					this._menu_UR_UNR._uR_UNR.limpiarInterfaz();
 					this._menu_UR_UNR.layout.add(this._productos_busqueda);
 				}
-					
-				
+
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}
-			
+
 		});
 
 	}

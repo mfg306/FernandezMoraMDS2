@@ -25,7 +25,7 @@ class VistaAdministrador extends PolymerElement {
    </vaadin-button>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout2">
-   <h2 style="align-self: center;" id="h21">Tus categorías</h2>
+   <h2 style="align-self: center;" id="h21">Tus categorias</h2>
    <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_gestionar_categorias">
      Gestionar 
    </vaadin-button>

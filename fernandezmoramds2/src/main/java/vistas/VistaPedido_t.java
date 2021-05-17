@@ -33,14 +33,14 @@ public class VistaPedido_t extends PolymerTemplate<VistaPedido_t.VistaPedido_tMo
 	private Label label1;
 	@Id("label2")
 	private Label label2;
-	@Id("vaadinCheckbox")
-	private Checkbox vaadinCheckbox;
 	@Id("vaadinVerticalLayout2")
 	private Element vaadinVerticalLayout2;
-	@Id("ironIcon")
-	private Element ironIcon;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("vaadinButton1")
+	private Button vaadinButton1;
+	@Id("ironIcon")
+	private Element ironIcon;
 
 	/**
      * Creates a new VistaPedido_t.
@@ -104,14 +104,6 @@ public class VistaPedido_t extends PolymerTemplate<VistaPedido_t.VistaPedido_tMo
 		this.label2 = label2;
 	}
 
-	public Checkbox getVaadinCheckbox() {
-		return vaadinCheckbox;
-	}
-
-	public void setVaadinCheckbox(Checkbox vaadinCheckbox) {
-		this.vaadinCheckbox = vaadinCheckbox;
-	}
-
 	public Element getVaadinVerticalLayout2() {
 		return vaadinVerticalLayout2;
 	}
@@ -120,19 +112,27 @@ public class VistaPedido_t extends PolymerTemplate<VistaPedido_t.VistaPedido_tMo
 		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
 	}
 
-	public Element getIronIcon() {
-		return ironIcon;
-	}
-
-	public void setIronIcon(Element ironIcon) {
-		this.ironIcon = ironIcon;
-	}
-
 	public Button getVaadinButton() {
 		return vaadinButton;
 	}
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public Button getVaadinButton1() {
+		return vaadinButton1;
+	}
+
+	public void setVaadinButton1(Button vaadinButton1) {
+		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
 	}
 }

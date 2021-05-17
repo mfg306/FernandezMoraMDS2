@@ -19,7 +19,10 @@ public class Iniciar_sesion extends VistaIniciar_sesion {
 	public Iniciar_sesion() {
 
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-
+		this.getBotonRegistrarse().setVisible(false);
+		this.getVaadinButton1().setVisible(false);
+		this.getModoEmpleado().setVisible(true);
+		this.getH1().setVisible(false);
 		inicializar();
 	}
 

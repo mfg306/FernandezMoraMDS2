@@ -18,14 +18,14 @@ class VistaProducto_listado extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; align-items: center; margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m);" id="verticalLayout_producto_listado">
  <vaadin-horizontal-layout theme="spacing" style="width: 60%; background-color: #F1F2F2; padding: var(--lumo-space-s);" id="vaadinHorizontalLayout">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: center;" id="vaadinHorizontalLayout1">
-   <label style="align-self: center;" id="label">Nombre producto</label>
+   <label style="align-self: center;" id="label"></label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout2">
-   <label style="align-self: center;" id="label1">Precio</label>
+   <label style="align-self: center;" id="label1"></label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout3">
    <vaadin-button theme="primary" style="align-self: center; margin-right: var(--lumo-space-m); background-color: #ae1641;" id="vaadinButton">
-     Añadir 
+    Anadir
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>

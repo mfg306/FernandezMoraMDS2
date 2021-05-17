@@ -15,7 +15,7 @@ class VistaSolicitar_identificacion extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: center; justify-content: center;" id="vaadinVerticalLayout">
- <span style="font-size: 4vw; font-weight: bold; align-self: center; text-align: center; margin-top: var(--lumo-space-xl);" id="span">INICIA SESIÓN O REGÍSTRATE PARA REALIZAR UNA COMPRA </span>
+ <span style="font-size: 4vw; font-weight: bold; align-self: center; text-align: center; margin-top: var(--lumo-space-xl);" id="span">INICIA SESION O REGISTRATE PARA REALIZAR UNA COMPRA</span>
 </vaadin-vertical-layout>
 `;
     }

@@ -25,11 +25,11 @@ class VistaEditar_perfil extends PolymerElement {
   <vaadin-text-field style="align-self: center; width: 80%;" placeholder="Nombre de usuario" id="nombre_usuario"></vaadin-text-field>
   <vaadin-text-field style="align-self: center; width: 80%;" placeholder="Nombre" id="nombre"></vaadin-text-field>
   <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Apellidos" id="apellidos"></vaadin-text-field>
-  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Correo electrónico" id="correo_electronico"></vaadin-text-field>
-  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Dirección envío" id="direccion_envio"></vaadin-text-field>
-  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Método de pago" id="metodo_pago"></vaadin-text-field>
+  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Correo electronico" id="correo_electronico"></vaadin-text-field>
+  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Direccion envio" id="direccion_envio"></vaadin-text-field>
+  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Metodo de pago" id="metodo_pago"></vaadin-text-field>
   <vaadin-button style="width: 80%; align-self: center; color: #ae1641;" id="boton_cambiar_contrasenia">
-    Cambiar contraseña 
+   Cambiar contrasena 
   </vaadin-button>
   <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_guardar">
     Guardar 

@@ -82,7 +82,7 @@ public class Menu_UR extends Menu_UR_UNR {
 				this._ver_carrito_UR = new Ver_carrito_UR(this);
 			}
 
-			this._ver_carrito_UR._productos_carrito.actualizarListaProductos(this._uR.listaAux);
+			this._ver_carrito_UR._productos_carrito.actualizarListaProductos(this._uR.listaAuxUR);
 			ocultar_Informacion_Al_Abrir_Carrito();
 			ocultarInformacionVerBandejaDeEntrada();
 			ocultarInformacionPedidos();

@@ -1,7 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class VistaProducto_categoria extends PolymerElement {
 
@@ -16,13 +15,10 @@ class VistaProducto_categoria extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <img style="width: 100%; height: 100%;" id="imagen_producto">
+ <img style="width: 100%; height: 100%; align-self: center;" id="imagen_producto">
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout">
-  <span style="align-self: center;" id="nombre_producto">Nombre Producto</span>
-  <span id="precio_producto" style="align-self: center;">Precio</span>
-  <vaadin-button id="verProducto" style="color: #ae1641;">
-    Ver producto 
-  </vaadin-button>
+  <span style="align-self: center;" id="nombre_producto"></span>
+  <span id="precio_producto" style="align-self: center;"></span>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

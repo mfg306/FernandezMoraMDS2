@@ -19,11 +19,11 @@ class VistaVer_ficha_cliente extends PolymerElement {
   <vaadin-button theme="primary" style="align-self: flex-end; margin-right: var(--lumo-space-s); background-color: #ae1641;" id="vaadinButton">
     Cerrar 
   </vaadin-button>
-  <h3 style="align-self: center;" id="h3">Código cliente</h3>
+  <h3 style="align-self: center;" id="h3">Codigo cliente</h3>
   <label style="padding: var(--lumo-space-m);" id="label">Nombre</label>
   <label style="padding: var(--lumo-space-m);" id="label1">Apellidos</label>
   <label style="padding: var(--lumo-space-m);" id="label2">Dirección</label>
-  <label style="padding: var(--lumo-space-m);" id="label3">Correo electrónico</label>
+  <label style="padding: var(--lumo-space-m);" id="label3">Correo electronico</label>
   <label style="padding: var(--lumo-space-m);" id="label4">Modo de pago</label>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

@@ -20,7 +20,7 @@ class VistaEditar_empleado extends PolymerElement {
  <h1 style="align-self: center;" id="h1">Editar empleado</h1>
  <vaadin-vertical-layout theme="spacing" style="width: 80%; padding: 10%; align-self: center; background-color: #F1F2F2; " id="vaadinVerticalLayout1">
   <vaadin-text-field style="align-self: center; width: 50%;" placeholder="Introducir nuevo correo" id="vaadinTextField1"></vaadin-text-field>
-  <vaadin-text-field style="align-self: center; width: 50%;" placeholder="Introducir nueva contraseña" id="vaadinTextField"></vaadin-text-field>
+  <vaadin-text-field style="align-self: center; width: 50%;" placeholder="Introducir nueva contrasena" id="vaadinTextField"></vaadin-text-field>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout">
    <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
      Guardar 

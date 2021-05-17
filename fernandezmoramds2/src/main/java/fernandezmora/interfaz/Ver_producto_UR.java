@@ -17,7 +17,6 @@ public class Ver_producto_UR extends Producto_UNR {
 		super(_ur, p);
 		if (_ur instanceof UR) {
 			this._uR = (UR) _ur;
-		this.Anadir_al_carrito(p);
 		}
 		Comentar();
 		inicializar(_ur, p);
@@ -60,7 +59,6 @@ public class Ver_producto_UR extends Producto_UNR {
 					Notification.show("Por favor, realice un comentario o añada una valoración");
 				}
 			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
@@ -74,7 +72,6 @@ public class Ver_producto_UR extends Producto_UNR {
 
 				ur.valorar(this.producto.getId_Producto(), this._uR.UR.getId_Usuario(), this.valoracion.getValue());
 			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
@@ -87,18 +84,17 @@ public class Ver_producto_UR extends Producto_UNR {
 			Producto_carrito pc = new Producto_carrito(this, p, this._uR);
 
 			// Anadirlo al listado de productos del usuario
-			if(!this._uR.listaAux.contains(pc)) {
+			if (!this._uR.listaAuxUR.contains(pc)) {
 				pc.incrementarCantidad();
 				this._uR.miListadoProductos(pc);
-				Notification.show("" + this._uR.listaAux.size());
+				Notification.show("" + this._uR.listaAuxUR.size());
 			} else {
 				int index = 0;
-				index = this._uR.listaAux.indexOf(pc);
-				this._uR.listaAux.get(index).incrementarCantidad();
+				index = this._uR.listaAuxUR.indexOf(pc);
+				this._uR.listaAuxUR.get(index).incrementarCantidad();
 			}
-			
-		});
 
+		});
 
 	}
 

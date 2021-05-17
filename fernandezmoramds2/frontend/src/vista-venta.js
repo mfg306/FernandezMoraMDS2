@@ -18,10 +18,9 @@ class VistaVenta extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%; margin-top: var(--lumo-space-l);" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; background-color: #F1F2F2; align-self: center; justify-content: space-around;" id="vaadinHorizontalLayout">
-  <h2 style="flex-grow: 0; align-self: center; flex-shrink: 1;" id="h2">Imagen</h2>
   <vaadin-list-box style="padding: var(--lumo-space-l); flex-grow: 0; background-color:#D0D1D1; flex-shrink: 1; width: 40%;" id="vaadinListBox">
    <vaadin-item id="vaadinItem">
-     Características 
+    Caracteristicas
    </vaadin-item>
   </vaadin-list-box>
   <label style="align-self: center; flex-grow: 0; flex-shrink: 1; margin-right: var(--lumo-space-l);" id="label">Estado venta</label>

@@ -30,8 +30,8 @@ class VistaEditar_producto extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; width: 100%; align-items: center;" id="vaadinVerticalLayout1">
    <vaadin-text-field label="Nuevo nombre producto:" placeholder="Nombre producto" id="nuevoNombreProducto" style="width: 100%;"></vaadin-text-field>
    <vaadin-text-field label="Nuevo precio:" placeholder="Precio" id="nuevoPrecio" style="width: 100%;"></vaadin-text-field>
-   <vaadin-text-field label="Número de unidades:" placeholder="Número unidades" id="numUnidades" style="width: 100%;"></vaadin-text-field>
-   <vaadin-text-area label="Añade una nueva descripción:" placeholder="Descripción" style="flex-grow: 0; flex-shrink: 0; width: 100%;" id="añadeUnaNuevaDescripción"></vaadin-text-area>
+   <vaadin-text-field label="Numero de unidades:" placeholder="Numero unidades" id="numUnidades" style="width: 100%;"></vaadin-text-field>
+   <vaadin-text-area label="Anade una nueva descripcion:" placeholder="Descripcion" style="flex-grow: 0; flex-shrink: 0; width: 100%;" id="añadeUnaNuevaDescripción"></vaadin-text-area>
   </vaadin-vertical-layout>
   <vaadin-horizontal-layout theme="spacing" style="margin-top: var(--lumo-space-l); justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout1">
    <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">

@@ -50,6 +50,18 @@ public class Producto extends VistaProducto{
 		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()));
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
 		
+		this.getImg().setWidth("20vw");
+		this.getImg1().setWidth("8vw");
+		this.getImg2().setWidth("8vw");
+		this.getImg3().setWidth("8vw");
+		this.getImg4().setWidth("8vw");
+		
+		if(this.producto._Imagen.toArray().length != 0) this.getImg().setSrc(this.producto._Imagen.toArray()[0].getRuta());
+		if(this.producto._Imagen.toArray().length > 1) this.getImg1().setSrc(this.producto._Imagen.toArray()[1].getRuta());
+		if(this.producto._Imagen.toArray().length > 2) this.getImg2().setSrc(this.producto._Imagen.toArray()[2].getRuta());
+		if(this.producto._Imagen.toArray().length > 3) this.getImg3().setSrc(this.producto._Imagen.toArray()[3].getRuta());
+		if(this.producto._Imagen.toArray().length > 4) this.getImg4().setSrc(this.producto._Imagen.toArray()[4].getRuta());
+		
 		
 		try {
 			this.comentarios = iUr_UNR.cargarComentarios(this.producto.getId_Producto());

@@ -41,7 +41,6 @@ public class BD_Recibido {
 		Date date = new Date();
 		formatter.format(date);
 		
-		
 		try {
 			
 			Recibido recibido = RecibidoDAO.createRecibido();
@@ -50,17 +49,18 @@ public class BD_Recibido {
 			recibido.setFecha_estado(date.toString());
 			recibido.setNum_total_unidades(aEnviado.getNum_total_unidades());
 			recibido.setPrecio_total(aEnviado.getPrecio_total());
+			
+			RecibidoDAO.save(recibido);
 
 		} catch(Exception e) {
 			e.printStackTrace();
 			t.rollback();
 			return false;
 		}
-		
 
 		this._bDPrincipal = new BDPrincipal();
+		this._bDPrincipal.eliminarEnviado(aEnviado);
 		
-		/*Llamar al metodo de eliminar Enviado que tengo que añadirlo, esperando respuesta de Jesus*/
 		
 		return true;
 		

@@ -24,7 +24,7 @@ class VistaVer_bandeja_de_entrada extends PolymerElement {
       Correo 
     </vaadin-button>
     <vaadin-button theme="primary" style="margin: var(--lumo-space-xl); background-color: #ae1641;" id="cerrar_sesion">
-      Cerrar sesión 
+     Cerrar sesion
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>

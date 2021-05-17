@@ -27,8 +27,6 @@ public class VistaPedido_e extends PolymerTemplate<VistaPedido_e.VistaPedido_eMo
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("label")
-	private Label label;
 	@Id("label1")
 	private Label label1;
 	@Id("label2")
@@ -37,6 +35,8 @@ public class VistaPedido_e extends PolymerTemplate<VistaPedido_e.VistaPedido_eMo
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("botonAsignar")
 	private Button botonAsignar;
+	@Id("numTotalUnidades")
+	private Label numTotalUnidades;
 	/**
      * Creates a new VistaPedido_e.
      */
@@ -75,14 +75,6 @@ public class VistaPedido_e extends PolymerTemplate<VistaPedido_e.VistaPedido_eMo
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public Label getLabel() {
-		return label;
-	}
-
-	public void setLabel(Label label) {
-		this.label = label;
-	}
-
 	public Label getLabel1() {
 		return label1;
 	}
@@ -113,6 +105,14 @@ public class VistaPedido_e extends PolymerTemplate<VistaPedido_e.VistaPedido_eMo
 
 	public void setBotonAsignar(Button botonAsignar) {
 		this.botonAsignar = botonAsignar;
+	}
+
+	public Label getNumTotalUnidades() {
+		return numTotalUnidades;
+	}
+
+	public void setNumTotalUnidades(Label numTotalUnidades) {
+		this.numTotalUnidades = numTotalUnidades;
 	}
 
 }
