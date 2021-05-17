@@ -5,6 +5,7 @@ import java.util.Vector;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -23,6 +24,7 @@ public class Categorias extends VistaCategorias {
 	public VerticalLayout layout = this.getLista_Categorias().as(VerticalLayout.class);
 	public Span pagina, de, primeraPagina, ultimaPagina;
 	public Button siguiente, anterior;
+	public H1 noHayCategorias;
 	private int categoriasPorPagina = 2;
 	private int numeroTotalRegistros = 0;
 	private int numeroTotalPaginas = 0;
@@ -92,6 +94,12 @@ public class Categorias extends VistaCategorias {
 	public void mostrar_Categorias_Paginadas() {
 
 		this.layout.removeAll();
+		if(this._list_Categorias.size() == 0) {
+			this.getPartePaginacion().as(VerticalLayout.class).removeAll();
+			noHayCategorias = new H1();
+			noHayCategorias.setText("No hay categorias disponibles");
+			this.layout.add(noHayCategorias);
+		}else {
 
 		if (numeroTotalRegistros % 2 == 0) {
 			numeroTotalPaginas = numeroTotalRegistros / categoriasPorPagina;
@@ -107,7 +115,7 @@ public class Categorias extends VistaCategorias {
 				break;
 			layout.add(this._list_Categorias.get(i));
 		}
-
+		}
 	}
 
 	/*
