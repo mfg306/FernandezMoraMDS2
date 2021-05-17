@@ -22,7 +22,7 @@ public class Producto_UNR extends Producto {
 			if(!this._uNR_.listaAux.contains(pc)) {
 				pc.incrementarCantidad();
 				this._uNR_.miListadoProductos(pc);
-				Notification.show("" + this._uNR_.listaAux.size());
+				Notification.show("UNR" + this._uNR_.listaAux.size());
 			} else {
 				int index = 0;
 				index = this._uNR_.listaAux.indexOf(pc);

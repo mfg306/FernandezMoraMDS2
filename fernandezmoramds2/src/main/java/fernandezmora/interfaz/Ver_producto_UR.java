@@ -17,7 +17,7 @@ public class Ver_producto_UR extends Producto_UNR {
 		super(_ur, p);
 		if (_ur instanceof UR) {
 			this._uR = (UR) _ur;
-		this.Anadir_al_carrito(p);
+			this.Anadir_al_carrito(p);
 		}
 		Comentar();
 		inicializar(_ur, p);
@@ -37,6 +37,7 @@ public class Ver_producto_UR extends Producto_UNR {
 				if (this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() != null) {
 					Valorar();
 					Notification.show("Valoración enviada");
+					this.inicializar();
 				}
 				if (!this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() != null) {
 					ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(),
@@ -87,18 +88,17 @@ public class Ver_producto_UR extends Producto_UNR {
 			Producto_carrito pc = new Producto_carrito(this, p, this._uR);
 
 			// Anadirlo al listado de productos del usuario
-			if(!this._uR.listaAux.contains(pc)) {
+			if (!this._uR.listaAux.contains(pc)) {
 				pc.incrementarCantidad();
 				this._uR.miListadoProductos(pc);
-				Notification.show("" + this._uR.listaAux.size());
+				Notification.show("UR" + this._uR.listaAux.size());
 			} else {
 				int index = 0;
 				index = this._uR.listaAux.indexOf(pc);
 				this._uR.listaAux.get(index).incrementarCantidad();
 			}
-			
-		});
 
+		});
 
 	}
 
