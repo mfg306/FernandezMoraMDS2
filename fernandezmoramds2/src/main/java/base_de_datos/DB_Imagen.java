@@ -19,6 +19,9 @@ public class DB_Imagen {
 		imagen.setRuta(aImagenes);
 		imagen.set_Producto(aProducto);
 		
+		System.out.println(aImagenes);
+		System.out.println(aProducto.getId_Producto());
+		
 		if(aEsPrincipal) imagen.setPrincipal(true);
 		else imagen.setPrincipal(false);
 		

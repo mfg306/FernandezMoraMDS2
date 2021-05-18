@@ -16,22 +16,24 @@ public class Producto_administrador extends VistaProducto_administrador {
 	public VerticalLayout layout;
 	
 	public Producto_administrador(base_de_datos.Producto p, Productos_administrador pa) {
-		this.getLabel().setText(p.getNombre());
-		this.getLabel1().setText("" + p.getId_Producto());
-		this.getLabel2().setText("" + p.getPrecio_producto());
-		this.getVaadinItem().setText(p.getDescripcion());
-		this.p = p;
-		if(this.p._Imagen != null) {
-			base_de_datos.Imagen imagenes[] = this.p._Imagen.toArray();
-			
-			this.getFotoProducto().setWidth("10vw");
-			this.getFotoProducto().setHeight("auto");
-			
-			for(base_de_datos.Imagen i : imagenes){
-				if(i.getPrincipal()) this.getFotoProducto().setSrc(i.getRuta());
-			}
+		if(p != null) {
+			this.getLabel().setText(p.getNombre());
+			this.getLabel1().setText("" + p.getId_Producto());
+			this.getLabel2().setText("" + p.getPrecio_producto());
+			this.getVaadinItem().setText(p.getDescripcion());
+			this.p = p;
+			if(this.p._Imagen != null) {
+				base_de_datos.Imagen imagenes[] = this.p._Imagen.toArray();
+				
+				this.getFotoProducto().setWidth("10vw");
+				this.getFotoProducto().setHeight("auto");
+				
+				for(base_de_datos.Imagen i : imagenes){
+					if(i.getPrincipal()) this.getFotoProducto().setSrc(i.getRuta());
+				}
+			}	
 		}
-		
+
 		this._productos_administrador = pa;
 		this.layout = this._productos_administrador._gestionar_productos.layout;
 		Eliminar_producto();
