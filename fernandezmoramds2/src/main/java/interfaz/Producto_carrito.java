@@ -25,6 +25,8 @@ public class Producto_carrito extends VistaProducto_carrito {
 		
 		inicializar(pc);
 	}
+	
+	
 
 	public void incrementarCantidad() {
 		this.cantidad++;

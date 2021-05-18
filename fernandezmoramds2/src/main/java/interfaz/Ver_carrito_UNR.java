@@ -1,6 +1,9 @@
 package interfaz;
 
+import java.util.Vector;
+
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Ver_carrito_UNR extends Ver_carrito {
@@ -26,6 +29,7 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		abrir_Producto(this._menu_UNR._uNR_.listaAuxUNR, this.layout);
 		cerrar_Producto(this._menu_UNR.getBoton_carrito(), this._menu_UNR._uNR_.listaAuxUNR, this.layout);
 	}
+	
 	
 	public void retroceder(){
 		Button retroceder = new Button();

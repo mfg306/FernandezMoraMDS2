@@ -57,7 +57,6 @@ public class Buscador extends VistaBuscador {
 
 		iUR_UNR i = new BDPrincipal();
 		this._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
-			System.out.println("AA");
 			try {
 				this._productos_busqueda.getVaadinHorizontalLayout1().removeAll();
 
