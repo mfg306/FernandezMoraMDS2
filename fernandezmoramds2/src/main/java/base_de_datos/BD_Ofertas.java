@@ -119,7 +119,7 @@ public class BD_Ofertas {
 			t2.rollback();
 		}
 		
-		HitoPersistentManager.instance().disposePersistentManager();
+//		HitoPersistentManager.instance().disposePersistentManager();
 		
 		/*
 		 * Paso 3. Eliminar el producto de la lista porque ya lo tenemos con
