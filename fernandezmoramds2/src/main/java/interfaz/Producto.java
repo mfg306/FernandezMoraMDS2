@@ -4,11 +4,12 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
-import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
-import base_de_datos.Comentario;
 import basededatos.BDPrincipal;
 import basededatos.iUR_UNR;
 import vistas.VistaProducto;
@@ -25,18 +26,33 @@ public class Producto extends VistaProducto{
 	public base_de_datos.Valoracion[]valoraciones;
 	public base_de_datos.Comentario[] comentarios;
 	public VerticalLayout listaComentarios;
+	HorizontalLayout estrellitas;
+	public int valoracionMedia;
+	VerticalLayout listaValoraciones;
+
 	
 	public Producto(base_de_datos.Producto p) {
 		this.producto = p;
+
+		estrellitas = new HorizontalLayout();
 		listaComentarios = this.getListaComentarios().as(VerticalLayout.class);
+		listaValoraciones = this.getVaadinVerticalLayout5().as(VerticalLayout.class);
+		
 		inicializar();
 	}
 	
 	public void inicializar() {
-		this.listaComentarios.removeAll();
+		estrellitas = new HorizontalLayout();
+		listaValoraciones.removeAll();
+		listaComentarios.removeAll();
+
 		this._comentarios = new Comentarios(this);
-		verProducto();
+
 		this.listaComentarios.add(this._comentarios);	
+		
+		this.verProducto();
+		this.cargarLasEstrellasDeValoracion((int)valoracionMedia);
+		listaValoraciones.add(estrellitas);		
 	}
 	
 	public void verProducto() {
@@ -85,14 +101,28 @@ public class Producto extends VistaProducto{
 		if(this.valoraciones.length != 0 ) mediaValoracion = valoracion/this.valoraciones.length;
 		else mediaValoracion = valoracion; 
 		
-		this.getValoracion_media().setText(String.valueOf(mediaValoracion) + " estrellas");
+		valoracionMedia = (int)mediaValoracion;
+		
 		
 		for(base_de_datos.Comentario c : this.comentarios) {
 			this._comentarios.anadirComentarios(c);
-			this._comentarios.inicializar(this);
 		}
 		
 	}
+	
+	private void cargarLasEstrellasDeValoracion(int valoracion) {
+        for (int i = 0; i < 5; i++) {
+            if (i < valoracion) {
+                Icon IconEstrella = VaadinIcon.STAR.create();
+                IconEstrella.setColor("gold");
+                estrellitas.add(IconEstrella);
+            } else {
+                Icon IconEstrellaVacia = VaadinIcon.STAR_O.create();
+                IconEstrellaVacia.setColor("gold");
+                estrellitas.add(IconEstrellaVacia);
+            }
+        }
+    }
 	
 	
 	

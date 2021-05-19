@@ -119,15 +119,17 @@ public class BD_Ofertas {
 			t2.rollback();
 		}
 		
-//		HitoPersistentManager.instance().disposePersistentManager();
-		
 		/*
 		 * Paso 3. Eliminar el producto de la lista porque ya lo tenemos con
 		 * Producto_Rebajado y no lo queremos repetido
 		 */
+		
+		System.out.println("Oferta creada con exito");
 		for (Producto p : aListaProductos) {
 			this._bDPrincipal.eliminarProductoAdministrador(p.getId_Producto());
 		}
+		
+		System.out.println("Productos elmininados");
 		
 		return o;
 

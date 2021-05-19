@@ -40,6 +40,7 @@ public class Ver_producto_UR extends Producto_UNR {
 				if (!this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() != null) {
 					ur.comentar(this.getDejar_comentario().getValue(), this.producto.getId_Producto(),
 							this._uR.UR.getId_Usuario());
+					Valorar();
 
 					Notification.show("Comentario y valoracion enviada");
 					this.inicializar();
@@ -58,6 +59,7 @@ public class Ver_producto_UR extends Producto_UNR {
 				if (this.getDejar_comentario().getValue().equals("") && this.valoracion.getValue() == null) {
 					Notification.show("Por favor, realice un comentario o añada una valoración");
 				}
+				
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}
@@ -67,14 +69,11 @@ public class Ver_producto_UR extends Producto_UNR {
 
 	public void Valorar() {
 		iUR ur = new BDPrincipal();
-		this.getEnviar_comentario().addClickListener(event -> {
-			try {
-
-				ur.valorar(this.producto.getId_Producto(), this._uR.UR.getId_Usuario(), this.valoracion.getValue());
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
-		});
+		try {
+			ur.valorar(this.producto.getId_Producto(), this._uR.UR.getId_Usuario(), this.valoracion.getValue());
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

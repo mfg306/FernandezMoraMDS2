@@ -23,8 +23,7 @@ public class Comentarios extends VistaComentarios {
 	}
 	
 	public void anadirComentarios(base_de_datos.Comentario c) {
-	        Comentario comentario;
-			comentario = new Comentario(c,c.get_Realiza(),this);
+	        Comentario comentario = new Comentario(c,c.get_Realiza(),this);
 			this._list_Comentario.add(comentario);
 		    this.layout.add(comentario);
 			
