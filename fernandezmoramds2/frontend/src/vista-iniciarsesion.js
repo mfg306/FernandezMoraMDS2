@@ -33,8 +33,8 @@ class VistaIniciar_sesion extends PolymerElement {
    <vaadin-button theme="primary" id="boton_iniciar_sesion" class="botonPersonalizado" style="align-self: center; background-color: #ae1641;">
      Iniciar sesion 
    </vaadin-button>
-   <vaadin-button id="boton_iniciar_sesion_empleados" style="align-self: center; background-color: #ae1641;">
-     Button 
+   <vaadin-button id="boton_iniciar_sesion_empleados" style="align-self: center; background-color: #ae1641;" theme="primary">
+    Iniciar sesión
    </vaadin-button>
    <vaadin-button theme="tertiary-inline" id="botonRegistrarse" style="align-self: center; color: #ae1641;">
      ¿No tienes cuenta? Registrate 
