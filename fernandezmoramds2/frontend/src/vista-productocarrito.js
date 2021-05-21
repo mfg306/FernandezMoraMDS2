@@ -21,9 +21,6 @@ class VistaProducto_carrito extends PolymerElement {
   <vaadin-button style="width: 100%;color: #ae1641;" id="vaadinButton">
     Eliminar 
   </vaadin-button>
-  <vaadin-button id="verProductoCarrito" style="width: 100%; color: #ae1641;">
-    Ver producto 
-  </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

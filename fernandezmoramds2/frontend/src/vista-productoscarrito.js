@@ -24,7 +24,7 @@ class VistaProductos_carrito extends PolymerElement {
     Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;" id="vaadinHorizontalLayout1"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout style="width: 100%; height: 100%;" id="vaadinHorizontalLayout1"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
     }

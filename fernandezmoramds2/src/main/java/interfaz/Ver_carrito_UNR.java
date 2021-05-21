@@ -10,7 +10,6 @@ public class Ver_carrito_UNR extends Ver_carrito {
 
 	public Menu_UNR _menu_UNR;
 	public Solicitar_identificación _solicitar_identificación;
-	public Productos_carrito _productos_carrito; // ¿Esto podemos hacerlo? Esq asi es mucho mas facil :( 
 	public VerticalLayout layout;
 
 	public Ver_carrito_UNR(Menu_UNR _menu_UNR) {
@@ -20,7 +19,6 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		layout = this.getVaadinVerticalLayout1().as(VerticalLayout.class);
 		
 		inicializar();
-		retroceder();
 	}
 
 	public void inicializar() {
@@ -30,18 +28,6 @@ public class Ver_carrito_UNR extends Ver_carrito {
 		cerrar_Producto(this._menu_UNR.getBoton_carrito(), this._menu_UNR._uNR_.listaAuxUNR, this.layout);
 	}
 	
-	
-	public void retroceder(){
-		Button retroceder = new Button();
-		retroceder.setText("Atras");
-		this.layout.add(retroceder);
-		
-		retroceder.addClickListener(event ->{
-			this._menu_UNR._uNR_.inicializarURUNR();
-			limpiarInterfaz();
-		});
-		
-	}
 	
 	public void limpiarInterfaz() {
 		this._menu_UNR._uNR_.layout.remove(this);

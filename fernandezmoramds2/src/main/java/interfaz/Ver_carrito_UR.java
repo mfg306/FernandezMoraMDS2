@@ -7,12 +7,10 @@ public class Ver_carrito_UR extends Ver_carrito {
 	public Menu_UR _menu_UR;
 	public Introducir_datos_compra _introducir_datos_compra;
 	public VerticalLayout layout;
-	public Productos_carrito _productos_carrito; // ¿Esto podemos hacerlo? Esq asi es mucho mas facil :(
 
 	public Ver_carrito_UR(Menu_UR _menu_UR) {
 		this._menu_UR = _menu_UR;
 		this._productos_carrito = new Productos_carrito(this._menu_UR._uR.listaAuxUR,this);
-		System.out.println(this._menu_UR._uR.listaAuxUR.size());
 
 		layout = this.getVaadinVerticalLayout1().as(VerticalLayout.class);
 		inicializar();

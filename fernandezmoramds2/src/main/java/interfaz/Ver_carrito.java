@@ -20,7 +20,7 @@ public abstract class Ver_carrito extends VistaVer_carrito {
 
 	public void abrir_Producto(Vector<Producto_carrito> lista, VerticalLayout layout) {
 		for (Producto_carrito pca : lista) {
-			pca.getVerProductoCarrito().addClickListener(event -> {
+			pca.getImg().addClickListener(event -> {
 				this.getVaadinHorizontalLayout().setVisible(false);
 				pca._producto.getVaadinVerticalLayout2().setVisible(false);
 				layout.add(pca._producto);

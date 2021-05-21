@@ -21,6 +21,8 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this.producto = pc;
 		
 		this.getImg().setWidth("10vw");
+		this.getImg().setHeight("15vw");
+		
 		this.getImg().setSrc(pc._Imagen.toArray()[0].getRuta());
 		
 		inicializar(pc);
