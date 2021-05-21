@@ -36,8 +36,6 @@ public abstract class UR_UNR extends VistaUrunr{
 		this.layoutOfertas.removeAll();
 		this.layoutProductosMasVendidosPorCategorias.removeAll();
 		
-		
-		this._ver_categorias = new Ver_categorias(this);
 		this._ofertas = new Ofertas(this);
 		this._productos_mas_vendidos_por_categorias = new Productos_mas_vendidos_por_categorias(this);
 
@@ -49,6 +47,8 @@ public abstract class UR_UNR extends VistaUrunr{
 
 	public void abrir_Ver_Categorias() {
 		this.getBotonVerCategorias().addClickListener(event -> {
+			this._ver_categorias = new Ver_categorias(this);
+
 			this.getBotonVerCategorias().setVisible(false);
 			this.getProductosMasVendidosPorCategorias().setVisible(false);
 			this.layoutOfertas.setVisible(false);

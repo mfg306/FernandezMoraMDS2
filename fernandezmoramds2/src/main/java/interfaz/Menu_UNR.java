@@ -74,13 +74,10 @@ public class Menu_UNR extends Menu_UR_UNR {
 
 		if (this._ver_carrito_UNR != null) {
 			this._ver_carrito_UNR.setVisible(false);
-		}
-		if (this._ver_carrito_UNR != null) {
 			if (this._ver_carrito_UNR._solicitar_identificación != null) {
 				this._ver_carrito_UNR._solicitar_identificación.setVisible(false);
 			}
 		}
-
 	}
 
 	@Override
@@ -109,8 +106,12 @@ public class Menu_UNR extends Menu_UR_UNR {
 			
 			ocultar_Informacion_Al_Abrir_Carrito();
 			
-//			this._ver_carrito_UNR.layout.setVisible(false);
-
+			for(Oferta o : this._uNR_._ofertas._list_Ofertas) {
+				o.cerrar_Oferta();
+			}
+			
+			this._uNR_.inicializarURUNR();
+			
 			this._uNR_.layoutOfertas.setVisible(true);
 			this._uNR_.layoutProductosMasVendidosPorCategorias.setVisible(true);
 			this._uNR_.getBotonVerCategorias().setVisible(true);

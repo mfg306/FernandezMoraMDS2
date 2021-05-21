@@ -30,7 +30,6 @@ public class Ver_carrito_UR extends Ver_carrito {
 
 	public void ocultar_informacion_al_realizar_compra() {
 		this.getVaadinHorizontalLayout().setVisible(false);
-
 	}
 
 	@Override
