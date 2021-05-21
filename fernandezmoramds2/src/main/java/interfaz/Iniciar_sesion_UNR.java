@@ -26,11 +26,11 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	public VerticalLayout layout;
 	public base_de_datos.UR UR;
 	public base_de_datos.Administrador admin;
-	
+
 	public Iniciar_sesion_UNR(Menu_UNR munr) {
-		
+
 		UI.getCurrent().getPage().setTitle("Iniciar sesion");
-		
+
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this.inicializarUNR(munr);
 	}
@@ -39,6 +39,10 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this._menu_UNR = munr;
 
 		this._recuperar_contrasenia = new Recuperar_contrasenia(this);
+		this.getBoton_iniciar_sesion().setVisible(true);
+		this.getBoton_iniciar_sesion_empleados().setVisible(false);
+
+
 		this.getNombre_usuario().setVisible(false);
 		this.getCorreo().setVisible(true);
 		this.getBotonRegistrarse().setVisible(true);
@@ -47,6 +51,14 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this.getH1().setVisible(true);
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
+		abrirIniciarSesionEmpleados();
+		
+		
+		try {
+			this.iniciarSesion();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		};
 
 	}
 
@@ -67,35 +79,53 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		});
 	}
 
+	public void abrirIniciarSesionEmpleados() {
+		this.getEnlaceEmpleados().addClickListener(event -> {
+			this.getNombre_usuario().setVisible(true);
+			this.getCorreo().setVisible(false);
+			this.getBotonRegistrarse().setVisible(false);
+			this.getModoEmpleado().setVisible(true);
+			this.getVaadinButton1().setVisible(false);
+			this.getH1().setVisible(false);
+			this.getEnlaceEmpleados().setVisible(false);
+			
+			
+			this.getBoton_iniciar_sesion_empleados().setVisible(true);
+			this.getBoton_iniciar_sesion().setVisible(false);
+			
+			
+		});
+	}
+
 	public void limpiar_interfaz() {
 		this._menu_UNR.layout.remove(this);
 	}
 
-	@Override
 	public void iniciarSesion() throws PersistentException {
-			
+		System.out.println("UR");
+
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
+			System.out.println("UR");
 
 			iUNR_ iunr = new BDPrincipal();
 			base_de_datos.Usuario_General usuario = null;
 
 			try {
 				usuario = iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue());
-				
-				if(usuario != null && usuario instanceof base_de_datos.UR) {
+
+				if (usuario != null && usuario instanceof base_de_datos.UR) {
 					limpiar_interfaz();
 					this._menu_UNR.layout.add(new UR(usuario));
-				} else if(usuario != null && usuario instanceof base_de_datos.Administrador) {
+				} else if (usuario != null && usuario instanceof base_de_datos.Administrador) {
 					limpiar_interfaz();
-					this._menu_UNR.layout.add(new Administrador(usuario,this));
+					this._menu_UNR.layout.add(new Administrador(usuario, this));
 				} else {
 					Notification.show("El usuario no está registrado");
 				}
-		
+
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}
-
 		});
 
 	}

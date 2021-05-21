@@ -52,8 +52,9 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	@Id("modoEmpleado")
 	private H1 modoEmpleado;
 	@Id("enlaceEmpleados")
-	private Element enlaceEmpleados;
-
+	private Button enlaceEmpleados;
+	@Id("boton_iniciar_sesion_empleados")
+	private Button boton_iniciar_sesion_empleados;
 	/**
 	 * Creates a new VistaIniciar_sesion.
 	 */
@@ -173,12 +174,21 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 		this.modoEmpleado = modoEmpleado;
 	}
 
-	public Element getEnlaceEmpleados() {
+	public Button getEnlaceEmpleados() {
 		return enlaceEmpleados;
 	}
 
-	public void setEnlaceEmpleados(Element enlaceEmpleados) {
+	public void setEnlaceEmpleados(Button enlaceEmpleados) {
 		this.enlaceEmpleados = enlaceEmpleados;
 	}
+
+	public Button getBoton_iniciar_sesion_empleados() {
+		return boton_iniciar_sesion_empleados;
+	}
+
+	public void setBoton_iniciar_sesion_empleados(Button boton_iniciar_sesion_empleados) {
+		this.boton_iniciar_sesion_empleados = boton_iniciar_sesion_empleados;
+	}
+
 
 }

@@ -1,26 +1,14 @@
 package fernandezmora;
 
-import org.orm.PersistentException;
 
 import com.vaadin.flow.component.dependency.CssImport;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PreserveOnRefresh;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
-
-import basededatos.BDPrincipal;
-import basededatos.iAdministrador;
-import basededatos.iUNR_;
-import basededatos.iUR;
-import interfaz.Administrador;
-import interfaz.Encargado_de_compras;
-import interfaz.Gestionar_categorias;
-import interfaz.Iniciar_sesion_UNR;
-import interfaz.Transportista;
+import com.vaadin.flow.spring.annotation.EnableVaadin;
 import interfaz.UNR_;
-import interfaz.UR;
 
 /**
  * A sample Vaadin view class.
@@ -38,6 +26,7 @@ import interfaz.UR;
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 @PreserveOnRefresh
+@EnableVaadin(value = "interfaz")
 public class MainView extends VerticalLayout {
 
 	UNR_ unr = new UNR_();

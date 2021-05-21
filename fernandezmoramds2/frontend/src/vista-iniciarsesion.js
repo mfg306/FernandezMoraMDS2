@@ -28,15 +28,20 @@ class VistaIniciar_sesion extends PolymerElement {
    <vaadin-text-field id="nombre_usuario" style="width: 80%; align-self: center;" placeholder="Introduzca su nombre de usuario" required autofocus invalid></vaadin-text-field>
    <vaadin-password-field id="contrasenia" style="width: 80%; align-self: center;" required invalid placeholder="Introduzca su contrasena"></vaadin-password-field>
    <vaadin-button theme="tertiary-inline" id="botonOlvidarContraseña" class="boton-enlace" style="align-self: center; flex-grow: 0; flex-shrink: 0; color: #ae1641;">
-    ¿Has olvidado tu contrasena?
+     ¿Has olvidado tu contrasena? 
    </vaadin-button>
    <vaadin-button theme="primary" id="boton_iniciar_sesion" class="botonPersonalizado" style="align-self: center; background-color: #ae1641;">
-    Iniciar sesion
+     Iniciar sesion 
+   </vaadin-button>
+   <vaadin-button id="boton_iniciar_sesion_empleados" style="align-self: center; background-color: #ae1641;">
+     Button 
    </vaadin-button>
    <vaadin-button theme="tertiary-inline" id="botonRegistrarse" style="align-self: center; color: #ae1641;">
      ¿No tienes cuenta? Registrate 
    </vaadin-button>
-   <a href="iniciarSesionEmpleados" id="enlaceEmpleados" style="text-decoration: none; color: #ae1641; align-self: center;">¿Eres un empleado?</a>
+   <vaadin-button id="enlaceEmpleados" style="align-self: center; color: #ae1641;" theme="tertiary-inline">
+    ¿Eres un empleado?
+   </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
