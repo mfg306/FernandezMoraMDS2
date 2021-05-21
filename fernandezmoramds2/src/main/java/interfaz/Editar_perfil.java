@@ -16,7 +16,7 @@ import basededatos.iUR;
 import subirfotos.Uploader;
 import vistas.VistaEditar_perfil;
 
-public class Editar_perfil extends VistaEditar_perfil {
+public class Editar_perfil extends VistaEditar_perfil{
 	public Menu_UR _menu_UR;
 	public Verificacion_cuenta_eliminada _verificacion_cuenta_eliminada;
 	public Cambiar_contraseña _cambiar_contraseña;
@@ -49,15 +49,6 @@ public class Editar_perfil extends VistaEditar_perfil {
 			this._menu_UR.layout.add(cc);
 		});
 	}
-
-	/*public void eliminar_cuenta() {
-		this.getBoton_eliminar_cuenta().addClickListener(event -> {
-			Verificacion_cuenta_eliminada vce = new Verificacion_cuenta_eliminada(this._menu_UR);
-			limpiar_interfaz();
-			this._menu_UR.layout.add(vce);
-
-		});
-	}*/
 
 	public void limpiar_interfaz() {
 		this._menu_UR.layout.remove(this);
@@ -145,4 +136,5 @@ public class Editar_perfil extends VistaEditar_perfil {
 			}
 		});
 	}
+
 }

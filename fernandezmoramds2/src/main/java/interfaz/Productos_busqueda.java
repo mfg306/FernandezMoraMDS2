@@ -15,7 +15,6 @@ public class Productos_busqueda extends VistaProductos_busqueda{
 		this._buscador = buscador;
 		this._list_Producto_busqueda = new Vector<Producto_busqueda>();
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
-	
 	}
 
 	public void Ver_anteriores() {

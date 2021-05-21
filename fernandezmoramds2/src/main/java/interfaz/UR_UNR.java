@@ -58,8 +58,8 @@ public abstract class UR_UNR extends VistaUrunr{
 	}
 	
 	public void limpiarInterfaz( ) {
-		this.layoutOfertas.removeAll();
-		this.layoutProductosMasVendidosPorCategorias.removeAll();
+		this.layoutOfertas.setVisible(false);
+		this.layoutProductosMasVendidosPorCategorias.setVisible(false);
 		this.getBotonVerCategorias().setVisible(false);
 	}
 

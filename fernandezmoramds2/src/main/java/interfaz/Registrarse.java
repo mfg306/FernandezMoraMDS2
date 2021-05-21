@@ -55,14 +55,20 @@ public class Registrarse extends VistaRegistrarse implements Serializable {
 
 	public void registrarse() throws PersistentException {
 		iUNR_ iunr = new BDPrincipal();
-		boolean registroRealizado = iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(), this.getCorreo().getValue(), 
+		int registroRealizado = iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(), this.getCorreo().getValue(), 
 				this.getNombre_usuario().getValue(), this.getContrasenia().getValue(), this.getConfirmacionContrasenia().getValue());
 
-		if(registroRealizado) {
+		if(registroRealizado == 0) {
 			limpiar_interfaz();
 			Notification.show("Se ha registrado con exito. Inicie sesion");
-		}else {
+		}else if(registroRealizado == 1) {
 			Span mensajeError = new Span("La contraseña no debe ser mayor de 8 caracteres, debe contener al menos una mayuscula y un digito.");
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(mensajeError);
+		} else if(registroRealizado == 2) {
+			Span mensajeError = new Span("El correo electrónico ya está registrado. Pruebe con otro.");
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(mensajeError);
+		} else {
+			Span mensajeError = new Span("Ha ocurrido un error en la base de datos. Inténtelo de nuevo. ");
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(mensajeError);
 		}
 		

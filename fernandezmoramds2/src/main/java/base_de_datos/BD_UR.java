@@ -14,7 +14,7 @@ public class BD_UR {
 	public BDPrincipal _bDPrincipal;
 	public Vector<UR> _uNR = new Vector<UR>();
 
-	public boolean registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
+	public int registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
 			String aContrasenia, String aContraseniaRepeticion) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
@@ -31,10 +31,8 @@ public class BD_UR {
 
 			boolean hayDigitos = false, mayorDe8Caracteres = false, hayMayuscula = false, hayCaracteres = false;
 
-			if (usuario.getContrasenia().length() > 8)
-				mayorDe8Caracteres = true;
-			if (mayorDe8Caracteres)
-				return false;
+			if (usuario.getContrasenia().length() > 8) mayorDe8Caracteres = true;
+			if (mayorDe8Caracteres) return 1;
 
 			for (Character c : usuario.getContrasenia().toCharArray()) {
 				if (Character.isDigit(c))
@@ -45,15 +43,17 @@ public class BD_UR {
 						hayMayuscula = true;
 				}
 			}
-
+			
 			if (!hayDigitos || !hayMayuscula || !hayCaracteres) {
-				return false;
+				return 1;
 			}
 
 			UR[] usuariosCorreo = URDAO.listURByQuery("correo_electronico = '" + aCorreo + "'", "correo_electronico");
 
 			if (usuariosCorreo.length == 0) {
 				URDAO.save(usuario);
+			} else {
+				return 2;
 			}
 
 			t.commit();
@@ -61,10 +61,10 @@ public class BD_UR {
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
-			return false;
+			return 3;
 		}
 
-		return true;
+		return 0;
 	}
 
 	public Usuario_General iniciarSesion(String aCorreo, String aContrasenia) throws PersistentException {

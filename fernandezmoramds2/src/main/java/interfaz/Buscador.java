@@ -7,6 +7,7 @@ import org.orm.PersistentException;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.TextField;
@@ -24,7 +25,8 @@ public class Buscador extends VistaBuscador {
 	public Productos_busqueda _productos_busqueda;
 	public base_de_datos.Categoria[] listaCategorias;
 	public base_de_datos.Producto[] listaProductosBusqueda;
-	public VerticalLayout layout;
+	HorizontalLayout productoNuevo;
+
 
 	public Buscador(Menu_UR_UNR urunr) {
 		this._busquedaTF = new TextField();
@@ -32,13 +34,16 @@ public class Buscador extends VistaBuscador {
 		Icon icon = new Icon("lumo", "search");
 		_busquedaTF.setPrefixComponent(icon);
 		_busquedaTF.setWidth("100%");
+
+		inicializar(urunr);
+	}
+	
+	public void inicializar(Menu_UR_UNR urunr) {
 		this._productos_busqueda = new Productos_busqueda(this);
-		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		cargarCategoriasBuscador();
 		this.getEspacioBuscador().add(this.categoriasBuscador);
 		this.getEspacioBuscador().add(this._busquedaTF);
 		buscarProducto();
-
 	}
 
 	public void cargarCategoriasBuscador() {
@@ -57,6 +62,11 @@ public class Buscador extends VistaBuscador {
 
 		iUR_UNR i = new BDPrincipal();
 		this._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
+
+			this._menu_UR_UNR.layout.remove(this._productos_busqueda);
+			inicializar(this._menu_UR_UNR);
+			productoNuevo = new HorizontalLayout();
+
 			try {
 				this._productos_busqueda.getVaadinHorizontalLayout1().removeAll();
 
@@ -72,7 +82,6 @@ public class Buscador extends VistaBuscador {
 					for (base_de_datos.Producto producto : this.listaProductosBusqueda) {
 						Producto_busqueda pb = new Producto_busqueda(this._productos_busqueda, producto, this._menu_UR_UNR._uR_UNR);
 						this._productos_busqueda._list_Producto_busqueda.add(pb);
-						VerticalLayout productoNuevo = new VerticalLayout();
 						productoNuevo.add(pb);
 						this._productos_busqueda.getVaadinHorizontalLayout1().add(productoNuevo);
 					}

@@ -2,7 +2,6 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-
 import vistas.VistaAdministrador;
 
 //import basededatos.iAdministrador;

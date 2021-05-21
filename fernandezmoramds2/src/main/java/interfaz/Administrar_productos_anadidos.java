@@ -1,7 +1,6 @@
 package interfaz;
 
 import org.orm.PersistentException;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -42,8 +41,7 @@ public class Administrar_productos_anadidos extends VistaAdministrar_productos_a
 		if(oferta == null & categoria == null) {
 			esCategorias = 0;
 		}
-		
-		
+
 		verProductosCategoria();
 	}
 

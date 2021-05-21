@@ -154,9 +154,9 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_Mensajes.enviarMensaje(aCorreoReceptor, aMensaje, aAsunto, aEmisor);
 	}
 
-	public boolean registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
+	public int registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
 			String aContrasenia, Object aContraseniaRepeticion) throws PersistentException {
-		boolean registrado = false;
+		int registrado = 0;
 		try {
 			registrado = this._bD_UNR.registrarse(aNombre, aApellidos, aCorreo, aNombreUsuario, aContrasenia,
 					aContrasenia);

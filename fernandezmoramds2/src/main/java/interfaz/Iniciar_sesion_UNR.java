@@ -39,7 +39,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this._menu_UNR = munr;
 
 		this._recuperar_contrasenia = new Recuperar_contrasenia(this);
-		this._registrarse = new Registrarse(this);
 		this.getNombre_usuario().setVisible(false);
 		this.getCorreo().setVisible(true);
 		this.getBotonRegistrarse().setVisible(true);
@@ -61,6 +60,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 
 	public void abrir_Registrarse() {
 		this.getBotonRegistrarse().addClickListener(event -> {
+			this._registrarse = new Registrarse(this);
 			limpiar_interfaz();
 			this._menu_UNR.layout.add(this._registrarse);
 

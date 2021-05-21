@@ -34,8 +34,9 @@ public class Menu_UNR extends Menu_UR_UNR {
 		}
 		
 		if(this._buscador != null && this._buscador._productos_busqueda != null) {
-			System.out.println("Borrando por aqui");
+			/*Borramos el listado de productos busqueda*/
 			this._buscador._productos_busqueda.getVaadinHorizontalLayout1().removeAll();
+			/*Borramos cualquier posible producto que se haya podido abrir*/
 			this._buscador._productos_busqueda.layout.removeAll();
 		}
 	}

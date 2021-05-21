@@ -8,7 +8,6 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -23,7 +22,6 @@ public class Crear_categoría extends Zona_productos {
 		this._gestionar_categorias = gc;
 		inicializar();
 		guardarCategoria();
-
 	}
 
 	public void inicializar() {
@@ -97,7 +95,6 @@ public class Crear_categoría extends Zona_productos {
 				base_de_datos.Categoria c = admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString());
 				Categoria_administrador ca = new Categoria_administrador(this._gestionar_categorias._categorias_administrador, c);
 				this._gestionar_categorias._categorias_administrador.addCategoria(ca);
-				//Notification.show("Categoria creada con exito");
 				retroceder();
 				dialog.open();
 				this.inicializar();
