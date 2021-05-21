@@ -24,12 +24,16 @@ public class Oferta extends VistaOferta {
 
 	public void abrir_Oferta() {
 		this.getBotonOferta().addClickListener(event -> {
-			System.out.println("Click en oferta");
 			this._ofertas._uR_UNR.layoutOfertas.remove(this._ofertas);
 			this._ofertas._uR_UNR.getBotonVerCategorias().setVisible(false);
 			this._ofertas._uR_UNR.layoutProductosMasVendidosPorCategorias.setVisible(false);
 			this._ofertas._uR_UNR.layoutOfertas.add(this._productos_oferta);
 		});
+	}
+	
+	public void cerrar_Oferta() {
+		this._ofertas._uR_UNR.layoutOfertas.remove(this._productos_oferta);
+
 	}
 
 }
