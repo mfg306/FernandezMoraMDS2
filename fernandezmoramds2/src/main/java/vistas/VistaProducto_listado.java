@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-producto_listado template.
@@ -36,6 +37,8 @@ public class VistaProducto_listado extends PolymerTemplate<VistaProducto_listado
 	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("cambiarPrecio")
+	private TextField cambiarPrecio;
 
 	/**
      * Creates a new VistaProducto_listado.
@@ -113,5 +116,13 @@ public class VistaProducto_listado extends PolymerTemplate<VistaProducto_listado
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public TextField getCambiarPrecio() {
+		return cambiarPrecio;
+	}
+
+	public void setCambiarPrecio(TextField cambiarPrecio) {
+		this.cambiarPrecio = cambiarPrecio;
 	}
 }

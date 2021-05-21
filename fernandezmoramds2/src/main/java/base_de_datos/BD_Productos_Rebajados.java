@@ -35,6 +35,19 @@ public class BD_Productos_Rebajados {
 		Oferta oferta = OfertaDAO.loadOfertaByQuery("Id_Oferta = " + aOferta.getId_Oferta(), null);
 		poferta = oferta._Pertenece_a.toArray();
 		return poferta;
-	
 	}
+	
+	public Producto_Rebajado cargarProductoRebajado(Producto aProducto) throws PersistentException {
+		
+		try {
+			Producto_Rebajado pr = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null)[0];
+			return pr;
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
+
 }

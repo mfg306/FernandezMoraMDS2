@@ -31,8 +31,10 @@ public class BD_UR {
 
 			boolean hayDigitos = false, mayorDe8Caracteres = false, hayMayuscula = false, hayCaracteres = false;
 
-			if (usuario.getContrasenia().length() > 8) mayorDe8Caracteres = true;
-			if (mayorDe8Caracteres) return 1;
+			if (usuario.getContrasenia().length() > 8)
+				mayorDe8Caracteres = true;
+			if (mayorDe8Caracteres)
+				return 1;
 
 			for (Character c : usuario.getContrasenia().toCharArray()) {
 				if (Character.isDigit(c))
@@ -43,7 +45,7 @@ public class BD_UR {
 						hayMayuscula = true;
 				}
 			}
-			
+
 			if (!hayDigitos || !hayMayuscula || !hayCaracteres) {
 				return 1;
 			}
@@ -75,12 +77,23 @@ public class BD_UR {
 
 		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
 
-		if (usuariosCorreo.length == 0) return null;
-		if(!usuariosCorreo[0].getEsta_operativo()) return null;
-		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())
-				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia()))
-			return usuariosCorreo[0];
+		if (usuariosCorreo.length == 0) {
+			HitoPersistentManager.instance().disposePersistentManager();
+			return null;
+		}
+		if (!usuariosCorreo[0].getEsta_operativo()) {
+			HitoPersistentManager.instance().disposePersistentManager();
 
+			return null;
+		}
+		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())
+				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia())) {
+			HitoPersistentManager.instance().disposePersistentManager();
+
+			return usuariosCorreo[0];
+		}
+
+		HitoPersistentManager.instance().disposePersistentManager();
 		return null;
 	}
 
@@ -97,12 +110,16 @@ public class BD_UR {
 			}
 		} catch (Exception e) {
 			e.getStackTrace();
+			
+			HitoPersistentManager.instance().disposePersistentManager();
 			return null;
 		}
+		
+		HitoPersistentManager.instance().disposePersistentManager();
 		return usuarioEncontrado;
 	}
-	
-		public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException {
+
+	public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		UR usuario = URDAO.createUR();
 		usuario.setCorreo_electronico(aCorreo);
@@ -119,56 +136,64 @@ public class BD_UR {
 		} catch (Exception e) {
 			t.rollback();
 			e.getStackTrace();
-			
 		}
 		
+		HitoPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
-		throw new UnsupportedOperationException();
+	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago, UR aUsuario)
+			throws PersistentException {
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			aUsuario.setDireccion_envio(aDireccionEnvio);
+			aUsuario.setMetodo_pago(aMetodoPago);
+			URDAO.save(aUsuario);
+			t.commit();
+		} catch (PersistentException e) {
+			t.rollback();
+			e.printStackTrace();
+		}
+		HitoPersistentManager.instance().disposePersistentManager();
+
 	}
 
-	public UR[] cargarFichaCliente() {
-		throw new UnsupportedOperationException();
-	}
-	
-	public UR[] cargarClientes() throws PersistentException{
+	public UR[] cargarClientes() throws PersistentException {
 		UR[] usuarios = URDAO.listURByQuery(null, null);
 		return usuarios;
-
 	}
-	
-	public void actualizarContrasenia(UR ur, String aNuevaContrasenia) throws PersistentException  {
+
+	public void actualizarContrasenia(UR ur, String aNuevaContrasenia) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-		
+
 		try {
 			ur.setContrasenia(aNuevaContrasenia);
 			URDAO.save(ur);
 			t.commit();
 		} catch (PersistentException e) {
-		
+
 			e.printStackTrace();
 		}
-			
+
 	}
-	
-	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, 
-			String aMetodoDePago, String aRutaFoto) throws PersistentException {
-		
+
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo,
+			String aDireccion, String aMetodoDePago, String aRutaFoto) throws PersistentException {
+
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Imagen i = null;
-		
+
 		try {
 			i = ImagenDAO.createImagen();
 			i.setRuta(aRutaFoto);
-			
+
 			ImagenDAO.save(i);
 			t.commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
-		
+
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		UR usuario = URDAO.createUR();
 		usuario.setCorreo_electronico(aCorreo);
@@ -183,19 +208,20 @@ public class BD_UR {
 				usuarioEncontrado.setPrimer_apellido(aApellidos);
 				usuarioEncontrado.setDireccion_envio(aDireccion);
 				usuarioEncontrado.setMetodo_pago(aMetodoDePago);
-				
-				if(i != null) usuarioEncontrado.setImagen(i);
-				
+
+				if (i != null)
+					usuarioEncontrado.setImagen(i);
+
 				URDAO.save(usuarioEncontrado);
 				t2.commit();
 			}
 		} catch (Exception e) {
 			t2.rollback();
 			e.getStackTrace();
-			
+
 		}
 	}
-	
+
 	public void eliminarUsuario(String aCorreo) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		UR usuario = URDAO.createUR();
@@ -213,7 +239,7 @@ public class BD_UR {
 		} catch (Exception e) {
 			t.rollback();
 			e.getStackTrace();
-			
+
 		}
 	}
 

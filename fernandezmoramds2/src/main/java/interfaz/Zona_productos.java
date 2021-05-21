@@ -19,10 +19,10 @@ public class Zona_productos extends Administrar_productos_anadidos {
 	public VerticalLayout layoutIzquierda;
 	TextField buscadorZona = new TextField();
 
-	public Zona_productos(base_de_datos.Categoria categoria, base_de_datos.Oferta oferta) {
+	public Zona_productos(base_de_datos.Categoria categoria, base_de_datos.Oferta oferta, Gestionar_categorias gc, Gestionar_ofertas gf) {
 		super(categoria, oferta);
 
-		this._productos_listado = new Productos_listado(this);
+		this._productos_listado = new Productos_listado(this, gc, gf);
 		this.layoutIzquierda = this.getHuecoIzquierda().as(VerticalLayout.class);
 
 		Icon icon = new Icon("lumo", "search");
@@ -30,11 +30,11 @@ public class Zona_productos extends Administrar_productos_anadidos {
 		buscadorZona.setWidth("100%");
 
 		this.getVaadinHorizontalLayout2().add(buscadorZona);
-		this.inicializar_zona();
+		this.inicializar_zona(gc, gf);
 		eliminarProductosListado();
 	}
 
-	public void inicializar_zona() {
+	public void inicializar_zona(Gestionar_categorias gc, Gestionar_ofertas gf) {
 		this.layoutIzquierda.add(this._productos_listado);
 
 		try {

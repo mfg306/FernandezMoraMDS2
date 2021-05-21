@@ -134,8 +134,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 
-	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago) {
-		throw new UnsupportedOperationException();
+	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago, UR aUsuario) throws PersistentException{
+		this._bD_UNR.actualizarDatosCompra(aDireccionEnvio, aMetodoPago, aUsuario);
 	}
 
 	public Compra[] cargarPedidos(UR aUsuario) {
@@ -197,10 +197,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_Enviado.cargarEnviados();
 	}
 
-	public UR[] cargarFichaCliente() {
-		throw new UnsupportedOperationException();
-	}
-
 	public Pendiente[] cargarPedidosPendientes(int aIdEncargado) {
 		throw new UnsupportedOperationException();
 	}
@@ -227,8 +223,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaRegistro) throws PersistentException {
-		return this._bD_Ofertas.insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaRegistro);
+			String aFechaRegistro, double[] aPrecios) throws PersistentException {
+		return this._bD_Ofertas.insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaRegistro, aPrecios);
 	}
 
 	public Categoria insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro)
@@ -246,9 +242,9 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaActualizacion, int aIdOferta) throws PersistentException {
+			String aFechaActualizacion, int aIdOferta, double[] aPrecios) throws PersistentException {
 		return this._bD_Ofertas.actualizarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion,
-				aIdOferta);
+				aIdOferta, aPrecios);
 	}
 
 	public Producto actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String[] aRutaImagen,int aNumUnidades) throws PersistentException  {
@@ -370,12 +366,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public Producto[] cargarProductos(String aProducto) throws PersistentException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) throws PersistentException {
 		return this._bD_Enviado.cargarClienteEnviado(aTransportista, aEnviado);
 	}
@@ -406,6 +396,17 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	@Override
 	public boolean eliminarEnviado(Enviado aEnviado) throws PersistentException {
 		return this._bD_Enviado.eliminarEnviado(aEnviado);
+	}
+
+	@Override
+	public Producto_Rebajado cargarProductoRebajado(Producto aProducto) throws PersistentException {
+		return this._bD_Productos_Rebajados.cargarProductoRebajado(aProducto);
+	}
+
+	@Override
+	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades) throws PersistentException {
+		this._bD_Pendiente.realizarCompra(aProductos, aId_Usuario, aUnidades);
+		
 	}
 
 	

@@ -18,7 +18,7 @@ public class Crear_categoría extends Zona_productos {
 	VerticalLayout layout;
 
 	public Crear_categoría(Gestionar_categorias gc) {
-		super(null, null);
+		super(null, null, gc, null);
 		this._gestionar_categorias = gc;
 		inicializar();
 		guardarCategoria();

@@ -2,6 +2,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaProducto_listado extends PolymerElement {
 
@@ -21,11 +22,12 @@ class VistaProducto_listado extends PolymerElement {
    <label style="align-self: center;" id="label"></label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout2">
+   <vaadin-text-field label="Label" placeholder="Placeholder" id="cambiarPrecio" style="width: 100%;"></vaadin-text-field>
    <label style="align-self: center;" id="label1"></label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; flex-shrink: 1; width: 100%; justify-content: flex-end;" id="vaadinHorizontalLayout3">
    <vaadin-button theme="primary" style="align-self: center; margin-right: var(--lumo-space-m); background-color: #ae1641;" id="vaadinButton">
-    Anadir
+     Anadir 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>

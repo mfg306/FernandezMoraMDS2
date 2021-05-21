@@ -20,7 +20,7 @@ public class Editar_categoria extends Zona_productos {
 	VerticalLayout layout;
 
 	public Editar_categoria(Categoria_administrador ca) {
-		super(ca.categoria, null);
+		super(ca.categoria, null, ca._categorias_administrador._gestionar_categorias, null);
 		inicializar(ca);
 		guardarCategoria();
 	}

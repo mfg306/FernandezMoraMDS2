@@ -10,13 +10,28 @@ public class Productos_listado extends VistaProductos_listado {
 	public Zona_productos _zona_productos;
 	public Vector<Producto_listado> _list_Producto_listado = new Vector<Producto_listado>();
 	public VerticalLayout layout;
+	public boolean esOfertas, esCategorias;
 	
-	public Productos_listado(Zona_productos zp) {
+	public Productos_listado(Zona_productos zp, Gestionar_categorias gc, Gestionar_ofertas gf) {
 		this._zona_productos = zp;
-		inicializar();
+		inicializar(gc, gf);
+		
+		esOfertas = false;
+		esCategorias = false;
+		
+		
+		if(gc != null) {
+			System.out.println("ESTAMOS TRABAJANDO CON CATEGORIA");
+			esCategorias = true;
+		}
+		
+		if(gf != null) {
+			System.out.println("ESTAMOS TRABAJANDO CON OFERTAS");
+			esOfertas = true;
+		}
 	}
 	
-	public void inicializar() {
+	public void inicializar(Gestionar_categorias gc, Gestionar_ofertas gf) {
 		this._list_Producto_listado = new Vector<>();
 		layout = this.getVaadinVerticalLayout_productos_listado().as(VerticalLayout.class);
 	}

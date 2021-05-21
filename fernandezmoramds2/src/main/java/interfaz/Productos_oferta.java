@@ -31,7 +31,7 @@ public class Productos_oferta extends VistaProductos_oferta{
 
 	public void abrir_Producto_Oferta() {
 		for(Producto_oferta pof : this._list_Producto_oferta) {
-			pof.getBotonProductoOferta().addClickListener(event ->{
+			pof.getImagen_producto().addClickListener(event ->{
 				this._list_Ofertas._ofertas._uR_UNR.layoutOfertas.remove(this._list_Ofertas._productos_oferta);
 				this._list_Ofertas._ofertas._uR_UNR.layoutOfertas.add(pof._producto);
 				
@@ -51,7 +51,6 @@ public class Productos_oferta extends VistaProductos_oferta{
 				
 			}
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

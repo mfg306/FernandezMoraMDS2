@@ -6,10 +6,11 @@ import base_de_datos.Compra;
 import base_de_datos.UR;
 import base_de_datos.Usuario_General;
 import base_de_datos.Mensaje;
+import base_de_datos.Producto;
 
 public interface iUR extends iUR_UNR {
 
-	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago);
+	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago, UR aUsuario) throws PersistentException;
 	
 	public UR buscarUsuarioPorCorreo(String aCorreo)throws PersistentException;
 
@@ -35,5 +36,6 @@ public interface iUR extends iUR_UNR {
 	public void actualizarContrasenia(UR aUr ,String aNuevaContrasenia) throws PersistentException;
 	
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException;
-
+	
+	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades)  throws PersistentException;
 }

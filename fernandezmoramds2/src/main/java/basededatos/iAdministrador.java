@@ -20,8 +20,6 @@ public interface iAdministrador {
 
 	public Oferta[] cargarOfertas();
 
-	public Producto[] cargarProductos(String aProducto) throws PersistentException;
-
 	public Mensaje[] cargarMensajesEnviados(Usuario_General aUsuario) throws PersistentException;
 
 	public Mensaje[] cargarMensajesRecibidos(Usuario_General aUsuario) throws PersistentException;
@@ -34,7 +32,7 @@ public interface iAdministrador {
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades, String[] aRuta) throws PersistentException;
 
-	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro) throws PersistentException;
+	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaRegistro, double[] aPrecios) throws PersistentException;
 
 	public Categoria insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException;
 
@@ -42,7 +40,7 @@ public interface iAdministrador {
 
 	public Empleado actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException ;
 
-	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta)  throws PersistentException ;
+	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad, String aFechaActualizacion, int aIdOferta, double[] aPrecios)  throws PersistentException ;
 
 	public Producto actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion, String[] aRutaImagen, int aNumUnidades)  throws PersistentException;
 

@@ -46,11 +46,11 @@ public class BD_Ofertas {
 	}
 
 	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaRegistro) throws PersistentException {
+			String aFechaRegistro, double[] aPrecios) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Oferta o = null;
 		Producto_Rebajado pr = null;
-
+		
 		/* Paso 1. Crear la oferta */
 		try {
 			o = OfertaDAO.createOferta();
@@ -69,7 +69,8 @@ public class BD_Ofertas {
 		
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
-
+		
+		int contador = 0;
 		/*
 		 * Paso 2. Crear los productos rebajados basados en el producto seleccionado de
 		 * la lista y enlazar este producto rebajado con la oferta
@@ -81,13 +82,17 @@ public class BD_Ofertas {
 				 * precio rebajado
 				 */
 				pr = Producto_RebajadoDAO.createProducto_Rebajado();
-				pr.setPrecio_producto(0.0);
+				
+				pr.setPrecio_producto(pr.getPrecio_producto());
 				pr.setNombre(p.getNombre());
 				pr.setDescripcion(p.getDescripcion());
 				pr.set_Categoria(p.get_Categoria());
 				pr.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
 				pr.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
-				pr.setPrecio_producto(p.getPrecio_producto());
+				
+				pr.setPrecio_rebajado(aPrecios[contador]);
+				
+				contador ++;
 				
 				
 				for(Imagen i : p._Imagen.toArray()) {
@@ -124,39 +129,47 @@ public class BD_Ofertas {
 		 * Producto_Rebajado y no lo queremos repetido
 		 */
 		
-		System.out.println("Oferta creada con exito");
 		for (Producto p : aListaProductos) {
 			this._bDPrincipal.eliminarProductoAdministrador(p.getId_Producto());
 		}
-		
-		System.out.println("Productos elmininados");
 		
 		return o;
 
 	}
 
 	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
-			String aFechaActualizacion, int aIdOferta) throws PersistentException {
+			String aFechaActualizacion, int aIdOferta, double[] aPrecios) throws PersistentException {
 		eliminarOfertaAdmin(aIdOferta, aListaProductos);
-		return insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion);
+		return insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion, aPrecios);
 	}
 
 	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
+		Oferta o = 	OfertaDAO.getOfertaByORMID(aIdOferta);
+		
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-		Oferta o = null;
+
 		try {
-			o = OfertaDAO.getOfertaByORMID(aIdOferta);
-			OfertaDAO.delete(o);
+			OfertaDAO.deleteAndDissociate(o);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 			e.printStackTrace();
-			
-			HitoPersistentManager.instance().disposePersistentManager();
-
 			return false;
 		}
+		
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
 
+		try {
+			for(Producto_Rebajado pr : o._Pertenece_a.toArray()) {
+				System.out.println("Producto rebajado : " + pr.getNombre());
+				Producto_RebajadoDAO.deleteAndDissociate(pr);
+			}
+			t2.commit();
+		} catch(Exception e) {
+			t2.rollback();
+			e.printStackTrace();
+		}
+		
 		return true;
 	}
 }

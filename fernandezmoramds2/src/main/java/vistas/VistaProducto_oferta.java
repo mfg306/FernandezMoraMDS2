@@ -35,8 +35,6 @@ public class VistaProducto_oferta extends PolymerTemplate<VistaProducto_oferta.V
 	private Element vaadinVerticalLayout1;
 	@Id("precio_rebajado")
 	private Span precio_rebajado;
-	@Id("botonProductoOferta")
-	private Button botonProductoOferta;
 
 	/**
      * Creates a new VistaProducto_oferta.
@@ -108,11 +106,4 @@ public class VistaProducto_oferta extends PolymerTemplate<VistaProducto_oferta.V
 		this.precio_rebajado = precio_rebajado;
 	}
 
-	public Button getBotonProductoOferta() {
-		return botonProductoOferta;
-	}
-
-	public void setBotonProductoOferta(Button botonProductoOferta) {
-		this.botonProductoOferta = botonProductoOferta;
-	}
 }

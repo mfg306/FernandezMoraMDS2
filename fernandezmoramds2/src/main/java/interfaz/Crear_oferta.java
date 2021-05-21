@@ -20,7 +20,7 @@ public class Crear_oferta extends Zona_productos {
 	VerticalLayout layout;
 
 	public Crear_oferta(Gestionar_ofertas go) {
-		super(null,null);
+		super(null,null, null, go);
 		this._gestionar_ofertas = go;
 		inicializar();
 		guardarOferta();
@@ -97,13 +97,16 @@ public class Crear_oferta extends Zona_productos {
 			
 			Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
 			base_de_datos.Producto[] productosOferta = new base_de_datos.Producto[listaProductos.size()];
+			double[] precios = new double[listaProductos.size()];
 			
 			for(int i=0; i< listaProductos.size(); i++) {
 				productosOferta[i] = listaProductos.get(i).producto;
+				precios[i] = listaProductos.get(i).precio;
 			}
 			
 			try {
-				admin.insertarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString());
+				admin.insertarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), 
+						date.toString(), precios);
 				//Notification.show("Oferta creada con exito");
 				retroceder();
 				dialog.open();

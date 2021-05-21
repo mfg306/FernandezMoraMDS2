@@ -45,8 +45,8 @@ public class Administrar_productos_anadidos extends VistaAdministrar_productos_a
 		verProductosCategoria();
 	}
 
-	public void incorporarProductoListado(base_de_datos.Producto p, Zona_productos zp) {
-		Producto_listado_administracion pla = new Producto_listado_administracion(p, _productos_listado_administracion, zp);
+	public void incorporarProductoListado(base_de_datos.Producto p, Zona_productos zp, double precio) {
+		Producto_listado_administracion pla = new Producto_listado_administracion(p, _productos_listado_administracion, zp, precio);
 		this._productos_listado_administracion.add_productos_listado_administracion(pla);
 	}
 

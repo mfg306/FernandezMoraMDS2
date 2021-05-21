@@ -1,6 +1,8 @@
 package base_de_datos;
 
 import basededatos.BDPrincipal;
+
+import java.util.Random;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -12,12 +14,88 @@ public class BD_Pendiente {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Pendiente> _pendiente = new Vector<Pendiente>();
 
-	public void realizarCompra(Producto[] aProductos, int aId_Usuario) {
-		throw new UnsupportedOperationException();
-	}
+	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades) throws PersistentException {
+		System.out.println("EMPEZANDO");
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		int contador = 0;
+		
+		Encargado_de_compras[] encargados = Encargado_de_comprasDAO.listEncargado_de_comprasByQuery(null, null);
+		
+		for(Encargado_de_compras e : encargados) {
+			System.out.println("Nombre encargado : " + e.getCorreo());
+		}
+		
+		Random rand = new Random();
+		int randomNum = rand.nextInt((encargados.length));
+		
+		
+		System.out.println("Numero aleatorio : " + randomNum);
+		
+		/*Generamos un numero aleatorio que sera el encargado al que le toque*/
+		Encargado_de_compras encargado = encargados[randomNum];
+		System.out.println("Encargado : " + encargado.getCorreo());
+		UR usuario = URDAO.getURByORMID(aId_Usuario);
+		
+		Pendiente pendiente = null;
+		/*Paso 1. Insertar en Pendiente*/
+		try {
+			
+			pendiente = PendienteDAO.createPendiente();
+			pendiente.setORM__Encargado_de_compras(encargado);
+			pendiente.setORM__Hace_compra(usuario);
+			pendiente.setAsignado(false);
+			
+			PendienteDAO.save(pendiente);
+			
+			t.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+		}
 
-	public Pendiente[] cargarPedidosPendientes(int aIdEncargado) {
-		throw new UnsupportedOperationException();
+		
+		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+
+		/*Paso 2. Crear el producto en compra y relacionar con pendiente*/
+		try {
+			for(Producto p : aProductos) {
+				Producto_en_compra pec = Producto_en_compraDAO.createProducto_en_compra();
+				
+				pec.setORM__Producto(p);
+				pec.setNum_unidades_producto(aUnidades[contador]);
+				pec.setORM__Pendiente(pendiente);
+				contador++;
+				Producto_en_compraDAO.save(pec);
+			}
+			
+			t2.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t2.rollback();
+		}
+
+		contador = 0;
+		/*Paso 3. Actualizar los datos de Producto*/
+		PersistentTransaction t3 = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			for(Producto p: aProductos) {
+				p.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes() - aUnidades[contador]);
+				p.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas() + aUnidades[contador]);
+				contador++;
+				
+				ProductoDAO.save(p);
+			}
+			
+			t3.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t3.rollback();
+		}
+
+		
+		
+		
 	}
 
 	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException {
@@ -25,18 +103,18 @@ public class BD_Pendiente {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			pendientes = PendienteDAO.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = "+ aIdEncargado
-				+ " AND ASIGNADO = 0", null);
-		} catch(Exception e) {
+			pendientes = PendienteDAO.listPendienteByQuery(
+					"Encargado_de_comprasEmpleadoIdEmpleado = " + aIdEncargado + " AND ASIGNADO = 0", null);
+		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
-		
+
 		HitoPersistentManager.instance().disposePersistentManager();
 
 		return pendientes;
 	}
-	
+
 	public Pendiente[] cargarPendientes() throws PersistentException {
 		Pendiente[] pendientes = null;
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
@@ -47,26 +125,26 @@ public class BD_Pendiente {
 			e.printStackTrace();
 			t.rollback();
 		}
-		
+
 		HitoPersistentManager.instance().disposePersistentManager();
 
 		return pendientes;
 	}
-	
+
 	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			
+
 			aPedidoPendiente.setAsignado(true);
 			PendienteDAO.save(aPedidoPendiente);
 			t.commit();
-			
+
 			HitoPersistentManager.instance().disposePersistentManager();
 
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
-			
+
 			HitoPersistentManager.instance().disposePersistentManager();
 
 			return false;

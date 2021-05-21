@@ -17,7 +17,7 @@ public class Editar_oferta extends Zona_productos {
 
 	
 	public Editar_oferta(Oferta_administrador oa) {
-		super(null, oa.oferta);
+		super(null, oa.oferta, null, oa._ofertas_administrador._gestionar_ofertas);
 		inicializar(oa);
 		
 		guardarOferta();
@@ -57,7 +57,6 @@ public class Editar_oferta extends Zona_productos {
 		this.getVaadinHorizontalLayout().setVisible(false);
 		
 		this.getVaadinVerticalLayout1().setVisible(false);
-//		this._productos_listado.setVisible(false);
 		
 		this.getHuecoIzquierda().setVisible(false);
 		this.getHuecoDerecha().setVisible(false);
@@ -95,13 +94,18 @@ public class Editar_oferta extends Zona_productos {
 
 			Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
 			base_de_datos.Producto[] productosOferta = new base_de_datos.Producto[listaProductos.size()];
-						
+			double[] precios = new double[listaProductos.size()];
+
 			try {
 
 				for(int i=0; i< listaProductos.size(); i++) {
 					productosOferta[i] = listaProductos.get(i).producto;
+					precios[i] = listaProductos.get(i).precio;
 				}
-				base_de_datos.Oferta ofertaActualizada = admin.actualizarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), date.toString(), this._oferta_administrador.oferta.getId_Oferta());
+				
+				base_de_datos.Oferta ofertaActualizada = admin.actualizarOferta(this.getCampoOferta().getValue(), 
+						productosOferta, dateCaducidad.toString(), date.toString(), 
+						this._oferta_administrador.oferta.getId_Oferta(), precios);
 				
 				this._oferta_administrador.oferta = ofertaActualizada;
 				this._oferta_administrador.inicializar(this._oferta_administrador._ofertas_administrador, ofertaActualizada);
