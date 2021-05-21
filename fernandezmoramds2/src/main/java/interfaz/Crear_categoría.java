@@ -6,6 +6,8 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -75,7 +77,11 @@ public class Crear_categoría extends Zona_productos {
 
 		this.getVaadinButton().addClickListener(event -> {
 			iAdministrador admin = new BDPrincipal();
+			Dialog dialog = new Dialog();
+			dialog.add(new Text("Categoria creada con exito"));
 
+			dialog.setWidth("400px");
+			dialog.setHeight("150px");
 			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 			Date date = new Date();
 			formatter.format(date);
@@ -91,8 +97,9 @@ public class Crear_categoría extends Zona_productos {
 				base_de_datos.Categoria c = admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString());
 				Categoria_administrador ca = new Categoria_administrador(this._gestionar_categorias._categorias_administrador, c);
 				this._gestionar_categorias._categorias_administrador.addCategoria(ca);
-				Notification.show("Categoria creada con exito");
+				//Notification.show("Categoria creada con exito");
 				retroceder();
+				dialog.open();
 				this.inicializar();
 			} catch (PersistentException e) {
 				e.printStackTrace();
