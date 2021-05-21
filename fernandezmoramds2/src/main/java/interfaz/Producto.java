@@ -63,7 +63,7 @@ public class Producto extends VistaProducto{
 		this.producto = iUr_UNR.cargarProducto(this.producto.getId_Producto());
 		
 		this.getNombre_producto().setText(this.producto.getNombre());
-		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()));
+		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()) + " €");
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
 		
 		this.getImg().setWidth("20vw");

@@ -17,11 +17,11 @@ class VistaComentario extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; padding: var(--lumo-space-s); align-items: center;" id="comentario">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-items: center;">
   <vaadin-vertical-layout theme="spacing" id="huecoNombreUsuarioComentario" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center;">
-   <span id="nombreComentarioUsuario"></span>
+   <span id="nombreComentarioUsuario" style="font-weight: bold; align-self: flex-start;"></span>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="flex-grow: 1; align-self: center; align-items: center; justify-content: center;">
    <span id="valoracionProducto" style="align-self: center;"></span>
-   <vaadin-vertical-layout theme="spacing" id="huecoComentario" style="width: 100%;">
+   <vaadin-vertical-layout id="huecoComentario" style="width: 100%; background-color: white; padding: 1em; align-self: flex-start;">
     <span id="comentarioProducto" style="align-self: center;"></span>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>

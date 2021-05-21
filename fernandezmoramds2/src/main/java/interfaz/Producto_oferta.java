@@ -17,7 +17,7 @@ public class Producto_oferta extends VistaProducto_oferta{
 		if(unrunr instanceof UR) this._producto = new Ver_producto_UR(unrunr,p);
 		if(unrunr instanceof UNR_) this._producto = new Producto_UNR(unrunr,p);
 		this.getNombre_producto().setText(p.getNombre());
-		this.getPrecio_original().setText(String.valueOf("Precio: " + p.getPrecio_producto()));
+		this.getPrecio_original().setText(String.valueOf(p.getPrecio_producto()) + " €");
 		
 		this.getImagen_producto().setWidth("10vw");
 		this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
