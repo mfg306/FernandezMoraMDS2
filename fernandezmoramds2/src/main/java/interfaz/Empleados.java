@@ -23,8 +23,11 @@ public class Empleados extends VistaEmpleados {
 
 	
 	public Empleados(Gestionar_empleados ge) {
+		this.getBotonAnteriores().setEnabled(false);
+
 		this._gestionar_empleados = ge;
 		inicializar(this.paginaActual);
+
 	}
 	
 	public void inicializar(int paginaActual ) {
@@ -83,22 +86,47 @@ public class Empleados extends VistaEmpleados {
 	
 	
 	public void Ver_anteriores() {
-		this.getBotonAnteriores().addClickListener(event -> {
-			if(paginaActual > 0) {
-				this.paginaActual--;
-				this.inicializar(paginaActual);
-			}
+		
+		if(this.getBotonAnteriores().isEnabled()){
+			this.getBotonAnteriores().addClickListener(event -> {
+				if(paginaActual > 0) {
+					this.paginaActual--;
+					this.inicializar(paginaActual);
+				}
+				
+				/*Una vez que se le da al boton de anterior volvemos a activar el boton de siguiente*/
+				this.getBotonSiguientes().setEnabled(true);
+				
+				
+				this.inicializar(paginaActual);	
 
-		});
+			});
+		}
+		
+
+		
+
 	}
 
 	public void Ver_siguientes() {
-		this.getBotonSiguientes().addClickListener(event -> {
-			if((paginaActual + 1) < numeroTotalPaginas) {
-				this.paginaActual++;
+		
+		if(this.getBotonSiguientes().isEnabled()) {
+			this.getBotonSiguientes().addClickListener(event -> {
+				if((paginaActual + 1) < numeroTotalPaginas) {
+					this.paginaActual++;
+				}
+				
+				/*Una vez que se de al boton de siguiente volvemos a activar el boton de anterior*/
+				this.getBotonAnteriores().setEnabled(true);
+				
+				if(this.paginaActual + 1 == numeroTotalPaginas) {
+					this.getBotonSiguientes().setEnabled(false);
+				}
+				
 				this.inicializar(paginaActual);	
-			}
-		});
+			});
+			
+		}
 	}
 	
 	public void abrirEmpleados() {
