@@ -89,7 +89,7 @@ public class Ver_producto_UR extends Producto_UNR {
 				index = this._uR.indiceProducto(pc);
 				this._uR.listaAuxUR.get(index).incrementarCantidad();
 			}
-
+			Notification.show( this.producto.getNombre() + " añadido al carrito");
 		});
 
 	}

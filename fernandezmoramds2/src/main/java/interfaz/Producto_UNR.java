@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
 public class Producto_UNR extends Producto {
 
 	public UNR_ _uNR_;
@@ -25,6 +27,7 @@ public class Producto_UNR extends Producto {
 				this._uNR_.listaAuxUNR.get(index).incrementarCantidad();
 				
 			}
+			Notification.show( this.producto.getNombre() + " añadido al carrito");
 			
 		});
 	}
