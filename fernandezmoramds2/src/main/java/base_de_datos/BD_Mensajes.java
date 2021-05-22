@@ -39,15 +39,15 @@ public class BD_Mensajes {
 			if(aEmisor instanceof base_de_datos.Administrador) {
 				iUR user = this._bDPrincipal;
 				UR usuarioReceptor = user.buscarUsuarioPorCorreo(aCorreoReceptor);
-				m.set_Enviado_por_Admin((base_de_datos.Administrador)aEmisor);
-				m.set_Enviado_por_UR(usuarioReceptor);
+				m.setORM__Enviado_por_Admin((base_de_datos.Administrador)aEmisor);
+				m.setORM__Enviado_por_UR(usuarioReceptor);
 			}
 			
 			if(aEmisor instanceof base_de_datos.UR) {
 				iAdministrador iadmin = this._bDPrincipal;
 				Administrador admin = iadmin.buscarAdmin(aCorreoReceptor);
-				m.set_Enviado_por_UR((base_de_datos.UR)aEmisor);
-				m.set_Enviado_por_Admin(admin);
+				m.setORM__Enviado_por_UR((base_de_datos.UR)aEmisor);
+				m.setORM__Enviado_por_Admin(admin);
 			}
 			
 			m.setCorreo_receptor(aCorreoReceptor);
@@ -82,15 +82,15 @@ public class BD_Mensajes {
 			if(aEmisor instanceof base_de_datos.Administrador) {
 				iUR user = this._bDPrincipal;
 				UR usuarioReceptor = user.buscarUsuarioPorCorreo(aCorreoReceptor);
-				m.set_Enviado_por_Admin((base_de_datos.Administrador)aEmisor);
-				m.set_Enviado_por_UR(usuarioReceptor);
+				m.setORM__Enviado_por_Admin((base_de_datos.Administrador)aEmisor);
+				m.setORM__Enviado_por_UR(usuarioReceptor);
 			}
 			
 			if(aEmisor instanceof base_de_datos.UR) {
 				iAdministrador iadmin = this._bDPrincipal;
 				Administrador admin = iadmin.buscarAdmin(aCorreoReceptor);
-				m.set_Enviado_por_UR((base_de_datos.UR)aEmisor);
-				m.set_Enviado_por_Admin(admin);
+				m.setORM__Enviado_por_UR((base_de_datos.UR)aEmisor);
+				m.setORM__Enviado_por_Admin(admin);
 			}
 			
 			m.setCorreo_receptor(aCorreoReceptor);
