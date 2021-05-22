@@ -110,7 +110,7 @@ public class BD_Mensajes {
 			t.rollback();
 		}
 		
-		HitoPersistentManager.instance().disposePersistentManager();
+//		HitoPersistentManager.instance().disposePersistentManager();
 
 		return false;
 	}
