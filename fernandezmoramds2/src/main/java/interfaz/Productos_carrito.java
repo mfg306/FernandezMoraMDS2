@@ -24,34 +24,50 @@ public class Productos_carrito extends VistaProductos_carrito {
 		listadoProductos = this.getVaadinHorizontalLayout1();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		mostrarProductos();
+		Seleccionar_varios();
 		Borrar();
 	}
-	
+
 	public void mostrarProductos() {
 		double precio = .0;
-		for(Producto_carrito pc : this._list_Producto_carrito) {
+		for (Producto_carrito pc : this._list_Producto_carrito) {
 			pc.actualizarListado(this);
 			this.listadoProductos.add(pc);
 			precio += pc.producto.getPrecio_producto();
 		}
-		
+
 		this._ver_carrito.getSpan1().setText("" + precio + " €");
 	}
-	
+
 	public void actualizarListaProductos(Vector<Producto_carrito> aux) {
 		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
 	}
 
-
 	public void Seleccionar_varios() {
-		throw new UnsupportedOperationException();
+		this.getVaadinButton1().addClickListener(event -> {
+			for (Producto_carrito pca : this._list_Producto_carrito) {
+				pca.getCheckEliminar().setVisible(true);
+				pca.getVaadinButton().setVisible(false);
+				pca.seleccionCantidad.setVisible(false);
+			}
+		});
 	}
 
 	public void Borrar() {
 		this.getVaadinButton().addClickListener(event -> {
-			for (Producto_carrito pc : this._list_Producto_carrito) {
-				this.layout.remove(pc);
+			for (Producto_carrito pca : this._list_Producto_carrito) {
+				if (pca.getCheckEliminar().getValue() == true) {
+					this.listadoProductos.remove(pca);
+					 //this._list_Producto_carrito.remove(pca);
+				}
+				if (pca.getCheckEliminar().getValue() == false) {
+					pca.getCheckEliminar().setVisible(false);
+					pca.getVaadinButton().setVisible(true);
+					pca.seleccionCantidad.setVisible(true);
+				}
 			}
+
+		
 		});
 
 	}

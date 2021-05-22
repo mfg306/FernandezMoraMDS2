@@ -13,6 +13,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.checkbox.Checkbox;
 
 /**
  * A Designer generated component for the vista-producto_carrito template.
@@ -32,6 +33,8 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("checkEliminar")
+	private Checkbox checkEliminar;
 
 
 	/**
@@ -78,5 +81,13 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public Checkbox getCheckEliminar() {
+		return checkEliminar;
+	}
+
+	public void setCheckEliminar(Checkbox checkEliminar) {
+		this.checkEliminar = checkEliminar;
 	}
 }

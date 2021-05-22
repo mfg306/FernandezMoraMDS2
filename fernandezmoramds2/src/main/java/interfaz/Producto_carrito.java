@@ -17,6 +17,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		seleccionCantidad.setItems("0", "1", "2", "3", "4");
 		this.layout.add(seleccionCantidad);
+		this.getCheckEliminar().setValue(false);
 		this._producto = p;
 		this.producto = pc;
 		
@@ -52,8 +53,9 @@ public class Producto_carrito extends VistaProducto_carrito {
 
 	public void Eliminar() {
 		this.getVaadinButton().addClickListener(event -> {
-			this._productos_carrito.layout.remove(this);
+			this._productos_carrito.listadoProductos.remove(this);
 			this._productos_carrito._list_Producto_carrito.remove(this);
+			
 
 		});
 

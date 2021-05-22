@@ -23,6 +23,7 @@ public class Producto_UNR extends Producto {
 				int index = 0;
 				index = this._uNR_.indiceProducto(pc);
 				this._uNR_.listaAuxUNR.get(index).incrementarCantidad();
+				
 			}
 			
 		});
