@@ -52,6 +52,8 @@ public class Crear_categoría extends Zona_productos {
 		this.getH2CrearCategoria().setVisible(false);
 		this.getH2().setVisible(false);
 		this.getH21().setVisible(false);
+		
+		this.getCampoCategoria().setVisible(false);
 
 		this.getVaadinHorizontalLayout().setVisible(false);
 	}
