@@ -39,7 +39,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 		upload = new Upload(buffer);
 		this.getHuecoImagen().as(VerticalLayout.class).removeAll();
 		this.getHuecoImagen().as(VerticalLayout.class).add(upload);
-		cambiar_Foto_Producto();
+		cambiar_Foto_Perfil();
 	}
 
 	public void cambiar_contrasenia() {
@@ -100,7 +100,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 		
 	}
 	
-	public void cambiar_Foto_Producto() {
+	public void cambiar_Foto_Perfil() {
 		upload.setAcceptedFileTypes("image/jpeg", "image/png");
 		
 		upload.addSucceededListener(e -> {
