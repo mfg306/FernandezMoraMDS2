@@ -96,7 +96,7 @@ public class BD_Mensajes {
 			m.setCorreo_receptor(aCorreoReceptor);
 			m.setMensaje(aMensaje);
 			m.setCorreo_emisor(aEmisor.getCorreo_electronico());
-			m.set_Responder_a(mensajeHilo);
+			m.setORM__Responder_a(mensajeHilo);
 			m.setAsunto("Re : " + mensajeHilo.getAsunto());
 			m.setFecha(date.toString());
 						

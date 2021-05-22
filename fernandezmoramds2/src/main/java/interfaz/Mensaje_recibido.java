@@ -19,6 +19,8 @@ public class Mensaje_recibido extends VistaMensaje_recibido {
 		this.getSpan().setText(this.mensaje.getCorreo_emisor());
 		this.getSpan2().setText(this.mensaje.getFecha());
 		
+		this.getAsunto().setText(this.mensaje.getAsunto());
+		
 		abrir_Crear_Mensaje_Responder();
 	}	
 	

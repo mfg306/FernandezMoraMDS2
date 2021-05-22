@@ -32,6 +32,8 @@ public class VistaMensaje_recibido extends PolymerTemplate<VistaMensaje_recibido
 	private Span span2;
 	@Id("responder")
 	private Button responder;
+	@Id("asunto")
+	private Span asunto;
 
 	/**
      * Creates a new VistaMensaje_recibido.
@@ -93,5 +95,13 @@ public class VistaMensaje_recibido extends PolymerTemplate<VistaMensaje_recibido
 
 	public void setResponder(Button responder) {
 		this.responder = responder;
+	}
+
+	public Span getAsunto() {
+		return asunto;
+	}
+
+	public void setAsunto(Span asunto) {
+		this.asunto = asunto;
 	}
 }
