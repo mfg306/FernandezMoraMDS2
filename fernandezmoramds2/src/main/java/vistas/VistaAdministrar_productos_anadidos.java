@@ -13,6 +13,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.datepicker.DatePicker;
 
 /**
  * A Designer generated component for the vista-administrar_productos_anadidos template.
@@ -97,14 +98,14 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("campoCategoria")
 	private TextField campoCategoria;
-	@Id("campoFechaCaducidad")
-	private TextField campoFechaCaducidad;
 	@Id("campoOferta")
 	private TextField campoOferta;
 	@Id("campoOferta1")
 	private Span campoOferta1;
 	@Id("fechaCaducidad")
 	private Span fechaCaducidad;
+	@Id("campoFecha")
+	private DatePicker campoFecha;
 	/**
      * Creates a new VistaAdministrar_productos_anadidos.
      */
@@ -401,14 +402,6 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 		this.campoCategoria = campoCategoria;
 	}
 
-	public TextField getCampoFechaCaducidad() {
-		return campoFechaCaducidad;
-	}
-
-	public void setCampoFechaCaducidad(TextField campoFechaCaducidad) {
-		this.campoFechaCaducidad = campoFechaCaducidad;
-	}
-
 	public TextField getCampoOferta() {
 		return campoOferta;
 	}
@@ -431,6 +424,14 @@ public class VistaAdministrar_productos_anadidos extends PolymerTemplate<VistaAd
 
 	public void setFechaCaducidad(Span fechaCaducidad) {
 		this.fechaCaducidad = fechaCaducidad;
+	}
+
+	public DatePicker getCampoFecha() {
+		return campoFecha;
+	}
+
+	public void setCampoFecha(DatePicker campoFecha) {
+		this.campoFecha = campoFecha;
 	}
 
 

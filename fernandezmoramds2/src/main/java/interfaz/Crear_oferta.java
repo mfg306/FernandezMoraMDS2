@@ -1,6 +1,6 @@
 package interfaz;
 
-import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
@@ -9,7 +9,6 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -55,7 +54,6 @@ public class Crear_oferta extends Zona_productos {
 		this.getVaadinHorizontalLayout().setVisible(false);
 		
 		this.getVaadinVerticalLayout1().setVisible(false);
-//		this._productos_listado.setVisible(false);
 		this.getHuecoIzquierda().setVisible(false);
 		this.getHuecoDerecha().setVisible(false);
 		
@@ -83,17 +81,10 @@ public class Crear_oferta extends Zona_productos {
 
 			dialog.setWidth("400px");
 			dialog.setHeight("150px");
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = new Date();
-			formatter.format(date);
-			String inputDate = this.getCampoFechaCaducidad().getValue();
-			Date dateCaducidad = null;
-			
-			try {
-				dateCaducidad = formatter.parse(inputDate);
-			} catch (ParseException e1) {
-				e1.printStackTrace();
-			}
+			String fechaActual = formatter.format(date);
+
 			
 			Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
 			base_de_datos.Producto[] productosOferta = new base_de_datos.Producto[listaProductos.size()];
@@ -105,9 +96,10 @@ public class Crear_oferta extends Zona_productos {
 			}
 			
 			try {
-				admin.insertarOferta(this.getCampoOferta().getValue(), productosOferta, dateCaducidad.toString(), 
-						date.toString(), precios);
-				//Notification.show("Oferta creada con exito");
+				base_de_datos.Oferta o = admin.insertarOferta(this.getCampoOferta().getValue(), productosOferta, 
+						this.getCampoFecha().getValue().toString(), fechaActual, precios);
+				Oferta_administrador oa = new Oferta_administrador(this._gestionar_ofertas._ofertas_administrador, o);
+				this._gestionar_ofertas._ofertas_administrador.add_ofertas(oa);
 				retroceder();
 				dialog.open();
 			} catch (PersistentException e) {

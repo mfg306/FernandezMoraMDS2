@@ -36,7 +36,7 @@ public class Crear_categoría extends Zona_productos {
 		this.getCampoOferta().setVisible(false);
 		this.getCampoOferta1().setVisible(false);
 		
-		this.getCampoFechaCaducidad().setVisible(false);
+		this.getCampoFecha().setVisible(false);
 		this.getFechaCaducidad().setVisible(false);
 
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
@@ -52,6 +52,8 @@ public class Crear_categoría extends Zona_productos {
 		this.getH2CrearCategoria().setVisible(false);
 		this.getH2().setVisible(false);
 		this.getH21().setVisible(false);
+		
+		this.getCampoCategoria().setVisible(false);
 
 		this.getVaadinHorizontalLayout().setVisible(false);
 	}
@@ -80,9 +82,9 @@ public class Crear_categoría extends Zona_productos {
 
 			dialog.setWidth("400px");
 			dialog.setHeight("150px");
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 			Date date = new Date();
-			formatter.format(date);
+			String fechaActual = formatter.format(date);
 
 			Vector<Producto_listado_administracion> listaProductos = this._productos_listado_administracion._list_Producto_listado_administracion;
 			base_de_datos.Producto[] productosCategoria = new base_de_datos.Producto[listaProductos.size()];
@@ -92,7 +94,7 @@ public class Crear_categoría extends Zona_productos {
 			}
 
 			try {
-				base_de_datos.Categoria c = admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, date.toString());
+				base_de_datos.Categoria c = admin.insertarCategoria(this.getCampoCategoria().getValue(), productosCategoria, fechaActual);
 				Categoria_administrador ca = new Categoria_administrador(this._gestionar_categorias._categorias_administrador, c);
 				this._gestionar_categorias._categorias_administrador.addCategoria(ca);
 				retroceder();

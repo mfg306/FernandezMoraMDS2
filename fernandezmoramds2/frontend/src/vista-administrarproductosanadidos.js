@@ -2,6 +2,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class VistaAdministrar_productos_anadidos extends PolymerElement {
@@ -43,7 +44,7 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
    <span id="campoOferta1">Nombre oferta</span>
    <vaadin-text-field id="campoOferta" style="align-self: center;"></vaadin-text-field>
    <span id="fechaCaducidad">Fecha caducidad</span>
-   <vaadin-text-field id="campoFechaCaducidad"></vaadin-text-field>
+   <vaadin-date-picker id="campoFecha"></vaadin-date-picker>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout_administrador_productos_anadidos" style="width: 100%;">

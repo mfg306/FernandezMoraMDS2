@@ -51,6 +51,9 @@ public class BD_Ofertas {
 		Oferta o = null;
 		Producto_Rebajado pr = null;
 		
+		System.out.println("Fecha caducidad : " + aFechaCaducidad);
+		System.out.println("Fecha registro : " + aFechaRegistro);
+		
 		/* Paso 1. Crear la oferta */
 		try {
 			o = OfertaDAO.createOferta();
