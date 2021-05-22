@@ -19,11 +19,15 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 	private int numeroTotalRegistrosE = 0;
 	private int numeroTotalPaginasE = 0;
 	int paginaActualE = 0;
+	
+	int contador = 0;
 
 	public Mensajes_enviados(base_de_datos.Usuario_General general, Ver_mensajes_enviados vme) {
 		super(general, vme);
 		this.general = general;
+		
 		inicializarEnviados(this.paginaActualE);
+		
 	}
 
 	public void inicializarEnviados(int paginaActual) {
@@ -34,6 +38,16 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 		numeroTotalRegistrosE = 0;
 		numeroTotalPaginasE = 0;
 		verMensajesEnviados();
+		
+		/*Cuando contador = 0 quiere decir que estamos leyendo primero el constructor de Mensajes_recibidos
+		 * porque estamos heredando dicho constructor con el super. Entonces, no queremos repetir estas dos lineas,
+		 * unicamente cuando accedamos a inicializarEnviados porque haya que refrescar, es decir, cuando contador > 0 */
+		if(contador  > 0 ) {
+			this.Ver_mensajes_anteriores();
+			this.Ver_mensajes_siguientes();
+		}
+		
+		contador ++;
 	}
 
 	public void add_mensaje_enviado(base_de_datos.Mensaje mensaje) {
@@ -68,7 +82,6 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 		this.getPaginaActual().setText("" + (paginaActualE + 1));
 		this.getTotalPaginas().setText("" + numeroTotalPaginasE);
 
-		System.out.println("La pagina es : " + paginaActualE);
 		for (int i = (paginaActualE * mensajesPorPaginaE); i < this._list_Mensaje_enviado.size(); i++) {
 			if (i > paginaActualE * mensajesPorPaginaE + mensajesPorPaginaE - 1) break;
 			layout.add(this._list_Mensaje_enviado.get(i));
@@ -102,23 +115,42 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 
 	@Override
 	public void Ver_mensajes_anteriores() {
-		this.getBoton_pagina_anterior().addClickListener(event -> {
-			if (paginaActualE > 0) {
-				this.paginaActualE--;
+		if(this.getBoton_pagina_anterior().isEnabled()) {
+			this.getBoton_pagina_anterior().addClickListener(event -> {
+				if (paginaActualE > 0) {
+					this.paginaActualE--;
+				}
+				
+				if(this.paginaActualE == 0) {
+					this.getBoton_pagina_anterior().setEnabled(false);
+				}
+				
+				this.getBoton_pagina_siguiente().setEnabled(true);
+				
 				this.inicializarEnviados(paginaActualE);
-				System.out.println("Refrescando --");
-			}
-		});
+
+			});
+		}
+
 	}
 
 	@Override
 	public void Ver_mensajes_siguientes() {
-		this.getBoton_pagina_siguiente().addClickListener(event -> {
-			if ((paginaActualE + 1) < numeroTotalPaginasE) {
-				this.paginaActualE++;
+		if(this.getBoton_pagina_siguiente().isEnabled()) {
+			this.getBoton_pagina_siguiente().addClickListener(event -> {
+				if ((paginaActualE + 1) < numeroTotalPaginasE) {
+					this.paginaActualE++;
+				}
+				
+				this.getBoton_pagina_anterior().setEnabled(true);
+				
+				if(this.paginaActualE + 1 == numeroTotalPaginasE) {
+					this.getBoton_pagina_siguiente().setEnabled(false);
+				}
+				
 				this.inicializarEnviados(paginaActualE);
-				System.out.println("Refrescando ++");
-			}
-		});
+			});
+		}
+
 	}
 }

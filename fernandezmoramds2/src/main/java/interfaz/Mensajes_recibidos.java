@@ -25,13 +25,18 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	int paginaActual = 0;
 	
 	public Mensajes_recibidos(base_de_datos.Usuario_General general, Ver_bandeja_de_entrada vb) {
+		this.getBoton_pagina_anterior().setEnabled(false);
+
 		this.general = general;
 		this._ver_bandeja_de_entrada = vb;
 		inicializar(this.paginaActual);
 	}
 	
 	public void inicializar(int paginaActual) {
+		this._list_Mensaje_recibido = new Vector<Mensaje_recibido>();
 		this.layout = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
+		this.layout.removeAll();
+		
 		numeroTotalRegistros = 0;
 		numeroTotalPaginas = 0;
 		
@@ -58,9 +63,6 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 		}
 		
 		this.mostrar_Mensajes_Paginados();
-		
-//		this._list_Mensaje_recibido.add(mr);
-//		this.layout.add(mr);
 	}
 	
 	public void mostrar_Mensajes_Paginados()
@@ -131,22 +133,42 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	}
 	
 	public void Ver_mensajes_anteriores() {
-		this.getBoton_pagina_anterior().addClickListener(event ->{
-			System.out.println("WTF");
-			if(paginaActual > 0) {
-				this.paginaActual--;
+		
+		if(this.getBoton_pagina_anterior().isEnabled()) {
+			this.getBoton_pagina_anterior().addClickListener(event ->{
+
+				if(paginaActual > 0) {
+					this.paginaActual--;
+				}
+				
+				if(this.paginaActual == 0) {
+					this.getBoton_pagina_anterior().setEnabled(false);
+				}
+				
+				this.getBoton_pagina_siguiente().setEnabled(true);
 				this.inicializar(paginaActual);
-			}
-		});
+			});
+		}
+
 	}
 
 	public void Ver_mensajes_siguientes() {
-		this.getBoton_pagina_siguiente().addClickListener(event ->{
-			System.out.println("WTF");
-			if((paginaActual + 1) < numeroTotalPaginas) {
-				this.paginaActual++;
+		
+		if(this.getBoton_pagina_siguiente().isEnabled()) {
+			this.getBoton_pagina_siguiente().addClickListener(event ->{
+				if((paginaActual + 1) < numeroTotalPaginas) {
+					this.paginaActual++;
+				}
+				
+				this.getBoton_pagina_anterior().setEnabled(true);
+				
+				if(this.paginaActual + 1 == numeroTotalPaginas) {
+					this.getBoton_pagina_siguiente().setEnabled(false);
+				}
+				
 				this.inicializar(paginaActual);	
-			}
-		});
+			});
+		}
+
 	}
 }

@@ -97,6 +97,10 @@ public class Empleados extends VistaEmpleados {
 				/*Una vez que se le da al boton de anterior volvemos a activar el boton de siguiente*/
 				this.getBotonSiguientes().setEnabled(true);
 				
+				if(this.paginaActual == 0) {
+					this.getBotonAnteriores().setEnabled(false);
+				}
+				
 				
 				this.inicializar(paginaActual);	
 
