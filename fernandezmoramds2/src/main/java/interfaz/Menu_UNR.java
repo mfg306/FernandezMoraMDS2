@@ -11,7 +11,7 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public Menu_UNR(UNR_ unr) {
 		super(unr);
 		inicializar(unr);
-
+		
 		this.getBoton_iniciar_sesion().setSrc("login.png");
 		this.getBoton_iniciar_sesion().setWidth("3vw");
 	}
@@ -19,6 +19,9 @@ public class Menu_UNR extends Menu_UR_UNR {
 	public void inicializar(UNR_ unr) {
 		_uNR_ = unr;
 		layout = this.getMenu().as(VerticalLayout.class);
+		this._buscador = new Buscador(this);
+		this.getHuecoBuscador().as(VerticalLayout.class).add(this._buscador);
+		
 		abrir_iniciar_sesion();
 		abrir_carrito();
 		volver_a_Pagina_Inicial();
@@ -53,7 +56,11 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this.getBoton_carrito().addClickListener(event -> {
 			cerrar_carrito();
 			
-			this._ver_carrito_UNR = new Ver_carrito_UNR(this);
+			if(this._ver_carrito_UNR == null) {
+				this._ver_carrito_UNR = new Ver_carrito_UNR(this);
+				this._ver_carrito = this._ver_carrito_UNR;
+			}
+
 
 			this.ocultar_Informacion_Al_Abrir_Carrito();
 
@@ -124,6 +131,13 @@ public class Menu_UNR extends Menu_UR_UNR {
 		if(this._buscador != null) {
 			this._buscador._productos_busqueda.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		}
+	}
+	
+	@Override
+	public void limpiar_interfaz() {
+		this.ocultar_Productos_Busqueda();
+		this.ocultarInformacionIniciarSesion();
+		this.ocultar_Informacion_Al_Abrir_Carrito();
 	}
 
 }

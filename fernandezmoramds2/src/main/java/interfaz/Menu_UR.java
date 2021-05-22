@@ -20,11 +20,13 @@ public class Menu_UR extends Menu_UR_UNR {
 		this._uR = ur;
 		this.getBoton_iniciar_sesion().setVisible(false);
 		this.layout = this.getMenu().as(VerticalLayout.class);
-
 		inicializar(usuario);
 	}
 	
 	public void inicializar(base_de_datos.UR usuario) {
+		
+		this._buscador = new Buscador(this);
+		this.getHuecoBuscador().as(VerticalLayout.class).add(this._buscador);
 		
 		if(datos != null) this.getVaadinHorizontalLayout().remove(datos);
 		datos = new Select<>();
@@ -45,7 +47,7 @@ public class Menu_UR extends Menu_UR_UNR {
 			}
 
 			if (event.getValue().equals("Mis correos")) {
-				ocultarCarrito();
+				cerrar_carrito();
 				this._ver_bandeja_de_entrada = new Ver_bandeja_de_entrada(usuario);
 				abrir_bandeja_entrada();
 			}
@@ -95,6 +97,7 @@ public class Menu_UR extends Menu_UR_UNR {
 
 			if (this._ver_carrito_UR == null) {
 				this._ver_carrito_UR = new Ver_carrito_UR(this);
+				this._ver_carrito = this._ver_carrito_UR;
 			}
 
 			this._ver_carrito_UR._productos_carrito.actualizarListaProductos(this._uR.listaAuxUR);
@@ -107,6 +110,14 @@ public class Menu_UR extends Menu_UR_UNR {
 
 			this._uR.layout.add(this._ver_carrito_UR);
 		});
+	}
+	
+	@Override
+	public void limpiar_interfaz() {
+		this.ocultarInformacionPedidos();
+		this.ocultarInformacionEditarPerfil();
+		this.cerrar_carrito();
+		this.ocultarInformacionVerBandejaDeEntrada();
 	}
 
 	@Override
@@ -140,7 +151,7 @@ public class Menu_UR extends Menu_UR_UNR {
 		this.layout.removeAll();
 	}
 
-	public void ocultarCarrito() {
+	public void cerrar_carrito() {
 		if (this._ver_carrito_UR != null) {
 			this._uR.layout.remove(this._ver_carrito_UR);
 		}
@@ -150,7 +161,7 @@ public class Menu_UR extends Menu_UR_UNR {
 		this._ver_pedidos = new Ver_pedidos(this);
 
 		ocultar_Informacion_PaginaInicial();
-		ocultarCarrito();
+		cerrar_carrito();
 		this.ocultar_Informacion_Al_Abrir_Carrito();
 		this.ocultarInformacionPedidos();
 		this.ocultarInformacionEditarPerfil();
@@ -163,7 +174,7 @@ public class Menu_UR extends Menu_UR_UNR {
 		this._editar_perfil = new Editar_perfil(this);
 
 		ocultar_Informacion_PaginaInicial();
-		ocultarCarrito();
+		cerrar_carrito();
 		this.ocultar_Informacion_Al_Abrir_Carrito();
 		this.ocultarInformacionPedidos();
 		this.ocultarInformacionEditarPerfil();
@@ -182,7 +193,7 @@ public class Menu_UR extends Menu_UR_UNR {
 			ocultarInformacionVerBandejaDeEntrada();
 			ocultarInformacionPedidos();
 			ocultarInformacionEditarPerfil();
-			ocultarCarrito();
+			cerrar_carrito();
 			ocultar_Productos_Busqueda();
 			
 			for(Oferta o : this._uR._ofertas._list_Ofertas) {

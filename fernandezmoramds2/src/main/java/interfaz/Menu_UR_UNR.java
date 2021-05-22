@@ -29,10 +29,10 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 
 	public void inicializar() {
 		layout = this.getMenu().as(VerticalLayout.class);
-		this._buscador = new Buscador(this);
-		this.getHuecoBuscador().as(VerticalLayout.class).add(this._buscador);
-		
 	}
+	
+	public abstract void cerrar_carrito();
+	public abstract void limpiar_interfaz();
 
 	public abstract void abrir_carrito();
 

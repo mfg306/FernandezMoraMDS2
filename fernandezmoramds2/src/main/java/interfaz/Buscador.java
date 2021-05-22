@@ -63,7 +63,9 @@ public class Buscador extends VistaBuscador {
 		iUR_UNR i = new BDPrincipal();
 		this._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
 
-			this._menu_UR_UNR.layout.remove(this._productos_busqueda);
+//			this._menu_UR_UNR.layout.remove(this._productos_busqueda);
+			this._menu_UR_UNR._uR_UNR.layout.remove(this._productos_busqueda);
+
 			inicializar(this._menu_UR_UNR);
 			productoNuevo = new HorizontalLayout();
 
@@ -85,8 +87,13 @@ public class Buscador extends VistaBuscador {
 						productoNuevo.add(pb);
 						this._productos_busqueda.getVaadinHorizontalLayout1().add(productoNuevo);
 					}
+					
+					/*Borrando el carrito*/
+					if(this._menu_UR_UNR._ver_carrito != null) {
+						this._menu_UR_UNR.cerrar_carrito();
+					}
 					this._menu_UR_UNR._uR_UNR.limpiarInterfaz();
-					this._menu_UR_UNR.layout.add(this._productos_busqueda);
+					this._menu_UR_UNR._uR_UNR.layout.add(this._productos_busqueda);
 				}
 
 			} catch (PersistentException e) {
