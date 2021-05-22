@@ -34,6 +34,18 @@ public class Editar_oferta extends Zona_productos {
 		this.getH2CrearOferta().setVisible(false);
 		this.getH2EditarCategoria().setVisible(false);
 		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		String inputDate = oa.oferta.getFecha_caducidad();
+		
+		Date date = new Date(inputDate);
+		
+		formatter.format(date);
+
+
+		
+		
+		System.out.println(inputDate.toString());
+		
 		this.getCampoFechaCaducidad().setValue(oa.oferta.getFecha_caducidad());
 		this.getCampoOferta().setValue(oa.oferta.getNombre_Oferta());
 		
