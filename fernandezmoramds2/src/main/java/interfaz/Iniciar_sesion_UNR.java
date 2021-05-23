@@ -102,10 +102,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	}
 
 	public void iniciarSesion() throws PersistentException {
-		System.out.println("UR");
-
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
-			System.out.println("UR");
 
 			iUNR_ iunr = new BDPrincipal();
 			base_de_datos.Usuario_General usuario = null;
