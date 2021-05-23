@@ -118,12 +118,12 @@ public class Menu_UNR extends Menu_UR_UNR {
 				o.cerrar_Oferta();
 			}
 			
-			//this._uNR_.inicializarURUNR();
-			
 			this._uNR_.layoutOfertas.setVisible(true);
 			this._uNR_.layoutProductosMasVendidosPorCategorias.setVisible(true);
 			this._uNR_.getBotonVerCategorias().setVisible(true);
 			this._uNR_.getProductosMasVendidosPorCategorias().setVisible(true);
+			
+			
 		});
 
 	}

@@ -42,6 +42,8 @@ public abstract class UR_UNR extends VistaUrunr{
 		this.layoutOfertas.add(this._ofertas);
 		this.layoutProductosMasVendidosPorCategorias.add(this._productos_mas_vendidos_por_categorias);
 		
+		this.getBotonVerCategorias().setVisible(true);
+		
 		abrir_Ver_Categorias();
 	}
 	

@@ -40,8 +40,11 @@ public class BD_Productos {
 		Producto[] pds = null;
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-			Categoria c = CategoriaDAO.loadCategoriaByORMID(aCategoria.getId_Categoria());
-			pds = c._Producto.toArray();
+//			Categoria c = CategoriaDAO.loadCategoriaByORMID(aCategoria.getId_Categoria());
+//			pds = c._Producto.toArray();
+			
+			pds = ProductoDAO.listProductoByQuery("CategoriaId_Categoria = " + aCategoria.getId_Categoria(), null);
+			
 		} catch (Exception e) {
 			t.rollback();
 		}

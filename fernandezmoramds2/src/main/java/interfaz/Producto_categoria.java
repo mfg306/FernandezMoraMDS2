@@ -6,8 +6,10 @@ import vistas.VistaProducto_categoria;
 public class Producto_categoria extends VistaProducto_categoria{
 	public Productos_categoria _productos_categoria;
 	public Producto _producto;
+	base_de_datos.Producto producto;
 	
 	public Producto_categoria(Productos_categoria pc, UR_UNR unrunr, base_de_datos.Producto p) {
+		this.producto = p;
 		this.getNombre_producto().setText(p.getNombre());
 		this.getPrecio_producto().setText(String.valueOf(p.getPrecio_producto()) + " €");
 		this.getImagen_producto().setWidth("10vw");

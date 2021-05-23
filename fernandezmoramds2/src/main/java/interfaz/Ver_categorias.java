@@ -18,14 +18,12 @@ public class Ver_categorias extends VistaVercategorias {
 		//verCategorias();
 		inicializar(unr);
 		
-		
 	}
-	
 	
 	public void inicializar(UR_UNR unr) {
 		this._uR_UNR = unr;
-		this._categorias = new Categorias(this);
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		this._categorias = new Categorias(this);
 		this.layout.remove(this._categorias);
 		this.layout.add(this._categorias);
 		

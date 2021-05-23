@@ -93,12 +93,6 @@ public class Editar_categoria extends Zona_productos {
 			}
 			
 			try {
-				
-				for(base_de_datos.Producto p : productosCategoria) {
-					System.out.println("EN LA INTERFAZ ==> " + p.getNombre());
-				}
-				
-				
 				this._categoria_administrador.categoria = admin.actualizarCategoria(this.getCampoCategoria().getValue(), 
 						productosCategoria, fechaActual, this._categoria_administrador.categoria);
 				Notification.show("Categoria creada con éxito");
