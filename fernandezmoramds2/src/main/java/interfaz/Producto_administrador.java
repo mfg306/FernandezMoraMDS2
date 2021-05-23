@@ -54,7 +54,7 @@ public class Producto_administrador extends VistaProducto_administrador {
 	
 	public void Editar_producto() {
 		this.getVaadinButton().addClickListener(event ->{
-			this._editar_producto = new Editar_producto(this);
+			this._editar_producto = new Editar_producto(this, this._productos_administrador._gestionar_productos);
 			this._productos_administrador._gestionar_productos.ocultar_Gestionar_Productos();
 			this.layout.add(this._editar_producto);
 		});

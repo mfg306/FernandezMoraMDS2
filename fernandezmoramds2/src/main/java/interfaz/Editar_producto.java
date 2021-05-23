@@ -24,7 +24,9 @@ public class Editar_producto extends VistaEditar_producto {
 	String[] imagenes = new String[5];
 	int contador = 0;
 
-	public Editar_producto(Producto_administrador pa) {
+	public Editar_producto(Producto_administrador pa, Gestionar_productos gps) {
+		
+		this._gestionar_productos = gps;
 		this._producto_administrador = pa;
 		this.getAñadeUnaNuevaDescripción().setValue(this._producto_administrador.p.getDescripcion());
 		this.getNuevoNombreProducto().setValue(this._producto_administrador.p.getNombre());
@@ -33,7 +35,7 @@ public class Editar_producto extends VistaEditar_producto {
 
 		base_de_datos.Imagen imagenes[] = this._producto_administrador.p._Imagen.toArray();
 
-		this.getImagen().setWidth("30vw");
+		this.getImagen().setWidth("20vw");
 		this.getImagen().setHeight("auto");
 		
 		

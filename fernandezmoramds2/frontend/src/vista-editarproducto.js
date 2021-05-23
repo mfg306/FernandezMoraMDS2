@@ -19,8 +19,8 @@ class VistaEditar_producto extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <h1 style="align-self: center;" id="h1">Mis productos</h1>
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="width: 100%; height: 100%;">
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; justify-content: center; width: 100%;">
-   <img id="imagen" style="width: 100%; height: 100%;">
+  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; justify-content: center; width: 100%; align-self: center;">
+   <img id="imagen" style="width: 100%; height: 100%; align-self: center;">
    <img id="imagen1" style="width: 100%; height: 100%;">
    <img id="imagen2" style="width: 100%; height: 100%;">
    <img id="imagen3" style="width: 100%; height: 100%;">
