@@ -43,7 +43,6 @@ public class Iniciar_sesion extends VistaIniciar_sesion {
 	}
 
 	public void iniciarSesionEmpleados() throws PersistentException {
-		System.out.println("Empleados");
 
 		this.getBoton_iniciar_sesion_empleados().addClickListener(event -> {
 			System.out.println("Empleados");
