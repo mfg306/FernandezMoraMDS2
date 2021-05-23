@@ -13,8 +13,23 @@ public class BD_Productos {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Producto> _producto = new Vector<Producto>();
 
-	public Producto[] cargarProductosMasVendidos(String aNombreCategoria) {
-		throw new UnsupportedOperationException();
+	public Producto[] cargarProductosMasVendidos(String aNombreCategoria) throws PersistentException {
+		Categoria[] categorias = CategoriaDAO.listCategoriaByQuery("Nombre_categoria = '" + aNombreCategoria + "'",
+				"Nombre_categoria");
+		Producto[] productos = null;
+		Categoria c = null;
+		if (categorias != null && categorias.length != 0) {
+			c = categorias[0];
+
+			int idCategoria = c.getId_Categoria();
+
+			productos = ProductoDAO.listProductoByQuery("CategoriaId_Categoria = " + idCategoria,
+					"Num_Unidades_Vendidas");
+
+		}
+
+		return productos;
+
 	}
 
 	public Producto cargarProducto(int aIdProducto) throws PersistentException {
@@ -59,7 +74,9 @@ public class BD_Productos {
 
 		if (p != null) {
 			this._bDPrincipal.eliminarImagenProducto(p);
-			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
+//			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
+			this._bDPrincipal.eliminarComentarioProducto(p);
+			this._bDPrincipal.eliminarValoracionesProducto(p);
 		}
 
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
@@ -72,15 +89,13 @@ public class BD_Productos {
 			e.printStackTrace();
 		}
 
-		this._bDPrincipal.eliminarComentarioProducto(p);
-		this._bDPrincipal.eliminarValoracionesProducto(p);
 	}
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades,
 			String[] aRuta) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Producto p = null;
-		int contador = 0 ;
+		int contador = 0;
 		boolean esPrincipal = false;
 		try {
 			p = ProductoDAO.createProducto();
@@ -102,10 +117,11 @@ public class BD_Productos {
 		this._bDPrincipal = new BDPrincipal();
 		for (String ruta : aRuta) {
 			if (ruta != null) {
-				if(contador == 0) esPrincipal = true;
+				if (contador == 0)
+					esPrincipal = true;
 				this._bDPrincipal.guardarImagenesProducto(ruta, p, esPrincipal);
 				esPrincipal = false;
-				contador ++;
+				contador++;
 			}
 		}
 
@@ -119,36 +135,36 @@ public class BD_Productos {
 
 	public Producto actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion,
 			String[] aRutaImagen, int aNumUnidades) throws PersistentException {
-		
+
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Producto p = null;
-		int contador = 0 ;
+		int contador = 0;
 		boolean esPrincipal = false;
-		
+
 		try {
 			p = ProductoDAO.getProductoByORMID(aIdProducto);
-			
+
 			p.setNombre(aNombre);
 			p.setDescripcion(aDescripcion);
 			p.setPrecio_producto(aPrecio);
 			p.setNum_Unidades_Restantes(aNumUnidades);
-					
+
 			ProductoDAO.save(p);
-			
+
 			t.commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
-		
 
 		this._bDPrincipal = new BDPrincipal();
 		for (String ruta : aRutaImagen) {
 			if (ruta != null) {
-				if(contador == 0) esPrincipal = true;
+				if (contador == 0)
+					esPrincipal = true;
 				this._bDPrincipal.guardarImagenesProducto(ruta, p, esPrincipal);
 				esPrincipal = false;
-				contador ++;
+				contador++;
 			}
 		}
 		return p;
@@ -163,9 +179,10 @@ public class BD_Productos {
 		return null;
 	}
 
-	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto) throws PersistentException {
-		
-		if(aNombreCategoria == null || aNombreCategoria.equals("Todos los departamentos")) {
+	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto)
+			throws PersistentException {
+
+		if (aNombreCategoria == null || aNombreCategoria.equals("Todos los departamentos")) {
 			Producto[] p = ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aNombreProducto + "%'", "Nombre");
 			return p;
 		} else {

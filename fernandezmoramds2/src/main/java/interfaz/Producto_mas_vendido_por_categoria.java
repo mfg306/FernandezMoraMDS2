@@ -9,6 +9,12 @@ public class Producto_mas_vendido_por_categoria extends VistaProducto_mas_vendid
 	
 	public Producto_mas_vendido_por_categoria(Productos_mas_vendidos_por_categorias pmc, UR_UNR urunr,base_de_datos.Producto p) {
 		
+		this.getImagen_producto().setWidth("10vw");
+
+		if(p._Imagen != null && !p._Imagen.isEmpty()) {
+			this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
+		}
+		
 		inicializar(pmc, urunr,p);
 	}
 	

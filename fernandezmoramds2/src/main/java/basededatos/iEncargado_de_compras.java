@@ -4,6 +4,7 @@ import org.orm.PersistentException;
 
 import base_de_datos.Encargado_de_compras;
 import base_de_datos.Pendiente;
+import base_de_datos.Producto_en_compra;
 import base_de_datos.Transportista;
 
 public interface iEncargado_de_compras {
@@ -21,4 +22,6 @@ public interface iEncargado_de_compras {
 	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException;
 	
 	public boolean eliminarProductosEnCompra(Pendiente aPendiente) throws PersistentException;
+	
+	public Producto_en_compra[] cargarProductosEnCompra(int aIdEnviado) throws PersistentException;
 }

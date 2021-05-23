@@ -21,9 +21,15 @@ public class BD_Pendiente {
 		int contador = 0;
 		
 		Encargado_de_compras[] encargados = Encargado_de_comprasDAO.listEncargado_de_comprasByQuery(null, null);
+		Transportista[] transportistas = TransportistaDAO.listTransportistaByQuery(null, null);
 		
 		Random rand = new Random();
 		int randomNum = rand.nextInt((encargados.length));
+		
+		
+		/*En que cola se va a asignar*/
+		int randomCola = rand.nextInt(transportistas.length);
+		
 		
 		/*Generamos un numero aleatorio que sera el encargado al que le toque*/
 		Encargado_de_compras encargado = encargados[randomNum];
@@ -40,6 +46,7 @@ public class BD_Pendiente {
 			pendiente.setORM__Encargado_de_compras(encargado);
 			pendiente.setORM__Hace_compra(usuario);
 			pendiente.setAsignado(false);
+			pendiente.setId_cola(randomCola);
 			
 			pendiente.setFecha_estado(fechaActualizacion);
 			
@@ -78,12 +85,19 @@ public class BD_Pendiente {
 
 		contador = 0;
 		/*Paso 3. Actualizar los datos de Producto*/
+		System.out.println("AQUI");
 		PersistentTransaction t3 = HitoPersistentManager.instance().getSession().beginTransaction();
 		
 		try {
 			for(Producto p: aProductos) {
 				p.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes() - aUnidades[contador]);
-				p.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas() + aUnidades[contador]);
+				int numUnidadesVendidas = 0;
+				if(p.getNum_Unidades_Vendidas() != null) {
+					numUnidadesVendidas = Integer.parseInt(p.getNum_Unidades_Vendidas());
+				} else {
+				}
+				System.out.println("El numero de unidades vendidas es : " + numUnidadesVendidas);
+				p.setNum_Unidades_Vendidas("" + (numUnidadesVendidas + aUnidades[contador]));
 				contador++;
 				
 				ProductoDAO.save(p);

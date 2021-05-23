@@ -29,6 +29,7 @@ import base_de_datos.Producto;
 import base_de_datos.Categoria;
 import base_de_datos.Comentario;
 import base_de_datos.Producto_Rebajado;
+import base_de_datos.Producto_en_compra;
 import base_de_datos.Compra;
 import base_de_datos.UR;
 import base_de_datos.Usuario_General;
@@ -72,10 +73,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return ofs;
 	}
 
-	public Producto[] cargarProductosMasVendidos() {
-		throw new UnsupportedOperationException();
-	}
-
 	public Categoria[] cargarCategorias() {
 		Categoria[] cts = null;
 		try {
@@ -94,8 +91,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_UNR.cambiarContraseniaUsuario(aCorreo, aContrasenia);
 	}
 
-	public Producto[] cargarProductosMasVendidos(String aNombreCategoria) {
-		throw new UnsupportedOperationException();
+	public Producto[] cargarProductosMasVendidos(String aNombreCategoria) throws PersistentException {
+		return this._bD_Productos.cargarProductosMasVendidos(aNombreCategoria);
 	}
 
 	public Producto_Rebajado[] cargarProductosOferta(Oferta aOferta) throws PersistentException {
@@ -407,6 +404,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades) throws PersistentException {
 		this._bD_Pendiente.realizarCompra(aProductos, aId_Usuario, aUnidades);
 		
+	}
+
+	@Override
+	public Producto_en_compra[] cargarProductosEnCompra(int aIdEnviado) throws PersistentException {
+		return this._bD_Productos_en_compra.cargarProductosEnCompra(aIdEnviado);
 	}
 
 	

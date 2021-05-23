@@ -34,4 +34,8 @@ public class BD_Productos_en_compra {
 		HitoPersistentManager.instance().disposePersistentManager();
 		return true;
 	}
+	
+	public Producto_en_compra[] cargarProductosEnCompra(int aIdEnviado) throws PersistentException {
+		return  Producto_en_compraDAO.listProducto_en_compraByQuery("PendienteCompraCodigo = " + aIdEnviado, null);
+	}
 }

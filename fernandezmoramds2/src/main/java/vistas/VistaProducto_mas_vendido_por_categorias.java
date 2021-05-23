@@ -23,8 +23,6 @@ public class VistaProducto_mas_vendido_por_categorias extends PolymerTemplate<Vi
 	private Element vaadinVerticalLayout;
 	@Id("imagen_producto")
 	private Image imagen_producto;
-	@Id("botonproductoMasVendidoPorCategoria")
-	private Button botonproductoMasVendidoPorCategoria;
 
 	/**
      * Creates a new VistaProducto_mas_vendido_por_categorias.
@@ -54,13 +52,5 @@ public class VistaProducto_mas_vendido_por_categorias extends PolymerTemplate<Vi
 
 	public void setImagen_producto(Image imagen_producto) {
 		this.imagen_producto = imagen_producto;
-	}
-
-	public Button getBotonproductoMasVendidoPorCategoria() {
-		return botonproductoMasVendidoPorCategoria;
-	}
-
-	public void setBotonproductoMasVendidoPorCategoria(Button botonproductoMasVendidoPorCategoria) {
-		this.botonproductoMasVendidoPorCategoria = botonproductoMasVendidoPorCategoria;
 	}
 }

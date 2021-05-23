@@ -25,7 +25,10 @@ public class Producto_oferta extends VistaProducto_oferta{
 		this.getPrecio_original().setText(String.valueOf(p.getPrecio_producto()) + " €");
 		
 		this.getImagen_producto().setWidth("10vw");
-		this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
+		
+		if(p._Imagen != null && !p._Imagen.isEmpty()) {
+			this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
+		}
 		
 		cargarProductoRebajado();
 	}
