@@ -52,7 +52,6 @@ public class Pedido_T extends VistaPedido_t {
 		}
 
 		this.getLabel1().setText(cliente.getDireccion_envio());
-
 	}
 
 	public void Marcar_como_entregado() {
