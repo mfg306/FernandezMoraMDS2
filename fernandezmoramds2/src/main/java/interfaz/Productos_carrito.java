@@ -19,16 +19,18 @@ public class Productos_carrito extends VistaProductos_carrito {
 		this._ver_carrito = vc;
 		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
 		seleccionarVarios = false;
+		actualizar_datos(usuario);
+
 		inicializar(usuario);
+		
+		Seleccionar_varios();
+		Borrar(usuario);
 	}
 
 	public void inicializar(UR_UNR usuario) {
 		listadoProductos = this.getVaadinHorizontalLayout1();
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		mostrarProductos();
-		Seleccionar_varios();
-		Borrar(usuario);
-		actualizar_datos(usuario);
 
 	}
 
@@ -50,7 +52,7 @@ public class Productos_carrito extends VistaProductos_carrito {
 	public void actualizar_datos(UR_UNR usuario) {
 		for(Producto_carrito pc : this._list_Producto_carrito) {
 			pc.seleccionCantidad.addValueChangeListener(event ->{
-				this.inicializar(usuario);
+				mostrarProductos();
 			});
 		}
 	}
@@ -72,12 +74,16 @@ public class Productos_carrito extends VistaProductos_carrito {
 
 	public void Borrar(UR_UNR usuario) {
 		this.getVaadinButton().addClickListener(event -> {
+			
 			if (seleccionarVarios) {
 				for (int i = 0; i < this._list_Producto_carrito.size(); i++) {
 					if (this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == true) {
+						System.out.println("Check a true : " + this._list_Producto_carrito.get(i).producto.getNombre());
 						this.listadoProductos.remove(this._list_Producto_carrito.get(i));
 					}
-					if (this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == false) {
+					
+					if(this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == false) {
+						System.out.println("Check a false : " + this._list_Producto_carrito.get(i).producto.getNombre());
 						this._list_Producto_carrito.get(i).getCheckEliminar().setVisible(false);
 						this._list_Producto_carrito.get(i).getVaadinButton().setVisible(true);
 						this._list_Producto_carrito.get(i).seleccionCantidad.setVisible(true);
@@ -94,19 +100,22 @@ public class Productos_carrito extends VistaProductos_carrito {
 						this._list_Producto_carrito.remove(i);
 					}
 				}
-			} else {
+			} 
+			
+			
+			if(!seleccionarVarios) {
 				this._list_Producto_carrito.removeAllElements();
 				this.listadoProductos.removeAll();
 				usuario.listaAux.removeAllElements();
 
 			}
 
+			this.inicializar(usuario);
 			/* Una vez que hemos borrado volvemos a ponerSeleccionarVarios a false */
 			seleccionarVarios = false;
 			
-			this.inicializar(usuario);
-			
 		});
+		
 	}
 
 }
