@@ -24,8 +24,6 @@ public class VistaVenta extends PolymerTemplate<VistaVenta.VistaVentaModel> {
 	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("h2")
-	private H2 h2;
 	@Id("vaadinListBox")
 	private Element vaadinListBox;
 	@Id("vaadinItem")
@@ -61,14 +59,6 @@ public class VistaVenta extends PolymerTemplate<VistaVenta.VistaVentaModel> {
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-	public H2 getH2() {
-		return h2;
-	}
-
-	public void setH2(H2 h2) {
-		this.h2 = h2;
 	}
 
 	public Element getVaadinListBox() {

@@ -49,6 +49,7 @@ public class BD_Recibido {
 			recibido.setFecha_estado(fechaActualizacion);
 			recibido.setNum_total_unidades(aEnviado.getNum_total_unidades());
 			recibido.setPrecio_total(aEnviado.getPrecio_total());
+			recibido.setRecibido(true);
 			
 			RecibidoDAO.save(recibido);
 
