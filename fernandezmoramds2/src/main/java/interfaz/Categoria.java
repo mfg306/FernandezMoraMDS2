@@ -50,19 +50,19 @@ public class Categoria extends VistaCategoria {
 		for (base_de_datos.Producto p : this.productos) {
 			Producto_categoria pc = new Producto_categoria(this._productos_categoria, this._categorias._ver_categorias._uR_UNR, p);
 			this._productos_categoria._list_Producto_categoria.add(pc);
-			//this._productos_categoria.getLista_productos_categoria().add(pc);
-			//this._categorias._ver_categorias.layout.add(this._productos_categoria);
+			this._productos_categoria.getLista_productos_categoria().add(pc);
+			this._categorias._ver_categorias.layout.add(this._productos_categoria);
 
 		}
-		//this.inicializar(this._categorias, this._categorias._ver_categorias._uR_UNR);
+		this.inicializar(this._categorias, this._categorias._ver_categorias._uR_UNR);
 		this.numeroTotalPaginas = this._productos_categoria._list_Producto_categoria.size()/this.productoscategoriaPorPagina;
 		/*if(this.numeroTotalPaginas%2 != 0) {
 			this.numeroTotalPaginas = this.numeroTotalPaginas + 1;
 		}*/
 		
-		this._productos_categoria.getPrimeraPagina().setText(String.valueOf(paginaActual));
+		/*this._productos_categoria.getPrimeraPagina().setText(String.valueOf(paginaActual));
 		this._productos_categoria.getUltimaPagina().setText(String.valueOf(numeroTotalPaginas));
-		this._productos_categoria.mostrarProductosCategoria(numeroRegistro);
+		this._productos_categoria.mostrarProductosCategoria(numeroRegistro);*/
 	}
 
 

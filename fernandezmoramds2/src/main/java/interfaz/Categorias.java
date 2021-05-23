@@ -21,7 +21,7 @@ public class Categorias extends VistaCategorias {
 	public Ver_categorias _ver_categorias;
 	public Vector<Categoria> _list_Categorias = new Vector<Categoria>();
 	public HorizontalLayout paginacion;
-	public VerticalLayout layout = this.getLista_Categorias().as(VerticalLayout.class);
+	public VerticalLayout layout;
 	public Span pagina, de, primeraPagina, ultimaPagina;
 	public Button siguiente, anterior;
 	public H1 noHayCategorias;
@@ -38,6 +38,7 @@ public class Categorias extends VistaCategorias {
 	public void inicializar(Ver_categorias vCategorias) {
 		this._ver_categorias = vCategorias;
 		this._list_Categorias = new Vector<Categoria>();
+		layout = this.getLista_Categorias().as(VerticalLayout.class);
 		categoriasPorPagina = 2;
 		numeroTotalRegistros = 0;
 		parte_paginacion();
@@ -93,7 +94,6 @@ public class Categorias extends VistaCategorias {
 
 	public void mostrar_Categorias_Paginadas() {
 
-		this.layout.removeAll();
 		if(this._list_Categorias.size() == 0) {
 			this.getPartePaginacion().as(VerticalLayout.class).removeAll();
 			noHayCategorias = new H1();
@@ -109,7 +109,7 @@ public class Categorias extends VistaCategorias {
 
 		this.primeraPagina.setText("" + (paginaActual + 1));
 		this.ultimaPagina.setText("" + numeroTotalPaginas);
-
+		this.layout.removeAll();
 		for (int i = (paginaActual * categoriasPorPagina); i < this._list_Categorias.size(); i++) {
 			if (i > paginaActual * categoriasPorPagina + categoriasPorPagina - 1)
 				break;
