@@ -30,11 +30,6 @@ public class BD_Categorias {
 		Categoria c = CategoriaDAO.createCategoria();
 			
 		try {
-
-			if(c == null) System.out.println("C ES NULL");
-			else System.out.println("NO ES NULL");
-			
-			
 			c.setNombre_categoria(aNombreCategoria);
 			c.setFecha_registro(aFechaRegistro);
 
@@ -42,7 +37,6 @@ public class BD_Categorias {
 
 			t.commit();
 			
-			System.out.println("Se ha creado la categoria");
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
@@ -101,11 +95,9 @@ public class BD_Categorias {
 		
 		
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-		System.out.println("ID llegado: " + aIdCategoria);
 
 		try {
 			Categoria c = CategoriaDAO.getCategoriaByORMID(aIdCategoria);
-			System.out.println("ID encontrado: " + c.getId_Categoria());
 
 			CategoriaDAO.delete(c);
 			t.commit();
