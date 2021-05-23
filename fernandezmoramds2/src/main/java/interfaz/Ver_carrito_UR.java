@@ -12,10 +12,6 @@ public class Ver_carrito_UR extends Ver_carrito {
 		this._menu_UR = _menu_UR;
 		this._productos_carrito = new Productos_carrito(this._menu_UR._uR.listaAux,this, this._menu_UR._uR);
 		
-		for(Producto_carrito pc : this._menu_UR._uR.listaAux) {
-			System.out.println(pc.producto.getNombre() + " - " +  pc.cantidad);
-		}
-
 		layout = this.getVaadinVerticalLayout1().as(VerticalLayout.class);
 		inicializar();
 	}

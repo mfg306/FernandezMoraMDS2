@@ -55,6 +55,7 @@ public class Asignar_a_transportista extends VistaAsignar_a_transportista {
 						String asunto = "El pedido de código " + this.pendiente.getCodigo() + " se ha enviado con éxito.";
 						String mensaje = "El pedido de código " + this.pendiente.getCodigo() + " se ha enviado a la empresa de transportes"
 								+ " con éxito. \n Fecha: " + this.pendiente.getFecha_estado();
+											
 						this.Enviar_mensaje_a_cliente_E(this.pendiente.get_Hace_compra().getCorreo_electronico(), asunto, mensaje);
 					} catch (PersistentException e1) {
 						e1.printStackTrace();

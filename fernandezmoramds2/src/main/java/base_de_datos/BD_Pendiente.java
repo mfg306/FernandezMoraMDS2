@@ -15,25 +15,16 @@ public class BD_Pendiente {
 	public Vector<Pendiente> _pendiente = new Vector<Pendiente>();
 
 	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades) throws PersistentException {
-		System.out.println("EMPEZANDO");
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		int contador = 0;
 		
 		Encargado_de_compras[] encargados = Encargado_de_comprasDAO.listEncargado_de_comprasByQuery(null, null);
 		
-		for(Encargado_de_compras e : encargados) {
-			System.out.println("Nombre encargado : " + e.getCorreo());
-		}
-		
 		Random rand = new Random();
 		int randomNum = rand.nextInt((encargados.length));
 		
-		
-		System.out.println("Numero aleatorio : " + randomNum);
-		
 		/*Generamos un numero aleatorio que sera el encargado al que le toque*/
 		Encargado_de_compras encargado = encargados[randomNum];
-		System.out.println("Encargado : " + encargado.getCorreo());
 		UR usuario = URDAO.getURByORMID(aId_Usuario);
 		
 		Pendiente pendiente = null;
@@ -55,11 +46,15 @@ public class BD_Pendiente {
 
 		
 		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		Producto_en_compra[] productos =  new Producto_en_compra[aProductos.length];
+		int cont = 0;
 
 		/*Paso 2. Crear el producto en compra y relacionar con pendiente*/
 		try {
 			for(Producto p : aProductos) {
 				Producto_en_compra pec = Producto_en_compraDAO.createProducto_en_compra();
+				productos[cont] = pec;
+				cont++;
 				
 				pec.setORM__Producto(p);
 				pec.setNum_unidades_producto(aUnidades[contador]);
@@ -91,11 +86,7 @@ public class BD_Pendiente {
 		} catch(Exception e) {
 			e.printStackTrace();
 			t3.rollback();
-		}
-
-		
-		
-		
+		}		
 	}
 
 	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException {
