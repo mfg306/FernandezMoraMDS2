@@ -24,7 +24,7 @@ public class Producto_UNR extends Producto {
 			} else {
 				int index = 0;
 				index = this._uNR_.indiceProducto(pc);
-				this._uNR_.listaAuxUNR.get(index).incrementarCantidad();
+				this._uNR_.listaAux.get(index).incrementarCantidad();
 				
 			}
 			Notification.show( this.producto.getNombre() + " añadido al carrito");

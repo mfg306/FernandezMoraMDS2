@@ -64,7 +64,8 @@ public class Menu_UNR extends Menu_UR_UNR {
 
 			this.ocultar_Informacion_Al_Abrir_Carrito();
 
-			this._ver_carrito_UNR._productos_carrito.actualizarListaProductos(this._uNR_.listaAuxUNR);
+			this._ver_carrito_UNR._productos_carrito.actualizarListaProductos(this._uNR_.listaAux);
+			this._ver_carrito_UNR.inicializar();
 			this._uNR_.limpiarInterfaz();
 			this._uNR_.layout.add(this._ver_carrito_UNR);
 		});

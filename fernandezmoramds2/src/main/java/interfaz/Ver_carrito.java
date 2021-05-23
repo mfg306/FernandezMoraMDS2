@@ -31,6 +31,7 @@ public abstract class Ver_carrito extends VistaVer_carrito {
 	public void cerrar_Producto(Image b, Vector<Producto_carrito> lista, VerticalLayout layout) {
 		b.addClickListener(event -> {
 			for (Producto_carrito pca : lista) {
+				this.getVaadinHorizontalLayout().setVisible(true);
 				layout.remove(pca._producto);
 			}
 		});

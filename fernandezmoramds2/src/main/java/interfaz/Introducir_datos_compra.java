@@ -39,16 +39,17 @@ public class Introducir_datos_compra extends VistaIntroducir_datos_compra {
 
 			try {
 
-				Producto[] lista = new Producto[this._ver_carrito_UR._menu_UR._uR.listaAuxUR.size()];
+				Producto[] lista = new Producto[this._ver_carrito_UR._menu_UR._uR.listaAux.size()];
 				int[] numUnidades = new int[lista.length];
 
 				for (int i = 0; i < lista.length; i++) {
-					lista[i] = this._ver_carrito_UR._menu_UR._uR.listaAuxUR.get(i).producto;
-					numUnidades[i] = this._ver_carrito_UR._menu_UR._uR.listaAuxUR.get(i).cantidad;
+					lista[i] = this._ver_carrito_UR._menu_UR._uR.listaAux.get(i).producto;
+					numUnidades[i] = this._ver_carrito_UR._menu_UR._uR.listaAux.get(i).cantidad;
 				}
 
 				/* Producto[] aProductos, int aId_Usuario, int[] aUnidades */
 				iur.realizarCompra(lista, this._ver_carrito_UR._menu_UR._uR.UR.getId_Usuario(), numUnidades);
+				
 			} catch (Exception e) {
 
 			}

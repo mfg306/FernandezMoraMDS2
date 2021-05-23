@@ -10,9 +10,9 @@ public class Ver_carrito_UR extends Ver_carrito {
 
 	public Ver_carrito_UR(Menu_UR _menu_UR) {
 		this._menu_UR = _menu_UR;
-		this._productos_carrito = new Productos_carrito(this._menu_UR._uR.listaAuxUR,this);
+		this._productos_carrito = new Productos_carrito(this._menu_UR._uR.listaAux,this, this._menu_UR._uR);
 		
-		for(Producto_carrito pc : this._menu_UR._uR.listaAuxUR) {
+		for(Producto_carrito pc : this._menu_UR._uR.listaAux) {
 			System.out.println(pc.producto.getNombre() + " - " +  pc.cantidad);
 		}
 
@@ -24,7 +24,7 @@ public class Ver_carrito_UR extends Ver_carrito {
 		this._introducir_datos_compra = new Introducir_datos_compra(this);
 		this.getProductosCarrito().add(this._productos_carrito);
 		abrir_Producto(this._productos_carrito._list_Producto_carrito, this.layout);
-		cerrar_Producto(this._menu_UR.getBoton_carrito(), this._menu_UR._uR.listaAuxUR, this.layout);
+		cerrar_Producto(this._menu_UR.getBoton_carrito(), this._menu_UR._uR.listaAux, this.layout);
 	}
 
 

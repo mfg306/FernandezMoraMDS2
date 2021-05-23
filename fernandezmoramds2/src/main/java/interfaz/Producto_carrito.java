@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.util.Vector;
+
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
@@ -25,7 +28,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 
 		this.getImg().setSrc(pc._Imagen.toArray()[0].getRuta());
 
-		inicializar(pc);
+		inicializar(pc, usuario);
 	}
 
 	public void incrementarCantidad() {
@@ -40,8 +43,11 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this._productos_carrito = pc;
 	}
 
-	public void inicializar(base_de_datos.Producto p) {
-		Eliminar();
+	public void inicializar(base_de_datos.Producto p, UR_UNR usuario) {
+
+		this.getVaadinButton().addClickListener(event -> {
+			Eliminar(usuario);
+		});
 	}
 
 	public void Editar_cantidad() {
@@ -49,13 +55,11 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this.layout.add(seleccionCantidad);
 	}
 
-	public void Eliminar() {
-		this.getVaadinButton().addClickListener(event -> {
-			this._productos_carrito.listadoProductos.remove(this);
-			this._productos_carrito._list_Producto_carrito.remove(this);
-
-		});
-
+	public void Eliminar(UR_UNR usuario) {
+		this._productos_carrito.listadoProductos.remove(this);
+		this._productos_carrito._list_Producto_carrito.remove(this);
+		usuario.actualizarMiListado(this._productos_carrito._list_Producto_carrito);
 	}
+
 
 }
