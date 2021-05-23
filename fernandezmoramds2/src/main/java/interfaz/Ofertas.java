@@ -63,8 +63,11 @@ public class Ofertas extends VistaOfertas {
 			this.getListaOfertas().removeAll();
 		} else {
 			for (base_de_datos.Oferta of : this.ofertas) {
-				Oferta oferta = new Oferta(this, this._uR_UNR, of);
-				this._list_Ofertas.add(oferta);
+				if(of != null) {
+					Oferta oferta = new Oferta(this, this._uR_UNR, of);
+					this._list_Ofertas.add(oferta);
+				}
+
 			}
 			this.getListaOfertas().removeAll();
 			this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
