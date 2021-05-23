@@ -111,7 +111,6 @@ public class BD_Productos {
 			ProductoDAO.save(p);
 
 			t.commit();
-			System.out.println("Se ha creado el producto");
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();

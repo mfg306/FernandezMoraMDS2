@@ -45,8 +45,6 @@ public class BD_Empleados {
 				for(Recibido recibido : ((Transportista) e)._Recibido.toArray()) {
 					((Transportista) e)._Recibido.remove(recibido);
 				}
-				
-				System.out.println("Dependencias eliminadas del transportista");
 			}
 			
 			if(e instanceof Encargado_de_compras) {
@@ -59,8 +57,6 @@ public class BD_Empleados {
 				for(Pendiente pendiente : ((Encargado_de_compras) e)._Pendiente.toArray()) {
 					((Encargado_de_compras) e)._Pendiente.remove(pendiente);
 				}
-				
-				System.out.println("Dependencias eliminadas del encargado");
 			}
 			
 			

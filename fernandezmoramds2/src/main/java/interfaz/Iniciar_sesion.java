@@ -45,7 +45,6 @@ public class Iniciar_sesion extends VistaIniciar_sesion {
 	public void iniciarSesionEmpleados() throws PersistentException {
 
 		this.getBoton_iniciar_sesion_empleados().addClickListener(event -> {
-			System.out.println("Empleados");
 
 			iTransportista_Encargado_NR tenr = new BDPrincipal();
 			base_de_datos.Empleado empleado = tenr.iniciarSesionEmpleados(this.getNombre_usuario().getValue(),

@@ -85,7 +85,6 @@ public class BD_Pendiente {
 
 		contador = 0;
 		/*Paso 3. Actualizar los datos de Producto*/
-		System.out.println("AQUI");
 		PersistentTransaction t3 = HitoPersistentManager.instance().getSession().beginTransaction();
 		
 		try {
@@ -96,7 +95,6 @@ public class BD_Pendiente {
 					numUnidadesVendidas = Integer.parseInt(p.getNum_Unidades_Vendidas());
 				} else {
 				}
-				System.out.println("El numero de unidades vendidas es : " + numUnidadesVendidas);
 				p.setNum_Unidades_Vendidas("" + (numUnidadesVendidas + aUnidades[contador]));
 				contador++;
 				

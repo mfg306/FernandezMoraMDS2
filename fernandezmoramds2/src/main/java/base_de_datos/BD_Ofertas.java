@@ -67,9 +67,6 @@ public class BD_Ofertas {
 		Oferta o = null;
 		Producto_Rebajado pr = null;
 
-		System.out.println("Fecha caducidad : " + aFechaCaducidad);
-		System.out.println("Fecha registro : " + aFechaRegistro);
-
 		/* Paso 1. Crear la oferta */
 		try {
 			o = OfertaDAO.createOferta();
@@ -179,7 +176,6 @@ public class BD_Ofertas {
 
 		try {
 			for (Producto_Rebajado pr : o._Pertenece_a.toArray()) {
-				System.out.println("Producto rebajado : " + pr.getNombre());
 				Producto_RebajadoDAO.deleteAndDissociate(pr);
 			}
 			t2.commit();

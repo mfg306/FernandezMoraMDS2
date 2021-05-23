@@ -26,12 +26,6 @@ public class Categoria extends VistaCategoria {
 	public void inicializar(Categorias c, UR_UNR unrunr) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		this._categorias = c;
-		
-		if(this._categorias == null) System.out.println("Las categorias son null");
-		if(this._categorias._ver_categorias == null) System.out.println("Ver categorias es null");
-		if(this._productos_categoria == null) System.out.println("Los productos son null");
-		if(this._categorias._ver_categorias.layout == null) System.out.println("EL layout es null");
-		
 		abrir_Categoria(unrunr);
 	}
 

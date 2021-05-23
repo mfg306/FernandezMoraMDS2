@@ -19,9 +19,6 @@ public class DB_Imagen {
 		imagen.setRuta(aImagenes);
 		imagen.set_Producto(aProducto);
 		
-		System.out.println(aImagenes);
-		System.out.println(aProducto.getId_Producto());
-		
 		if(aEsPrincipal) imagen.setPrincipal(true);
 		else imagen.setPrincipal(false);
 		
@@ -42,7 +39,6 @@ public class DB_Imagen {
 		try {
 			imagenes = ImagenDAO.listImagenByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
 			for(Imagen i : imagenes) {
-				System.out.println(i.getRuta());
 				ImagenDAO.deleteAndDissociate(i);
 			}
 			t.commit();
