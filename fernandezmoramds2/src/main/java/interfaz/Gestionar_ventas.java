@@ -37,12 +37,14 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 		this.getRetroceder().addClickListener(event ->{
 			this.ocultar_ventas();
 			/*Si viene del inicio*/
-			if(this._administrador.padre != null) {
-				this._administrador.padre.removeAll();
-			}
+//			if(this._administrador.padre != null) {
+//				System.out.println("AQUI 1");
+//				this._administrador.padre.removeAll();
+//			}
 			
 			/*Si ya se viene de un retroceder ==> se ha creado aqui en este metodo*/
-			if(this._administrador.padre == null) {
+			if(true) {
+				System.out.println("AQUI 2");
 				this._administrador.layout.removeAll();
 			}
 			
