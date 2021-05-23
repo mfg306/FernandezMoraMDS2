@@ -19,10 +19,9 @@ public class Producto_carrito extends VistaProducto_carrito {
 	public Producto_carrito(Producto p, base_de_datos.Producto pc, UR_UNR usuario) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		Editar_cantidad();
-		// this.getCheckEliminar().setValue(false);
 		this._producto = p;
 		this.producto = pc;
-
+		
 		this.getImg().setWidth("10vw");
 		this.getImg().setHeight("15vw");
 
@@ -35,6 +34,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this.cantidad++;
 		seleccionCantidad.setValue("" + this.cantidad);
 	}
+	
 
 	/**
 	 * @param pc listado al que queremos que pertenezca ahora
@@ -51,7 +51,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 	}
 
 	public void Editar_cantidad() {
-		seleccionCantidad.setItems("0", "1", "2", "3", "4");
+		seleccionCantidad.setItems("1", "2", "3", "4");
 		this.layout.add(seleccionCantidad);
 	}
 
@@ -59,6 +59,8 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this._productos_carrito.listadoProductos.remove(this);
 		this._productos_carrito._list_Producto_carrito.remove(this);
 		usuario.actualizarMiListado(this._productos_carrito._list_Producto_carrito);
+		
+		this._productos_carrito.inicializar(usuario);
 	}
 
 

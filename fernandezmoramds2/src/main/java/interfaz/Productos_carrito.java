@@ -28,6 +28,7 @@ public class Productos_carrito extends VistaProductos_carrito {
 		mostrarProductos();
 		Seleccionar_varios();
 		Borrar(usuario);
+		actualizar_datos(usuario);
 
 	}
 
@@ -37,16 +38,23 @@ public class Productos_carrito extends VistaProductos_carrito {
 		for (int i = 0; i < this._list_Producto_carrito.size(); i++) {
 			this._list_Producto_carrito.get(i).getCheckEliminar().setVisible(false);
 			this._list_Producto_carrito.get(i).actualizarListado(this);
+			
 			this.listadoProductos.add(this._list_Producto_carrito.get(i));
-			precio += this._list_Producto_carrito.get(i).producto.getPrecio_producto();
-			System.out.println();
-			System.out.println(this._list_Producto_carrito.get(i).producto.getNombre());
-			System.out.println();
+			precio += this._list_Producto_carrito.get(i).producto.getPrecio_producto()*Integer.parseInt(this._list_Producto_carrito.get(i).seleccionCantidad.getValue());
 		}
 
 		this._ver_carrito.getSpan1().setText("" + precio + " €");
 	}
 
+	
+	public void actualizar_datos(UR_UNR usuario) {
+		for(Producto_carrito pc : this._list_Producto_carrito) {
+			pc.seleccionCantidad.addValueChangeListener(event ->{
+				this.inicializar(usuario);
+			});
+		}
+	}
+	
 	public void actualizarListaProductos(Vector<Producto_carrito> aux) {
 		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
 	}
@@ -78,7 +86,7 @@ public class Productos_carrito extends VistaProductos_carrito {
 
 				/*
 				 * Que lo borres de la lista de _list_Producto_carrito no sirve de nada porque
-				 * luego la que se coge es la del UNR
+				 * luego la que se coge es la de la lista Aux
 				 */
 				for (int i = 0; i < usuario.listaAux.size(); i++) {
 					if (this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == true) {
@@ -87,13 +95,16 @@ public class Productos_carrito extends VistaProductos_carrito {
 					}
 				}
 			} else {
-				for(int i=0; i<usuario.listaAux.size(); i++) {
-					this._list_Producto_carrito.get(i).Eliminar(usuario);
-				}
+				this._list_Producto_carrito.removeAllElements();
+				this.listadoProductos.removeAll();
+				usuario.listaAux.removeAllElements();
+
 			}
 
 			/* Una vez que hemos borrado volvemos a ponerSeleccionarVarios a false */
 			seleccionarVarios = false;
+			
+			this.inicializar(usuario);
 			
 		});
 	}
