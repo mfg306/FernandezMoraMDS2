@@ -2,7 +2,6 @@ package base_de_datos;
 
 import basededatos.BDPrincipal;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
@@ -36,11 +35,11 @@ public class BD_Enviado {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();
-		formatter.format(date);
+		String fechaActualizacion = formatter.format(date);
 		
 		e.setORM__Procesa(aEncargado);
 		e.setORM__Transportista(aTransportista);
-		e.setFecha_estado(date.toString());
+		e.setFecha_estado(fechaActualizacion);
 		e.setNum_total_unidades(aPedidoPendiente.getNum_total_unidades());
 		e.setPrecio_total(aPedidoPendiente.getPrecio_total());
 		

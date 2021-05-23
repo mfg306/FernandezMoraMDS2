@@ -39,14 +39,14 @@ public class BD_Recibido {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();
-		formatter.format(date);
+		String fechaActualizacion = formatter.format(date);
 		
 		try {
 			
 			Recibido recibido = RecibidoDAO.createRecibido();
 			recibido.setORM__recibe(aCliente);
 			recibido.setORM__Recoge(aEnviado.get_Transportista());
-			recibido.setFecha_estado(date.toString());
+			recibido.setFecha_estado(fechaActualizacion);
 			recibido.setNum_total_unidades(aEnviado.getNum_total_unidades());
 			recibido.setPrecio_total(aEnviado.getPrecio_total());
 			

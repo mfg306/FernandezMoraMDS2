@@ -2,6 +2,8 @@ package base_de_datos;
 
 import basededatos.BDPrincipal;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import java.util.Vector;
 
@@ -28,6 +30,9 @@ public class BD_Pendiente {
 		UR usuario = URDAO.getURByORMID(aId_Usuario);
 		
 		Pendiente pendiente = null;
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		Date date = new Date();
+		String fechaActualizacion = formatter.format(date);
 		/*Paso 1. Insertar en Pendiente*/
 		try {
 			
@@ -35,6 +40,8 @@ public class BD_Pendiente {
 			pendiente.setORM__Encargado_de_compras(encargado);
 			pendiente.setORM__Hace_compra(usuario);
 			pendiente.setAsignado(false);
+			
+			pendiente.setFecha_estado(fechaActualizacion);
 			
 			PendienteDAO.save(pendiente);
 			
