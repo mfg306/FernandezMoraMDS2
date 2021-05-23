@@ -29,8 +29,8 @@ public class Producto_oferta extends VistaProducto_oferta{
 		if(p._Imagen != null && !p._Imagen.isEmpty()) {
 			this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
 		}
-		
 		cargarProductoRebajado();
+		abrir_Producto_Oferta(unrunr,p);
 	}
 	
 	public void cargarProductoRebajado() {
@@ -48,6 +48,23 @@ public class Producto_oferta extends VistaProducto_oferta{
 		this.getPrecio_original().setText(pr.getPrecio_producto() + " €");
 		this.getPrecio_rebajado().setText(pr.getPrecio_rebajado() + " €");
 				
+	}
+	
+	public void abrir_Producto_Oferta(UR_UNR unrunr,base_de_datos.Producto p) {
+			this.getImagen_producto().addClickListener(event ->{
+				this._productos_oferta._list_Ofertas._ofertas._uR_UNR.layoutOfertas.remove(this._productos_oferta);
+				if(unrunr instanceof UR) {
+					this._producto = new Ver_producto_UR(unrunr,p);
+					
+				}
+				if(unrunr instanceof UNR_) {
+					this._producto = new Producto_UNR(unrunr,p);
+					
+				}
+				this._productos_oferta._list_Ofertas._ofertas._uR_UNR.layoutOfertas.add(this._producto);
+				
+			});
+		
 	}
 	
 }

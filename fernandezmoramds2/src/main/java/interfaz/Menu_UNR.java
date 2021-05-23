@@ -122,6 +122,8 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this._uNR_.layoutProductosMasVendidosPorCategorias.setVisible(true);
 			this._uNR_.getBotonVerCategorias().setVisible(true);
 			this._uNR_.getProductosMasVendidosPorCategorias().setVisible(true);
+			this._uNR_.layoutOfertas.removeAll();
+			this._uNR_.layoutOfertas.add(this._uR_UNR._ofertas);
 			
 			
 		});

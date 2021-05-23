@@ -35,8 +35,7 @@ public class Ofertas extends VistaOfertas {
 				this._uR_UNR.indiceOfertas--;
 				this.getListaOfertas().removeAll();
 				this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
-				this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta
-						.inicializar(this._list_Ofertas.get(this._uR_UNR.indiceOfertas), _uR_UNR);
+				this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta.inicializar(this._list_Ofertas.get(this._uR_UNR.indiceOfertas), _uR_UNR,this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta.paginaActual);
 			}
 
 		});
@@ -48,8 +47,7 @@ public class Ofertas extends VistaOfertas {
 				this._uR_UNR.indiceOfertas++;
 				this.getListaOfertas().removeAll();
 				this.getListaOfertas().add(this._list_Ofertas.get(this._uR_UNR.indiceOfertas));
-				this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta
-						.inicializar(this._list_Ofertas.get(this._uR_UNR.indiceOfertas), _uR_UNR);
+				this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta.inicializar(this._list_Ofertas.get(this._uR_UNR.indiceOfertas), _uR_UNR,this._list_Ofertas.get(this._uR_UNR.indiceOfertas)._productos_oferta.paginaActual);
 
 			}
 		});
