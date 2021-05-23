@@ -34,6 +34,12 @@ public class VistaProductos_categoria extends PolymerTemplate<VistaProductos_cat
 	private Button boton_pagina_siguiente;
 	@Id("verProductoCategoria")
 	private Element verProductoCategoria;
+	@Id("ultimaPagina")
+	private Span ultimaPagina;
+	@Id("primeraPagina")
+	private Span primeraPagina;
+	@Id("span")
+	private Span span;
 
 	/**
      * Creates a new VistaProductos_categoria.
@@ -105,5 +111,29 @@ public class VistaProductos_categoria extends PolymerTemplate<VistaProductos_cat
 
 	public void setVerProductoCategoria(Element verProductoCategoria) {
 		this.verProductoCategoria = verProductoCategoria;
+	}
+
+	public Span getUltimaPagina() {
+		return ultimaPagina;
+	}
+
+	public void setUltimaPagina(Span ultimaPagina) {
+		this.ultimaPagina = ultimaPagina;
+	}
+
+	public Span getPrimeraPagina() {
+		return primeraPagina;
+	}
+
+	public void setPrimeraPagina(Span primeraPagina) {
+		this.primeraPagina = primeraPagina;
+	}
+
+	public Span getSpan() {
+		return span;
+	}
+
+	public void setSpan(Span span) {
+		this.span = span;
 	}
 }

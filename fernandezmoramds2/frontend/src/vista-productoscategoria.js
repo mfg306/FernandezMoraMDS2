@@ -22,7 +22,10 @@ class VistaProductos_categoria extends PolymerElement {
   <vaadin-button id="boton_pagina_anterior" style="color: #ae1641;">
     &lt; 
   </vaadin-button>
-  <span id="numero_pagina">Pagina x de X</span>
+  <span id="span">Página</span>
+  <span id="primeraPagina">Span</span>
+  <span id="numero_pagina">de</span>
+  <span id="ultimaPagina">Span</span>
   <vaadin-button id="boton_pagina_siguiente" style="color: #ae1641;">
     &gt; 
   </vaadin-button>
