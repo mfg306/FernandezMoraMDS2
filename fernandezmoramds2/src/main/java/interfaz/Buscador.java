@@ -50,6 +50,8 @@ public class Buscador extends VistaBuscador {
 		iUR_UNR iur = new BDPrincipal();
 		ArrayList<String> categorias = new ArrayList<>();
 		listaCategorias = iur.cargarCategorias();
+		
+		categorias.add("Todos los departamentos");
 
 		for (base_de_datos.Categoria c : this.listaCategorias) {
 			categorias.add(c.getNombre_categoria());

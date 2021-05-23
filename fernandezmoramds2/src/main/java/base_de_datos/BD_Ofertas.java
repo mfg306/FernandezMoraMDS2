@@ -48,17 +48,13 @@ public class BD_Ofertas {
 			
 			/*1. Que se haya pasado el año*/
 			if(anioActual > anio) break;
-			System.out.println(anioActual + " < " + anio);
 			/*2. Que estemos en el mismo año y se haya pasado el mes*/
 			if(anioActual == anio && mesActual > mes) break;
-			System.out.println(mesActual + " < " + mes);
 			/*3. Que estemos en el mismo año y el mismo mes y se haya pasado el dia*/
 			if(anioActual == anio & mesActual == mes && diaActual > dia) break;
-			System.out.println(diaActual + " < " + dia);
 			
 			/*En cualquier otro caso se añade*/
 			ofertasResultado[contador] = ofertas[i];
-			System.out.println("Oferta introducida : " + ofertas[i].getNombre_Oferta()); 
 			contador++;
 		}
 
