@@ -32,6 +32,12 @@ public class VistaProductos_oferta extends PolymerTemplate<VistaProductos_oferta
 	private Span numero_pagina;
 	@Id("boton_pagina_siguiente")
 	private Button boton_pagina_siguiente;
+	@Id("primeraPagina")
+	private Span span;
+	@Id("span1")
+	private Span primeraPagina;
+	@Id("ultimaPagina")
+	private Span ultimaPagina;
 
 	/**
      * Creates a new VistaProductos_oferta.
@@ -94,5 +100,29 @@ public class VistaProductos_oferta extends PolymerTemplate<VistaProductos_oferta
 
 	public void setBoton_pagina_siguiente(Button boton_pagina_siguiente) {
 		this.boton_pagina_siguiente = boton_pagina_siguiente;
+	}
+
+	public Span getSpan() {
+		return span;
+	}
+
+	public void setSpan(Span span) {
+		this.span = span;
+	}
+
+	public Span getPrimeraPagina() {
+		return primeraPagina;
+	}
+
+	public void setPrimeraPagina(Span primeraPagina) {
+		this.primeraPagina = primeraPagina;
+	}
+
+	public Span getUltimaPagina() {
+		return ultimaPagina;
+	}
+
+	public void setUltimaPagina(Span ultimaPagina) {
+		this.ultimaPagina = ultimaPagina;
 	}
 }
