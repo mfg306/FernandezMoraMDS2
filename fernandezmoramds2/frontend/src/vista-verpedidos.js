@@ -15,8 +15,8 @@ class VistaVer_pedidos extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="menu">
- <div style="margin-top: var(--lumo-space-xl); align-self: center;" id="div">
-  <span style="font-size: 4vw; font-weight: bold; " id="span">MIS PEDIDOS:</span>
+ <div style="margin-top: var(--lumo-space-xl);  align-self: center; width: 100%; text-align: center;" id="div">
+  <span style="font-size: 4vw; font-weight: bold;  text-align: center;" id="span">MIS PEDIDOS</span>
   <vaadin-vertical-layout theme="spacing" id="lista_pedidos" style="background-color: #F5F5F5; width: 100%; height: 100%;"></vaadin-vertical-layout>
  </div>
 </vaadin-vertical-layout>
