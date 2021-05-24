@@ -77,7 +77,7 @@ public class BD_Productos {
 
 		if (p != null) {
 			this._bDPrincipal.eliminarImagenProducto(p);
-//			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
+			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
 			this._bDPrincipal.eliminarComentarioProducto(p);
 			this._bDPrincipal.eliminarValoracionesProducto(p);
 		}
