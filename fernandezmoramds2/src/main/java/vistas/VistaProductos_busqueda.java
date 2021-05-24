@@ -32,6 +32,12 @@ public class VistaProductos_busqueda extends PolymerTemplate<VistaProductos_busq
 	private Button boton_pagina_siguiente;
 	@Id("vaadinHorizontalLayout2")
 	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("span")
+	private Span span;
+	@Id("ultimaPagina")
+	private Span ultimaPagina;
+	@Id("primeraPagina")
+	private Span primeraPagina;
 
 	/**
      * Creates a new VistaProductos_busqueda.
@@ -93,5 +99,29 @@ public class VistaProductos_busqueda extends PolymerTemplate<VistaProductos_busq
 
 	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
 		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public Span getSpan() {
+		return span;
+	}
+
+	public void setSpan(Span span) {
+		this.span = span;
+	}
+
+	public Span getUltimaPagina() {
+		return ultimaPagina;
+	}
+
+	public void setUltimaPagina(Span ultimaPagina) {
+		this.ultimaPagina = ultimaPagina;
+	}
+
+	public Span getPrimeraPagina() {
+		return primeraPagina;
+	}
+
+	public void setPrimeraPagina(Span primeraPagina) {
+		this.primeraPagina = primeraPagina;
 	}
 }

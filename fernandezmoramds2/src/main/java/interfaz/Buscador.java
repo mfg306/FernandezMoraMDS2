@@ -39,11 +39,11 @@ public class Buscador extends VistaBuscador {
 	}
 	
 	public void inicializar(Menu_UR_UNR urunr) {
-		this._productos_busqueda = new Productos_busqueda(this);
+		this._productos_busqueda = new Productos_busqueda(this,this._menu_UR_UNR._uR_UNR);
+		this.productoNuevo =  new HorizontalLayout();
 		cargarCategoriasBuscador();
 		this.getEspacioBuscador().add(this.categoriasBuscador);
 		this.getEspacioBuscador().add(this._busquedaTF);
-		buscarProducto();
 	}
 
 	public void cargarCategoriasBuscador() {
@@ -60,7 +60,7 @@ public class Buscador extends VistaBuscador {
 
 	}
 
-	public void buscarProducto() {
+	/*public void buscarProducto() {
 
 		iUR_UNR i = new BDPrincipal();
 		this._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
@@ -69,7 +69,7 @@ public class Buscador extends VistaBuscador {
 			this._menu_UR_UNR._uR_UNR.layout.remove(this._productos_busqueda);
 
 			inicializar(this._menu_UR_UNR);
-			productoNuevo = new HorizontalLayout();
+			//productoNuevo = new HorizontalLayout();
 
 			try {
 				this._productos_busqueda.getVaadinHorizontalLayout1().removeAll();
@@ -90,7 +90,7 @@ public class Buscador extends VistaBuscador {
 						this._productos_busqueda.getVaadinHorizontalLayout1().add(productoNuevo);
 					}
 					
-					/*Borrando el carrito*/
+					
 					if(this._menu_UR_UNR._ver_carrito != null) {
 						this._menu_UR_UNR.cerrar_carrito();
 					}
@@ -104,6 +104,6 @@ public class Buscador extends VistaBuscador {
 
 		});
 
-	}
+	}*/
 
 }

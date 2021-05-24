@@ -201,7 +201,6 @@ public class Menu_UR extends Menu_UR_UNR {
 			}
 			
 			
-			this._uR.inicializarURUNR();
 
 			this._uR.layoutOfertas.setVisible(true);
 			this._uR.layoutProductosMasVendidosPorCategorias.setVisible(true);

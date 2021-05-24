@@ -28,8 +28,6 @@ public class Productos_oferta extends VistaProductos_oferta {
 	public void inicializar(Oferta of, UR_UNR unrunr, int paginaActual) {
 		this._list_Ofertas = of;
 		_list_Producto_oferta = new Vector<Producto_oferta>();
-		//verProductosOferta();
-		// abrir_Producto_Oferta();
 		numeroTotalRegistros = 0;
 		numeroTotalPaginas = 0;
 		verOferta();
@@ -74,23 +72,6 @@ public class Productos_oferta extends VistaProductos_oferta {
 		}
 	}
 
-	/*public void verProductosOferta() {
-		iUR_UNR iur = new BDPrincipal();
-		this.getLista_productos_oferta().removeAll();
-		try {
-			Producto_Rebajado[] productos = iur.cargarProductosOferta(
-					this._list_Ofertas._ofertas.ofertas[this._list_Ofertas._ofertas._uR_UNR.indiceOfertas]);
-			for (base_de_datos.Producto_Rebajado p : productos) {
-				Producto_oferta po = new Producto_oferta(this, this._list_Ofertas._ofertas._uR_UNR, p);
-				this._list_Producto_oferta.add(po);
-				this.getLista_productos_oferta().add(po);
-
-			}
-		} catch (PersistentException e) {
-			e.printStackTrace();
-		}
-
-	}*/
 
 	public void Ver_siguientes() {
 		if (this.getBoton_pagina_siguiente().isEnabled()) {
@@ -155,16 +136,5 @@ public class Productos_oferta extends VistaProductos_oferta {
 		}
 
 	}
-
-	/*
-	 * public void abrir_Producto_Oferta() { for (Producto_oferta pof :
-	 * this._list_Producto_oferta) { pof.getImagen_producto().addClickListener(event
-	 * -> {
-	 * this._list_Ofertas._ofertas._uR_UNR.layoutOfertas.remove(this._list_Ofertas.
-	 * _productos_oferta);
-	 * this._list_Ofertas._ofertas._uR_UNR.layoutOfertas.add(pof._producto);
-	 * 
-	 * }); } }
-	 */
 
 }
