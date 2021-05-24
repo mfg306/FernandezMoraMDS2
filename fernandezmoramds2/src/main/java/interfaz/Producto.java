@@ -46,10 +46,6 @@ public class Producto extends VistaProducto{
 		listaValoraciones.removeAll();
 		listaComentarios.removeAll();
 
-		this._comentarios = new Comentarios(this);
-
-		this.listaComentarios.add(this._comentarios);	
-		
 		this.verProducto();
 		this.cargarLasEstrellasDeValoracion((int)valoracionMedia);
 		listaValoraciones.add(estrellitas);		
@@ -82,7 +78,6 @@ public class Producto extends VistaProducto{
 		try {
 			this.comentarios = iUr_UNR.cargarComentarios(this.producto.getId_Producto());
 		} catch (PersistentException e) {
-			
 			e.printStackTrace();
 		}
 		
@@ -104,9 +99,15 @@ public class Producto extends VistaProducto{
 		valoracionMedia = (int)mediaValoracion;
 		
 		
-		for(base_de_datos.Comentario c : this.comentarios) {
-			this._comentarios.anadirComentarios(c);
+		if(this.comentarios != null && this.comentarios.length > 0) {
+			this._comentarios = new Comentarios(this);
+			this.listaComentarios.add(this._comentarios);
+			
+			for(base_de_datos.Comentario c : this.comentarios) {
+				this._comentarios.anadirComentarios(c);
+			}
 		}
+
 		
 	}
 	
