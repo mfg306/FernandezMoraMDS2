@@ -3,18 +3,19 @@ package basededatos;
 import org.orm.PersistentException;
 
 import base_de_datos.Compra;
+import base_de_datos.Enviado;
 import base_de_datos.UR;
 import base_de_datos.Usuario_General;
 import base_de_datos.Mensaje;
+import base_de_datos.Pendiente;
 import base_de_datos.Producto;
+import base_de_datos.Recibido;
 
 public interface iUR extends iUR_UNR {
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago, UR aUsuario) throws PersistentException;
 	
 	public UR buscarUsuarioPorCorreo(String aCorreo)throws PersistentException;
-
-	public Compra[] cargarPedidos(UR aUsuario);
 
 	public Mensaje[] cargarMensajesEnviados(Usuario_General aUsuario) throws PersistentException;
 
@@ -38,4 +39,10 @@ public interface iUR extends iUR_UNR {
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException;
 	
 	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades)  throws PersistentException;
+	
+	public Enviado[] cargarEnviados(UR aUsuario);
+	
+	public Recibido[] cargarRecibidos(UR aUsuario);
+	
+	public Pendiente[] cargarPendientes(UR aUsuario);
 }
