@@ -66,6 +66,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 			this.getNombre().setValue(this._menu_UR._uR.UR.getNombre().toString());
 			this.getCorreo_electronico().setValue(this._menu_UR._uR.UR.getCorreo_electronico().toString());
 			this.getApellidos().setValue(this._menu_UR._uR.UR.getPrimer_apellido().toString());
+			this.getSegundoApellido().setValue(this._menu_UR._uR.UR.getSegundo_apellido().toString());
 			
 			if(this._menu_UR._uR.UR.getImagen() != null){
 				this.getImg().setSrc(this._menu_UR._uR.UR.getImagen().getRuta());
@@ -87,7 +88,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 		
 		this.getBoton_guardar().addClickListener(event ->{
 			try {
-				iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue()
+				iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue(),this.getSegundoApellido().getValue()
 						, this.getCorreo_electronico().getValue(), this.getDireccion_envio().getValue(), 
 						this.getMetodo_pago().getValue(), this.imagenPerfil);
 				Notification.show("Configuración guardada con éxito");

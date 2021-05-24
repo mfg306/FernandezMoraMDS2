@@ -147,11 +147,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_Mensajes.enviarMensaje(aCorreoReceptor, aMensaje, aAsunto, aEmisor);
 	}
 
-	public int registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
+	public int registrarse(String aNombre, String aPrimerApellido, String aSegundoApellido, String aCorreo, String aNombreUsuario,
 			String aContrasenia, Object aContraseniaRepeticion) throws PersistentException {
 		int registrado = 0;
 		try {
-			registrado = this._bD_UNR.registrarse(aNombre, aApellidos, aCorreo, aNombreUsuario, aContrasenia,
+			registrado = this._bD_UNR.registrarse(aNombre,aPrimerApellido,aSegundoApellido, aCorreo, aNombreUsuario, aContrasenia,
 					aContrasenia);
 
 		} catch (Exception e) {
@@ -321,9 +321,9 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_UNR.cargarClientes();
 	}
 	
-	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo, String aDireccion, 
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aPrimerApellido, String aSegundoApellido, String aCorreo, String aDireccion, 
 			String aMetodoDePago, String aRutaFoto) throws PersistentException {
-		this._bD_UNR.cambiarDatosUsuario(aNombreUsuario, aNombre, aApellidos, aCorreo, aDireccion, aMetodoDePago, aRutaFoto);
+		this._bD_UNR.cambiarDatosUsuario(aNombreUsuario, aNombre, aPrimerApellido,aSegundoApellido, aCorreo, aDireccion, aMetodoDePago, aRutaFoto);
 	}
 	
 	public void eliminarUsuario(String aCorreo) throws PersistentException {

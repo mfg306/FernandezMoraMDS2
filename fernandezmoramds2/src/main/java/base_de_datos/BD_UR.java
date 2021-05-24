@@ -14,7 +14,7 @@ public class BD_UR {
 	public BDPrincipal _bDPrincipal;
 	public Vector<UR> _uNR = new Vector<UR>();
 
-	public int registrarse(String aNombre, String aApellidos, String aCorreo, String aNombreUsuario,
+	public int registrarse(String aNombre, String aPrimerApellido, String aSegundoApellido, String aCorreo, String aNombreUsuario,
 			String aContrasenia, String aContraseniaRepeticion) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
@@ -24,7 +24,8 @@ public class BD_UR {
 
 			usuario.setNombre(aNombre);
 			usuario.setCorreo_electronico(aCorreo);
-			usuario.setPrimer_apellido(aApellidos);
+			usuario.setPrimer_apellido(aPrimerApellido);
+			usuario.setSegundo_apellido(aSegundoApellido);
 			usuario.setContrasenia(aContrasenia);
 			usuario.setNombre_usuario(aNombreUsuario);
 			usuario.setEsta_operativo(true);
@@ -177,7 +178,7 @@ public class BD_UR {
 
 	}
 
-	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aApellidos, String aCorreo,
+	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aPrimerApellido, String aSegundoApellido, String aCorreo,
 			String aDireccion, String aMetodoDePago, String aRutaFoto) throws PersistentException {
 
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
@@ -205,7 +206,8 @@ public class BD_UR {
 				usuarioEncontrado = usuariosCorreo[0];
 				usuarioEncontrado.setNombre_usuario(aNombreUsuario);
 				usuarioEncontrado.setNombre(aNombre);
-				usuarioEncontrado.setPrimer_apellido(aApellidos);
+				usuarioEncontrado.setPrimer_apellido(aPrimerApellido);
+				usuarioEncontrado.setSegundo_apellido(aSegundoApellido);
 				usuarioEncontrado.setDireccion_envio(aDireccion);
 				usuarioEncontrado.setMetodo_pago(aMetodoDePago);
 

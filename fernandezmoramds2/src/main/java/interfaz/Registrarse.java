@@ -55,7 +55,7 @@ public class Registrarse extends VistaRegistrarse implements Serializable {
 
 	public void registrarse() throws PersistentException {
 		iUNR_ iunr = new BDPrincipal();
-		int registroRealizado = iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(), this.getCorreo().getValue(), 
+		int registroRealizado = iunr.registrarse(this.getNombre().getValue(), this.getApellidos().getValue(),this.getSegundoApellido().getValue(), this.getCorreo().getValue(), 
 				this.getNombre_usuario().getValue(), this.getContrasenia().getValue(), this.getConfirmacionContrasenia().getValue());
 
 		if(registroRealizado == 0) {
