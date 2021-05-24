@@ -124,6 +124,8 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this._uNR_.getProductosMasVendidosPorCategorias().setVisible(true);
 			this._uNR_.layoutOfertas.removeAll();
 			this._uNR_.layoutOfertas.add(this._uR_UNR._ofertas);
+			if(this._uR_UNR._productos_mas_vendidos_por_categorias!=null)
+			this._uR_UNR._productos_mas_vendidos_por_categorias.cerrar_Productos_Mas_Vendidos_Por_Categoria();
 			
 			
 		});
