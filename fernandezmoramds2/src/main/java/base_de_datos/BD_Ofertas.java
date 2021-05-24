@@ -105,6 +105,7 @@ public class BD_Ofertas {
 				pr.set_Categoria(p.get_Categoria());
 				pr.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
 				pr.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
+				pr.setPrecio_producto(p.getPrecio_producto());
 
 				pr.setPrecio_rebajado(aPrecios[contador]);
 
