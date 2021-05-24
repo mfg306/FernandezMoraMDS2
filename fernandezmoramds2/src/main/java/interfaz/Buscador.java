@@ -41,12 +41,12 @@ public class Buscador extends VistaBuscador {
 	public void inicializar(Menu_UR_UNR urunr) {
 		this._productos_busqueda = new Productos_busqueda(this,this._menu_UR_UNR._uR_UNR);
 		this.productoNuevo =  new HorizontalLayout();
-		cargarCategoriasBuscador();
+		Clasificar_por_categoria();
 		this.getEspacioBuscador().add(this.categoriasBuscador);
 		this.getEspacioBuscador().add(this._busquedaTF);
 	}
 
-	public void cargarCategoriasBuscador() {
+	public void Clasificar_por_categoria() {
 		iUR_UNR iur = new BDPrincipal();
 		ArrayList<String> categorias = new ArrayList<>();
 		listaCategorias = iur.cargarCategorias();

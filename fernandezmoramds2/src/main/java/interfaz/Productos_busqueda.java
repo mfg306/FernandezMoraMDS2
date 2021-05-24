@@ -160,7 +160,4 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 		});
 	}
 
-	public void Clasificar_por_categoria() {
-		throw new UnsupportedOperationException();
-	}
 }
