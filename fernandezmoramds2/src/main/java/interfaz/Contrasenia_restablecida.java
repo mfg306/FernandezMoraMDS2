@@ -1,6 +1,5 @@
 package interfaz;
 
-import vistas.VistaContrasenia_establecida;
 import vistas.VistaVerificacion_contrasenia_cambiada;
 
 public class Contrasenia_restablecida extends VistaVerificacion_contrasenia_cambiada{

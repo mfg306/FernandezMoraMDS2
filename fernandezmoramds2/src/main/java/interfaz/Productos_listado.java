@@ -21,12 +21,10 @@ public class Productos_listado extends VistaProductos_listado {
 		
 		
 		if(gc != null) {
-			System.out.println("ESTAMOS TRABAJANDO CON CATEGORIA");
 			esCategorias = true;
 		}
 		
 		if(gf != null) {
-			System.out.println("ESTAMOS TRABAJANDO CON OFERTAS");
 			esOfertas = true;
 		}
 	}

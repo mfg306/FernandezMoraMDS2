@@ -1,12 +1,8 @@
 package interfaz;
 
 
-import java.util.Iterator;
-
 import org.orm.PersistentException;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import basededatos.BDPrincipal;
 import basededatos.iEncargado_de_compras;
 import vistas.VistaPedido_e;
@@ -29,7 +25,6 @@ public class Pedido_E extends VistaPedido_e{
 
 		for(base_de_datos.Producto_en_compra p : listado) {
 			numTotalUnidades += p.getNum_unidades_producto();
-			System.out.println(p.getNum_unidades_producto());
 		}
 		
 		this.getNumTotalUnidades().setText("Numero total unidades : " + numTotalUnidades );

@@ -1,13 +1,14 @@
 package interfaz;
 
-import java.util.Vector;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
-//import basededatos.iUNR_;
+import basededatos.iUNR_;
+
 
 @Route(value = "inicioUNR")
 public class UNR_ extends UR_UNR{
+	public iUNR_ _iUNR_;
 	public Menu_UNR _menu_UNR;
 	public Producto_UNR _producto_UNR;
 

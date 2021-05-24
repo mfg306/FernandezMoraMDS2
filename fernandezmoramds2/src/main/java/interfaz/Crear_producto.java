@@ -1,37 +1,21 @@
 package interfaz;
 
-import java.util.Iterator;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Vector;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.stream.ImageInputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.orm.PersistentException;
 
-import com.vaadin.flow.component.Component;
+import java.io.File;
+import java.io.IOException;
+import java.util.Vector;
+import org.apache.commons.io.FileUtils;
+import org.orm.PersistentException;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
-import com.vaadin.flow.internal.MessageDigestUtil;
-import com.vaadin.flow.server.StreamResource;
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import subirfotos.Uploader;
 import vistas.VistaCrear_producto;
-import java.io.ByteArrayInputStream;
-import java.nio.charset.StandardCharsets;
 
 public class Crear_producto extends VistaCrear_producto {
 	public Producto_administrador _producto_administrador;

@@ -10,12 +10,12 @@ import basededatos.BDPrincipal;
 import basededatos.iTransportista;
 import vistas.VistaTransportista;
 
-//import basededatos.iTransportista;
-
 public class Transportista extends VistaTransportista {
 	public Pedidos_T _pedidos_T;
 	VerticalLayout layout;
 	base_de_datos.Transportista transportista;
+	public iTransportista _iTransportista;
+
 	
 	public Transportista(base_de_datos.Transportista transportista) {
 		this.transportista = transportista;

@@ -32,10 +32,8 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 		layout.add(this.categoriasMasVendidos);
 		
 		if(inicial) {
-			System.out.println("ESTE");
 			Clasificar_por_categoria_inicial();
 		}else {
-			System.out.println("OTRO");
 			Clasificar_por_categoria();
 		}
 	}
@@ -47,11 +45,8 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 	}
 	
 	public void limpiar_Interfaz_Para_Abrir_Producto(Producto_mas_vendido_por_categoria producto) {
-		Vector<Producto_mas_vendido_por_categoria> copia = new Vector<>(this._list_Producto_mas_vendido_por_categoria);
 		
-		System.out.println("ENTRANDO");
 		for(Producto_mas_vendido_por_categoria pc : this._list_Producto_mas_vendido_por_categoria){
-			System.out.println(pc.producto.getNombre());
 			if(pc.producto.getId_Producto() != producto.producto.getId_Producto()) {
 				this.getLista_productos_categoria().remove(pc);
 			}
@@ -94,8 +89,6 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 			this.inicial = false;
 			Clasificar_por_categoria();
 
-
-//			this.inicializar(_uR_UNR);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -106,7 +99,6 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 		this.categoriasMasVendidos.addValueChangeListener(event -> {
 			this._list_Producto_mas_vendido_por_categoria = new Vector<Producto_mas_vendido_por_categoria>();
 
-			System.out.println("CAMBIANDO VALOR");
 			this.getLista_productos_categoria().removeAll();
 			iUR_UNR iurunr = new BDPrincipal();
 

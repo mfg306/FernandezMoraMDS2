@@ -78,12 +78,10 @@ public class Productos_carrito extends VistaProductos_carrito {
 			if (seleccionarVarios) {
 				for (int i = 0; i < this._list_Producto_carrito.size(); i++) {
 					if (this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == true) {
-						System.out.println("Check a true : " + this._list_Producto_carrito.get(i).producto.getNombre());
 						this.listadoProductos.remove(this._list_Producto_carrito.get(i));
 					}
 					
 					if(this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == false) {
-						System.out.println("Check a false : " + this._list_Producto_carrito.get(i).producto.getNombre());
 						this._list_Producto_carrito.get(i).getCheckEliminar().setVisible(false);
 						this._list_Producto_carrito.get(i).getVaadinButton().setVisible(true);
 						this._list_Producto_carrito.get(i).seleccionCantidad.setVisible(true);

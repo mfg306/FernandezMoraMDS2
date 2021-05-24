@@ -15,7 +15,6 @@ public class Cambiar_contraseña extends VistaCambiar_contrasenia {
 	public Cambiar_contraseña(Menu_UR menu, Editar_perfil _editar_perfil) {
 		this._editar_perfil = _editar_perfil;
 		inicializar(menu);
-
 	}
 
 	public void inicializar(Menu_UR menu) {

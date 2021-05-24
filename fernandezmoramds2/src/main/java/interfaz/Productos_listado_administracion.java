@@ -1,10 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
-
 import vistas.VistaProductos_listado_administracion;
-
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 

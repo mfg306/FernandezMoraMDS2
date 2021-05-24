@@ -21,7 +21,6 @@ public class Pedidos_E extends VistaPedidos_e {
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 	}
 	
-	
 	public void add_pedidos(base_de_datos.Pendiente pendiente) {
 		Pedido_E p = new Pedido_E(this, pendiente);
 		this._list_Pedido_E.add(p);

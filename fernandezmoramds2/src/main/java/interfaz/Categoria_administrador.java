@@ -1,11 +1,8 @@
 package interfaz;
 
-import java.util.Vector;
+
 
 import org.orm.PersistentException;
-
-import com.vaadin.flow.component.notification.Notification;
-
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import vistas.VistaCategoria_administrador;
@@ -52,13 +49,5 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 				e.printStackTrace();
 			}
 		});
-		
-
-		
 	}
-	
-
-
-	
-	
 }

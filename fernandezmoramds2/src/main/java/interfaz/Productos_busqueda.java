@@ -176,7 +176,6 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 				}
 			}
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

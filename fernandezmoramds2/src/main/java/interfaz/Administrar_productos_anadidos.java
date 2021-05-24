@@ -69,7 +69,6 @@ public class Administrar_productos_anadidos extends VistaAdministrar_productos_a
 
 			if(listadoProductos != null && listadoProductos.length > 0) {
 				for (base_de_datos.Producto p : listadoProductos) {
-//					System.out.println("PRODUCTO : " + p.getNombre());
 					Producto_listado_administracion pla = new Producto_listado_administracion(p, _productos_listado_administracion);
 					this._productos_listado_administracion.add_productos_listado_administracion(pla);
 				}	

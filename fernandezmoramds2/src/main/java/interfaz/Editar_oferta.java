@@ -21,7 +21,6 @@ public class Editar_oferta extends Zona_productos {
 		inicializar(oa);
 
 		guardarOferta();
-
 	}
 
 	public void inicializar(Oferta_administrador oa) {

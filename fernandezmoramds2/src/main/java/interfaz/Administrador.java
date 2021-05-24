@@ -2,9 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import vistas.VistaAdministrador;
 
-//import basededatos.iAdministrador;
+import basededatos.iAdministrador;
+import vistas.VistaAdministrador;
 
 @Route(value = "inicialAdmin")
 public class Administrador extends VistaAdministrador{
@@ -17,6 +17,7 @@ public class Administrador extends VistaAdministrador{
 	public VerticalLayout layout;
 	public base_de_datos.Administrador admin;
 	public VerticalLayout padre;
+	public iAdministrador _iAdministrador;
 
 	
 	public Administrador(base_de_datos.Usuario_General admin, Iniciar_sesion_UNR vistaInicial) {

@@ -9,12 +9,11 @@ import basededatos.BDPrincipal;
 import basededatos.iEncargado_de_compras;
 import vistas.VistaEncargado_de_compras;
 
-//import basededatos.iEncargado_de_compras;
-
 public class Encargado_de_compras extends VistaEncargado_de_compras{
 	public Pedidos_E _pedidos_E;
 	VerticalLayout layout;
 	base_de_datos.Encargado_de_compras encargado;
+	public iEncargado_de_compras _iEncargado_de_compras;
 	
 	public Encargado_de_compras(base_de_datos.Encargado_de_compras encargado) {
 		this.encargado = encargado;

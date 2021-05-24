@@ -28,8 +28,6 @@ public class Venta extends VistaVenta{
 			compra = (base_de_datos.Enviado)compra;
 			
 			descripcion += "Pedido repartido al transportista : " +  ((base_de_datos.Enviado)compra).get_Transportista().getCorreo() + System.lineSeparator();
-			
-			
 		}
 		
 		if(compra instanceof base_de_datos.Recibido) {

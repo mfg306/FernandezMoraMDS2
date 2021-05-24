@@ -1,8 +1,5 @@
 package interfaz;
 
-import java.util.Vector;
-
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 

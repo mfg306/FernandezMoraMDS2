@@ -1,7 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
-
 import vistas.VistaProducto_listado;
 
 public class Producto_listado extends VistaProducto_listado {
