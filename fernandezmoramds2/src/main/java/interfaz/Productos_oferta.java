@@ -30,7 +30,7 @@ public class Productos_oferta extends VistaProductos_oferta {
 		_list_Producto_oferta = new Vector<Producto_oferta>();
 		numeroTotalRegistros = 0;
 		numeroTotalPaginas = 0;
-		verOferta();
+		verProductosOferta();
 		Ver_anteriores();
 		Ver_siguientes();
 	}
@@ -118,7 +118,7 @@ public class Productos_oferta extends VistaProductos_oferta {
 		}
 	}
 
-	public void verOferta() {
+	public void verProductosOferta() {
 		iUR_UNR iur = new BDPrincipal();
 
 		Producto_Rebajado[] productos;

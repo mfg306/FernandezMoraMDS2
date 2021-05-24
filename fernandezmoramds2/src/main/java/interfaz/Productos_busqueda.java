@@ -22,6 +22,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 	public int numeroTotalPaginas = 0;
 	public int paginaActual = 0;
 	HorizontalLayout productoNuevo;
+	public boolean buscar = true;
 
 	public Productos_busqueda(Buscador b, UR_UNR unrunr) {
 
@@ -35,7 +36,12 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		numeroTotalRegistros = 0;
 		numeroTotalPaginas = 0;
-		verProductosBusqueda();
+		if (buscar) {
+			verProductosBusqueda();
+		} else {
+			Notification.show("Productos buscados");
+		}
+
 		Ver_anteriores();
 		Ver_siguientes();
 	}
@@ -61,7 +67,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 	public void mostrar_Productos_busqueda_paginados() {
 		this.getVaadinHorizontalLayout1().removeAll();
 		this.productoNuevo.removeAll();
-		
+
 		if (numeroTotalRegistros % 2 == 0) {
 			numeroTotalPaginas = numeroTotalRegistros / productosPorPagina;
 		} else {
@@ -74,8 +80,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 		for (int i = (paginaActual * productosPorPagina); i < this._list_Producto_busqueda.size(); i++) {
 			if (i > paginaActual * productosPorPagina + productosPorPagina - 1)
 				break;
-			productoNuevo.add(this._list_Producto_busqueda.get(i));
-			this.getVaadinHorizontalLayout1().add(productoNuevo);
+			this.getVaadinHorizontalLayout1().add(this._list_Producto_busqueda.get(i));
 		}
 	}
 
@@ -96,11 +101,12 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 					this.getBoton_pagina_anterior().setEnabled(false);
 				}
 
-				//this.inicializar(this._buscador, this._buscador._menu_UR_UNR._uR_UNR, this.paginaActual);
+				buscar = false;
+				this.inicializar(this._buscador, this._buscador._menu_UR_UNR._uR_UNR, this.paginaActual);
 			});
 		}
 	}
-	
+
 	public void Ver_siguientes() {
 		if (this.getBoton_pagina_siguiente().isEnabled()) {
 			this.getBoton_pagina_siguiente().addClickListener(event -> {
@@ -108,26 +114,23 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 					this.paginaActual++;
 				}
 
-				/*
-				 * Una vez que se de al boton de siguiente volvemos a activar el boton de
-				 * anterior
-				 */
+				/*Una vez que se de al boton de siguiente volvemos a activar el boton de anterior*/
 				this.getBoton_pagina_anterior().setEnabled(true);
 
 				if (this.paginaActual + 1 == numeroTotalPaginas) {
 					this.getBoton_pagina_siguiente().setEnabled(false);
 				}
 
-				//this.inicializar(this._buscador, this._buscador._menu_UR_UNR._uR_UNR, this.paginaActual);
+				buscar = false;
+				this.inicializar(this._buscador, this._buscador._menu_UR_UNR._uR_UNR, this.paginaActual);
 			});
 		}
 	}
 
-
-
 	public void verProductosBusqueda() {
 
 		this._buscador._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
+			buscar = false;
 			this._buscador._menu_UR_UNR._uR_UNR.layout.remove(this);
 			iUR_UNR i = new BDPrincipal();
 
