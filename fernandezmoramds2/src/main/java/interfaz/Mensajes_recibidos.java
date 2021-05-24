@@ -27,6 +27,9 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	public Mensajes_recibidos(base_de_datos.Usuario_General general, Ver_bandeja_de_entrada vb) {
 		this.getBoton_pagina_anterior().setEnabled(false);
 
+		this.getPaginaActual().setText("" + 0);
+		this.getTotalPaginas().setText(""  + 0);
+		
 		this.general = general;
 		this._ver_bandeja_de_entrada = vb;
 		inicializar(this.paginaActual);
