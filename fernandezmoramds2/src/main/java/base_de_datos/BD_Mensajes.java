@@ -64,8 +64,6 @@ public class BD_Mensajes {
 			t.rollback();
 		}
 		
-//		HitoPersistentManager.instance().disposePersistentManager();
-
 	}
 	
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException {
@@ -110,7 +108,6 @@ public class BD_Mensajes {
 			t.rollback();
 		}
 		
-//		HitoPersistentManager.instance().disposePersistentManager();
 
 		return false;
 	}
