@@ -125,19 +125,23 @@ public class Menu_UNR extends Menu_UR_UNR {
 			this._uNR_.layoutOfertas.removeAll();
 			this._uNR_.layoutOfertas.add(this._uR_UNR._ofertas);
 			
+			
 			if(this._uR_UNR._productos_mas_vendidos_por_categorias != null) {
 				for(Producto_mas_vendido_por_categoria pc : this._uR_UNR._productos_mas_vendidos_por_categorias._list_Producto_mas_vendido_por_categoria) {
 					pc.cerrar_producto();
 				}
 			}
 			
-			this._uR_UNR._productos_mas_vendidos_por_categorias.Clasificar_por_categoria_inicial();
-			
 			
 //			this._productos_mas_vendidos_por_categorias._uR_UNR.layoutOfertas.setVisible(false);
 			this._uR_UNR._productos_mas_vendidos_por_categorias.getGetTituloMasVendidos().setVisible(true);
 			this._uR_UNR._productos_mas_vendidos_por_categorias.getListaCategoriasMasVendidos().setVisible(true);
 //			this._productos_mas_vendidos_por_categorias._uR_UNR.getBotonVerCategorias().setVisible(false);
+			
+			this._uNR_._productos_mas_vendidos_por_categorias = new Productos_mas_vendidos_por_categorias(this._uNR_);
+			this._uNR_.layoutProductosMasVendidosPorCategorias.removeAll();
+			this._uNR_.layoutProductosMasVendidosPorCategorias.add(this._uNR_._productos_mas_vendidos_por_categorias);
+			
 			
 		});
 
