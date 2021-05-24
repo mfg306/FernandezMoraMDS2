@@ -1,8 +1,12 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
+import basededatos.BDPrincipal;
+import basededatos.iUR;
 import vistas.VistaPedido;
 
 public class Pedido extends VistaPedido {
@@ -10,7 +14,8 @@ public class Pedido extends VistaPedido {
 	public VerticalLayout layout;
 	base_de_datos.Compra compra;
 	
-	public Pedido(base_de_datos.Compra compra) {
+	public Pedido(base_de_datos.Compra compra, Pedidos pedidos) {
+		this._pedidos = pedidos;
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		
 		this.compra = compra;
@@ -32,11 +37,28 @@ public class Pedido extends VistaPedido {
 		this.getFecha().setText(this.compra.getFecha_estado());
 		this.getPrecio().setText(this.compra.getPrecio_total() + " €");
 		this.getCodigo().setText(this.compra.getCodigo() + "");
+		
+		inicializar();
 	}
 	
+	
+	public void inicializar() {
+		Cancelar();
+	}
 
 	
 	public void Cancelar() {
-		throw new UnsupportedOperationException();
+		this.getBoton_cancelar_pedido().addClickListener(event ->{
+			iUR iur = new BDPrincipal(); 
+			
+			try {
+				iur.cancelarPedido(this.compra.getCodigo());
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+			
+			this._pedidos._ver_pedidos.inicializar(this._pedidos._ver_pedidos._menu_UR);
+  
+		});
 	}
 }

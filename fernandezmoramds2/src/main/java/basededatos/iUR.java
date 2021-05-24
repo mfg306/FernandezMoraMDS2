@@ -45,4 +45,6 @@ public interface iUR extends iUR_UNR {
 	public Recibido[] cargarRecibidos(UR aUsuario);
 	
 	public Pendiente[] cargarPendientes(UR aUsuario);
+	
+	public boolean cancelarPedido(int aIdPedido) throws PersistentException;
 }

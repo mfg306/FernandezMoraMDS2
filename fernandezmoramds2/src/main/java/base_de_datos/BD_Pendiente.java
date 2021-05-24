@@ -175,4 +175,27 @@ public class BD_Pendiente {
 		return listaP;
 
 	}
+	
+	public boolean cancelarPedido(int aIdPedido) throws PersistentException {
+		Pendiente p = PendienteDAO.getPendienteByORMID(aIdPedido);
+
+		this._bDPrincipal = new BDPrincipal();
+		this._bDPrincipal.eliminarProductosEnCompra(p);
+		
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		try {
+			PendienteDAO.delete(p);
+			t.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+			HitoPersistentManager.instance().disposePersistentManager();
+			return false;
+		}
+		
+		HitoPersistentManager.instance().disposePersistentManager();
+		return true;
+
+	}
 }

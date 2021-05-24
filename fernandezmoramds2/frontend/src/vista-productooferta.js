@@ -17,7 +17,7 @@ class VistaProducto_oferta extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <img style="width: 100%; height: 100%;" id="imagen_producto">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout">
-  <span style="width: 100%; align-self: center;" id="nombre_producto">Nombre Producto</span>
+  <span style="width: 100%; align-self: center;" id="nombre_producto"></span>
   <vaadin-vertical-layout theme="spacing" style="align-items: flex-end; width: 100%;" id="vaadinVerticalLayout1">
    <span id="precio_original" style="text-decoration:line-through"></span>
    <span style="color: red;" id="precio_rebajado"></span>

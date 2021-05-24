@@ -12,11 +12,16 @@ public class Ver_pedidos extends VistaVer_pedidos {
 	public VerticalLayout layout;
 	
 	public Ver_pedidos(Menu_UR mur) {
+		layout = this.getLista_pedidos().as(VerticalLayout.class);
+
 		inicializar(mur);
 	}
 	
 	public void inicializar(Menu_UR menuur) {
-		layout = this.getLista_pedidos().as(VerticalLayout.class);
+		
+		this.layout.removeAll();
+		
+		
 		this._menu_UR = menuur;
 		this._pedidos = new Pedidos(this);
 		this.layout.add(this._pedidos);

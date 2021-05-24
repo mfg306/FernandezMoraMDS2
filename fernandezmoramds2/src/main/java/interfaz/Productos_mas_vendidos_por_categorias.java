@@ -91,12 +91,16 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 		this._list_Producto_mas_vendido_por_categoria = new Vector<Producto_mas_vendido_por_categoria>();
 		try {
 			base_de_datos.Categoria[] categorias = iur.cargarCategorias();
-			base_de_datos.Producto[] productos = iur.cargarProductosMasVendidos(categorias[0].getNombre_categoria());
+			if(categorias != null && categorias.length != 0){
+				base_de_datos.Producto[] productos = iur.cargarProductosMasVendidos(categorias[0].getNombre_categoria());
 
-			if (productos != null) {
-				for (base_de_datos.Producto p : productos) {
-					this.add_Producto_Mas_Vendido_Por_Categoria(p);
+				if (productos != null) {
+					for (base_de_datos.Producto p : productos) {
+						this.add_Producto_Mas_Vendido_Por_Categoria(p);
+					}
 				}
+			} else {
+				this.getLista_productos_categoria().add("No hay categorias en la base de datos.");
 			}
 
 			//this.inicializar(_uR_UNR);

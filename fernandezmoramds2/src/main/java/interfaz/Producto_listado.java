@@ -20,7 +20,7 @@ public class Producto_listado extends VistaProducto_listado {
 		if (listado.esOfertas == true) {
 			this.getLabel1().setVisible(false);
 			this.getCambiarPrecio().setPlaceholder("" + p.getPrecio_producto());
-			this.getCambiarPrecio().setHelperText("Introduzca un nuevo precio:");
+			this.getCambiarPrecio().setLabel("Introduzca un nuevo precio:");
 		}
 
 		this.getCambiarPrecio().setValue("" + p.getPrecio_producto());

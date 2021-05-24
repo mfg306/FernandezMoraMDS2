@@ -2,6 +2,7 @@ package base_de_datos;
 
 import basededatos.BDPrincipal;
 
+import java.util.Arrays;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -40,9 +41,6 @@ public class BD_Productos {
 		Producto[] pds = null;
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		try {
-//			Categoria c = CategoriaDAO.loadCategoriaByORMID(aCategoria.getId_Categoria());
-//			pds = c._Producto.toArray();
-			
 			pds = ProductoDAO.listProductoByQuery("CategoriaId_Categoria = " + aCategoria.getId_Categoria(), null);
 			
 		} catch (Exception e) {
@@ -59,13 +57,15 @@ public class BD_Productos {
 		try {
 			Oferta o = OfertaDAO.loadOfertaByORMID(aOferta.getId_Oferta());
 			pds = o._Pertenece_a.toArray();
+			Arrays.sort(pds);
 		} catch (Exception e) {
 			t.rollback();
 		}
 
 		return pds;
 	}
-
+	
+	
 	public Producto[] cargarProductos() {
 		return null;
 	}
@@ -176,10 +176,10 @@ public class BD_Productos {
 		return ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aProducto + "%'", "nombre");
 	}
 
-	public Producto[] cargarProductos(String aProducto) throws PersistentException {
-
-		return null;
-	}
+//	public Producto[] cargarProductos(String aProducto) throws PersistentException {
+//
+//		return null;
+//	}
 
 	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto)
 			throws PersistentException {
