@@ -51,17 +51,21 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 			posiblesUsuarios.setWidth("100%");
 			this.getHuecoSelect().add(posiblesUsuarios);
 			cargarClientes();
+			
 		}
 		
 		retroceder();
 	}
 	
 	public void retroceder() {
-		/*Redirigimos a mensajes recibidos*/
-		if(this._mensajes_recibidos != null) {
-			this._mensajes_recibidos._ver_bandeja_de_entrada.layout.remove(this);
-			this._mensajes_recibidos._ver_bandeja_de_entrada.inicializar();
-		}
+		this.getBoton_atras().addClickListener(event ->{
+			/*Redirigimos a mensajes recibidos*/
+			if(this._mensajes_recibidos != null) {
+				this._mensajes_recibidos._ver_bandeja_de_entrada.layout.remove(this);
+				this._mensajes_recibidos._ver_bandeja_de_entrada.inicializar();
+			}
+		});
+
 	}
 	
 	public void cargarClientes() {
