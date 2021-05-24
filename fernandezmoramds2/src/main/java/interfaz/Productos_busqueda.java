@@ -5,6 +5,7 @@ import java.util.Vector;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -22,6 +23,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 	public int numeroTotalPaginas = 0;
 	public int paginaActual = 0;
 	HorizontalLayout productoNuevo;
+	base_de_datos.Producto[] productos = null;
 	public boolean buscar = true;
 
 	public Productos_busqueda(Buscador b, UR_UNR unrunr) {
@@ -31,16 +33,16 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 
 	public void inicializar(Buscador b, UR_UNR unrunr, int paginaActual) {
 		this._buscador = b;
-		_list_Producto_busqueda = new Vector<Producto_busqueda>();
+		
 		productoNuevo = new HorizontalLayout();
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		numeroTotalRegistros = 0;
 		numeroTotalPaginas = 0;
-		if (buscar) {
+
+		this._buscador._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
+			this._list_Producto_busqueda = new Vector<Producto_busqueda>();
 			verProductosBusqueda();
-		} else {
-			Notification.show("Productos buscados");
-		}
+		});
 
 		Ver_anteriores();
 		Ver_siguientes();
@@ -101,8 +103,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 					this.getBoton_pagina_anterior().setEnabled(false);
 				}
 
-				buscar = false;
-				this.inicializar(this._buscador, this._buscador._menu_UR_UNR._uR_UNR, this.paginaActual);
+				verProductosBusqueda();
 			});
 		}
 	}
@@ -114,50 +115,71 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 					this.paginaActual++;
 				}
 
-				/*Una vez que se de al boton de siguiente volvemos a activar el boton de anterior*/
+				/*
+				 * Una vez que se de al boton de siguiente volvemos a activar el boton de
+				 * anterior
+				 */
 				this.getBoton_pagina_anterior().setEnabled(true);
 
 				if (this.paginaActual + 1 == numeroTotalPaginas) {
 					this.getBoton_pagina_siguiente().setEnabled(false);
 				}
 
-				buscar = false;
-				this.inicializar(this._buscador, this._buscador._menu_UR_UNR._uR_UNR, this.paginaActual);
+				verProductosBusqueda();
 			});
 		}
 	}
 
 	public void verProductosBusqueda() {
 
-		this._buscador._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
-			buscar = false;
-			this._buscador._menu_UR_UNR._uR_UNR.layout.remove(this);
-			iUR_UNR i = new BDPrincipal();
+		this._buscador._menu_UR_UNR._uR_UNR.layout.remove(this);
+		iUR_UNR i = new BDPrincipal();
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).setVisible(true);
+	
+		try {
+			if (this._buscador._busquedaTF.getValue().toString().equals("")) {
+				Notification.show("Introduzca un producto en el buscador para realizar la busqueda");
 
-			base_de_datos.Producto[] productos = null;
-			try {
-				if (this._buscador._busquedaTF.getValue().toString().equals("")) {
-					Notification.show("Introduzca un producto en el buscador para realizar la busqueda");
+			} else {
+				this.productos = i.cargarProductosPorCategoria(this._buscador.categoriasBuscador.getValue(),
+						this._buscador._busquedaTF.getValue());
+				if (this.productos.length != 0) {
+					for (base_de_datos.Producto p : this.productos) {
+						this.add_ProductosBusqueda(p);
+					}
+
+					if (this._buscador._menu_UR_UNR._ver_carrito != null) {
+						this._buscador._menu_UR_UNR.cerrar_carrito();
+					}
+					this._buscador._menu_UR_UNR._uR_UNR.limpiarInterfaz();
+					this.getBoton_pagina_anterior().setVisible(true);
+					this.getBoton_pagina_siguiente().setVisible(true);
+					this.getPrimeraPagina().setVisible(true);
+					this.getUltimaPagina().setVisible(true);
+					this.getNumero_pagina().setVisible(true);
+					this.getSpan().setVisible(true);
+					this._buscador._menu_UR_UNR._uR_UNR.layout.add(this);
 
 				} else {
-					productos = i.cargarProductosPorCategoria(this._buscador.categoriasBuscador.getValue(),
-							this._buscador._busquedaTF.getValue());
+					H1 noHayProductos = new H1();
+					noHayProductos.setText("Sin resultados en la busqueda");
+					this._buscador._menu_UR_UNR._uR_UNR.limpiarInterfaz();
+					this.getVaadinHorizontalLayout1().removeAll();
+					this.getVaadinHorizontalLayout1().add(noHayProductos);
+					this.getBoton_pagina_anterior().setVisible(false);
+					this.getBoton_pagina_siguiente().setVisible(false);
+					this.getPrimeraPagina().setVisible(false);
+					this.getUltimaPagina().setVisible(false);
+					this.getNumero_pagina().setVisible(false);
+					this.getSpan().setVisible(false);
+					this._buscador._menu_UR_UNR._uR_UNR.layout.add(this);
 				}
-				for (base_de_datos.Producto p : productos) {
-					this.add_ProductosBusqueda(p);
-				}
-
-				if (this._buscador._menu_UR_UNR._ver_carrito != null) {
-					this._buscador._menu_UR_UNR.cerrar_carrito();
-				}
-				this._buscador._menu_UR_UNR._uR_UNR.limpiarInterfaz();
-				this._buscador._menu_UR_UNR._uR_UNR.layout.add(this);
-			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		});
 	}
 
 }

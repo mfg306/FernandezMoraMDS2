@@ -131,8 +131,8 @@ public class Menu_UNR extends Menu_UR_UNR {
 	}
 	
 	public void ocultar_Productos_Busqueda() {
-		if(this._buscador != null) {
-			this._buscador._productos_busqueda.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+		if(this._buscador._productos_busqueda != null) {
+			this._buscador._productos_busqueda.getVaadinVerticalLayout().as(VerticalLayout.class).setVisible(false);
 		}
 	}
 	

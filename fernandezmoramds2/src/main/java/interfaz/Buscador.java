@@ -25,7 +25,6 @@ public class Buscador extends VistaBuscador {
 	public Productos_busqueda _productos_busqueda;
 	public base_de_datos.Categoria[] listaCategorias;
 	public base_de_datos.Producto[] listaProductosBusqueda;
-	HorizontalLayout productoNuevo;
 
 
 	public Buscador(Menu_UR_UNR urunr) {
@@ -40,7 +39,6 @@ public class Buscador extends VistaBuscador {
 	
 	public void inicializar(Menu_UR_UNR urunr) {
 		this._productos_busqueda = new Productos_busqueda(this,this._menu_UR_UNR._uR_UNR);
-		this.productoNuevo =  new HorizontalLayout();
 		Clasificar_por_categoria();
 		this.getEspacioBuscador().add(this.categoriasBuscador);
 		this.getEspacioBuscador().add(this._busquedaTF);
