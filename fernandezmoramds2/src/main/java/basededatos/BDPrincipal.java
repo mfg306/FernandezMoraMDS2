@@ -135,10 +135,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		this._bD_UNR.actualizarDatosCompra(aDireccionEnvio, aMetodoPago, aUsuario);
 	}
 
-	public Compra[] cargarPedidos(UR aUsuario) {
-		throw new UnsupportedOperationException();
-	}
-
 	public Mensaje[] cargarMensajesEnviados(Usuario_General aUsuario) throws PersistentException {
 		return this._bD_Mensajes.cargarMensajesEnviados(aUsuario);
 	}
@@ -409,6 +405,21 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	@Override
 	public Producto_en_compra[] cargarProductosEnCompra(int aIdEnviado) throws PersistentException {
 		return this._bD_Productos_en_compra.cargarProductosEnCompra(aIdEnviado);
+	}
+
+	@Override
+	public Enviado[] cargarEnviados(UR aUsuario) {
+		return this._bD_Enviado.cargarEnviados(aUsuario);
+	}
+
+	@Override
+	public Recibido[] cargarRecibidos(UR aUsuario) {
+		return this._bD_Recibido.cargarRecibidos(aUsuario);
+	}
+
+	@Override
+	public Pendiente[] cargarPendientes(UR aUsuario) {
+		return this._bD_Pendiente.cargarPendientes(aUsuario);
 	}
 
 	
