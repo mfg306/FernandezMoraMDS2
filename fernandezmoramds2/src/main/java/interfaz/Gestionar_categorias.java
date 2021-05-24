@@ -1,7 +1,8 @@
  package interfaz;
 
 import org.orm.PersistentException;
-import com.vaadin.flow.component.notification.Notification;
+
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
@@ -14,7 +15,7 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 	public Crear_categoría _crear_categoría;
 	public VerticalLayout layout;
 	base_de_datos.Categoria[] categoriasAdmin;
-
+	Span aviso = new Span();
 	
 	public Gestionar_categorias(Administrador admin)  {
 		this._administrador = admin;
@@ -82,11 +83,17 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 		iAdministrador iadmin = new BDPrincipal();
 
 		this.categoriasAdmin = iadmin.cargarCategoriasAdministrador();
-		for(base_de_datos.Categoria c : this.categoriasAdmin) {
-			Categoria_administrador ca = new Categoria_administrador(this._categorias_administrador, c);
-			this._categorias_administrador.addCategoria(ca);
-
+		
+		if(this.categoriasAdmin != null & this.categoriasAdmin.length > 0) {
+			for(base_de_datos.Categoria c : this.categoriasAdmin) {
+				Categoria_administrador ca = new Categoria_administrador(this._categorias_administrador, c);
+				this._categorias_administrador.addCategoria(ca);
+			}	
+		} else {
+			aviso.setText("No hay ninguna categoria registrada en la base de datos.");
+			this.layout.add(aviso);
 		}
+
 	}
 	
 	

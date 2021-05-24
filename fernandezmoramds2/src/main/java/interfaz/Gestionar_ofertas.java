@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -12,7 +13,7 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 	public Ofertas_administrador _ofertas_administrador;
 	public VerticalLayout layout;
 	base_de_datos.Oferta[] ofertasAdmin;
-
+	Span aviso = new Span();
 	
 	public Gestionar_ofertas(Administrador admin) {	
 		this._administrador = admin;
@@ -74,10 +75,16 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 		iAdministrador iadmin = new BDPrincipal();
 		
 		this.ofertasAdmin = iadmin.cargarOfertas();
-		for(base_de_datos.Oferta o : this.ofertasAdmin) {
-			Oferta_administrador oa = new Oferta_administrador(this._ofertas_administrador, o);
-			this._ofertas_administrador.add_ofertas(oa);
+		if(this.ofertasAdmin != null && this.ofertasAdmin.length > 0) {
+			for(base_de_datos.Oferta o : this.ofertasAdmin) {
+				Oferta_administrador oa = new Oferta_administrador(this._ofertas_administrador, o);
+				this._ofertas_administrador.add_ofertas(oa);
+			}	
+		} else {
+			aviso.setText("No hay ninguna oferta registrada en la base de datos.");
+			this.layout.add(aviso);
 		}
+
 	}
 	
 	

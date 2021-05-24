@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import base_de_datos.Enviado;
@@ -17,6 +18,8 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 	base_de_datos.Pendiente[] pendientes;
 	base_de_datos.Enviado[] enviados;
 	base_de_datos.Recibido[] recibidos;
+	Span aviso = new Span();
+
 
 	public Gestionar_ventas(Administrador admin) {
 		this._administrador = admin;
@@ -44,7 +47,6 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 			
 			/*Si ya se viene de un retroceder ==> se ha creado aqui en este metodo*/
 			if(true) {
-				System.out.println("AQUI 2");
 				this._administrador.layout.removeAll();
 			}
 			
@@ -57,6 +59,7 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 	public void ocultar_ventas() {
 		this.getH1().setVisible(false);
 		this.getRetroceder().setVisible(false);
+		this.aviso.setVisible(false);
 	}
 
 	public void abrirGestionarVentas() {
@@ -75,6 +78,11 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 			pendientes = admin.cargarPendientes();
 			for (Pendiente p : pendientes) {
 				this._ventas.add_ventas(p);
+			}
+			
+			if((pendientes == null || pendientes.length ==  0) && (enviados == null || enviados.length == 0) && (recibidos == null || recibidos.length == 0)){
+				aviso.setText("No hay ningún producto registrado en la base de datos.");
+				this.layout.add(aviso);
 			}
 			
 		} catch (Exception e) {

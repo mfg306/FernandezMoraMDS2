@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import vistas.VistaGestionar_empleados;
 

@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -15,7 +16,8 @@ public class Empleados extends VistaEmpleados {
 	public Gestionar_empleados _gestionar_empleados;
 	public Vector<Empleado> _list_Empleado = new Vector<Empleado>();
 	public VerticalLayout layout;
-	
+	Span aviso = new Span();
+
 	private int empleadosPorPagina = 2;
 	private int numeroTotalRegistros = 0;
 	private int numeroTotalPaginas = 0;
@@ -100,16 +102,9 @@ public class Empleados extends VistaEmpleados {
 				if(this.paginaActual == 0) {
 					this.getBotonAnteriores().setEnabled(false);
 				}
-				
-				
 				this.inicializar(paginaActual);	
-
 			});
 		}
-		
-
-		
-
 	}
 
 	public void Ver_siguientes() {
@@ -129,7 +124,6 @@ public class Empleados extends VistaEmpleados {
 				
 				this.inicializar(paginaActual);	
 			});
-			
 		}
 	}
 	
@@ -138,9 +132,16 @@ public class Empleados extends VistaEmpleados {
 		
 		try {
 			base_de_datos.Empleado[] empleados = admin.cargarEmpleados();
-			for(base_de_datos.Empleado e : empleados) {
-				this.add_Empleados(e);
+			
+			if(empleados != null && empleados.length > 0 ) {
+				for(base_de_datos.Empleado e : empleados) {
+					this.add_Empleados(e);
+				}
+			} else {
+				aviso.setText("No hay ningún empleado registrado en la base de datos.");
+				this.layout.add(aviso);
 			}
+
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
