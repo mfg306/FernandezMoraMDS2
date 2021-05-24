@@ -32,8 +32,16 @@ public class BD_Productos_Rebajados {
 	
 	public Producto_Rebajado[] cargarProductos(Oferta aOferta) throws PersistentException {
 		Producto_Rebajado[] poferta = null;
+		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Oferta oferta = OfertaDAO.loadOfertaByQuery("Id_Oferta = " + aOferta.getId_Oferta(), null);
 		poferta = oferta._Pertenece_a.toArray();
+		/*try {
+			poferta = Producto_RebajadoDAO.listProducto_RebajadoByQuery("OfertaId_Oferta = " + aOferta.getId_Oferta(), null);
+		}catch (Exception e) {
+			t.rollback();
+			e.getStackTrace();
+		}*/
+		
 		return poferta;
 	}
 	

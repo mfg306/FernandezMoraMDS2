@@ -64,7 +64,7 @@ public class Productos_oferta extends VistaProductos_oferta {
 			numeroTotalPaginas = (int) Math.round(((numeroTotalRegistros + 1) / productosPorPagina));
 		}
 
-		this.getPrimeraPagina().setText("" + (paginaActual + 1));
+		this.getSpan().setText("" + (paginaActual + 1));
 		this.getUltimaPagina().setText("" + numeroTotalPaginas);
 
 		for (int i = (paginaActual * productosPorPagina); i < this._list_Producto_oferta.size(); i++) {
