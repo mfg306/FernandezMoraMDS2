@@ -12,7 +12,7 @@ public class Verificacion_contraseña_cambiada extends VistaVerificacion_contras
 
 	
 	public void inicializar(Menu_UR menu, Editar_perfil ep) {
-		this._cambiar_contraseña = new Cambiar_contraseña(menu, ep);
+		this._cambiar_contraseña = new Cambiar_contraseña(ep);
 		this.getBoton_aceptar().addClickListener(event ->{
 			this._cambiar_contraseña._editar_perfil = new Editar_perfil(menu);
 			menu.layout.remove(this);

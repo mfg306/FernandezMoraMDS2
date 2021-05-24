@@ -12,16 +12,16 @@ public class Cambiar_contraseña extends VistaCambiar_contrasenia {
 	public Editar_perfil _editar_perfil;
 	public Verificacion_contraseña_cambiada _verificacion_contraseña_cambiada;
 
-	public Cambiar_contraseña(Menu_UR menu, Editar_perfil _editar_perfil) {
+	public Cambiar_contraseña(Editar_perfil _editar_perfil) {
 		this._editar_perfil = _editar_perfil;
-		inicializar(menu);
+		inicializar();
 	}
 
-	public void inicializar(Menu_UR menu) {
-		cambiarContrasenia(menu);
+	public void inicializar() {
+		cambiarContrasenia();
 	}
 
-	public void cambiarContrasenia(Menu_UR menu) {
+	public void cambiarContrasenia() {
 		iUR iur = new BDPrincipal();
 		this.getBoton_guardar().addClickListener(event -> {
 			try {
@@ -37,10 +37,10 @@ public class Cambiar_contraseña extends VistaCambiar_contrasenia {
 				}
 				else {
 					iur.actualizarContrasenia(this._editar_perfil._menu_UR._uR.UR, this.getConfirmacion_nueva_contrasenia().getValue().toString());
-					menu.layout.remove(this);
-					Verificacion_contraseña_cambiada vcc = new Verificacion_contraseña_cambiada(menu,
+					this._editar_perfil._menu_UR.layout.remove(this);
+					Verificacion_contraseña_cambiada vcc = new Verificacion_contraseña_cambiada(this._editar_perfil._menu_UR,
 							this._editar_perfil);
-					menu.layout.add(vcc);
+					this._editar_perfil._menu_UR.layout.add(vcc);
 				}
 			} catch (PersistentException e) {
 				e.printStackTrace();

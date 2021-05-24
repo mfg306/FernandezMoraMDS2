@@ -44,7 +44,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 
 	public void cambiar_contrasenia() {
 		this.getBoton_cambiar_contrasenia().addClickListener(event -> {
-			Cambiar_contraseña cc = new Cambiar_contraseña(this._menu_UR, this);
+			Cambiar_contraseña cc = new Cambiar_contraseña(this);
 			limpiar_interfaz();
 			this._menu_UR.layout.add(cc);
 		});
