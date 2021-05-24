@@ -162,4 +162,17 @@ public class BD_Pendiente {
 
 		return true;
 	}
+	
+	public Pendiente[] cargarPendientes(UR aUsuario) {
+		Pendiente[] listaP = null;
+		
+		try {
+			listaP = PendienteDAO.listPendienteByQuery("URUsuario_GeneralId_Usuario = " + aUsuario.getId_Usuario() + " AND asignado = 0", null);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return listaP;
+
+	}
 }
