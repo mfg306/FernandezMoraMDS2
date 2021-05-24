@@ -49,7 +49,9 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 	public void limpiar_Interfaz_Para_Abrir_Producto(Producto_mas_vendido_por_categoria producto) {
 		Vector<Producto_mas_vendido_por_categoria> copia = new Vector<>(this._list_Producto_mas_vendido_por_categoria);
 		
-		for(Producto_mas_vendido_por_categoria pc : copia){
+		System.out.println("ENTRANDO");
+		for(Producto_mas_vendido_por_categoria pc : this._list_Producto_mas_vendido_por_categoria){
+			System.out.println(pc.producto.getNombre());
 			if(pc.producto.getId_Producto() != producto.producto.getId_Producto()) {
 				this.getLista_productos_categoria().remove(pc);
 			}
@@ -101,8 +103,9 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 
 	public void Clasificar_por_categoria() {
 		this.inicial = false;
-		this._list_Producto_mas_vendido_por_categoria = new Vector<Producto_mas_vendido_por_categoria>();
 		this.categoriasMasVendidos.addValueChangeListener(event -> {
+			this._list_Producto_mas_vendido_por_categoria = new Vector<Producto_mas_vendido_por_categoria>();
+
 			System.out.println("CAMBIANDO VALOR");
 			this.getLista_productos_categoria().removeAll();
 			iUR_UNR iurunr = new BDPrincipal();
