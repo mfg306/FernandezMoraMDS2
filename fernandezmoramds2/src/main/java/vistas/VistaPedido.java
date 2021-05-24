@@ -35,6 +35,10 @@ public class VistaPedido extends PolymerTemplate<VistaPedido.VistaPedidoModel> {
 	private Button boton_cancelar_pedido;
 	@Id("codigo")
 	private Span codigo;
+	@Id("fecha")
+	private Span fecha;
+	@Id("precio")
+	private Span precio;
 
 	/**
      * Creates a new VistaPedido.
@@ -88,6 +92,30 @@ public class VistaPedido extends PolymerTemplate<VistaPedido.VistaPedidoModel> {
 
 	public void setBoton_cancelar_pedido(Button boton_cancelar_pedido) {
 		this.boton_cancelar_pedido = boton_cancelar_pedido;
+	}
+
+	public Span getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Span codigo) {
+		this.codigo = codigo;
+	}
+
+	public Span getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Span fecha) {
+		this.fecha = fecha;
+	}
+
+	public Span getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Span precio) {
+		this.precio = precio;
 	}
 	
 }
