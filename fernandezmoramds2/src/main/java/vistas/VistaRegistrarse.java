@@ -48,6 +48,8 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 	private PasswordField contrasenia;
 	@Id("confirmacionContrasenia")
 	private PasswordField confirmacionContrasenia;
+	@Id("segundoApellido")
+	private TextField segundoApellido;
 
 	/**
      * Creates a new VistaRegistrarse.
@@ -157,5 +159,13 @@ public class VistaRegistrarse extends PolymerTemplate<VistaRegistrarse.VistaRegi
 
 	public void setConfirmacionContrasenia(PasswordField confirmacionContrasenia) {
 		this.confirmacionContrasenia = confirmacionContrasenia;
+	}
+
+	public TextField getSegundoApellido() {
+		return segundoApellido;
+	}
+
+	public void setSegundoApellido(TextField segundoApellido) {
+		this.segundoApellido = segundoApellido;
 	}
 }

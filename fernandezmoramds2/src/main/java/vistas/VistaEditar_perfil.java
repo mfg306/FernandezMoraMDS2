@@ -53,6 +53,8 @@ public class VistaEditar_perfil extends PolymerTemplate<VistaEditar_perfil.Vista
 	private Button boton_eliminar_cuenta;
 	@Id("huecoImagen")
 	private Element huecoImagen;
+	@Id("segundoApellido")
+	private TextField segundoApellido;
 
 	/**
      * Creates a new VistaEditar_perfil.
@@ -194,5 +196,13 @@ public class VistaEditar_perfil extends PolymerTemplate<VistaEditar_perfil.Vista
 
 	public void setHuecoImagen(Element huecoImagen) {
 		this.huecoImagen = huecoImagen;
+	}
+
+	public TextField getSegundoApellido() {
+		return segundoApellido;
+	}
+
+	public void setSegundoApellido(TextField segundoApellido) {
+		this.segundoApellido = segundoApellido;
 	}
 }

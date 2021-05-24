@@ -24,12 +24,13 @@ class VistaEditar_perfil extends PolymerElement {
   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span1">Editar perfil</span>
   <vaadin-text-field style="align-self: center; width: 80%;" placeholder="Nombre de usuario" id="nombre_usuario"></vaadin-text-field>
   <vaadin-text-field style="align-self: center; width: 80%;" placeholder="Nombre" id="nombre"></vaadin-text-field>
-  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Apellidos" id="apellidos"></vaadin-text-field>
+  <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Primer apellido" id="apellidos"></vaadin-text-field>
+  <vaadin-text-field placeholder="Segundo apellido" id="segundoApellido" style="width: 80%; align-self: center;"></vaadin-text-field>
   <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Correo electronico" id="correo_electronico"></vaadin-text-field>
   <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Direccion envio" id="direccion_envio"></vaadin-text-field>
   <vaadin-text-field style="width: 80%; align-self: center;" placeholder="Metodo de pago" id="metodo_pago"></vaadin-text-field>
   <vaadin-button style="width: 80%; align-self: center; color: #ae1641;" id="boton_cambiar_contrasenia">
-   Cambiar contrasena 
+    Cambiar contrasena 
   </vaadin-button>
   <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_guardar">
     Guardar 

@@ -21,7 +21,8 @@ class VistaRegistrarse extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="width: 100%; justify-content: center; height: 100%;" id="vaadinVerticalLayout1">
    <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span">REGISTRATE</span>
    <vaadin-text-field id="nombre" style="width: 100%;" placeholder="Introduzca su nombre" required invalid></vaadin-text-field>
-   <vaadin-text-field id="apellidos" style="width: 100%;" placeholder="Introduzca sus apellidos" required invalid></vaadin-text-field>
+   <vaadin-text-field id="apellidos" style="width: 100%;" placeholder="Introduzca su primer apellido" required invalid></vaadin-text-field>
+   <vaadin-text-field placeholder="Introduzca su segundo apellido" id="segundoApellido" style="width: 100%;"></vaadin-text-field>
    <vaadin-text-field id="correo" style="width: 100%;" placeholder="Introduzca su correo" required></vaadin-text-field>
    <vaadin-text-field id="nombre_usuario" style="width: 100%;" placeholder="Introduzca su nombre de usuario" required invalid></vaadin-text-field>
    <vaadin-password-field id="contrasenia" style="width: 100%;" required invalid></vaadin-password-field>
@@ -32,7 +33,7 @@ class VistaRegistrarse extends PolymerElement {
   </vaadin-vertical-layout>
  </div>
  <vaadin-button theme="tertiary-inline" id="botonIniciarSesion" style="align-self: center; margin: var(--lumo-space-m); color: #ae1641;">
-  ¿Ya tienes cuenta? Haz click aqui para iniciar sesion
+   ¿Ya tienes cuenta? Haz click aqui para iniciar sesion 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;
