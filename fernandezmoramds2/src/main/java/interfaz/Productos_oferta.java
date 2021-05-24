@@ -89,8 +89,8 @@ public class Productos_oferta extends VistaProductos_oferta {
 				if (this.paginaActual + 1 == numeroTotalPaginas) {
 					this.getBoton_pagina_siguiente().setEnabled(false);
 				}
-
-				this.inicializar(this._list_Ofertas, this._list_Ofertas._ofertas._uR_UNR, paginaActual);
+				mostrar_Productos_Oferta_paginados();
+//				this.inicializar(this._list_Ofertas, this._list_Ofertas._ofertas._uR_UNR, paginaActual);
 			});
 
 		}
@@ -113,7 +113,8 @@ public class Productos_oferta extends VistaProductos_oferta {
 					this.getBoton_pagina_anterior().setEnabled(false);
 				}
 
-				this.inicializar(this._list_Ofertas, this._list_Ofertas._ofertas._uR_UNR, paginaActual);
+				mostrar_Productos_Oferta_paginados();
+//				this.inicializar(this._list_Ofertas, this._list_Ofertas._ofertas._uR_UNR, paginaActual);
 			});
 		}
 	}

@@ -13,7 +13,6 @@ public class Ofertas extends VistaOfertas {
 
 	public UR_UNR _uR_UNR;
 	public Vector<Oferta> _list_Ofertas;
-	// public int indice;
 	public base_de_datos.Oferta[] ofertas;
 
 	public Ofertas(UR_UNR urunr) {
