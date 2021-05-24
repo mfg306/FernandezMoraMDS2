@@ -19,11 +19,10 @@ public class Pedidos extends VistaPedidos {
 	public void inicializar(Ver_pedidos vp) {
 		this.layout = this.getLista_pedidos().as(VerticalLayout.class);
 		this._ver_pedidos = vp;
-		add_pedidos();
 	}
 
-	public void add_pedidos() {
-		Pedido p = new Pedido();
+	public void add_pedidos(base_de_datos.Compra c) {
+		Pedido p = new Pedido(c);
 		this._list_Pedido.add(p);
 		this.layout.add(p);
 
