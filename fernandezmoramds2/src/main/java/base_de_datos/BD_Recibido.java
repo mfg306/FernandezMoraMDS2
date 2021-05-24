@@ -66,5 +66,18 @@ public class BD_Recibido {
 		return true;
 		
 	}
+	
+	public Recibido[] cargarRecibidos(UR aUsuario) {
+		Recibido[] listaR = null;
+	
+		try {
+			listaR = RecibidoDAO.listRecibidoByQuery("URUsuario_GeneralId_Usuario = " + aUsuario.getId_Usuario() + " AND RECIBIDO = 1", null);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return listaR;
+		
+	}
 
 }
