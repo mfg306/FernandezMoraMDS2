@@ -29,44 +29,36 @@ public class Productos_mas_vendidos_por_categorias extends VistaProductos_mas_ve
 	public void inicializar(UR_UNR urunr) {
 		this._uR_UNR = urunr;
 		
-		
 		layout.add(this.categoriasMasVendidos);
+		
 		if(inicial) {
 		 Clasificar_por_categoria_inicial();
 		}else {
 			Clasificar_por_categoria();
 		}
-		Clasificar_por_categoria();
-		abrir_Producto_MasVendido_Por_Categoria();
 	}
 
 	public void add_Producto_Mas_Vendido_Por_Categoria(base_de_datos.Producto p) {
 		Producto_mas_vendido_por_categoria pmc = new Producto_mas_vendido_por_categoria(this, this._uR_UNR, p);
 		this._list_Producto_mas_vendido_por_categoria.add(pmc);
-		//this.getLista_productos_categoria().removeAll();
 		this.getLista_productos_categoria().add(pmc);
 	}
 
-	public void abrir_Producto_MasVendido_Por_Categoria() {
-		for (Producto_mas_vendido_por_categoria pcm : this._list_Producto_mas_vendido_por_categoria) {
-			pcm.getImagen_producto().addClickListener(event -> {
-				//this._uR_UNR.layoutProductosMasVendidosPorCategorias.remove(this._uR_UNR._productos_mas_vendidos_por_categorias);
-				//this._uR_UNR.layoutOfertas.remove(this._uR_UNR._ofertas);
-				//this._uR_UNR.getBotonVerCategorias().setVisible(false);
-				this._uR_UNR._productos_mas_vendidos_por_categorias.getGetTituloMasVendidos().setVisible(false);
-				this._uR_UNR._productos_mas_vendidos_por_categorias.getLista_productos_categoria().setVisible(false);
-				this._uR_UNR.layoutProductosMasVendidosPorCategorias.add(pcm._producto);
-			});
-		}
-	}
+//	public void cerrar_Productos_Mas_Vendidos_Por_Categoria() {
+//		for (Producto_mas_vendido_por_categoria pcm : this._list_Producto_mas_vendido_por_categoria) {
+//				this.inicial = true;
+//				this._uR_UNR.layoutProductosMasVendidosPorCategorias.remove(pcm);
+//				this._uR_UNR.layoutProductosMasVendidosPorCategorias.add(this._uR_UNR._productos_mas_vendidos_por_categorias);
+//		}
+//	}
 	
-	public void cerrar_Productos_Mas_Vendidos_Por_Categoria() {
-		for (Producto_mas_vendido_por_categoria pcm : this._list_Producto_mas_vendido_por_categoria) {
-				this.inicial = true;
-				this._uR_UNR.layoutProductosMasVendidosPorCategorias.remove(pcm);
-				this._uR_UNR.layoutProductosMasVendidosPorCategorias.add(this._uR_UNR._productos_mas_vendidos_por_categorias);
-				
-			
+	public void limpiar_Interfaz_Para_Abrir_Producto(Producto_mas_vendido_por_categoria producto) {
+		Vector<Producto_mas_vendido_por_categoria> copia = new Vector<>(this._list_Producto_mas_vendido_por_categoria);
+		
+		for(Producto_mas_vendido_por_categoria pc : copia){
+			if(pc.producto.getId_Producto() != producto.producto.getId_Producto()) {
+				this.getLista_productos_categoria().remove(pc);
+			}
 		}
 	}
 
