@@ -105,4 +105,8 @@ public class BD_Enviado {
 		
 		return true;
 	}
+	
+	public Enviado[] cargarEnviados(UR aUsuario) {
+		return null;
+	}
 }
