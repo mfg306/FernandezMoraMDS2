@@ -176,10 +176,7 @@ public class BD_Productos {
 		return ProductoDAO.listProductoByQuery("Nombre LIKE '%" + aProducto + "%'", "nombre");
 	}
 
-//	public Producto[] cargarProductos(String aProducto) throws PersistentException {
-//
-//		return null;
-//	}
+	
 
 	public Producto[] cargarProductosPorCategoria(String aNombreCategoria, String aNombreProducto)
 			throws PersistentException {
