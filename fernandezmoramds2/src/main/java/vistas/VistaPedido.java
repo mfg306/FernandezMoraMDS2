@@ -27,29 +27,14 @@ public class VistaPedido extends PolymerTemplate<VistaPedido.VistaPedidoModel> {
 	private Element pedido;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("imagen_pedido")
-	private Image imagen_pedido;
-	@Id("caracteristicas_pedido")
-	private Element caracteristicas_pedido;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("hr")
-	private Hr hr;
-	@Id("vaadinItem3")
-	private Element vaadinItem3;
-	@Id("vaadinItem2")
-	private Element vaadinItem2;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("estado_pedido")
 	private Span estado_pedido;
 	@Id("boton_cancelar_pedido")
 	private Button boton_cancelar_pedido;
-	@Id("span")
-	private Span span;
-
+	@Id("codigo")
+	private Span codigo;
 
 	/**
      * Creates a new VistaPedido.
@@ -81,62 +66,6 @@ public class VistaPedido extends PolymerTemplate<VistaPedido.VistaPedidoModel> {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public Image getImagen_pedido() {
-		return imagen_pedido;
-	}
-
-	public void setImagen_pedido(Image imagen_pedido) {
-		this.imagen_pedido = imagen_pedido;
-	}
-
-	public Element getCaracteristicas_pedido() {
-		return caracteristicas_pedido;
-	}
-
-	public void setCaracteristicas_pedido(Element caracteristicas_pedido) {
-		this.caracteristicas_pedido = caracteristicas_pedido;
-	}
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-	public Hr getHr() {
-		return hr;
-	}
-
-	public void setHr(Hr hr) {
-		this.hr = hr;
-	}
-
-	public Element getVaadinItem3() {
-		return vaadinItem3;
-	}
-
-	public void setVaadinItem3(Element vaadinItem3) {
-		this.vaadinItem3 = vaadinItem3;
-	}
-
-	public Element getVaadinItem2() {
-		return vaadinItem2;
-	}
-
-	public void setVaadinItem2(Element vaadinItem2) {
-		this.vaadinItem2 = vaadinItem2;
-	}
-
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
@@ -160,14 +89,5 @@ public class VistaPedido extends PolymerTemplate<VistaPedido.VistaPedidoModel> {
 	public void setBoton_cancelar_pedido(Button boton_cancelar_pedido) {
 		this.boton_cancelar_pedido = boton_cancelar_pedido;
 	}
-
-	public Span getSpan() {
-		return span;
-	}
-
-	public void setSpan(Span span) {
-		this.span = span;
-	}
-
 	
 }
