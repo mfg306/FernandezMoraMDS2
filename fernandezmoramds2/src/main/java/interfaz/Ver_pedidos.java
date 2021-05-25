@@ -5,6 +5,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BDPrincipal;
 import basededatos.iUR;
 import vistas.VistaVer_pedidos;
+import com.vaadin.flow.component.html.H1;
 
 public class Ver_pedidos extends VistaVer_pedidos {
 	public Menu_UR _menu_UR;
@@ -20,7 +21,6 @@ public class Ver_pedidos extends VistaVer_pedidos {
 	public void inicializar(Menu_UR menuur) {
 		
 		this.layout.removeAll();
-		
 		
 		this._menu_UR = menuur;
 		this._pedidos = new Pedidos(this);
@@ -42,10 +42,14 @@ public class Ver_pedidos extends VistaVer_pedidos {
 
 		base_de_datos.Recibido[] listaRecibidos = iur.cargarRecibidos(this._menu_UR._uR.UR);
 		
-		if(listaRecibidos != null) {
+		if(listaRecibidos != null && listaRecibidos.length > 0) {
 			for(base_de_datos.Recibido r : listaRecibidos) {
 				this._pedidos.add_pedidos(r);
 			}
+		} else {
+			H1 aviso = new H1();
+			aviso.setText("No ha realizado ningun pedido todavía.");
+			this.layout.add(aviso);
 		}
 
 		

@@ -57,13 +57,17 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 		retroceder();
 	}
 	
+	public void limpiar_interfaz() {
+		if(this._mensajes_recibidos != null) {
+			this._mensajes_recibidos._ver_bandeja_de_entrada.layout.remove(this);
+			this._mensajes_recibidos._ver_bandeja_de_entrada.inicializar();
+		}
+	}
+	
 	public void retroceder() {
 		this.getBoton_atras().addClickListener(event ->{
 			/*Redirigimos a mensajes recibidos*/
-			if(this._mensajes_recibidos != null) {
-				this._mensajes_recibidos._ver_bandeja_de_entrada.layout.remove(this);
-				this._mensajes_recibidos._ver_bandeja_de_entrada.inicializar();
-			}
+			limpiar_interfaz();
 		});
 
 	}
@@ -93,7 +97,7 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 				try {
 					iadmin.enviarMensaje(posiblesUsuarios.getValue(), this.getMensaje().getValue(),
 							this.getAsunto().getValue(), this.general);
-					retroceder();
+					limpiar_interfaz();
 				} catch (PersistentException e) {
 					e.printStackTrace();
 				}
@@ -121,7 +125,7 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 				try {
 					iur.responderMensaje(this.mensaje.getCorreo_emisor(), this.getMensaje().getValue(), this.general, mensaje);
 					Notification.show("Su respuesta se ha mandado con éxito");
-					retroceder();
+					limpiar_interfaz();
 				} catch (PersistentException e) {
 					e.printStackTrace();
 					Notification.show("Se ha producido un error al enviar su mensaje. Vuelva a intentarlo");

@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -36,6 +37,14 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 	}
 	
 	public void inicializar(int paginaActual) {
+		
+		this.getSpan().setVisible(true);
+		this.getPaginaActual().setVisible(true);
+		this.getNumero_de_pagina().setVisible(true);
+		this.getBoton_pagina_anterior().setVisible(true);
+		this.getBoton_pagina_siguiente().setVisible(true);
+		this.getTotalPaginas().setVisible(true);
+		
 		this._list_Mensaje_recibido = new Vector<Mensaje_recibido>();
 		this.layout = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);
 		this.layout.removeAll();
@@ -130,9 +139,23 @@ public class Mensajes_recibidos extends VistaMensajes_recibidos {
 			}
 		}
 		
-		for(base_de_datos.Mensaje m : mensajes) {
-			this.add_mensaje_recibido(m);
+		if(mensajes != null & mensajes.length > 0 ) {
+			for(base_de_datos.Mensaje m : mensajes) {
+				this.add_mensaje_recibido(m);
+			}
+		}  else {
+			H1 aviso = new H1();
+			aviso.setText("No ha recibido ningun mensaje.");
+			this.getHueco_mensajes_recibidos().as(VerticalLayout.class).add(aviso);
+			
+			this.getSpan().setVisible(false);
+			this.getPaginaActual().setVisible(false);
+			this.getTotalPaginas().setVisible(false);
+			this.getNumero_de_pagina().setVisible(false);
+			this.getBoton_pagina_anterior().setVisible(false);
+			this.getBoton_pagina_siguiente().setVisible(false);
 		}
+
 	}
 	
 	public void Ver_mensajes_anteriores() {

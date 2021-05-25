@@ -3,6 +3,7 @@ package interfaz;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -61,9 +62,16 @@ public class Transportista extends VistaTransportista {
 			e1.printStackTrace();
 		}
 		
-		for(base_de_datos.Enviado e : listaEnviados) {
-			if(!e.getEnviado()) this._pedidos_T.add_pedidos_T(e);
+		if(listaEnviados != null && listaEnviados.length > 0) {
+			for(base_de_datos.Enviado e : listaEnviados) {
+				if(!e.getEnviado()) this._pedidos_T.add_pedidos_T(e);
+			}
+		} else {
+			H1 aviso = new H1();
+			aviso.setText("No tiene pedidos asignados");
+			this.layout.add(aviso);
 		}
+
 		
 	}
 

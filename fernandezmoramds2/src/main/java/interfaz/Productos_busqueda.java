@@ -32,6 +32,8 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 	}
 
 	public void inicializar(Buscador b, UR_UNR unrunr, int paginaActual) {
+		
+		_list_Producto_busqueda = new Vector<>();
 		this._buscador = b;
 		
 		productoNuevo = new HorizontalLayout();
@@ -39,10 +41,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 		numeroTotalRegistros = 0;
 		numeroTotalPaginas = 0;
 
-		this._buscador._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
-			this._list_Producto_busqueda = new Vector<Producto_busqueda>();
-			verProductosBusqueda();
-		});
+		verProductosBusqueda();
 
 		Ver_anteriores();
 		Ver_siguientes();
@@ -131,8 +130,6 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 	}
 
 	public void verProductosBusqueda() {
-
-		this._buscador._menu_UR_UNR._uR_UNR.layout.remove(this);
 		iUR_UNR i = new BDPrincipal();
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).setVisible(true);
 	
@@ -158,7 +155,6 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 					this.getUltimaPagina().setVisible(true);
 					this.getNumero_pagina().setVisible(true);
 					this.getSpan().setVisible(true);
-					this._buscador._menu_UR_UNR._uR_UNR.layout.add(this);
 
 				} else {
 					H1 noHayProductos = new H1();
@@ -172,7 +168,6 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 					this.getUltimaPagina().setVisible(false);
 					this.getNumero_pagina().setVisible(false);
 					this.getSpan().setVisible(false);
-					this._buscador._menu_UR_UNR._uR_UNR.layout.add(this);
 				}
 			}
 		} catch (PersistentException e) {

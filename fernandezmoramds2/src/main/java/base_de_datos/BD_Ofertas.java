@@ -187,4 +187,9 @@ public class BD_Ofertas {
 
 		return true;
 	}
+	
+	public Oferta[] cargarOfertasAdmin() throws PersistentException {
+		return OfertaDAO.listOfertaByQuery(null, null);
+	}
+
 }

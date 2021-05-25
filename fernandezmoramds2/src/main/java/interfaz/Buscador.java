@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 import org.orm.PersistentException;
 
@@ -38,10 +39,20 @@ public class Buscador extends VistaBuscador {
 	}
 	
 	public void inicializar(Menu_UR_UNR urunr) {
-		this._productos_busqueda = new Productos_busqueda(this,this._menu_UR_UNR._uR_UNR);
 		Clasificar_por_categoria();
 		this.getEspacioBuscador().add(this.categoriasBuscador);
 		this.getEspacioBuscador().add(this._busquedaTF);
+		
+		
+		
+		this._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
+			
+			if(this._productos_busqueda != null) this._menu_UR_UNR._uR_UNR.layout.remove(this._productos_busqueda);
+			
+			this._productos_busqueda = new Productos_busqueda(this,this._menu_UR_UNR._uR_UNR);
+			this._menu_UR_UNR._uR_UNR.layout.add(this._productos_busqueda);
+
+		});
 	}
 
 	public void Clasificar_por_categoria() {

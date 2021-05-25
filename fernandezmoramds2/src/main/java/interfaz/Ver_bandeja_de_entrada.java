@@ -19,6 +19,11 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 		this.getSpan().setVisible(true);
 		this.getBoton_enviados().setVisible(true);
 		this.getBoton_recibidos().setVisible(true);
+		
+		if(this._mensajes_recibidos != null) {
+			this.getHuecoMensajes().as(VerticalLayout.class).remove(this._mensajes_recibidos);
+		}
+		
 		this._mensajes_recibidos = new Mensajes_recibidos(this.general,this);
 		this.getHuecoMensajes().as(VerticalLayout.class).add(this._mensajes_recibidos);
 

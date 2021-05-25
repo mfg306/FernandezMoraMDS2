@@ -38,6 +38,12 @@ public class Empleados extends VistaEmpleados {
 		numeroTotalRegistros = 0;
 		numeroTotalPaginas = 0;
 		
+		this.getBotonAnteriores().setVisible(true);
+		this.getBotonSiguientes().setVisible(true);
+		this.getPaginaActual().setVisible(true);
+		this.getTotalPaginas().setVisible(true);
+		this.getDe().setVisible(true);
+		
 		abrirEmpleados();
 		
 		Ver_anteriores();
@@ -138,6 +144,12 @@ public class Empleados extends VistaEmpleados {
 					this.add_Empleados(e);
 				}
 			} else {
+				this.getBotonAnteriores().setVisible(false);
+				this.getBotonSiguientes().setVisible(false);
+				this.getPaginaActual().setVisible(false);
+				this.getTotalPaginas().setVisible(false);
+				this.getDe().setVisible(false);
+				
 				aviso.setText("No hay ningún empleado registrado en la base de datos.");
 				this.layout.add(aviso);
 			}

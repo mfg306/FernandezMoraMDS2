@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -74,7 +76,11 @@ public class Gestionar_ofertas extends VistaGestionar_ofertas {
 	public void abrirGestionarOfertas() {
 		iAdministrador iadmin = new BDPrincipal();
 		
-		this.ofertasAdmin = iadmin.cargarOfertas();
+		try {
+			this.ofertasAdmin = iadmin.cargarOfertasAdmin();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 		if(this.ofertasAdmin != null && this.ofertasAdmin.length > 0) {
 			for(base_de_datos.Oferta o : this.ofertasAdmin) {
 				Oferta_administrador oa = new Oferta_administrador(this._ofertas_administrador, o);

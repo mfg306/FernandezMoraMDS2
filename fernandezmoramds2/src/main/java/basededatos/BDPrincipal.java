@@ -422,6 +422,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public boolean cancelarPedido(int aIdPedido) throws PersistentException {
 		return this._bD_Pendiente.cancelarPedido(aIdPedido);
 	}
+
+	@Override
+	public Oferta[] cargarOfertasAdmin() throws PersistentException {
+		return this._bD_Ofertas.cargarOfertasAdmin();
+	}
 	
 	
 

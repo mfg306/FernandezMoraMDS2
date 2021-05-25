@@ -215,12 +215,8 @@ public class Menu_UR extends Menu_UR_UNR {
 				}
 			}
 			
-			
-//			this._productos_mas_vendidos_por_categorias._uR_UNR.layoutOfertas.setVisible(false);
 			this._uR_UNR._productos_mas_vendidos_por_categorias.getGetTituloMasVendidos().setVisible(true);
 			this._uR_UNR._productos_mas_vendidos_por_categorias.getListaCategoriasMasVendidos().setVisible(true);
-//			this._productos_mas_vendidos_por_categorias._uR_UNR.getBotonVerCategorias().setVisible(false);
-			
 			this._uR._productos_mas_vendidos_por_categorias = new Productos_mas_vendidos_por_categorias(this._uR);
 			this._uR.layoutProductosMasVendidosPorCategorias.removeAll();
 			this._uR.layoutProductosMasVendidosPorCategorias.add(this._uR._productos_mas_vendidos_por_categorias);
@@ -229,7 +225,7 @@ public class Menu_UR extends Menu_UR_UNR {
 	}
 	
 	public void ocultar_Productos_Busqueda() {
-		if(this._buscador != null) {
+		if(this._buscador != null && this._buscador._productos_busqueda != null) {
 			this._buscador._productos_busqueda.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		}
 	}

@@ -2,8 +2,6 @@ package interfaz;
 
 import java.util.Vector;
 
-import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
 import basededatos.iUR_UNR;
@@ -21,6 +19,9 @@ public class Ofertas extends VistaOfertas {
 	}
 
 	public void inicializar(UR_UNR urunr) {
+		this.getBoton_anterior().setVisible(true);
+		this.getBoton_siguiente().setVisible(true);
+		
 		this._uR_UNR = urunr;
 		verOfertas();
 		Ver_anteriores();
@@ -58,6 +59,8 @@ public class Ofertas extends VistaOfertas {
 		ofertas = ur_unr.cargarOfertas();
 		if (this.ofertas.length == 0) {
 			this.getListaOfertas().removeAll();
+			this.getBoton_anterior().setVisible(false);
+			this.getBoton_siguiente().setVisible(false);
 		} else {
 			for (base_de_datos.Oferta of : this.ofertas) {
 				if(of != null) {

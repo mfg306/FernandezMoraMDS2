@@ -2,17 +2,13 @@ package interfaz;
 
 import java.util.Vector;
 
-import org.orm.PersistentException;
-
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
-import basededatos.iAdministrador;
 import basededatos.iUR_UNR;
 import vistas.VistaCategorias;
 
@@ -94,13 +90,6 @@ public class Categorias extends VistaCategorias {
 
 	public void mostrar_Categorias_Paginadas() {
 
-		if(this._list_Categorias.size() == 0) {
-			this.getPartePaginacion().as(VerticalLayout.class).removeAll();
-			noHayCategorias = new H1();
-			noHayCategorias.setText("No hay categorias disponibles");
-			this.layout.add(noHayCategorias);
-		}else {
-
 		if (numeroTotalRegistros % 2 == 0) {
 			numeroTotalPaginas = numeroTotalRegistros / categoriasPorPagina;
 		} else {
@@ -114,7 +103,6 @@ public class Categorias extends VistaCategorias {
 			if (i > paginaActual * categoriasPorPagina + categoriasPorPagina - 1)
 				break;
 			layout.add(this._list_Categorias.get(i));
-		}
 		}
 	}
 
@@ -150,8 +138,13 @@ public class Categorias extends VistaCategorias {
 		iUR_UNR iur = new BDPrincipal();
 		
 		this.categorias =iur.cargarCategorias();
-		for(base_de_datos.Categoria c : this.categorias) {
-			this.add_Categorias(c);
+		if(this.categorias != null && this.categorias.length > 0) {
+			for(base_de_datos.Categoria c : this.categorias) {
+				this.add_Categorias(c);
+			}	
+		} else {
+			this.noHayCategorias.setVisible(true);
 		}
+
 	}
 }
