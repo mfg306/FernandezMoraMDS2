@@ -202,10 +202,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		return this._bD_Pendiente.cargarPedidosE(aIdEncargado);
 	}
 
-	public void enviarMensajeE(String aMensaje, String aCorreoEmisor, String aCorreoReceptor) {
-		throw new UnsupportedOperationException();
-	}
-
 	public void guardarImagenesProducto(String aImagenes, Producto aProducto, boolean aEsPrincipal) throws PersistentException {
 		this._dB_Imagen.guardarImagenesProducto(aImagenes, aProducto, aEsPrincipal);
 	}

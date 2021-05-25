@@ -15,8 +15,6 @@ public interface iEncargado_de_compras {
 
 	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException;
 
-	public void enviarMensajeE(String aMensaje, String aCorreoEmisor, String aCorreoReceptor);
-	
 	public Transportista[] cargarTransportistas() throws PersistentException;
 	
 	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException;
