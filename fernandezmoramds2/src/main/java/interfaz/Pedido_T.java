@@ -50,7 +50,7 @@ public class Pedido_T extends VistaPedido_t {
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
-
+		
 		this.getLabel1().setText(cliente.getDireccion_envio());
 	}
 

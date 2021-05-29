@@ -97,7 +97,7 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 				try {
 					iadmin.enviarMensaje(posiblesUsuarios.getValue(), this.getMensaje().getValue(),
 							this.getAsunto().getValue(), this.general);
-					limpiar_interfaz();
+					limpiar_interfaz(); 
 				} catch (PersistentException e) {
 					e.printStackTrace();
 				}
@@ -108,7 +108,7 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 				try {
 					iur.enviarMensaje("admin@admin.es", this.getMensaje().getValue(), this.getAsunto().getValue(),
 							this.general);
-					retroceder();
+					retroceder(); /*...*/
 				} catch (PersistentException e) {
 					e.printStackTrace();
 				}

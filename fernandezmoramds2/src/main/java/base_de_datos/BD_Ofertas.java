@@ -184,6 +184,8 @@ public class BD_Ofertas {
 			t2.rollback();
 			e.printStackTrace();
 		}
+		
+		/*Aqui faltaria una vez se borra el producto rebajado, volver a insertarlo como producto normal*/
 
 		return true;
 	}

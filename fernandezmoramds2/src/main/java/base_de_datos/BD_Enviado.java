@@ -82,6 +82,8 @@ public class BD_Enviado {
 		
 		Pendiente pendientes[] = PendienteDAO.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = " + encargado.getIdEmpleado(), null);
 		
+		
+		
 		for(Pendiente p : pendientes) {
 			if(p.getId_cola() == aTransportista.getId_cola()) {
 				return p.get_Hace_compra();

@@ -87,6 +87,9 @@ public class BD_Empleados {
 				t.setContrasenia(aContrasenia);
 				t.setCorreo(aCorreo);
 				
+				/*Esto falta*/
+				//t.setId_cola(random);
+				
 				TransportistaDAO.save(t);
 			}
 			
