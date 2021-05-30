@@ -23,15 +23,12 @@ public class Pedido extends VistaPedido {
 		if(this.compra instanceof base_de_datos.Recibido) {
 			this.getEstado_pedido().setText("Recibido");
 			this.getBoton_cancelar_pedido().setVisible(false);
+			System.out.println("Recibido");
 		}
 		
 		if(this.compra instanceof base_de_datos.Pendiente) {
 			this.getEstado_pedido().setText("Pendiente");
-		}
-		
-		if(this.compra instanceof base_de_datos.Enviado) {
-			this.getEstado_pedido().setText("Enviado");
-			this.getBoton_cancelar_pedido().setVisible(false);
+			System.out.println("Pendiente");
 		}
 		
 		this.getFecha().setText(this.compra.getFecha_estado());
@@ -39,6 +36,21 @@ public class Pedido extends VistaPedido {
 		this.getCodigo().setText(this.compra.getCodigo() + "");
 		
 		inicializar();
+	}
+	
+	/*Para los Pedidos de tipo ENVIADO*/
+	public Pedido(base_de_datos.Compra compra, Pedidos pedidos, boolean esCompra){
+		this._pedidos = pedidos;
+		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+
+		this.compra = compra;
+		this.getEstado_pedido().setText("Enviado");
+		this.getBoton_cancelar_pedido().setVisible(false);
+		
+		this.getFecha().setText(this.compra.getFecha_estado());
+		this.getPrecio().setText(this.compra.getPrecio_total() + " €");
+		this.getCodigo().setText(this.compra.getCodigo() + "");
+		
 	}
 	
 	

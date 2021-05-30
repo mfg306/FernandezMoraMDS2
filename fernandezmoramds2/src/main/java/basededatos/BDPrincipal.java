@@ -404,7 +404,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public Enviado[] cargarEnviados(UR aUsuario) {
+	public Compra[] cargarEnviados(UR aUsuario) throws PersistentException {
 		return this._bD_Enviado.cargarEnviados(aUsuario);
 	}
 

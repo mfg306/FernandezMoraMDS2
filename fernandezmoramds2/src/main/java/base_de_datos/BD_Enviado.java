@@ -17,81 +17,82 @@ public class BD_Enviado {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 		Enviado[] e = null;
 		try {
-			e = EnviadoDAO.listEnviadoByQuery("TransportistaEmpleadoIdEmpleado = " + aTransportista.getIdEmpleado() , null);
-		} catch(Exception ex) {
+			e = EnviadoDAO.listEnviadoByQuery("TransportistaEmpleadoIdEmpleado = " + aTransportista.getIdEmpleado(),
+					null);
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			t.rollback();
 		}
-		
+
 		HitoPersistentManager.instance().disposePersistentManager();
-		
+
 		return e;
 	}
 
-	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Transportista aTransportista, Encargado_de_compras aEncargado) throws PersistentException {
+	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Transportista aTransportista,
+			Encargado_de_compras aEncargado) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-		
+
 		Enviado e = EnviadoDAO.createEnviado();
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();
 		String fechaActualizacion = formatter.format(date);
-		
+
 		e.setORM__Procesa(aEncargado);
 		e.setORM__Transportista(aTransportista);
 		e.setFecha_estado(fechaActualizacion);
 		e.setNum_total_unidades(aPedidoPendiente.getNum_total_unidades());
 		e.setPrecio_total(aPedidoPendiente.getPrecio_total());
-		
+
 		try {
 			EnviadoDAO.save(e);
 			t.commit();
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			t.rollback();
 		}
-		
+
 		this._bDPrincipal = new BDPrincipal();
-		
+
 		try {
 			this._bDPrincipal.eliminarPendiente(aPedidoPendiente);
-		} catch(Exception ex2) {
+		} catch (Exception ex2) {
 			ex2.printStackTrace();
 		}
 	}
-	
+
 	public Enviado[] cargarEnviados() throws PersistentException {
 		Enviado[] enviados = null;
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			enviados = EnviadoDAO.listEnviadoByQuery(null, null);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
-		
+
 		HitoPersistentManager.instance().disposePersistentManager();
 
 		return enviados;
-		
+
 	}
-	
+
 	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) throws PersistentException {
 		Encargado_de_compras encargado = aEnviado.get_Procesa();
-		
-		Pendiente pendientes[] = PendienteDAO.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = " + encargado.getIdEmpleado(), null);
-		
-		
-		
-		for(Pendiente p : pendientes) {
-			if(p.getId_cola() == aTransportista.getId_cola()) {
+
+		Pendiente pendientes[] = PendienteDAO
+				.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = " + encargado.getIdEmpleado(), null);
+
+		for (Pendiente p : pendientes) {
+			if (p.getId_cola() == aTransportista.getId_cola()) {
 				return p.get_Hace_compra();
 			}
 		}
 		return null;
 	}
-	
+
 	public boolean eliminarEnviado(Enviado aEnviado) throws PersistentException {
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
@@ -99,16 +100,20 @@ public class BD_Enviado {
 			aEnviado.setEnviado(true);
 			EnviadoDAO.save(aEnviado);
 			t.commit();
-		} catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
 			return false;
 		}
-		
+
 		return true;
 	}
-	
-	public Enviado[] cargarEnviados(UR aUsuario) {
-		return null;
+
+	public Compra[] cargarEnviados(UR aUsuario) throws PersistentException {
+
+		Compra listaPendientes[] = PendienteDAO.listPendienteByQuery(
+				"URUsuario_GeneralId_Usuario = " + aUsuario.getId_Usuario() + " AND Asignado = 1", null);
+
+		return listaPendientes;
 	}
 }

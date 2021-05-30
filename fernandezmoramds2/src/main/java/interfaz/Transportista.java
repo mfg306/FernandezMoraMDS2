@@ -22,7 +22,6 @@ public class Transportista extends VistaTransportista {
 		this.transportista = transportista;
 		layout = this.getHuecoListaPedidos().as(VerticalLayout.class);
 
-
 		cerrar_sesion();
 		inicializar();
 	}
@@ -64,6 +63,7 @@ public class Transportista extends VistaTransportista {
 		
 		if(listaEnviados != null && listaEnviados.length > 0) {
 			for(base_de_datos.Enviado e : listaEnviados) {
+				System.out.println("Codigo de la compra: " + e.getCodigo() + " codigo del transportista: " + e.get_Transportista().getId_cola());
 				if(!e.getEnviado()) this._pedidos_T.add_pedidos_T(e);
 			}
 		} else {

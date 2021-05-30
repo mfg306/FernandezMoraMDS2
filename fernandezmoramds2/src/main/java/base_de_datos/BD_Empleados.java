@@ -87,8 +87,11 @@ public class BD_Empleados {
 				t.setContrasenia(aContrasenia);
 				t.setCorreo(aCorreo);
 				
-				/*Esto falta*/
-				//t.setId_cola(random);
+				Transportista[] listadoT = TransportistaDAO.listTransportistaByQuery(null, null);
+				
+				/* Tenemos que asignarle la cola que se corresponde con el numero del transportista que es*/
+				if(listadoT.length > 0) t.setId_cola(listadoT.length);
+				else t.setId_cola(0);
 				
 				TransportistaDAO.save(t);
 			}

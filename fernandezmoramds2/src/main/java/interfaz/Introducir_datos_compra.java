@@ -1,13 +1,8 @@
 package interfaz;
 
-import java.util.Vector;
-
 import org.orm.PersistentException;
-
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.notification.Notification;
-
 import base_de_datos.Producto;
 import basededatos.BDPrincipal;
 import basededatos.iUR;
@@ -49,7 +44,6 @@ public class Introducir_datos_compra extends VistaIntroducir_datos_compra {
 					numUnidades[i] = this._ver_carrito_UR._menu_UR._uR.listaAux.get(i).cantidad;
 				}
 
-				/* Producto[] aProductos, int aId_Usuario, int[] aUnidades */
 				iur.realizarCompra(lista, this._ver_carrito_UR._menu_UR._uR.UR.getId_Usuario(), numUnidades);
 				
 			} catch (Exception e) {

@@ -21,7 +21,7 @@ public class Pedido_E extends VistaPedido_e{
 		
 		int numTotalUnidades = 0;
 		
-//		cargarProductosEnCompra();
+		cargarProductosEnCompra();
 
 		for(base_de_datos.Producto_en_compra p : listado) {
 			numTotalUnidades += p.getNum_unidades_producto();
