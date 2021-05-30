@@ -187,7 +187,7 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	public Enviado[] cargarPedidosT(Transportista aTransportista) throws PersistentException {
-		return this._bD_Enviado.cargarEnviados();
+		return this._bD_Enviado.cargarPedidosT(aTransportista);
 	}
 
 	public Pendiente[] cargarPedidosPendientes(int aIdEncargado) {

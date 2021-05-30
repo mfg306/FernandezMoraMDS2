@@ -40,6 +40,7 @@ public class BD_Enviado {
 		String fechaActualizacion = formatter.format(date);
 
 		e.setORM__Procesa(aEncargado);
+		
 		e.setORM__Transportista(aTransportista);
 		e.setFecha_estado(fechaActualizacion);
 		e.setNum_total_unidades(aPedidoPendiente.getNum_total_unidades());

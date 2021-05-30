@@ -27,17 +27,11 @@ public class Transportista extends VistaTransportista {
 	}
 	
 	public void inicializar() {
-		if(this._pedidos_T != null) {
-			layout.remove(this._pedidos_T);
-		}
 		
-		this._pedidos_T = new Pedidos_T(this);
-			
 		cargarPedidosT();
 		
 		if(this._pedidos_T._list_Pedido_T.size() > 0) {
 			layout.add(this._pedidos_T);
-
 		} else {
 			Notification.show("No tiene ningun pedido para repartir.");
 		}
@@ -52,6 +46,13 @@ public class Transportista extends VistaTransportista {
 	}
 	
 	public void cargarPedidosT(){
+		
+		if(this._pedidos_T != null) {
+			layout.remove(this._pedidos_T);
+		} else {
+			this._pedidos_T = new Pedidos_T(this);
+		}
+		
 		iTransportista iT = new BDPrincipal();
 		base_de_datos.Enviado[] listaEnviados = null;
 		
@@ -63,7 +64,6 @@ public class Transportista extends VistaTransportista {
 		
 		if(listaEnviados != null && listaEnviados.length > 0) {
 			for(base_de_datos.Enviado e : listaEnviados) {
-				System.out.println("Codigo de la compra: " + e.getCodigo() + " codigo del transportista: " + e.get_Transportista().getId_cola());
 				if(!e.getEnviado()) this._pedidos_T.add_pedidos_T(e);
 			}
 		} else {
