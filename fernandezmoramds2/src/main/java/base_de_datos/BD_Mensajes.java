@@ -27,7 +27,7 @@ public class BD_Mensajes {
 	}
 
 	public void enviarMensaje(String aCorreoReceptor, String aMensaje, String aAsunto, Usuario_General aEmisor) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();
@@ -67,7 +67,7 @@ public class BD_Mensajes {
 	}
 	
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();

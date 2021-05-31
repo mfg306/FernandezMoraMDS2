@@ -25,11 +25,11 @@ public class Recibido extends base_de_datos.Compra implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_RECIBIDO__RECOGE) {
+		if (key == ORMConstants.KEY_RECIBIDO__RECOGE) {
 			this._Recoge = (base_de_datos.Transportista) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_RECIBIDO__RECIBE) {
+		else if (key == ORMConstants.KEY_RECIBIDO__RECIBE) {
 			this._recibe = (base_de_datos.UR) owner;
 		}
 	}

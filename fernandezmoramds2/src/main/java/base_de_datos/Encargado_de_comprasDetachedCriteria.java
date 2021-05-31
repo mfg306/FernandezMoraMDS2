@@ -43,12 +43,12 @@ public class Encargado_de_comprasDetachedCriteria extends AbstractORMDetachedCri
 		_Pedido_enviado = new CollectionExpression("ORM__Pedido_enviado", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.PendienteDetachedCriteria create_PendienteCriteria() {
-		return new base_de_datos.PendienteDetachedCriteria(createCriteria("ORM__Pendiente"));
+	public PendienteDetachedCriteria create_PendienteCriteria() {
+		return new PendienteDetachedCriteria(createCriteria("ORM__Pendiente"));
 	}
 	
-	public base_de_datos.EnviadoDetachedCriteria create_Pedido_enviadoCriteria() {
-		return new base_de_datos.EnviadoDetachedCriteria(createCriteria("ORM__Pedido_enviado"));
+	public EnviadoDetachedCriteria create_Pedido_enviadoCriteria() {
+		return new EnviadoDetachedCriteria(createCriteria("ORM__Pedido_enviado"));
 	}
 	
 	public Encargado_de_compras uniqueEncargado_de_compras(PersistentSession session) {

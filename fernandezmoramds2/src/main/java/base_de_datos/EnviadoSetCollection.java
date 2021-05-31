@@ -71,6 +71,7 @@ public class EnviadoSetCollection extends org.orm.util.ORMSet {
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
 	 * <li>enviado</li>
+	 * <li>codigoPendiente</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -82,6 +83,7 @@ public class EnviadoSetCollection extends org.orm.util.ORMSet {
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
 	 * <li>enviado</li>
+	 * <li>codigoPendiente</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
@@ -91,7 +93,7 @@ public class EnviadoSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return base_de_datos.HitoPersistentManager.instance();
+		return MDS2PersistentManager.instance();
 	}
 	
 }

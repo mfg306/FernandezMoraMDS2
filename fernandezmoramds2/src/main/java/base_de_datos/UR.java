@@ -25,19 +25,19 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_UR__ES_DE_UN) {
+		if (key == ORMConstants.KEY_UR__ES_DE_UN) {
 			return ORM__Es_de_un;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__COMPRA) {
+		else if (key == ORMConstants.KEY_UR__COMPRA) {
 			return ORM__Compra;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__RECIBIDO) {
+		else if (key == ORMConstants.KEY_UR__RECIBIDO) {
 			return ORM__recibido;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__ENVIA) {
+		else if (key == ORMConstants.KEY_UR__ENVIA) {
 			return ORM__Envia;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_UR__VALORA) {
+		else if (key == ORMConstants.KEY_UR__VALORA) {
 			return ORM__Valora;
 		}
 		
@@ -135,7 +135,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ComentarioSetCollection _Es_de_un = new base_de_datos.ComentarioSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__ES_DE_UN, base_de_datos.ORMConstants.KEY_COMENTARIO__REALIZA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.ComentarioSetCollection _Es_de_un = new base_de_datos.ComentarioSetCollection(this, _ormAdapter, ORMConstants.KEY_UR__ES_DE_UN, ORMConstants.KEY_COMENTARIO__REALIZA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Compra(java.util.Set value) {
 		this.ORM__Compra = value;
@@ -146,7 +146,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.PendienteSetCollection _Compra = new base_de_datos.PendienteSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__COMPRA, base_de_datos.ORMConstants.KEY_PENDIENTE__HACE_COMPRA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.PendienteSetCollection _Compra = new base_de_datos.PendienteSetCollection(this, _ormAdapter, ORMConstants.KEY_UR__COMPRA, ORMConstants.KEY_PENDIENTE__HACE_COMPRA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__recibido(java.util.Set value) {
 		this.ORM__recibido = value;
@@ -157,7 +157,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.RecibidoSetCollection _recibido = new base_de_datos.RecibidoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__RECIBIDO, base_de_datos.ORMConstants.KEY_RECIBIDO__RECIBE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.RecibidoSetCollection _recibido = new base_de_datos.RecibidoSetCollection(this, _ormAdapter, ORMConstants.KEY_UR__RECIBIDO, ORMConstants.KEY_RECIBIDO__RECIBE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Envia(java.util.Set value) {
 		this.ORM__Envia = value;
@@ -168,7 +168,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.MensajeSetCollection _Envia = new base_de_datos.MensajeSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__ENVIA, base_de_datos.ORMConstants.KEY_MENSAJE__ENVIADO_POR_UR, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.MensajeSetCollection _Envia = new base_de_datos.MensajeSetCollection(this, _ormAdapter, ORMConstants.KEY_UR__ENVIA, ORMConstants.KEY_MENSAJE__ENVIADO_POR_UR, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Valora(java.util.Set value) {
 		this.ORM__Valora = value;
@@ -179,7 +179,7 @@ public class UR extends base_de_datos.Usuario_General implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ValoracionSetCollection _Valora = new base_de_datos.ValoracionSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_UR__VALORA, base_de_datos.ORMConstants.KEY_VALORACION__VALORADO_POR, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.ValoracionSetCollection _Valora = new base_de_datos.ValoracionSetCollection(this, _ormAdapter, ORMConstants.KEY_UR__VALORA, ORMConstants.KEY_VALORACION__VALORADO_POR, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void setImagen(base_de_datos.Imagen value) {
 		if (this.imagen != value) {

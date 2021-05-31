@@ -21,7 +21,7 @@ import java.util.List;
 public class PendienteDAO {
 	public static Pendiente loadPendienteByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadPendienteByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class PendienteDAO {
 	
 	public static Pendiente getPendienteByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getPendienteByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadPendienteByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class PendienteDAO {
 	
 	public static Pendiente getPendienteByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getPendienteByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class PendienteDAO {
 	
 	public static List queryPendiente(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryPendiente(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class PendienteDAO {
 	
 	public static List queryPendiente(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryPendiente(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class PendienteDAO {
 	
 	public static Pendiente[] listPendienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listPendienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class PendienteDAO {
 	
 	public static Pendiente[] listPendienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listPendienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadPendienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class PendienteDAO {
 	
 	public static Pendiente loadPendienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadPendienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class PendienteDAO {
 	
 	public static java.util.Iterator iteratePendienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iteratePendienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class PendienteDAO {
 	
 	public static java.util.Iterator iteratePendienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iteratePendienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class PendienteDAO {
 	
 	public static boolean save(base_de_datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(pendiente);
+			MDS2PersistentManager.instance().saveObject(pendiente);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class PendienteDAO {
 	
 	public static boolean delete(base_de_datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(pendiente);
+			MDS2PersistentManager.instance().deleteObject(pendiente);
 			return true;
 		}
 		catch (Exception e) {
@@ -372,7 +372,7 @@ public class PendienteDAO {
 	
 	public static boolean refresh(base_de_datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(pendiente);
+			MDS2PersistentManager.instance().getSession().refresh(pendiente);
 			return true;
 		}
 		catch (Exception e) {
@@ -383,7 +383,7 @@ public class PendienteDAO {
 	
 	public static boolean evict(base_de_datos.Pendiente pendiente) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(pendiente);
+			MDS2PersistentManager.instance().getSession().evict(pendiente);
 			return true;
 		}
 		catch (Exception e) {

@@ -35,7 +35,7 @@ public class EmpleadoCriteria extends AbstractORMCriteria {
 	}
 	
 	public EmpleadoCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public Empleado uniqueEmpleado() {

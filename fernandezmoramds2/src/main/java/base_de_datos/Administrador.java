@@ -25,7 +25,7 @@ public class Administrador extends base_de_datos.Usuario_General implements Seri
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_ADMINISTRADOR__ENVIA) {
+		if (key == ORMConstants.KEY_ADMINISTRADOR__ENVIA) {
 			return ORM__Envia;
 		}
 		
@@ -54,7 +54,7 @@ public class Administrador extends base_de_datos.Usuario_General implements Seri
 	}
 	
 	@Transient	
-	public final base_de_datos.MensajeSetCollection _Envia = new base_de_datos.MensajeSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_ADMINISTRADOR__ENVIA, base_de_datos.ORMConstants.KEY_MENSAJE__ENVIADO_POR_ADMIN, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.MensajeSetCollection _Envia = new base_de_datos.MensajeSetCollection(this, _ormAdapter, ORMConstants.KEY_ADMINISTRADOR__ENVIA, ORMConstants.KEY_MENSAJE__ENVIADO_POR_ADMIN, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

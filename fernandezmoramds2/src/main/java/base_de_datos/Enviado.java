@@ -25,11 +25,11 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_ENVIADO__PROCESA) {
+		if (key == ORMConstants.KEY_ENVIADO__PROCESA) {
 			this._Procesa = (base_de_datos.Encargado_de_compras) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_ENVIADO__TRANSPORTISTA) {
+		else if (key == ORMConstants.KEY_ENVIADO__TRANSPORTISTA) {
 			this._Transportista = (base_de_datos.Transportista) owner;
 		}
 	}
@@ -44,6 +44,9 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 	
 	@Column(name="Enviado", nullable=false, length=1)	
 	private boolean enviado;
+	
+	@Column(name="CodigoPendiente", nullable=false, length=10)	
+	private int codigoPendiente;
 	
 	@ManyToOne(targetEntity=base_de_datos.Transportista.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
@@ -63,6 +66,14 @@ public class Enviado extends base_de_datos.Compra implements Serializable {
 	
 	public boolean getEnviado() {
 		return enviado;
+	}
+	
+	public void setCodigoPendiente(int value) {
+		this.codigoPendiente = value;
+	}
+	
+	public int getCodigoPendiente() {
+		return codigoPendiente;
 	}
 	
 	public void set_Procesa(base_de_datos.Encargado_de_compras value) {

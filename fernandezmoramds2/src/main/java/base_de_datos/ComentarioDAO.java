@@ -21,7 +21,7 @@ import java.util.List;
 public class ComentarioDAO {
 	public static Comentario loadComentarioByORMID(int id_Comentario) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadComentarioByORMID(session, id_Comentario);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class ComentarioDAO {
 	
 	public static Comentario getComentarioByORMID(int id_Comentario) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getComentarioByORMID(session, id_Comentario);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class ComentarioDAO {
 	
 	public static Comentario loadComentarioByORMID(int id_Comentario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadComentarioByORMID(session, id_Comentario, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class ComentarioDAO {
 	
 	public static Comentario getComentarioByORMID(int id_Comentario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getComentarioByORMID(session, id_Comentario, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class ComentarioDAO {
 	
 	public static List queryComentario(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryComentario(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class ComentarioDAO {
 	
 	public static List queryComentario(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryComentario(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class ComentarioDAO {
 	
 	public static Comentario[] listComentarioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listComentarioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class ComentarioDAO {
 	
 	public static Comentario[] listComentarioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listComentarioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class ComentarioDAO {
 	
 	public static Comentario loadComentarioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadComentarioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class ComentarioDAO {
 	
 	public static Comentario loadComentarioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadComentarioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class ComentarioDAO {
 	
 	public static java.util.Iterator iterateComentarioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateComentarioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class ComentarioDAO {
 	
 	public static java.util.Iterator iterateComentarioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateComentarioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class ComentarioDAO {
 	
 	public static boolean save(base_de_datos.Comentario comentario) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(comentario);
+			MDS2PersistentManager.instance().saveObject(comentario);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class ComentarioDAO {
 	
 	public static boolean delete(base_de_datos.Comentario comentario) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(comentario);
+			MDS2PersistentManager.instance().deleteObject(comentario);
 			return true;
 		}
 		catch (Exception e) {
@@ -364,7 +364,7 @@ public class ComentarioDAO {
 	
 	public static boolean refresh(base_de_datos.Comentario comentario) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(comentario);
+			MDS2PersistentManager.instance().getSession().refresh(comentario);
 			return true;
 		}
 		catch (Exception e) {
@@ -375,7 +375,7 @@ public class ComentarioDAO {
 	
 	public static boolean evict(base_de_datos.Comentario comentario) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(comentario);
+			MDS2PersistentManager.instance().getSession().evict(comentario);
 			return true;
 		}
 		catch (Exception e) {

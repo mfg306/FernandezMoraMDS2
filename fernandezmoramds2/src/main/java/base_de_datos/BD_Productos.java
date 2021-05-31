@@ -39,7 +39,7 @@ public class BD_Productos {
 
 	public Producto[] cargarProductosCategoria(Categoria aCategoria) throws PersistentException {
 		Producto[] pds = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			pds = ProductoDAO.listProductoByQuery("CategoriaId_Categoria = " + aCategoria.getId_Categoria(), null);
 			
@@ -52,7 +52,7 @@ public class BD_Productos {
 
 	public Producto[] cargarProductosOferta(Oferta aOferta) throws PersistentException {
 		Producto[] pds = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			Oferta o = OfertaDAO.loadOfertaByORMID(aOferta.getId_Oferta());
@@ -82,7 +82,7 @@ public class BD_Productos {
 			this._bDPrincipal.eliminarValoracionesProducto(p);
 		}
 
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			ProductoDAO.delete(p);
@@ -96,7 +96,7 @@ public class BD_Productos {
 
 	public Producto insertarProducto(String aNombreProducto, String aDescripcion, double aPrecio, int aNumUnidades,
 			String[] aRuta) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Producto p = null;
 		int contador = 0;
 		boolean esPrincipal = false;
@@ -138,7 +138,7 @@ public class BD_Productos {
 	public Producto actualizarProducto(int aIdProducto, String aNombre, double aPrecio, String aDescripcion,
 			String[] aRutaImagen, int aNumUnidades) throws PersistentException {
 
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Producto p = null;
 		int contador = 0;
 		boolean esPrincipal = false;

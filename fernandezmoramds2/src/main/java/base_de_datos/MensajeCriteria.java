@@ -55,7 +55,7 @@ public class MensajeCriteria extends AbstractORMCriteria {
 	}
 	
 	public MensajeCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public AdministradorCriteria create_Enviado_por_AdminCriteria() {
@@ -70,8 +70,8 @@ public class MensajeCriteria extends AbstractORMCriteria {
 		return new MensajeCriteria(createCriteria("_Responder_a"));
 	}
 	
-	public base_de_datos.MensajeCriteria create_MensajeCriteria() {
-		return new base_de_datos.MensajeCriteria(createCriteria("ORM__Mensaje"));
+	public MensajeCriteria create_MensajeCriteria() {
+		return new MensajeCriteria(createCriteria("ORM__Mensaje"));
 	}
 	
 	public Mensaje uniqueMensaje() {

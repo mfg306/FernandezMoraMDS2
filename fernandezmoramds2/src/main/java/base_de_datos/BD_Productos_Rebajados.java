@@ -15,7 +15,7 @@ public class BD_Productos_Rebajados {
 	public Vector<Producto_Rebajado> _producto_Rebajado = new Vector<Producto_Rebajado>();
 	
 	public void eliminarProductosRebajados(int aIdProducto) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			Producto_Rebajado[] productosRebajados = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + aIdProducto,  null);	
 			
@@ -32,7 +32,7 @@ public class BD_Productos_Rebajados {
 	
 	public Producto_Rebajado[] cargarProductos(Oferta aOferta) throws PersistentException {
 		Producto_Rebajado[] poferta = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Oferta oferta = OfertaDAO.loadOfertaByQuery("Id_Oferta = " + aOferta.getId_Oferta(), null);
 		poferta = oferta._Pertenece_a.toArray();
 		

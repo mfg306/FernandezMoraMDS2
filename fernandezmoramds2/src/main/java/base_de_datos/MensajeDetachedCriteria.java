@@ -79,8 +79,8 @@ public class MensajeDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new MensajeDetachedCriteria(createCriteria("_Responder_a"));
 	}
 	
-	public base_de_datos.MensajeDetachedCriteria create_MensajeCriteria() {
-		return new base_de_datos.MensajeDetachedCriteria(createCriteria("ORM__Mensaje"));
+	public MensajeDetachedCriteria create_MensajeCriteria() {
+		return new MensajeDetachedCriteria(createCriteria("ORM__Mensaje"));
 	}
 	
 	public Mensaje uniqueMensaje(PersistentSession session) {

@@ -21,7 +21,7 @@ import java.util.List;
 public class RecibidoDAO {
 	public static Recibido loadRecibidoByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadRecibidoByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class RecibidoDAO {
 	
 	public static Recibido getRecibidoByORMID(int codigo) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getRecibidoByORMID(session, codigo);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadRecibidoByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class RecibidoDAO {
 	
 	public static Recibido getRecibidoByORMID(int codigo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getRecibidoByORMID(session, codigo, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class RecibidoDAO {
 	
 	public static List queryRecibido(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryRecibido(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class RecibidoDAO {
 	
 	public static List queryRecibido(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryRecibido(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class RecibidoDAO {
 	
 	public static Recibido[] listRecibidoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listRecibidoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class RecibidoDAO {
 	
 	public static Recibido[] listRecibidoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listRecibidoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadRecibidoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class RecibidoDAO {
 	
 	public static Recibido loadRecibidoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadRecibidoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class RecibidoDAO {
 	
 	public static java.util.Iterator iterateRecibidoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateRecibidoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class RecibidoDAO {
 	
 	public static java.util.Iterator iterateRecibidoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateRecibidoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class RecibidoDAO {
 	
 	public static boolean save(base_de_datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(recibido);
+			MDS2PersistentManager.instance().saveObject(recibido);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class RecibidoDAO {
 	
 	public static boolean delete(base_de_datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(recibido);
+			MDS2PersistentManager.instance().deleteObject(recibido);
 			return true;
 		}
 		catch (Exception e) {
@@ -364,7 +364,7 @@ public class RecibidoDAO {
 	
 	public static boolean refresh(base_de_datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(recibido);
+			MDS2PersistentManager.instance().getSession().refresh(recibido);
 			return true;
 		}
 		catch (Exception e) {
@@ -375,7 +375,7 @@ public class RecibidoDAO {
 	
 	public static boolean evict(base_de_datos.Recibido recibido) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(recibido);
+			MDS2PersistentManager.instance().getSession().evict(recibido);
 			return true;
 		}
 		catch (Exception e) {

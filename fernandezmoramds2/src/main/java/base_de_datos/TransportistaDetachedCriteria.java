@@ -46,12 +46,12 @@ public class TransportistaDetachedCriteria extends AbstractORMDetachedCriteria {
 		_Enviado = new CollectionExpression("ORM__Enviado", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.RecibidoDetachedCriteria create_RecibidoCriteria() {
-		return new base_de_datos.RecibidoDetachedCriteria(createCriteria("ORM__Recibido"));
+	public RecibidoDetachedCriteria create_RecibidoCriteria() {
+		return new RecibidoDetachedCriteria(createCriteria("ORM__Recibido"));
 	}
 	
-	public base_de_datos.EnviadoDetachedCriteria create_EnviadoCriteria() {
-		return new base_de_datos.EnviadoDetachedCriteria(createCriteria("ORM__Enviado"));
+	public EnviadoDetachedCriteria create_EnviadoCriteria() {
+		return new EnviadoDetachedCriteria(createCriteria("ORM__Enviado"));
 	}
 	
 	public Transportista uniqueTransportista(PersistentSession session) {

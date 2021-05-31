@@ -69,8 +69,8 @@ public class PendienteDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new URDetachedCriteria(createCriteria("_Hace_compra"));
 	}
 	
-	public base_de_datos.Producto_en_compraDetachedCriteria create_Producto_en_compraCriteria() {
-		return new base_de_datos.Producto_en_compraDetachedCriteria(createCriteria("ORM__Producto_en_compra"));
+	public Producto_en_compraDetachedCriteria create_Producto_en_compraCriteria() {
+		return new Producto_en_compraDetachedCriteria(createCriteria("ORM__Producto_en_compra"));
 	}
 	
 	public Pendiente uniquePendiente(PersistentSession session) {

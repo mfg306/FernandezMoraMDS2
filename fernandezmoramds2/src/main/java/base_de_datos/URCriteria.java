@@ -65,27 +65,27 @@ public class URCriteria extends AbstractORMCriteria {
 	}
 	
 	public URCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.ComentarioCriteria create_Es_de_unCriteria() {
-		return new base_de_datos.ComentarioCriteria(createCriteria("ORM__Es_de_un"));
+	public ComentarioCriteria create_Es_de_unCriteria() {
+		return new ComentarioCriteria(createCriteria("ORM__Es_de_un"));
 	}
 	
-	public base_de_datos.PendienteCriteria create_CompraCriteria() {
-		return new base_de_datos.PendienteCriteria(createCriteria("ORM__Compra"));
+	public PendienteCriteria create_CompraCriteria() {
+		return new PendienteCriteria(createCriteria("ORM__Compra"));
 	}
 	
-	public base_de_datos.RecibidoCriteria create_recibidoCriteria() {
-		return new base_de_datos.RecibidoCriteria(createCriteria("ORM__recibido"));
+	public RecibidoCriteria create_recibidoCriteria() {
+		return new RecibidoCriteria(createCriteria("ORM__recibido"));
 	}
 	
-	public base_de_datos.MensajeCriteria create_EnviaCriteria() {
-		return new base_de_datos.MensajeCriteria(createCriteria("ORM__Envia"));
+	public MensajeCriteria create_EnviaCriteria() {
+		return new MensajeCriteria(createCriteria("ORM__Envia"));
 	}
 	
-	public base_de_datos.ValoracionCriteria create_ValoraCriteria() {
-		return new base_de_datos.ValoracionCriteria(createCriteria("ORM__Valora"));
+	public ValoracionCriteria create_ValoraCriteria() {
+		return new ValoracionCriteria(createCriteria("ORM__Valora"));
 	}
 	
 	public ImagenCriteria createImagenCriteria() {

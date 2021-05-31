@@ -38,7 +38,7 @@ public interface iUR extends iUR_UNR {
 	
 	public boolean responderMensaje(String aCorreoReceptor, String aMensaje, Usuario_General aEmisor, Mensaje mensajeHilo) throws PersistentException;
 	
-	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades)  throws PersistentException;
+	public void realizarCompra(Producto[] aProductos, UR aUsuario, int[] aUnidades)  throws PersistentException;
 	
 	public Compra[] cargarEnviados(UR aUsuario) throws PersistentException;
 	

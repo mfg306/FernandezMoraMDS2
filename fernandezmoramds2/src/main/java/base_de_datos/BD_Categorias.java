@@ -15,7 +15,7 @@ public class BD_Categorias {
 
 	public Categoria[] cargarCategorias() throws PersistentException {
 		Categoria[] cat = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			cat = CategoriaDAO.listCategoriaByQuery(null, null);
 		} catch (Exception e) {
@@ -26,7 +26,7 @@ public class BD_Categorias {
 	}
 
 	public Categoria insertarCategoria(String aNombreCategoria, Producto[] aListaProductos, String aFechaRegistro) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Categoria c = CategoriaDAO.createCategoria();
 			
 		try {
@@ -45,7 +45,7 @@ public class BD_Categorias {
 		/*Hasta este punto tenemos la categoria creada. Vamos a coger la lista de productos y actualizarle 
 		 * su categoria*/
 		
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		try {
 			for(Producto p : aListaProductos) { 
@@ -63,7 +63,7 @@ public class BD_Categorias {
 
 	public Categoria[] cargarCategoriasAdministrador() throws PersistentException {
 		Categoria[] cat = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			cat = CategoriaDAO.listCategoriaByQuery(null, null);
 		} catch (Exception e) {
@@ -79,7 +79,7 @@ public class BD_Categorias {
 	}
 
 	public boolean eliminarCategoriaAdmin(int aIdCategoria, Producto[] aListaProductos) throws PersistentException {
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		try {
 			for(Producto p : aListaProductos) { 
@@ -94,7 +94,7 @@ public class BD_Categorias {
 		}	
 		
 		
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			Categoria c = CategoriaDAO.getCategoriaByORMID(aIdCategoria);

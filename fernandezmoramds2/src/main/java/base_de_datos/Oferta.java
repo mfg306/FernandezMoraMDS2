@@ -23,7 +23,7 @@ public class Oferta implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A) {
+		if (key == ORMConstants.KEY_OFERTA__PERTENECE_A) {
 			return ORM__Pertenece_a;
 		}
 		
@@ -104,7 +104,7 @@ public class Oferta implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_RebajadoSetCollection _Pertenece_a = new base_de_datos.Producto_RebajadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A, base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final base_de_datos.Producto_RebajadoSetCollection _Pertenece_a = new base_de_datos.Producto_RebajadoSetCollection(this, _ormAdapter, ORMConstants.KEY_OFERTA__PERTENECE_A, ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Oferta());

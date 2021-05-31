@@ -25,10 +25,7 @@ public class Encargado_de_compras extends VistaEncargado_de_compras{
 	}
 	
 	public void inicializar() {
-		_pedidos_E = new Pedidos_E(this);
-
 		layout = this.getHuecoListaPedidos().as(VerticalLayout.class);
-		layout.add(_pedidos_E);
 		
 		cargarPedidos();
 	}
@@ -48,6 +45,14 @@ public class Encargado_de_compras extends VistaEncargado_de_compras{
 	}
 	
 	public void cargarPedidos() {
+		
+		if(this._pedidos_E != null) {
+			layout.remove(this._pedidos_E);
+		}
+
+		_pedidos_E = new Pedidos_E(this);
+		layout.add(_pedidos_E);
+		
 		iEncargado_de_compras iE = new BDPrincipal();
 		base_de_datos.Pendiente pendientes[] = null;
 		try {

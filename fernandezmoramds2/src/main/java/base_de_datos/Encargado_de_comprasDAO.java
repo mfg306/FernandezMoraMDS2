@@ -21,7 +21,7 @@ import java.util.List;
 public class Encargado_de_comprasDAO {
 	public static Encargado_de_compras loadEncargado_de_comprasByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras getEncargado_de_comprasByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getEncargado_de_comprasByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras getEncargado_de_comprasByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getEncargado_de_comprasByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static List queryEncargado_de_compras(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryEncargado_de_compras(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static List queryEncargado_de_compras(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryEncargado_de_compras(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras[] listEncargado_de_comprasByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listEncargado_de_comprasByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras[] listEncargado_de_comprasByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listEncargado_de_comprasByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static Encargado_de_compras loadEncargado_de_comprasByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEncargado_de_comprasByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static java.util.Iterator iterateEncargado_de_comprasByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateEncargado_de_comprasByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static java.util.Iterator iterateEncargado_de_comprasByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateEncargado_de_comprasByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static boolean save(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(encargado_de_compras);
+			MDS2PersistentManager.instance().saveObject(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static boolean delete(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(encargado_de_compras);
+			MDS2PersistentManager.instance().deleteObject(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {
@@ -364,7 +364,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static boolean refresh(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(encargado_de_compras);
+			MDS2PersistentManager.instance().getSession().refresh(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {
@@ -375,7 +375,7 @@ public class Encargado_de_comprasDAO {
 	
 	public static boolean evict(base_de_datos.Encargado_de_compras encargado_de_compras) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(encargado_de_compras);
+			MDS2PersistentManager.instance().getSession().evict(encargado_de_compras);
 			return true;
 		}
 		catch (Exception e) {

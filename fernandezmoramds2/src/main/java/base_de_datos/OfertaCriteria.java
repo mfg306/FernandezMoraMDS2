@@ -39,11 +39,11 @@ public class OfertaCriteria extends AbstractORMCriteria {
 	}
 	
 	public OfertaCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.Producto_RebajadoCriteria create_Pertenece_aCriteria() {
-		return new base_de_datos.Producto_RebajadoCriteria(createCriteria("ORM__Pertenece_a"));
+	public Producto_RebajadoCriteria create_Pertenece_aCriteria() {
+		return new Producto_RebajadoCriteria(createCriteria("ORM__Pertenece_a"));
 	}
 	
 	public Oferta uniqueOferta() {

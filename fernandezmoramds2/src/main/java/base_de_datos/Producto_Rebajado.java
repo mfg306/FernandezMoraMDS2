@@ -25,7 +25,7 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE) {
+		if (key == ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE) {
 			return ORM__Tiene;
 		}
 		
@@ -65,7 +65,7 @@ public class Producto_Rebajado extends base_de_datos.Producto implements Seriali
 	}
 	
 	@Transient	
-	public final base_de_datos.OfertaSetCollection _Tiene = new base_de_datos.OfertaSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, base_de_datos.ORMConstants.KEY_OFERTA__PERTENECE_A, base_de_datos.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final base_de_datos.OfertaSetCollection _Tiene = new base_de_datos.OfertaSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO_REBAJADO__TIENE, ORMConstants.KEY_OFERTA__PERTENECE_A, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

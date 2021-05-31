@@ -51,7 +51,7 @@ public class PendienteCriteria extends AbstractORMCriteria {
 	}
 	
 	public PendienteCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public Encargado_de_comprasCriteria create_Encargado_de_comprasCriteria() {
@@ -62,8 +62,8 @@ public class PendienteCriteria extends AbstractORMCriteria {
 		return new URCriteria(createCriteria("_Hace_compra"));
 	}
 	
-	public base_de_datos.Producto_en_compraCriteria create_Producto_en_compraCriteria() {
-		return new base_de_datos.Producto_en_compraCriteria(createCriteria("ORM__Producto_en_compra"));
+	public Producto_en_compraCriteria create_Producto_en_compraCriteria() {
+		return new Producto_en_compraCriteria(createCriteria("ORM__Producto_en_compra"));
 	}
 	
 	public Pendiente uniquePendiente() {

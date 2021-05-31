@@ -16,8 +16,8 @@ public class BD_Pendiente {
 	public BDPrincipal _bDPrincipal;
 	public Vector<Pendiente> _pendiente = new Vector<Pendiente>();
 
-	public void realizarCompra(Producto[] aProductos, int aId_Usuario, int[] aUnidades) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+	public void realizarCompra(Producto[] aProductos, UR aUsuario, int[] aUnidades) throws PersistentException {
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		int contador = 0;
 		
 		Encargado_de_compras[] encargados = Encargado_de_comprasDAO.listEncargado_de_comprasByQuery(null, null);
@@ -33,7 +33,6 @@ public class BD_Pendiente {
 		
 		/*Generamos un numero aleatorio que sera el encargado al que le toque*/
 		Encargado_de_compras encargado = encargados[randomNum];
-		UR usuario = URDAO.getURByORMID(aId_Usuario);
 		
 		Pendiente pendiente = null;
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -44,7 +43,7 @@ public class BD_Pendiente {
 			
 			pendiente = PendienteDAO.createPendiente();
 			pendiente.setORM__Encargado_de_compras(encargado);
-			pendiente.setORM__Hace_compra(usuario);
+			pendiente.setORM__Hace_compra(aUsuario);
 			pendiente.setAsignado(false);
 			pendiente.setId_cola(randomCola);
 			
@@ -59,7 +58,7 @@ public class BD_Pendiente {
 		}
 
 		
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Producto_en_compra[] productos =  new Producto_en_compra[aProductos.length];
 		int cont = 0;
 
@@ -84,8 +83,10 @@ public class BD_Pendiente {
 		}
 
 		contador = 0;
+		
+		MDS2PersistentManager.instance().disposePersistentManager();
 		/*Paso 3. Actualizar los datos de Producto*/
-		PersistentTransaction t3 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t3 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		try {
 			for(Producto p: aProductos) {
@@ -110,7 +111,7 @@ public class BD_Pendiente {
 
 	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException {
 		Pendiente[] pendientes = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			pendientes = PendienteDAO.listPendienteByQuery(
@@ -120,43 +121,38 @@ public class BD_Pendiente {
 			t.rollback();
 		}
 
-		HitoPersistentManager.instance().disposePersistentManager();
+		MDS2PersistentManager.instance().disposePersistentManager();
 
 		return pendientes;
 	}
 
 	public Pendiente[] cargarPendientes() throws PersistentException {
 		Pendiente[] pendientes = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			pendientes = PendienteDAO.listPendienteByQuery(null, null);
+			pendientes = PendienteDAO.listPendienteByQuery("Asignado = 0", null);
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
 		}
 
-		HitoPersistentManager.instance().disposePersistentManager();
+		MDS2PersistentManager.instance().disposePersistentManager();
 
 		return pendientes;
 	}
 
-	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+	public boolean eliminarPendiente(Pendiente aPedidoPendiente, Enviado aEnviado) throws PersistentException {
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 
 			aPedidoPendiente.setAsignado(true);
 			PendienteDAO.save(aPedidoPendiente);
 			t.commit();
 
-			HitoPersistentManager.instance().disposePersistentManager();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
-
-			HitoPersistentManager.instance().disposePersistentManager();
-
 			return false;
 		}
 
@@ -182,7 +178,7 @@ public class BD_Pendiente {
 		this._bDPrincipal = new BDPrincipal();
 		this._bDPrincipal.eliminarProductosEnCompra(p);
 		
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		try {
 			PendienteDAO.delete(p);
@@ -190,11 +186,9 @@ public class BD_Pendiente {
 		} catch(Exception e) {
 			e.printStackTrace();
 			t.rollback();
-			HitoPersistentManager.instance().disposePersistentManager();
 			return false;
 		}
 		
-		HitoPersistentManager.instance().disposePersistentManager();
 		return true;
 
 	}

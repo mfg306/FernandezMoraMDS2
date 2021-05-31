@@ -21,7 +21,7 @@ import java.util.List;
 public class EmpleadoDAO {
 	public static Empleado loadEmpleadoByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEmpleadoByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class EmpleadoDAO {
 	
 	public static Empleado getEmpleadoByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getEmpleadoByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class EmpleadoDAO {
 	
 	public static Empleado loadEmpleadoByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEmpleadoByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class EmpleadoDAO {
 	
 	public static Empleado getEmpleadoByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getEmpleadoByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class EmpleadoDAO {
 	
 	public static List queryEmpleado(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryEmpleado(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class EmpleadoDAO {
 	
 	public static List queryEmpleado(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryEmpleado(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class EmpleadoDAO {
 	
 	public static Empleado[] listEmpleadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listEmpleadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class EmpleadoDAO {
 	
 	public static Empleado[] listEmpleadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listEmpleadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class EmpleadoDAO {
 	
 	public static Empleado loadEmpleadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEmpleadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class EmpleadoDAO {
 	
 	public static Empleado loadEmpleadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadEmpleadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class EmpleadoDAO {
 	
 	public static java.util.Iterator iterateEmpleadoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateEmpleadoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class EmpleadoDAO {
 	
 	public static java.util.Iterator iterateEmpleadoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateEmpleadoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class EmpleadoDAO {
 	
 	public static boolean save(base_de_datos.Empleado empleado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(empleado);
+			MDS2PersistentManager.instance().saveObject(empleado);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class EmpleadoDAO {
 	
 	public static boolean delete(base_de_datos.Empleado empleado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(empleado);
+			MDS2PersistentManager.instance().deleteObject(empleado);
 			return true;
 		}
 		catch (Exception e) {
@@ -323,7 +323,7 @@ public class EmpleadoDAO {
 	
 	public static boolean refresh(base_de_datos.Empleado empleado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(empleado);
+			MDS2PersistentManager.instance().getSession().refresh(empleado);
 			return true;
 		}
 		catch (Exception e) {
@@ -334,7 +334,7 @@ public class EmpleadoDAO {
 	
 	public static boolean evict(base_de_datos.Empleado empleado) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(empleado);
+			MDS2PersistentManager.instance().getSession().evict(empleado);
 			return true;
 		}
 		catch (Exception e) {

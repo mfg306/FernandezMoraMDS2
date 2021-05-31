@@ -23,7 +23,7 @@ public class Categoria implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_CATEGORIA__PRODUCTO) {
+		if (key == ORMConstants.KEY_CATEGORIA__PRODUCTO) {
 			return ORM__Producto;
 		}
 		
@@ -92,7 +92,7 @@ public class Categoria implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ProductoSetCollection _Producto = new base_de_datos.ProductoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_CATEGORIA__PRODUCTO, base_de_datos.ORMConstants.KEY_PRODUCTO__CATEGORIA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.ProductoSetCollection _Producto = new base_de_datos.ProductoSetCollection(this, _ormAdapter, ORMConstants.KEY_CATEGORIA__PRODUCTO, ORMConstants.KEY_PRODUCTO__CATEGORIA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Categoria());

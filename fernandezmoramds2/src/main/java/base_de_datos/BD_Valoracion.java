@@ -15,7 +15,7 @@ public class BD_Valoracion {
 	public Vector<Valoracion> _valoracion = new Vector<Valoracion>();
 
 	public boolean valorar(int aIdProducto, int aIdUsuario, String aValoracion) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			Producto producto = ProductoDAO.getProductoByORMID(aIdProducto);
@@ -45,7 +45,7 @@ public class BD_Valoracion {
 	public Valoracion[] cargarValoraciones(int aIdProducto) throws PersistentException {
 		Valoracion[] v = null;
 
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			v = ValoracionDAO.listValoracionByQuery("ProductoId_Producto LIKE '%" + aIdProducto + "%'", null);
 
@@ -58,7 +58,7 @@ public class BD_Valoracion {
 	public boolean eliminarValoracionesProducto(Producto aProducto) throws PersistentException {
 		Valoracion valoraciones[] = ValoracionDAO
 				.listValoracionByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			for (Valoracion v : valoraciones) {

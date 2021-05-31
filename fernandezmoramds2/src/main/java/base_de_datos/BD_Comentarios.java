@@ -20,7 +20,7 @@ public class BD_Comentarios {
 	public Vector<Comentario> _comentario = new Vector<Comentario>();
 
 	public boolean comentar(String aComentario, int aIdProducto, int aIdUsuario) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 
 			Producto producto = ProductoDAO.getProductoByORMID(aIdProducto);
@@ -53,7 +53,7 @@ public class BD_Comentarios {
 	public Comentario[] cargarComentarios(int aIdProducto) throws PersistentException {
 		Comentario[] c = null;
 
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			c = ComentarioDAO.listComentarioByQuery("ProductoId_Producto LIKE '%" + aIdProducto + "%'", "Fecha");
 
@@ -65,7 +65,7 @@ public class BD_Comentarios {
 	
 	public boolean eliminarComentarioProducto(Producto aProducto) throws PersistentException {
 		Comentario[] comentarios = ComentarioDAO.listComentarioByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			for(Comentario c : comentarios) {

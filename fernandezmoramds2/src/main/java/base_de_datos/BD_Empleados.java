@@ -13,7 +13,7 @@ public class BD_Empleados {
 	public Vector<Empleado> _empleado = new Vector<Empleado>();
 
 	public Empleado[] cargarEmpleados() throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Empleado[] empleados = null;
 		try {
 			empleados = EmpleadoDAO.listEmpleadoByQuery(null, null);
@@ -27,7 +27,7 @@ public class BD_Empleados {
 	}
 
 	public void eliminarEmpleado(int aIdEmpleado) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		try {
 			Empleado e = EmpleadoDAO.getEmpleadoByORMID(aIdEmpleado);
@@ -70,7 +70,7 @@ public class BD_Empleados {
 
 	public void insertarEmpleado(String aContrasenia, String aCorreo, boolean aEsEncargado) throws PersistentException {
 	
-		PersistentTransaction t1 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t1 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		try {
 			if(aEsEncargado == true){
@@ -104,7 +104,7 @@ public class BD_Empleados {
 	}
 
 	public Empleado actualizarEmpleado(int aIdEmpleado, String correo, String contrasenia) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Empleado e = null;
 		
 		try {

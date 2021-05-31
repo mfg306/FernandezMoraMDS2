@@ -25,7 +25,7 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA) {
+		if (key == ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA) {
 			return ORM__Producto_en_compra;
 		}
 		
@@ -33,11 +33,11 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PENDIENTE__HACE_COMPRA) {
+		if (key == ORMConstants.KEY_PENDIENTE__HACE_COMPRA) {
 			this._Hace_compra = (base_de_datos.UR) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS) {
+		else if (key == ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS) {
 			this._Encargado_de_compras = (base_de_datos.Encargado_de_compras) owner;
 		}
 	}
@@ -102,7 +102,7 @@ public class Pendiente extends base_de_datos.Compra implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, ORMConstants.KEY_PENDIENTE__PRODUCTO_EN_COMPRA, ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public void set_Hace_compra(base_de_datos.UR value) {
 		if (_Hace_compra != null) {

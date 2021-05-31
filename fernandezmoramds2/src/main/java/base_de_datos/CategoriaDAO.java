@@ -21,7 +21,7 @@ import java.util.List;
 public class CategoriaDAO {
 	public static Categoria loadCategoriaByORMID(int id_Categoria) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadCategoriaByORMID(session, id_Categoria);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class CategoriaDAO {
 	
 	public static Categoria getCategoriaByORMID(int id_Categoria) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getCategoriaByORMID(session, id_Categoria);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class CategoriaDAO {
 	
 	public static Categoria loadCategoriaByORMID(int id_Categoria, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadCategoriaByORMID(session, id_Categoria, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class CategoriaDAO {
 	
 	public static Categoria getCategoriaByORMID(int id_Categoria, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getCategoriaByORMID(session, id_Categoria, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class CategoriaDAO {
 	
 	public static List queryCategoria(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryCategoria(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class CategoriaDAO {
 	
 	public static List queryCategoria(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryCategoria(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class CategoriaDAO {
 	
 	public static Categoria[] listCategoriaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listCategoriaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class CategoriaDAO {
 	
 	public static Categoria[] listCategoriaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listCategoriaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class CategoriaDAO {
 	
 	public static Categoria loadCategoriaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadCategoriaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class CategoriaDAO {
 	
 	public static Categoria loadCategoriaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadCategoriaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class CategoriaDAO {
 	
 	public static java.util.Iterator iterateCategoriaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateCategoriaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class CategoriaDAO {
 	
 	public static java.util.Iterator iterateCategoriaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateCategoriaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class CategoriaDAO {
 	
 	public static boolean save(base_de_datos.Categoria categoria) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(categoria);
+			MDS2PersistentManager.instance().saveObject(categoria);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class CategoriaDAO {
 	
 	public static boolean delete(base_de_datos.Categoria categoria) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(categoria);
+			MDS2PersistentManager.instance().deleteObject(categoria);
 			return true;
 		}
 		catch (Exception e) {
@@ -356,7 +356,7 @@ public class CategoriaDAO {
 	
 	public static boolean refresh(base_de_datos.Categoria categoria) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(categoria);
+			MDS2PersistentManager.instance().getSession().refresh(categoria);
 			return true;
 		}
 		catch (Exception e) {
@@ -367,7 +367,7 @@ public class CategoriaDAO {
 	
 	public static boolean evict(base_de_datos.Categoria categoria) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(categoria);
+			MDS2PersistentManager.instance().getSession().evict(categoria);
 			return true;
 		}
 		catch (Exception e) {

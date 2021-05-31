@@ -16,7 +16,7 @@ public class BD_UR {
 
 	public int registrarse(String aNombre, String aPrimerApellido, String aSegundoApellido, String aCorreo, String aNombreUsuario,
 			String aContrasenia, String aContraseniaRepeticion) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 
@@ -79,22 +79,16 @@ public class BD_UR {
 		UR[] usuariosCorreo = URDAO.listURByQuery("Correo_electronico = '" + aCorreo + "'", "Correo_electronico");
 
 		if (usuariosCorreo.length == 0) {
-			HitoPersistentManager.instance().disposePersistentManager();
 			return null;
 		}
 		if (!usuariosCorreo[0].getEsta_operativo()) {
-			HitoPersistentManager.instance().disposePersistentManager();
-
 			return null;
 		}
 		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())
 				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia())) {
-			HitoPersistentManager.instance().disposePersistentManager();
-
 			return usuariosCorreo[0];
 		}
 
-		HitoPersistentManager.instance().disposePersistentManager();
 		return null;
 	}
 
@@ -112,16 +106,14 @@ public class BD_UR {
 		} catch (Exception e) {
 			e.getStackTrace();
 			
-			HitoPersistentManager.instance().disposePersistentManager();
 			return null;
 		}
 		
-		HitoPersistentManager.instance().disposePersistentManager();
 		return usuarioEncontrado;
 	}
 
 	public void cambiarContraseniaUsuario(String aCorreo, String aContrasenia) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		UR usuario = URDAO.createUR();
 		usuario.setCorreo_electronico(aCorreo);
 		base_de_datos.UR usuarioEncontrado = null;
@@ -139,12 +131,12 @@ public class BD_UR {
 			e.getStackTrace();
 		}
 		
-		HitoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void actualizarDatosCompra(String aDireccionEnvio, String aMetodoPago, UR aUsuario)
 			throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			aUsuario.setDireccion_envio(aDireccionEnvio);
@@ -154,8 +146,8 @@ public class BD_UR {
 		} catch (PersistentException e) {
 			t.rollback();
 			e.printStackTrace();
+		} finally {
 		}
-		HitoPersistentManager.instance().disposePersistentManager();
 
 	}
 
@@ -165,7 +157,7 @@ public class BD_UR {
 	}
 
 	public void actualizarContrasenia(UR ur, String aNuevaContrasenia) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			ur.setContrasenia(aNuevaContrasenia);
@@ -181,7 +173,7 @@ public class BD_UR {
 	public void cambiarDatosUsuario(String aNombreUsuario, String aNombre, String aPrimerApellido, String aSegundoApellido, String aCorreo,
 			String aDireccion, String aMetodoDePago, String aRutaFoto) throws PersistentException {
 
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Imagen i = null;
 
 		try {
@@ -195,7 +187,7 @@ public class BD_UR {
 			t.rollback();
 		}
 
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		UR usuario = URDAO.createUR();
 		usuario.setCorreo_electronico(aCorreo);
 		base_de_datos.UR usuarioEncontrado = null;
@@ -225,7 +217,7 @@ public class BD_UR {
 	}
 
 	public void eliminarUsuario(String aCorreo) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		UR usuario = URDAO.createUR();
 		usuario.setCorreo_electronico(aCorreo);
 		base_de_datos.UR usuarioEncontrado = null;

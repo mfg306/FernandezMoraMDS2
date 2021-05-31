@@ -23,7 +23,7 @@ public class Mensaje implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_MENSAJE__MENSAJE) {
+		if (key == ORMConstants.KEY_MENSAJE__MENSAJE) {
 			return ORM__Mensaje;
 		}
 		
@@ -31,15 +31,15 @@ public class Mensaje implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_MENSAJE__RESPONDER_A) {
+		if (key == ORMConstants.KEY_MENSAJE__RESPONDER_A) {
 			this._Responder_a = (base_de_datos.Mensaje) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_MENSAJE__ENVIADO_POR_UR) {
+		else if (key == ORMConstants.KEY_MENSAJE__ENVIADO_POR_UR) {
 			this._Enviado_por_UR = (base_de_datos.UR) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_MENSAJE__ENVIADO_POR_ADMIN) {
+		else if (key == ORMConstants.KEY_MENSAJE__ENVIADO_POR_ADMIN) {
 			this._Enviado_por_Admin = (base_de_datos.Administrador) owner;
 		}
 	}
@@ -233,7 +233,7 @@ public class Mensaje implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.MensajeSetCollection _Mensaje = new base_de_datos.MensajeSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_MENSAJE__MENSAJE, base_de_datos.ORMConstants.KEY_MENSAJE__RESPONDER_A, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.MensajeSetCollection _Mensaje = new base_de_datos.MensajeSetCollection(this, _ormAdapter, ORMConstants.KEY_MENSAJE__MENSAJE, ORMConstants.KEY_MENSAJE__RESPONDER_A, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Mensaje());

@@ -26,16 +26,8 @@ public class Introducir_datos_compra extends VistaIntroducir_datos_compra {
 	public void realizarCompra() {
 		this.getBoton_continuar().addClickListener(event -> {
 			iUR iur = new BDPrincipal();
-
+			
 			try {
-				iur.actualizarDatosCompra(this.getDireccion_envio().getValue(), this.getMetodo_pago().getValue(),
-						this._ver_carrito_UR._menu_UR._uR.UR);
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
-
-			try {
-
 				Producto[] lista = new Producto[this._ver_carrito_UR._menu_UR._uR.listaAux.size()];
 				int[] numUnidades = new int[lista.length];
 
@@ -44,9 +36,16 @@ public class Introducir_datos_compra extends VistaIntroducir_datos_compra {
 					numUnidades[i] = this._ver_carrito_UR._menu_UR._uR.listaAux.get(i).cantidad;
 				}
 
-				iur.realizarCompra(lista, this._ver_carrito_UR._menu_UR._uR.UR.getId_Usuario(), numUnidades);
+				iur.realizarCompra(lista, this._ver_carrito_UR._menu_UR._uR.UR, numUnidades);
 				
 			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			try {
+				iur.actualizarDatosCompra(this.getDireccion_envio().getValue(), this.getMetodo_pago().getValue(),
+						this._ver_carrito_UR._menu_UR._uR.UR);
+			} catch (PersistentException e) {
 				e.printStackTrace();
 			}
 

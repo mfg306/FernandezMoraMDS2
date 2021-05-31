@@ -52,8 +52,8 @@ public class AdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
 		_Envia = new CollectionExpression("ORM__Envia", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.MensajeDetachedCriteria create_EnviaCriteria() {
-		return new base_de_datos.MensajeDetachedCriteria(createCriteria("ORM__Envia"));
+	public MensajeDetachedCriteria create_EnviaCriteria() {
+		return new MensajeDetachedCriteria(createCriteria("ORM__Envia"));
 	}
 	
 	public Administrador uniqueAdministrador(PersistentSession session) {

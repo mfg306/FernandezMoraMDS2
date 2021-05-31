@@ -63,7 +63,7 @@ public class BD_Ofertas {
 
 	public Oferta insertarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaRegistro, double[] aPrecios) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Oferta o = null;
 		Producto_Rebajado pr = null;
 
@@ -83,7 +83,7 @@ public class BD_Ofertas {
 			t.rollback();
 		}
 
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
 
 		int contador = 0;
@@ -162,7 +162,7 @@ public class BD_Ofertas {
 	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
 		Oferta o = OfertaDAO.getOfertaByORMID(aIdOferta);
 
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			OfertaDAO.deleteAndDissociate(o);
@@ -173,7 +173,7 @@ public class BD_Ofertas {
 			return false;
 		}
 
-		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			for (Producto_Rebajado pr : o._Pertenece_a.toArray()) {

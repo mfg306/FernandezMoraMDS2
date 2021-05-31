@@ -37,11 +37,11 @@ public class CategoriaCriteria extends AbstractORMCriteria {
 	}
 	
 	public CategoriaCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.ProductoCriteria create_ProductoCriteria() {
-		return new base_de_datos.ProductoCriteria(createCriteria("ORM__Producto"));
+	public ProductoCriteria create_ProductoCriteria() {
+		return new ProductoCriteria(createCriteria("ORM__Producto"));
 	}
 	
 	public Categoria uniqueCategoria() {

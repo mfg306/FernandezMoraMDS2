@@ -82,24 +82,24 @@ public class URDetachedCriteria extends AbstractORMDetachedCriteria {
 		imagen = new AssociationExpression("imagen", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.ComentarioDetachedCriteria create_Es_de_unCriteria() {
-		return new base_de_datos.ComentarioDetachedCriteria(createCriteria("ORM__Es_de_un"));
+	public ComentarioDetachedCriteria create_Es_de_unCriteria() {
+		return new ComentarioDetachedCriteria(createCriteria("ORM__Es_de_un"));
 	}
 	
-	public base_de_datos.PendienteDetachedCriteria create_CompraCriteria() {
-		return new base_de_datos.PendienteDetachedCriteria(createCriteria("ORM__Compra"));
+	public PendienteDetachedCriteria create_CompraCriteria() {
+		return new PendienteDetachedCriteria(createCriteria("ORM__Compra"));
 	}
 	
-	public base_de_datos.RecibidoDetachedCriteria create_recibidoCriteria() {
-		return new base_de_datos.RecibidoDetachedCriteria(createCriteria("ORM__recibido"));
+	public RecibidoDetachedCriteria create_recibidoCriteria() {
+		return new RecibidoDetachedCriteria(createCriteria("ORM__recibido"));
 	}
 	
-	public base_de_datos.MensajeDetachedCriteria create_EnviaCriteria() {
-		return new base_de_datos.MensajeDetachedCriteria(createCriteria("ORM__Envia"));
+	public MensajeDetachedCriteria create_EnviaCriteria() {
+		return new MensajeDetachedCriteria(createCriteria("ORM__Envia"));
 	}
 	
-	public base_de_datos.ValoracionDetachedCriteria create_ValoraCriteria() {
-		return new base_de_datos.ValoracionDetachedCriteria(createCriteria("ORM__Valora"));
+	public ValoracionDetachedCriteria create_ValoraCriteria() {
+		return new ValoracionDetachedCriteria(createCriteria("ORM__Valora"));
 	}
 	
 	public ImagenDetachedCriteria createImagenCriteria() {

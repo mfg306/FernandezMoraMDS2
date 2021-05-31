@@ -43,8 +43,8 @@ public class OfertaDetachedCriteria extends AbstractORMDetachedCriteria {
 		_Pertenece_a = new CollectionExpression("ORM__Pertenece_a", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.Producto_RebajadoDetachedCriteria create_Pertenece_aCriteria() {
-		return new base_de_datos.Producto_RebajadoDetachedCriteria(createCriteria("ORM__Pertenece_a"));
+	public Producto_RebajadoDetachedCriteria create_Pertenece_aCriteria() {
+		return new Producto_RebajadoDetachedCriteria(createCriteria("ORM__Pertenece_a"));
 	}
 	
 	public Oferta uniqueOferta(PersistentSession session) {

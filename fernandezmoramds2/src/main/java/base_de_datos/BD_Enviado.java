@@ -14,7 +14,7 @@ public class BD_Enviado {
 	public Vector<Enviado> _enviado = new Vector<Enviado>();
 
 	public Enviado[] cargarPedidosT(Transportista aTransportista) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Enviado[] e = null;
 		try {
 			e = EnviadoDAO.listEnviadoByQuery("TransportistaEmpleadoIdEmpleado = " + aTransportista.getIdEmpleado(),
@@ -34,7 +34,7 @@ public class BD_Enviado {
 		this._bDPrincipal = new BDPrincipal();
 		transportista = this._bDPrincipal.buscarTransportistaCola(aPedidoPendiente.getId_cola());
 		
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		Enviado e = EnviadoDAO.createEnviado();
 
@@ -43,7 +43,7 @@ public class BD_Enviado {
 		String fechaActualizacion = formatter.format(date);
 
 		e.setORM__Procesa(aEncargado);
-		
+		e.setCodigoPendiente(aPedidoPendiente.getCodigo());
 		e.setORM__Transportista(transportista);
 		e.setFecha_estado(fechaActualizacion);
 		e.setNum_total_unidades(aPedidoPendiente.getNum_total_unidades());
@@ -60,28 +60,16 @@ public class BD_Enviado {
 		this._bDPrincipal = new BDPrincipal();
 
 		try {
-			this._bDPrincipal.eliminarPendiente(aPedidoPendiente);
+			this._bDPrincipal.eliminarPendiente(aPedidoPendiente, e);
 		} catch (Exception ex2) {
 			ex2.printStackTrace();
 		}
-//		
-//		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
-//
-//		try {
-//			aPedidoPendiente.setEnviado(e);
-//			PendienteDAO.save(aPedidoPendiente);
-//			
-//			t2.commit();
-//		} catch(Exception ex) {
-//			ex.printStackTrace();
-//			t2.rollback();
-//		}
 		
 	}
 
 	public Enviado[] cargarEnviados() throws PersistentException {
 		Enviado[] enviados = null;
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			enviados = EnviadoDAO.listEnviadoByQuery(null, null);
@@ -95,27 +83,17 @@ public class BD_Enviado {
 	}
 
 	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) throws PersistentException {
-		Encargado_de_compras encargado = aEnviado.get_Procesa();
-
-		Pendiente pendientes[] = PendienteDAO
-				.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = " + encargado.getIdEmpleado(), null);
-
+		int codigoPendiente = aEnviado.getCodigoPendiente();
+		Pendiente p = PendienteDAO.getPendienteByORMID(codigoPendiente);
+		System.out.println(codigoPendiente);
+		UR usuario = p.get_Hace_compra();
 		
-		/*Esta condicion no es suficiente porque puede haber varios Enviados con el mismo id_cola y el 
-		 * mismo encargado y nos va a devolver el primero que se encuentre. 
-		 * 
-		 * En la base de datos necesitamo relacionar cada Pendiente con cada Enviado de 1:1 para poder 
-		 * acceder a cada Pendiente sin confusion*/
-		for (Pendiente p : pendientes) {
-			if (p.getId_cola() == aTransportista.getId_cola()) {
-				return p.get_Hace_compra();
-			}
-		}
-		return null;
+		return usuario;
+		
 	}
 
 	public boolean eliminarEnviado(Enviado aEnviado) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
 			aEnviado.setEnviado(true);
@@ -124,7 +102,7 @@ public class BD_Enviado {
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
-			HitoPersistentManager.instance().disposePersistentManager();
+			MDS2PersistentManager.instance().disposePersistentManager();
 
 			return false;
 		}

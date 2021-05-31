@@ -23,11 +23,11 @@ public class Comentario implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_COMENTARIO__TIENE) {
+		if (key == ORMConstants.KEY_COMENTARIO__TIENE) {
 			this._Tiene = (base_de_datos.Producto) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_COMENTARIO__REALIZA) {
+		else if (key == ORMConstants.KEY_COMENTARIO__REALIZA) {
 			this._Realiza = (base_de_datos.UR) owner;
 		}
 	}

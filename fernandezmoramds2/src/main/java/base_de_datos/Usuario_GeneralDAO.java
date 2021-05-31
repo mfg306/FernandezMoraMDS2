@@ -21,7 +21,7 @@ import java.util.List;
 public class Usuario_GeneralDAO {
 	public static Usuario_General loadUsuario_GeneralByORMID(int id_Usuario) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadUsuario_GeneralByORMID(session, id_Usuario);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class Usuario_GeneralDAO {
 	
 	public static Usuario_General getUsuario_GeneralByORMID(int id_Usuario) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getUsuario_GeneralByORMID(session, id_Usuario);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class Usuario_GeneralDAO {
 	
 	public static Usuario_General loadUsuario_GeneralByORMID(int id_Usuario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadUsuario_GeneralByORMID(session, id_Usuario, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class Usuario_GeneralDAO {
 	
 	public static Usuario_General getUsuario_GeneralByORMID(int id_Usuario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getUsuario_GeneralByORMID(session, id_Usuario, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class Usuario_GeneralDAO {
 	
 	public static List queryUsuario_General(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryUsuario_General(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class Usuario_GeneralDAO {
 	
 	public static List queryUsuario_General(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryUsuario_General(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class Usuario_GeneralDAO {
 	
 	public static Usuario_General[] listUsuario_GeneralByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listUsuario_GeneralByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class Usuario_GeneralDAO {
 	
 	public static Usuario_General[] listUsuario_GeneralByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listUsuario_GeneralByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class Usuario_GeneralDAO {
 	
 	public static Usuario_General loadUsuario_GeneralByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadUsuario_GeneralByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class Usuario_GeneralDAO {
 	
 	public static Usuario_General loadUsuario_GeneralByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadUsuario_GeneralByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class Usuario_GeneralDAO {
 	
 	public static java.util.Iterator iterateUsuario_GeneralByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateUsuario_GeneralByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class Usuario_GeneralDAO {
 	
 	public static java.util.Iterator iterateUsuario_GeneralByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateUsuario_GeneralByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class Usuario_GeneralDAO {
 	
 	public static boolean save(base_de_datos.Usuario_General usuario_General) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(usuario_General);
+			MDS2PersistentManager.instance().saveObject(usuario_General);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class Usuario_GeneralDAO {
 	
 	public static boolean delete(base_de_datos.Usuario_General usuario_General) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(usuario_General);
+			MDS2PersistentManager.instance().deleteObject(usuario_General);
 			return true;
 		}
 		catch (Exception e) {
@@ -323,7 +323,7 @@ public class Usuario_GeneralDAO {
 	
 	public static boolean refresh(base_de_datos.Usuario_General usuario_General) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(usuario_General);
+			MDS2PersistentManager.instance().getSession().refresh(usuario_General);
 			return true;
 		}
 		catch (Exception e) {
@@ -334,7 +334,7 @@ public class Usuario_GeneralDAO {
 	
 	public static boolean evict(base_de_datos.Usuario_General usuario_General) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(usuario_General);
+			MDS2PersistentManager.instance().getSession().evict(usuario_General);
 			return true;
 		}
 		catch (Exception e) {

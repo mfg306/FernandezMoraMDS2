@@ -23,11 +23,11 @@ public class Imagen implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_IMAGEN__PRODUCTO) {
+		if (key == ORMConstants.KEY_IMAGEN__PRODUCTO) {
 			this._Producto = (base_de_datos.Producto) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_IMAGEN_UR) {
+		else if (key == ORMConstants.KEY_IMAGEN_UR) {
 			this.uR = (base_de_datos.UR) owner;
 		}
 	}

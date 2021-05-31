@@ -43,7 +43,7 @@ public class ImagenCriteria extends AbstractORMCriteria {
 	}
 	
 	public ImagenCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public URCriteria createURCriteria() {

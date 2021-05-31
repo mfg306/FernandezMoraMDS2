@@ -24,16 +24,16 @@ public class Producto implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA) {
+		if (key == ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA) {
 			return ORM__Producto_en_compra;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__PERTENECE_A) {
+		else if (key == ORMConstants.KEY_PRODUCTO__PERTENECE_A) {
 			return ORM__Pertenece_a;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__IMAGEN) {
+		else if (key == ORMConstants.KEY_PRODUCTO__IMAGEN) {
 			return ORM__Imagen;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR) {
+		else if (key == ORMConstants.KEY_PRODUCTO__VALORADO_POR) {
 			return ORM__Valorado_por;
 		}
 		
@@ -41,7 +41,7 @@ public class Producto implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO__CATEGORIA) {
+		if (key == ORMConstants.KEY_PRODUCTO__CATEGORIA) {
 			this._Categoria = (base_de_datos.Categoria) owner;
 		}
 	}
@@ -190,7 +190,7 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.Producto_en_compraSetCollection _Producto_en_compra = new base_de_datos.Producto_en_compraSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO__PRODUCTO_EN_COMPRA, ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Pertenece_a(java.util.Set value) {
 		this.ORM__Pertenece_a = value;
@@ -201,7 +201,7 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ComentarioSetCollection _Pertenece_a = new base_de_datos.ComentarioSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__PERTENECE_A, base_de_datos.ORMConstants.KEY_COMENTARIO__TIENE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.ComentarioSetCollection _Pertenece_a = new base_de_datos.ComentarioSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO__PERTENECE_A, ORMConstants.KEY_COMENTARIO__TIENE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Imagen(java.util.Set value) {
 		this.ORM__Imagen = value;
@@ -212,7 +212,7 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ImagenSetCollection _Imagen = new base_de_datos.ImagenSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__IMAGEN, base_de_datos.ORMConstants.KEY_IMAGEN__PRODUCTO, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.ImagenSetCollection _Imagen = new base_de_datos.ImagenSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO__IMAGEN, ORMConstants.KEY_IMAGEN__PRODUCTO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Valorado_por(java.util.Set value) {
 		this.ORM__Valorado_por = value;
@@ -223,7 +223,7 @@ public class Producto implements Serializable {
 	}
 	
 	@Transient	
-	public final base_de_datos.ValoracionSetCollection _Valorado_por = new base_de_datos.ValoracionSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_PRODUCTO__VALORADO_POR, base_de_datos.ORMConstants.KEY_VALORACION__VALORADO, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.ValoracionSetCollection _Valorado_por = new base_de_datos.ValoracionSetCollection(this, _ormAdapter, ORMConstants.KEY_PRODUCTO__VALORADO_POR, ORMConstants.KEY_VALORACION__VALORADO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getId_Producto());

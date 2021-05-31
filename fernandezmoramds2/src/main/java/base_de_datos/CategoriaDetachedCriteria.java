@@ -40,8 +40,8 @@ public class CategoriaDetachedCriteria extends AbstractORMDetachedCriteria {
 		_Producto = new CollectionExpression("ORM__Producto", this.getDetachedCriteria());
 	}
 	
-	public base_de_datos.ProductoDetachedCriteria create_ProductoCriteria() {
-		return new base_de_datos.ProductoDetachedCriteria(createCriteria("ORM__Producto"));
+	public ProductoDetachedCriteria create_ProductoCriteria() {
+		return new ProductoDetachedCriteria(createCriteria("ORM__Producto"));
 	}
 	
 	public Categoria uniqueCategoria(PersistentSession session) {

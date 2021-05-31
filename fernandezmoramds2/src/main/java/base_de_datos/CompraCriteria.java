@@ -37,7 +37,7 @@ public class CompraCriteria extends AbstractORMCriteria {
 	}
 	
 	public CompraCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public Compra uniqueCompra() {

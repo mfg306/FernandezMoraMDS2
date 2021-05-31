@@ -43,7 +43,7 @@ public class Usuario_GeneralCriteria extends AbstractORMCriteria {
 	}
 	
 	public Usuario_GeneralCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public Usuario_General uniqueUsuario_General() {

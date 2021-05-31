@@ -25,10 +25,10 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE) {
+		if (key == ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE) {
 			return ORM__Pendiente;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO) {
+		else if (key == ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO) {
 			return ORM__Pedido_enviado;
 		}
 		
@@ -62,7 +62,7 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	}
 	
 	@Transient	
-	public final base_de_datos.PendienteSetCollection _Pendiente = new base_de_datos.PendienteSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE, base_de_datos.ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.PendienteSetCollection _Pendiente = new base_de_datos.PendienteSetCollection(this, _ormAdapter, ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PENDIENTE, ORMConstants.KEY_PENDIENTE__ENCARGADO_DE_COMPRAS, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Pedido_enviado(java.util.Set value) {
 		this.ORM__Pedido_enviado = value;
@@ -73,7 +73,7 @@ public class Encargado_de_compras extends base_de_datos.Empleado implements Seri
 	}
 	
 	@Transient	
-	public final base_de_datos.EnviadoSetCollection _Pedido_enviado = new base_de_datos.EnviadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO, base_de_datos.ORMConstants.KEY_ENVIADO__PROCESA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.EnviadoSetCollection _Pedido_enviado = new base_de_datos.EnviadoSetCollection(this, _ormAdapter, ORMConstants.KEY_ENCARGADO_DE_COMPRAS__PEDIDO_ENVIADO, ORMConstants.KEY_ENVIADO__PROCESA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

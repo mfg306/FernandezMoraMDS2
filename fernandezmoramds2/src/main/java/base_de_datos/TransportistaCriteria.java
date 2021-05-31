@@ -41,15 +41,15 @@ public class TransportistaCriteria extends AbstractORMCriteria {
 	}
 	
 	public TransportistaCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.RecibidoCriteria create_RecibidoCriteria() {
-		return new base_de_datos.RecibidoCriteria(createCriteria("ORM__Recibido"));
+	public RecibidoCriteria create_RecibidoCriteria() {
+		return new RecibidoCriteria(createCriteria("ORM__Recibido"));
 	}
 	
-	public base_de_datos.EnviadoCriteria create_EnviadoCriteria() {
-		return new base_de_datos.EnviadoCriteria(createCriteria("ORM__Enviado"));
+	public EnviadoCriteria create_EnviadoCriteria() {
+		return new EnviadoCriteria(createCriteria("ORM__Enviado"));
 	}
 	
 	public Transportista uniqueTransportista() {

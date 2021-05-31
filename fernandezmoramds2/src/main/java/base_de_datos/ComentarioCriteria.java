@@ -43,7 +43,7 @@ public class ComentarioCriteria extends AbstractORMCriteria {
 	}
 	
 	public ComentarioCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public URCriteria create_RealizaCriteria() {

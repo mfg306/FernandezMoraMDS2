@@ -45,11 +45,11 @@ public class AdministradorCriteria extends AbstractORMCriteria {
 	}
 	
 	public AdministradorCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.MensajeCriteria create_EnviaCriteria() {
-		return new base_de_datos.MensajeCriteria(createCriteria("ORM__Envia"));
+	public MensajeCriteria create_EnviaCriteria() {
+		return new MensajeCriteria(createCriteria("ORM__Envia"));
 	}
 	
 	public Administrador uniqueAdministrador() {

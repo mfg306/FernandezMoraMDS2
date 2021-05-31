@@ -21,7 +21,7 @@ import java.util.List;
 public class TransportistaDAO {
 	public static Transportista loadTransportistaByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadTransportistaByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class TransportistaDAO {
 	
 	public static Transportista getTransportistaByORMID(int idEmpleado) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getTransportistaByORMID(session, idEmpleado);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadTransportistaByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class TransportistaDAO {
 	
 	public static Transportista getTransportistaByORMID(int idEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getTransportistaByORMID(session, idEmpleado, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class TransportistaDAO {
 	
 	public static List queryTransportista(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryTransportista(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class TransportistaDAO {
 	
 	public static List queryTransportista(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryTransportista(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class TransportistaDAO {
 	
 	public static Transportista[] listTransportistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listTransportistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class TransportistaDAO {
 	
 	public static Transportista[] listTransportistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listTransportistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadTransportistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class TransportistaDAO {
 	
 	public static Transportista loadTransportistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadTransportistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class TransportistaDAO {
 	
 	public static java.util.Iterator iterateTransportistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateTransportistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class TransportistaDAO {
 	
 	public static java.util.Iterator iterateTransportistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateTransportistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class TransportistaDAO {
 	
 	public static boolean save(base_de_datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(transportista);
+			MDS2PersistentManager.instance().saveObject(transportista);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class TransportistaDAO {
 	
 	public static boolean delete(base_de_datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(transportista);
+			MDS2PersistentManager.instance().deleteObject(transportista);
 			return true;
 		}
 		catch (Exception e) {
@@ -364,7 +364,7 @@ public class TransportistaDAO {
 	
 	public static boolean refresh(base_de_datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(transportista);
+			MDS2PersistentManager.instance().getSession().refresh(transportista);
 			return true;
 		}
 		catch (Exception e) {
@@ -375,7 +375,7 @@ public class TransportistaDAO {
 	
 	public static boolean evict(base_de_datos.Transportista transportista) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(transportista);
+			MDS2PersistentManager.instance().getSession().evict(transportista);
 			return true;
 		}
 		catch (Exception e) {

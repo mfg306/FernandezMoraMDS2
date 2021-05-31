@@ -13,7 +13,7 @@ public class DB_Imagen {
 	public Vector<Imagen> _imagen = new Vector<Imagen>();
 
 	public void guardarImagenesProducto(String aImagenes, Producto aProducto, boolean aEsPrincipal) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		Imagen imagen = ImagenDAO.createImagen();
 		imagen.setRuta(aImagenes);
@@ -33,7 +33,7 @@ public class DB_Imagen {
 	}
 	
 	public boolean eliminarImagenProducto(Producto aProducto) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Imagen[] imagenes = null;
 		
 		try {
@@ -42,12 +42,10 @@ public class DB_Imagen {
 				ImagenDAO.deleteAndDissociate(i);
 			}
 			t.commit();
-			HitoPersistentManager.instance().disposePersistentManager();
 			return true;
 		} catch(Exception e) {
-//			e.printStackTrace();
+			e.printStackTrace();
 			t.rollback();
-			HitoPersistentManager.instance().disposePersistentManager();
 			return false;
 		}
 		

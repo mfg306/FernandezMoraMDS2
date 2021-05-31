@@ -21,7 +21,7 @@ import java.util.List;
 public class ValoracionDAO {
 	public static Valoracion loadValoracionByORMID(int id_valoracion) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadValoracionByORMID(session, id_valoracion);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion getValoracionByORMID(int id_valoracion) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getValoracionByORMID(session, id_valoracion);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByORMID(int id_valoracion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadValoracionByORMID(session, id_valoracion, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion getValoracionByORMID(int id_valoracion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return getValoracionByORMID(session, id_valoracion, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class ValoracionDAO {
 	
 	public static List queryValoracion(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryValoracion(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class ValoracionDAO {
 	
 	public static List queryValoracion(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return queryValoracion(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion[] listValoracionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listValoracionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion[] listValoracionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return listValoracionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadValoracionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class ValoracionDAO {
 	
 	public static Valoracion loadValoracionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return loadValoracionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class ValoracionDAO {
 	
 	public static java.util.Iterator iterateValoracionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateValoracionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class ValoracionDAO {
 	
 	public static java.util.Iterator iterateValoracionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = base_de_datos.HitoPersistentManager.instance().getSession();
+			PersistentSession session = MDS2PersistentManager.instance().getSession();
 			return iterateValoracionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class ValoracionDAO {
 	
 	public static boolean save(base_de_datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().saveObject(valoracion);
+			MDS2PersistentManager.instance().saveObject(valoracion);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class ValoracionDAO {
 	
 	public static boolean delete(base_de_datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().deleteObject(valoracion);
+			MDS2PersistentManager.instance().deleteObject(valoracion);
 			return true;
 		}
 		catch (Exception e) {
@@ -364,7 +364,7 @@ public class ValoracionDAO {
 	
 	public static boolean refresh(base_de_datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().refresh(valoracion);
+			MDS2PersistentManager.instance().getSession().refresh(valoracion);
 			return true;
 		}
 		catch (Exception e) {
@@ -375,7 +375,7 @@ public class ValoracionDAO {
 	
 	public static boolean evict(base_de_datos.Valoracion valoracion) throws PersistentException {
 		try {
-			base_de_datos.HitoPersistentManager.instance().getSession().evict(valoracion);
+			MDS2PersistentManager.instance().getSession().evict(valoracion);
 			return true;
 		}
 		catch (Exception e) {

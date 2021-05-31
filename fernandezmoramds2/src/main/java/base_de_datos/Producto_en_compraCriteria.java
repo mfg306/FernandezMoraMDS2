@@ -41,7 +41,7 @@ public class Producto_en_compraCriteria extends AbstractORMCriteria {
 	}
 	
 	public Producto_en_compraCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public PendienteCriteria create_PendienteCriteria() {

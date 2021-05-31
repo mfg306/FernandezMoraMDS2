@@ -18,7 +18,7 @@ public class BD_Recibido {
 
 	public Recibido[] cargarRecibidos() throws PersistentException 
 	{
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Recibido[] recibidos = null;
 		
 		try {
@@ -34,8 +34,7 @@ public class BD_Recibido {
 	
 	public boolean repartirACliente(UR aCliente, Enviado aEnviado)  throws PersistentException 
 	{
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
-		
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();

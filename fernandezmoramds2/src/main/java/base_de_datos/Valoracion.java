@@ -23,11 +23,11 @@ public class Valoracion implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_VALORACION__VALORADO_POR) {
+		if (key == ORMConstants.KEY_VALORACION__VALORADO_POR) {
 			this._Valorado_por = (base_de_datos.UR) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_VALORACION__VALORADO) {
+		else if (key == ORMConstants.KEY_VALORACION__VALORADO) {
 			this._Valorado = (base_de_datos.Producto) owner;
 		}
 	}

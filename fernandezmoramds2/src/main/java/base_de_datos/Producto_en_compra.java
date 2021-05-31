@@ -23,11 +23,11 @@ public class Producto_en_compra implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO) {
+		if (key == ORMConstants.KEY_PRODUCTO_EN_COMPRA__PRODUCTO) {
 			this._Producto = (base_de_datos.Producto) owner;
 		}
 		
-		else if (key == base_de_datos.ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE) {
+		else if (key == ORMConstants.KEY_PRODUCTO_EN_COMPRA__PENDIENTE) {
 			this._Pendiente = (base_de_datos.Pendiente) owner;
 		}
 	}

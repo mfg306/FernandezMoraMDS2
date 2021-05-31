@@ -25,10 +25,10 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == base_de_datos.ORMConstants.KEY_TRANSPORTISTA__RECIBIDO) {
+		if (key == ORMConstants.KEY_TRANSPORTISTA__RECIBIDO) {
 			return ORM__Recibido;
 		}
-		else if (key == base_de_datos.ORMConstants.KEY_TRANSPORTISTA__ENVIADO) {
+		else if (key == ORMConstants.KEY_TRANSPORTISTA__ENVIADO) {
 			return ORM__Enviado;
 		}
 		
@@ -73,7 +73,7 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	}
 	
 	@Transient	
-	public final base_de_datos.RecibidoSetCollection _Recibido = new base_de_datos.RecibidoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_TRANSPORTISTA__RECIBIDO, base_de_datos.ORMConstants.KEY_RECIBIDO__RECOGE, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.RecibidoSetCollection _Recibido = new base_de_datos.RecibidoSetCollection(this, _ormAdapter, ORMConstants.KEY_TRANSPORTISTA__RECIBIDO, ORMConstants.KEY_RECIBIDO__RECOGE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	private void setORM__Enviado(java.util.Set value) {
 		this.ORM__Enviado = value;
@@ -84,7 +84,7 @@ public class Transportista extends base_de_datos.Empleado implements Serializabl
 	}
 	
 	@Transient	
-	public final base_de_datos.EnviadoSetCollection _Enviado = new base_de_datos.EnviadoSetCollection(this, _ormAdapter, base_de_datos.ORMConstants.KEY_TRANSPORTISTA__ENVIADO, base_de_datos.ORMConstants.KEY_ENVIADO__TRANSPORTISTA, base_de_datos.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final base_de_datos.EnviadoSetCollection _Enviado = new base_de_datos.EnviadoSetCollection(this, _ormAdapter, ORMConstants.KEY_TRANSPORTISTA__ENVIADO, ORMConstants.KEY_ENVIADO__TRANSPORTISTA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return super.toString();

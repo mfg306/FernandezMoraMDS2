@@ -13,7 +13,7 @@ public class BD_Productos_en_compra {
 	public Vector<Producto_en_compra> _producto_en_compra = new Vector<Producto_en_compra>();
 	
 	public boolean eliminarProductosEnCompra(Pendiente aPendiente) throws PersistentException {
-		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Producto_en_compra[] listaPen = Producto_en_compraDAO.listProducto_en_compraByQuery("PendienteCompraCodigo = " + aPendiente.getCodigo(), null);
 		if(listaPen.length == 0) return false;
 		
@@ -25,13 +25,10 @@ public class BD_Productos_en_compra {
 		} catch(Exception e) {
 			e.printStackTrace();
 			t.rollback();
-			
-			HitoPersistentManager.instance().disposePersistentManager();
 
 			return false;
 		}
 		
-		HitoPersistentManager.instance().disposePersistentManager();
 		return true;
 	}
 	

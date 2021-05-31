@@ -41,7 +41,7 @@ public class ValoracionCriteria extends AbstractORMCriteria {
 	}
 	
 	public ValoracionCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
 	public ProductoCriteria create_ValoradoCriteria() {

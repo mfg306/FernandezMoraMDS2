@@ -39,15 +39,15 @@ public class Encargado_de_comprasCriteria extends AbstractORMCriteria {
 	}
 	
 	public Encargado_de_comprasCriteria() throws PersistentException {
-		this(base_de_datos.HitoPersistentManager.instance().getSession());
+		this(MDS2PersistentManager.instance().getSession());
 	}
 	
-	public base_de_datos.PendienteCriteria create_PendienteCriteria() {
-		return new base_de_datos.PendienteCriteria(createCriteria("ORM__Pendiente"));
+	public PendienteCriteria create_PendienteCriteria() {
+		return new PendienteCriteria(createCriteria("ORM__Pendiente"));
 	}
 	
-	public base_de_datos.EnviadoCriteria create_Pedido_enviadoCriteria() {
-		return new base_de_datos.EnviadoCriteria(createCriteria("ORM__Pedido_enviado"));
+	public EnviadoCriteria create_Pedido_enviadoCriteria() {
+		return new EnviadoCriteria(createCriteria("ORM__Pedido_enviado"));
 	}
 	
 	public Encargado_de_compras uniqueEncargado_de_compras() {
