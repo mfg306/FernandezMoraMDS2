@@ -38,4 +38,11 @@ public class BD_Transportistas {
 		}
 		return transportistas;
 	}
+	
+	public Transportista buscarTransportistaCola(int aIdCola) throws PersistentException {
+		Transportista t = TransportistaDAO.listTransportistaByQuery("Id_cola = " + aIdCola, null)[0];
+		return t;
+		
+	}
+	
 }
