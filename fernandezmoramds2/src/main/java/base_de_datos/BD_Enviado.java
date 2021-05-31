@@ -85,7 +85,6 @@ public class BD_Enviado {
 	public UR cargarClienteEnviado(Transportista aTransportista, Enviado aEnviado) throws PersistentException {
 		int codigoPendiente = aEnviado.getCodigoPendiente();
 		Pendiente p = PendienteDAO.getPendienteByORMID(codigoPendiente);
-		System.out.println(codigoPendiente);
 		UR usuario = p.get_Hace_compra();
 		
 		return usuario;

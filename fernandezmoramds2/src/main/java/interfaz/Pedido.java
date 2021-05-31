@@ -23,12 +23,10 @@ public class Pedido extends VistaPedido {
 		if(this.compra instanceof base_de_datos.Recibido) {
 			this.getEstado_pedido().setText("Recibido");
 			this.getBoton_cancelar_pedido().setVisible(false);
-			System.out.println("Recibido");
 		}
 		
 		if(this.compra instanceof base_de_datos.Pendiente) {
 			this.getEstado_pedido().setText("Pendiente");
-			System.out.println("Pendiente");
 		}
 		
 		this.getFecha().setText(this.compra.getFecha_estado());

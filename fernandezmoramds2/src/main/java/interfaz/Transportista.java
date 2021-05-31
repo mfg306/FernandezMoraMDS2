@@ -48,7 +48,6 @@ public class Transportista extends VistaTransportista {
 	public void cargarPedidosT(){
 		
 		if(this._pedidos_T != null) {
-			System.out.println("Borrando pedidos de la interfaz");
 			layout.remove(this._pedidos_T);
 		} 
 
