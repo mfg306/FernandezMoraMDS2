@@ -95,12 +95,16 @@ public class Menu_UR extends Menu_UR_UNR {
 	public void abrir_carrito() {
 		this.getBoton_carrito().addClickListener(event -> {
 
-			if (this._ver_carrito_UR == null) {
-				this._ver_carrito_UR = new Ver_carrito_UR(this);
-				this._ver_carrito = this._ver_carrito_UR;
+			if(this._ver_carrito_UR != null) {
+				this._uR.layout.remove(this._ver_carrito_UR);
 			}
-
+			
+			this._ver_carrito_UR = new Ver_carrito_UR(this);
+			this._ver_carrito = this._ver_carrito_UR;
+			
+			
 			this._ver_carrito_UR._productos_carrito.actualizarListaProductos(this._uR.listaAux);
+			
 			ocultar_Informacion_Al_Abrir_Carrito();
 			ocultarInformacionVerBandejaDeEntrada();
 			ocultarInformacionPedidos();
@@ -108,6 +112,7 @@ public class Menu_UR extends Menu_UR_UNR {
 			this._ver_carrito_UR.getVaadinHorizontalLayout().setVisible(true);
 			ocultar_Informacion_PaginaInicial();
 
+			
 			this._uR.layout.add(this._ver_carrito_UR);
 		});
 	}
