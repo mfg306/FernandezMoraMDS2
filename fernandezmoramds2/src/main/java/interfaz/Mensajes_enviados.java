@@ -181,11 +181,11 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 	@Override
 	public void abrir_Crear_Mensaje() {
 		this.getBoton_crear_mensaje().addClickListener(event ->{
-			this._ver_bandeja_de_entrada.limpiar_mensajes();
-			this.limpiar_interfaz();
+			this._ver_bandeja_de_entrada.limpiar_interfaz();
+			
 			this._crear_mensaje = new Crear_mensaje(this.general, this);
 			this.layout.removeAll();
-			this._ver_bandeja_de_entrada.getHuecoMensajes().as(VerticalLayout.class).add(this._crear_mensaje);
+			this.layout.add(this._crear_mensaje);
 		});
 	}
 }

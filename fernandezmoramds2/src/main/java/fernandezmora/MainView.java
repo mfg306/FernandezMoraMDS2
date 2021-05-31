@@ -1,13 +1,19 @@
 package fernandezmora;
 
-
 import com.vaadin.flow.component.dependency.CssImport;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.page.LoadingIndicatorConfiguration;
 import com.vaadin.flow.router.PreserveOnRefresh;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.InitialPageSettings;
 import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.server.PageConfigurator;
 import com.vaadin.flow.spring.annotation.EnableVaadin;
+import com.vaadin.flow.theme.NoTheme;
+import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.theme.lumo.Lumo;
+
 import interfaz.UNR_;
 
 /**
@@ -21,13 +27,13 @@ import interfaz.UNR_;
  * A new instance of this class is created for every new user and every browser
  * tab/window.
  */
-@Route
+@Route()
 @PWA(name = "Tienda electrodomesticos", shortName = "Tienda Electrodomesticos", description = "This is an example Vaadin application.", enableInstallPrompt = false)
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 @PreserveOnRefresh
 @EnableVaadin(value = "interfaz")
-public class MainView extends VerticalLayout {
+public class MainView extends VerticalLayout implements PageConfigurator {
 
 	UNR_ unr = new UNR_();
 
@@ -45,5 +51,24 @@ public class MainView extends VerticalLayout {
 		this.setPadding(false);
 	}
 
+	@Override
+	public void configurePage(InitialPageSettings settings) {
+		settings.addFavIcon("icon", "icons/icon.png", "192x192");
+
+		LoadingIndicatorConfiguration conf = settings.getLoadingIndicatorConfiguration();
+
+		// disable default theme -> loading indicator will not be shown
+		conf.setApplyDefaultTheme(false);
+		/*
+		 * Delay for showing the indicator and setting the 'first' class name.
+		 */
+		conf.setFirstDelay(300); // 300ms is the default
+
+		/* Delay for setting the 'second' class name */
+		conf.setSecondDelay(1500); // 1500ms is the default
+
+		/* Delay for setting the 'third' class name */
+		conf.setThirdDelay(5000); // 5000ms is the default
+	}
 
 }

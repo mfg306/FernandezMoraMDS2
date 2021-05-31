@@ -18,7 +18,7 @@ class VistaEditar_producto extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <h1 style="align-self: center;" id="h1">Mis productos</h1>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="width: 100%; height: 100%;">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="width: 90%; height: 100%; align-self: center;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-items: center; justify-content: center; width: 100%; align-self: center;">
    <img id="imagen" style="width: 100%; height: 100%; align-self: center;">
    <img id="imagen1" style="width: 100%; height: 100%;">
@@ -28,16 +28,16 @@ class VistaEditar_producto extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="huecoUpload" style="width: 100%;"></vaadin-horizontal-layout>
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; width: 100%; align-items: center;" id="vaadinVerticalLayout1">
-   <vaadin-text-field label="Nuevo nombre producto:" placeholder="Nombre producto" id="nuevoNombreProducto" style="width: 100%;"></vaadin-text-field>
-   <vaadin-text-field label="Nuevo precio:" placeholder="Precio" id="nuevoPrecio" style="width: 100%;"></vaadin-text-field>
-   <vaadin-text-field label="Numero de unidades:" placeholder="Numero unidades" id="numUnidades" style="width: 100%;"></vaadin-text-field>
-   <vaadin-text-area label="Anade una nueva descripcion:" placeholder="Descripcion" style="flex-grow: 0; flex-shrink: 0; width: 100%;" id="añadeUnaNuevaDescripción"></vaadin-text-area>
+   <vaadin-text-field label="Nuevo nombre producto:" placeholder="Nombre producto" id="nuevoNombreProducto" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;"></vaadin-text-field>
+   <vaadin-text-field label="Nuevo precio:" placeholder="Precio" id="nuevoPrecio" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;"></vaadin-text-field>
+   <vaadin-text-field label="Numero de unidades:" placeholder="Numero unidades" id="numUnidades" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;"></vaadin-text-field>
+   <vaadin-text-area label="Anade una nueva descripcion:" placeholder="Descripcion" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" id="añadeUnaNuevaDescripción"></vaadin-text-area>
   </vaadin-vertical-layout>
   <vaadin-horizontal-layout theme="spacing" style="margin-top: var(--lumo-space-l); justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout1">
-   <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
+   <vaadin-button theme="primary" id="vaadinButton" style="align-self: center;  background-color: #7800ff; color: white;">
      Guardar 
    </vaadin-button>
-   <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
+   <vaadin-button theme="primary" id="vaadinButton1" style="align-self: center;  background-color: grey; color: white;">
      Cancelar 
    </vaadin-button>
   </vaadin-horizontal-layout>

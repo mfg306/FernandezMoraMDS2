@@ -24,11 +24,11 @@ class VistaPedido_t extends PolymerElement {
    <label style="margin: var(--lumo-space-m);" id="label2">Fecha pedido</label>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="vaadinVerticalLayout2">
-   <vaadin-button id="vaadinButton1" style="align-self: center; flex-grow: 0; background-color: #ae1641;" theme="primary">
+   <vaadin-button id="vaadinButton1" style="align-self: center;  background-color: #7800ff;" theme="primary">
      Marcar como enviado 
     <iron-icon icon="lumo:bell" style="vertical-align: top;" id="ironIcon"></iron-icon>
    </vaadin-button>
-   <vaadin-button theme="primary" style="align-self: center; flex-grow: 0; margin-top: 50%; background-color: #ae1641;" id="vaadinButton">
+   <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="vaadinButton">
      Ver ficha 
    </vaadin-button>
   </vaadin-vertical-layout>

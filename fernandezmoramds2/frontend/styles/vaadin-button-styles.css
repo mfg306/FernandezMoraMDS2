@@ -1,0 +1,13 @@
+/*
+   CSS styling examples for the Vaadin app.
+   Visit https://vaadin.com/docs/flow/theme/theming-overview.html and
+   https://vaadin.com/themes/lumo for more information.
+*/
+
+
+:host {
+	align-self: flex-end;
+	margin: var(- -lumo-space-m);
+	background-color: #ae1641;
+	color: white;
+}

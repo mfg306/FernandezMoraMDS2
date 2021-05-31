@@ -47,8 +47,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this.getCorreo().setVisible(true);
 		this.getBotonRegistrarse().setVisible(true);
 		this.getVaadinButton1().setVisible(true);
-		this.getModoEmpleado().setVisible(false);
-		this.getH1().setVisible(true);
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
 		abrirIniciarSesionEmpleados();
@@ -84,9 +82,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 			this.getNombre_usuario().setVisible(true);
 			this.getCorreo().setVisible(false);
 			this.getBotonRegistrarse().setVisible(false);
-			this.getModoEmpleado().setVisible(true);
 			this.getVaadinButton1().setVisible(false);
-			this.getH1().setVisible(false);
 			this.getEnlaceEmpleados().setVisible(false);
 			
 			

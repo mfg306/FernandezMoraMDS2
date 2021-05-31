@@ -10,6 +10,10 @@
     background-color: var(--lumo-base-color);
 }
 
+:host([focus-ring]) [part="input-field"] {
+  box-shadow: 20px solid orange;
+}
+
 *{
 	font-family: 'Poppins';
 }

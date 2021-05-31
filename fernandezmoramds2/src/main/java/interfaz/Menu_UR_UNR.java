@@ -16,10 +16,9 @@ public abstract class Menu_UR_UNR extends VistaMenu_urunr {
 
 	public Menu_UR_UNR(UR_UNR urunr) {
 		this._uR_UNR = urunr;
-		this.getLogo_tienda().setSrc("icons/logo.jpg");
-		this.getLogo_tienda().setWidth("10vw");
-		this.getLogo_tienda().setHeight("10vw");
+		this.getLogo_tienda().setSrc("icons/logo.png");
 		this.getLogo_tienda().setAlt("Logo de la tienda");
+		this.getLogo_tienda().setWidth("30%");
 
 		this.getBoton_carrito().setSrc("carrito.png");
 		this.getBoton_carrito().setWidth("3vw");

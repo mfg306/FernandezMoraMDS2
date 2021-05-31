@@ -14,7 +14,7 @@ class VistaGestionar_empleados extends PolymerElement {
 
                 }
             </style>
-<vaadin-button id="retroceder" style="align-self: flex-start; border-radius: 4vw; background-color: black;  color: white;">
+<vaadin-button id="retroceder" style="background-color: grey; color: white;">
   &lt; 
 </vaadin-button>
 <vaadin-vertical-layout style="width: 100%; align-items: center;" id="vaadinVerticalLayout">

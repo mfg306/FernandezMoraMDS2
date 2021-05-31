@@ -21,7 +21,7 @@ class VistaPedido_e extends PolymerElement {
    <label style="align-self: center; margin-left: 10%;" id="label2">Fecha:</label>
    <label id="numTotalUnidades" style="align-self: center; margin-left: 10%;">N</label>
    <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; width: 100%; margin-left: 5%;" id="vaadinHorizontalLayout1">
-    <vaadin-button theme="primary" id="botonAsignar" style="background-color: #ae1641;">
+    <vaadin-button theme="primary" id="botonAsignar" style="align-self: center;  background-color: #7800ff;">
       Asignar 
     </vaadin-button>
    </vaadin-horizontal-layout>

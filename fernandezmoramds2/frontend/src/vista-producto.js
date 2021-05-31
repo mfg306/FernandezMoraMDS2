@@ -18,12 +18,12 @@ class VistaProducto extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; margin-top: var(--lumo-space-l);" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; padding: var(--lumo-space-m);" id="vaadinVerticalLayout1">
    <vaadin-horizontal-layout theme="spacing" style="align-self: center; justify-content: space-between; width: 100%; height: 100%; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout1">
     <span id="nombre_producto" style="font-size: 2vw;"></span>
-    <vaadin-button id="boton_anadir_carrito" style="color: #ae1641;">
+    <vaadin-button id="boton_anadir_carrito" style="color: #7800ff;">
       Anadir a carrito 
     </vaadin-button>
    </vaadin-horizontal-layout>
@@ -38,7 +38,7 @@ class VistaProducto extends PolymerElement {
    <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; background-color: #F5F5F5; padding: var(--lumo-space-l);" id="vaadinVerticalLayout2">
     <vaadin-text-field placeholder="Deja tu comentario ..." style="height: 100%; padding: var(--lumo-space-m); align-self: center; width: 100%;" required name="comentario" invalid id="dejar_comentario"></vaadin-text-field>
     <vaadin-vertical-layout theme="spacing" id="valorarProducto"></vaadin-vertical-layout>
-    <vaadin-button theme="primary" style="align-self: flex-end; background-color: #ae1641;" id="enviar_comentario">
+    <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="enviar_comentario">
       Enviar comentario 
     </vaadin-button>
    </vaadin-vertical-layout>

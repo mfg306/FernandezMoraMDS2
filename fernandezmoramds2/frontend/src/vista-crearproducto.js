@@ -22,11 +22,11 @@ class VistaCrear_producto extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; justify-content: center; background-color: #F1F2F2; align-self: center; padding: var(--lumo-space-xl);" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout theme="spacing" style="width: 80%; align-self: center;" id="vaadinVerticalLayout1">
    <vaadin-horizontal-layout theme="spacing" style="height: 100%; width: 40%;" id="vaadinHorizontalLayout1">
-    <vaadin-text-field label="Nombre producto:" placeholder="Introduzca un nombre producto" style="flex-grow: 1; width: 100%;" id="nombreProducto"></vaadin-text-field>
+    <vaadin-text-field label="Nombre producto:" placeholder="Introduzca un nombre producto" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0;" id="nombreProducto"></vaadin-text-field>
    </vaadin-horizontal-layout>
-   <vaadin-text-field label="Precio:" placeholder="Introduzca un precio" id="precio"></vaadin-text-field>
-   <vaadin-text-area label="Anade una descripcion al producto:" placeholder="Descripcion" style="width: 50%;" id="añadeUnaDescripciónAlProducto"></vaadin-text-area>
-   <vaadin-text-field label="Cantidad disponible:" placeholder="Cantidad" id="cantidadProducto"></vaadin-text-field>
+   <vaadin-text-field label="Precio:" placeholder="Introduzca un precio" id="precio" style="align-self: flex-start; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0;"></vaadin-text-field>
+   <vaadin-text-area label="Anade una descripcion al producto:" placeholder="Descripcion" style="align-self: flex-start; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0;" id="añadeUnaDescripciónAlProducto"></vaadin-text-area>
+   <vaadin-text-field label="Cantidad disponible:" placeholder="Cantidad" id="cantidadProducto" style="border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; align-self: flex-start;"></vaadin-text-field>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" style="width: 60%;" id="vaadinVerticalLayout2">
    <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="vaadinHorizontalLayout2">
@@ -38,10 +38,10 @@ class VistaCrear_producto extends PolymerElement {
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; margin-top: var(--lumo-space-l); justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout3">
-  <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
+  <vaadin-button theme="primary" id="vaadinButton1" style="align-self: center;  background-color: #7800ff;">
     Guardar 
   </vaadin-button>
-  <vaadin-button theme="primary" id="vaadinButton2" style="background-color: #ae1641;">
+  <vaadin-button theme="primary" id="vaadinButton2" style="background-color: grey; color: white;">
     Cancelar 
   </vaadin-button>
  </vaadin-horizontal-layout>

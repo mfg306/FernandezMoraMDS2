@@ -37,6 +37,7 @@ public class Categorias extends VistaCategorias {
 		layout = this.getLista_Categorias().as(VerticalLayout.class);
 		categoriasPorPagina = 2;
 		numeroTotalRegistros = 0;
+		this.getPartePaginacion().setVisible(true);
 		parte_paginacion();
 		abrirCategorias();
 		Ver_anteriores();
@@ -143,7 +144,11 @@ public class Categorias extends VistaCategorias {
 				this.add_Categorias(c);
 			}	
 		} else {
-			this.noHayCategorias.setVisible(true);
+			this.noHayCategorias = new H1();
+			this.noHayCategorias.setText("No hay ninguna categoria en la base de datos");
+			this.layout.add(this.noHayCategorias);
+			this.getPartePaginacion().setVisible(false);
+//			this.noHayCategorias.setVisible(true);
 		}
 
 	}

@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 
 /**
  * A Designer generated component for the vista-oferta template.

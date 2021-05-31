@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
 import basededatos.BDPrincipal;
@@ -19,8 +20,9 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 	base_de_datos.Usuario_General general;
 	base_de_datos.Mensaje mensaje;
 
-
-	/** Constructor para cuando se accede a traves de los mensajes recibidos
+	/**
+	 * Constructor para cuando se accede a traves de los mensajes recibidos
+	 * 
 	 * @param general
 	 * @param mr
 	 */
@@ -32,11 +34,25 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 	}
 
 	/**
+	 * Constructor para cuando se accede a traves de los mensajes enviados
+	 * 
+	 * @param general
+	 * @param mr
+	 */
+	public Crear_mensaje(base_de_datos.Usuario_General general, Mensajes_enviados me) {
+		this.general = general;
+		this._mensajes_enviados = me;
+		crearMensaje();
+		inicializar();
+	}
+
+	/**
 	 * Este constructor es para cuando se quiere responder a un mensaje
+	 * 
 	 * @param general usuario que envia el mensaje
 	 * @param mensaje mensaje al que se va a responder
 	 */
-	public Crear_mensaje(base_de_datos.Usuario_General general, base_de_datos.Mensaje mensaje,  Mensajes_recibidos mr) {
+	public Crear_mensaje(base_de_datos.Usuario_General general, base_de_datos.Mensaje mensaje, Mensajes_recibidos mr) {
 		this.general = general;
 		this.mensaje = mensaje;
 		this._mensajes_recibidos = mr;
@@ -51,27 +67,31 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 			posiblesUsuarios.setWidth("100%");
 			this.getHuecoSelect().add(posiblesUsuarios);
 			cargarClientes();
-			
+
 		}
-		
+
 		retroceder();
 	}
-	
+
 	public void limpiar_interfaz() {
-		if(this._mensajes_recibidos != null) {
+		if (this._mensajes_recibidos != null) {
 			this._mensajes_recibidos._ver_bandeja_de_entrada.layout.remove(this);
 			this._mensajes_recibidos._ver_bandeja_de_entrada.inicializar();
 		}
+		
+		if(this._mensajes_enviados != null) {
+			this._mensajes_enviados._ver_bandeja_de_entrada.inicializar();
+		}
 	}
-	
+
 	public void retroceder() {
-		this.getBoton_atras().addClickListener(event ->{
-			/*Redirigimos a mensajes recibidos*/
+		this.getBoton_atras().addClickListener(event -> {
+			/* Redirigimos a mensajes recibidos */
 			limpiar_interfaz();
 		});
 
 	}
-	
+
 	public void cargarClientes() {
 		iAdministrador admin = new BDPrincipal();
 		ArrayList<String> listaCorreos;
@@ -97,7 +117,7 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 				try {
 					iadmin.enviarMensaje(posiblesUsuarios.getValue(), this.getMensaje().getValue(),
 							this.getAsunto().getValue(), this.general);
-					limpiar_interfaz(); 
+					limpiar_interfaz();
 				} catch (PersistentException e) {
 					e.printStackTrace();
 				}
@@ -108,22 +128,23 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 				try {
 					iur.enviarMensaje("admin@admin.es", this.getMensaje().getValue(), this.getAsunto().getValue(),
 							this.general);
-					retroceder(); /*...*/
+					limpiar_interfaz();
 				} catch (PersistentException e) {
 					e.printStackTrace();
 				}
 			}
 			Notification.show("Mensaje enviado con exito");
 		});
-		
+
 	}
 
 	public void responderMensaje() {
 		this.getBoton_enviar().addClickListener(event -> {
-			if(this.general instanceof base_de_datos.UR) {
+			if (this.general instanceof base_de_datos.UR) {
 				iUR iur = new BDPrincipal();
 				try {
-					iur.responderMensaje(this.mensaje.getCorreo_emisor(), this.getMensaje().getValue(), this.general, mensaje);
+					iur.responderMensaje(this.mensaje.getCorreo_emisor(), this.getMensaje().getValue(), this.general,
+							mensaje);
 					Notification.show("Su respuesta se ha mandado con éxito");
 					limpiar_interfaz();
 				} catch (PersistentException e) {
@@ -131,13 +152,14 @@ public class Crear_mensaje extends VistaCrear_mensaje {
 					Notification.show("Se ha producido un error al enviar su mensaje. Vuelva a intentarlo");
 				}
 			}
-			
-			if(this.general instanceof base_de_datos.Administrador) {
+
+			if (this.general instanceof base_de_datos.Administrador) {
 				iAdministrador iadmin = new BDPrincipal();
 				try {
-					iadmin.responderMensaje(this.mensaje.getCorreo_emisor(), this.getMensaje().getValue(), this.general, mensaje);
+					iadmin.responderMensaje(this.mensaje.getCorreo_emisor(), this.getMensaje().getValue(), this.general,
+							mensaje);
 					Notification.show("Su respuesta se ha mandado con éxito");
-					retroceder();
+					limpiar_interfaz();
 				} catch (PersistentException e) {
 					e.printStackTrace();
 					Notification.show("Se ha producido un error al enviar su mensaje. Vuelva a intentarlo");

@@ -16,19 +16,19 @@ class VistaMensajes_recibidos extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="lista_mensajes_recibidos">
- <vaadin-button id="boton_crear_mensaje" style="color: #ae1641;">
+ <vaadin-button id="boton_crear_mensaje" style="color: #7800ff;">
    Crear mensaje 
  </vaadin-button>
  <vaadin-vertical-layout theme="spacing" id="hueco_mensajes_recibidos"></vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; align-self: center; justify-content: center; align-items: center;" id="vaadinHorizontalLayout">
-  <vaadin-button id="boton_pagina_anterior">
+  <vaadin-button id="boton_pagina_anterior" style="background-color: grey; color: white;">
     &lt; 
   </vaadin-button>
-  <span id="numero_de_pagina">Pagina</span>
+  <span id="numero_de_pagina"></span>
   <span id="paginaActual"></span>
-  <span id="span">de</span>
+  <span id="span"></span>
   <span id="totalPaginas"></span>
-  <vaadin-button id="boton_pagina_siguiente">
+  <vaadin-button id="boton_pagina_siguiente" style="background-color: grey; color: white;">
     &gt; 
   </vaadin-button>
  </vaadin-horizontal-layout>

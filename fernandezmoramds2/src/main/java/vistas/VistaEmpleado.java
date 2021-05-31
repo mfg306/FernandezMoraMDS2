@@ -29,12 +29,12 @@ public class VistaEmpleado extends PolymerTemplate<VistaEmpleado.VistaEmpleadoMo
 	private Label label;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinButton")
-	private Button vaadinButton;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
 	@Id("tipoEmpleado")
 	private Span tipoEmpleado;
+	@Id("vaadinButton")
+	private Button vaadinButton;
 
 	/**
      * Creates a new VistaEmpleado.

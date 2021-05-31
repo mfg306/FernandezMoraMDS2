@@ -14,8 +14,8 @@ class VistaOferta extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
- <vaadin-button id="botonOferta" style="width: 100%; box-shadow: 2px 2px 5px grey; color: black; text-aling: center;"></vaadin-button>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
+ <vaadin-button id="botonOferta" style="width: 100%; box-shadow: 2px 2px 5px grey; color: black; text-aling: center; height: 100%;  font-size: 1.5vw; font-family: 'Poppins';"></vaadin-button>
 </vaadin-vertical-layout>
 `;
     }

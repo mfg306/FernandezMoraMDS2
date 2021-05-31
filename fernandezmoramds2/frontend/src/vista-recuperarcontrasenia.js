@@ -19,8 +19,8 @@ class VistaRecuperar_contrasenia extends PolymerElement {
  <div style="width: 80%; height: 100%; align-self: center;" id="div">
   <vaadin-vertical-layout theme="spacing" style="align-items: center; justify-content: center; width: 100%; height: 100%;" id="vaadinVerticalLayout1">
    <span style="font-size: 4vw; font-weight: bold; " id="span">RECUPERA TU CONTRASENA</span>
-   <vaadin-text-field placeholder="Introduzca su correo electronico" style="width: 100%;" id="correo"></vaadin-text-field>
-   <vaadin-button theme="primary" id="boton_enviar_correo" style="background-color: #ae1641;">
+   <vaadin-text-field placeholder="Introduzca su correo electronico" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" id="correo"></vaadin-text-field>
+   <vaadin-button theme="primary" id="boton_enviar_correo" style="align-self: center;  background-color: #7800ff;">
      Enviar correo 
    </vaadin-button>
   </vaadin-vertical-layout>

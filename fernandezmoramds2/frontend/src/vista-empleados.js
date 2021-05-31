@@ -18,13 +18,13 @@ class VistaEmpleados extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; align-items: center;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout theme="spacing" id="huecoEmpleados" style="width: 100%; align-self: center; align-items: center; justify-content: center;"></vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout">
-  <vaadin-button theme="primary" id="botonAnteriores" style="background-color: #ae1641;">
+  <vaadin-button theme="primary" id="botonAnteriores" style="background-color: grey; color: white;">
     Anterior 
   </vaadin-button>
-  <span id="paginaActual">Span</span>
-  <span id="de">de</span>
-  <span id="totalPaginas">Span</span>
-  <vaadin-button theme="primary" id="botonSiguientes" style="background-color: #ae1641;">
+  <span id="paginaActual"></span>
+  <span id="de"></span>
+  <span id="totalPaginas"></span>
+  <vaadin-button theme="primary" id="botonSiguientes" style="background-color: grey; color: white;">
     Siguiente 
   </vaadin-button>
  </vaadin-horizontal-layout>

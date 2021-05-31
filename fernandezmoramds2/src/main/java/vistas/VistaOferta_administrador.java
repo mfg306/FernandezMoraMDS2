@@ -33,6 +33,8 @@ public class VistaOferta_administrador extends PolymerTemplate<VistaOferta_admin
 	private Button vaadinButton1;
 	@Id("label")
 	private Label label;
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
 
 	/**
      * Creates a new VistaOferta_administrador.

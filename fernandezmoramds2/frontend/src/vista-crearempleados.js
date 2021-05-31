@@ -19,8 +19,8 @@ class VistaCrear_empleados extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <h1 style="align-self: center;" id="h1">Crear empleado</h1>
- <vaadin-text-field style="align-self: center;" label="Introduzca un correo:" id="introduzcaUnCorreo"></vaadin-text-field>
- <vaadin-text-field style="align-self: center; margin: var(--lumo-space-m);" label="Introduzca una contrasena:" id="introduzcaUnaContraseña"></vaadin-text-field>
+ <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey;  border-radius: 0; padding-bottom: 0;" label="Introduzca un correo:" id="introduzcaUnCorreo" autofocus></vaadin-text-field>
+ <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0;" label="Introduzca una contrasena:" id="introduzcaUnaContraseña"></vaadin-text-field>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-self: center; align-items: center; justify-content: center;">
   <vaadin-checkbox id="vaadinCheckbox" style="align-self: center;">
     Transportista 
@@ -29,7 +29,7 @@ class VistaCrear_empleados extends PolymerElement {
     Encargado 
   </vaadin-checkbox>
  </vaadin-horizontal-layout>
- <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="vaadinButton">
+ <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="vaadinButton">
    Crear 
  </vaadin-button>
 </vaadin-vertical-layout>

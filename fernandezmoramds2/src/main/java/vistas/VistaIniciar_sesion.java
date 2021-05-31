@@ -13,6 +13,7 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Image;
 
 /**
  * A Designer generated component for the vista-iniciar_sesion template.
@@ -41,20 +42,18 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 	private PasswordField contrasenia;
 	@Id("boton_iniciar_sesion")
 	private Button boton_iniciar_sesion;
-	@Id("h1")
-	private H1 h1;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinVerticalLayout2")
 	private Element vaadinVerticalLayout2;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("modoEmpleado")
-	private H1 modoEmpleado;
 	@Id("enlaceEmpleados")
 	private Button enlaceEmpleados;
 	@Id("boton_iniciar_sesion_empleados")
 	private Button boton_iniciar_sesion_empleados;
+	@Id("img")
+	private Image img;
 	/**
 	 * Creates a new VistaIniciar_sesion.
 	 */
@@ -134,14 +133,6 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 		this.contrasenia = contrasenia;
 	}
 
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
 	}
@@ -166,14 +157,6 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public H1 getModoEmpleado() {
-		return modoEmpleado;
-	}
-
-	public void setModoEmpleado(H1 modoEmpleado) {
-		this.modoEmpleado = modoEmpleado;
-	}
-
 	public Button getEnlaceEmpleados() {
 		return enlaceEmpleados;
 	}
@@ -188,6 +171,14 @@ public class VistaIniciar_sesion extends PolymerTemplate<VistaIniciar_sesion.Vis
 
 	public void setBoton_iniciar_sesion_empleados(Button boton_iniciar_sesion_empleados) {
 		this.boton_iniciar_sesion_empleados = boton_iniciar_sesion_empleados;
+	}
+
+	public Image getImg() {
+		return img;
+	}
+
+	public void setImg(Image img) {
+		this.img = img;
 	}
 
 

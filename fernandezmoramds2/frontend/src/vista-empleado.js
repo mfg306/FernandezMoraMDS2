@@ -19,13 +19,13 @@ class VistaEmpleado extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; height: 100%; background-color: #F1F2F2; align-self: center; padding: var(--lumo-space-l);" id="vaadinHorizontalLayout">
   <label style="align-self: center;" id="label"></label>
   <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; width: 100%;" id="vaadinHorizontalLayout1">
-   <vaadin-button theme="primary" style="margin-left: 40%; background-color: #ae1641;" id="vaadinButton">
+   <vaadin-button theme="primary" id="vaadinButton" style="background-color: #7800ff;">
      Editar 
    </vaadin-button>
-   <vaadin-button theme="primary" id="vaadinButton1" style="background-color: #ae1641;">
+   <vaadin-button theme="primary" id="vaadinButton1" style="background-color: red;">
      Eliminar 
    </vaadin-button>
-   <span id="tipoEmpleado">Span</span>
+   <span id="tipoEmpleado" style="align-self: center;"></span>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

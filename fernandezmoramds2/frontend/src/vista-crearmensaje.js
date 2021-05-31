@@ -19,16 +19,16 @@ class VistaCrear_mensaje extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <span style="font-size: 4vw; font-weight: bold; align-self: center; text-align: center; margin-top: var(--lumo-space-xl);" id="span">BANDEJA DE ENTRADA</span>
  <vaadin-vertical-layout theme="spacing" style="width: 80%; height: 100%; align-self: center;" id="vaadinVerticalLayout1">
-  <vaadin-text-field id="asunto" style="width: 100%;" placeholder="Introduzca un asunto"></vaadin-text-field>
+  <vaadin-text-field id="asunto" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Introduzca un asunto"></vaadin-text-field>
   <vaadin-horizontal-layout id="huecoSelect" style="width: 100%;"></vaadin-horizontal-layout>
-  <vaadin-text-field id="mensaje" style="width: 100%; height: 100%;" placeholder="Introduzca su mensaje"></vaadin-text-field>
+  <vaadin-text-field id="mensaje" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Introduzca su mensaje"></vaadin-text-field>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
-<vaadin-horizontal-layout theme="spacing" style="justify-content: space-around; width: 100%; align-items: center; flex-direction: row;" id="vaadinHorizontalLayout1">
- <vaadin-button id="boton_atras" style="align-self: center; color: #ae1641;">
-  Volver atras
+<vaadin-horizontal-layout theme="spacing" style="justify-content: center; align-items: center; flex-direction: row;" id="vaadinHorizontalLayout1">
+ <vaadin-button id="boton_atras" style="background-color: grey; color: white;">
+   Volver atras 
  </vaadin-button>
- <vaadin-button theme="primary" id="boton_enviar" style="align-self: center; background-color: #ae1641;">
+ <vaadin-button theme="primary" id="boton_enviar" style="align-self: center;  background-color: #7800ff;">
    Enviar mensaje 
  </vaadin-button>
 </vaadin-horizontal-layout>

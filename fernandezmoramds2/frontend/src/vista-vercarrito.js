@@ -22,7 +22,7 @@ class VistaVer_carrito extends PolymerElement {
   <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-self: center;" id="vaadinVerticalLayout">
    <span style="align-self: center;" id="span">Precio total de la compra:</span>
    <span style="align-self: center;" id="span1"></span>
-   <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="vaadinButton">
+   <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="vaadinButton">
      Comprar 
    </vaadin-button>
   </vaadin-vertical-layout>

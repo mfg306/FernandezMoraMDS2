@@ -16,11 +16,11 @@ class VistaGestionar_ofertas extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; align-items: flex-start;" id="vaadinVerticalLayout">
- <vaadin-button id="retroceder" style="align-self: flex-start; border-radius: 4vw; background-color: black;  color: white;">
+ <vaadin-button id="retroceder" style="background-color: grey; color: white;">
    &lt; 
  </vaadin-button>
  <h1 style="align-self: center;" id="h1">Mis ofertas</h1>
- <vaadin-button theme="primary" style="margin: var(--lumo-space-l); background-color: #ae1641;" id="vaadinButton">
+ <vaadin-button theme="primary" style="align-self: flex-start; background-color: #7800ff;" id="vaadinButton">
    Nueva oferta 
  </vaadin-button>
  <vaadin-vertical-layout id="vaadinVerticalLayout1">

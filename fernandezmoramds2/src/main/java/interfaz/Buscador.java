@@ -34,6 +34,8 @@ public class Buscador extends VistaBuscador {
 		Icon icon = new Icon("lumo", "search");
 		_busquedaTF.setPrefixComponent(icon);
 		_busquedaTF.setWidth("100%");
+		
+		this._busquedaTF.setClearButtonVisible(true);
 
 		inicializar(urunr);
 	}

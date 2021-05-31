@@ -19,7 +19,7 @@ class VistaProducto_carrito extends PolymerElement {
 <vaadin-vertical-layout id="vaadinVerticalLayout">
  <img id="img">
  <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout">
-  <vaadin-button style="width: 100%; color: #ae1641;" id="vaadinButton">
+  <vaadin-button style="background-color: red; color: white;" id="vaadinButton">
     Eliminar 
   </vaadin-button>
   <vaadin-checkbox id="checkEliminar" style="align-self: center; flex-grow: 0;"></vaadin-checkbox>

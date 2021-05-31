@@ -21,7 +21,7 @@ class VistaMensaje_recibido extends PolymerElement {
   <span style="flex-grow: 0; flex-shrink: 0;" id="span"></span>
   <span style="width: 100%; flex-grow: 0; flex-shrink: 1; align-self: center;" id="span1"></span>
   <span id="span2" style="width: 100%; align-self: center;"></span>
-  <vaadin-button theme="primary" id="responder" style="align-self: center; width: 100%; background-color: #ae1641;">
+  <vaadin-button theme="primary" id="responder" style="align-self: center; background-color: #7800ff; width: 100%;">
     Responder 
   </vaadin-button>
  </vaadin-horizontal-layout>

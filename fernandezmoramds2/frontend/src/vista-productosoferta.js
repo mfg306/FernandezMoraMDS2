@@ -19,14 +19,14 @@ class VistaProductos_oferta extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing-l" style="align-self: center; background-color: #F5F5F5; height: 100%; padding: var(--lumo-space-m); align-items: center; justify-content: center;" id="lista_productos_oferta"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: center; align-items: center; justify-content: center; margin-top: var(--lumo-space-xl); margin-bottom: var(--lumo-space-s);" id="vaadinHorizontalLayout">
-  <vaadin-button id="boton_pagina_anterior" style="color: #ae1641;">
+  <vaadin-button id="boton_pagina_anterior" style="background-color: grey; color: white;">
     &lt; 
   </vaadin-button>
   <span id="span1">Página</span>
-  <span id="primeraPagina">Span</span>
+  <span id="primeraPagina"></span>
   <span id="numero_pagina">de</span>
-  <span id="ultimaPagina">Span</span>
-  <vaadin-button id="boton_pagina_siguiente" style="color: #ae1641;">
+  <span id="ultimaPagina"></span>
+  <vaadin-button id="boton_pagina_siguiente" style="background-color: grey; color: white;">
     &gt; 
   </vaadin-button>
  </vaadin-horizontal-layout>

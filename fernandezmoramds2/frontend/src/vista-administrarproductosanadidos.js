@@ -36,13 +36,13 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%;">
   <vaadin-horizontal-layout theme="spacing" id="layoutNombreCategoria" style="width: 100%;">
    <label id="nombreCategoria" style="padding: var(--lumo-space-m);">Nombre categoria</label>
-   <vaadin-text-field id="campoCategoria" style="align-self: center;"></vaadin-text-field>
+   <vaadin-text-field id="campoCategoria" style="align-self: center; border-bottom: 2px solid grey; padding: 0; border-radius: 0;"></vaadin-text-field>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%;">
   <vaadin-horizontal-layout theme="spacing" id="layoutNombreOferta" style="width: 100%;">
    <span id="campoOferta1">Nombre oferta</span>
-   <vaadin-text-field id="campoOferta" style="align-self: center;"></vaadin-text-field>
+   <vaadin-text-field id="campoOferta" style="align-self: center; border-bottom: 2px solid grey; padding: 0; border-radius: 0;"></vaadin-text-field>
    <span id="fechaCaducidad">Fecha caducidad</span>
    <vaadin-date-picker id="campoFecha"></vaadin-date-picker>
   </vaadin-horizontal-layout>
@@ -50,7 +50,7 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout_administrador_productos_anadidos" style="width: 100%;">
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout_zonaProductos" style="width: 100%;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1_zonaProductos" style="width: 100%; justify-content: center;">
-    <h2 id="h2"> Seleccione los productos a:</h2>
+    <h2 id="h2">Seleccione los productos a añadir:</h2>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1_productos_anadidos" style="width: 100%; align-self: flex-end;">
@@ -63,10 +63,10 @@ class VistaAdministrar_productos_anadidos extends PolymerElement {
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; justify-content: center;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="width: 100%;"></vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%; align-self: center; align-items: center; justify-content: center;">
-    <vaadin-button theme="primary" id="botonCancelar" style="background-color: #ae1641;">
+    <vaadin-button theme="primary" id="botonCancelar" style="background-color: grey;">
       Cancelar 
     </vaadin-button>
-    <vaadin-button theme="primary" id="vaadinButton" style="background-color: #ae1641;">
+    <vaadin-button theme="primary" id="vaadinButton" style="background-color: #7800ff;">
       Guardar 
     </vaadin-button>
    </vaadin-horizontal-layout>

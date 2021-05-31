@@ -18,9 +18,9 @@ class VistaIntroducir_datos_compra extends PolymerElement {
 <vaadin-vertical-layout style="width: 100%; align-items: center; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout theme="spacing" style="height: 100%; width: 80%; justify-content: center; align-items: center;" id="vaadinVerticalLayout1">
   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span">Introduzca los datos de su compra</span>
-  <vaadin-text-field id="direccion_envio" style="width: 100%;" placeholder="Introduzca una direccion de envio"></vaadin-text-field>
-  <vaadin-text-field id="metodo_pago" style="width: 100%;" placeholder="Introduzca un metodo de pago"></vaadin-text-field>
-  <vaadin-button theme="primary" id="boton_continuar" style="background-color: #ae1641;">
+  <vaadin-text-field id="direccion_envio" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Introduzca una direccion de envio"></vaadin-text-field>
+  <vaadin-text-field id="metodo_pago" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Introduzca un metodo de pago"></vaadin-text-field>
+  <vaadin-button theme="primary" id="boton_continuar" style="align-self: center;  background-color: #7800ff;">
     Continuar 
   </vaadin-button>
  </vaadin-vertical-layout>

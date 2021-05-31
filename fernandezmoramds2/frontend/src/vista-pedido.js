@@ -22,7 +22,7 @@ class VistaPedido extends PolymerElement {
   <span id="precio" style="width: 100%;"></span>
   <span id="fecha" style="width: 100%;"></span>
   <vaadin-vertical-layout theme="spacing" style="width: 100%; align-self: center;" id="vaadinVerticalLayout">
-   <vaadin-button theme="primary" style="align-self: center; background-color: #ae1641;" id="boton_cancelar_pedido">
+   <vaadin-button theme="primary" style="align-self: center;  background-color: red;" id="boton_cancelar_pedido">
      Cancelar 
    </vaadin-button>
   </vaadin-vertical-layout>

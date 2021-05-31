@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.Timer;
 import java.util.Vector;
 
 
@@ -12,7 +13,7 @@ public class Ofertas extends VistaOfertas {
 	public UR_UNR _uR_UNR;
 	public Vector<Oferta> _list_Ofertas;
 	public base_de_datos.Oferta[] ofertas;
-
+	
 	public Ofertas(UR_UNR urunr) {
 
 		inicializar(urunr);
@@ -28,7 +29,7 @@ public class Ofertas extends VistaOfertas {
 		Ver_siguientes();
 
 	}
-
+	
 	public void Ver_anteriores() {
 		this.getBoton_anterior().addClickListener(event -> {
 			if (this._uR_UNR.indiceOfertas > 0) {
@@ -74,4 +75,5 @@ public class Ofertas extends VistaOfertas {
 			this._uR_UNR.layoutOfertas.add(this);
 		}
 	}
+
 }
