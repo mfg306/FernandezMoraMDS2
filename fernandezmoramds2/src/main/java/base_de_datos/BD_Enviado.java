@@ -24,13 +24,16 @@ public class BD_Enviado {
 			t.rollback();
 		}
 
-		HitoPersistentManager.instance().disposePersistentManager();
-
 		return e;
 	}
 
-	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Transportista aTransportista,
-			Encargado_de_compras aEncargado) throws PersistentException {
+	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Encargado_de_compras aEncargado) throws PersistentException {
+		
+		Transportista transportista = null;
+		
+		this._bDPrincipal = new BDPrincipal();
+		transportista = this._bDPrincipal.buscarTransportistaCola(aPedidoPendiente.getId_cola());
+		
 		PersistentTransaction t = HitoPersistentManager.instance().getSession().beginTransaction();
 
 		Enviado e = EnviadoDAO.createEnviado();
@@ -41,7 +44,7 @@ public class BD_Enviado {
 
 		e.setORM__Procesa(aEncargado);
 		
-		e.setORM__Transportista(aTransportista);
+		e.setORM__Transportista(transportista);
 		e.setFecha_estado(fechaActualizacion);
 		e.setNum_total_unidades(aPedidoPendiente.getNum_total_unidades());
 		e.setPrecio_total(aPedidoPendiente.getPrecio_total());
@@ -61,6 +64,19 @@ public class BD_Enviado {
 		} catch (Exception ex2) {
 			ex2.printStackTrace();
 		}
+//		
+//		PersistentTransaction t2 = HitoPersistentManager.instance().getSession().beginTransaction();
+//
+//		try {
+//			aPedidoPendiente.setEnviado(e);
+//			PendienteDAO.save(aPedidoPendiente);
+//			
+//			t2.commit();
+//		} catch(Exception ex) {
+//			ex.printStackTrace();
+//			t2.rollback();
+//		}
+		
 	}
 
 	public Enviado[] cargarEnviados() throws PersistentException {
@@ -74,8 +90,6 @@ public class BD_Enviado {
 			t.rollback();
 		}
 
-		HitoPersistentManager.instance().disposePersistentManager();
-
 		return enviados;
 
 	}
@@ -86,6 +100,12 @@ public class BD_Enviado {
 		Pendiente pendientes[] = PendienteDAO
 				.listPendienteByQuery("Encargado_de_comprasEmpleadoIdEmpleado = " + encargado.getIdEmpleado(), null);
 
+		
+		/*Esta condicion no es suficiente porque puede haber varios Enviados con el mismo id_cola y el 
+		 * mismo encargado y nos va a devolver el primero que se encuentre. 
+		 * 
+		 * En la base de datos necesitamo relacionar cada Pendiente con cada Enviado de 1:1 para poder 
+		 * acceder a cada Pendiente sin confusion*/
 		for (Pendiente p : pendientes) {
 			if (p.getId_cola() == aTransportista.getId_cola()) {
 				return p.get_Hace_compra();
@@ -104,6 +124,8 @@ public class BD_Enviado {
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();
+			HitoPersistentManager.instance().disposePersistentManager();
+
 			return false;
 		}
 
