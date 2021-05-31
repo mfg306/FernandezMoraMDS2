@@ -194,8 +194,8 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 		throw new UnsupportedOperationException();
 	}
 
-	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Transportista aTransportista, Encargado_de_compras aEncargado) throws PersistentException {
-		this._bD_Enviado.asignarPedidoTransportista(aPedidoPendiente, aTransportista, aEncargado);
+	public void asignarPedidoTransportista(Pendiente aPedidoPendiente, Encargado_de_compras aEncargado) throws PersistentException {
+		this._bD_Enviado.asignarPedidoTransportista(aPedidoPendiente, aEncargado);
 	}
 
 	public Pendiente[] cargarPedidosE(int aIdEncargado) throws PersistentException {
@@ -340,11 +340,6 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	}
 
 	@Override
-	public Transportista[] cargarTransportistas() throws PersistentException {
-		return this._bD_Transportistas.cargarTransportistas();
-	}
-
-	@Override
 	public boolean eliminarPendiente(Pendiente aPedidoPendiente) throws PersistentException {
 		return this._bD_Pendiente.eliminarPendiente(aPedidoPendiente);
 	}
@@ -426,6 +421,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	@Override
 	public Oferta[] cargarOfertasAdmin() throws PersistentException {
 		return this._bD_Ofertas.cargarOfertasAdmin();
+	}
+
+	@Override
+	public Transportista buscarTransportistaCola(int aIdCola) throws PersistentException {
+		return this._bD_Transportistas.buscarTransportistaCola(aIdCola);
 	}
 	
 	
