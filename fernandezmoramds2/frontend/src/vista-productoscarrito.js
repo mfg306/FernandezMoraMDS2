@@ -1,7 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 class VistaProductos_carrito extends PolymerElement {
 
@@ -24,7 +24,7 @@ class VistaProductos_carrito extends PolymerElement {
     Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 100%; height: 100%;" id="vaadinHorizontalLayout1"></vaadin-horizontal-layout>
+ <vaadin-vertical-layout theme="spacing" id="listadoProductos" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
     }

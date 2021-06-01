@@ -12,14 +12,18 @@ public class Productos_carrito extends VistaProductos_carrito {
 	public Vector<Producto_carrito> _list_Producto_carrito;
 	public Producto_carrito _producto_carrito;
 	public VerticalLayout layout;
-	public HorizontalLayout listadoProductos;
+	public VerticalLayout listadoProductos;
 	private boolean seleccionarVarios;
+	int contadorLayout = 0; 
 
 	public Productos_carrito(Vector<Producto_carrito> aux, Ver_carrito vc, UR_UNR usuario) {
 		this._ver_carrito = vc;
 		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
 		seleccionarVarios = false;
 		actualizar_datos(usuario);
+		
+		listadoProductos = this.getListadoProductos().as(VerticalLayout.class);
+		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 
 		inicializar(usuario);
 		
@@ -28,20 +32,32 @@ public class Productos_carrito extends VistaProductos_carrito {
 	}
 
 	public void inicializar(UR_UNR usuario) {
-		listadoProductos = this.getVaadinHorizontalLayout1();
-		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
+		this.listadoProductos.removeAll();
 		mostrarProductos();
 
 	}
 
 	public void mostrarProductos() {
-
+		contadorLayout = 0;
 		double precio = .0;
+		HorizontalLayout hl = new HorizontalLayout();
 		for (int i = 0; i < this._list_Producto_carrito.size(); i++) {
+			if(contadorLayout == 0 || (contadorLayout) % 3 == 0) {
+				if(contadorLayout != 0) {
+					hl = new HorizontalLayout();
+				}
+
+				hl.add(this._list_Producto_carrito.get(i));
+				
+				this.listadoProductos.add(hl);
+			} else {
+				hl.add(this._list_Producto_carrito.get(i));
+			}
+			contadorLayout++;
 			this._list_Producto_carrito.get(i).getCheckEliminar().setVisible(false);
 			this._list_Producto_carrito.get(i).actualizarListado(this);
 			
-			this.listadoProductos.add(this._list_Producto_carrito.get(i));
+			
 			precio += this._list_Producto_carrito.get(i).producto.getPrecio_producto()*Integer.parseInt(this._list_Producto_carrito.get(i).seleccionCantidad.getValue());
 		}
 

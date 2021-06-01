@@ -14,13 +14,14 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-producto_carrito template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
- */
+ */ 
 @Tag("vista-productocarrito")
 @JsModule("./src/vista-productocarrito.js")
 public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito.VistaProducto_carritoModel> {
@@ -35,6 +36,12 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 	private Button vaadinButton;
 	@Id("checkEliminar")
 	private Checkbox checkEliminar;
+	@Id("precioProducto")
+	private Span precioProducto;
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("nombreProducto")
+	private Span nombreProducto;
 
 
 	/**
@@ -89,5 +96,29 @@ public class VistaProducto_carrito extends PolymerTemplate<VistaProducto_carrito
 
 	public void setCheckEliminar(Checkbox checkEliminar) {
 		this.checkEliminar = checkEliminar;
+	}
+
+	public Span getPrecioProducto() {
+		return precioProducto;
+	}
+
+	public void setPrecioProducto(Span precioProducto) {
+		this.precioProducto = precioProducto;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public Span getNombreProducto() {
+		return nombreProducto;
+	}
+
+	public void setNombreProducto(Span nombreProducto) {
+		this.nombreProducto = nombreProducto;
 	}
 }

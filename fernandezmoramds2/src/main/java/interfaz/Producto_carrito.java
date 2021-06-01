@@ -19,10 +19,9 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this._producto = p;
 		this.producto = pc;
 		
-		this.getImg().setWidth("10vw");
-		this.getImg().setHeight("15vw");
-
 		this.getImg().setSrc(pc._Imagen.toArray()[0].getRuta());
+		this.getPrecioProducto().setText("" + pc.getPrecio_producto() + " €");
+		this.getNombreProducto().setText(pc.getNombre());
 
 		inicializar(pc, usuario);
 	}
@@ -49,11 +48,10 @@ public class Producto_carrito extends VistaProducto_carrito {
 
 	public void Editar_cantidad() {
 		seleccionCantidad.setItems("1", "2", "3", "4");
-		this.layout.add(seleccionCantidad);
+		this.getVaadinHorizontalLayout().add(seleccionCantidad);
 	}
 
 	public void Eliminar(UR_UNR usuario) {
-		this._productos_carrito.listadoProductos.remove(this);
 		this._productos_carrito._list_Producto_carrito.remove(this);
 		usuario.actualizarMiListado(this._productos_carrito._list_Producto_carrito);
 		
