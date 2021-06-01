@@ -61,6 +61,8 @@ public class BD_Pendiente {
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Producto_en_compra[] productos =  new Producto_en_compra[aProductos.length];
 		int cont = 0;
+		
+		double precioTotal = .0;
 
 		/*Paso 2. Crear el producto en compra y relacionar con pendiente*/
 		try {
@@ -72,7 +74,12 @@ public class BD_Pendiente {
 				pec.setORM__Producto(p);
 				pec.setNum_unidades_producto(aUnidades[contador]);
 				pec.setORM__Pendiente(pendiente);
+				
+				/*Vamos calculando el precio total de la compra*/
+				precioTotal += p.getPrecio_producto() * aUnidades[contador];
+				
 				contador++;
+				
 				Producto_en_compraDAO.save(pec);
 			}
 			
@@ -82,10 +89,25 @@ public class BD_Pendiente {
 			t2.rollback();
 		}
 
+		MDS2PersistentManager.instance().disposePersistentManager();
+		/*Paso 3. Actualizamos el precio de la compra Pendiente*/
+		PersistentTransaction t4 = MDS2PersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			
+			pendiente.setPrecio_total(precioTotal);
+			PendienteDAO.save(pendiente);
+			
+			t4.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t4.rollback();
+		}
+		
 		contador = 0;
 		
 		MDS2PersistentManager.instance().disposePersistentManager();
-		/*Paso 3. Actualizar los datos de Producto*/
+		/*Paso 4. Actualizar los datos de Producto*/
 		PersistentTransaction t3 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		
 		try {

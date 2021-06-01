@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -41,6 +42,14 @@ public class Productos_carrito extends VistaProductos_carrito {
 		contadorLayout = 0;
 		double precio = .0;
 		HorizontalLayout hl = new HorizontalLayout();
+		
+		if(this._list_Producto_carrito.size() == 0) {
+			Span aviso = new Span();
+			aviso.setText("Todavia no tienes ningun producto en el carrito ... ");
+			aviso.setWidth("100%");
+			listadoProductos.add(aviso);
+		}
+		
 		for (int i = 0; i < this._list_Producto_carrito.size(); i++) {
 			if(contadorLayout == 0 || (contadorLayout) % 3 == 0) {
 				if(contadorLayout != 0) {

@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException;
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
@@ -23,23 +25,24 @@ public class Editar_perfil extends VistaEditar_perfil{
 	Upload upload;
 	MemoryBuffer buffer;
 	String imagenPerfil = "";
+	Image foto;
 
 	public Editar_perfil(Menu_UR _menu_UR) {
-		this.getImg().setWidth("15vw");
-		this.getImg().setHeight("15vw");	
 		inicializar(_menu_UR);
 	}
 
 	public void inicializar(Menu_UR _menu_UR) {
 		this._menu_UR = _menu_UR;
+
+		this.getHuecoImagen().as(VerticalLayout.class).removeAll();
+
+		buffer = new MemoryBuffer();
+		upload = new Upload(buffer);
+		cambiar_Foto_Perfil();
 		editarPerfil();
 		eliminarCuenta();
 		cambiar_contrasenia();
-		buffer = new MemoryBuffer();
-		upload = new Upload(buffer);
-		this.getHuecoImagen().as(VerticalLayout.class).removeAll();
 		this.getHuecoImagen().as(VerticalLayout.class).add(upload);
-		cambiar_Foto_Perfil();
 	}
 
 	public void cambiar_contrasenia() {
@@ -69,7 +72,15 @@ public class Editar_perfil extends VistaEditar_perfil{
 			this.getSegundoApellido().setValue(this._menu_UR._uR.UR.getSegundo_apellido().toString());
 			
 			if(this._menu_UR._uR.UR.getImagen() != null){
-				this.getImg().setSrc(this._menu_UR._uR.UR.getImagen().getRuta());
+				if(foto != null) {
+					this.getHuecoImagen().as(VerticalLayout.class).remove(foto);
+				}
+				
+				foto = new Image();
+				foto.setSrc(this._menu_UR._uR.UR.getImagen().getRuta());
+				foto.setWidth("20vw");
+				foto.setHeight("20vw");
+				this.getHuecoImagen().as(VerticalLayout.class).add(foto);
 			}
 			
 			if (this._menu_UR._uR.UR.getDireccion_envio() == null) {
@@ -84,7 +95,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 			}
 		} catch (PersistentException e) {
 			e.printStackTrace();
-		}
+		} 
 		
 		this.getBoton_guardar().addClickListener(event ->{
 			try {
@@ -97,11 +108,13 @@ public class Editar_perfil extends VistaEditar_perfil{
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}
+			
 		});
 		
 	}
 	
 	public void cambiar_Foto_Perfil() {
+
 		upload.setAcceptedFileTypes("image/jpeg", "image/png");
 		
 		upload.addSucceededListener(e -> {
@@ -117,9 +130,21 @@ public class Editar_perfil extends VistaEditar_perfil{
 			String rutaImagen = "https://i.imgur.com/" +  rutaImgur.subSequence(15, 22) + ".jpg";
 			imagenPerfil = rutaImagen;
 			
-			this.getImg().setSrc(rutaImagen);
-			this.getImg().setWidth("10vw");
-			this.getImg().setHeight("10vw");	
+			if(foto != null) {
+				this.getHuecoImagen().as(VerticalLayout.class).remove(foto);
+			}
+			
+			foto = new Image();
+			foto.setSrc(rutaImagen);
+			foto.setWidth("20vw");
+			foto.setHeight("20vw");
+			
+			this.getHuecoImagen().as(VerticalLayout.class).add(foto);
+			this.getHuecoImagen().as(VerticalLayout.class).remove(upload);
+			this.getHuecoImagen().as(VerticalLayout.class).add(upload);
+
+			
+	
 		});
 	}
 	

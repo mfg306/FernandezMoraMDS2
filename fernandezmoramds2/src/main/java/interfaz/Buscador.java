@@ -71,7 +71,7 @@ public class Buscador extends VistaBuscador {
 		
 		this.categoriasBuscador.setValue(categorias.get(0));
 		
-		this.categoriasBuscador.setWidth("90%");
+		this.categoriasBuscador.setWidth("70%");
 
 	}
 }

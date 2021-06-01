@@ -23,9 +23,9 @@ class VistaProductos_busqueda extends PolymerElement {
   <vaadin-button id="boton_pagina_anterior" style="background-color: grey; color: white;">
     &lt; 
   </vaadin-button>
-  <span id="span"></span>
+  <span id="span">Página</span>
   <span id="primeraPagina"></span>
-  <span id="numero_pagina"></span>
+  <span id="numero_pagina">de</span>
   <span id="ultimaPagina"></span>
   <vaadin-button id="boton_pagina_siguiente" style="background-color: grey; color: white;">
     &gt; 
