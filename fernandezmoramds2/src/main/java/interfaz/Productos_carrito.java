@@ -109,6 +109,8 @@ public class Productos_carrito extends VistaProductos_carrito {
 			}
 
 			this.inicializar(usuario);
+			this._ver_carrito._menu_UR_UNR._uR_UNR.actualizarNumeroItemsCarrito();
+
 			/* Una vez que hemos borrado volvemos a ponerSeleccionarVarios a false */
 			seleccionarVarios = false;
 			

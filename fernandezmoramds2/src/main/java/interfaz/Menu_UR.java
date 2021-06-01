@@ -25,6 +25,8 @@ public class Menu_UR extends Menu_UR_UNR {
 	
 	public void inicializar(base_de_datos.UR usuario) {
 		
+		this.getNumeroElementos().setText("" + this._uR.listaAux.size());
+		
 		this._buscador = new Buscador(this);
 		this.getHuecoBuscador().as(VerticalLayout.class).add(this._buscador);
 		

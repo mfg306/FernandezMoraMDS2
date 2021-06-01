@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-menu_urunr template.
@@ -35,6 +36,10 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 	private Image boton_carrito;
 	@Id("boton_iniciar_sesion")
 	private Image boton_iniciar_sesion;
+	@Id("numeroElementos")
+	private Span numeroElementos;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 	
 
 	/**
@@ -105,5 +110,21 @@ public class VistaMenu_urunr extends PolymerTemplate<VistaMenu_urunr.VistaMenu_u
 
 	public void setBoton_iniciar_sesion(Image boton_iniciar_sesion) {
 		this.boton_iniciar_sesion = boton_iniciar_sesion;
+	}
+
+	public Span getNumeroElementos() {
+		return numeroElementos;
+	}
+
+	public void setNumeroElementos(Span numeroElementos) {
+		this.numeroElementos = numeroElementos;
+	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 }

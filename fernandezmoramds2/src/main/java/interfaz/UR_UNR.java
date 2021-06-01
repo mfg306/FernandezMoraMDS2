@@ -45,13 +45,6 @@ public abstract class UR_UNR extends VistaUrunr{
 		abrir_Ver_Categorias();
 	}
 	
-	public void miListadoProductos(Producto_carrito p) {
-		listaAux.add(p);
-	}
-	
-	public void actualizarMiListado(Vector<Producto_carrito> listaAux) {
-		this.listaAux = new Vector<>(listaAux);
-	}
 	
 	public boolean estaElProducto(Producto_carrito pc) {
 		for(Producto_carrito p : listaAux) {
@@ -87,5 +80,17 @@ public abstract class UR_UNR extends VistaUrunr{
 		this.layoutProductosMasVendidosPorCategorias.setVisible(false);
 		this.getBotonVerCategorias().setVisible(false);
 	}
+	
+	public void miListadoProductos(Producto_carrito p) {
+		listaAux.add(p);
+		actualizarNumeroItemsCarrito();
+	}
+	
+	public void actualizarMiListado(Vector<Producto_carrito> listaAux) {
+		this.listaAux = new Vector<>(listaAux);
+		actualizarNumeroItemsCarrito();
+	}
+	
+	public abstract void actualizarNumeroItemsCarrito();
 
 }

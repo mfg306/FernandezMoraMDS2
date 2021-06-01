@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.util.Vector;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
@@ -21,5 +23,18 @@ public class UNR_ extends UR_UNR{
 		_menu_UNR = new Menu_UNR(this);
 		this.getHuecoMenu().as(VerticalLayout.class).add(_menu_UNR);
 	}
+
+	@Override
+	public void actualizarNumeroItemsCarrito() {
+		int suma = 0;
+		
+		for(Producto_carrito pc : this.listaAux) {
+			suma += pc.cantidad;
+		}
+		
+		this._menu_UNR.getNumeroElementos().setText("" + suma);
+	}
+	
+
 	
 }

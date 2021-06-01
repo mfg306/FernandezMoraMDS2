@@ -9,6 +9,7 @@ public class Ver_carrito_UNR extends Ver_carrito {
 	public VerticalLayout layout;
 
 	public Ver_carrito_UNR(Menu_UNR _menu_UNR) {
+		super(_menu_UNR);
 		this._menu_UNR = _menu_UNR;
 		layout = this.getVaadinVerticalLayout1().as(VerticalLayout.class);
 		inicializar();

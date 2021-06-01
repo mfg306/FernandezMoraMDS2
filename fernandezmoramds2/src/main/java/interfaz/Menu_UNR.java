@@ -22,6 +22,9 @@ public class Menu_UNR extends Menu_UR_UNR {
 		this._buscador = new Buscador(this);
 		this.getHuecoBuscador().as(VerticalLayout.class).add(this._buscador);
 
+		this.getNumeroElementos().setText("" + this._uNR_.listaAux.size());
+
+		
 		abrir_iniciar_sesion();
 		abrir_carrito();
 		volver_a_Pagina_Inicial();

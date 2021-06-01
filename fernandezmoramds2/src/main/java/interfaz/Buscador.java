@@ -68,6 +68,10 @@ public class Buscador extends VistaBuscador {
 			categorias.add(c.getNombre_categoria());
 		}
 		this.categoriasBuscador.setItems(categorias);
+		
+		this.categoriasBuscador.setValue(categorias.get(0));
+		
+		this.categoriasBuscador.setWidth("90%");
 
 	}
 }
