@@ -59,16 +59,17 @@ public class MainView extends VerticalLayout implements PageConfigurator {
 
 		// disable default theme -> loading indicator will not be shown
 		conf.setApplyDefaultTheme(false);
-		/*
-		 * Delay for showing the indicator and setting the 'first' class name.
-		 */
-		conf.setFirstDelay(300); // 300ms is the default
-
-		/* Delay for setting the 'second' class name */
-		conf.setSecondDelay(1500); // 1500ms is the default
-
-		/* Delay for setting the 'third' class name */
-		conf.setThirdDelay(5000); // 5000ms is the default
+//		/*
+//		 * Delay for showing the indicator and setting the 'first' class name.
+//		 */
+//		conf.setFirstDelay(300); // 300ms is the default
+//
+//		/* Delay for setting the 'second' class name */
+//		conf.setSecondDelay(1500); // 1500ms is the default
+//
+//		/* Delay for setting the 'third' class name */
+//		conf.setThirdDelay(5000); // 5000ms is the default
+		
 	}
 
 }
