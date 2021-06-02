@@ -48,7 +48,8 @@ public class Producto extends VistaProducto{
 
 		this.verProducto();
 		this.cargarLasEstrellasDeValoracion((int)valoracionMedia);
-		listaValoraciones.add(estrellitas);		
+		listaValoraciones.add(estrellitas);	
+		cambiarDeImagen();
 	}
 	
 	public void verProducto() {
@@ -62,17 +63,38 @@ public class Producto extends VistaProducto{
 		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()) + " €");
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
 		
-		this.getImg().setWidth("20vw");
-		this.getImg1().setWidth("8vw");
-		this.getImg2().setWidth("8vw");
-		this.getImg3().setWidth("8vw");
-		this.getImg4().setWidth("8vw");
+		if(this.producto._Imagen.toArray().length != 0) {
+			this.getImg().setWidth("20vw");
+			this.getImg().setSrc(this.producto._Imagen.toArray()[0].getRuta());
+		}
 		
-		if(this.producto._Imagen.toArray().length != 0) this.getImg().setSrc(this.producto._Imagen.toArray()[0].getRuta());
-		if(this.producto._Imagen.toArray().length > 1) this.getImg1().setSrc(this.producto._Imagen.toArray()[1].getRuta());
-		if(this.producto._Imagen.toArray().length > 2) this.getImg2().setSrc(this.producto._Imagen.toArray()[2].getRuta());
-		if(this.producto._Imagen.toArray().length > 3) this.getImg3().setSrc(this.producto._Imagen.toArray()[3].getRuta());
-		if(this.producto._Imagen.toArray().length > 4) this.getImg4().setSrc(this.producto._Imagen.toArray()[4].getRuta());
+		if(this.producto._Imagen.toArray().length > 1) {
+			this.getImg1().setWidth("8vw");
+			this.getImg1().setSrc(this.producto._Imagen.toArray()[1].getRuta());
+		} else {
+			this.getImg1().setVisible(false);
+		}
+		
+		if(this.producto._Imagen.toArray().length > 2) {
+			this.getImg2().setWidth("8vw");
+			this.getImg2().setSrc(this.producto._Imagen.toArray()[2].getRuta());
+		} else {
+			this.getImg2().setVisible(false);
+		}
+		
+		if(this.producto._Imagen.toArray().length > 3) {
+			this.getImg3().setWidth("8vw");
+			this.getImg3().setSrc(this.producto._Imagen.toArray()[3].getRuta());
+		} else {
+			this.getImg3().setVisible(false);
+		}
+		
+		if(this.producto._Imagen.toArray().length > 4) {
+			this.getImg4().setWidth("8vw");
+			this.getImg4().setSrc(this.producto._Imagen.toArray()[4].getRuta());
+		} else {
+			this.getImg4().setVisible(false);
+		}
 		
 		
 		try {
@@ -107,8 +129,33 @@ public class Producto extends VistaProducto{
 				this._comentarios.anadirComentarios(c);
 			}
 		}
-
+	}
+	
+	
+	public void cambiarDeImagen() {
+		this.getImg().addClickListener(event -> {
+			this.getImg().setSrc(this.getImg().getSrc());
+		});
 		
+		this.getImg1().addClickListener(event -> {
+			this.getImg().setSrc(this.getImg1().getSrc());
+			this.getImg1().setSrc(this.getImg().getSrc());
+		});
+		
+		this.getImg2().addClickListener(event -> {
+			this.getImg().setSrc(this.getImg2().getSrc());
+			this.getImg2().setSrc(this.getImg().getSrc());
+		});
+		
+		this.getImg3().addClickListener(event -> {
+			this.getImg().setSrc(this.getImg3().getSrc());
+			this.getImg3().setSrc(this.getImg().getSrc());
+		});
+		
+		this.getImg4().addClickListener(event -> {
+			this.getImg().setSrc(this.getImg4().getSrc());
+			this.getImg4().setSrc(this.getImg().getSrc());
+		});
 	}
 	
 	private void cargarLasEstrellasDeValoracion(int valoracion) {

@@ -73,19 +73,19 @@ public class BD_Productos {
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
 		Producto p = ProductoDAO.getProductoByORMID(aIdProducto);
 
-		this._bDPrincipal = new BDPrincipal();
-
-		if (p != null) {
-			this._bDPrincipal.eliminarImagenProducto(p);
-			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
-			this._bDPrincipal.eliminarComentarioProducto(p);
-			this._bDPrincipal.eliminarValoracionesProducto(p);
-		}
+//		this._bDPrincipal = new BDPrincipal();
+//
+//		if (p != null) {
+//			this._bDPrincipal.eliminarImagenProducto(p);
+//			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
+//			this._bDPrincipal.eliminarComentarioProducto(p);
+//			this._bDPrincipal.eliminarValoracionesProducto(p);
+//		}
 
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			ProductoDAO.delete(p);
+			ProductoDAO.deleteAndDissociate(p);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

@@ -323,10 +323,10 @@ public class Producto_RebajadoDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Producto_Rebajado producto_Rebajado)throws PersistentException {
 		try {
-			base_de_datos.Oferta[] l_Tienes = producto_Rebajado._Tiene.toArray();
-			for(int i = 0; i < l_Tienes.length; i++) {
-				l_Tienes[i]._Pertenece_a.remove(producto_Rebajado);
+			if (producto_Rebajado.get_Tiene() != null) {
+				producto_Rebajado.get_Tiene()._Pertenece_a.remove(producto_Rebajado);
 			}
+			
 			if (producto_Rebajado.get_Categoria() != null) {
 				producto_Rebajado.get_Categoria()._Producto.remove(producto_Rebajado);
 			}
@@ -357,10 +357,10 @@ public class Producto_RebajadoDAO {
 	
 	public static boolean deleteAndDissociate(base_de_datos.Producto_Rebajado producto_Rebajado, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			base_de_datos.Oferta[] l_Tienes = producto_Rebajado._Tiene.toArray();
-			for(int i = 0; i < l_Tienes.length; i++) {
-				l_Tienes[i]._Pertenece_a.remove(producto_Rebajado);
+			if (producto_Rebajado.get_Tiene() != null) {
+				producto_Rebajado.get_Tiene()._Pertenece_a.remove(producto_Rebajado);
 			}
+			
 			if (producto_Rebajado.get_Categoria() != null) {
 				producto_Rebajado.get_Categoria()._Producto.remove(producto_Rebajado);
 			}

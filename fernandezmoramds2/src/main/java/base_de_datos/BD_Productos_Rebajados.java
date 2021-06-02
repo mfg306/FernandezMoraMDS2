@@ -17,10 +17,13 @@ public class BD_Productos_Rebajados {
 	public void eliminarProductosRebajados(int aIdProducto) throws PersistentException {
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
+			
+			System.out.println("ID : " + aIdProducto);
 			Producto_Rebajado[] productosRebajados = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + aIdProducto,  null);	
 			
 			for(Producto_Rebajado pr : productosRebajados){
-				Producto_RebajadoDAO.deleteAndDissociate(pr);
+				System.out.println("Eliminando el producto rebajado : " + pr.getId_Producto());
+				Producto_RebajadoDAO.delete(pr);
 			}
 			
 			t.commit();

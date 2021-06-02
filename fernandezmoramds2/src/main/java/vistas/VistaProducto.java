@@ -47,8 +47,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Image img3;
 	@Id("img4")
 	private Image img4;
-	@Id("img5")
-	private Image img5;
 	@Id("vaadinVerticalLayout2")
 	private Element vaadinVerticalLayout2;
 	@Id("dejar_comentario")
@@ -189,14 +187,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 
 	public void setImg4(Image img4) {
 		this.img4 = img4;
-	}
-
-	public Image getImg5() {
-		return img5;
-	}
-
-	public void setImg5(Image img5) {
-		this.img5 = img5;
 	}
 
 	public Element getVaadinVerticalLayout2() {

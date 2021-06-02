@@ -325,7 +325,7 @@ public class OfertaDAO {
 		try {
 			base_de_datos.Producto_Rebajado[] l_Pertenece_as = oferta._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
-				l_Pertenece_as[i]._Tiene.remove(oferta);
+				l_Pertenece_as[i].set_Tiene(null);
 			}
 			return delete(oferta);
 		}
@@ -339,7 +339,7 @@ public class OfertaDAO {
 		try {
 			base_de_datos.Producto_Rebajado[] l_Pertenece_as = oferta._Pertenece_a.toArray();
 			for(int i = 0; i < l_Pertenece_as.length; i++) {
-				l_Pertenece_as[i]._Tiene.remove(oferta);
+				l_Pertenece_as[i].set_Tiene(null);
 			}
 			try {
 				session.delete(oferta);

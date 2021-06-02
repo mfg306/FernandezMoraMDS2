@@ -317,6 +317,18 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="OfertaId_Oferta">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>base_de_datos.Oferta.Id_Oferta</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
   </Entity>
   <Entity name="Transportista" Unlogged="false" PKClustered="0">
     <Column name="Id_cola">
@@ -945,32 +957,6 @@
       <UserTypes/>
     </Column>
   </Entity>
-  <Entity name="Producto_Rebajado_Oferta" Unlogged="false" PKClustered="0">
-    <Column name="Producto_RebajadoProductoId_Producto">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>base_de_datos.Producto_Rebajado.ProductoId_Producto</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="OfertaId_Oferta">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>base_de_datos.Oferta.Id_Oferta</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
   <ForeignKey name="FKUR630080">
     <ReferenceTable>UR</ReferenceTable>
     <ReferencedTable>Usuario_General</ReferencedTable>
@@ -1051,18 +1037,8 @@
       <Column>Codigo</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKProducto_R824849">
-    <ReferenceTable>Producto_Rebajado_Oferta</ReferenceTable>
-    <ReferencedTable>Producto_Rebajado</ReferencedTable>
-    <Columns>
-      <Column>Producto_RebajadoProductoId_Producto</Column>
-    </Columns>
-    <RefColumns>
-      <Column>ProductoId_Producto</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKProducto_R98365">
-    <ReferenceTable>Producto_Rebajado_Oferta</ReferenceTable>
+  <ForeignKey name="FKProducto_R263979">
+    <ReferenceTable>Producto_Rebajado</ReferenceTable>
     <ReferencedTable>Oferta</ReferencedTable>
     <Columns>
       <Column>OfertaId_Oferta</Column>

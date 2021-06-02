@@ -27,13 +27,12 @@ class VistaProducto extends PolymerElement {
       Anadir a carrito 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <img style="width: 100%; height: 100%; align-self: center;" id="img">
+   <img style="width: 100%; height: 100%; align-self: center; border: 2px solid #7800ff; padding: var(--lumo-space-s);" id="img">
    <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;" id="vaadinHorizontalLayout2">
-    <img style="width: 100%; height: 100%;" id="img1">
-    <img style="width: 80%; height: 80%;" id="img2">
-    <img style="width: 80%; height: 80%;" id="img3">
-    <img style="width: 80%; height: 80%;" id="img4">
-    <img style="width: 80%; height: 80%;" id="img5">
+    <img style="width: 100%; height: 100%;  border: 2px solid #ECEDEE; padding: var(--lumo-space-s);" id="img1">
+    <img style="width: 80%; height: 80%;  border: 2px solid #ECEDEE; padding: var(--lumo-space-s);" id="img2">
+    <img style="width: 80%; height: 80%;  border: 2px solid #ECEDEE; padding: var(--lumo-space-s);" id="img3">
+    <img style="width: 80%; height: 80%;  border: 2px solid #ECEDEE; padding: var(--lumo-space-s);" id="img4">
    </vaadin-horizontal-layout>
    <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; background-color: #F5F5F5; padding: var(--lumo-space-l);" id="vaadinVerticalLayout2">
     <vaadin-text-field placeholder="Deja tu comentario ..." style="height: 100%; padding: var(--lumo-space-m); align-self: center; width: 100%;" required name="comentario" invalid id="dejar_comentario"></vaadin-text-field>

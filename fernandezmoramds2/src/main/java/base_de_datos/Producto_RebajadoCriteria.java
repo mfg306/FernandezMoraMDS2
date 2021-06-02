@@ -32,7 +32,8 @@ public class Producto_RebajadoCriteria extends AbstractORMCriteria {
 	public final CollectionExpression _Imagen;
 	public final CollectionExpression _Valorado_por;
 	public final DoubleExpression precio_rebajado;
-	public final CollectionExpression _Tiene;
+	public final IntegerExpression _TieneId;
+	public final AssociationExpression _Tiene;
 	
 	public Producto_RebajadoCriteria(Criteria criteria) {
 		super(criteria);
@@ -49,7 +50,8 @@ public class Producto_RebajadoCriteria extends AbstractORMCriteria {
 		_Imagen = new CollectionExpression("ORM__Imagen", this);
 		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this);
 		precio_rebajado = new DoubleExpression("precio_rebajado", this);
-		_Tiene = new CollectionExpression("ORM__Tiene", this);
+		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this);
+		_Tiene = new AssociationExpression("_Tiene", this);
 	}
 	
 	public Producto_RebajadoCriteria(PersistentSession session) {
@@ -61,7 +63,7 @@ public class Producto_RebajadoCriteria extends AbstractORMCriteria {
 	}
 	
 	public OfertaCriteria create_TieneCriteria() {
-		return new OfertaCriteria(createCriteria("ORM__Tiene"));
+		return new OfertaCriteria(createCriteria("_Tiene"));
 	}
 	
 	public CategoriaCriteria create_CategoriaCriteria() {

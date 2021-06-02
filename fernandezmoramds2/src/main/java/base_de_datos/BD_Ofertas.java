@@ -17,18 +17,18 @@ public class BD_Ofertas {
 	public Vector<Oferta> _oferta = new Vector<Oferta>();
 
 	public Oferta[] cargarOfertas() throws PersistentException {
-		
+
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();
-		String fechaActual = formatter.format(date); //Tipo 07/07/2000
+		String fechaActual = formatter.format(date); // Tipo 07/07/2000
 		String fechaOferta = "";
 		int anio, mes, dia;
 		int anioActual, mesActual, diaActual;
-		
+
 		anioActual = Integer.parseInt(fechaActual.substring(6));
-		mesActual = Integer.parseInt(fechaActual.substring(3,5));
+		mesActual = Integer.parseInt(fechaActual.substring(3, 5));
 		diaActual = Integer.parseInt(fechaActual.substring(0, 2));
-		
+
 		Oferta[] ofertas = null;
 		Oferta[] ofertasResultado = null;
 
@@ -38,22 +38,25 @@ public class BD_Ofertas {
 		int contador = 0;
 
 		for (int i = 0; i < ofertas.length; i++) {
-			fechaOferta = ofertas[i].getFecha_caducidad(); //Tipo 2000-05-25
-			
-			anio = Integer.parseInt(fechaOferta.substring(0,4));
-			mes = Integer.parseInt(fechaOferta.substring(5,7));
+			fechaOferta = ofertas[i].getFecha_caducidad(); // Tipo 2000-05-25
+
+			anio = Integer.parseInt(fechaOferta.substring(0, 4));
+			mes = Integer.parseInt(fechaOferta.substring(5, 7));
 			dia = Integer.parseInt(fechaOferta.substring(8));
-			
-			/*Condiciones que no cumplen:*/
-			
-			/*1. Que se haya pasado el año*/
-			if(anioActual > anio) break;
-			/*2. Que estemos en el mismo año y se haya pasado el mes*/
-			if(anioActual == anio && mesActual > mes) break;
-			/*3. Que estemos en el mismo año y el mismo mes y se haya pasado el dia*/
-			if(anioActual == anio & mesActual == mes && diaActual > dia) break;
-			
-			/*En cualquier otro caso se añade*/
+
+			/* Condiciones que no cumplen: */
+
+			/* 1. Que se haya pasado el año */
+			if (anioActual > anio)
+				break;
+			/* 2. Que estemos en el mismo año y se haya pasado el mes */
+			if (anioActual == anio && mesActual > mes)
+				break;
+			/* 3. Que estemos en el mismo año y el mismo mes y se haya pasado el dia */
+			if (anioActual == anio & mesActual == mes && diaActual > dia)
+				break;
+
+			/* En cualquier otro caso se añade */
 			ofertasResultado[contador] = ofertas[i];
 			contador++;
 		}
@@ -82,6 +85,8 @@ public class BD_Ofertas {
 			e.printStackTrace();
 			t.rollback();
 		}
+
+		MDS2PersistentManager.instance().disposePersistentManager();
 
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
@@ -184,12 +189,15 @@ public class BD_Ofertas {
 			t2.rollback();
 			e.printStackTrace();
 		}
-		
-		/*Aqui faltaria una vez se borra el producto rebajado, volver a insertarlo como producto normal*/
+
+		/*
+		 * Aqui faltaria una vez se borra el producto rebajado, volver a insertarlo como
+		 * producto normal
+		 */
 
 		return true;
 	}
-	
+
 	public Oferta[] cargarOfertasAdmin() throws PersistentException {
 		return OfertaDAO.listOfertaByQuery(null, null);
 	}

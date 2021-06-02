@@ -32,7 +32,8 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 	public final CollectionExpression _Imagen;
 	public final CollectionExpression _Valorado_por;
 	public final DoubleExpression precio_rebajado;
-	public final CollectionExpression _Tiene;
+	public final IntegerExpression _TieneId;
+	public final AssociationExpression _Tiene;
 	
 	public Producto_RebajadoDetachedCriteria() {
 		super(base_de_datos.Producto_Rebajado.class, base_de_datos.Producto_RebajadoCriteria.class);
@@ -49,7 +50,8 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());
 		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this.getDetachedCriteria());
 		precio_rebajado = new DoubleExpression("precio_rebajado", this.getDetachedCriteria());
-		_Tiene = new CollectionExpression("ORM__Tiene", this.getDetachedCriteria());
+		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this.getDetachedCriteria());
+		_Tiene = new AssociationExpression("_Tiene", this.getDetachedCriteria());
 	}
 	
 	public Producto_RebajadoDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -67,11 +69,12 @@ public class Producto_RebajadoDetachedCriteria extends AbstractORMDetachedCriter
 		_Imagen = new CollectionExpression("ORM__Imagen", this.getDetachedCriteria());
 		_Valorado_por = new CollectionExpression("ORM__Valorado_por", this.getDetachedCriteria());
 		precio_rebajado = new DoubleExpression("precio_rebajado", this.getDetachedCriteria());
-		_Tiene = new CollectionExpression("ORM__Tiene", this.getDetachedCriteria());
+		_TieneId = new IntegerExpression("_Tiene.id_Oferta", this.getDetachedCriteria());
+		_Tiene = new AssociationExpression("_Tiene", this.getDetachedCriteria());
 	}
 	
 	public OfertaDetachedCriteria create_TieneCriteria() {
-		return new OfertaDetachedCriteria(createCriteria("ORM__Tiene"));
+		return new OfertaDetachedCriteria(createCriteria("_Tiene"));
 	}
 	
 	public CategoriaDetachedCriteria create_CategoriaCriteria() {
