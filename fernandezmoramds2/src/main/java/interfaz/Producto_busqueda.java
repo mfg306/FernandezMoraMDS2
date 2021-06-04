@@ -12,7 +12,9 @@ public class Producto_busqueda extends VistaProducto_busqueda{
 		this.getPrecio_producto().setText(String.valueOf(p.getPrecio_producto()));
 		this._productos_busqueda = productos_busqueda;
 		this.getImagen_producto().setWidth("10vw");
-		this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
+		if(p._Imagen != null && p._Imagen.toArray().length > 0) {
+			this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
+		}
 		
 		this.p = p;
 		
