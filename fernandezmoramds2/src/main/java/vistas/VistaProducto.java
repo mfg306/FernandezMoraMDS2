@@ -79,6 +79,8 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Element valorarProducto;
 	@Id("listaComentarios")
 	private Element listaComentarios;
+	@Id("precioRebajado")
+	private Span precioRebajado;
 	/**
 	 * Creates a new VistaProducto.
 	 */
@@ -317,6 +319,14 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 
 	public void setListaComentarios(Element listaComentarios) {
 		this.listaComentarios = listaComentarios;
+	}
+
+	public Span getPrecioRebajado() {
+		return precioRebajado;
+	}
+
+	public void setPrecioRebajado(Span precioRebajado) {
+		this.precioRebajado = precioRebajado;
 	}
 
 }

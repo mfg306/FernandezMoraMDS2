@@ -35,6 +35,7 @@ public class BD_Productos_Rebajados {
 		Producto_Rebajado[] poferta = null;
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Oferta oferta = OfertaDAO.loadOfertaByQuery("Id_Oferta = " + aOferta.getId_Oferta(), null);
+
 		poferta = oferta._Pertenece_a.toArray();
 		
 		return poferta;

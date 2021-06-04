@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.notification.Notification;
 
 import base_de_datos.Producto_Rebajado;
@@ -72,7 +73,6 @@ public class Productos_oferta extends VistaProductos_oferta {
 		}
 	}
 
-
 	public void Ver_siguientes() {
 		if (this.getBoton_pagina_siguiente().isEnabled()) {
 			this.getBoton_pagina_siguiente().addClickListener(event -> {
@@ -122,12 +122,19 @@ public class Productos_oferta extends VistaProductos_oferta {
 
 		Producto_Rebajado[] productos;
 		try {
+
 			productos = iur.cargarProductosOferta(
 					this._list_Ofertas._ofertas.ofertas[this._list_Ofertas._ofertas._uR_UNR.indiceOfertas]);
-			for (base_de_datos.Producto_Rebajado p : productos) {
+			if (productos == null) {
+              H1 h = new H1();
+              h.setText("No hay productos en esta oferta");
+              this.getLista_productos_oferta().add(h);
+			} else {
+				for (base_de_datos.Producto_Rebajado p : productos) {
 
-				this.add_Oferta(p);
+					this.add_Oferta(p);
 
+				}
 			}
 		} catch (PersistentException e) {
 			e.printStackTrace();
