@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.util.Vector;
+
 import org.orm.PersistentException;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dialog.Dialog;
@@ -56,6 +58,9 @@ public class Introducir_datos_compra extends VistaIntroducir_datos_compra {
 			dialog.setHeight("150px");
 
 			dialog.open();
+			
+			this._ver_carrito_UR._menu_UR._uR.actualizarMiListado(new Vector<Producto_carrito>());
+			
 		});
 	}
 
