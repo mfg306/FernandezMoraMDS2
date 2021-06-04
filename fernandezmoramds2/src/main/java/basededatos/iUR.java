@@ -40,7 +40,7 @@ public interface iUR extends iUR_UNR {
 	
 	public void realizarCompra(Producto[] aProductos, UR aUsuario, int[] aUnidades)  throws PersistentException;
 	
-	public Compra[] cargarEnviados(UR aUsuario) throws PersistentException;
+	public Enviado[] cargarEnviados(UR aUsuario) throws PersistentException;
 	
 	public Recibido[] cargarRecibidos(UR aUsuario);
 	

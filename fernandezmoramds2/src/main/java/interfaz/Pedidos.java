@@ -28,11 +28,5 @@ public class Pedidos extends VistaPedidos {
 		this._list_Pedido.add(p);
 		this.layout.add(p);
 	}
-	
-	public void add_pedidos(base_de_datos.Compra c, boolean esCompra) {
-		Pedido p = new Pedido(c, this, esCompra);
-		this._list_Pedido.add(p);
-		this.layout.add(p);
-	}
 
 }

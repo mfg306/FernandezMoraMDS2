@@ -61,7 +61,9 @@ public class Ver_pedidos extends VistaVer_pedidos {
 		
 		if(listaEnviados != null && listaEnviados.length > 0) {
 			for(base_de_datos.Compra e : listaEnviados) {
-				this._pedidos.add_pedidos(e, true);
+				if(e != null){
+					this._pedidos.add_pedidos(e);	
+				}
 			}
 		}
 

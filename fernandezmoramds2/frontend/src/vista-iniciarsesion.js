@@ -23,22 +23,24 @@ class VistaIniciar_sesion extends PolymerElement {
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing-l" style="width: 100%; padding: var(--lumo-space-m); " id="vaadinVerticalLayout1">
    <span style="font-size: 4vw; font-weight: bold; width: 100%; text-align:center;" id="span">INICIA SESION</span>
+   <vaadin-horizontal-layout theme="spacing-xs" style="align-self: center; align-items: center; justify-content: center;">
+    <vaadin-button theme="tertiary-inline" id="botonRegistrarse" style="align-self: center; color: #7800ff; flex-grow: 0; flex-shrink: 0;">
+     o Registrate
+    </vaadin-button>
+   </vaadin-horizontal-layout>
    <vaadin-text-field id="correo" style="align-self: center; border-bottom: 1px solid grey; border-radius: 0; padding-bottom: 0; width: 100%; background-color: white; " placeholder="Introduzca su correo electronico" required autofocus invalid></vaadin-text-field>
    <vaadin-text-field id="nombre_usuario" style="align-self: center; border-bottom: 1px solid grey; border-radius: 0; padding-bottom: 0; width: 100%; background-color: white; " placeholder="Introduzca su correo electronico" required autofocus invalid></vaadin-text-field>
    <vaadin-password-field id="contrasenia" style="align-self: center; border-bottom: 1px solid grey; border-radius: 0; padding-bottom: 0; width: 100%; background-color: white; " required invalid placeholder="Introduzca su contrasena"></vaadin-password-field>
+   <vaadin-button theme="tertiary-inline" id="botonOlvidarContraseña" class="boton-enlace" style="align-self: flex-start; flex-grow: 0; flex-shrink: 0; color:#7800ff;">
+     ¿Has olvidado tu contrasena? 
+   </vaadin-button>
    <vaadin-button theme="primary" id="boton_iniciar_sesion" class="botonPersonalizado" style="align-self: center; background-color: #7800ff;">
      Iniciar sesion 
    </vaadin-button>
    <vaadin-button id="boton_iniciar_sesion_empleados" style="align-self: center;  background-color: #7800ff;" theme="primary">
      Iniciar sesión 
    </vaadin-button>
-   <vaadin-button theme="tertiary-inline" id="botonOlvidarContraseña" class="boton-enlace" style="align-self: center; flex-grow: 0; flex-shrink: 0; color:#7800ff;">
-     ¿Has olvidado tu contrasena? 
-   </vaadin-button>
-   <vaadin-button theme="tertiary-inline" id="botonRegistrarse" style="align-self: center; color: #7800ff;">
-     ¿No tienes cuenta? Registrate 
-   </vaadin-button>
-   <vaadin-button id="enlaceEmpleados" style="align-self: center; color: #7800ff;" theme="tertiary-inline">
+   <vaadin-button id="enlaceEmpleados" style="align-self: center; color: #7800ff; border-radius: 0;" theme="tertiary-inline">
      ¿Eres un empleado? 
    </vaadin-button>
   </vaadin-vertical-layout>

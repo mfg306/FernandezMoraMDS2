@@ -109,11 +109,25 @@ public class BD_Enviado {
 		return true;
 	}
 
-	public Compra[] cargarEnviados(UR aUsuario) throws PersistentException {
+	public Enviado[] cargarEnviados(UR aUsuario) throws PersistentException {
 
-		Compra listaPendientes[] = PendienteDAO.listPendienteByQuery(
+		int contador = 0;
+		Pendiente listaPendientes[] = PendienteDAO.listPendienteByQuery(
 				"URUsuario_GeneralId_Usuario = " + aUsuario.getId_Usuario() + " AND Asignado = 1", null);
+		
+		Enviado resultado[] = new Enviado[listaPendientes.length];
+		
+		for(int i=0; i<listaPendientes.length; i++) {
+			Enviado[] e = EnviadoDAO.listEnviadoByQuery("CodigoPendiente = " + listaPendientes[i].getCodigo() + " "
+					+ "AND ENVIADO = 0" , null);
+			
+			if(e != null && e.length > 0){
+				resultado[contador] = e[i];
+				contador++;	
+			}
 
-		return listaPendientes;
+		}
+		
+		return resultado;
 	}
 }
