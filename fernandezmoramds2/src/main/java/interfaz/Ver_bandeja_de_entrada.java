@@ -20,12 +20,9 @@ public class Ver_bandeja_de_entrada extends VistaVer_bandeja_de_entrada{
 		this.getBoton_enviados().setVisible(true);
 		this.getBoton_recibidos().setVisible(true);
 		
-		System.out.println("2");
 		if(this._mensajes_recibidos != null) {
 			this.getHuecoMensajes().as(VerticalLayout.class).remove(this._mensajes_recibidos);
-		
 			if(this._mensajes_recibidos._list_Ver_mensajes_enviados != null) {
-				System.out.println("3");
 				this.getHuecoMensajes().as(VerticalLayout.class).remove(this._mensajes_recibidos._list_Ver_mensajes_enviados._mensajes_enviados);
 			}
 		}

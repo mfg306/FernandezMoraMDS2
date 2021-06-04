@@ -29,7 +29,6 @@ public class Producto extends VistaProducto{
 	HorizontalLayout estrellitas;
 	public int valoracionMedia;
 	VerticalLayout listaValoraciones;
-
 	
 	public Producto(base_de_datos.Producto p) {
 		this.producto = p;
@@ -64,33 +63,35 @@ public class Producto extends VistaProducto{
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
 		
 		if(this.producto._Imagen.toArray().length != 0) {
-			this.getImg().setWidth("20vw");
+			this.getImg().setWidth("25vw");
 			this.getImg().setSrc(this.producto._Imagen.toArray()[0].getRuta());
+		} else {
+			this.getImg().setVisible(false);
 		}
 		
 		if(this.producto._Imagen.toArray().length > 1) {
-			this.getImg1().setWidth("8vw");
+			this.getImg1().setWidth("10vw");
 			this.getImg1().setSrc(this.producto._Imagen.toArray()[1].getRuta());
 		} else {
 			this.getImg1().setVisible(false);
 		}
 		
 		if(this.producto._Imagen.toArray().length > 2) {
-			this.getImg2().setWidth("8vw");
+			this.getImg2().setWidth("10vw");
 			this.getImg2().setSrc(this.producto._Imagen.toArray()[2].getRuta());
 		} else {
 			this.getImg2().setVisible(false);
 		}
 		
 		if(this.producto._Imagen.toArray().length > 3) {
-			this.getImg3().setWidth("8vw");
+			this.getImg3().setWidth("10vw");
 			this.getImg3().setSrc(this.producto._Imagen.toArray()[3].getRuta());
 		} else {
 			this.getImg3().setVisible(false);
 		}
 		
 		if(this.producto._Imagen.toArray().length > 4) {
-			this.getImg4().setWidth("8vw");
+			this.getImg4().setWidth("10vw");
 			this.getImg4().setSrc(this.producto._Imagen.toArray()[4].getRuta());
 		} else {
 			this.getImg4().setVisible(false);
@@ -138,23 +139,27 @@ public class Producto extends VistaProducto{
 		});
 		
 		this.getImg1().addClickListener(event -> {
+			String aux = this.getImg().getSrc();
 			this.getImg().setSrc(this.getImg1().getSrc());
-			this.getImg1().setSrc(this.getImg().getSrc());
+			this.getImg1().setSrc(aux);
 		});
 		
 		this.getImg2().addClickListener(event -> {
+			String aux = this.getImg().getSrc();
 			this.getImg().setSrc(this.getImg2().getSrc());
-			this.getImg2().setSrc(this.getImg().getSrc());
+			this.getImg2().setSrc(aux);
 		});
 		
 		this.getImg3().addClickListener(event -> {
+			String aux = this.getImg().getSrc();
 			this.getImg().setSrc(this.getImg3().getSrc());
-			this.getImg3().setSrc(this.getImg().getSrc());
+			this.getImg3().setSrc(aux);
 		});
 		
 		this.getImg4().addClickListener(event -> {
+			String aux = this.getImg().getSrc();
 			this.getImg().setSrc(this.getImg4().getSrc());
-			this.getImg4().setSrc(this.getImg().getSrc());
+			this.getImg4().setSrc(aux);
 		});
 	}
 	

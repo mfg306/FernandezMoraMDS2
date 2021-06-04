@@ -106,7 +106,7 @@ public class BD_Ofertas {
 				 */
 				pr = Producto_RebajadoDAO.createProducto_Rebajado();
 
-				pr.setPrecio_producto(pr.getPrecio_producto());
+				pr.setPrecio_producto(p.getPrecio_producto());
 				pr.setNombre(p.getNombre());
 				pr.setDescripcion(p.getDescripcion());
 				pr.setORM__Categoria(p.get_Categoria());
@@ -234,8 +234,51 @@ public class BD_Ofertas {
 	}
 
 	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
+		
+		/*Recuperamos el producto original*/
+		PersistentTransaction t3 = MDS2PersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			for(Producto p : aListaProductos) {
+				Producto product = ProductoDAO.createProducto();
+				product.setORM__Categoria(p.get_Categoria());
+				product.setDescripcion(p.getDescripcion());
+				product.setNombre(p.getNombre());
+				product.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
+				product.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
+				product.setPrecio_producto(p.getPrecio_producto());
+				
+				for (Imagen i : p._Imagen.toArray()) {
+					i.set_Producto(product);
+				}
+
+				for (Comentario c : p._Pertenece_a.toArray()) {
+					c.set_Tiene(product);
+				}
+
+				for (Producto_en_compra pc : p._Producto_en_compra.toArray()) {
+					pc.set_Producto(product);
+				}
+
+				for (Valoracion v : p._Valorado_por.toArray()) {
+					v.set_Valorado(product);
+				}
+				
+				ProductoDAO.save(product);
+			}
+			
+			t3.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t3.rollback();
+		}
+		
+		
+		MDS2PersistentManager.instance().disposePersistentManager();
+
 		Oferta o = OfertaDAO.getOfertaByORMID(aIdOferta);
 
+		/*Nos deshacemos del producto rebajado*/
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
@@ -248,6 +291,9 @@ public class BD_Ofertas {
 			e.printStackTrace();
 		}
 		
+		MDS2PersistentManager.instance().disposePersistentManager();
+		
+		/*Borramos la oferta*/
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
