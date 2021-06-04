@@ -18,11 +18,9 @@ public class BD_Productos_Rebajados {
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		try {
 			
-			System.out.println("ID : " + aIdProducto);
 			Producto_Rebajado[] productosRebajados = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + aIdProducto,  null);	
 			
 			for(Producto_Rebajado pr : productosRebajados){
-				System.out.println("Eliminando el producto rebajado : " + pr.getId_Producto());
 				Producto_RebajadoDAO.delete(pr);
 			}
 			

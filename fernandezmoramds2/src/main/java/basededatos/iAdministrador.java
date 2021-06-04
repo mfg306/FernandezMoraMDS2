@@ -85,4 +85,6 @@ public interface iAdministrador {
 	public boolean eliminarValoracionesProducto(Producto aProducto) throws PersistentException;
 	
 	public Oferta[] cargarOfertasAdmin() throws PersistentException;
+	
+	public void eliminarProductoOriginalOferta(Producto aProducto) throws PersistentException;
 }

@@ -259,6 +259,10 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
 		this._bD_Productos.eliminarProductoAdministrador(aIdProducto);
 	}
+	
+	public void eliminarProductoOriginalOferta(Producto aProducto) throws PersistentException {
+		this._bD_Productos.eliminarProductoOriginalOferta(aProducto);
+	}
 
 	public Producto[] cargarProductosListado() throws PersistentException {
 		return this._bD_Productos.cargarProductosListado();

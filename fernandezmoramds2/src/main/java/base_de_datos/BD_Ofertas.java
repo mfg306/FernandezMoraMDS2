@@ -7,8 +7,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 import java.util.Vector;
 
+import org.hibernate.Criteria;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -86,7 +88,7 @@ public class BD_Ofertas {
 			t.rollback();
 		}
 
-		MDS2PersistentManager.instance().disposePersistentManager();
+//		MDS2PersistentManager.instance().disposePersistentManager();
 
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
@@ -107,29 +109,29 @@ public class BD_Ofertas {
 				pr.setPrecio_producto(pr.getPrecio_producto());
 				pr.setNombre(p.getNombre());
 				pr.setDescripcion(p.getDescripcion());
-				pr.set_Categoria(p.get_Categoria());
+				pr.setORM__Categoria(p.get_Categoria());
 				pr.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
 				pr.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
-				pr.setPrecio_producto(p.getPrecio_producto());
+				pr.setORM__Tiene(o);
 
 				pr.setPrecio_rebajado(aPrecios[contador]);
 
 				contador++;
 
 				for (Imagen i : p._Imagen.toArray()) {
-					pr._Imagen.add(i);
+					i.set_Producto(pr);
 				}
 
 				for (Comentario c : p._Pertenece_a.toArray()) {
-					pr._Pertenece_a.add(c);
+					c.set_Tiene(pr);
 				}
 
 				for (Producto_en_compra pc : p._Producto_en_compra.toArray()) {
-					pr._Producto_en_compra.add(pc);
+					pc.set_Producto(pr);
 				}
 
 				for (Valoracion v : p._Valorado_por.toArray()) {
-					pr._Valorado_por.add(v);
+					v.set_Valorado(pr);
 				}
 
 				/* Guardamos los cambios */
@@ -145,13 +147,15 @@ public class BD_Ofertas {
 			t2.rollback();
 		}
 
+		MDS2PersistentManager.instance().disposePersistentManager();
+
 		/*
 		 * Paso 3. Eliminar el producto de la lista porque ya lo tenemos con
 		 * Producto_Rebajado y no lo queremos repetido
 		 */
 
 		for (Producto p : aListaProductos) {
-			this._bDPrincipal.eliminarProductoAdministrador(p.getId_Producto());
+			this._bDPrincipal.eliminarProductoOriginalOferta(p);
 		}
 
 		return o;
@@ -160,23 +164,77 @@ public class BD_Ofertas {
 
 	public Oferta actualizarOferta(String aNombreOferta, Producto[] aListaProductos, String aFechaCaducidad,
 			String aFechaActualizacion, int aIdOferta, double[] aPrecios) throws PersistentException {
-		eliminarOfertaAdmin(aIdOferta, aListaProductos);
-		return insertarOferta(aNombreOferta, aListaProductos, aFechaCaducidad, aFechaActualizacion, aPrecios);
+
+		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
+		this._bDPrincipal = new BDPrincipal();
+		Producto_Rebajado pr = null;
+
+		int contador = 0;
+
+		Oferta o = OfertaDAO.listOfertaByQuery("Nombre_Oferta = '" + aNombreOferta + "'", null)[0];
+
+		try {
+			for (Producto p : aListaProductos) {
+				/*
+				 * Crear el producto rebajado que va a ser una copia del Producto p pero con el
+				 * precio rebajado
+				 */
+				pr = Producto_RebajadoDAO.createProducto_Rebajado();
+
+				pr.setPrecio_producto(p.getPrecio_producto());
+				pr.setNombre(p.getNombre());
+				pr.setDescripcion(p.getDescripcion());
+				pr.setORM__Categoria(p.get_Categoria());
+				pr.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
+				pr.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
+				pr.setORM__Tiene(o);
+
+				pr.setPrecio_rebajado(aPrecios[contador]);
+
+				contador++;
+
+				for (Imagen i : p._Imagen.toArray()) {
+					i.set_Producto(pr);
+				}
+
+
+				for (Comentario c : p._Pertenece_a.toArray()) {
+					c.set_Tiene(pr);
+				}
+
+				for (Producto_en_compra pc : p._Producto_en_compra.toArray()) {
+					pc.set_Producto(pr);
+				}
+
+				for (Valoracion v : p._Valorado_por.toArray()) {
+					v.set_Valorado(pr);
+				}
+
+				/* Guardamos los cambios */
+				Producto_RebajadoDAO.save(pr);
+				o._Pertenece_a.add(pr);
+			}
+
+			OfertaDAO.save(o);
+
+			t2.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			t2.rollback();
+		}
+		
+		MDS2PersistentManager.instance().disposePersistentManager();
+
+		for (Producto p : aListaProductos) {
+			this._bDPrincipal.eliminarProductoOriginalOferta(p);
+		}
+
+		return o;
+
 	}
 
 	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
 		Oferta o = OfertaDAO.getOfertaByORMID(aIdOferta);
-
-		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
-
-		try {
-			OfertaDAO.deleteAndDissociate(o);
-			t.commit();
-		} catch (Exception e) {
-			t.rollback();
-			e.printStackTrace();
-			return false;
-		}
 
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 
@@ -189,6 +247,19 @@ public class BD_Ofertas {
 			t2.rollback();
 			e.printStackTrace();
 		}
+		
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			OfertaDAO.deleteAndDissociate(o);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+			e.printStackTrace();
+			return false;
+		}
+
+
 
 		/*
 		 * Aqui faltaria una vez se borra el producto rebajado, volver a insertarlo como
