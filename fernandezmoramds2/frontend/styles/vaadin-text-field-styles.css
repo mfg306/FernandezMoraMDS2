@@ -14,7 +14,9 @@
   box-shadow: 20px solid orange;
 }
 
-*{
+
+
+:host{
 	font-family: 'Poppins';
 }
 

@@ -19,7 +19,7 @@ class VistaUrunr extends PolymerElement {
  <vaadin-button theme="primary" id="botonVerCategorias" style="align-self: flex-end; background-color: #7800ff;">
    Ver categorias 
  </vaadin-button>
- <vaadin-vertical-layout id="ofertas" style="width: 100%;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout id="ofertas" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
  <vaadin-vertical-layout id="productosMasVendidosPorCategorias" style="width: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

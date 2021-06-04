@@ -25,7 +25,7 @@ class VistaIniciar_sesion extends PolymerElement {
    <span style="font-size: 4vw; font-weight: bold; width: 100%; text-align:center;" id="span">INICIA SESION</span>
    <vaadin-horizontal-layout theme="spacing-xs" style="align-self: center; align-items: center; justify-content: center;">
     <vaadin-button theme="tertiary-inline" id="botonRegistrarse" style="align-self: center; color: #7800ff; flex-grow: 0; flex-shrink: 0;">
-     o Registrate
+      o Registrate 
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-text-field id="correo" style="align-self: center; border-bottom: 1px solid grey; border-radius: 0; padding-bottom: 0; width: 100%; background-color: white; " placeholder="Introduzca su correo electronico" required autofocus invalid></vaadin-text-field>
@@ -40,7 +40,7 @@ class VistaIniciar_sesion extends PolymerElement {
    <vaadin-button id="boton_iniciar_sesion_empleados" style="align-self: center;  background-color: #7800ff;" theme="primary">
      Iniciar sesión 
    </vaadin-button>
-   <vaadin-button id="enlaceEmpleados" style="align-self: center; color: #7800ff; border-radius: 0;" theme="tertiary-inline">
+   <vaadin-button id="enlaceEmpleados" style="align-self: center; color: #7800ff; border-radius: 0;" theme="tertiary-inline" class="bounce">
      ¿Eres un empleado? 
    </vaadin-button>
   </vaadin-vertical-layout>

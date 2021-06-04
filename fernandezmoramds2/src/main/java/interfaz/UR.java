@@ -34,5 +34,6 @@ public class UR extends UR_UNR {
 		}
 
 		this._menu_UR.getNumeroElementos().setText("" + suma);
+
 	}
 }

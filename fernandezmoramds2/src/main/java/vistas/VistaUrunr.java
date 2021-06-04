@@ -7,6 +7,7 @@ import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Span;
 
 /**
  * A Designer generated component for the vista-urunr template.
@@ -28,6 +29,7 @@ public class VistaUrunr extends PolymerTemplate<VistaUrunr.VistaUrunrModel> {
 	private Element ofertas;
 	@Id("productosMasVendidosPorCategorias")
 	private Element productosMasVendidosPorCategorias;
+
 	/**
      * Creates a new VistaUrunr.
      */

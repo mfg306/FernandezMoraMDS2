@@ -3,6 +3,7 @@ package fernandezmora;
 import com.vaadin.flow.component.dependency.CssImport;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.page.Inline;
 import com.vaadin.flow.component.page.LoadingIndicatorConfiguration;
 import com.vaadin.flow.router.PreserveOnRefresh;
 import com.vaadin.flow.router.Route;
@@ -31,6 +32,8 @@ import interfaz.UNR_;
 @PWA(name = "Tienda electrodomesticos", shortName = "Tienda Electrodomesticos", description = "This is an example Vaadin application.", enableInstallPrompt = false)
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
+@CssImport(value="./styles/vaadin-button-styles.css", themeFor = "vaadin-button")
+@CssImport(value="./styles/vaadin-span-styles.css", themeFor = "span")
 @PreserveOnRefresh
 @EnableVaadin(value = "interfaz")
 public class MainView extends VerticalLayout implements PageConfigurator {
@@ -59,17 +62,7 @@ public class MainView extends VerticalLayout implements PageConfigurator {
 
 		// disable default theme -> loading indicator will not be shown
 		conf.setApplyDefaultTheme(false);
-//		/*
-//		 * Delay for showing the indicator and setting the 'first' class name.
-//		 */
-//		conf.setFirstDelay(300); // 300ms is the default
-//
-//		/* Delay for setting the 'second' class name */
-//		conf.setSecondDelay(1500); // 1500ms is the default
-//
-//		/* Delay for setting the 'third' class name */
-//		conf.setThirdDelay(5000); // 5000ms is the default
-		
+
 	}
 
 }

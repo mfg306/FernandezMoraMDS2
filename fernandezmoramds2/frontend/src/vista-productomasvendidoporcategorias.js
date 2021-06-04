@@ -13,8 +13,8 @@ class VistaProducto_mas_vendido_por_categorias extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center;" id="vaadinVerticalLayout">
- <img style="width: 100%; height: 100%;" id="imagen_producto">
+<vaadin-vertical-layout style="align-items: center; width: 100%; height: 100%;" id="vaadinVerticalLayout">
+ <img style="width: 40vw;" id="imagen_producto">
 </vaadin-vertical-layout>
 `;
     }

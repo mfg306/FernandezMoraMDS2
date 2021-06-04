@@ -10,8 +10,9 @@
 	max-width: 250px;
 }
 
+
 * {
-	font-family: 'Poppins';
+	font-family: "Poppins";
 }
 
 .v-loading-indicator {
@@ -62,3 +63,5 @@
     transform: scale(1.0);
   }
 }
+
+
