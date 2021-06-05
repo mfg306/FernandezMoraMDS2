@@ -15,7 +15,7 @@ class VistaCategoria extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout id="vaadinVerticalLayout">
- <vaadin-button theme="primary" id="categoria1" style="width: 100%; flex-grow: 0;  background-color: #7800ff;"></vaadin-button>
+ <vaadin-button theme="primary" id="categoria1" style="width: 100%; flex-grow: 0;  background-color: #7800ff; height: 5vw;"></vaadin-button>
 </vaadin-vertical-layout>
 `;
     }

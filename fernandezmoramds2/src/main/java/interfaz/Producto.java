@@ -29,6 +29,7 @@ public class Producto extends VistaProducto{
 	HorizontalLayout estrellitas;
 	public int valoracionMedia;
 	VerticalLayout listaValoraciones;
+	double precioProducto = .0;
 	
 	public Producto(base_de_datos.Producto p) {
 		this.producto = p;
@@ -45,6 +46,8 @@ public class Producto extends VistaProducto{
 		listaValoraciones.removeAll();
 		listaComentarios.removeAll();
 
+		this.getPrecioRebajado().setVisible(false);
+
 		this.verProducto();
 		this.cargarLasEstrellasDeValoracion((int)valoracionMedia);
 		listaValoraciones.add(estrellitas);	
@@ -57,9 +60,26 @@ public class Producto extends VistaProducto{
 		
 		iUR_UNR iUr_UNR = new BDPrincipal();
 		this.producto = iUr_UNR.cargarProducto(this.producto.getId_Producto());
+		base_de_datos.Producto_Rebajado pr = null;
+		
+		try {
+			 pr = iUr_UNR.cargarProductoRebajado(this.producto);
+
+		} catch (PersistentException e1) {
+			e1.printStackTrace();
+		}
+		
+		if(pr != null){
+			this.getPrecioRebajado().setVisible(true);
+			this.getPrecioRebajado().setText("REBAJADO: " + pr.getPrecio_rebajado() + " €");
+			this.precioProducto = pr.getPrecio_rebajado();
+		} else {
+			this.precioProducto = producto.getPrecio_producto();
+		}
+		
 		
 		this.getNombre_producto().setText(this.producto.getNombre());
-		this.getPrecio().setText(String.valueOf(this.producto.getPrecio_producto()) + " €");
+		this.getPrecio().setText(String.valueOf("PRECIO: " + this.producto.getPrecio_producto()) + " €");
 		this.getVaadinItem6().setText(this.producto.getDescripcion());
 		
 		if(this.producto._Imagen.toArray().length != 0) {

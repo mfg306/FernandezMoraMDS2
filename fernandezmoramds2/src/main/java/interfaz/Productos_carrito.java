@@ -66,8 +66,8 @@ public class Productos_carrito extends VistaProductos_carrito {
 			this._list_Producto_carrito.get(i).getCheckEliminar().setVisible(false);
 			this._list_Producto_carrito.get(i).actualizarListado(this);
 			
-			
-			precio += this._list_Producto_carrito.get(i).producto.getPrecio_producto()*Integer.parseInt(this._list_Producto_carrito.get(i).seleccionCantidad.getValue());
+			precio += this._list_Producto_carrito.get(i)._producto.precioProducto*Integer.parseInt(this._list_Producto_carrito.get(i).seleccionCantidad.getValue());
+
 		}
 
 		this._ver_carrito.getSpan1().setText("" + precio + " €");

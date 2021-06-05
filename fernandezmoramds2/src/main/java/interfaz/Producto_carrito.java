@@ -20,7 +20,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 		this.producto = pc;
 		
 		this.getImg().setSrc(pc._Imagen.toArray()[0].getRuta());
-		this.getPrecioProducto().setText("" + pc.getPrecio_producto() + " €");
+		this.getPrecioProducto().setText("" + this._producto.precioProducto + " €");
 		this.getNombreProducto().setText(pc.getNombre());
 
 		inicializar(pc, usuario);

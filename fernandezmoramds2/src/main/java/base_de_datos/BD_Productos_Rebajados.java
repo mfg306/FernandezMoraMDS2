@@ -44,8 +44,12 @@ public class BD_Productos_Rebajados {
 	public Producto_Rebajado cargarProductoRebajado(Producto aProducto) throws PersistentException {
 		
 		try {
-			Producto_Rebajado pr = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null)[0];
-			return pr;
+			Producto_Rebajado[] listado = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
+			
+			if(listado != null && listado.length > 0) {
+				return listado[0];
+			}
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

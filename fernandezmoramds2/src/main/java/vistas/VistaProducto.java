@@ -61,8 +61,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 	private Element vaadinVerticalLayout4;
 	@Id("vaadinHorizontalLayout4")
 	private HorizontalLayout vaadinHorizontalLayout4;
-	@Id("etiqueta_descripcion")
-	private Span etiqueta_descripcion;
 	@Id("precio")
 	private Span precio;
 	@Id("caracteristicas_producto")
@@ -245,14 +243,6 @@ public class VistaProducto extends PolymerTemplate<VistaProducto.VistaProductoMo
 
 	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
 		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
-	}
-
-	public Span getEtiqueta_descripcion() {
-		return etiqueta_descripcion;
-	}
-
-	public void setEtiqueta_descripcion(Span etiqueta_descripcion) {
-		this.etiqueta_descripcion = etiqueta_descripcion;
 	}
 
 	public Span getPrecio() {

@@ -5,6 +5,8 @@ import java.util.Vector;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
+import com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -65,7 +67,11 @@ public class Categorias extends VistaCategorias {
 		paginacion.add(de);
 		paginacion.add(ultimaPagina);
 		paginacion.add(siguiente);
+		
 
+		paginacion.setAlignItems(Alignment.CENTER);
+		paginacion.setJustifyContentMode(JustifyContentMode.CENTER);
+		
 		this.getPartePaginacion().as(VerticalLayout.class).removeAll();
 		this.getPartePaginacion().as(VerticalLayout.class).add(paginacion);
 

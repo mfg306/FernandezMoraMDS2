@@ -76,7 +76,18 @@ public class BD_Pendiente {
 				pec.setORM__Pendiente(pendiente);
 				
 				/*Vamos calculando el precio total de la compra*/
-				precioTotal += p.getPrecio_producto() * aUnidades[contador];
+				
+				/*Ver si coger el rebajado o no*/
+				
+				Producto_Rebajado lista[] = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + p.getId_Producto(), null);
+				
+				if(lista != null && lista.length > 0 ) {
+					precioTotal += lista[0].getPrecio_rebajado() * aUnidades[contador];
+
+				} else {
+					precioTotal += p.getPrecio_producto() * aUnidades[contador];
+				}
+				
 				
 				contador++;
 				

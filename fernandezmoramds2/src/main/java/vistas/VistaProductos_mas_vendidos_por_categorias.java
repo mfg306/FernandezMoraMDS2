@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Div;
 
 /**
  * A Designer generated component for the vista-productos_mas_vendidos_por_categorias template.
@@ -29,6 +30,12 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 	private H2 getTituloMasVendidos;
 	@Id("listaCategoriasMasVendidos")
 	private Element listaCategoriasMasVendidos;
+	@Id("div")
+	private Div div;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("div1")
+	private Div div1;
 	
 	/**
      * Creates a new VistaProductos_mas_vendidos_por_categorias.
@@ -78,6 +85,30 @@ public class VistaProductos_mas_vendidos_por_categorias extends PolymerTemplate<
 
 	public void setListaCategoriasMasVendidos(Element listaCategoriasMasVendidos) {
 		this.listaCategoriasMasVendidos = listaCategoriasMasVendidos;
+	}
+
+	public Div getDiv() {
+		return div;
+	}
+
+	public void setDiv(Div div) {
+		this.div = div;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Div getDiv1() {
+		return div1;
+	}
+
+	public void setDiv1(Div div1) {
+		this.div1 = div1;
 	}
 
 	

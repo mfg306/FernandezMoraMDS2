@@ -41,7 +41,9 @@ public class Producto_mas_vendido_por_categoria extends VistaProducto_mas_vendid
 			this._productos_mas_vendidos_por_categorias.getGetTituloMasVendidos().setVisible(false);
 			this._productos_mas_vendidos_por_categorias.getListaCategoriasMasVendidos().setVisible(false);
 			this._productos_mas_vendidos_por_categorias._uR_UNR.getBotonVerCategorias().setVisible(false);
-
+			this._productos_mas_vendidos_por_categorias.getDiv1().setVisible(false);
+			this._productos_mas_vendidos_por_categorias.getDiv().setVisible(false);
+			
 			this._productos_mas_vendidos_por_categorias.limpiar_Interfaz_Para_Abrir_Producto(this);
 
 			this.layout.add(this._producto);
