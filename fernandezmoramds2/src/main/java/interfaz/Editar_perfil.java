@@ -24,7 +24,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 	public Cambiar_contraseña _cambiar_contraseña;
 	Upload upload;
 	MemoryBuffer buffer;
-	String imagenPerfil = "";
+//	String imagenPerfil = "";
 	Image foto;
 
 	public Editar_perfil(Menu_UR _menu_UR) {
@@ -101,7 +101,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 			try {
 				iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue(),this.getSegundoApellido().getValue()
 						, this.getCorreo_electronico().getValue(), this.getDireccion_envio().getValue(), 
-						this.getMetodo_pago().getValue(), this.imagenPerfil);
+						this.getMetodo_pago().getValue(), foto.getSrc());
 				Notification.show("Configuración guardada con éxito");
 				this.inicializar(this._menu_UR);
 				
@@ -128,7 +128,6 @@ public class Editar_perfil extends VistaEditar_perfil{
 			
 			String rutaImgur = Uploader.upload(targetFile);
 			String rutaImagen = "https://i.imgur.com/" +  rutaImgur.subSequence(15, 22) + ".jpg";
-			imagenPerfil = rutaImagen;
 			
 			if(foto != null) {
 				this.getHuecoImagen().as(VerticalLayout.class).remove(foto);

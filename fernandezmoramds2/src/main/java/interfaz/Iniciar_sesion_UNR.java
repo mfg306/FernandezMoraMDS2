@@ -113,7 +113,7 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 					limpiar_interfaz();
 					this._menu_UNR.layout.add(new Administrador(usuario, this));
 				} else {
-					Notification.show("El usuario no está registrado");
+					Notification.show("No se ha podido encontrar tu cuenta");
 				}
 
 			} catch (PersistentException e) {

@@ -81,9 +81,11 @@ public class BD_UR {
 		if (usuariosCorreo.length == 0) {
 			return null;
 		}
+		
 		if (!usuariosCorreo[0].getEsta_operativo()) {
 			return null;
 		}
+		
 		if (usuariosCorreo[0].getCorreo_electronico().equals(usuario.getCorreo_electronico())
 				&& usuariosCorreo[0].getContrasenia().equals(usuario.getContrasenia())) {
 			return usuariosCorreo[0];
