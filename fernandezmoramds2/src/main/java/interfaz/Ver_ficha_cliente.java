@@ -35,8 +35,7 @@ public class Ver_ficha_cliente extends VistaVer_ficha_cliente{
 	public void cerrar() {
 		this.getVaadinButton().addClickListener(event ->{
 			ocultar_ficha_cliente();
-			this._pedido_T._pedidos_T._transportista = new Transportista(this._pedido_T._pedidos_T._transportista.transportista);
-			this.layout.add(this._pedido_T._pedidos_T._transportista);
+			this._pedido_T._pedidos_T._transportista.inicializar();
 		});
 		
 	}
