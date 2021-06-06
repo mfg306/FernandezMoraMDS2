@@ -48,6 +48,14 @@ public class Pedido_E extends VistaPedido_e {
 				String mensaje = "El pedido de código " + this.pendiente.getCodigo()
 						+ " se ha enviado a la empresa de transportes" + " con éxito. \n Fecha: "
 						+ this.pendiente.getFecha_estado();
+				
+				mensaje += "\nArtículos: \n";
+				
+				for(base_de_datos.Producto_en_compra pec : listado) {
+					mensaje += pec.get_Producto().getNombre() + "\n";
+				}
+				
+				mensaje += "\nEn breves recibirá sus artículos. ";
 
 				this.Enviar_mensaje_a_cliente_E(this.pendiente.get_Hace_compra().getCorreo_electronico(), asunto,
 						mensaje);

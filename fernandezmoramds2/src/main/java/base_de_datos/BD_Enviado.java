@@ -120,9 +120,10 @@ public class BD_Enviado {
 		for(int i=0; i<listaPendientes.length; i++) {
 			Enviado[] e = EnviadoDAO.listEnviadoByQuery("CodigoPendiente = " + listaPendientes[i].getCodigo() + " "
 					+ "AND ENVIADO = 0" , null);
+
 			
 			if(e != null && e.length > 0){
-				resultado[contador] = e[i];
+				resultado[contador] = e[0];
 				contador++;	
 			}
 

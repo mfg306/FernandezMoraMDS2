@@ -33,7 +33,10 @@ import interfaz.UNR_;
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 @CssImport(value="./styles/vaadin-button-styles.css", themeFor = "vaadin-button")
-@CssImport(value="./styles/vaadin-span-styles.css", themeFor = "span")
+@CssImport(value="./styles/vaadin-select-styles.css", themeFor="vaadin-select")
+@CssImport(value="./styles/vaadin-select-text-field-styles.css", themeFor="vaadin-select-text-field")
+@CssImport(value="./styles/vaadin-item-styles.css", themeFor="vaadin-item")
+
 @PreserveOnRefresh
 @EnableVaadin(value = "interfaz")
 public class MainView extends VerticalLayout implements PageConfigurator {

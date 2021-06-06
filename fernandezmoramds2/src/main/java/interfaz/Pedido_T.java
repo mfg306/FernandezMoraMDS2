@@ -24,7 +24,6 @@ public class Pedido_T extends VistaPedido_t {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		
 		inicializar(p);
-
 	}
 
 	public void inicializar(Pedidos_T p) {
