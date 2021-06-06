@@ -109,14 +109,12 @@ public class Productos_carrito extends VistaProductos_carrito {
 			if (seleccionarVarios) {
 				if(this._list_Producto_carrito.size() > 0) {
 					for(Producto_carrito pc : usuario.listaAux) {
-						System.out.println("AQUI");
 
 						if(pc.getCheckEliminar().getValue() == true) {
 							this._list_Producto_carrito.remove(pc);
 						} 
 						
 						if(pc.getCheckEliminar().getValue() == false) {
-							System.out.println("ES FALSE");
 							pc.getCheckEliminar().setVisible(false);
 							pc.getVaadinButton().setVisible(true);
 							pc.seleccionCantidad.setVisible(true);	
