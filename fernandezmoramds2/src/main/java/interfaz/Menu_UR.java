@@ -145,7 +145,13 @@ public class Menu_UR extends Menu_UR_UNR {
 	public void ocultarInformacionEditarPerfil() {
 		if (this._editar_perfil != null) {
 			this.layout.remove(this._editar_perfil);
+			
+			if(this._editar_perfil._cambiar_contraseña != null) {
+				this.layout.remove(this._editar_perfil._cambiar_contraseña);
+			}
 		}
+		
+		
 	}
 
 	public void ocultarInformacionVerBandejaDeEntrada() {

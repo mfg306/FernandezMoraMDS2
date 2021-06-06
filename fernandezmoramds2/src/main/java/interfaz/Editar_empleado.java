@@ -2,6 +2,7 @@ package interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -23,14 +24,18 @@ public class Editar_empleado extends VistaEditar_empleado {
 		cancelar_edicion();
 		editarEmpleado();
 	}
+	
+	public void retroceder() {
+		Gestionar_empleados ge = new Gestionar_empleados(this._empleado._empleados._gestionar_empleados._administrador);
+		this.getVaadinVerticalLayout1().setVisible(false);
+		this.getH1().setVisible(false);
+		layout.add(ge);
+	}
 
 	
 	public void cancelar_edicion() {
 		this.getVaadinButton1().addClickListener(event ->{
-			Gestionar_empleados ge = new Gestionar_empleados(this._empleado._empleados._gestionar_empleados._administrador);
-			this.getVaadinVerticalLayout1().setVisible(false);
-			this.getH1().setVisible(false);
-			layout.add(ge);
+			retroceder();
 		});
 	}
 	
@@ -40,6 +45,8 @@ public class Editar_empleado extends VistaEditar_empleado {
 			
 			try {
 				this._empleado.e = admin.actualizarEmpleado(this._empleado.e.getIdEmpleado(), this.getVaadinTextField1().getValue(), this.getVaadinTextField().getValue());
+				retroceder();
+				Notification.show("Empleado editado con exito");
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}

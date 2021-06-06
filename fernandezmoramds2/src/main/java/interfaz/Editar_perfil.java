@@ -24,7 +24,6 @@ public class Editar_perfil extends VistaEditar_perfil{
 	public Cambiar_contraseña _cambiar_contraseña;
 	Upload upload;
 	MemoryBuffer buffer;
-//	String imagenPerfil = "";
 	Image foto;
 
 	public Editar_perfil(Menu_UR _menu_UR) {
@@ -47,9 +46,9 @@ public class Editar_perfil extends VistaEditar_perfil{
 
 	public void cambiar_contrasenia() {
 		this.getBoton_cambiar_contrasenia().addClickListener(event -> {
-			Cambiar_contraseña cc = new Cambiar_contraseña(this);
+			this._cambiar_contraseña = new Cambiar_contraseña(this);
 			limpiar_interfaz();
-			this._menu_UR.layout.add(cc);
+			this._menu_UR.layout.add(this._cambiar_contraseña);
 		});
 	}
 
