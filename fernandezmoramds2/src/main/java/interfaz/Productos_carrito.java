@@ -1,7 +1,9 @@
 package interfaz;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -15,19 +17,20 @@ public class Productos_carrito extends VistaProductos_carrito {
 	public VerticalLayout layout;
 	public VerticalLayout listadoProductos;
 	private boolean seleccionarVarios;
-	int contadorLayout = 0; 
+	int contadorLayout = 0;
+	private ArrayList<HorizontalLayout> layoutsProductos;
 
 	public Productos_carrito(Vector<Producto_carrito> aux, Ver_carrito vc, UR_UNR usuario) {
 		this._ver_carrito = vc;
 		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
 		seleccionarVarios = false;
 		actualizar_datos(usuario);
-		
+
 		listadoProductos = this.getListadoProductos().as(VerticalLayout.class);
 		layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 
 		inicializar(usuario);
-		
+
 		Seleccionar_varios();
 		Borrar(usuario);
 	}
@@ -41,23 +44,26 @@ public class Productos_carrito extends VistaProductos_carrito {
 	public void mostrarProductos() {
 		contadorLayout = 0;
 		double precio = .0;
+		layoutsProductos = new ArrayList<>();
 		HorizontalLayout hl = new HorizontalLayout();
-		
-		if(this._list_Producto_carrito.size() == 0) {
+		layoutsProductos.add(hl);
+
+		if (this._list_Producto_carrito.size() == 0) {
 			Span aviso = new Span();
 			aviso.setText("Todavia no tienes ningun producto en el carrito ... ");
 			aviso.setWidth("100%");
 			listadoProductos.add(aviso);
 		}
-		
+
 		for (int i = 0; i < this._list_Producto_carrito.size(); i++) {
-			if(contadorLayout == 0 || (contadorLayout) % 3 == 0) {
-				if(contadorLayout != 0) {
+			if (contadorLayout == 0 || (contadorLayout) % 3 == 0) {
+				if (contadorLayout != 0) {
+					layoutsProductos.add(hl);
 					hl = new HorizontalLayout();
 				}
 
 				hl.add(this._list_Producto_carrito.get(i));
-				
+
 				this.listadoProductos.add(hl);
 			} else {
 				hl.add(this._list_Producto_carrito.get(i));
@@ -65,23 +71,23 @@ public class Productos_carrito extends VistaProductos_carrito {
 			contadorLayout++;
 			this._list_Producto_carrito.get(i).getCheckEliminar().setVisible(false);
 			this._list_Producto_carrito.get(i).actualizarListado(this);
-			
-			precio += this._list_Producto_carrito.get(i)._producto.precioProducto*Integer.parseInt(this._list_Producto_carrito.get(i).seleccionCantidad.getValue());
+
+			precio += this._list_Producto_carrito.get(i)._producto.precioProducto
+					* Integer.parseInt(this._list_Producto_carrito.get(i).seleccionCantidad.getValue());
 
 		}
 
 		this._ver_carrito.getSpan1().setText("" + precio + " €");
 	}
 
-	
 	public void actualizar_datos(UR_UNR usuario) {
-		for(Producto_carrito pc : this._list_Producto_carrito) {
-			pc.seleccionCantidad.addValueChangeListener(event ->{
+		for (Producto_carrito pc : this._list_Producto_carrito) {
+			pc.seleccionCantidad.addValueChangeListener(event -> {
 				mostrarProductos();
 			});
 		}
 	}
-	
+
 	public void actualizarListaProductos(Vector<Producto_carrito> aux) {
 		this._list_Producto_carrito = new Vector<Producto_carrito>(aux);
 	}
@@ -99,34 +105,29 @@ public class Productos_carrito extends VistaProductos_carrito {
 
 	public void Borrar(UR_UNR usuario) {
 		this.getVaadinButton().addClickListener(event -> {
-			
-			if (seleccionarVarios) {
-				for (int i = 0; i < this._list_Producto_carrito.size(); i++) {
-					if (this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == true) {
-						this.listadoProductos.remove(this._list_Producto_carrito.get(i));
-					}
-					
-					if(this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == false) {
-						this._list_Producto_carrito.get(i).getCheckEliminar().setVisible(false);
-						this._list_Producto_carrito.get(i).getVaadinButton().setVisible(true);
-						this._list_Producto_carrito.get(i).seleccionCantidad.setVisible(true);
-					}
-				}
 
-				/*
-				 * Que lo borres de la lista de _list_Producto_carrito no sirve de nada porque
-				 * luego la que se coge es la de la lista Aux
-				 */
-				for (int i = 0; i < usuario.listaAux.size(); i++) {
-					if (this._list_Producto_carrito.get(i).getCheckEliminar().getValue() == true) {
-						usuario.listaAux.remove(i);
-						this._list_Producto_carrito.remove(i);
+			if (seleccionarVarios) {
+				if(this._list_Producto_carrito.size() > 0) {
+					for(Producto_carrito pc : usuario.listaAux) {
+						System.out.println("AQUI");
+
+						if(pc.getCheckEliminar().getValue() == true) {
+							this._list_Producto_carrito.remove(pc);
+						} 
+						
+						if(pc.getCheckEliminar().getValue() == false) {
+							System.out.println("ES FALSE");
+							pc.getCheckEliminar().setVisible(false);
+							pc.getVaadinButton().setVisible(true);
+							pc.seleccionCantidad.setVisible(true);	
+						}
 					}
+					usuario.actualizarMiListado(_list_Producto_carrito);
 				}
-			} 
-			
-			
-			if(!seleccionarVarios) {
+				
+			}
+
+			if (!seleccionarVarios) {
 				this._list_Producto_carrito.removeAllElements();
 				this.listadoProductos.removeAll();
 				usuario.listaAux.removeAllElements();
@@ -138,9 +139,9 @@ public class Productos_carrito extends VistaProductos_carrito {
 
 			/* Una vez que hemos borrado volvemos a ponerSeleccionarVarios a false */
 			seleccionarVarios = false;
-			
+
 		});
-		
+
 	}
 
 }
