@@ -12,6 +12,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 	public int cantidad = 0;
 	public VerticalLayout layout;
 	base_de_datos.Producto producto;
+	boolean flag = false;
 
 	public Producto_carrito(Producto p, base_de_datos.Producto pc, UR_UNR usuario) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
@@ -27,12 +28,24 @@ public class Producto_carrito extends VistaProducto_carrito {
 	}
 
 	public void incrementarCantidad() {
-		if(this.seleccionCantidad.getValue() == null) {
-			this.cantidad = 1;
-		} else {
-			this.cantidad = Integer.parseInt(this.seleccionCantidad.getValue());
+		if(this.cantidad < 4) {
+			this.cantidad++;
+			seleccionCantidad.setValue("" + this.cantidad);
+			this.flag = true;
 		}
-		seleccionCantidad.setValue("" + this.cantidad);
+	}
+	
+	public void actualizarValor() {
+				
+		if(!flag) {
+			if(this.seleccionCantidad.getValue() == null) {
+				this.cantidad = 1;
+			} else {
+				this.cantidad = Integer.parseInt(this.seleccionCantidad.getValue());
+			}
+			seleccionCantidad.setValue("" + this.cantidad);
+		}
+
 	}
 	
 
@@ -49,8 +62,9 @@ public class Producto_carrito extends VistaProducto_carrito {
 			if(usuario.estaElProducto(this)) {
 				int index = 0;
 				index = usuario.indiceProducto(this);
-				usuario.listaAux.get(index).incrementarCantidad();
+				usuario.listaAux.get(index).actualizarValor();
 				usuario.actualizarNumeroItemsCarrito();
+				flag = false;
 			}
 		});
 
