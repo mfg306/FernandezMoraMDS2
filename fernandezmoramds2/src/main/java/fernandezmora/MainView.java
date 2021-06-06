@@ -65,7 +65,6 @@ public class MainView extends VerticalLayout implements PageConfigurator {
 
 		// disable default theme -> loading indicator will not be shown
 		conf.setApplyDefaultTheme(false);
-
 	}
 
 }

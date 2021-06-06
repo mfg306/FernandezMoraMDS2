@@ -27,7 +27,11 @@ public class Producto_carrito extends VistaProducto_carrito {
 	}
 
 	public void incrementarCantidad() {
-		this.cantidad++;
+		if(this.seleccionCantidad.getValue() == null) {
+			this.cantidad = 1;
+		} else {
+			this.cantidad = Integer.parseInt(this.seleccionCantidad.getValue());
+		}
 		seleccionCantidad.setValue("" + this.cantidad);
 	}
 	
@@ -40,6 +44,15 @@ public class Producto_carrito extends VistaProducto_carrito {
 	}
 
 	public void inicializar(base_de_datos.Producto p, UR_UNR usuario) {
+		
+		this.seleccionCantidad.addValueChangeListener(event ->{
+			if(usuario.estaElProducto(this)) {
+				int index = 0;
+				index = usuario.indiceProducto(this);
+				usuario.listaAux.get(index).incrementarCantidad();
+				usuario.actualizarNumeroItemsCarrito();
+			}
+		});
 
 		this.getVaadinButton().addClickListener(event -> {
 			Eliminar(usuario);
