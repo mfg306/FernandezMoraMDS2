@@ -44,12 +44,4 @@ public class Oferta_administrador extends VistaOferta_administrador {
 		});
 	}
 
-	public void abrir_editar_Oferta() {
-		this.getVaadinButton().addClickListener(event -> {
-			this._editar_oferta = new Editar_oferta(this);
-			this._ofertas_administrador._gestionar_ofertas.ocultar_Gestionar_Ofertas();
-			this._ofertas_administrador._gestionar_ofertas.layout.add(this._editar_oferta);
-		});
-
-	}
 }

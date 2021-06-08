@@ -168,19 +168,24 @@ public class BD_Ofertas {
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
 		Producto_Rebajado pr = null;
-
+		boolean creandoNuevo = false;
 		int contador = 0;
 
 		Oferta o = OfertaDAO.listOfertaByQuery("Nombre_Oferta = '" + aNombreOferta + "'", null)[0];
 
 		try {
 			for (Producto p : aListaProductos) {
-				/*
-				 * Crear el producto rebajado que va a ser una copia del Producto p pero con el
-				 * precio rebajado
-				 */
-				pr = Producto_RebajadoDAO.createProducto_Rebajado();
 
+				System.out.println("Empezando con el producto : " + p.getNombre());
+
+//				Producto_Rebajado listado[] = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + 
+//				p.getId_Producto(), null);
+
+				/*
+				 * Si el producto rebajado ya existia, modificamos sus datos, si no, lo creamos
+				 */
+
+				pr = Producto_RebajadoDAO.createProducto_Rebajado();
 				pr.setPrecio_producto(p.getPrecio_producto());
 				pr.setNombre(p.getNombre());
 				pr.setDescripcion(p.getDescripcion());
@@ -197,7 +202,6 @@ public class BD_Ofertas {
 					i.set_Producto(pr);
 				}
 
-
 				for (Comentario c : p._Pertenece_a.toArray()) {
 					c.set_Tiene(pr);
 				}
@@ -213,16 +217,19 @@ public class BD_Ofertas {
 				/* Guardamos los cambios */
 				Producto_RebajadoDAO.save(pr);
 				o._Pertenece_a.add(pr);
+				System.out.println("Terminando con el producto : " + p.getNombre());
+
 			}
 
 			OfertaDAO.save(o);
 
 			t2.commit();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			t2.rollback();
 		}
-		
+
 		MDS2PersistentManager.instance().disposePersistentManager();
 
 		for (Producto p : aListaProductos) {
@@ -234,12 +241,12 @@ public class BD_Ofertas {
 	}
 
 	public boolean eliminarOfertaAdmin(int aIdOferta, Producto[] aListaProductos) throws PersistentException {
-		
-		/*Recuperamos el producto original*/
+
+		/* Recuperamos el producto original */
 		PersistentTransaction t3 = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			for(Producto p : aListaProductos) {
+			for (Producto p : aListaProductos) {
 				Producto product = ProductoDAO.createProducto();
 				product.setORM__Categoria(p.get_Categoria());
 				product.setDescripcion(p.getDescripcion());
@@ -247,7 +254,7 @@ public class BD_Ofertas {
 				product.setNum_Unidades_Restantes(p.getNum_Unidades_Restantes());
 				product.setNum_Unidades_Vendidas(p.getNum_Unidades_Vendidas());
 				product.setPrecio_producto(p.getPrecio_producto());
-				
+
 				for (Imagen i : p._Imagen.toArray()) {
 					i.set_Producto(product);
 				}
@@ -263,22 +270,21 @@ public class BD_Ofertas {
 				for (Valoracion v : p._Valorado_por.toArray()) {
 					v.set_Valorado(product);
 				}
-				
+
 				ProductoDAO.save(product);
 			}
-			
+
 			t3.commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			t3.rollback();
 		}
-		
-		
+
 		MDS2PersistentManager.instance().disposePersistentManager();
 
 		Oferta o = OfertaDAO.getOfertaByORMID(aIdOferta);
 
-		/*Nos deshacemos del producto rebajado*/
+		/* Nos deshacemos del producto rebajado */
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
@@ -290,10 +296,10 @@ public class BD_Ofertas {
 			t2.rollback();
 			e.printStackTrace();
 		}
-		
+
 		MDS2PersistentManager.instance().disposePersistentManager();
-		
-		/*Borramos la oferta*/
+
+		/* Borramos la oferta */
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
@@ -304,8 +310,6 @@ public class BD_Ofertas {
 			e.printStackTrace();
 			return false;
 		}
-
-
 
 		/*
 		 * Aqui faltaria una vez se borra el producto rebajado, volver a insertarlo como
