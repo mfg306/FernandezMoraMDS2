@@ -19,9 +19,9 @@ class VistaCrear_empleados extends PolymerElement {
             </style>
 <vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
  <h1 style="align-self: center;" id="h1">Crear empleado</h1>
- <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey;  border-radius: 0; padding-bottom: 0;" label="Introduzca un correo:" id="introduzcaUnCorreo" autofocus></vaadin-text-field>
- <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0;" label="Introduzca una contrasena:" id="introduzcaUnaContraseña"></vaadin-text-field>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-self: center; align-items: center; justify-content: center;">
+ <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 80%; margin: var(--lumo-space-xs);" label="Introduzca un correo:" id="introduzcaUnCorreo" autofocus></vaadin-text-field>
+ <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 80%; margin: var(--lumo-space-xs);" label="Introduzca una contrasena:" id="introduzcaUnaContraseña"></vaadin-text-field>
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-self: center; align-items: center; justify-content: center; padding: var(--lumo-space-s);">
   <vaadin-checkbox id="vaadinCheckbox" style="align-self: center;">
     Transportista 
   </vaadin-checkbox>

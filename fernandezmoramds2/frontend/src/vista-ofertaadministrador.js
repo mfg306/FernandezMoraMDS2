@@ -15,18 +15,16 @@ class VistaOferta_administrador extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="align-items: center; background-color: #F1F2F2; justify-content: center;" id="vaadinVerticalLayout">
- <h1 id="h1" style="width: 50%; align-self: center;">Nombre oferta</h1>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-grow: 1; margin-top: var(--lumo-space-l); flex-shrink: 0; align-items: center; align-self: stretch; justify-content: center;" id="vaadinHorizontalLayout">
-  <label style="margin: var(--lumo-space-l); width: 100%;" id="label">Codigo oferta</label>
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="justify-content: flex-end; width: 100%;">
-   <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="vaadinButton">
-     Editar 
-   </vaadin-button>
-   <vaadin-button theme="primary" style="align-self: center;  background-color: red;" id="vaadinButton1">
-     Eliminar 
-   </vaadin-button>
-  </vaadin-horizontal-layout>
+<vaadin-vertical-layout style="background-color: white; justify-content: center; border-bottom: 1px solid #ECEDEE;" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-self: stretch; justify-content: center; align-items: center;">
+  <label style="margin: var(--lumo-space-l); align-self: center;" id="label"></label>
+  <h1 id="h1" style="width: 50%; align-self: center;"></h1>
+  <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="vaadinButton">
+    Editar 
+  </vaadin-button>
+  <vaadin-button theme="primary" style="align-self: center; background-color: red;" id="vaadinButton1">
+    Eliminar 
+  </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

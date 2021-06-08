@@ -15,13 +15,13 @@ class VistaCategoria_administrador extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="width: 80%; flex-grow: 0; margin-top: var(--lumo-space-l); background-color: #F1F2F2; align-items: center;" id="vaadinHorizontalLayout">
+<vaadin-vertical-layout style="background-color: white; justify-content: center; border-bottom: 1px solid #ECEDEE;" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: stretch; justify-content: center; align-items: center;" id="vaadinHorizontalLayout">
   <h1 style="align-self: center; margin-left: var(--lumo-space-l);" id="h1"></h1>
-  <vaadin-button theme="primary" id="vaadinButton" style="background-color: #7800ff;">
+  <vaadin-button theme="primary" id="vaadinButton" style="background-color: #7800ff; align-self: center;">
     Editar 
   </vaadin-button>
-  <vaadin-button theme="primary" id="vaadinButton1" style="background-color: red;">
+  <vaadin-button theme="primary" id="vaadinButton1" style="background-color: red; align-self: center;">
     Eliminar 
   </vaadin-button>
  </vaadin-horizontal-layout>

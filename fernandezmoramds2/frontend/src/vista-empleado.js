@@ -15,8 +15,8 @@ class VistaEmpleado extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; margin-top: var(--lumo-space-l);" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="width: 80%; height: 100%; background-color: #F1F2F2; align-self: center; padding: var(--lumo-space-l);" id="vaadinHorizontalLayout">
+<vaadin-vertical-layout style="width: 100%; margin-top: var(--lumo-space-l); border-bottom: 1px solid #ECEDEE;" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing" style="width: 80%; height: 100%; background-color: white; align-self: center; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout">
   <label style="align-self: center;" id="label"></label>
   <vaadin-horizontal-layout theme="spacing" style="justify-content: flex-end; width: 100%;" id="vaadinHorizontalLayout1">
    <vaadin-button theme="primary" id="vaadinButton" style="background-color: #7800ff;">
