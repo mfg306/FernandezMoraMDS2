@@ -39,6 +39,8 @@ public class VistaPedido extends PolymerTemplate<VistaPedido.VistaPedidoModel> {
 	private Span fecha;
 	@Id("precio")
 	private Span precio;
+	@Id("huecoProductos")
+	private Element huecoProductos;
 
 	/**
      * Creates a new VistaPedido.
@@ -116,6 +118,14 @@ public class VistaPedido extends PolymerTemplate<VistaPedido.VistaPedidoModel> {
 
 	public void setPrecio(Span precio) {
 		this.precio = precio;
+	}
+
+	public Element getHuecoProductos() {
+		return huecoProductos;
+	}
+
+	public void setHuecoProductos(Element huecoProductos) {
+		this.huecoProductos = huecoProductos;
 	}
 	
 }

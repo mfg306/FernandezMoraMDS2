@@ -431,6 +431,11 @@ public class BDPrincipal implements iUR_UNR, iUR, iGestor_Banco, iUNR_, iGestor_
 	public Transportista buscarTransportistaCola(int aIdCola) throws PersistentException {
 		return this._bD_Transportistas.buscarTransportistaCola(aIdCola);
 	}
+
+	@Override
+	public Pendiente cargarPendienteEnviado(Enviado aEnviado) throws PersistentException{
+		return this._bD_Pendiente.cargarPendienteEnviado(aEnviado);
+	}
 	
 	
 

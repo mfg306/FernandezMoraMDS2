@@ -168,18 +168,12 @@ public class BD_Ofertas {
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();
 		this._bDPrincipal = new BDPrincipal();
 		Producto_Rebajado pr = null;
-		boolean creandoNuevo = false;
 		int contador = 0;
 
 		Oferta o = OfertaDAO.listOfertaByQuery("Nombre_Oferta = '" + aNombreOferta + "'", null)[0];
 
 		try {
 			for (Producto p : aListaProductos) {
-
-				System.out.println("Empezando con el producto : " + p.getNombre());
-
-//				Producto_Rebajado listado[] = Producto_RebajadoDAO.listProducto_RebajadoByQuery("ProductoId_Producto = " + 
-//				p.getId_Producto(), null);
 
 				/*
 				 * Si el producto rebajado ya existia, modificamos sus datos, si no, lo creamos
@@ -217,7 +211,6 @@ public class BD_Ofertas {
 				/* Guardamos los cambios */
 				Producto_RebajadoDAO.save(pr);
 				o._Pertenece_a.add(pr);
-				System.out.println("Terminando con el producto : " + p.getNombre());
 
 			}
 

@@ -223,6 +223,11 @@ public class BD_Pendiente {
 		}
 		
 		return true;
-
 	}
+	
+	public Pendiente cargarPendienteEnviado(Enviado aEnviado) throws PersistentException {
+		return PendienteDAO.getPendienteByORMID(aEnviado.getCodigoPendiente());
+	}
+	
+
 }
