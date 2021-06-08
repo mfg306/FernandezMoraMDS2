@@ -9,7 +9,6 @@ public class Producto_UNR extends Producto {
 
 	public Producto_UNR(UR_UNR unr,base_de_datos.Producto p) { // para que sirva para Ver_Producto_UR
 		super(p);
-		this._uNR_ = (UNR_) unr;
 		if (unr instanceof UNR_) this._uNR_ = (UNR_) unr;
 		this.Anadir_al_carrito(p);
 		this.getVaadinVerticalLayout2().setVisible(false);
