@@ -82,12 +82,13 @@ public class Ver_producto_UR extends Producto_UNR {
 			Producto_carrito pc = new Producto_carrito(this, p, this._uR);
 
 			if (!this._uR.estaElProducto(pc)) {
-				pc.incrementarCantidad();
+				pc.incrementarCantidad(this._uR);
 				this._uR.miListadoProductos(pc);
+				this._uR.actualizarNumeroItemsCarrito();
 			} else {
 				int index = 0;
 				index = this._uR.indiceProducto(pc);
-				this._uR.listaAux.get(index).incrementarCantidad();
+				this._uR.listaAux.get(index).incrementarCantidad(this._uR);
 				this._uR.actualizarNumeroItemsCarrito();
 			}
 			Notification.show( this.producto.getNombre() + " añadido al carrito");

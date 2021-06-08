@@ -18,7 +18,7 @@ class VistaProductos_busqueda extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="align-self: center; padding: var(--lumo-space-l); align-items: center; height: 100%; background-color: #F5F5F5;" id="vaadinHorizontalLayout1"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" style="align-self: center; padding: var(--lumo-space-l); align-items: center; height: 100%; background-color: white;" id="vaadinHorizontalLayout1"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; align-self: center; align-items: center; justify-content: center; margin-top: var(--lumo-space-xl); margin-bottom: var(--lumo-space-s);" id="vaadinHorizontalLayout2">
   <vaadin-button id="boton_pagina_anterior" style="background-color: grey; color: white;">
     &lt; 

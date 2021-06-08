@@ -18,7 +18,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 	public Buscador _buscador;
 	public Vector<Producto_busqueda> _list_Producto_busqueda;
 	public VerticalLayout layout;
-	public int productosPorPagina = 2;
+	public int productosPorPagina = 4;
 	public int numeroTotalRegistros = 0;
 	public int numeroTotalPaginas = 0;
 	public int paginaActual = 0;

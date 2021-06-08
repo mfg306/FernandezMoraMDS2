@@ -27,11 +27,13 @@ public class Producto_carrito extends VistaProducto_carrito {
 		inicializar(pc, usuario);
 	}
 
-	public void incrementarCantidad() {
+	public void incrementarCantidad(UR_UNR usuario) {
 		if(this.cantidad < 4) {
 			this.cantidad++;
 			seleccionCantidad.setValue("" + this.cantidad);
 			this.flag = true;
+			
+			this.inicializar(producto, usuario);
 		}
 	}
 	
@@ -44,6 +46,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 				this.cantidad = Integer.parseInt(this.seleccionCantidad.getValue());
 			}
 			seleccionCantidad.setValue("" + this.cantidad);
+			
 		}
 
 	}

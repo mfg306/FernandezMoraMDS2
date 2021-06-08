@@ -18,8 +18,8 @@ public class Pedido_T extends VistaPedido_t {
 
 	public Pedido_T(Pedidos_T p, base_de_datos.Enviado enviado) {
 		this.enviado = enviado;
-		this.getLabel().setText("" + enviado.getCodigo());
-		this.getLabel2().setText("" + enviado.getFecha_estado());
+		this.getLabel().setText("Codigo: " + enviado.getCodigo());
+		this.getLabel2().setText("Ultima actualizacion: " + enviado.getFecha_estado());
 
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		
@@ -51,7 +51,7 @@ public class Pedido_T extends VistaPedido_t {
 		}
 		
 		if(this.cliente != null) {
-			this.getLabel1().setText(cliente.getDireccion_envio());
+			this.getLabel1().setText("Direccion: " + cliente.getDireccion_envio());
 		}
 	}
 

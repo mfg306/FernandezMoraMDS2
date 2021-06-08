@@ -9,6 +9,7 @@ public class Producto_UNR extends Producto {
 
 	public Producto_UNR(UR_UNR unr,base_de_datos.Producto p) { // para que sirva para Ver_Producto_UR
 		super(p);
+		this._uNR_ = (UNR_) unr;
 		if (unr instanceof UNR_) this._uNR_ = (UNR_) unr;
 		this.Anadir_al_carrito(p);
 		this.getVaadinVerticalLayout2().setVisible(false);
@@ -19,12 +20,13 @@ public class Producto_UNR extends Producto {
 			Producto_carrito pc = new Producto_carrito(this , p, this._uNR_);
 			
 			if(!this._uNR_.estaElProducto(pc)) {
-				pc.incrementarCantidad();
+				pc.incrementarCantidad(this._uNR_);
 				this._uNR_.miListadoProductos(pc);
+				this._uNR_.actualizarNumeroItemsCarrito();
 			} else {
 				int index = 0;
 				index = this._uNR_.indiceProducto(pc);
-				this._uNR_.listaAux.get(index).incrementarCantidad();
+				this._uNR_.listaAux.get(index).incrementarCantidad(this._uNR_);
 				this._uNR_.actualizarNumeroItemsCarrito();
 			}
 			Notification.show( this.producto.getNombre() + " añadido al carrito");

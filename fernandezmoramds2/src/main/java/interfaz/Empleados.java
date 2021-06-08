@@ -29,10 +29,10 @@ public class Empleados extends VistaEmpleados {
 
 		this._gestionar_empleados = ge;
 		inicializar(this.paginaActual);
-
 	}
 	
 	public void inicializar(int paginaActual ) {
+		System.out.println("Inicializando");
 		this._list_Empleado = new Vector<>();
 		layout = this.getHuecoEmpleados().as(VerticalLayout.class);
 		numeroTotalRegistros = 0;
@@ -99,7 +99,6 @@ public class Empleados extends VistaEmpleados {
 			this.getBotonAnteriores().addClickListener(event -> {
 				if(paginaActual > 0) {
 					this.paginaActual--;
-					this.inicializar(paginaActual);
 				}
 				
 				/*Una vez que se le da al boton de anterior volvemos a activar el boton de siguiente*/
@@ -108,6 +107,7 @@ public class Empleados extends VistaEmpleados {
 				if(this.paginaActual == 0) {
 					this.getBotonAnteriores().setEnabled(false);
 				}
+				
 				this.inicializar(paginaActual);	
 			});
 		}

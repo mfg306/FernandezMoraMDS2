@@ -22,7 +22,7 @@ class VistaTransportista extends PolymerElement {
  </vaadin-horizontal-layout>
  <h1 style="align-self: center;" id="h1-transportista">Lista pedidos</h1>
  <vaadin-vertical-layout theme="spacing" id="huecoListaPedidos" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
- <h3 style="align-self: center; padding: var(--lumo-space-s); background-color: #7800ff;; border-radius: 15px; color: white;" id="h3-transportista">Nombre empresa</h3>
+ <h3 style="align-self: center; padding: var(--lumo-space-s); background-color: #7800ff;; border-radius: 15px; color: white;" id="h3-transportista">SEUR</h3>
 </vaadin-vertical-layout>
 `;
     }
