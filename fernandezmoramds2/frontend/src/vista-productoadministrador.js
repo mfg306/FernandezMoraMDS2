@@ -2,8 +2,6 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
-import '@vaadin/vaadin-item/src/vaadin-item.js';
 
 class VistaProducto_administrador extends PolymerElement {
 
@@ -17,18 +15,14 @@ class VistaProducto_administrador extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; align-items: center; margin-top: var(--lumo-space-l);" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="width: 80%; background-color: #F1F2F2; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout">
-  <label style="margin-left: var(--lumo-space-xl);" id="label">Nombre producto </label>
-  <label style="margin-left: 15%;" id="label2">Precio</label>
-  <label style="margin-left: 45%; width: 100%;" id="label1">Codigo producto</label>
+<vaadin-vertical-layout style="width: 100%; align-items: center; margin-top: var(--lumo-space-l); border: 1px solid #ECEDEE; padding: var(--lumo-space-m);  border-radius: 20px;" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing" style="width: 80%; background-color: white; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout">
+  <label style="margin-left: var(--lumo-space-xl); width: 100%;" id="label"></label>
+  <label style="margin-left: 15%;" id="label2"></label>
+  <label style="margin-left: 45%;" id="label1"></label>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 80%; background-color: #F1F2F2; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout1">
-  <vaadin-list-box style="margin-top: var(--lumo-space-xl); padding: var(--lumo-space-l); background-color:#D0D1D1; width: 100%;" id="vaadinListBox">
-   <vaadin-item id="vaadinItem">
-     Caracteristicas 
-   </vaadin-item>
-  </vaadin-list-box>
+ <vaadin-horizontal-layout theme="spacing" style="width: 80%; background-color: white; padding: var(--lumo-space-m);" id="vaadinHorizontalLayout1">
+  <span id="descripcion" style="width: 100%;"></span>
   <img id="fotoProducto" style="width: 100%; height: 100%;">
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 80%; justify-content: flex-end; margin-top: var(--lumo-space-l);" id="vaadinHorizontalLayout2">

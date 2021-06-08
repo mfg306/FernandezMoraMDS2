@@ -15,12 +15,12 @@ class VistaProducto_listado_administracion extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; align-items: center; margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m);" id="verticalLayout_producto_listado_administracion">
- <vaadin-horizontal-layout theme="spacing" style="width: 40%; background-color: #F1F2F2; padding: var(--lumo-space-s);" id="vaadinHorizontalLayout">
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1">
+<vaadin-vertical-layout style="width: 90%; align-items: center; margin-top: var(--lumo-space-m); margin-bottom: var(--lumo-space-m); border-bottom: 1px solid #ECEDEE;" id="verticalLayout_producto_listado_administracion">
+ <vaadin-horizontal-layout theme="spacing" style="width: 100%; background-color: white; padding: var(--lumo-space-s); align-self: center;" id="vaadinHorizontalLayout">
+  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center;">
    <label style="align-self: center; margin-left: var(--lumo-space-l);" id="label"></label>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; justify-content: flex-end;" id="vaadinHorizontalLayout2">
+  <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout2">
    <vaadin-button theme="primary" style="align-self: center; flex-grow: 0; flex-shrink: 0; margin-right: var(--lumo-space-m);  background-color: red;" id="vaadinButton">
      Eliminar 
    </vaadin-button>

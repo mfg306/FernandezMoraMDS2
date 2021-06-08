@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 
 /**
  * A Designer generated component for the vista-mensaje_recibido template.
@@ -34,6 +35,8 @@ public class VistaMensaje_recibido extends PolymerTemplate<VistaMensaje_recibido
 	private Button responder;
 	@Id("asunto")
 	private Span asunto;
+	@Id("fotoCorreo")
+	private Image fotoCorreo;
 
 	/**
      * Creates a new VistaMensaje_recibido.
@@ -103,5 +106,13 @@ public class VistaMensaje_recibido extends PolymerTemplate<VistaMensaje_recibido
 
 	public void setAsunto(Span asunto) {
 		this.asunto = asunto;
+	}
+
+	public Image getFotoCorreo() {
+		return fotoCorreo;
+	}
+
+	public void setFotoCorreo(Image fotoCorreo) {
+		this.fotoCorreo = fotoCorreo;
 	}
 }

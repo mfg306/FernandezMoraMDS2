@@ -13,7 +13,7 @@ class VistaProductos_administrador extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; align-items: center;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; align-items: center; background-color: white;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
 `;
     }
 

@@ -39,7 +39,6 @@ public class Mensajes_enviados extends Mensajes_recibidos {
 		this.getBoton_pagina_anterior().setVisible(true);
 		this.getBoton_pagina_siguiente().setVisible(true);
 		this.getTotalPaginas().setVisible(true);
-
 		
 		this._list_Mensaje_enviado = new Vector<Mensaje_enviado>();
 		this.layoutEnviados = this.getHueco_mensajes_recibidos().as(VerticalLayout.class);

@@ -15,8 +15,9 @@ class VistaMensaje_recibido extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%; background-color: #F5F5F5" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; background-color: white; border-bottom: 1px solid #ECEDEE;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; padding: var(--lumo-space-s); align-items: center;" id="vaadinHorizontalLayout">
+  <img id="fotoCorreo" style="width: 5vw; height: 5vw; border-radius: 100%;">
   <span id="asunto" style="font-weight: bold; width: 100%;"></span>
   <span style="flex-grow: 0; flex-shrink: 0;" id="span"></span>
   <span style="width: 100%; flex-grow: 0; flex-shrink: 1; align-self: center;" id="span1"></span>

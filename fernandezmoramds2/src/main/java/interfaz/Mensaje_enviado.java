@@ -11,5 +11,7 @@ public class Mensaje_enviado extends Mensaje_recibido {
 		this.getSpan1().setText(mensaje.getMensaje());
 		this.getSpan().setText(mensaje.getCorreo_emisor());
 		this.getResponder().setVisible(false);
+		
+		this.getFotoCorreo().setVisible(false);
 	}
 }

@@ -21,7 +21,18 @@ public class Mensaje_recibido extends VistaMensaje_recibido {
 		
 		this.getAsunto().setText(this.mensaje.getAsunto());
 		
+		if(this.general instanceof base_de_datos.Administrador) {
+			if(this.mensaje.get_Enviado_por_UR().getImagen() != null) {
+				this.getFotoCorreo().setSrc(this.mensaje.get_Enviado_por_UR().getImagen().getRuta());
+			} else {
+				this.getFotoCorreo().setVisible(false);
+			}
+		} else {
+			this.getFotoCorreo().setVisible(false);
+		}
+		
 		abrir_Crear_Mensaje_Responder();
+		
 	}	
 	
 	

@@ -17,10 +17,10 @@ public class Producto_administrador extends VistaProducto_administrador {
 	
 	public Producto_administrador(base_de_datos.Producto p, Productos_administrador pa) {
 		if(p != null) {
-			this.getLabel().setText(p.getNombre());
-			this.getLabel1().setText("" + p.getId_Producto());
-			this.getLabel2().setText("" + p.getPrecio_producto());
-			this.getVaadinItem().setText(p.getDescripcion());
+			this.getLabel().setText("Nombre: " + p.getNombre());
+			this.getLabel1().setText("Codigo: " + p.getId_Producto());
+			this.getLabel2().setText("Precio: " + p.getPrecio_producto() + " €");
+			this.getDescripcion().setText("Descripcion: " + p.getDescripcion());
 			this.p = p;
 			if(this.p._Imagen != null) {
 				base_de_datos.Imagen imagenes[] = this.p._Imagen.toArray();

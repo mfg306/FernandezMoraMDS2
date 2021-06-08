@@ -16,7 +16,7 @@ class VistaMensajes_recibidos extends PolymerElement {
                 }
             </style>
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="lista_mensajes_recibidos">
- <vaadin-button id="boton_crear_mensaje" style="color: #7800ff;">
+ <vaadin-button id="boton_crear_mensaje" style="color: #7800ff; align-self: flex-start;">
    Crear mensaje 
  </vaadin-button>
  <vaadin-vertical-layout theme="spacing" id="hueco_mensajes_recibidos"></vaadin-vertical-layout>
