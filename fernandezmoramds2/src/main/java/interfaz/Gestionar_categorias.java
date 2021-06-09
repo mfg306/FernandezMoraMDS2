@@ -42,17 +42,20 @@ public class Gestionar_categorias extends VistaGestionarcategorias {
 			
 			/*Si viene del inicio*/
 			if(this._administrador.padre != null) {
+				System.out.println("1");
 				this._administrador.padre.removeAll();
 			}
 			
 			/*Si ya se viene de un retroceder ==> se ha creado aqui en este metodo*/
 			if(this._administrador.padre == null) {
+				System.out.println("2");
 				this._administrador.layout.removeAll();
 			}
 			
 			Administrador admin = new Administrador(this._administrador.admin);
 			this.ocultar_Gestionar_Categorias();
 			this._administrador._menu_A.layout.removeAll();
+			this._administrador.layout.removeAll();
 			this._administrador.layout.add(admin);
 		});
 	}

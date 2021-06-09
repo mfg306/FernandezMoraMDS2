@@ -45,12 +45,8 @@ public class Buscador extends VistaBuscador {
 		this.getEspacioBuscador().add(this.categoriasBuscador);
 		this.getEspacioBuscador().add(this._busquedaTF);
 		
-		
-		
-		this._busquedaTF.addKeyPressListener(Key.ENTER, event -> {
-			
+		this._busquedaTF.addKeyPressListener(event -> {
 			if(this._productos_busqueda != null) this._menu_UR_UNR._uR_UNR.layout.remove(this._productos_busqueda);
-			
 			this._productos_busqueda = new Productos_busqueda(this,this._menu_UR_UNR._uR_UNR);
 			this._menu_UR_UNR._uR_UNR.layout.add(this._productos_busqueda);
 

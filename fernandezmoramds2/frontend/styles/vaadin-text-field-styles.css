@@ -6,33 +6,32 @@
 
 /* Example: the style is applied only to the textfields which has the `bordered` theme attribute. */
 :host([theme~="bordered"]) [part="input-field"] {
-    box-shadow: inset 0 0 0 1px var(--lumo-contrast-30pct);
-    background-color: var(--lumo-base-color);
+	box-shadow: inset 0 0 0 1px var(- -lumo-contrast-30pct);
+	background-color: var(- -lumo-base-color);
 }
 
 :host([focus-ring]) [part="input-field"] {
-  box-shadow: 20px solid orange;
+	box-shadow: 20px solid orange;
 }
 
 :host(.formulario) [part="input-field"] {
 	background-color: white;
-		width: auto;
-	
+	width: auto;
 }
 
-:host(.formulario) [part="value"]{
+:host(.formulario) [part="value"] {
 	background-color: white;
 	border-bottom: 1px solid #d8d8d8;
 }
 
-:host(.formulario) [part="value"]:focus{
+:host(.formulario) [part="value"]:focus {
 	background-color: white;
 	border: 1px solid #7800ff;
 	border-radius: 10px;
--webkit-box-shadow: 7px 3px 17px 1px rgba(0, 0, 0, 0.36);
-	box-shadow: 7px 3px 17px 1px rgba(0, 0, 0, 0.36);}
-
-:host{
-	font-family: 'Poppins';
+	-webkit-box-shadow: 7px 3px 17px 1px rgba(0, 0, 0, 0.36);
+	box-shadow: 7px 3px 17px 1px rgba(0, 0, 0, 0.36);
 }
 
+:host {
+	font-family: 'Poppins';
+}

@@ -14,9 +14,9 @@ class VistaAdministrador extends PolymerElement {
         			width: 100%;
                 }
             </style>
-<vaadin-vertical-layout style="width: 100%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; padding: 0;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout id="hueco-menu"></vaadin-vertical-layout>
- <h1 style="align-self: center; margin-bottom: var(--lumo-space-xl); 	" id="h1" class="bounce">BIENVENIDO AL MODO ADMINISTRADOR</h1>
+ <h1 style="align-self: center; margin-bottom: var(--lumo-space-xl); 	" id="h1">BIENVENIDO AL MODO ADMINISTRADOR</h1>
  <vaadin-horizontal-layout style="width: 100%;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout style="width: 100%; background-color: #ECEDEE; padding: var(--lumo-space-m);" id="vaadinVerticalLayout1">
    <h2 style="align-self: center;" id="h2">Tus ofertas</h2>

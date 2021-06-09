@@ -18,7 +18,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 	public Buscador _buscador;
 	public Vector<Producto_busqueda> _list_Producto_busqueda;
 	public VerticalLayout layout;
-	public int productosPorPagina = 4;
+	public int productosPorPagina = 2;
 	public int numeroTotalRegistros = 0;
 	public int numeroTotalPaginas = 0;
 	public int paginaActual = 0;
@@ -61,7 +61,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 			this._list_Producto_busqueda.add(pb);
 			this.numeroTotalRegistros++;
 		}
-
+		
 		this.mostrar_Productos_busqueda_paginados();
 	}
 
@@ -134,9 +134,8 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).setVisible(true);
 	
 		try {
-			if (this._buscador._busquedaTF.getValue().toString().equals("")) {
+			if (this._buscador._busquedaTF.getValue().equals("")) {
 				Notification.show("Introduzca un producto en el buscador para realizar la busqueda");
-
 			} else {
 				this.productos = i.cargarProductosPorCategoria(this._buscador.categoriasBuscador.getValue(),
 						this._buscador._busquedaTF.getValue());
