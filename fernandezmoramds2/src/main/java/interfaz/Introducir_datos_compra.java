@@ -60,6 +60,9 @@ public class Introducir_datos_compra extends VistaIntroducir_datos_compra {
 			dialog.open();
 			
 			this._ver_carrito_UR._menu_UR._uR.actualizarMiListado(new Vector<Producto_carrito>());
+			this._ver_carrito_UR.layout.remove(this);
+			this._ver_carrito_UR.inicializar();
+			this._ver_carrito_UR.getVaadinHorizontalLayout().setVisible(true);
 			
 		});
 	}

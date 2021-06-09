@@ -12,11 +12,12 @@ public class Ver_ficha_cliente extends VistaVer_ficha_cliente{
 	public Ver_ficha_cliente(Pedido_T p, base_de_datos.UR cliente) {
 		this.cliente = cliente;
 		
-		this.getLabel().setText(cliente.getNombre());
-		this.getLabel1().setText(cliente.getPrimer_apellido());
-		this.getLabel2().setText(cliente.getDireccion_envio());
-		this.getLabel3().setText(cliente.getCorreo_electronico());
-		this.getLabel4().setText(cliente.getMetodo_pago());
+		this.getH3().setText("Identificador: " + this.cliente.getId_Usuario());
+		this.getLabel().setText("Nombre: " + cliente.getNombre());
+		this.getLabel1().setText("Apellido: " + cliente.getPrimer_apellido());
+		this.getLabel2().setText("Direccion de envio: " + cliente.getDireccion_envio());
+		this.getLabel3().setText("Correo electronico: " + cliente.getCorreo_electronico());
+		this.getLabel4().setText("Metodo de pago: " + cliente.getMetodo_pago());
 		
 		inicializar(p);
 	}

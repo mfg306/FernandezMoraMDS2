@@ -1,6 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 class VistaVer_ficha_cliente extends PolymerElement {
 
@@ -14,17 +15,17 @@ class VistaVer_ficha_cliente extends PolymerElement {
 
                 }
             </style>
-<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout">
- <vaadin-vertical-layout style="width: 80%; background-color:#F1F2F2; flex-direction: column; align-items: flex-start; margin-top: 25%;" id="vaadinVerticalLayout1">
-  <vaadin-button theme="primary" style="align-self: flex-end; background-color: #7800ff;" id="vaadinButton">
-    Cerrar 
+<vaadin-vertical-layout style="align-items: center;" id="vaadinVerticalLayout">
+ <vaadin-vertical-layout style="background-color:#F1F2F2; flex-direction: column;  width: 100%; align-items: flex-start;" id="vaadinVerticalLayout1">
+  <vaadin-button id="vaadinButton" style="background-color: red;">
+   <iron-icon id="ironIcon" icon="lumo:cross"></iron-icon>
   </vaadin-button>
-  <h3 style="align-self: center;" id="h3">Codigo cliente</h3>
-  <label style="padding: var(--lumo-space-m);" id="label">Nombre</label>
-  <label style="padding: var(--lumo-space-m);" id="label1">Apellidos</label>
-  <label style="padding: var(--lumo-space-m);" id="label2">Dirección</label>
-  <label style="padding: var(--lumo-space-m);" id="label3">Correo electronico</label>
-  <label style="padding: var(--lumo-space-m);" id="label4">Modo de pago</label>
+  <h3 style="align-self: center;" id="h3"></h3>
+  <label style="padding: var(--lumo-space-m);" id="label"></label>
+  <label style="padding: var(--lumo-space-m);" id="label1"></label>
+  <label style="padding: var(--lumo-space-m);" id="label2"></label>
+  <label style="padding: var(--lumo-space-m);" id="label3"></label>
+  <label style="padding: var(--lumo-space-m);" id="label4"></label>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

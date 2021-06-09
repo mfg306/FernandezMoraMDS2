@@ -38,6 +38,9 @@ public class VistaVer_ficha_cliente extends PolymerTemplate<VistaVer_ficha_clien
 	private Label label4;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("ironIcon")
+	private Element ironIcon;
+
 
 	/**
      * Creates a new VistaVer_ficha_cliente.
@@ -123,5 +126,13 @@ public class VistaVer_ficha_cliente extends PolymerTemplate<VistaVer_ficha_clien
 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
+	}
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
 	}
 }
