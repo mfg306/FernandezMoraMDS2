@@ -18,7 +18,7 @@ class VistaOferta_administrador extends PolymerElement {
 <vaadin-vertical-layout style="background-color: white; justify-content: center; border-bottom: 1px solid #ECEDEE;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; align-self: stretch; justify-content: center; align-items: center;">
   <label style="margin: var(--lumo-space-l); align-self: center;" id="label"></label>
-  <h1 id="h1" style="width: 50%; align-self: center;"></h1>
+  <h3 id="h3"></h3>
   <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="vaadinButton">
     Editar 
   </vaadin-button>

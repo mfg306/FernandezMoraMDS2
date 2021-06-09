@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.H3;
 
 /**
  * A Designer generated component for the vista-oferta_administrador template.
@@ -23,8 +24,6 @@ public class VistaOferta_administrador extends PolymerTemplate<VistaOferta_admin
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("h1")
-	private H1 h1;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinButton")
@@ -33,6 +32,8 @@ public class VistaOferta_administrador extends PolymerTemplate<VistaOferta_admin
 	private Button vaadinButton1;
 	@Id("label")
 	private Label label;
+	@Id("h3")
+	private H3 h3;
 
 	/**
      * Creates a new VistaOferta_administrador.
@@ -54,14 +55,6 @@ public class VistaOferta_administrador extends PolymerTemplate<VistaOferta_admin
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
 	}
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
@@ -94,5 +87,13 @@ public class VistaOferta_administrador extends PolymerTemplate<VistaOferta_admin
 
 	public void setLabel(Label label) {
 		this.label = label;
+	}
+
+	public H3 getH3() {
+		return h3;
+	}
+
+	public void setH3(H3 h3) {
+		this.h3 = h3;
 	}
 }

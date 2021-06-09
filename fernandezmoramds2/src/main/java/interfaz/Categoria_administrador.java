@@ -24,7 +24,7 @@ public class Categoria_administrador extends VistaCategoria_administrador {
 		this._categorias_administrador = ca;
 		this.categoria = c;
 		abrir_editar_categoria();
-		this.getH1().setText(c.getNombre_categoria());
+		this.getH3().setText(c.getNombre_categoria());
 	}
 	
 	public void abrir_editar_categoria() {

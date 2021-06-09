@@ -18,7 +18,7 @@ public class Oferta_administrador extends VistaOferta_administrador {
 
 	public void inicializar(Ofertas_administrador oa, base_de_datos.Oferta o) {
 		this._ofertas_administrador = oa;
-		this.getH1().setText(o.getNombre_Oferta());
+		this.getH3().setText(o.getNombre_Oferta());
 		this.getLabel().setText("ID: " + o.getId_Oferta());
 	}
 	

@@ -9,6 +9,7 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H3;
 
 /**
  * A Designer generated component for the vista-categoria_administrador template.
@@ -24,12 +25,12 @@ public class VistaCategoria_administrador extends PolymerTemplate<VistaCategoria
 	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("h1")
-	private H1 h1;
 	@Id("vaadinButton")
 	private Button vaadinButton;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
+	@Id("h3")
+	private H3 h3;
 
 	/**
      * Creates a new VistaCategoria_administrador.
@@ -61,14 +62,6 @@ public class VistaCategoria_administrador extends PolymerTemplate<VistaCategoria
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public H1 getH1() {
-		return h1;
-	}
-
-	public void setH1(H1 h1) {
-		this.h1 = h1;
-	}
-
 	public Button getVaadinButton() {
 		return vaadinButton;
 	}
@@ -83,5 +76,13 @@ public class VistaCategoria_administrador extends PolymerTemplate<VistaCategoria
 
 	public void setVaadinButton1(Button vaadinButton1) {
 		this.vaadinButton1 = vaadinButton1;
+	}
+
+	public H3 getH3() {
+		return h3;
+	}
+
+	public void setH3(H3 h3) {
+		this.h3 = h3;
 	}
 }
