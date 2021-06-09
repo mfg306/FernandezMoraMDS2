@@ -36,6 +36,8 @@ import interfaz.UNR_;
 @CssImport(value="./styles/vaadin-select-styles.css", themeFor="vaadin-select")
 @CssImport(value="./styles/vaadin-select-text-field-styles.css", themeFor="vaadin-select-text-field")
 @CssImport(value="./styles/vaadin-item-styles.css", themeFor="vaadin-item")
+@CssImport(value="./styles/vaadin-input-styles.css", themeFor="vaadin-input")
+
 
 @PreserveOnRefresh
 @EnableVaadin(value = "interfaz")

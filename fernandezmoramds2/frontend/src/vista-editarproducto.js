@@ -28,10 +28,10 @@ class VistaEditar_producto extends PolymerElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="huecoUpload" style="width: 100%;"></vaadin-horizontal-layout>
   <vaadin-vertical-layout theme="spacing" style="flex-grow: 0; flex-shrink: 0; width: 100%; align-items: center;" id="vaadinVerticalLayout1">
-   <vaadin-text-field label="Nuevo nombre producto:" placeholder="Nombre producto" id="nuevoNombreProducto" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;"></vaadin-text-field>
-   <vaadin-text-field label="Nuevo precio:" placeholder="Precio" id="nuevoPrecio" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;"></vaadin-text-field>
-   <vaadin-text-field label="Numero de unidades:" placeholder="Numero unidades" id="numUnidades" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;"></vaadin-text-field>
-   <vaadin-text-area label="Anade una nueva descripcion:" placeholder="Descripcion" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" id="añadeUnaNuevaDescripción"></vaadin-text-area>
+   <vaadin-text-field label="Nuevo nombre producto:" placeholder="Nombre producto" id="nuevoNombreProducto" style="align-self: center; padding-bottom: 0; width: 100%;" class="formulario"></vaadin-text-field>
+   <vaadin-text-field label="Nuevo precio:" placeholder="Precio" id="nuevoPrecio" style="align-self: center; padding-bottom: 0; width: 100%;" class="formulario"></vaadin-text-field>
+   <vaadin-text-field label="Numero de unidades:" placeholder="Numero unidades" id="numUnidades" style="align-self: center; padding-bottom: 0; width: 100%;" class="formulario"></vaadin-text-field>
+   <vaadin-text-area label="Anade una nueva descripcion:" placeholder="Descripcion" style="align-self: center; padding-bottom: 0; width: 100%;" id="añadeUnaNuevaDescripción"></vaadin-text-area>
   </vaadin-vertical-layout>
   <vaadin-horizontal-layout theme="spacing" style="margin-top: var(--lumo-space-l); justify-content: flex-end; align-self: center;" id="vaadinHorizontalLayout1">
    <vaadin-button theme="primary" id="vaadinButton" style="align-self: center;  background-color: #7800ff; color: white;">

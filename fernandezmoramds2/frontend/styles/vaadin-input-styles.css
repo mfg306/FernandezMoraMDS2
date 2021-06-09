@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+:host{
+	font-family: 'Poppins';
+	background-color: red;
+	border: 1px solid #ECEDEE;
+}

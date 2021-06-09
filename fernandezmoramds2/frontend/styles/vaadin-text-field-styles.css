@@ -14,7 +14,23 @@
   box-shadow: 20px solid orange;
 }
 
+:host(.formulario) [part="input-field"] {
+	background-color: white;
+		width: auto;
+	
+}
 
+:host(.formulario) [part="value"]{
+	background-color: white;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+:host(.formulario) [part="value"]:focus{
+	background-color: white;
+	border: 1px solid #7800ff;
+	border-radius: 10px;
+-webkit-box-shadow: 7px 3px 17px 1px rgba(0, 0, 0, 0.36);
+	box-shadow: 7px 3px 17px 1px rgba(0, 0, 0, 0.36);}
 
 :host{
 	font-family: 'Poppins';

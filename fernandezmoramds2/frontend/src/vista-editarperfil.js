@@ -22,13 +22,13 @@ class VistaEditar_perfil extends PolymerElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 80%; height: 100%; flex-grow: 0; align-self: center; " id="vaadinVerticalLayout1">
   <span style="font-size: 4vw; font-weight: bold; align-self: center;" id="span1">Editar perfil</span>
-  <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Nombre de usuario" id="nombre_usuario"></vaadin-text-field>
-  <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Nombre" id="nombre"></vaadin-text-field>
-  <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Primer apellido" id="apellidos"></vaadin-text-field>
-  <vaadin-text-field placeholder="Segundo apellido" id="segundoApellido" style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;"></vaadin-text-field>
-  <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Correo electronico" id="correo_electronico"></vaadin-text-field>
-  <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Direccion envio" id="direccion_envio"></vaadin-text-field>
-  <vaadin-text-field style="align-self: center; border-bottom: 2px solid grey; border-radius: 0; padding-bottom: 0; width: 100%;" placeholder="Metodo de pago" id="metodo_pago"></vaadin-text-field>
+  <vaadin-text-field style="align-self: center; width: 100%;" placeholder="Nombre de usuario" id="nombre_usuario" class="formulario" label="Nombre de usuario:"></vaadin-text-field>
+  <vaadin-text-field style="align-self: center; width: 100%;" placeholder="Nombre" id="nombre" class="formulario" label="Nombre:"></vaadin-text-field>
+  <vaadin-text-field style="align-self: center; width: 100%;" placeholder="Primer apellido" id="apellidos" class="formulario" label="Primer apellido:"></vaadin-text-field>
+  <vaadin-text-field placeholder="Segundo apellido" id="segundoApellido" style="align-self: center; width: 100%;" class="formulario" label="Segundo apellido:"></vaadin-text-field>
+  <vaadin-text-field style="align-self: center; width: 100%;" placeholder="Correo electronico" id="correo_electronico" class="formulario" label="Correo electronico:"></vaadin-text-field>
+  <vaadin-text-field style="align-self: center; width: 100%;" placeholder="Direccion envio" id="direccion_envio" class="formulario" label="Direccion de envio:"></vaadin-text-field>
+  <vaadin-text-field style="align-self: center; width: 100%;" placeholder="Metodo de pago" id="metodo_pago" class="formulario" label="Metodo de pago:"></vaadin-text-field>
   <vaadin-button style="align-self: center; color: #7800ff;" id="boton_cambiar_contrasenia">
     Cambiar contrasena 
   </vaadin-button>
