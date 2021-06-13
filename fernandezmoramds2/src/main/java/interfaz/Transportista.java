@@ -4,6 +4,7 @@ import org.orm.PersistentException;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -33,7 +34,9 @@ public class Transportista extends VistaTransportista {
 		if(this._pedidos_T._list_Pedido_T.size() > 0) {
 			layout.add(this._pedidos_T);
 		} else {
-			Notification.show("No tiene ningun pedido para repartir.");
+			Span aviso = new Span();
+			aviso.setText("No tiene ningun pedido a repartir");
+			layout.add(aviso);
 		}
 	}
 	
