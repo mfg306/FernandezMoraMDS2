@@ -1,6 +1,11 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import basededatos.BDPrincipal;
+import basededatos.iUR_UNR;
 import vistas.VistaProducto_categoria;
 
 public class Producto_categoria extends VistaProducto_categoria{
@@ -14,6 +19,22 @@ public class Producto_categoria extends VistaProducto_categoria{
 		this.getPrecio_producto().setText(String.valueOf(p.getPrecio_producto()) + " €");
 		this.getImagen_producto().setWidth("10vw");
 		this.getImagen_producto().setSrc(p._Imagen.toArray()[0].getRuta());
+		iUR_UNR iUr_UNR = new BDPrincipal();
+		base_de_datos.Producto_Rebajado pr = null;
+
+		try {
+			pr = iUr_UNR.cargarProductoRebajado(this.producto);
+
+		} catch (PersistentException e1) {
+			e1.printStackTrace();
+		}
+
+		if (pr != null) {
+			this.getPrecio_rebajado().setVisible(true);
+			this.getPrecio_rebajado().setText("REBAJADO: " + pr.getPrecio_rebajado() + " €");
+		}else {
+			this.getPrecio_rebajado().setVisible(false);
+		}
 		inicializar(pc, unrunr,p);
 	}
 	

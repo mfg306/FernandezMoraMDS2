@@ -134,7 +134,7 @@ public class Productos_busqueda extends VistaProductos_busqueda {
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).setVisible(true);
 	
 		try {
-			if (this._buscador._busquedaTF.getValue().equals("")) {
+			if (this._buscador._busquedaTF.getValue().equals(" ")) {
 				Notification.show("Introduzca un producto en el buscador para realizar la busqueda");
 			} else {
 				this.productos = i.cargarProductosPorCategoria(this._buscador.categoriasBuscador.getValue(),

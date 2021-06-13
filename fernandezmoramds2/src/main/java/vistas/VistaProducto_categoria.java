@@ -31,6 +31,8 @@ public class VistaProducto_categoria extends PolymerTemplate<VistaProducto_categ
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("precio_producto")
 	private Span precio_producto;
+	@Id("precio_rebajado")
+	private Span precio_rebajado;
 
 	/**
      * Creates a new VistaProducto_categoria.
@@ -84,6 +86,14 @@ public class VistaProducto_categoria extends PolymerTemplate<VistaProducto_categ
 
 	public void setPrecio_producto(Span precio_producto) {
 		this.precio_producto = precio_producto;
+	}
+
+	public Span getPrecio_rebajado() {
+		return precio_rebajado;
+	}
+
+	public void setPrecio_rebajado(Span precio_rebajado) {
+		this.precio_rebajado = precio_rebajado;
 	}
 
 }

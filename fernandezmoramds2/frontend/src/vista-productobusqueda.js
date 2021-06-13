@@ -19,6 +19,7 @@ class VistaProducto_busqueda extends PolymerElement {
  <vaadin-horizontal-layout theme="spacing" style="align-self: stretch; justify-content: space-between; width: 100%;" id="vaadinHorizontalLayout">
   <span style="align-self: center; width: 100%;" id="nombre_producto"></span>
   <span style="flex-grow: 0; align-self: flex-end; flex-shrink: 1; width: 100%;" id="precio_producto"></span>
+  <span id="precio_rebajado" style="flex-grow: 0; align-self: flex-end; flex-shrink: 1; width: 100%;color: red;"></span>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
