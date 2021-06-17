@@ -75,6 +75,7 @@ public class BD_Productos {
 		this._bDPrincipal = new BDPrincipal();
 
 		if (p != null) {
+			this._bDPrincipal.eliminarProductoEnCompra(p);
 			this._bDPrincipal.eliminarImagenProducto(p);
 			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
 			this._bDPrincipal.eliminarComentarioProducto(p);

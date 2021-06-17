@@ -32,6 +32,26 @@ public class BD_Productos_en_compra {
 		return true;
 	}
 	
+	public boolean eliminarProductoEnCompra(Producto aProducto) throws PersistentException {
+		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
+
+		try {
+			Producto_en_compra[] pen = Producto_en_compraDAO.listProducto_en_compraByQuery("ProductoId_Producto = " + aProducto.getId_Producto(), null);
+			
+			for(Producto_en_compra p : pen) {
+				Producto_en_compraDAO.deleteAndDissociate(p);
+			}
+			
+			t.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+			t.rollback();
+			return false;
+		}
+		
+		return true;
+	}
+	
 	public Producto_en_compra[] cargarProductosEnCompra(int aIdEnviado) throws PersistentException {
 		return  Producto_en_compraDAO.listProducto_en_compraByQuery("PendienteCompraCodigo = " + aIdEnviado, null);
 	}
