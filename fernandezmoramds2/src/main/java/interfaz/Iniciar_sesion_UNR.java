@@ -42,7 +42,6 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		this.getBoton_iniciar_sesion().setVisible(true);
 		this.getBoton_iniciar_sesion_empleados().setVisible(false);
 
-
 		this.getNombre_usuario().setVisible(false);
 		this.getCorreo().setVisible(true);
 		this.getBotonRegistrarse().setVisible(true);
@@ -50,13 +49,13 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
 		abrirIniciarSesionEmpleados();
-		
-		
+
 		try {
 			this.iniciarSesion();
 		} catch (PersistentException e) {
 			e.printStackTrace();
-		};
+		}
+		;
 
 	}
 
@@ -84,12 +83,10 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 			this.getBotonRegistrarse().setVisible(false);
 			this.getVaadinButton1().setVisible(false);
 			this.getEnlaceEmpleados().setVisible(false);
-			
-			
+
 			this.getBoton_iniciar_sesion_empleados().setVisible(true);
 			this.getBoton_iniciar_sesion().setVisible(false);
-			
-			
+
 		});
 	}
 
@@ -119,6 +116,29 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 			} catch (PersistentException e) {
 				e.printStackTrace();
 			}
+		});
+
+		this.getContrasenia().addKeyPressListener(event -> {
+			iUNR_ iunr = new BDPrincipal();
+			base_de_datos.Usuario_General usuario = null;
+			try {
+				usuario = iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue());
+
+				if (usuario != null && usuario instanceof base_de_datos.UR) {
+					limpiar_interfaz();
+					this._menu_UNR.layout.add(new UR(usuario));
+				} else if (usuario != null && usuario instanceof base_de_datos.Administrador) {
+					limpiar_interfaz();
+					this._menu_UNR.layout.add(new Administrador(usuario, this));
+				}
+			
+			
+			
+
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+
 		});
 
 	}
