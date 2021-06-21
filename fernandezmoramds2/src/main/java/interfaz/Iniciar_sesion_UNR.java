@@ -2,6 +2,7 @@ package interfaz;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
@@ -49,14 +50,8 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 		abrir_RecuperarContraseña();
 		abrir_Registrarse();
 		abrirIniciarSesionEmpleados();
-
-		try {
-			this.iniciarSesion();
-		} catch (PersistentException e) {
-			e.printStackTrace();
-		}
-		;
-
+		
+		this.realizarInicioSesion();
 	}
 
 	public void abrir_RecuperarContraseña() {
@@ -93,54 +88,43 @@ public class Iniciar_sesion_UNR extends Iniciar_sesion {
 	public void limpiar_interfaz() {
 		this._menu_UNR.layout.remove(this);
 	}
-
-	public void iniciarSesion() throws PersistentException {
+	
+	public void realizarInicioSesion() {
+		
 		this.getBoton_iniciar_sesion().addClickListener(event -> {
-
-			iUNR_ iunr = new BDPrincipal();
-			base_de_datos.Usuario_General usuario = null;
-
-			try {
-				usuario = iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue());
-
-				if (usuario != null && usuario instanceof base_de_datos.UR) {
-					limpiar_interfaz();
-					this._menu_UNR.layout.add(new UR(usuario));
-				} else if (usuario != null && usuario instanceof base_de_datos.Administrador) {
-					limpiar_interfaz();
-					this._menu_UNR.layout.add(new Administrador(usuario, this));
-				} else {
-					Notification.show("No se ha podido encontrar tu cuenta");
-				}
-
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
+			iniciarSesion();
+		});
+		
+		this.getCorreo().addKeyPressListener(Key.ENTER, event->{
+			iniciarSesion();
 		});
 
-		this.getContrasenia().addKeyPressListener(event -> {
-			iUNR_ iunr = new BDPrincipal();
-			base_de_datos.Usuario_General usuario = null;
-			try {
-				usuario = iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue());
-
-				if (usuario != null && usuario instanceof base_de_datos.UR) {
-					limpiar_interfaz();
-					this._menu_UNR.layout.add(new UR(usuario));
-				} else if (usuario != null && usuario instanceof base_de_datos.Administrador) {
-					limpiar_interfaz();
-					this._menu_UNR.layout.add(new Administrador(usuario, this));
-				}
-			
-			
-			
-
-			} catch (PersistentException e) {
-				e.printStackTrace();
-			}
-
+		this.getContrasenia().addKeyPressListener(Key.ENTER, event -> {
+			iniciarSesion();
 		});
 
+	}
+
+	public void iniciarSesion() {
+		iUNR_ iunr = new BDPrincipal();
+		base_de_datos.Usuario_General usuario = null;
+
+		try {
+			usuario = iunr.iniciarSesion(this.getCorreo().getValue(), this.getContrasenia().getValue());
+
+			if (usuario != null && usuario instanceof base_de_datos.UR) {
+				limpiar_interfaz();
+				this._menu_UNR.layout.add(new UR(usuario));
+			} else if (usuario != null && usuario instanceof base_de_datos.Administrador) {
+				limpiar_interfaz();
+				this._menu_UNR.layout.add(new Administrador(usuario, this));
+			} else {
+				Notification.show("No se ha podido encontrar tu cuenta");
+			}
+
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

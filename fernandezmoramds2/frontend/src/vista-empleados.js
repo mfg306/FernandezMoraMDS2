@@ -21,7 +21,7 @@ class VistaEmpleados extends PolymerElement {
   <vaadin-button theme="primary" id="botonAnteriores" style="background-color: grey; color: white;">
     Anterior 
   </vaadin-button>
-  <span>Pagina</span>
+  <span id="pagina">Pagina</span>
   <span id="paginaActual"></span>
   <span id="de">de</span>
   <span id="totalPaginas"></span>

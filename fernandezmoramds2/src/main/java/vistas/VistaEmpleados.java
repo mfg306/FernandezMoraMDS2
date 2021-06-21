@@ -36,6 +36,8 @@ public class VistaEmpleados extends PolymerTemplate<VistaEmpleados.VistaEmpleado
 	private Button botonAnteriores;
 	@Id("huecoEmpleados")
 	private Element huecoEmpleados;
+	@Id("pagina")
+	private Span pagina;
 
 	/**
      * Creates a new VistaEmpleados.
@@ -113,5 +115,13 @@ public class VistaEmpleados extends PolymerTemplate<VistaEmpleados.VistaEmpleado
 
 	public void setHuecoEmpleados(Element huecoEmpleados) {
 		this.huecoEmpleados = huecoEmpleados;
+	}
+
+	public Span getPagina() {
+		return pagina;
+	}
+
+	public void setPagina(Span pagina) {
+		this.pagina = pagina;
 	}
 }

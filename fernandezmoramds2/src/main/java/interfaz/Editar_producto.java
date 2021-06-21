@@ -38,7 +38,6 @@ public class Editar_producto extends VistaEditar_producto {
 		this.getImagen().setWidth("20vw");
 		this.getImagen().setHeight("auto");
 		
-		
 		if(imagenes.length != 0) this.getImagen().setSrc(imagenes[0].getRuta());
 		if(imagenes.length > 1) this.getImagen1().setSrc(imagenes[1].getRuta());
 		if(imagenes.length > 2) this.getImagen2().setSrc(imagenes[2].getRuta());

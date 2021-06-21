@@ -32,7 +32,6 @@ public class Empleados extends VistaEmpleados {
 	}
 	
 	public void inicializar(int paginaActual ) {
-		System.out.println("Inicializando");
 		this._list_Empleado = new Vector<>();
 		layout = this.getHuecoEmpleados().as(VerticalLayout.class);
 		numeroTotalRegistros = 0;
@@ -149,6 +148,7 @@ public class Empleados extends VistaEmpleados {
 				this.getPaginaActual().setVisible(false);
 				this.getTotalPaginas().setVisible(false);
 				this.getDe().setVisible(false);
+				this.getPagina().setVisible(false);
 				
 				aviso.setText("No hay ningún empleado registrado en la base de datos.");
 				this.layout.add(aviso);

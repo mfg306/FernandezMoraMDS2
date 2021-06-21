@@ -12,7 +12,7 @@ public class Ver_ficha_cliente extends VistaVer_ficha_cliente{
 	public Ver_ficha_cliente(Pedido_T p, base_de_datos.UR cliente) {
 		this.cliente = cliente;
 		
-		this.getH3().setText("Identificador: " + this.cliente.getId_Usuario());
+		this.getH3().setText("Identificador del cliente: " + this.cliente.getId_Usuario());
 		this.getLabel().setText("Nombre: " + cliente.getNombre());
 		this.getLabel1().setText("Apellido: " + cliente.getPrimer_apellido());
 		this.getLabel2().setText("Direccion de envio: " + cliente.getDireccion_envio());

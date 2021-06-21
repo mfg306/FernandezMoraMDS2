@@ -90,8 +90,14 @@ public class BD_Empleados {
 				Transportista[] listadoT = TransportistaDAO.listTransportistaByQuery(null, null);
 				
 				/* Tenemos que asignarle la cola que se corresponde con el numero del transportista que es*/
-				if(listadoT.length != 0) t.setId_cola(listadoT.length);
-				else t.setId_cola(0);
+				if(listadoT.length != 0) {
+					System.out.println("ES 0");
+					t.setId_cola(listadoT.length);
+				}
+				else {
+					System.out.println("NO ES 0");
+					t.setId_cola(0);
+				}
 				
 				TransportistaDAO.save(t);
 			}

@@ -17,6 +17,7 @@ public class Producto_carrito extends VistaProducto_carrito {
 	public Producto_carrito(Producto p, base_de_datos.Producto pc, UR_UNR usuario) {
 		this.layout = this.getVaadinVerticalLayout().as(VerticalLayout.class);
 		Editar_cantidad();
+		
 		this._producto = p;
 		this.producto = pc;
 		

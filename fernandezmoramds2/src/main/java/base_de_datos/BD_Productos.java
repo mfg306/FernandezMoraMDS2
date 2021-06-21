@@ -100,7 +100,6 @@ public class BD_Productos {
 		try {
 			if(aProducto.get_Categoria() != null) {
 				aProducto.setORM__Categoria(null);
-//				aProducto.get_Categoria()._Producto.remove(aProducto);
 			}
 			
 			base_de_datos.Producto_en_compra[] l_Producto_en_compras = aProducto._Producto_en_compra.toArray();
@@ -120,7 +119,7 @@ public class BD_Productos {
 				l_Valorado_pors[i].set_Valorado(null);
 			}
 				
-			ProductoDAO.delete(aProducto);
+			ProductoDAO.deleteAndDissociate(aProducto);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

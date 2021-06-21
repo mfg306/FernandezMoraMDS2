@@ -55,6 +55,7 @@ public class Pedido_E extends VistaPedido_e {
 					mensaje += "(" + pec.getNum_unidades_producto() + ") " +  pec.get_Producto().getNombre() + "\n";
 				}
 				
+				mensaje += "\n Precio total: " + this.pendiente.getPrecio_total() + "\n";
 				mensaje += "\nEn breves recibirá sus artículos. ";
 
 				this.Enviar_mensaje_a_cliente_E(this.pendiente.get_Hace_compra().getCorreo_electronico(), asunto,

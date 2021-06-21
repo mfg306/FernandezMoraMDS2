@@ -30,7 +30,6 @@ public class BD_Pendiente {
 		/*En que cola se va a asignar*/
 		int randomCola = rand.nextInt(transportistas.length);
 		
-		
 		/*Generamos un numero aleatorio que sera el encargado al que le toque*/
 		Encargado_de_compras encargado = encargados[randomNum];
 		
