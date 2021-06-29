@@ -23,7 +23,7 @@ public class BD_Productos {
 			c = categorias[0];
 
 			int idCategoria = c.getId_Categoria();
-			
+
 			productos = ProductoDAO.listProductoByQuery("CategoriaId_Categoria = " + idCategoria,
 					"Num_Unidades_Vendidas");
 
@@ -71,21 +71,33 @@ public class BD_Productos {
 
 	public void eliminarProductoAdministrador(int aIdProducto) throws PersistentException {
 		Producto p = ProductoDAO.getProductoByORMID(aIdProducto);
+		Producto_Rebajado listaRebajados[] = Producto_RebajadoDAO
+				.listProducto_RebajadoByQuery("ProductoId_Producto = " + p.getId_Producto(), null);
 
 		this._bDPrincipal = new BDPrincipal();
 
 		if (p != null) {
 			this._bDPrincipal.eliminarProductoEnCompra(p);
 			this._bDPrincipal.eliminarImagenProducto(p);
-			this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
 			this._bDPrincipal.eliminarComentarioProducto(p);
 			this._bDPrincipal.eliminarValoracionesProducto(p);
-		}
 
+			if (listaRebajados.length != 0) {
+				this._bDPrincipal._bD_Productos_Rebajados.eliminarProductosRebajados(p.getId_Producto());
+			}
+		}
+		
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			ProductoDAO.deleteAndDissociate(p);
+
+			/* Si hay una categoria la quitamos */
+			if (p.get_Categoria() != null) {
+				p.setORM__Categoria(null);
+			}
+
+			ProductoDAO.delete(p);
+
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -98,29 +110,33 @@ public class BD_Productos {
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			if(aProducto.get_Categoria() != null) {
-				aProducto.setORM__Categoria(null);
-			}
+//			if (aProducto.get_Categoria() != null) {
+//				aProducto.setORM__Categoria(null);
+//			}
+
+//			base_de_datos.Producto_en_compra[] l_Producto_en_compras = aProducto._Producto_en_compra.toArray();
+//			for (int i = 0; i < l_Producto_en_compras.length; i++) {
+//				l_Producto_en_compras[i].set_Producto(null);
+//			}
+//
+//			base_de_datos.Comentario[] l_Pertenece_as = aProducto._Pertenece_a.toArray();
+//			for (int i = 0; i < l_Pertenece_as.length; i++) {
+//				l_Pertenece_as[i].set_Tiene(null);
+//			}
+//
+//			base_de_datos.Imagen[] l_Imagens = aProducto._Imagen.toArray();
+//			for (int i = 0; i < l_Imagens.length; i++) {
+//				ImagenDAO.deleteAndDissociate(l_Imagens[i]);
+//			}
+//			
+//			base_de_datos.Valoracion[] l_Valorado_pors = aProducto._Valorado_por.toArray();
+//			for (int i = 0; i < l_Valorado_pors.length; i++) {
+//				l_Valorado_pors[i].set_Valorado(null);
+//			}
 			
-			base_de_datos.Producto_en_compra[] l_Producto_en_compras = aProducto._Producto_en_compra.toArray();
-			for(int i = 0; i < l_Producto_en_compras.length; i++) {
-				l_Producto_en_compras[i].set_Producto(null);
-			}
-			base_de_datos.Comentario[] l_Pertenece_as = aProducto._Pertenece_a.toArray();
-			for(int i = 0; i < l_Pertenece_as.length; i++) {
-				l_Pertenece_as[i].set_Tiene(null);
-			}
-			base_de_datos.Imagen[] l_Imagens = aProducto._Imagen.toArray();
-			for(int i = 0; i < l_Imagens.length; i++) {
-				l_Imagens[i].set_Producto(null);
-			}
-			base_de_datos.Valoracion[] l_Valorado_pors = aProducto._Valorado_por.toArray();
-			for(int i = 0; i < l_Valorado_pors.length; i++) {
-				l_Valorado_pors[i].set_Valorado(null);
-			}
-				
 			ProductoDAO.deleteAndDissociate(aProducto);
 			t.commit();
+			
 		} catch (Exception e) {
 			t.rollback();
 			e.printStackTrace();
