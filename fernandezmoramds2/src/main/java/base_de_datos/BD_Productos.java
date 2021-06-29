@@ -23,7 +23,7 @@ public class BD_Productos {
 			c = categorias[0];
 
 			int idCategoria = c.getId_Categoria();
-
+			
 			productos = ProductoDAO.listProductoByQuery("CategoriaId_Categoria = " + idCategoria,
 					"Num_Unidades_Vendidas");
 
