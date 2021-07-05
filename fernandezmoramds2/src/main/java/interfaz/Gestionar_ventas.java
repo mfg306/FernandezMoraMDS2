@@ -65,6 +65,7 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 			}
 
 			enviados = admin.cargarEnviados();
+			
 			for (Enviado e : enviados) {
 				this._ventas.add_ventas(e);
 			}

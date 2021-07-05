@@ -177,16 +177,18 @@ public class BD_UR {
 
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 		Imagen i = null;
+		
+		if(aRutaFoto != null) {
+			try {
+				i = ImagenDAO.createImagen();
+				i.setRuta(aRutaFoto);
 
-		try {
-			i = ImagenDAO.createImagen();
-			i.setRuta(aRutaFoto);
-
-			ImagenDAO.save(i);
-			t.commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			t.rollback();
+				ImagenDAO.save(i);
+				t.commit();
+			} catch (Exception e) {
+				e.printStackTrace();
+				t.rollback();
+			}
 		}
 
 		PersistentTransaction t2 = MDS2PersistentManager.instance().getSession().beginTransaction();

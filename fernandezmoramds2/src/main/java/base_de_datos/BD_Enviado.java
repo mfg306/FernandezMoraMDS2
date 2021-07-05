@@ -72,7 +72,11 @@ public class BD_Enviado {
 		PersistentTransaction t = MDS2PersistentManager.instance().getSession().beginTransaction();
 
 		try {
-			enviados = EnviadoDAO.listEnviadoByQuery(null, null);
+			enviados = EnviadoDAO.listEnviadoByQuery("Enviado = true", null);
+			System.out.println("SIZE : " + enviados.length);
+			for(Enviado e : enviados) {
+				System.out.println(e.getCodigo());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			t.rollback();

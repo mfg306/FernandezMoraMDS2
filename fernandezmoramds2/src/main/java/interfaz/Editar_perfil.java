@@ -25,8 +25,10 @@ public class Editar_perfil extends VistaEditar_perfil{
 	Upload upload;
 	MemoryBuffer buffer;
 	Image foto;
+	String rutaInicial = "";
 
 	public Editar_perfil(Menu_UR _menu_UR) {
+		rutaInicial = this.getImg().getSrc();
 		inicializar(_menu_UR);
 	}
 
@@ -98,9 +100,24 @@ public class Editar_perfil extends VistaEditar_perfil{
 		
 		this.getBoton_guardar().addClickListener(event ->{
 			try {
-				iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue(),this.getSegundoApellido().getValue()
-						, this.getCorreo_electronico().getValue(), this.getDireccion_envio().getValue(), 
-						this.getMetodo_pago().getValue(), foto.getSrc());
+				
+				if(foto != null) {
+					if(foto.getSrc().equals(rutaInicial)) {
+						iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue(),this.getSegundoApellido().getValue()
+								, this.getCorreo_electronico().getValue(), this.getDireccion_envio().getValue(), 
+								this.getMetodo_pago().getValue(), null);
+					} else {
+						iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue(),this.getSegundoApellido().getValue()
+								, this.getCorreo_electronico().getValue(), this.getDireccion_envio().getValue(), 
+								this.getMetodo_pago().getValue(), foto.getSrc());
+					}
+					
+				}else {
+					iur.cambiarDatosUsuario(this.getNombre_usuario().getValue(), this.getNombre().getValue(), this.getApellidos().getValue(),this.getSegundoApellido().getValue()
+							, this.getCorreo_electronico().getValue(), this.getDireccion_envio().getValue(), 
+							this.getMetodo_pago().getValue(), null);
+				}
+
 				Notification.show("Configuración guardada con éxito");
 				this.inicializar(this._menu_UR);
 				
