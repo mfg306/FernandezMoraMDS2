@@ -63,7 +63,7 @@ public class Pedido_T extends VistaPedido_t {
 				iT.repartirACliente(this.cliente, this.enviado);
 				String asunto = "Pedido con código " + this.enviado.getCodigo() + " enviado con éxito.";
 				String cuerpo = "El pedido con código " + this.enviado.getCodigo() + " ha sido enviado con éxito. Valore el producto"
-						+ "si ha quedado satisfecho con el mismo.";
+						+ " si ha quedado satisfecho con el mismo.";
 				this.Enviar_mensaje_a_cliente_T(this.cliente.getCorreo_electronico(), asunto, cuerpo);
 				
 				this._pedidos_T._transportista.inicializar();

@@ -76,7 +76,7 @@ public class Gestionar_ventas extends VistaGestionar_ventas {
 			}
 			
 			if((pendientes == null || pendientes.length ==  0) && (enviados == null || enviados.length == 0) && (recibidos == null || recibidos.length == 0)){
-				aviso.setText("No hay ningún producto registrado en la base de datos.");
+				aviso.setText("No hay ninguna venta registrada en la base de datos.");
 				this.layout.add(aviso);
 			}
 			

@@ -35,7 +35,9 @@ class VistaProducto extends PolymerElement {
     <img style="width: 80%; height: 80%;  border: 2px solid #ECEDEE; padding: var(--lumo-space-s);" id="img4">
    </vaadin-horizontal-layout>
    <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; background-color: #F5F5F5; padding: var(--lumo-space-l);" id="vaadinVerticalLayout2">
-    <vaadin-text-field placeholder="Deja tu comentario ..." style="height: 100%; padding: var(--lumo-space-m); align-self: center; width: 100%;" required name="comentario" invalid id="dejar_comentario"></vaadin-text-field>
+    <span>Deja tu comentario:</span>
+    <vaadin-text-field placeholder="Deja tu comentario ..." style="height: 100%; align-self: center; width: 100%; padding: var(--lumo-space-m);" required name="comentario" invalid id="dejar_comentario"></vaadin-text-field>
+    <span>Deja tu valoración:</span>
     <vaadin-vertical-layout theme="spacing" id="valorarProducto"></vaadin-vertical-layout>
     <vaadin-button theme="primary" style="align-self: center;  background-color: #7800ff;" id="enviar_comentario">
       Enviar comentario 

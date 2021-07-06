@@ -147,7 +147,7 @@ public class Editar_perfil extends VistaEditar_perfil{
 			
 			if(foto != null) {
 				this.getHuecoImagen().as(VerticalLayout.class).remove(foto);
-			}
+			} 
 			
 			foto = new Image();
 			foto.setSrc(rutaImagen);
